@@ -10,11 +10,13 @@
     <title>{{ page.title }}</title>
   </head>
   <body>
+  	{% include nav.ext %}
     <header>
       <h1><a href="/">{{ page.title }}</a></h1>
     </header>
     <section>
       {{ content }}
     </section>
+    {% include footer.ext %}
   </body>
 </html>
