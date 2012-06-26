@@ -1,0 +1,22 @@
+/* line 3, ../sass/styles.scss */
+html {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}
+
+/* line 15, ../sass/styles.scss */
+pre {
+  overflow: auto;
+  text-shadow: none;
+  word-wrap: normal;
+  white-space: pre;
+}
+
+/* line 22, ../sass/styles.scss */
+code {
+  speak: literal-punctuation;
+  word-wrap: normal;
+}
