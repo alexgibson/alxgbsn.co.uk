@@ -1,0 +1,25 @@
+@import "base";
+
+html {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}
+
+body {
+	
+}
+
+pre {
+  overflow: auto;
+  text-shadow: none;
+  word-wrap: normal;
+  white-space: pre;
+}
+
+code {
+  speak: literal-punctuation;
+  word-wrap: normal;
+}
