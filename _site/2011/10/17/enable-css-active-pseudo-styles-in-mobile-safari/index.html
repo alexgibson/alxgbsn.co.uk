@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="description" content="Alex Gibson is a front–end web developer from Newcastle upon Tyne, United Kingdom." />
+  <meta name="author" content="Alex Gibson" />
+  <meta name="viewport" content="width=device-width" />
+  <link rel="stylesheet" href="/css/styles.css" />
+  <link rel="alternate" type="application/rss+xml" title="Alex Gibson" href="http://alxgbsn.co.uk/feed/" />
+  <title>Enable CSS active pseudo styles in Mobile Safari</title>
+</head>
+  <body>
+  	<nav>
+	<ul>
+		<li><a href="/">Home</a></li>
+		<li><a href="/feed/index.xml">Feed</a></li>
+	</ul>
+</nav>
+    <header>
+      <h1>Enable CSS active pseudo styles in Mobile Safari</h1>
+    </header>
+    <section>
+      <div class="content">
+  <div id="post">
+    <h1></h1>
+    <p>By default Mobile Safari disables CSS active pseudo styles on web pages, instead opting for a generic tap–highlight colour on clickable elements. A little known trick is that you can easily re-enable your active pseudo styles by declaring a <code>touchstart</code> event on the page. You don't even need to actually use the event, simply declaring an empty function will suffice.</p>
+
+<p>Just add the following single line of JavaScript to your web page and all your active CSS styles will spring to life.</p>
+
+<pre><code>document.addEventListener("touchstart", function() {},false);
+</code></pre>
+
+<p>Note: if you do this trick it is also worth removing the default <code>tap–highlight</code> colour Mobile Safari applies using the following CSS rule.</p>
+
+<pre><code>html {
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+</code></pre>
+
+<p>On a related note, there are also some other useful mobile Webkit oddities that can activated by using empty event declarations, like <a href="http://krijnhoetmer.nl/stuff/javascript/label-checkbox-ios/">making form labels clickable</a>.</p>
+
+  </div>
+</div>
+
+    </section>
+    <footer>
+	<p>Copyright &copy; Alex Gibson.</p>
+</footer>
+  </body>
+</html>
