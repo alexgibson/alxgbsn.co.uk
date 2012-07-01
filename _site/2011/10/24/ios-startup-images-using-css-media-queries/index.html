@@ -9,19 +9,17 @@
   <link rel="alternate" type="application/rss+xml" title="Alex Gibson" href="http://alxgbsn.co.uk/feed/" />
   <title>iOS startup images using CSS media queries</title>
 </head>
-  <body>
-  	<nav>
+<body>
+  	<nav role="navigation">
 	<ul>
 		<li><a href="/">Home</a></li>
 		<li><a href="/feed/index.xml">Feed</a></li>
 	</ul>
 </nav>
-    <header>
-      <h1>iOS startup images using CSS media queries</h1>
+    <header role="banner">
+        <h1>iOS startup images using CSS media queries</h1>
     </header>
-    <section>
-      <div class="content">
-  <div id="post">
+    <article role="main">
     <h1></h1>
     <p>Ever since the arrival of the iPad and iPhone 4, serving correctly sized <code>apple-touch-startup-images</code> for iOS web apps has been somewhat clumbersome, especially if you wish to cater for every type of iOS device.</p>
 
@@ -60,12 +58,10 @@
 
 <p>The only drawback to this CSS only method is that every image seems to be downloaded, regardless of which one is used on the device. If your application is supporting both iPhone and iPad, it may be worth using the JavaScript solution still. But the choice is yours to make, depending on the number of files and their respective sizes. Hopefully Apple will eventually support another solution to serving the correct file, such as using the <code>sizes</code> attribute.</p>
 
-  </div>
-</div>
+</article>
 
-    </section>
     <footer>
 	<p>Copyright &copy; Alex Gibson.</p>
 </footer>
-  </body>
+</body>
 </html>

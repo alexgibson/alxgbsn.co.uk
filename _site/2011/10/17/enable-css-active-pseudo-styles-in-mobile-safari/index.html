@@ -9,19 +9,17 @@
   <link rel="alternate" type="application/rss+xml" title="Alex Gibson" href="http://alxgbsn.co.uk/feed/" />
   <title>Enable CSS active pseudo styles in Mobile Safari</title>
 </head>
-  <body>
-  	<nav>
+<body>
+  	<nav role="navigation">
 	<ul>
 		<li><a href="/">Home</a></li>
 		<li><a href="/feed/index.xml">Feed</a></li>
 	</ul>
 </nav>
-    <header>
-      <h1>Enable CSS active pseudo styles in Mobile Safari</h1>
+    <header role="banner">
+        <h1>Enable CSS active pseudo styles in Mobile Safari</h1>
     </header>
-    <section>
-      <div class="content">
-  <div id="post">
+    <article role="main">
     <h1></h1>
     <p>By default Mobile Safari disables CSS active pseudo styles on web pages, instead opting for a generic tap–highlight colour on clickable elements. A little known trick is that you can easily re-enable your active pseudo styles by declaring a <code>touchstart</code> event on the page. You don't even need to actually use the event, simply declaring an empty function will suffice.</p>
 
@@ -39,12 +37,10 @@
 
 <p>On a related note, there are also some other useful mobile Webkit oddities that can activated by using empty event declarations, like <a href="http://krijnhoetmer.nl/stuff/javascript/label-checkbox-ios/">making form labels clickable</a>.</p>
 
-  </div>
-</div>
+</article>
 
-    </section>
     <footer>
 	<p>Copyright &copy; Alex Gibson.</p>
 </footer>
-  </body>
+</body>
 </html>

@@ -9,19 +9,17 @@
   <link rel="alternate" type="application/rss+xml" title="Alex Gibson" href="http://alxgbsn.co.uk/feed/" />
   <title>Making web content more accessible with iOS VoiceOver</title>
 </head>
-  <body>
-  	<nav>
+<body>
+  	<nav role="navigation">
 	<ul>
 		<li><a href="/">Home</a></li>
 		<li><a href="/feed/index.xml">Feed</a></li>
 	</ul>
 </nav>
-    <header>
-      <h1>Making web content more accessible with iOS VoiceOver</h1>
+    <header role="banner">
+        <h1>Making web content more accessible with iOS VoiceOver</h1>
     </header>
-    <section>
-      <div class="content">
-  <div id="post">
+    <article role="main">
     <h1></h1>
     <p>If you're a web developer and own an iOS device, you may have noticed it comes with a whole range of accessibility features. One such feature is a built-in screen reader for visually impaired users, called VoiceOver. For a touch screen device, VoiceOver is a wonderfully capable piece of assistive technology, and a very useful tool that you can use to help test the accessibility of your web content.</p>
 
@@ -129,12 +127,10 @@ document.querySelector('#panel').setAttribute('aria-hidden', 'false'); //visible
 
 <p>These are just a few basic things that you can do to help improve the accessibility of your web content for VoiceOver on iOS. Mobile specific content is sadly often forgotten when it comes to accessibility, since many still regard it as not having the right tools available to assist people. It is a good thing that iOS uses the same underlying technology as VoiceOver for Mac OSX, because if you're building accessible content for the web, then you're already well on the way to providing a great experience on iOS too.</p>
 
-  </div>
-</div>
+</article>
 
-    </section>
     <footer>
 	<p>Copyright &copy; Alex Gibson.</p>
 </footer>
-  </body>
+</body>
 </html>

@@ -9,19 +9,17 @@
   <link rel="alternate" type="application/rss+xml" title="Alex Gibson" href="http://alxgbsn.co.uk/feed/" />
   <title>Serving iOS retina startup images for the new iPad</title>
 </head>
-  <body>
-  	<nav>
+<body>
+  	<nav role="navigation">
 	<ul>
 		<li><a href="/">Home</a></li>
 		<li><a href="/feed/index.xml">Feed</a></li>
 	</ul>
 </nav>
-    <header>
-      <h1>Serving iOS retina startup images for the new iPad</h1>
+    <header role="banner">
+        <h1>Serving iOS retina startup images for the new iPad</h1>
     </header>
-    <section>
-      <div class="content">
-  <div id="post">
+    <article role="main">
     <h1></h1>
     <p>In the past we have touched on how to serve iOS startup images for full screen web apps using both <a href="http://miniapps.co.uk/blog/post/ios-startup-images-using-css-media-queries/">CSS media queries and JavaScript</a> techniques. Now that the latest iPad sports a retina calibre display, we must again look at the best way to serve startup images in our web apps.</p>
 
@@ -42,12 +40,10 @@ if (navigator.platform === "iPad") {
 
 <p>It would be nice if Apple would provide a better way to do this rather than having to rely on JavaScript. Perhaps in the future we will be able to have the option to use vector formats, such as SVG for startup images?</p>
 
-  </div>
-</div>
+</article>
 
-    </section>
     <footer>
 	<p>Copyright &copy; Alex Gibson.</p>
 </footer>
-  </body>
+</body>
 </html>

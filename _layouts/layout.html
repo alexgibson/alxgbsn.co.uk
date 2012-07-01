@@ -9,14 +9,12 @@
   <link rel="alternate" type="application/rss+xml" title="Alex Gibson" href="http://alxgbsn.co.uk/feed/" />
   <title>{{ page.title }}</title>
 </head>
-  <body>
+<body>
   	{% include nav.ext %}
-    <header>
-      <h1>{{ page.title }}</h1>
+    <header role="banner">
+        <h1>{{ page.title }}</h1>
     </header>
-    <section>
-      {{ content }}
-    </section>
+    {{ content }}
     {% include footer.ext %}
-  </body>
+</body>
 </html>
