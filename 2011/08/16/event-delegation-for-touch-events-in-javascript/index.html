@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="description" content="Alex Gibson is a front–end web developer from Newcastle upon Tyne, United Kingdom." />
+  <meta name="author" content="Alex Gibson" />
+  <meta name="viewport" content="width=device-width" />
+  <link rel="stylesheet" href="/css/styles.css" />
+  <link rel="alternate" type="application/rss+xml" title="Alex Gibson" href="http://alxgbsn.co.uk/feed/" />
+  <title>Event delegation for touch events in JavaScript</title>
+</head>
+  <body>
+  	<nav>
+	<ul>
+		<li><a href="/">Home</a></li>
+		<li><a href="/feed/index.xml">Feed</a></li>
+	</ul>
+</nav>
+    <header>
+      <h1>Event delegation for touch events in JavaScript</h1>
+    </header>
+    <section>
+      <div class="content">
+  <div id="post">
+    <h1></h1>
+    <p>Anyone who has experience developing web applications on mobile devices will have no doubt encountered the 300ms delay when firing <code>click</code> events in web browsers such as Mobile Safari. There are some useful <a href="https://github.com/cheeaun/tappable">standalone plugins</a> and <a href="http://code.google.com/mobile/articles/fast_buttons.html">informative articles</a> to help combat this delay, but this post aims to show a super–quick example of how to do simulated 'tap' events on dynamic content using JavaScript event delegation.</p>
+
+<p>A common technique when dealing with <code>click</code> events in dynamic content is to use event delegation to capture events bubbling up through the DOM. This same technique can be applied to touch events, although it is a little more difficult since there are at least four different events to capture; <code>touchstart</code>, <code>touchmove</code>, <code>touchend</code> and <code>touchcancel</code>.</p>
+
+<p>Here's a very basic example of how to capture a simulated 'tap' event:</p>
+
+<pre><code>var tapArea, moved, startX, startY;
+
+tapArea = document.querySelector('#list'); //element to delegate
+moved = false; //flags if the finger has moved
+startX = 0; //starting x coordinate
+startY = 0; //starting y coordinate
+
+//touchstart            
+tapArea.ontouchstart = function(e) {
+
+    moved = false;
+    startX = e.touches[0].clientX;
+    startY = e.touches[0].clientY;
+};
+
+//touchmove 
+tapArea.ontouchmove = function(e) {
+
+    //if finger moves more than 10px flag to cancel
+    //code.google.com/mobile/articles/fast_buttons.html
+    if (Math.abs(e.touches[0].clientX - startX) &gt; 10 ||
+        Math.abs(e.touches[0].clientY - startY) &gt; 10) {
+            moved = true;
+    }
+};
+
+//touchend
+tapArea.ontouchend = function(e) {
+
+    e.preventDefault();
+
+    //get element from touch point
+    var element = e.changedTouches[0].target;
+
+    //if the element is a text node, get its parent.
+    if (element.nodeType === 3) {   
+        element = element.parentNode;
+    }
+
+    if (!moved) {
+        //check for the element type you want to capture
+        if (element.tagName.toLowerCase() === 'label') {
+            alert('tap');
+        }
+    }
+};
+
+//don't forget about touchcancel!
+tapArea.ontouchcancel = function(e) {
+
+    //reset variables
+    moved = false;
+    startX = 0;
+    startY = 0;
+};
+</code></pre>
+
+<p>Notice here it is useful to make use of <code>touchmove</code> to detect any finger dragging gestures that might occur after a <code>touchstart</code> has fired. This way it is easy to cancel the 'tap' on <code>touchend</code> if desired.</p>
+
+<p>Update: Originally this article was using the function <code>document.elementFromPoint(x,y)</code> to get the element target in <code>ontouchend</code>. A few people have kindly pointed out that you can actually just use <code>e.changedTouches[0].target</code> or even <code>e.target</code> to get the same result for a simple 'tap'. It should be noted however, that the target attribute in this case always refers to the originating element, so if you do need to reference the element a finger might have moved on/off during <code>touchmove</code> or <code>touchend</code>, you would still need to use:</p>
+
+<pre><code>document.elementFromPoint(e.changedTouches[0].clientX, e.changedTouches[0].clientY).
+</code></pre>
+
+<p>Life would be so much easier if we had a native 'tap' event in mobile browsers!</p>
+
+  </div>
+</div>
+
+    </section>
+    <footer>
+	<p>Copyright &copy; Alex Gibson.</p>
+</footer>
+  </body>
+</html>

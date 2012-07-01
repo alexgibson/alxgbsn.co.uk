@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="description" content="Alex Gibson is a front–end web developer from Newcastle upon Tyne, United Kingdom." />
+  <meta name="author" content="Alex Gibson" />
+  <meta name="viewport" content="width=device-width" />
+  <link rel="stylesheet" href="/css/styles.css" />
+  <link rel="alternate" type="application/rss+xml" title="Alex Gibson" href="http://alxgbsn.co.uk/feed/" />
+  <title>Site redesign, a mobile first approach</title>
+</head>
+  <body>
+  	<nav>
+	<ul>
+		<li><a href="/">Home</a></li>
+		<li><a href="/feed/index.xml">Feed</a></li>
+	</ul>
+</nav>
+    <header>
+      <h1>Site redesign, a mobile first approach</h1>
+    </header>
+    <section>
+      <div class="content">
+  <div id="post">
+    <h1></h1>
+    <p>Anyone who has visited this site over the last few weeks will no doubt have noticed a few changes. It has now had a complete design overhaul, which is probably long overdue given the current rise in interest of principals such as <a href="http://www.alistapart.com/articles/responsive-web-design/">responsive web design</a> and <a href="http://www.lukew.com/ff/entry.asp?933">mobile first</a>. What follows is a run down of basic changes to the site, in what hopefully makes for a much improved reading experience, in our rapidly changing, device-agnostic world.</p>
+
+<h2>Establishing a useful baseline</h2>
+
+<p>Rather than using a traditional CSS reset, this site now uses <a href="http://necolas.github.com/normalize.css/">normalize.css</a> to establish a consistent baseline for cross-browser CSS rendering. Normalize.css makes web browsers render elements more consistently and in line with modern standards. It also preserves useful defaults and corrects common browser inconsistencies, unlike many CSS resets.</p>
+
+<h2>Mobile First</h2>
+
+<p>For a site where 62.46% of visitors in August to September 2011 were on mobile devices, this is real a no-brainer. Whilst the majority of mobile visitors to MiniApps are on more capable smart phone platforms such as iOS and Android (where a simple set of <a href="http://www.w3.org/TR/css3-mediaqueries/">CSS Media Queries</a> could suffice), given the <a href="http://www.lukew.com/ff/entry.asp?1405">continual rise</a> in the number of people using mobile devices to access the world wide web, it still makes sense to design using a <a href="http://www.lukew.com/ff/entry.asp?933">mobile first</a> approach.</p>
+
+<p>This site now serves styling for browsers in the following order:</p>
+
+<ul>
+<li>A default CSS style sheet suited to small–screen devices</li>
+<li>CSS Media Queries then optimize content for larger screen sizes such as tablets, e–readers and desktop web browsers.</li>
+<li>Note: since Internet Explorer 8 (and below) does not support CSS Media Queries, it is served a static set of CSS styles optimized for desktop, via a single conditional comment.</li>
+<li><p>Update: IE Mobile is now set as version 7 in the conditional comment. This is because the new Mango update uses mobile IE 9 (thanks <a href="http://paulirish.com/">Paul Irish</a>!).</p>
+
+<p>  /<em> Default CSS for mobile here -- </em>/</p>
+
+<p>  /<em> Tablets (portrait) ----------- </em>/
+  @media (min-width : 570px) and (max-width : 768px) {</p>
+
+<p>  }</p>
+
+<p>  /<em> Tablets landscape, and desktop </em>/
+  @media (min-width : 769px) {</p>
+
+<p>  }</p></li>
+</ul>
+
+
+<p>Conditional comment for Internet Explorer:</p>
+
+<pre><code>&lt;!--[if (lt IE 9)&amp;(!IEMobile 7)]&gt;
+&lt;link href="css/desktop.css" rel="stylesheet" /&gt;
+&lt;![endif]--&gt;
+</code></pre>
+
+<h2>Responsive design</h2>
+
+<p>Whilst the new MiniApps design is quite minimal, using a single column design centered on readability and clear presentation of content - there are still some interesting pieces of responsiveness worth noting (other than the typical resizing of content to fit the browser window).</p>
+
+<h2>Content first, navigation second</h2>
+
+<p>Despite MiniApps already using a mobile first approach for CSS, more capable small–screen web browsers can benefit from a further layer of progressive enhancement, with the adoption of a <a href="http://adactio.com/journal/4778/">content first, navigation second</a> design pattern. Using the <a href="http://dev.w3.org/csswg/css3-flexbox/">CSS3 Flexbox module</a>, visitors on capable mobile web browsers will see the page header and main content first, followed by the navigation further down the page, but before the footer.</p>
+
+<p>Here is a basic template for the site's structural HTML markup:</p>
+
+<pre><code>&lt;body&gt;
+    &lt;nav role="navigation"&gt;&lt;/nav&gt;
+    &lt;header role="banner"&gt;&lt;/header&gt;
+    &lt;section role="main"&gt;&lt;/section&gt;
+    &lt;aside role="complementary"&gt;&lt;/aside&gt;
+    &lt;footer role="contentinfo"&gt;&lt;/footer&gt;
+&lt;/body&gt;
+</code></pre>
+
+<p>Nested inside an appropriate CSS Media Query, small–screen browsers are then be served a different ordering of page content, using the box-ordinal-group property.</p>
+
+<pre><code>/* Smartphones (portrait and landscape) ----------- */
+@media (max-width : 569px) {
+
+    body {
+        display: -webkit-box;
+        display: -moz-box;
+        display: box;
+        -webkit-box-orient: vertical;
+        -moz-box-orient: vertical;
+        box-orient: vertical;
+    }
+
+    nav[role=navigation] {
+        -webkit-box-ordinal-group: 4;
+        -moz-box-ordinal-group: 4;
+        box-ordinal-group: 4;
+    }
+
+    header[role=banner] {
+        -webkit-box-ordinal-group: 1;
+        -moz-box-ordinal-group: 1;
+        box-ordinal-group: 1;
+    }
+
+    section[role=main] {
+        -webkit-box-ordinal-group: 2;
+        -moz-box-ordinal-group: 2;
+        box-ordinal-group: 2;
+    }
+
+    aside[role=complementary] {
+        -webkit-box-ordinal-group: 3;
+        -moz-box-ordinal-group: 3;
+        box-ordinal-group: 3;
+    }
+
+    footer[role=contentinfo] {
+        -webkit-box-ordinal-group: 5;
+        -moz-box-ordinal-group: 5;
+        box-ordinal-group: 5;
+    }
+
+}
+</code></pre>
+
+<p>This gets the user straight to the content they want to see, making much better use of valuable screen real–estate. Each page also features skip links, allowing for quick access to navigation and main content irrespective of the content order.</p>
+
+<p>Note: for the subset of mobile browsers that support CSS Media Queries but do not yet support Flexbox (e.g. Opera Mobile/Mini), featured detection comes to the rescue courtesy of <a href="http://modernizr.com/">Modernizr</a>. A few alternate CSS styling rules are all that is needed for the navigation and footer sections. Modernizr also provides the site's HTML5 shim that enables Internet Explorer to correctly style new sectioning elements.</p>
+
+  </div>
+</div>
+
+    </section>
+    <footer>
+	<p>Copyright &copy; Alex Gibson.</p>
+</footer>
+  </body>
+</html>

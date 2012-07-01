@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="description" content="Alex Gibson is a front–end web developer from Newcastle upon Tyne, United Kingdom." />
+  <meta name="author" content="Alex Gibson" />
+  <meta name="viewport" content="width=device-width" />
+  <link rel="stylesheet" href="/css/styles.css" />
+  <link rel="alternate" type="application/rss+xml" title="Alex Gibson" href="http://alxgbsn.co.uk/feed/" />
+  <title>Making web content more accessible with iOS VoiceOver</title>
+</head>
+  <body>
+  	<nav>
+	<ul>
+		<li><a href="/">Home</a></li>
+		<li><a href="/feed/index.xml">Feed</a></li>
+	</ul>
+</nav>
+    <header>
+      <h1>Making web content more accessible with iOS VoiceOver</h1>
+    </header>
+    <section>
+      <div class="content">
+  <div id="post">
+    <h1></h1>
+    <p>If you're a web developer and own an iOS device, you may have noticed it comes with a whole range of accessibility features. One such feature is a built-in screen reader for visually impaired users, called VoiceOver. For a touch screen device, VoiceOver is a wonderfully capable piece of assistive technology, and a very useful tool that you can use to help test the accessibility of your web content.</p>
+
+<p>This article gives an introduction to using VoiceOver on iOS, followed by some basic tips to help improve the accessibility of your web content. While covering iOS specifically for example's sake, many of these tips are also applicable to improving accessibility for screen reader users in general.</p>
+
+<h2>Navigating a web page using VoiceOver on iOS</h2>
+
+<p>You can enable VoiceOver on iOS by going to: Settings -> General -> Accessibility -> VoiceOver.</p>
+
+<p>Using VoiceOver at its most basic level involves selecting an item by touching it, activating a selected item by double-tap, and scrolling by flicking three fingers. You can also swipe left/right to navigate through content elements in the natural order of your page’s markup. For quick page navigation, you can swipe up/down to jump through predefined sections of web content, such as headings, links, words, lines and even landmark roles. These pre-defined options are selected via a feature known as Rotator. A user can cycle through Rotator settings using a two finger rotation gesture anywhere on screen. The selected option is then read aloud as you rotate your fingers.</p>
+
+<p>Aside from regular click events which operate using double-tap, touch events operate a little differently with iOS VoiceOver, since they rely on dragging the finger and not just tapping. If a web page features an element that has a touch event associated with it, the user must double-tap &amp; hold on the element until an audible sound effect of three small tones is heard. Once the tones have played, VoiceOver then allows a touch gesture to be performed and ignores all other actions until the finger is next released. At this point VoiceOver returns back to it's normal state.</p>
+
+<p>This may sound like a lot to remember at first, but VoiceOver is actually very simple to use and feels very intuitive after just a few sessions. Give it a go before reading on and try to familiarize yourself with the gestures.</p>
+
+<p>There is a nice <a href="http://www.apple.com/accessibility/iphone/vision.html">introduction to VoiceOver on the iPhone</a> over on Apple's website for some more in-depth examples and other features not covered here.</p>
+
+<h2>Using WAI-ARIA landmark roles</h2>
+
+<p>As you will have discovered after trying VoiceOver, one of the fastest ways to navigate through a large web page is to use the Rotator feature. If your web pages use well structured headings and markup, then your pages should already be relatively easy to navigate. A nice additional feature you can take advantage of however, is the use of <a href="http://www.w3.org/WAI/PF/aria-practices/">WAI-ARIA landmark roles</a>. These role attributes enable screen reader users to quickly jump to predefined sections of a web page, and these can be accessed by VoiceOver using the Rotator 'landmark' option.</p>
+
+<p>Here's some basic HTML5 markup for a common web page complete with landmark roles:</p>
+
+<pre><code>&lt;header role="banner"&gt;
+    &lt;h1&gt;Page heading&lt;/h1&gt;
+&lt;/header&gt;
+
+&lt;div role="main"&gt;
+    &lt;section role="region"&gt;
+        &lt;h2&gt;Sub heading 1&lt;/h2&gt;
+    &lt;/section&gt;
+    &lt;section role="region"&gt;
+        &lt;h2&gt;Sub heading 2&lt;/h2&gt;
+    &lt;/section&gt;
+&lt;/div&gt;
+
+&lt;footer role="contentinfo"&gt;
+    &lt;h4&gt;Footer title&lt;/h4&gt;
+&lt;/footer&gt;
+</code></pre>
+
+<p>Note: as of iOS 4.3 the 'landmark' option is not included as a default rotator setting, and must be selected first in the general accessibility options. iOS does not currently read out the landmark types either, it just simply describes each as 'landmark start' and 'landmark end'.</p>
+
+<h2>Hiding and showing content</h2>
+
+<p>Because many client-based web applications are often just single page controllers that hide and show content when switching between views, it is important to make sure that only visible content is accessible to screen readers. If you can't visually see something on screen, then (usually) it should be hidden from assistive technologies as well. Some mobile web applications simply slide elements in and out of the viewport when transitioning between screens. This can be problematic since elements that are not visible can still be read out and accessed by VoiceOver.</p>
+
+<p>You can hide an HTML element from screen readers by setting the <code>aria-hidden</code> attribute to true. Likewise, setting the value to false will un-hide the element again.</p>
+
+<pre><code>document.querySelector('#panel').setAttribute('aria-hidden', 'true'); //not visible
+document.querySelector('#panel').setAttribute('aria-hidden', 'false'); //visible
+</code></pre>
+
+<p>If you wish to visually hide the content as well, you can also take advantage of this attribute to set the element's <code>display</code> property in CSS like so.</p>
+
+<pre><code>#panel[aria-hidden="true"] { display: none; }
+#panel[aria-hidden="false"] { display: block; }
+</code></pre>
+
+<p>Note here we are only changing the <code>display</code> property for the element <code>#panel</code> and not simply for every element that might have <code>aria-hidden</code> applied. There are situations where you might want content hidden from screen readers, but still visible on screen. Take for example, if your website creates a floating dialog box that is displayed on top of the existing page. In this case the content is still visible behind the dialog box, but should not be accessible until the user responds and the dialog box is closed. Here you might want to apply <code>aria-hidden</code> to the page behind, but not actually change the <code>display</code> property.</p>
+
+<h2>Making faux-buttons behave like buttons</h2>
+
+<p>While it is advisable to use a native HTML <code>&lt;button&gt;</code> element wherever possible, sometimes you may want to (for stylistic reasons) make a non-interactive HTML element such as a <code>&lt;div&gt;</code>, act like a button.</p>
+
+<pre><code>&lt;div id="my-button"&gt;Button text&lt;/div&gt;
+</code></pre>
+
+<p>It is important to make sure this behaves like an interactive element to VoiceOver, so assign a <code>role</code> attribute of type <code>button</code> to the element. The role attribute will enable VoiceOver to verbally identify the element just as it would do a native HTML <code>&lt;button&gt;</code>.</p>
+
+<pre><code>&lt;div id="my-button" role="button"&gt;Button text&lt;/div&gt;
+</code></pre>
+
+<p>Now that VoiceOver identifies the element as a button and not just a piece of text, it makes it much clearer how the user should interact with this element and that they should and double-tap to activate it.</p>
+
+<h2>Providing textual descriptions for icons</h2>
+
+<p>It is common to use visual icons to represent actions that buttons perform on mobile devices. Icons have the advantage of saving valuable screen space and are often universally understood. For assistive technologies, it is still important to provide a textual alternative. Take for example the following faux-button that does not contain any inner text.</p>
+
+<pre><code>&lt;div id="edit-button" role="button"&gt;&lt;/div&gt;
+</code></pre>
+
+<p>Here we must use another piece of HTML markup that is visible to assistive technologies, in order to provide a textual label.</p>
+
+<pre><code>&lt;p class="hide" id="edit-label"&gt;Edit item&lt;/p&gt;
+</code></pre>
+
+<p>We can then link the button with the textual label using the <code>aria-labelledby</code> attribute on our faux-button.</p>
+
+<pre><code>&lt;div id="edit-button" role="button" aria-labelledby="edit-label"&gt;&lt;/div&gt;
+</code></pre>
+
+<p>In order to hide the textual label visually on the screen, but not from assistive technology, we can position the label off screen.</p>
+
+<pre><code>.hide {
+    position: absolute;
+    top: -20em;
+    left: -200em;
+}
+</code></pre>
+
+<p>When VoiceOver gains focus on the element, it will now read out the label, before describing the role.</p>
+
+<h2>Final Note</h2>
+
+<p>These are just a few basic things that you can do to help improve the accessibility of your web content for VoiceOver on iOS. Mobile specific content is sadly often forgotten when it comes to accessibility, since many still regard it as not having the right tools available to assist people. It is a good thing that iOS uses the same underlying technology as VoiceOver for Mac OSX, because if you're building accessible content for the web, then you're already well on the way to providing a great experience on iOS too.</p>
+
+  </div>
+</div>
+
+    </section>
+    <footer>
+	<p>Copyright &copy; Alex Gibson.</p>
+</footer>
+  </body>
+</html>

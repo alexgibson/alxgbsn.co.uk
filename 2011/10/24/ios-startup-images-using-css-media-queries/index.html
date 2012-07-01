@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="description" content="Alex Gibson is a front–end web developer from Newcastle upon Tyne, United Kingdom." />
+  <meta name="author" content="Alex Gibson" />
+  <meta name="viewport" content="width=device-width" />
+  <link rel="stylesheet" href="/css/styles.css" />
+  <link rel="alternate" type="application/rss+xml" title="Alex Gibson" href="http://alxgbsn.co.uk/feed/" />
+  <title>iOS startup images using CSS media queries</title>
+</head>
+  <body>
+  	<nav>
+	<ul>
+		<li><a href="/">Home</a></li>
+		<li><a href="/feed/index.xml">Feed</a></li>
+	</ul>
+</nav>
+    <header>
+      <h1>iOS startup images using CSS media queries</h1>
+    </header>
+    <section>
+      <div class="content">
+  <div id="post">
+    <h1></h1>
+    <p>Ever since the arrival of the iPad and iPhone 4, serving correctly sized <code>apple-touch-startup-images</code> for iOS web apps has been somewhat clumbersome, especially if you wish to cater for every type of iOS device.</p>
+
+<p>A common solution has been to use JavaScript to detect what device the user is on, and then to write the correct image into the <code>&lt;head&gt;</code> of your HTML file.</p>
+
+<pre><code>&lt;!-- iOS App Splash Screen --&gt;
+(function () {
+    var filename;
+    if (navigator.platform === 'iPad') {
+        filename = window.orientation === 90 || window.orientation === -90 ? 'splash-1024x748.png' : 'splash-768x1004.png';
+    } else {
+        filename = window.devicePixelRatio === 2 ? 'splash-640x920.png' : 'splash-320x460.png';
+    }
+    document.write('&lt;link rel="apple-touch-startup-image" href="' + filename + '"/&gt;' );
+})();
+&lt;/script&gt;
+</code></pre>
+
+<p>To make things more complicated, you also need to serve a high-res startup image for the iPhone 4's retina display. The iPad requires two different splash screen images for each orientation as well. Things quickly start to get a bit messy…</p>
+
+<p>As of iOS5, you can now use CSS Media Queries to serve each type of startup image required, so no need for JavaScript anymore!</p>
+
+<p>Just use any of the following media queries in the <code>&lt;head&gt;</code>of your HTML file.</p>
+
+<pre><code>&lt;!-- 320x460 for iPhone 3GS --&gt;
+&lt;link rel="apple-touch-startup-image" media="(max-device-width: 480px) and not (-webkit-min-device-pixel-ratio: 2)" href="startup-iphone.png" /&gt;
+&lt;!-- 640x920 for retina display --&gt;
+&lt;link rel="apple-touch-startup-image" media="(max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2)" href="startup-iphone4.png" /&gt;
+&lt;!-- iPad Portrait 768x1004 --&gt;
+&lt;link rel="apple-touch-startup-image" media="(min-device-width: 768px) and (orientation: portrait)" href="startup-iPad-portrait.png" /&gt;
+&lt;!-- iPad Landscape 1024x748 --&gt;
+&lt;link rel="apple-touch-startup-image" media="(min-device-width: 768px) and (orientation: landscape)" href="startup-iPad-landscape.png" /&gt;
+</code></pre>
+
+<h2>Caveat</h2>
+
+<p>The only drawback to this CSS only method is that every image seems to be downloaded, regardless of which one is used on the device. If your application is supporting both iPhone and iPad, it may be worth using the JavaScript solution still. But the choice is yours to make, depending on the number of files and their respective sizes. Hopefully Apple will eventually support another solution to serving the correct file, such as using the <code>sizes</code> attribute.</p>
+
+  </div>
+</div>
+
+    </section>
+    <footer>
+	<p>Copyright &copy; Alex Gibson.</p>
+</footer>
+  </body>
+</html>

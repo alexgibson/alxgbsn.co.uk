@@ -4,7 +4,7 @@
  <title>Alex Gibson, Front End Developer</title>
  <link href="http://alxgbsn.co.uk/feed/" rel="self"/>
  <link href="http://alxgbsn.co.uk/"/>
- <updated>2012-06-26T22:42:38+01:00</updated>
+ <updated>2012-07-01T20:30:02+01:00</updated>
  <id>http://alxgbsn.co.uk/</id>
  <author>
    <name>Alex Gibson</name>
@@ -197,6 +197,621 @@ function tapDidOccur (e) {
 &lt;p&gt;What is clear though, is that you cannot rely on &lt;code&gt;touchend&lt;/code&gt; getting fired on every device. You need to write code that deals with &lt;code&gt;touchcancel&lt;/code&gt;. This is especially true on the iPad for example, say if you're building a multi–touch app or multi–player HTML5 game. Since there is no way of telling if the user has enabled Multitasking Gestures, your app needs to handle &lt;code&gt;touchcancel&lt;/code&gt; gracefully. The unpredictable nature of Android browser also demonstrates the importance of dealing with this event, as failure to do so will likely cause bugs in your UI.&lt;/p&gt;
 
 &lt;p&gt;So, next time you're writing your own touch events, don't forget about &lt;code&gt;touchcancel&lt;/code&gt;. Despite the varying levels of browser support, it still comes in very handy when dealing with certain unexpected user interactions.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Make sure to use correct meta viewport syntax</title>
+   <link href="http://alxgbsn.co.uk/2011/11/23/make-sure-to-use-correct-meta-viewport-syntax"/>
+   <updated>2011-11-23T00:00:00+00:00</updated>
+   <id>http://alxgbsn.co.uk/2011/11/23/make-sure-to-use-correct-meta-viewport-syntax</id>
+   <content type="html">&lt;p&gt;When browsing the web it's not uncommon to come across two slight variations on the syntax for declaring meta viewport content values. It's a bit unclear how the two variations originated, but it should be noted that only one is correct, and using an incorrect syntax can actually create problems on certain web browsers.&lt;/p&gt;
+
+&lt;p&gt;This is the correct syntax:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no&quot; /&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This is the incorrect syntax:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;meta name=&quot;viewport&quot; content=&quot;width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=no;&quot; /&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Notice the correct syntax uses comma separated values. The incorrect way is to use a semi-colon separator. There is also no real need for the separator on the last value, &lt;code&gt;user-scalable&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;So, why does all of this really matter? “It doesn't seem to make a difference on my iPad?” Well, maybe not — but it can and does make a difference on other devices. The recent &lt;a href=&quot;http://dev.w3.org/csswg/css-device-adapt/&quot;&gt;CSS Device Adaptation&lt;/a&gt; specification defines it, so real world implementations are now built toward the comma syntax style.&lt;/p&gt;
+
+&lt;p&gt;A real world example is the BlackBerry Playbook. It has a good web browser, but it's not very forgiving with error handling when parsing the meta viewport. If you use semi-colons instead of comma's, width can in some circumstances not get set to &lt;code&gt;device-width&lt;/code&gt;. There is currently a bug in the PlayBook's viewport implementation that means width gets set to an arbitrary value if &lt;code&gt;initial-scale&lt;/code&gt; is not also set to 1.0. If an error is thrown due to incorrect viewport syntax, &lt;code&gt;initial-scale&lt;/code&gt; can be ignored and the whole page will appear enlarged, with over-sized text and blurry images. Not really what you intended, huh?&lt;/p&gt;
+
+&lt;p&gt;Safari and Chrome are currently the only web browsers that display a series of errors/warnings for an incorrect meta viewport declaration:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Viewport argument value &quot;device-width;&quot; for key &quot;width&quot; not recognized. Content ignored.
+Viewport argument value &quot;1.0;&quot; for key &quot;initial-scale&quot; was truncated to its numeric prefix.
+Viewport argument value &quot;1.0;&quot; for key &quot;maximum-scale&quot; was truncated to its numeric prefix.
+Viewport argument value &quot;0;&quot; for key &quot;user-scalable&quot; was truncated to its numeric prefix.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;It would be nice if more browsers did this. Maybe once &lt;a href=&quot;http://dev.opera.com/articles/view/an-introduction-to-meta-viewport-and-viewport/&quot;&gt;@viewport&lt;/a&gt; becomes more widely adopted, we could then begin to phase out the messy meta viewport altogether?&lt;/p&gt;
+
+&lt;p&gt;So, the next time you are using meta viewport in a site — make sure you define it properly. Don't just cut and paste it from a old/bad example you found somewhere!&lt;/p&gt;
+
+&lt;p&gt;Please note, you should not necessarily be including all the different properties seen above in your declaration. This article is simply concentrating on how to define things correctly.&lt;/p&gt;
+
+&lt;p&gt;Update - for anyone wishing to use &lt;code&gt;width=device-width&lt;/code&gt; without also setting &lt;code&gt;initial-scale=1.0&lt;/code&gt;, the PlayBook can be tamed by inserting the legacy BlackBerry &lt;code&gt;HandheldFriendly&lt;/code&gt; meta property before the viewport declaration:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;meta name=&quot;HandheldFriendly&quot; content=&quot;True&quot; /&amp;gt;
+&amp;lt;meta name=&quot;viewport&quot; content=&quot;width=device-width&quot; /&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>iOS startup images using CSS media queries</title>
+   <link href="http://alxgbsn.co.uk/2011/10/24/ios-startup-images-using-css-media-queries"/>
+   <updated>2011-10-24T00:00:00+01:00</updated>
+   <id>http://alxgbsn.co.uk/2011/10/24/ios-startup-images-using-css-media-queries</id>
+   <content type="html">&lt;p&gt;Ever since the arrival of the iPad and iPhone 4, serving correctly sized &lt;code&gt;apple-touch-startup-images&lt;/code&gt; for iOS web apps has been somewhat clumbersome, especially if you wish to cater for every type of iOS device.&lt;/p&gt;
+
+&lt;p&gt;A common solution has been to use JavaScript to detect what device the user is on, and then to write the correct image into the &lt;code&gt;&amp;lt;head&amp;gt;&lt;/code&gt; of your HTML file.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;!-- iOS App Splash Screen --&amp;gt;
+(function () {
+    var filename;
+    if (navigator.platform === 'iPad') {
+        filename = window.orientation === 90 || window.orientation === -90 ? 'splash-1024x748.png' : 'splash-768x1004.png';
+    } else {
+        filename = window.devicePixelRatio === 2 ? 'splash-640x920.png' : 'splash-320x460.png';
+    }
+    document.write('&amp;lt;link rel=&quot;apple-touch-startup-image&quot; href=&quot;' + filename + '&quot;/&amp;gt;' );
+})();
+&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;To make things more complicated, you also need to serve a high-res startup image for the iPhone 4's retina display. The iPad requires two different splash screen images for each orientation as well. Things quickly start to get a bit messy…&lt;/p&gt;
+
+&lt;p&gt;As of iOS5, you can now use CSS Media Queries to serve each type of startup image required, so no need for JavaScript anymore!&lt;/p&gt;
+
+&lt;p&gt;Just use any of the following media queries in the &lt;code&gt;&amp;lt;head&amp;gt;&lt;/code&gt;of your HTML file.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;!-- 320x460 for iPhone 3GS --&amp;gt;
+&amp;lt;link rel=&quot;apple-touch-startup-image&quot; media=&quot;(max-device-width: 480px) and not (-webkit-min-device-pixel-ratio: 2)&quot; href=&quot;startup-iphone.png&quot; /&amp;gt;
+&amp;lt;!-- 640x920 for retina display --&amp;gt;
+&amp;lt;link rel=&quot;apple-touch-startup-image&quot; media=&quot;(max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2)&quot; href=&quot;startup-iphone4.png&quot; /&amp;gt;
+&amp;lt;!-- iPad Portrait 768x1004 --&amp;gt;
+&amp;lt;link rel=&quot;apple-touch-startup-image&quot; media=&quot;(min-device-width: 768px) and (orientation: portrait)&quot; href=&quot;startup-iPad-portrait.png&quot; /&amp;gt;
+&amp;lt;!-- iPad Landscape 1024x748 --&amp;gt;
+&amp;lt;link rel=&quot;apple-touch-startup-image&quot; media=&quot;(min-device-width: 768px) and (orientation: landscape)&quot; href=&quot;startup-iPad-landscape.png&quot; /&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2&gt;Caveat&lt;/h2&gt;
+
+&lt;p&gt;The only drawback to this CSS only method is that every image seems to be downloaded, regardless of which one is used on the device. If your application is supporting both iPhone and iPad, it may be worth using the JavaScript solution still. But the choice is yours to make, depending on the number of files and their respective sizes. Hopefully Apple will eventually support another solution to serving the correct file, such as using the &lt;code&gt;sizes&lt;/code&gt; attribute.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Enable CSS active pseudo styles in Mobile Safari</title>
+   <link href="http://alxgbsn.co.uk/2011/10/17/enable-css-active-pseudo-styles-in-mobile-safari"/>
+   <updated>2011-10-17T00:00:00+01:00</updated>
+   <id>http://alxgbsn.co.uk/2011/10/17/enable-css-active-pseudo-styles-in-mobile-safari</id>
+   <content type="html">&lt;p&gt;By default Mobile Safari disables CSS active pseudo styles on web pages, instead opting for a generic tap–highlight colour on clickable elements. A little known trick is that you can easily re-enable your active pseudo styles by declaring a &lt;code&gt;touchstart&lt;/code&gt; event on the page. You don't even need to actually use the event, simply declaring an empty function will suffice.&lt;/p&gt;
+
+&lt;p&gt;Just add the following single line of JavaScript to your web page and all your active CSS styles will spring to life.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;document.addEventListener(&quot;touchstart&quot;, function() {},false);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Note: if you do this trick it is also worth removing the default &lt;code&gt;tap–highlight&lt;/code&gt; colour Mobile Safari applies using the following CSS rule.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;html {
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;On a related note, there are also some other useful mobile Webkit oddities that can activated by using empty event declarations, like &lt;a href=&quot;http://krijnhoetmer.nl/stuff/javascript/label-checkbox-ios/&quot;&gt;making form labels clickable&lt;/a&gt;.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Building a PlayBook WebWorks app</title>
+   <link href="http://alxgbsn.co.uk/2011/10/03/building-a-playbook-webworks-app"/>
+   <updated>2011-10-03T00:00:00+01:00</updated>
+   <id>http://alxgbsn.co.uk/2011/10/03/building-a-playbook-webworks-app</id>
+   <content type="html">&lt;p&gt;I was recently hired to develop the front–end HTML, CSS and JavaScript for a BlackBerry PlayBook application, packaged using RIM's &lt;a href=&quot;http://us.blackberry.com/developers/tablet/webworks.jsp&quot;&gt;WebWorks SDK&lt;/a&gt;. The main purpose of the app was to assist the user in consuming a large volume of digital content (in the form of text, images and video) via a streamlined, touch–friendly interface. Despite a reasonably small development window, the PlayBook browser and development tools proved to be very capable in getting the job done.&lt;/p&gt;
+
+&lt;p&gt;What follows is a run down of the key HTML5 features used in the application, and how well they performed on the device. Please note the code shown in this article is simplified in places for the sake of clarity, and is by no means complete.&lt;/p&gt;
+
+&lt;h2&gt;Local database support&lt;/h2&gt;
+
+&lt;p&gt;While an internet connection would be required to view online images and stream video via YouTube, one of the main technical requirements was that the app should still function and be navigable when offline. Incremental data returned via a remote server should be permanently stored on the device and always accessible. The maximum payload of data this app required was around 15 to 20MB, so the natural development choice was to use an &lt;a href=&quot;http://www.w3.org/TR/webdatabase/&quot;&gt;HTML5 WebSQL Database&lt;/a&gt;, since the Playbook browser does not yet support &lt;a href=&quot;http://www.w3.org/TR/IndexedDB/&quot;&gt;IndexedDB&lt;/a&gt;, and the 5MB limit for &lt;a href=&quot;http://dev.w3.org/html5/webstorage/&quot;&gt;localStorage&lt;/a&gt; was too small for the size of data required.&lt;/p&gt;
+
+&lt;p&gt;Implementation was quite straight forward, with the application creating a simple WebSQL database on first launch, together with a single table called 'appdata' to act as a main store.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;var storage = {},
+    myData = null,
+    dbName = 'mydatabase',
+    dbVersion = '1.0',
+    dbDescription = 'app data store',
+    dbSize = 20 * 1024 * 1024;
+
+function handleDbError (e) {
+
+    console.log(e.message);
+    console.log(e.code);
+}
+
+function initDatabase () {
+
+    try {
+        var data = '';
+
+        storage.db = openDatabase(dbName, dbVersion, dbDescription, dbSize);
+        storage.db.transaction(function (tx) {
+
+            tx.executeSql(&quot;CREATE TABLE IF NOT EXISTS appdata (id unique, text)&quot;);
+
+        }, handleDbError);
+
+        storage.db.transaction(function (tx) {
+
+            tx.executeSql(&quot;INSERT OR IGNORE INTO appdata (id, text) VALUES(?,?)&quot;, [dbName, data]);
+
+        }, handleDbError);
+
+        } catch(e) {
+            handleDbError(e);
+    }
+}
+
+initDatabase();
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The application then makes a remote server call, and the JSON string returned as a response is then parsed and used immediately. At the same time, the data is saved asynchronously to the local database (in a single table row entry).&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;function getData () {
+
+    var myRequest = new XMLHttpRequest();
+
+    myRequest.onreadystatechange = function () {    
+
+        if (myRequest.readyState === 4 &amp;amp;&amp;amp; myRequest.status === 200) {
+            myData = JSON.parse(myRequest.responseText);
+            updateDatabase();
+            startApp();         
+        }
+    };
+
+    myRequest.open('GET', 'http://', true);
+    myRequest.send();
+}
+
+function updateDatabase () {
+
+    try {   
+        var data = JSON.stringify(myData);
+
+        storage.db = openDatabase(dbName, dbVersion, dbDescription, dbSize);        
+        storage.db.transaction(function (tx) {
+
+            tx.executeSql(&quot;UPDATE appdata SET text=? WHERE id=?&quot;, [data, dbName]);
+
+        }, handleDbError);
+
+        } catch(e) {                
+            handleDbError(e);
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If the app is later launched while offline, local data is then read back from the database and parsed back to an object, so the app only ever requires a single database read operation.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;function throwReadError (e) {
+
+    console.log(e.message);
+    console.log(e.code);
+
+    if(!myData) {
+        showAlert(&quot;This app requires an internet connection for first launch&quot;);
+    }
+}
+
+function readFromDatabase () {
+
+    storage.db = openDatabase(dbName, dbVersion, dbDescription, dbSize);
+    storage.db.transaction(function (tx) {
+
+        tx.executeSql('SELECT * FROM appdata', [], function (tx, results) {
+
+            myData = JSON.parse(results.rows.item(0).text);
+            startApp();
+        });
+
+    }, throwReadError);     
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The PlayBook coped with this size of data store very well. We never hit any bugs or performance issues. Updating the client data on subsequent app launches was also pretty trivial due to the very basic data store model. The PlayBook does not appear to ask the user for storage permission at any size of data we tested, although 50MB is likely the limit if other browsers are anything to go by.&lt;/p&gt;
+
+&lt;h2&gt;Offline detection&lt;/h2&gt;
+
+&lt;p&gt;For offline detection the app initially used &lt;code&gt;navigator.Online&lt;/code&gt;, which at first appears to be supported by the PlayBook Browser.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;var isOnline = window.navigator.onLine;
+
+initDatabase();
+
+if (isOnline) {
+    getData();          
+} else {
+    readFromDatabase();
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;However, once the first WebWorks build was made it became clear something was not right, since &lt;code&gt;navigator.Online&lt;/code&gt; was always returning &lt;code&gt;true&lt;/code&gt; on launch. This turns out to be an &lt;a href=&quot;http://supportforums.blackberry.com/t5/Web-and-WebWorks-Development/Bug-report-navigator-onLine-incorrect-status/m-p/1214513/highlight/true#M15043&quot;&gt;existing bug&lt;/a&gt;, but one that can be easily fixed using a WebWorks API call for offline detection:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;var isOnline = 'blackberry' in window ? blackberry.system.hasDataCoverage() : window.navigator.onLine;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Notice here we use a simple feature detect using the &lt;code&gt;blackberry&lt;/code&gt; window object, so we can carry on using &lt;code&gt;navigator.Online&lt;/code&gt; in the browser (for development purposes).&lt;/p&gt;
+
+&lt;h2&gt;CSS animation&lt;/h2&gt;
+
+&lt;p&gt;While the PlayBook has very good support for CSS &lt;a href=&quot;http://www.w3.org/TR/css3-2d-transforms/&quot;&gt;2D&lt;/a&gt; and &lt;a href=&quot;http://www.w3.org/TR/css3-3d-transforms/&quot;&gt;3D&lt;/a&gt; Transforms and &lt;a href=&quot;http://www.w3.org/TR/css3-animations/&quot;&gt;animations&lt;/a&gt;, it seems to struggle providing hardware acceleration. While RIM claims 3d transforms are hardware accelerated on the PlayBook, in real–world development we found that only the simplest examples managed anywhere near the smooth performance you come to expect on the iPad.&lt;/p&gt;
+
+&lt;p&gt;When building an app with a sizable DOM, the PlayBook seems to struggle when it comes to animating content. For example, if you display an element that has a CSS animation associated with it, the PlayBook seems to choke if it needs to render the element and then immediately animate it. Searching on the WebWorks support forums, there are many other developers experiencing &lt;a href=&quot;http://supportforums.blackberry.com/t5/Web-and-WebWorks-Development/State-of-hardware-accelleration-in-browser/m-p/1050143/highlight/true#M12534&quot;&gt;similar issues&lt;/a&gt;. More odd quirks also exist, like hardware acceleration failing if the element uses CSS gradients.&lt;/p&gt;
+
+&lt;p&gt;For this reason, performing full–screen animations and transitions we're simply too much for the Playbook to pull off reliably. Only after lots of testing, &lt;code&gt;setTimeout&lt;/code&gt; wrangling, tweaking and refining, we're we able to achieve some decent results.&lt;/p&gt;
+
+&lt;p&gt;Hopefully RIM can provide a future update that fixes current hardware acceleration issues, but as it stands this is currently the Playbook's only major weak point for WebWorks development.&lt;/p&gt;
+
+&lt;h2&gt;Touch events&lt;/h2&gt;
+
+&lt;p&gt;The app featured multiple sections where scrollable, dynamic touch–based carousels were needed. For this task &lt;a href=&quot;http://cubiq.org/iscroll-4&quot;&gt;iScroll4&lt;/a&gt; came to the rescue, and proved to be very reliable on the PlayBook browser. Even zoom-able sections that needed multi–touch proved to be no problem for the device.&lt;/p&gt;
+
+&lt;p&gt;The only notable exception is that the PlayBook seems to support multi-touch in a slightly different way to how it works on iOS. For example, while you can perform a two–touch gesture on a single element on the PlayBook, you do not seem to be able to drag around two separate elements independently of each other. The Playbook appears to be limited in the number of simultaneous, independent touch–points it can support.&lt;/p&gt;
+
+&lt;h2&gt;Native hooks&lt;/h2&gt;
+
+&lt;p&gt;API wise, the app used 95% browser–based API's. The remaining areas where WebWorks had to step in were for small things, like opening external links in the PlayBook browser and providing native alert boxes.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;function showAlert (message) {
+    try {
+        blackberry.ui.dialog.standardAskAsync(message, blackberry.ui.dialog.D_OK, {
+            title : &quot;Alert&quot;, 
+            size: blackberry.ui.dialog.SIZE_MEDIUM, 
+            position : blackberry.ui.dialog.CENTER
+        });
+    } catch (e) {
+        alert(message);
+        console.log(e);
+    }
+}
+
+function launchBrowser (url) {
+    var args = new blackberry.invoke.BrowserArguments(url);
+    blackberry.invoke.invoke(blackberry.invoke.APP_BROWSER, args);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2&gt;Remote debugging&lt;/h2&gt;
+
+&lt;p&gt;This is the area really where the Playbook shines in the eyes of a web developer, as you can quickly and very easily &lt;a href=&quot;http://devblog.blackberry.com/2011/06/debugging-blackberry-web-apps/&quot;&gt;remote debug&lt;/a&gt; on an actual device, over your local network. This saved many hours development time and bug fixing, especially when testing device related JavaScript events, such as orientation changes.&lt;/p&gt;
+
+&lt;p&gt;Hopefully one day we will have this kind of support on the other major mobile web browsers, and not need rely on third party solutions. RIM are really one step ahead of the competition here.&lt;/p&gt;
+
+&lt;h2&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;For web developers, building native applications using the WebWorks SDK is overall a very good experience. There is still room for improvement in key areas such as hardware acceleration performance, but otherwise the Playbook browser is a close second to iOS Safari in terms of &lt;a href=&quot;http://www.sencha.com/blog/blackberry-playbook-the-html5-developer-scorecard/&quot;&gt;browser features and support&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;If only it was as easy for RIM to instill the same level of enthusiasm and confidence in tablet–buying consumers!&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Site redesign, a mobile first approach</title>
+   <link href="http://alxgbsn.co.uk/2011/09/22/site-redesign-a-mobile-first-approach"/>
+   <updated>2011-09-22T00:00:00+01:00</updated>
+   <id>http://alxgbsn.co.uk/2011/09/22/site-redesign-a-mobile-first-approach</id>
+   <content type="html">&lt;p&gt;Anyone who has visited this site over the last few weeks will no doubt have noticed a few changes. It has now had a complete design overhaul, which is probably long overdue given the current rise in interest of principals such as &lt;a href=&quot;http://www.alistapart.com/articles/responsive-web-design/&quot;&gt;responsive web design&lt;/a&gt; and &lt;a href=&quot;http://www.lukew.com/ff/entry.asp?933&quot;&gt;mobile first&lt;/a&gt;. What follows is a run down of basic changes to the site, in what hopefully makes for a much improved reading experience, in our rapidly changing, device-agnostic world.&lt;/p&gt;
+
+&lt;h2&gt;Establishing a useful baseline&lt;/h2&gt;
+
+&lt;p&gt;Rather than using a traditional CSS reset, this site now uses &lt;a href=&quot;http://necolas.github.com/normalize.css/&quot;&gt;normalize.css&lt;/a&gt; to establish a consistent baseline for cross-browser CSS rendering. Normalize.css makes web browsers render elements more consistently and in line with modern standards. It also preserves useful defaults and corrects common browser inconsistencies, unlike many CSS resets.&lt;/p&gt;
+
+&lt;h2&gt;Mobile First&lt;/h2&gt;
+
+&lt;p&gt;For a site where 62.46% of visitors in August to September 2011 were on mobile devices, this is real a no-brainer. Whilst the majority of mobile visitors to MiniApps are on more capable smart phone platforms such as iOS and Android (where a simple set of &lt;a href=&quot;http://www.w3.org/TR/css3-mediaqueries/&quot;&gt;CSS Media Queries&lt;/a&gt; could suffice), given the &lt;a href=&quot;http://www.lukew.com/ff/entry.asp?1405&quot;&gt;continual rise&lt;/a&gt; in the number of people using mobile devices to access the world wide web, it still makes sense to design using a &lt;a href=&quot;http://www.lukew.com/ff/entry.asp?933&quot;&gt;mobile first&lt;/a&gt; approach.&lt;/p&gt;
+
+&lt;p&gt;This site now serves styling for browsers in the following order:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;A default CSS style sheet suited to small–screen devices&lt;/li&gt;
+&lt;li&gt;CSS Media Queries then optimize content for larger screen sizes such as tablets, e–readers and desktop web browsers.&lt;/li&gt;
+&lt;li&gt;Note: since Internet Explorer 8 (and below) does not support CSS Media Queries, it is served a static set of CSS styles optimized for desktop, via a single conditional comment.&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Update: IE Mobile is now set as version 7 in the conditional comment. This is because the new Mango update uses mobile IE 9 (thanks &lt;a href=&quot;http://paulirish.com/&quot;&gt;Paul Irish&lt;/a&gt;!).&lt;/p&gt;
+
+&lt;p&gt;  /&lt;em&gt; Default CSS for mobile here -- &lt;/em&gt;/&lt;/p&gt;
+
+&lt;p&gt;  /&lt;em&gt; Tablets (portrait) ----------- &lt;/em&gt;/
+  @media (min-width : 570px) and (max-width : 768px) {&lt;/p&gt;
+
+&lt;p&gt;  }&lt;/p&gt;
+
+&lt;p&gt;  /&lt;em&gt; Tablets landscape, and desktop &lt;/em&gt;/
+  @media (min-width : 769px) {&lt;/p&gt;
+
+&lt;p&gt;  }&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;Conditional comment for Internet Explorer:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;!--[if (lt IE 9)&amp;amp;(!IEMobile 7)]&amp;gt;
+&amp;lt;link href=&quot;css/desktop.css&quot; rel=&quot;stylesheet&quot; /&amp;gt;
+&amp;lt;![endif]--&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2&gt;Responsive design&lt;/h2&gt;
+
+&lt;p&gt;Whilst the new MiniApps design is quite minimal, using a single column design centered on readability and clear presentation of content - there are still some interesting pieces of responsiveness worth noting (other than the typical resizing of content to fit the browser window).&lt;/p&gt;
+
+&lt;h2&gt;Content first, navigation second&lt;/h2&gt;
+
+&lt;p&gt;Despite MiniApps already using a mobile first approach for CSS, more capable small–screen web browsers can benefit from a further layer of progressive enhancement, with the adoption of a &lt;a href=&quot;http://adactio.com/journal/4778/&quot;&gt;content first, navigation second&lt;/a&gt; design pattern. Using the &lt;a href=&quot;http://dev.w3.org/csswg/css3-flexbox/&quot;&gt;CSS3 Flexbox module&lt;/a&gt;, visitors on capable mobile web browsers will see the page header and main content first, followed by the navigation further down the page, but before the footer.&lt;/p&gt;
+
+&lt;p&gt;Here is a basic template for the site's structural HTML markup:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;body&amp;gt;
+    &amp;lt;nav role=&quot;navigation&quot;&amp;gt;&amp;lt;/nav&amp;gt;
+    &amp;lt;header role=&quot;banner&quot;&amp;gt;&amp;lt;/header&amp;gt;
+    &amp;lt;section role=&quot;main&quot;&amp;gt;&amp;lt;/section&amp;gt;
+    &amp;lt;aside role=&quot;complementary&quot;&amp;gt;&amp;lt;/aside&amp;gt;
+    &amp;lt;footer role=&quot;contentinfo&quot;&amp;gt;&amp;lt;/footer&amp;gt;
+&amp;lt;/body&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Nested inside an appropriate CSS Media Query, small–screen browsers are then be served a different ordering of page content, using the box-ordinal-group property.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;/* Smartphones (portrait and landscape) ----------- */
+@media (max-width : 569px) {
+
+    body {
+        display: -webkit-box;
+        display: -moz-box;
+        display: box;
+        -webkit-box-orient: vertical;
+        -moz-box-orient: vertical;
+        box-orient: vertical;
+    }
+
+    nav[role=navigation] {
+        -webkit-box-ordinal-group: 4;
+        -moz-box-ordinal-group: 4;
+        box-ordinal-group: 4;
+    }
+
+    header[role=banner] {
+        -webkit-box-ordinal-group: 1;
+        -moz-box-ordinal-group: 1;
+        box-ordinal-group: 1;
+    }
+
+    section[role=main] {
+        -webkit-box-ordinal-group: 2;
+        -moz-box-ordinal-group: 2;
+        box-ordinal-group: 2;
+    }
+
+    aside[role=complementary] {
+        -webkit-box-ordinal-group: 3;
+        -moz-box-ordinal-group: 3;
+        box-ordinal-group: 3;
+    }
+
+    footer[role=contentinfo] {
+        -webkit-box-ordinal-group: 5;
+        -moz-box-ordinal-group: 5;
+        box-ordinal-group: 5;
+    }
+
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This gets the user straight to the content they want to see, making much better use of valuable screen real–estate. Each page also features skip links, allowing for quick access to navigation and main content irrespective of the content order.&lt;/p&gt;
+
+&lt;p&gt;Note: for the subset of mobile browsers that support CSS Media Queries but do not yet support Flexbox (e.g. Opera Mobile/Mini), featured detection comes to the rescue courtesy of &lt;a href=&quot;http://modernizr.com/&quot;&gt;Modernizr&lt;/a&gt;. A few alternate CSS styling rules are all that is needed for the navigation and footer sections. Modernizr also provides the site's HTML5 shim that enables Internet Explorer to correctly style new sectioning elements.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Event delegation for touch events in JavaScript</title>
+   <link href="http://alxgbsn.co.uk/2011/08/16/event-delegation-for-touch-events-in-javascript"/>
+   <updated>2011-08-16T00:00:00+01:00</updated>
+   <id>http://alxgbsn.co.uk/2011/08/16/event-delegation-for-touch-events-in-javascript</id>
+   <content type="html">&lt;p&gt;Anyone who has experience developing web applications on mobile devices will have no doubt encountered the 300ms delay when firing &lt;code&gt;click&lt;/code&gt; events in web browsers such as Mobile Safari. There are some useful &lt;a href=&quot;https://github.com/cheeaun/tappable&quot;&gt;standalone plugins&lt;/a&gt; and &lt;a href=&quot;http://code.google.com/mobile/articles/fast_buttons.html&quot;&gt;informative articles&lt;/a&gt; to help combat this delay, but this post aims to show a super–quick example of how to do simulated 'tap' events on dynamic content using JavaScript event delegation.&lt;/p&gt;
+
+&lt;p&gt;A common technique when dealing with &lt;code&gt;click&lt;/code&gt; events in dynamic content is to use event delegation to capture events bubbling up through the DOM. This same technique can be applied to touch events, although it is a little more difficult since there are at least four different events to capture; &lt;code&gt;touchstart&lt;/code&gt;, &lt;code&gt;touchmove&lt;/code&gt;, &lt;code&gt;touchend&lt;/code&gt; and &lt;code&gt;touchcancel&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Here's a very basic example of how to capture a simulated 'tap' event:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;var tapArea, moved, startX, startY;
+
+tapArea = document.querySelector('#list'); //element to delegate
+moved = false; //flags if the finger has moved
+startX = 0; //starting x coordinate
+startY = 0; //starting y coordinate
+
+//touchstart            
+tapArea.ontouchstart = function(e) {
+
+    moved = false;
+    startX = e.touches[0].clientX;
+    startY = e.touches[0].clientY;
+};
+
+//touchmove 
+tapArea.ontouchmove = function(e) {
+
+    //if finger moves more than 10px flag to cancel
+    //code.google.com/mobile/articles/fast_buttons.html
+    if (Math.abs(e.touches[0].clientX - startX) &amp;gt; 10 ||
+        Math.abs(e.touches[0].clientY - startY) &amp;gt; 10) {
+            moved = true;
+    }
+};
+
+//touchend
+tapArea.ontouchend = function(e) {
+
+    e.preventDefault();
+
+    //get element from touch point
+    var element = e.changedTouches[0].target;
+
+    //if the element is a text node, get its parent.
+    if (element.nodeType === 3) {   
+        element = element.parentNode;
+    }
+
+    if (!moved) {
+        //check for the element type you want to capture
+        if (element.tagName.toLowerCase() === 'label') {
+            alert('tap');
+        }
+    }
+};
+
+//don't forget about touchcancel!
+tapArea.ontouchcancel = function(e) {
+
+    //reset variables
+    moved = false;
+    startX = 0;
+    startY = 0;
+};
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Notice here it is useful to make use of &lt;code&gt;touchmove&lt;/code&gt; to detect any finger dragging gestures that might occur after a &lt;code&gt;touchstart&lt;/code&gt; has fired. This way it is easy to cancel the 'tap' on &lt;code&gt;touchend&lt;/code&gt; if desired.&lt;/p&gt;
+
+&lt;p&gt;Update: Originally this article was using the function &lt;code&gt;document.elementFromPoint(x,y)&lt;/code&gt; to get the element target in &lt;code&gt;ontouchend&lt;/code&gt;. A few people have kindly pointed out that you can actually just use &lt;code&gt;e.changedTouches[0].target&lt;/code&gt; or even &lt;code&gt;e.target&lt;/code&gt; to get the same result for a simple 'tap'. It should be noted however, that the target attribute in this case always refers to the originating element, so if you do need to reference the element a finger might have moved on/off during &lt;code&gt;touchmove&lt;/code&gt; or &lt;code&gt;touchend&lt;/code&gt;, you would still need to use:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;document.elementFromPoint(e.changedTouches[0].clientX, e.changedTouches[0].clientY).
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Life would be so much easier if we had a native 'tap' event in mobile browsers!&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Making web content more accessible with iOS VoiceOver</title>
+   <link href="http://alxgbsn.co.uk/2011/06/06/making-web-content-more-accessible-with-ios-voiceover"/>
+   <updated>2011-06-06T00:00:00+01:00</updated>
+   <id>http://alxgbsn.co.uk/2011/06/06/making-web-content-more-accessible-with-ios-voiceover</id>
+   <content type="html">&lt;p&gt;If you're a web developer and own an iOS device, you may have noticed it comes with a whole range of accessibility features. One such feature is a built-in screen reader for visually impaired users, called VoiceOver. For a touch screen device, VoiceOver is a wonderfully capable piece of assistive technology, and a very useful tool that you can use to help test the accessibility of your web content.&lt;/p&gt;
+
+&lt;p&gt;This article gives an introduction to using VoiceOver on iOS, followed by some basic tips to help improve the accessibility of your web content. While covering iOS specifically for example's sake, many of these tips are also applicable to improving accessibility for screen reader users in general.&lt;/p&gt;
+
+&lt;h2&gt;Navigating a web page using VoiceOver on iOS&lt;/h2&gt;
+
+&lt;p&gt;You can enable VoiceOver on iOS by going to: Settings -&gt; General -&gt; Accessibility -&gt; VoiceOver.&lt;/p&gt;
+
+&lt;p&gt;Using VoiceOver at its most basic level involves selecting an item by touching it, activating a selected item by double-tap, and scrolling by flicking three fingers. You can also swipe left/right to navigate through content elements in the natural order of your page’s markup. For quick page navigation, you can swipe up/down to jump through predefined sections of web content, such as headings, links, words, lines and even landmark roles. These pre-defined options are selected via a feature known as Rotator. A user can cycle through Rotator settings using a two finger rotation gesture anywhere on screen. The selected option is then read aloud as you rotate your fingers.&lt;/p&gt;
+
+&lt;p&gt;Aside from regular click events which operate using double-tap, touch events operate a little differently with iOS VoiceOver, since they rely on dragging the finger and not just tapping. If a web page features an element that has a touch event associated with it, the user must double-tap &amp;amp; hold on the element until an audible sound effect of three small tones is heard. Once the tones have played, VoiceOver then allows a touch gesture to be performed and ignores all other actions until the finger is next released. At this point VoiceOver returns back to it's normal state.&lt;/p&gt;
+
+&lt;p&gt;This may sound like a lot to remember at first, but VoiceOver is actually very simple to use and feels very intuitive after just a few sessions. Give it a go before reading on and try to familiarize yourself with the gestures.&lt;/p&gt;
+
+&lt;p&gt;There is a nice &lt;a href=&quot;http://www.apple.com/accessibility/iphone/vision.html&quot;&gt;introduction to VoiceOver on the iPhone&lt;/a&gt; over on Apple's website for some more in-depth examples and other features not covered here.&lt;/p&gt;
+
+&lt;h2&gt;Using WAI-ARIA landmark roles&lt;/h2&gt;
+
+&lt;p&gt;As you will have discovered after trying VoiceOver, one of the fastest ways to navigate through a large web page is to use the Rotator feature. If your web pages use well structured headings and markup, then your pages should already be relatively easy to navigate. A nice additional feature you can take advantage of however, is the use of &lt;a href=&quot;http://www.w3.org/WAI/PF/aria-practices/&quot;&gt;WAI-ARIA landmark roles&lt;/a&gt;. These role attributes enable screen reader users to quickly jump to predefined sections of a web page, and these can be accessed by VoiceOver using the Rotator 'landmark' option.&lt;/p&gt;
+
+&lt;p&gt;Here's some basic HTML5 markup for a common web page complete with landmark roles:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;header role=&quot;banner&quot;&amp;gt;
+    &amp;lt;h1&amp;gt;Page heading&amp;lt;/h1&amp;gt;
+&amp;lt;/header&amp;gt;
+
+&amp;lt;div role=&quot;main&quot;&amp;gt;
+    &amp;lt;section role=&quot;region&quot;&amp;gt;
+        &amp;lt;h2&amp;gt;Sub heading 1&amp;lt;/h2&amp;gt;
+    &amp;lt;/section&amp;gt;
+    &amp;lt;section role=&quot;region&quot;&amp;gt;
+        &amp;lt;h2&amp;gt;Sub heading 2&amp;lt;/h2&amp;gt;
+    &amp;lt;/section&amp;gt;
+&amp;lt;/div&amp;gt;
+
+&amp;lt;footer role=&quot;contentinfo&quot;&amp;gt;
+    &amp;lt;h4&amp;gt;Footer title&amp;lt;/h4&amp;gt;
+&amp;lt;/footer&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Note: as of iOS 4.3 the 'landmark' option is not included as a default rotator setting, and must be selected first in the general accessibility options. iOS does not currently read out the landmark types either, it just simply describes each as 'landmark start' and 'landmark end'.&lt;/p&gt;
+
+&lt;h2&gt;Hiding and showing content&lt;/h2&gt;
+
+&lt;p&gt;Because many client-based web applications are often just single page controllers that hide and show content when switching between views, it is important to make sure that only visible content is accessible to screen readers. If you can't visually see something on screen, then (usually) it should be hidden from assistive technologies as well. Some mobile web applications simply slide elements in and out of the viewport when transitioning between screens. This can be problematic since elements that are not visible can still be read out and accessed by VoiceOver.&lt;/p&gt;
+
+&lt;p&gt;You can hide an HTML element from screen readers by setting the &lt;code&gt;aria-hidden&lt;/code&gt; attribute to true. Likewise, setting the value to false will un-hide the element again.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;document.querySelector('#panel').setAttribute('aria-hidden', 'true'); //not visible
+document.querySelector('#panel').setAttribute('aria-hidden', 'false'); //visible
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If you wish to visually hide the content as well, you can also take advantage of this attribute to set the element's &lt;code&gt;display&lt;/code&gt; property in CSS like so.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;#panel[aria-hidden=&quot;true&quot;] { display: none; }
+#panel[aria-hidden=&quot;false&quot;] { display: block; }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Note here we are only changing the &lt;code&gt;display&lt;/code&gt; property for the element &lt;code&gt;#panel&lt;/code&gt; and not simply for every element that might have &lt;code&gt;aria-hidden&lt;/code&gt; applied. There are situations where you might want content hidden from screen readers, but still visible on screen. Take for example, if your website creates a floating dialog box that is displayed on top of the existing page. In this case the content is still visible behind the dialog box, but should not be accessible until the user responds and the dialog box is closed. Here you might want to apply &lt;code&gt;aria-hidden&lt;/code&gt; to the page behind, but not actually change the &lt;code&gt;display&lt;/code&gt; property.&lt;/p&gt;
+
+&lt;h2&gt;Making faux-buttons behave like buttons&lt;/h2&gt;
+
+&lt;p&gt;While it is advisable to use a native HTML &lt;code&gt;&amp;lt;button&amp;gt;&lt;/code&gt; element wherever possible, sometimes you may want to (for stylistic reasons) make a non-interactive HTML element such as a &lt;code&gt;&amp;lt;div&amp;gt;&lt;/code&gt;, act like a button.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;div id=&quot;my-button&quot;&amp;gt;Button text&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;It is important to make sure this behaves like an interactive element to VoiceOver, so assign a &lt;code&gt;role&lt;/code&gt; attribute of type &lt;code&gt;button&lt;/code&gt; to the element. The role attribute will enable VoiceOver to verbally identify the element just as it would do a native HTML &lt;code&gt;&amp;lt;button&amp;gt;&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;div id=&quot;my-button&quot; role=&quot;button&quot;&amp;gt;Button text&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now that VoiceOver identifies the element as a button and not just a piece of text, it makes it much clearer how the user should interact with this element and that they should and double-tap to activate it.&lt;/p&gt;
+
+&lt;h2&gt;Providing textual descriptions for icons&lt;/h2&gt;
+
+&lt;p&gt;It is common to use visual icons to represent actions that buttons perform on mobile devices. Icons have the advantage of saving valuable screen space and are often universally understood. For assistive technologies, it is still important to provide a textual alternative. Take for example the following faux-button that does not contain any inner text.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;div id=&quot;edit-button&quot; role=&quot;button&quot;&amp;gt;&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Here we must use another piece of HTML markup that is visible to assistive technologies, in order to provide a textual label.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;p class=&quot;hide&quot; id=&quot;edit-label&quot;&amp;gt;Edit item&amp;lt;/p&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;We can then link the button with the textual label using the &lt;code&gt;aria-labelledby&lt;/code&gt; attribute on our faux-button.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;div id=&quot;edit-button&quot; role=&quot;button&quot; aria-labelledby=&quot;edit-label&quot;&amp;gt;&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;In order to hide the textual label visually on the screen, but not from assistive technology, we can position the label off screen.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;.hide {
+    position: absolute;
+    top: -20em;
+    left: -200em;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;When VoiceOver gains focus on the element, it will now read out the label, before describing the role.&lt;/p&gt;
+
+&lt;h2&gt;Final Note&lt;/h2&gt;
+
+&lt;p&gt;These are just a few basic things that you can do to help improve the accessibility of your web content for VoiceOver on iOS. Mobile specific content is sadly often forgotten when it comes to accessibility, since many still regard it as not having the right tools available to assist people. It is a good thing that iOS uses the same underlying technology as VoiceOver for Mac OSX, because if you're building accessible content for the web, then you're already well on the way to providing a great experience on iOS too.&lt;/p&gt;
 </content>
  </entry>
  

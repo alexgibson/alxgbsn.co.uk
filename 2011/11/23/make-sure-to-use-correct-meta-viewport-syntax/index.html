@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="description" content="Alex Gibson is a front–end web developer from Newcastle upon Tyne, United Kingdom." />
+  <meta name="author" content="Alex Gibson" />
+  <meta name="viewport" content="width=device-width" />
+  <link rel="stylesheet" href="/css/styles.css" />
+  <link rel="alternate" type="application/rss+xml" title="Alex Gibson" href="http://alxgbsn.co.uk/feed/" />
+  <title>Make sure to use correct meta viewport syntax</title>
+</head>
+  <body>
+  	<nav>
+	<ul>
+		<li><a href="/">Home</a></li>
+		<li><a href="/feed/index.xml">Feed</a></li>
+	</ul>
+</nav>
+    <header>
+      <h1>Make sure to use correct meta viewport syntax</h1>
+    </header>
+    <section>
+      <div class="content">
+  <div id="post">
+    <h1></h1>
+    <p>When browsing the web it's not uncommon to come across two slight variations on the syntax for declaring meta viewport content values. It's a bit unclear how the two variations originated, but it should be noted that only one is correct, and using an incorrect syntax can actually create problems on certain web browsers.</p>
+
+<p>This is the correct syntax:</p>
+
+<pre><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /&gt;
+</code></pre>
+
+<p>This is the incorrect syntax:</p>
+
+<pre><code>&lt;meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=no;" /&gt;
+</code></pre>
+
+<p>Notice the correct syntax uses comma separated values. The incorrect way is to use a semi-colon separator. There is also no real need for the separator on the last value, <code>user-scalable</code>.</p>
+
+<p>So, why does all of this really matter? “It doesn't seem to make a difference on my iPad?” Well, maybe not — but it can and does make a difference on other devices. The recent <a href="http://dev.w3.org/csswg/css-device-adapt/">CSS Device Adaptation</a> specification defines it, so real world implementations are now built toward the comma syntax style.</p>
+
+<p>A real world example is the BlackBerry Playbook. It has a good web browser, but it's not very forgiving with error handling when parsing the meta viewport. If you use semi-colons instead of comma's, width can in some circumstances not get set to <code>device-width</code>. There is currently a bug in the PlayBook's viewport implementation that means width gets set to an arbitrary value if <code>initial-scale</code> is not also set to 1.0. If an error is thrown due to incorrect viewport syntax, <code>initial-scale</code> can be ignored and the whole page will appear enlarged, with over-sized text and blurry images. Not really what you intended, huh?</p>
+
+<p>Safari and Chrome are currently the only web browsers that display a series of errors/warnings for an incorrect meta viewport declaration:</p>
+
+<pre><code>Viewport argument value "device-width;" for key "width" not recognized. Content ignored.
+Viewport argument value "1.0;" for key "initial-scale" was truncated to its numeric prefix.
+Viewport argument value "1.0;" for key "maximum-scale" was truncated to its numeric prefix.
+Viewport argument value "0;" for key "user-scalable" was truncated to its numeric prefix.
+</code></pre>
+
+<p>It would be nice if more browsers did this. Maybe once <a href="http://dev.opera.com/articles/view/an-introduction-to-meta-viewport-and-viewport/">@viewport</a> becomes more widely adopted, we could then begin to phase out the messy meta viewport altogether?</p>
+
+<p>So, the next time you are using meta viewport in a site — make sure you define it properly. Don't just cut and paste it from a old/bad example you found somewhere!</p>
+
+<p>Please note, you should not necessarily be including all the different properties seen above in your declaration. This article is simply concentrating on how to define things correctly.</p>
+
+<p>Update - for anyone wishing to use <code>width=device-width</code> without also setting <code>initial-scale=1.0</code>, the PlayBook can be tamed by inserting the legacy BlackBerry <code>HandheldFriendly</code> meta property before the viewport declaration:</p>
+
+<pre><code>&lt;meta name="HandheldFriendly" content="True" /&gt;
+&lt;meta name="viewport" content="width=device-width" /&gt;
+</code></pre>
+
+  </div>
+</div>
+
+    </section>
+    <footer>
+	<p>Copyright &copy; Alex Gibson.</p>
+</footer>
+  </body>
+</html>

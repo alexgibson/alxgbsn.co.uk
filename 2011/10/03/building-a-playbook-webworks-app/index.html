@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="description" content="Alex Gibson is a front–end web developer from Newcastle upon Tyne, United Kingdom." />
+  <meta name="author" content="Alex Gibson" />
+  <meta name="viewport" content="width=device-width" />
+  <link rel="stylesheet" href="/css/styles.css" />
+  <link rel="alternate" type="application/rss+xml" title="Alex Gibson" href="http://alxgbsn.co.uk/feed/" />
+  <title>Building a PlayBook WebWorks app</title>
+</head>
+  <body>
+  	<nav>
+	<ul>
+		<li><a href="/">Home</a></li>
+		<li><a href="/feed/index.xml">Feed</a></li>
+	</ul>
+</nav>
+    <header>
+      <h1>Building a PlayBook WebWorks app</h1>
+    </header>
+    <section>
+      <div class="content">
+  <div id="post">
+    <h1></h1>
+    <p>I was recently hired to develop the front–end HTML, CSS and JavaScript for a BlackBerry PlayBook application, packaged using RIM's <a href="http://us.blackberry.com/developers/tablet/webworks.jsp">WebWorks SDK</a>. The main purpose of the app was to assist the user in consuming a large volume of digital content (in the form of text, images and video) via a streamlined, touch–friendly interface. Despite a reasonably small development window, the PlayBook browser and development tools proved to be very capable in getting the job done.</p>
+
+<p>What follows is a run down of the key HTML5 features used in the application, and how well they performed on the device. Please note the code shown in this article is simplified in places for the sake of clarity, and is by no means complete.</p>
+
+<h2>Local database support</h2>
+
+<p>While an internet connection would be required to view online images and stream video via YouTube, one of the main technical requirements was that the app should still function and be navigable when offline. Incremental data returned via a remote server should be permanently stored on the device and always accessible. The maximum payload of data this app required was around 15 to 20MB, so the natural development choice was to use an <a href="http://www.w3.org/TR/webdatabase/">HTML5 WebSQL Database</a>, since the Playbook browser does not yet support <a href="http://www.w3.org/TR/IndexedDB/">IndexedDB</a>, and the 5MB limit for <a href="http://dev.w3.org/html5/webstorage/">localStorage</a> was too small for the size of data required.</p>
+
+<p>Implementation was quite straight forward, with the application creating a simple WebSQL database on first launch, together with a single table called 'appdata' to act as a main store.</p>
+
+<pre><code>var storage = {},
+    myData = null,
+    dbName = 'mydatabase',
+    dbVersion = '1.0',
+    dbDescription = 'app data store',
+    dbSize = 20 * 1024 * 1024;
+
+function handleDbError (e) {
+
+    console.log(e.message);
+    console.log(e.code);
+}
+
+function initDatabase () {
+
+    try {
+        var data = '';
+
+        storage.db = openDatabase(dbName, dbVersion, dbDescription, dbSize);
+        storage.db.transaction(function (tx) {
+
+            tx.executeSql("CREATE TABLE IF NOT EXISTS appdata (id unique, text)");
+
+        }, handleDbError);
+
+        storage.db.transaction(function (tx) {
+
+            tx.executeSql("INSERT OR IGNORE INTO appdata (id, text) VALUES(?,?)", [dbName, data]);
+
+        }, handleDbError);
+
+        } catch(e) {
+            handleDbError(e);
+    }
+}
+
+initDatabase();
+</code></pre>
+
+<p>The application then makes a remote server call, and the JSON string returned as a response is then parsed and used immediately. At the same time, the data is saved asynchronously to the local database (in a single table row entry).</p>
+
+<pre><code>function getData () {
+
+    var myRequest = new XMLHttpRequest();
+
+    myRequest.onreadystatechange = function () {    
+
+        if (myRequest.readyState === 4 &amp;&amp; myRequest.status === 200) {
+            myData = JSON.parse(myRequest.responseText);
+            updateDatabase();
+            startApp();         
+        }
+    };
+
+    myRequest.open('GET', 'http://', true);
+    myRequest.send();
+}
+
+function updateDatabase () {
+
+    try {   
+        var data = JSON.stringify(myData);
+
+        storage.db = openDatabase(dbName, dbVersion, dbDescription, dbSize);        
+        storage.db.transaction(function (tx) {
+
+            tx.executeSql("UPDATE appdata SET text=? WHERE id=?", [data, dbName]);
+
+        }, handleDbError);
+
+        } catch(e) {                
+            handleDbError(e);
+    }
+}
+</code></pre>
+
+<p>If the app is later launched while offline, local data is then read back from the database and parsed back to an object, so the app only ever requires a single database read operation.</p>
+
+<pre><code>function throwReadError (e) {
+
+    console.log(e.message);
+    console.log(e.code);
+
+    if(!myData) {
+        showAlert("This app requires an internet connection for first launch");
+    }
+}
+
+function readFromDatabase () {
+
+    storage.db = openDatabase(dbName, dbVersion, dbDescription, dbSize);
+    storage.db.transaction(function (tx) {
+
+        tx.executeSql('SELECT * FROM appdata', [], function (tx, results) {
+
+            myData = JSON.parse(results.rows.item(0).text);
+            startApp();
+        });
+
+    }, throwReadError);     
+}
+</code></pre>
+
+<p>The PlayBook coped with this size of data store very well. We never hit any bugs or performance issues. Updating the client data on subsequent app launches was also pretty trivial due to the very basic data store model. The PlayBook does not appear to ask the user for storage permission at any size of data we tested, although 50MB is likely the limit if other browsers are anything to go by.</p>
+
+<h2>Offline detection</h2>
+
+<p>For offline detection the app initially used <code>navigator.Online</code>, which at first appears to be supported by the PlayBook Browser.</p>
+
+<pre><code>var isOnline = window.navigator.onLine;
+
+initDatabase();
+
+if (isOnline) {
+    getData();          
+} else {
+    readFromDatabase();
+}
+</code></pre>
+
+<p>However, once the first WebWorks build was made it became clear something was not right, since <code>navigator.Online</code> was always returning <code>true</code> on launch. This turns out to be an <a href="http://supportforums.blackberry.com/t5/Web-and-WebWorks-Development/Bug-report-navigator-onLine-incorrect-status/m-p/1214513/highlight/true#M15043">existing bug</a>, but one that can be easily fixed using a WebWorks API call for offline detection:</p>
+
+<pre><code>var isOnline = 'blackberry' in window ? blackberry.system.hasDataCoverage() : window.navigator.onLine;
+</code></pre>
+
+<p>Notice here we use a simple feature detect using the <code>blackberry</code> window object, so we can carry on using <code>navigator.Online</code> in the browser (for development purposes).</p>
+
+<h2>CSS animation</h2>
+
+<p>While the PlayBook has very good support for CSS <a href="http://www.w3.org/TR/css3-2d-transforms/">2D</a> and <a href="http://www.w3.org/TR/css3-3d-transforms/">3D</a> Transforms and <a href="http://www.w3.org/TR/css3-animations/">animations</a>, it seems to struggle providing hardware acceleration. While RIM claims 3d transforms are hardware accelerated on the PlayBook, in real–world development we found that only the simplest examples managed anywhere near the smooth performance you come to expect on the iPad.</p>
+
+<p>When building an app with a sizable DOM, the PlayBook seems to struggle when it comes to animating content. For example, if you display an element that has a CSS animation associated with it, the PlayBook seems to choke if it needs to render the element and then immediately animate it. Searching on the WebWorks support forums, there are many other developers experiencing <a href="http://supportforums.blackberry.com/t5/Web-and-WebWorks-Development/State-of-hardware-accelleration-in-browser/m-p/1050143/highlight/true#M12534">similar issues</a>. More odd quirks also exist, like hardware acceleration failing if the element uses CSS gradients.</p>
+
+<p>For this reason, performing full–screen animations and transitions we're simply too much for the Playbook to pull off reliably. Only after lots of testing, <code>setTimeout</code> wrangling, tweaking and refining, we're we able to achieve some decent results.</p>
+
+<p>Hopefully RIM can provide a future update that fixes current hardware acceleration issues, but as it stands this is currently the Playbook's only major weak point for WebWorks development.</p>
+
+<h2>Touch events</h2>
+
+<p>The app featured multiple sections where scrollable, dynamic touch–based carousels were needed. For this task <a href="http://cubiq.org/iscroll-4">iScroll4</a> came to the rescue, and proved to be very reliable on the PlayBook browser. Even zoom-able sections that needed multi–touch proved to be no problem for the device.</p>
+
+<p>The only notable exception is that the PlayBook seems to support multi-touch in a slightly different way to how it works on iOS. For example, while you can perform a two–touch gesture on a single element on the PlayBook, you do not seem to be able to drag around two separate elements independently of each other. The Playbook appears to be limited in the number of simultaneous, independent touch–points it can support.</p>
+
+<h2>Native hooks</h2>
+
+<p>API wise, the app used 95% browser–based API's. The remaining areas where WebWorks had to step in were for small things, like opening external links in the PlayBook browser and providing native alert boxes.</p>
+
+<pre><code>function showAlert (message) {
+    try {
+        blackberry.ui.dialog.standardAskAsync(message, blackberry.ui.dialog.D_OK, {
+            title : "Alert", 
+            size: blackberry.ui.dialog.SIZE_MEDIUM, 
+            position : blackberry.ui.dialog.CENTER
+        });
+    } catch (e) {
+        alert(message);
+        console.log(e);
+    }
+}
+
+function launchBrowser (url) {
+    var args = new blackberry.invoke.BrowserArguments(url);
+    blackberry.invoke.invoke(blackberry.invoke.APP_BROWSER, args);
+}
+</code></pre>
+
+<h2>Remote debugging</h2>
+
+<p>This is the area really where the Playbook shines in the eyes of a web developer, as you can quickly and very easily <a href="http://devblog.blackberry.com/2011/06/debugging-blackberry-web-apps/">remote debug</a> on an actual device, over your local network. This saved many hours development time and bug fixing, especially when testing device related JavaScript events, such as orientation changes.</p>
+
+<p>Hopefully one day we will have this kind of support on the other major mobile web browsers, and not need rely on third party solutions. RIM are really one step ahead of the competition here.</p>
+
+<h2>Conclusion</h2>
+
+<p>For web developers, building native applications using the WebWorks SDK is overall a very good experience. There is still room for improvement in key areas such as hardware acceleration performance, but otherwise the Playbook browser is a close second to iOS Safari in terms of <a href="http://www.sencha.com/blog/blackberry-playbook-the-html5-developer-scorecard/">browser features and support</a>.</p>
+
+<p>If only it was as easy for RIM to instill the same level of enthusiasm and confidence in tablet–buying consumers!</p>
+
+  </div>
+</div>
+
+    </section>
+    <footer>
+	<p>Copyright &copy; Alex Gibson.</p>
+</footer>
+  </body>
+</html>
