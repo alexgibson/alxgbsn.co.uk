@@ -9,19 +9,17 @@
   <link rel="alternate" type="application/rss+xml" title="Alex Gibson" href="http://alxgbsn.co.uk/feed/" />
   <title>Event delegation for touch events in JavaScript</title>
 </head>
-  <body>
-  	<nav>
+<body>
+  	<nav role="navigation">
 	<ul>
 		<li><a href="/">Home</a></li>
 		<li><a href="/feed/index.xml">Feed</a></li>
 	</ul>
 </nav>
-    <header>
-      <h1>Event delegation for touch events in JavaScript</h1>
+    <header role="banner">
+        <h1>Event delegation for touch events in JavaScript</h1>
     </header>
-    <section>
-      <div class="content">
-  <div id="post">
+    <article role="main">
     <h1></h1>
     <p>Anyone who has experience developing web applications on mobile devices will have no doubt encountered the 300ms delay when firing <code>click</code> events in web browsers such as Mobile Safari. There are some useful <a href="https://github.com/cheeaun/tappable">standalone plugins</a> and <a href="http://code.google.com/mobile/articles/fast_buttons.html">informative articles</a> to help combat this delay, but this post aims to show a super–quick example of how to do simulated 'tap' events on dynamic content using JavaScript event delegation.</p>
 
@@ -95,12 +93,10 @@ tapArea.ontouchcancel = function(e) {
 
 <p>Life would be so much easier if we had a native 'tap' event in mobile browsers!</p>
 
-  </div>
-</div>
+</article>
 
-    </section>
     <footer>
 	<p>Copyright &copy; Alex Gibson.</p>
 </footer>
-  </body>
+</body>
 </html>
