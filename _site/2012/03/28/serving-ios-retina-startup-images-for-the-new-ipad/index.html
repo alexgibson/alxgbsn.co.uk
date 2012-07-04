@@ -13,14 +13,14 @@
   	<nav role="navigation">
 	<ul>
 		<li><a href="/">Home</a></li>
-		<li><a href="/feed/index.xml">Feed</a></li>
+		<li><a href="/projects/">Projects</a></li>
 	</ul>
 </nav>
     <header role="banner">
         <h1>Serving iOS retina startup images for the new iPad</h1>
     </header>
     <article role="main">
-    <h1></h1>
+    <time datetime="Wed Mar 28 00:00:00 +0100 2012" pubdate>Published Mar 28 2012</time>
     <p>In the past we have touched on how to serve iOS startup images for full screen web apps using both <a href="http://miniapps.co.uk/blog/post/ios-startup-images-using-css-media-queries/">CSS media queries and JavaScript</a> techniques. Now that the latest iPad sports a retina calibre display, we must again look at the best way to serve startup images in our web apps.</p>
 
 <p>Given the potential bandwidth cost incurred by downloading such large images (2048 x 1496 landscape, 1536 x 2006 portrait), the most advisable technique is to use JavaScript to serve only the assets a device requires (rather than downloading every asset, which would happen if we used media queries). This can be done using the following code snippet in the <head> of your page.</p>
@@ -42,7 +42,7 @@ if (navigator.platform === "iPad") {
 
 </article>
 
-    <footer>
+    <footer role="contentinfo">
 	<p>Copyright &copy; Alex Gibson.</p>
 </footer>
 </body>

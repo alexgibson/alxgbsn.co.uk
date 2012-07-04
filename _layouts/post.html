@@ -3,6 +3,6 @@ layout: layout
 ---
 
 <article role="main">
-    <h1>{{ post.title }}</h1>
+    <time datetime="{{ page.date }}" pubdate>Published {{ page.date | date: "%b %d %Y" }}</time>
     {{ content }}
 </article>

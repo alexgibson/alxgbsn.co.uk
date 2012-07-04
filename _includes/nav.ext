@@ -1,6 +1,6 @@
 <nav role="navigation">
 	<ul>
-		<li><a href="/">Home</a></li>
-		<li><a href="/feed/index.xml">Feed</a></li>
+		<li><a href="{{ root }}/">Home</a></li>
+		<li><a href="{{ root }}/projects/">Projects</a></li>
 	</ul>
 </nav>
