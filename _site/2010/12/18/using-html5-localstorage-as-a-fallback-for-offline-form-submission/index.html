@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="description" content="Alex Gibson is a front–end web developer from Newcastle upon Tyne, United Kingdom." />
+  <meta name="author" content="Alex Gibson" />
+  <meta name="viewport" content="width=device-width" />
+  <link rel="stylesheet" href="/css/styles.css" />
+  <link rel="alternate" type="application/rss+xml" title="Alex Gibson" href="http://alxgbsn.co.uk/feed/" />
+  <title>Using HTML5 localStorage as a fallback for offline form submission</title>
+</head>
+<body>
+  	<nav role="navigation">
+	<ul>
+		<li><a href="/">Home</a></li>
+		<li><a href="/projects/">Projects</a></li>
+		<li><a href="/contact/">Contact</a></li>
+	</ul>
+</nav>
+    <header role="banner">
+        <h1>Using HTML5 localStorage as a fallback for offline form submission</h1>
+    </header>
+    <article role="main">
+    <time datetime="Sat Dec 18 00:00:00 +0000 2010" pubdate>Published Dec 18 2010</time>
+    <p>I recently put together a working demo for a client showing how you might use HTML5 localStorage as a fallback for form data submission when a mobile device is offline without signal. I've published the full <a href="https://github.com/alexgibson/OfflineForm">source code over on GitHub</a> together with a demo for anyone who is interested.</p>
+
+<p>The demo uses <code>window.navigator.onLine</code> to listen for a boolean value of <code>true</code> or <code>false</code>, determining whether the device is online or offline. When online, the app makes a regular XmlHttpRequest and sends data to a server. If the device loses signal and goes offline, the app queues up and saves submitted data to localStorage as a JSON string. When online connection is next restored, the app then re-sends the queued data to the server automatically. Once the data has been sent successfully, the item is then removed from localStorage.</p>
+
+<p>I won't go through all the code line by line as it's reasonably straight forward, but feel free to take a closer look on <a href="https://github.com/alexgibson/OfflineForm">GitHub</a>. Many Webkit based smart phones now support <code>window.navigator.onLine</code>, as does desktop Safari or Firefox. To test, try enabling flight mode on your phone, or disable wifi on your laptop once the app is open.</p>
+
+</article>
+
+    <form class="search" action="http://google.com/search" method="get">
+    <input type="hidden" name="q" value="site:alxgbsn.co.uk" />
+    <input class="search" type="search" name="q" results="0" placeholder="Search"/>
+</form>
+    <footer role="contentinfo">
+	<p>Copyright &copy; Alex Gibson.</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="description" content="Alex Gibson is a front–end web developer from Newcastle upon Tyne, United Kingdom." />
+  <meta name="author" content="Alex Gibson" />
+  <meta name="viewport" content="width=device-width" />
+  <link rel="stylesheet" href="/css/styles.css" />
+  <link rel="alternate" type="application/rss+xml" title="Alex Gibson" href="http://alxgbsn.co.uk/feed/" />
+  <title>New sizes attribute in iOS 4.2.1 for web clip icons</title>
+</head>
+<body>
+  	<nav role="navigation">
+	<ul>
+		<li><a href="/">Home</a></li>
+		<li><a href="/projects/">Projects</a></li>
+		<li><a href="/contact/">Contact</a></li>
+	</ul>
+</nav>
+    <header role="banner">
+        <h1>New sizes attribute in iOS 4.2.1 for web clip icons</h1>
+    </header>
+    <article role="main">
+    <time datetime="Sat Oct 30 00:00:00 +0100 2010" pubdate>Published Oct 30 2010</time>
+    <p>A small but relatively undiscovered new feature in iOS 4.2.1 is the new <a href="http://developer.apple.com/library/safari/#documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html">'sizes' attribute</a> for defining different sized web clip icons. This new attribute allows you to cater for different device resolutions on iOS when publishing home screen icons for your websites. Here's an example:</p>
+
+<pre><code>&lt;link rel="apple-touch-icon" href="touch-icon-iphone.png" /&gt;
+&lt;link rel="apple-touch-icon" sizes="72x72" href="touch-icon-ipad.png" /&gt;
+&lt;link rel="apple-touch-icon" sizes="114x114" href="touch-icon-iphone4.png" /&gt;
+</code></pre>
+
+<p>Now what we really need is for this new attribute to also work on <code>apple-touch-startup-image</code>, so we can finally define different resolution startup images.</p>
+
+</article>
+
+    <form class="search" action="http://google.com/search" method="get">
+    <input type="hidden" name="q" value="site:alxgbsn.co.uk" />
+    <input class="search" type="search" name="q" results="0" placeholder="Search"/>
+</form>
+    <footer role="contentinfo">
+	<p>Copyright &copy; Alex Gibson.</p>
+</footer>
+</body>
+</html>

@@ -39,7 +39,7 @@ article[role=main] {
 }
 
 section {
-    border-top: 1px solid #636568;
+    border-top: 1px solid #a7a7a7;
 }
 
 pre {
@@ -50,18 +50,15 @@ pre {
   white-space: pre;
   padding: 1em;
   background-color: #ffffff;
-  border: 1px solid #e4e4e4;
+  border: 1px solid #a7a7a7;
 }
 
 code {
-  word-wrap: normal;
   color: #565757;
-  background-color: #ffffff;
 }
 
 footer[role=contentinfo] {
     display: block;
-    border-top: 1px solid #636568;
     text-align: center;
 }
 
@@ -79,12 +76,52 @@ p, ul > li {
     line-height: 1.5em
 }
 
+em {
+    font-family: Palatino-Italic, Palatino-Roman, Cambria, "Times New Roman", Times, serif;
+    font-style: italic;  
+}
+
+strong {
+    font-family: Palatino-Bold, Palatino-Roman, Cambria, "Times New Roman", Times, serif;
+    font-weight: bold;  
+}
+
+blockquote {
+    font-family: Palatino-Italic, Palatino-Roman, Cambria, "Times New Roman", Times, serif;
+    font-style: italic; 
+    font-size: 1.2em;    
+}
+
 h1 {
     text-align: center;
 }
 
+h1, h2, h3, h4, h5, h6 {
+    font-family: Palatino-Bold, Palatino-Roman, Cambria, "Times New Roman", Times, serif;
+    font-weight: bold;
+}
+
 time {
     display: block;
+    color: #636568;
+    font-family: Palatino-Italic, Palatino-Roman, Cambria, "Times New Roman", Times, serif;
     font-style: italic;
     text-align: center;
+}
+
+form.search {
+
+    margin-top: 1.5em;
+    text-align: center;
+
+    input[type=search] {
+        -webkit-appearance: none;
+        width: 60%;
+        margin: 0 auto;
+        border: 1px solid #a7a7a7;     
+    }
+
+    input[type=search]:focus {
+        outline: none;
+    }
 }
