@@ -4,7 +4,7 @@
  <title>Alex Gibson, Front End Developer</title>
  <link href="http://alxgbsn.co.uk/feed/" rel="self"/>
  <link href="http://alxgbsn.co.uk/"/>
- <updated>2012-07-08T21:15:47+01:00</updated>
+ <updated>2012-07-08T21:48:19+01:00</updated>
  <id>http://alxgbsn.co.uk/</id>
  <author>
    <name>Alex Gibson</name>
@@ -39,13 +39,13 @@ if (navigator.platform === &quot;iPad&quot;) {
  </entry>
  
  <entry>
-   <title>Tap.js - A lightweight 'tap' event JavaScript plugin</title>
+   <title>Tap.js - A lightweight ‘tap’ event JavaScript plugin</title>
    <link href="http://alxgbsn.co.uk/2012/03/12/tap-js-a-lightweight-tap-event-javascript-plugin"/>
    <updated>2012-03-12T00:00:00+00:00</updated>
    <id>http://alxgbsn.co.uk/2012/03/12/tap-js-a-lightweight-tap-event-javascript-plugin</id>
-   <content type="html">&lt;p&gt;While the &lt;a href=&quot;http://www.w3.org/TR/touch-events/&quot;&gt;W3C touch events API&lt;/a&gt; is quite flexible in its low-level implementation for dealing with multi-touch interaction, it means that the higher level gestures we use daily in our web apps can take &lt;a href=&quot;http://miniapps.co.uk/blog/post/event-delegation-for-touch-events-in-javascript/&quot;&gt;quite a lot of work&lt;/a&gt; for developers to implement themselves, even down to the basic 'tap' event. Many mobile web frameworks already offer support for such gestures, but if your app does not use or require such a framework, something as simple as a 'tap' plugin can become a necessity on nearly every mobile project.&lt;/p&gt;
+   <content type="html">&lt;p&gt;While the &lt;a href=&quot;http://www.w3.org/TR/touch-events/&quot;&gt;W3C touch events API&lt;/a&gt; is quite flexible in its low-level implementation for dealing with multi-touch interaction, it means that the higher level gestures we use daily in our web apps can take &lt;a href=&quot;http://miniapps.co.uk/blog/post/event-delegation-for-touch-events-in-javascript/&quot;&gt;quite a lot of work&lt;/a&gt; for developers to implement themselves, even down to the basic ‘tap’ event. Many mobile web frameworks already offer support for such gestures, but if your app does not use or require such a framework, something as simple as a 'tap' plugin can become a necessity on nearly every mobile project.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://github.com/alexgibson/tap.js&quot;&gt;Tap.js&lt;/a&gt; is a simple, lightweight plugin for a common 'tap' gesture. It has no dependencies and can be used just like any regular JavaScript event, along with standard event listener syntax. It also falls back to using regular mouse events when touch is not supported, so you don't need to manually feature detect or provide two different event types in your code.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/alexgibson/tap.js&quot;&gt;Tap.js&lt;/a&gt; is a simple, lightweight plugin for a common ‘tap’ gesture. It has no dependencies and can be used just like any regular JavaScript event, along with standard event listener syntax. It also falls back to using regular mouse events when touch is not supported, so you don't need to manually feature detect or provide two different event types in your code.&lt;/p&gt;
 
 &lt;h2&gt;Setup&lt;/h2&gt;
 
