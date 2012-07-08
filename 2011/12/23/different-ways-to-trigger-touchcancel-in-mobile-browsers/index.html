@@ -14,6 +14,7 @@
 	<ul>
 		<li><a href="/">Home</a></li>
 		<li><a href="/projects/">Projects</a></li>
+		<li><a href="/contact/">Contact</a></li>
 	</ul>
 </nav>
     <header role="banner">
@@ -23,7 +24,7 @@
     <time datetime="Fri Dec 23 00:00:00 +0000 2011" pubdate>Published Dec 23 2011</time>
     <p>The <code>touchcancel</code> event is often neglected when building touch–interfaces using JavaScript. Historically, browsers vendors have never really published documentation detailing the circumstances as to when this event gets fired, and hence it has always been associated with a level of obscurity by many developers. The aim of this post is to try and shed some light on the matter.</p>
 
-<p>Apple originally created touch events for iOS Safari, which have since been adopted as a basis for the <a href="http://www.w3.org/TR/2011/WD-touch-events-20110505/">W3C Touch Events Specification</a>. The original <a href="http://developer.apple.com/library/safari/#documentation/UserExperience/Reference/TouchEventClassReference/TouchEvent/TouchEvent.html%23//apple_ref/doc/uid/TP40009358">Safari DOM Additions Reference</a> documentation provides very little information on <code>touchcancel</code>:</p>
+<p>Apple originally created touch events for iOS Safari, which have since been adopted as a basis for the <a href="http://www.w3.org/TR/2011/WD-touch-events-20110505/">W3C Touch Events Specification</a>. The original <a href="http://developer.apple.com/library/safari/#documentation/UserExperience/Reference/TouchEventClassReference/TouchEvent/TouchEvent.html%23//apple_ref/doc/uid/TP40009358">Safari DOM Additions Reference</a> documentation provides very little information on touchcancel:</p>
 
 <blockquote><p>Sent when the system cancels tracking for the touch.</p></blockquote>
 
@@ -31,11 +32,11 @@
 
 <blockquote><p>A user agent must dispatch this event type to indicate when a touch point has been disrupted in an implementation-specific manner, such as a synchronous event or action originating from the UA canceling the touch, or the touch point leaving the document window into a non-document area which is capable of handling user interactions. (e.g. The UA's native user interface, plug-ins) A user agent may also dispatch this event type when the user places more touch points on the touch surface than the device or implementation is configured to store, in which case the earliest Touch object in the TouchList should be removed.</p></blockquote>
 
-<p>From this description we can begin to understand <code>touchcancel</code> with regard to browser behaviour a little better. It not only helps the browser keep accurate references to active <code>Touch</code> objects in the <code>TouchList</code>, but it can also be used by developers to carry out UI specific tasks, such as reseting any variables used during <code>touchstart</code> or <code>touchmove</code>. In the event that the system cancels tracking and the <code>touchend</code> event does not fire, <code>touchcancel</code> saves the day.</p>
+<p>From this description we can begin to understand touchcancel with regard to browser behaviour a little better. It not only helps the browser keep accurate references to active <code>Touch</code> objects in the <code>TouchList</code>, but it can also be used by developers to carry out UI specific tasks, such as reseting any variables used during <code>touchstart</code> or <code>touchmove</code>. In the event that the system cancels tracking and the <code>touchend</code> event does not fire, touchcancel saves the day.</p>
 
-<p>But when do browsers actually trigger this event? To start investigating, it was necessary to build a simple event logger to track all touch events. The test features a touch-area and logs the last touch event fired, making it easier to see exactly what kind of interactions result in a <code>touchcancel</code>.</p>
+<p>But when do browsers actually trigger this event? To start investigating, it was necessary to build a simple event logger to track all touch events. The test features a touch-area and logs the last touch event fired, making it easier to see exactly what kind of interactions result in a touchcancel.</p>
 
-<p>What follows is a list of findings for various mobile web browsers. It is interesting to note that <code>touchcancel</code> is not very predictable, especially on Android (2.3.5). But even on iOS5 you cannot always correctly guess what will trigger a <code>touchcancel</code>.</p>
+<p>What follows is a list of findings for various mobile web browsers. It is interesting to note that touchcancel is not very predictable, especially on Android (2.3.5). But even on iOS5 you cannot always correctly guess what will trigger a touchcancel.</p>
 
 <h2>iOS Safari 5.0.1 (iPhone 4 &amp; iPad 1)</h2>
 
@@ -50,7 +51,7 @@
 </ul>
 
 
-<p>Actions that do not trigger <code>touchcancel</code> during a <code>touchstart</code> or <code>touchmove</code> event:</p>
+<p>Actions that do not trigger touchcancel during a touchstart or touchmove event:</p>
 
 <ul>
 <li>User presses the bookmark button in Safari's bottom toolbar.</li>
@@ -67,9 +68,9 @@
 </ul>
 
 
-<p>In some of these circumstances the browser will simply fire a <code>touchend</code> instead of <code>touchcancel</code>. In others situations (such as the old–style popup notifications), <code>touchstart</code> or <code>touchmove</code> will remain active (even while the content is hidden underneath the notification), until the user releases their finger, at which point <code>touchend</code> is fired.</p>
+<p>In some of these circumstances the browser will simply fire a touchend instead of touchcancel. In others situations (such as the old–style popup notifications), touchstart or touchmove will remain active (even while the content is hidden underneath the notification), until the user releases their finger, at which point touchend is fired.</p>
 
-<p>Notable iOS5 system functions that will not activate during a <code>touchstart</code> or <code>touchmove</code> event:</p>
+<p>Notable iOS5 system functions that will not activate during a touchstart or touchmove event:</p>
 
 <ul>
 <li>User cannot focus on the Safari address bar.</li>
@@ -82,7 +83,7 @@
 
 <h2>Android 2.3.5 (Samsung Galaxy Y GT-S5363) stock browser</h2>
 
-<p>Actions that do trigger <code>touchcancel</code> during a <code>touchstart</code> or <code>touchmove</code> event:</p>
+<p>Actions that do trigger touchcancel during a touchstart or touchmove event:</p>
 
 <ul>
 <li>User presses the lock button.</li>
@@ -90,7 +91,7 @@
 </ul>
 
 
-<p>Actions that do not trigger <code>touchcancel</code> during a <code>touchstart</code> or <code>touchmove</code> event:</p>
+<p>Actions that do not trigger touchcancel during a touchstart or touchmove event:</p>
 
 <ul>
 <li>User presses the home button.</li>
@@ -99,7 +100,7 @@
 </ul>
 
 
-<p>Notable Android 2.3.5 system functions that will not activate during a <code>touchstart</code> or <code>touchmove</code> event:</p>
+<p>Notable Android 2.3.5 system functions that will not activate during a touchstart or touchmove event:</p>
 
 <ul>
 <li>User cannot press the menu or back buttons.</li>
@@ -111,22 +112,26 @@
 
 <h2>Opera Mobile</h2>
 
-<p>Opera Mobile 11.50 for Android was also tested. While the browser appears to have support for <code>touchcancel</code>, it does not actually seem to fire the event. In the case of pressing the home button for example, Opera Mobile appears to immediately fire <code>touchend</code> instead.</p>
+<p>Opera Mobile 11.50 for Android was also tested. While the browser appears to have support for touchcancel, it does not actually seem to fire the event. In the case of pressing the home button for example, Opera Mobile appears to immediately fire touchend instead.</p>
 
 <h2>BlackBerry Playbook (1.0.8.6067)</h2>
 
-<p>Even though the browser reportedly supports the <code>touchcancel</code> event, it does not appear to get fired at all. Even when pressing the power button to put the device on standby, <code>touchcancel</code> is not fired. The same goes for pressing browser tool bar buttons, or focusing on the address bar. It is also worth noting that when performing a <code>touchstart</code> or <code>touchmove</code>, the Playbook does not respond to any bevel swipe gestures.</p>
+<p>Even though the browser reportedly supports the touchcancel event, it does not appear to get fired at all. Even when pressing the power button to put the device on standby, touchcancel is not fired. The same goes for pressing browser tool bar buttons, or focusing on the address bar. It is also worth noting that when performing a touchstart or touchmove, the Playbook does not respond to any bevel swipe gestures.</p>
 
 <h2>Conclusion</h2>
 
-<p>It is appears from the tests that <code>touchcancel</code> is still a bit unpredictable. While it is easy enough to identify situations where it gets fired, there are often near identical situations where it does not. While the usefulness of this event is by no means in question, it seems like developers cannot yet rely on this event getting fired in all expected circumstances.</p>
+<p>It is appears from the tests that touchcancel is still a bit unpredictable. While it is easy enough to identify situations where it gets fired, there are often near identical situations where it does not. While the usefulness of this event is by no means in question, it seems like developers cannot yet rely on this event getting fired in all expected circumstances.</p>
 
-<p>What is clear though, is that you cannot rely on <code>touchend</code> getting fired on every device. You need to write code that deals with <code>touchcancel</code>. This is especially true on the iPad for example, say if you're building a multi–touch app or multi–player HTML5 game. Since there is no way of telling if the user has enabled Multitasking Gestures, your app needs to handle <code>touchcancel</code> gracefully. The unpredictable nature of Android browser also demonstrates the importance of dealing with this event, as failure to do so will likely cause bugs in your UI.</p>
+<p>What is clear though, is that you cannot rely on touchend getting fired on every device. You need to write code that deals with touchcancel. This is especially true on the iPad for example, say if you're building a multi–touch app or multi–player HTML5 game. Since there is no way of telling if the user has enabled Multitasking Gestures, your app needs to handle touchcancel gracefully. The unpredictable nature of Android browser also demonstrates the importance of dealing with this event, as failure to do so will likely cause bugs in your UI.</p>
 
-<p>So, next time you're writing your own touch events, don't forget about <code>touchcancel</code>. Despite the varying levels of browser support, it still comes in very handy when dealing with certain unexpected user interactions.</p>
+<p>So, next time you're writing your own touch events, don't forget about touchcancel. Despite the varying levels of browser support, it still comes in very handy when dealing with certain unexpected user interactions.</p>
 
 </article>
 
+    <form class="search" action="http://google.com/search" method="get">
+    <input type="hidden" name="q" value="site:alxgbsn.co.uk" />
+    <input class="search" type="search" name="q" results="0" placeholder="Search"/>
+</form>
     <footer role="contentinfo">
 	<p>Copyright &copy; Alex Gibson.</p>
 </footer>

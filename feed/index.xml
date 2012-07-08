@@ -4,7 +4,7 @@
  <title>Alex Gibson, Front End Developer</title>
  <link href="http://alxgbsn.co.uk/feed/" rel="self"/>
  <link href="http://alxgbsn.co.uk/"/>
- <updated>2012-07-04T22:42:02+01:00</updated>
+ <updated>2012-07-08T21:15:47+01:00</updated>
  <id>http://alxgbsn.co.uk/</id>
  <author>
    <name>Alex Gibson</name>
@@ -17,7 +17,7 @@
    <link href="http://alxgbsn.co.uk/2012/03/28/serving-ios-retina-startup-images-for-the-new-ipad"/>
    <updated>2012-03-28T00:00:00+01:00</updated>
    <id>http://alxgbsn.co.uk/2012/03/28/serving-ios-retina-startup-images-for-the-new-ipad</id>
-   <content type="html">&lt;p&gt;In the past we have touched on how to serve iOS startup images for full screen web apps using both &lt;a href=&quot;http://miniapps.co.uk/blog/post/ios-startup-images-using-css-media-queries/&quot;&gt;CSS media queries and JavaScript&lt;/a&gt; techniques. Now that the latest iPad sports a retina calibre display, we must again look at the best way to serve startup images in our web apps.&lt;/p&gt;
+   <content type="html">&lt;p&gt;In the past we have touched on how to serve iOS startup images for full screen web apps using both &lt;a href=&quot;http://alxgbsn.co.uk/2011/10/24/ios-startup-images-using-css-media-queries/&quot;&gt;CSS media queries and JavaScript&lt;/a&gt; techniques. Now that the latest iPad sports a retina calibre display, we must again look at the best way to serve startup images in our web apps.&lt;/p&gt;
 
 &lt;p&gt;Given the potential bandwidth cost incurred by downloading such large images (2048 x 1496 landscape, 1536 x 2006 portrait), the most advisable technique is to use JavaScript to serve only the assets a device requires (rather than downloading every asset, which would happen if we used media queries). This can be done using the following code snippet in the &lt;head&gt; of your page.&lt;/p&gt;
 
@@ -96,7 +96,7 @@ function tapDidOccur (e) {
    <id>http://alxgbsn.co.uk/2011/12/23/different-ways-to-trigger-touchcancel-in-mobile-browsers</id>
    <content type="html">&lt;p&gt;The &lt;code&gt;touchcancel&lt;/code&gt; event is often neglected when building touch–interfaces using JavaScript. Historically, browsers vendors have never really published documentation detailing the circumstances as to when this event gets fired, and hence it has always been associated with a level of obscurity by many developers. The aim of this post is to try and shed some light on the matter.&lt;/p&gt;
 
-&lt;p&gt;Apple originally created touch events for iOS Safari, which have since been adopted as a basis for the &lt;a href=&quot;http://www.w3.org/TR/2011/WD-touch-events-20110505/&quot;&gt;W3C Touch Events Specification&lt;/a&gt;. The original &lt;a href=&quot;http://developer.apple.com/library/safari/#documentation/UserExperience/Reference/TouchEventClassReference/TouchEvent/TouchEvent.html%23//apple_ref/doc/uid/TP40009358&quot;&gt;Safari DOM Additions Reference&lt;/a&gt; documentation provides very little information on &lt;code&gt;touchcancel&lt;/code&gt;:&lt;/p&gt;
+&lt;p&gt;Apple originally created touch events for iOS Safari, which have since been adopted as a basis for the &lt;a href=&quot;http://www.w3.org/TR/2011/WD-touch-events-20110505/&quot;&gt;W3C Touch Events Specification&lt;/a&gt;. The original &lt;a href=&quot;http://developer.apple.com/library/safari/#documentation/UserExperience/Reference/TouchEventClassReference/TouchEvent/TouchEvent.html%23//apple_ref/doc/uid/TP40009358&quot;&gt;Safari DOM Additions Reference&lt;/a&gt; documentation provides very little information on touchcancel:&lt;/p&gt;
 
 &lt;blockquote&gt;&lt;p&gt;Sent when the system cancels tracking for the touch.&lt;/p&gt;&lt;/blockquote&gt;
 
@@ -104,11 +104,11 @@ function tapDidOccur (e) {
 
 &lt;blockquote&gt;&lt;p&gt;A user agent must dispatch this event type to indicate when a touch point has been disrupted in an implementation-specific manner, such as a synchronous event or action originating from the UA canceling the touch, or the touch point leaving the document window into a non-document area which is capable of handling user interactions. (e.g. The UA's native user interface, plug-ins) A user agent may also dispatch this event type when the user places more touch points on the touch surface than the device or implementation is configured to store, in which case the earliest Touch object in the TouchList should be removed.&lt;/p&gt;&lt;/blockquote&gt;
 
-&lt;p&gt;From this description we can begin to understand &lt;code&gt;touchcancel&lt;/code&gt; with regard to browser behaviour a little better. It not only helps the browser keep accurate references to active &lt;code&gt;Touch&lt;/code&gt; objects in the &lt;code&gt;TouchList&lt;/code&gt;, but it can also be used by developers to carry out UI specific tasks, such as reseting any variables used during &lt;code&gt;touchstart&lt;/code&gt; or &lt;code&gt;touchmove&lt;/code&gt;. In the event that the system cancels tracking and the &lt;code&gt;touchend&lt;/code&gt; event does not fire, &lt;code&gt;touchcancel&lt;/code&gt; saves the day.&lt;/p&gt;
+&lt;p&gt;From this description we can begin to understand touchcancel with regard to browser behaviour a little better. It not only helps the browser keep accurate references to active &lt;code&gt;Touch&lt;/code&gt; objects in the &lt;code&gt;TouchList&lt;/code&gt;, but it can also be used by developers to carry out UI specific tasks, such as reseting any variables used during &lt;code&gt;touchstart&lt;/code&gt; or &lt;code&gt;touchmove&lt;/code&gt;. In the event that the system cancels tracking and the &lt;code&gt;touchend&lt;/code&gt; event does not fire, touchcancel saves the day.&lt;/p&gt;
 
-&lt;p&gt;But when do browsers actually trigger this event? To start investigating, it was necessary to build a simple event logger to track all touch events. The test features a touch-area and logs the last touch event fired, making it easier to see exactly what kind of interactions result in a &lt;code&gt;touchcancel&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;But when do browsers actually trigger this event? To start investigating, it was necessary to build a simple event logger to track all touch events. The test features a touch-area and logs the last touch event fired, making it easier to see exactly what kind of interactions result in a touchcancel.&lt;/p&gt;
 
-&lt;p&gt;What follows is a list of findings for various mobile web browsers. It is interesting to note that &lt;code&gt;touchcancel&lt;/code&gt; is not very predictable, especially on Android (2.3.5). But even on iOS5 you cannot always correctly guess what will trigger a &lt;code&gt;touchcancel&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;What follows is a list of findings for various mobile web browsers. It is interesting to note that touchcancel is not very predictable, especially on Android (2.3.5). But even on iOS5 you cannot always correctly guess what will trigger a touchcancel.&lt;/p&gt;
 
 &lt;h2&gt;iOS Safari 5.0.1 (iPhone 4 &amp;amp; iPad 1)&lt;/h2&gt;
 
@@ -123,7 +123,7 @@ function tapDidOccur (e) {
 &lt;/ul&gt;
 
 
-&lt;p&gt;Actions that do not trigger &lt;code&gt;touchcancel&lt;/code&gt; during a &lt;code&gt;touchstart&lt;/code&gt; or &lt;code&gt;touchmove&lt;/code&gt; event:&lt;/p&gt;
+&lt;p&gt;Actions that do not trigger touchcancel during a touchstart or touchmove event:&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;User presses the bookmark button in Safari's bottom toolbar.&lt;/li&gt;
@@ -140,9 +140,9 @@ function tapDidOccur (e) {
 &lt;/ul&gt;
 
 
-&lt;p&gt;In some of these circumstances the browser will simply fire a &lt;code&gt;touchend&lt;/code&gt; instead of &lt;code&gt;touchcancel&lt;/code&gt;. In others situations (such as the old–style popup notifications), &lt;code&gt;touchstart&lt;/code&gt; or &lt;code&gt;touchmove&lt;/code&gt; will remain active (even while the content is hidden underneath the notification), until the user releases their finger, at which point &lt;code&gt;touchend&lt;/code&gt; is fired.&lt;/p&gt;
+&lt;p&gt;In some of these circumstances the browser will simply fire a touchend instead of touchcancel. In others situations (such as the old–style popup notifications), touchstart or touchmove will remain active (even while the content is hidden underneath the notification), until the user releases their finger, at which point touchend is fired.&lt;/p&gt;
 
-&lt;p&gt;Notable iOS5 system functions that will not activate during a &lt;code&gt;touchstart&lt;/code&gt; or &lt;code&gt;touchmove&lt;/code&gt; event:&lt;/p&gt;
+&lt;p&gt;Notable iOS5 system functions that will not activate during a touchstart or touchmove event:&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;User cannot focus on the Safari address bar.&lt;/li&gt;
@@ -155,7 +155,7 @@ function tapDidOccur (e) {
 
 &lt;h2&gt;Android 2.3.5 (Samsung Galaxy Y GT-S5363) stock browser&lt;/h2&gt;
 
-&lt;p&gt;Actions that do trigger &lt;code&gt;touchcancel&lt;/code&gt; during a &lt;code&gt;touchstart&lt;/code&gt; or &lt;code&gt;touchmove&lt;/code&gt; event:&lt;/p&gt;
+&lt;p&gt;Actions that do trigger touchcancel during a touchstart or touchmove event:&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;User presses the lock button.&lt;/li&gt;
@@ -163,7 +163,7 @@ function tapDidOccur (e) {
 &lt;/ul&gt;
 
 
-&lt;p&gt;Actions that do not trigger &lt;code&gt;touchcancel&lt;/code&gt; during a &lt;code&gt;touchstart&lt;/code&gt; or &lt;code&gt;touchmove&lt;/code&gt; event:&lt;/p&gt;
+&lt;p&gt;Actions that do not trigger touchcancel during a touchstart or touchmove event:&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;User presses the home button.&lt;/li&gt;
@@ -172,7 +172,7 @@ function tapDidOccur (e) {
 &lt;/ul&gt;
 
 
-&lt;p&gt;Notable Android 2.3.5 system functions that will not activate during a &lt;code&gt;touchstart&lt;/code&gt; or &lt;code&gt;touchmove&lt;/code&gt; event:&lt;/p&gt;
+&lt;p&gt;Notable Android 2.3.5 system functions that will not activate during a touchstart or touchmove event:&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;User cannot press the menu or back buttons.&lt;/li&gt;
@@ -184,19 +184,19 @@ function tapDidOccur (e) {
 
 &lt;h2&gt;Opera Mobile&lt;/h2&gt;
 
-&lt;p&gt;Opera Mobile 11.50 for Android was also tested. While the browser appears to have support for &lt;code&gt;touchcancel&lt;/code&gt;, it does not actually seem to fire the event. In the case of pressing the home button for example, Opera Mobile appears to immediately fire &lt;code&gt;touchend&lt;/code&gt; instead.&lt;/p&gt;
+&lt;p&gt;Opera Mobile 11.50 for Android was also tested. While the browser appears to have support for touchcancel, it does not actually seem to fire the event. In the case of pressing the home button for example, Opera Mobile appears to immediately fire touchend instead.&lt;/p&gt;
 
 &lt;h2&gt;BlackBerry Playbook (1.0.8.6067)&lt;/h2&gt;
 
-&lt;p&gt;Even though the browser reportedly supports the &lt;code&gt;touchcancel&lt;/code&gt; event, it does not appear to get fired at all. Even when pressing the power button to put the device on standby, &lt;code&gt;touchcancel&lt;/code&gt; is not fired. The same goes for pressing browser tool bar buttons, or focusing on the address bar. It is also worth noting that when performing a &lt;code&gt;touchstart&lt;/code&gt; or &lt;code&gt;touchmove&lt;/code&gt;, the Playbook does not respond to any bevel swipe gestures.&lt;/p&gt;
+&lt;p&gt;Even though the browser reportedly supports the touchcancel event, it does not appear to get fired at all. Even when pressing the power button to put the device on standby, touchcancel is not fired. The same goes for pressing browser tool bar buttons, or focusing on the address bar. It is also worth noting that when performing a touchstart or touchmove, the Playbook does not respond to any bevel swipe gestures.&lt;/p&gt;
 
 &lt;h2&gt;Conclusion&lt;/h2&gt;
 
-&lt;p&gt;It is appears from the tests that &lt;code&gt;touchcancel&lt;/code&gt; is still a bit unpredictable. While it is easy enough to identify situations where it gets fired, there are often near identical situations where it does not. While the usefulness of this event is by no means in question, it seems like developers cannot yet rely on this event getting fired in all expected circumstances.&lt;/p&gt;
+&lt;p&gt;It is appears from the tests that touchcancel is still a bit unpredictable. While it is easy enough to identify situations where it gets fired, there are often near identical situations where it does not. While the usefulness of this event is by no means in question, it seems like developers cannot yet rely on this event getting fired in all expected circumstances.&lt;/p&gt;
 
-&lt;p&gt;What is clear though, is that you cannot rely on &lt;code&gt;touchend&lt;/code&gt; getting fired on every device. You need to write code that deals with &lt;code&gt;touchcancel&lt;/code&gt;. This is especially true on the iPad for example, say if you're building a multi–touch app or multi–player HTML5 game. Since there is no way of telling if the user has enabled Multitasking Gestures, your app needs to handle &lt;code&gt;touchcancel&lt;/code&gt; gracefully. The unpredictable nature of Android browser also demonstrates the importance of dealing with this event, as failure to do so will likely cause bugs in your UI.&lt;/p&gt;
+&lt;p&gt;What is clear though, is that you cannot rely on touchend getting fired on every device. You need to write code that deals with touchcancel. This is especially true on the iPad for example, say if you're building a multi–touch app or multi–player HTML5 game. Since there is no way of telling if the user has enabled Multitasking Gestures, your app needs to handle touchcancel gracefully. The unpredictable nature of Android browser also demonstrates the importance of dealing with this event, as failure to do so will likely cause bugs in your UI.&lt;/p&gt;
 
-&lt;p&gt;So, next time you're writing your own touch events, don't forget about &lt;code&gt;touchcancel&lt;/code&gt;. Despite the varying levels of browser support, it still comes in very handy when dealing with certain unexpected user interactions.&lt;/p&gt;
+&lt;p&gt;So, next time you're writing your own touch events, don't forget about touchcancel. Despite the varying levels of browser support, it still comes in very handy when dealing with certain unexpected user interactions.&lt;/p&gt;
 </content>
  </entry>
  
@@ -812,6 +812,70 @@ document.querySelector('#panel').setAttribute('aria-hidden', 'false'); //visible
 &lt;h2&gt;Final Note&lt;/h2&gt;
 
 &lt;p&gt;These are just a few basic things that you can do to help improve the accessibility of your web content for VoiceOver on iOS. Mobile specific content is sadly often forgotten when it comes to accessibility, since many still regard it as not having the right tools available to assist people. It is a good thing that iOS uses the same underlying technology as VoiceOver for Mac OSX, because if you're building accessible content for the web, then you're already well on the way to providing a great experience on iOS too.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Using HTML5 localStorage as a fallback for offline form submission</title>
+   <link href="http://alxgbsn.co.uk/2010/12/18/using-html5-localstorage-as-a-fallback-for-offline-form-submission"/>
+   <updated>2010-12-18T00:00:00+00:00</updated>
+   <id>http://alxgbsn.co.uk/2010/12/18/using-html5-localstorage-as-a-fallback-for-offline-form-submission</id>
+   <content type="html">&lt;p&gt;I recently put together a working demo for a client showing how you might use HTML5 localStorage as a fallback for form data submission when a mobile device is offline without signal. I've published the full &lt;a href=&quot;https://github.com/alexgibson/OfflineForm&quot;&gt;source code over on GitHub&lt;/a&gt; together with a demo for anyone who is interested.&lt;/p&gt;
+
+&lt;p&gt;The demo uses &lt;code&gt;window.navigator.onLine&lt;/code&gt; to listen for a boolean value of &lt;code&gt;true&lt;/code&gt; or &lt;code&gt;false&lt;/code&gt;, determining whether the device is online or offline. When online, the app makes a regular XmlHttpRequest and sends data to a server. If the device loses signal and goes offline, the app queues up and saves submitted data to localStorage as a JSON string. When online connection is next restored, the app then re-sends the queued data to the server automatically. Once the data has been sent successfully, the item is then removed from localStorage.&lt;/p&gt;
+
+&lt;p&gt;I won't go through all the code line by line as it's reasonably straight forward, but feel free to take a closer look on &lt;a href=&quot;https://github.com/alexgibson/OfflineForm&quot;&gt;GitHub&lt;/a&gt;. Many Webkit based smart phones now support &lt;code&gt;window.navigator.onLine&lt;/code&gt;, as does desktop Safari or Firefox. To test, try enabling flight mode on your phone, or disable wifi on your laptop once the app is open.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>New sizes attribute in iOS 4.2.1 for web clip icons</title>
+   <link href="http://alxgbsn.co.uk/2010/10/30/new-sizes-attribute-in-ios-421-for-web-clip-icons"/>
+   <updated>2010-10-30T00:00:00+01:00</updated>
+   <id>http://alxgbsn.co.uk/2010/10/30/new-sizes-attribute-in-ios-421-for-web-clip-icons</id>
+   <content type="html">&lt;p&gt;A small but relatively undiscovered new feature in iOS 4.2.1 is the new &lt;a href=&quot;http://developer.apple.com/library/safari/#documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html&quot;&gt;'sizes' attribute&lt;/a&gt; for defining different sized web clip icons. This new attribute allows you to cater for different device resolutions on iOS when publishing home screen icons for your websites. Here's an example:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;link rel=&quot;apple-touch-icon&quot; href=&quot;touch-icon-iphone.png&quot; /&amp;gt;
+&amp;lt;link rel=&quot;apple-touch-icon&quot; sizes=&quot;72x72&quot; href=&quot;touch-icon-ipad.png&quot; /&amp;gt;
+&amp;lt;link rel=&quot;apple-touch-icon&quot; sizes=&quot;114x114&quot; href=&quot;touch-icon-iphone4.png&quot; /&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now what we really need is for this new attribute to also work on &lt;code&gt;apple-touch-startup-image&lt;/code&gt;, so we can finally define different resolution startup images.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Targeting iPhone 4 using CSS Media Queries</title>
+   <link href="http://alxgbsn.co.uk/2010/06/26/targeting-iphone-4-using-css-media-queries"/>
+   <updated>2010-06-26T00:00:00+01:00</updated>
+   <id>http://alxgbsn.co.uk/2010/06/26/targeting-iphone-4-using-css-media-queries</id>
+   <content type="html">&lt;p&gt;With the release of iPhone 4 and it's 326ppi display, there has been a fair bit of speculation as to what impact this would have on mobile web apps and websites that are optimised for mobile screen sizes. How would web developers target both older iPhones with a 480x320 display, as well as the iPhone 4's 960x640 display? Would we need separate CSS stylesheets for each device? How would images need to be optimised for the new screens?&lt;/p&gt;
+
+&lt;p&gt;It turns out that CSS media queries targeting 320px screens still work on iPhone 4. It's all down to Mobile Safari utilising a 'device to pixel ratio' density of 2. There is actually a distinct difference between a device (screen) pixel and a pixel that we typically define in CSS. For example, when the iPhone 4 browser viewport is equal to the device width, 1 CSS pixel actually translates to 2x2 device pixels. For those interested, there is a quite old (but very relevant) Webkit article about &lt;a href=&quot;http://webkit.org/blog/55/high-dpi-web-sites/&quot;&gt;high dpi websites&lt;/a&gt;. It makes for an interesting read.&lt;/p&gt;
+
+&lt;p&gt;This is largely good news for mobile web developers, as very little needs to be done to our mobile CSS stylesheets for iPhone 4. Device pixels are translated to CSS pixels automatically. But what about images? Well, this is where some work needs to be done. In order for images to look crisp on the new iPhone 4 display, we now need to serve images that have a higher ppi than the standard web traditionally uses. To do this, the iPhone 4 (and any other high ppi device) can be targeted using the following CSS media query (Notice I have included rules both with and without the -webkit venor prefix).&lt;/p&gt;
+
+&lt;p&gt;Update (07/10/11) - the code below has now been updated to include additional vendor prefix properties, that did not exist at the original time of publishing this article.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;/* High PPI Devices ----------- */
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+only screen and (min--moz-device-pixel-ratio: 1.5),
+only screen and (-o-device-pixel-ratio: 3/2), 
+only screen and (min-device-pixel-ratio: 1.5) {
+
+    //high resolution images go here
+
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I won't go into great detail on how to best serve images, but it basically involves creating images that are double the pixel size that you would traditionally need (e.g. a 100x50 pixel image translates to 200x100 pixels). You can then set the &lt;a href=&quot;http://www.w3.org/TR/2002/WD-css3-background-20020802/#background-size&quot;&gt;background size in CSS&lt;/a&gt; so the large images still take up the same number of CSS pixels as they would on a normal display. &lt;a href=&quot;http://blog.iwalt.com/2010/06/targeting-the-iphone-4-retina-display-with-css3-media-queries.html&quot;&gt;Walt Dickinson&lt;/a&gt; has already written a nice article that has some more info on how to do this.&lt;/p&gt;
+
+&lt;p&gt;Finally, one last tip – you can also test for the same value using using JavaScript:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;if (window.devicePixelRatio == 2) {
+    //Targeted code goes here
+}
+&lt;/code&gt;&lt;/pre&gt;
 </content>
  </entry>
  
