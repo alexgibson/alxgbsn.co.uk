@@ -32,108 +32,114 @@
 
 <p>Implementation was quite straight forward, with the application creating a simple WebSQL database on first launch, together with a single table called 'appdata' to act as a main store.</p>
 
-<pre><code>var storage = {},
-    myData = null,
-    dbName = 'mydatabase',
-    dbVersion = '1.0',
-    dbDescription = 'app data store',
-    dbSize = 20 * 1024 * 1024;
+<div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">storage</span> <span class="o">=</span> <span class="p">{},</span>
+    <span class="nx">myData</span> <span class="o">=</span> <span class="kc">null</span><span class="p">,</span>
+    <span class="nx">dbName</span> <span class="o">=</span> <span class="s1">&#39;mydatabase&#39;</span><span class="p">,</span>
+    <span class="nx">dbVersion</span> <span class="o">=</span> <span class="s1">&#39;1.0&#39;</span><span class="p">,</span>
+    <span class="nx">dbDescription</span> <span class="o">=</span> <span class="s1">&#39;app data store&#39;</span><span class="p">,</span>
+    <span class="nx">dbSize</span> <span class="o">=</span> <span class="mi">20</span> <span class="o">*</span> <span class="mi">1024</span> <span class="o">*</span> <span class="mi">1024</span><span class="p">;</span>
 
-function handleDbError (e) {
+<span class="kd">function</span> <span class="nx">handleDbError</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+    
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">code</span><span class="p">);</span>
+<span class="p">}</span>
 
-    console.log(e.message);
-    console.log(e.code);
-}
+<span class="kd">function</span> <span class="nx">initDatabase</span> <span class="p">()</span> <span class="p">{</span>
+    
+    <span class="k">try</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
+                        
+        <span class="nx">storage</span><span class="p">.</span><span class="nx">db</span> <span class="o">=</span> <span class="nx">openDatabase</span><span class="p">(</span><span class="nx">dbName</span><span class="p">,</span> <span class="nx">dbVersion</span><span class="p">,</span> <span class="nx">dbDescription</span><span class="p">,</span> <span class="nx">dbSize</span><span class="p">);</span>
+        <span class="nx">storage</span><span class="p">.</span><span class="nx">db</span><span class="p">.</span><span class="nx">transaction</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">tx</span><span class="p">)</span> <span class="p">{</span>
+                    
+            <span class="nx">tx</span><span class="p">.</span><span class="nx">executeSql</span><span class="p">(</span><span class="s2">&quot;CREATE TABLE IF NOT EXISTS appdata (id unique, text)&quot;</span><span class="p">);</span>
+                        
+        <span class="p">},</span> <span class="nx">handleDbError</span><span class="p">);</span>
+                    
+        <span class="nx">storage</span><span class="p">.</span><span class="nx">db</span><span class="p">.</span><span class="nx">transaction</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">tx</span><span class="p">)</span> <span class="p">{</span>
+                    
+            <span class="nx">tx</span><span class="p">.</span><span class="nx">executeSql</span><span class="p">(</span><span class="s2">&quot;INSERT OR IGNORE INTO appdata (id, text) VALUES(?,?)&quot;</span><span class="p">,</span> <span class="p">[</span><span class="nx">dbName</span><span class="p">,</span> <span class="nx">data</span><span class="p">]);</span>
+                    
+        <span class="p">},</span> <span class="nx">handleDbError</span><span class="p">);</span>
+                                    
+        <span class="p">}</span> <span class="k">catch</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">handleDbError</span><span class="p">(</span><span class="nx">e</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
-function initDatabase () {
-
-    try {
-        var data = '';
-
-        storage.db = openDatabase(dbName, dbVersion, dbDescription, dbSize);
-        storage.db.transaction(function (tx) {
-
-            tx.executeSql("CREATE TABLE IF NOT EXISTS appdata (id unique, text)");
-
-        }, handleDbError);
-
-        storage.db.transaction(function (tx) {
-
-            tx.executeSql("INSERT OR IGNORE INTO appdata (id, text) VALUES(?,?)", [dbName, data]);
-
-        }, handleDbError);
-
-        } catch(e) {
-            handleDbError(e);
-    }
-}
-
-initDatabase();
+<span class="nx">initDatabase</span><span class="p">();</span>
 </code></pre>
+</div>
+
 
 <p>The application then makes a remote server call, and the JSON string returned as a response is then parsed and used immediately. At the same time, the data is saved asynchronously to the local database (in a single table row entry).</p>
 
-<pre><code>function getData () {
+<div class="highlight"><pre><code class="javascript"><span class="kd">function</span> <span class="nx">getData</span> <span class="p">()</span> <span class="p">{</span>
+            
+    <span class="kd">var</span> <span class="nx">myRequest</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>
 
-    var myRequest = new XMLHttpRequest();
+    <span class="nx">myRequest</span><span class="p">.</span><span class="nx">onreadystatechange</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>    
 
-    myRequest.onreadystatechange = function () {    
+        <span class="k">if</span> <span class="p">(</span><span class="nx">myRequest</span><span class="p">.</span><span class="nx">readyState</span> <span class="o">===</span> <span class="mi">4</span> <span class="o">&amp;&amp;</span> <span class="nx">myRequest</span><span class="p">.</span><span class="nx">status</span> <span class="o">===</span> <span class="mi">200</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">myData</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">myRequest</span><span class="p">.</span><span class="nx">responseText</span><span class="p">);</span>
+            <span class="nx">updateDatabase</span><span class="p">();</span>
+            <span class="nx">startApp</span><span class="p">();</span>          
+        <span class="p">}</span>
+    <span class="p">};</span>
 
-        if (myRequest.readyState === 4 &amp;&amp; myRequest.status === 200) {
-            myData = JSON.parse(myRequest.responseText);
-            updateDatabase();
-            startApp();         
-        }
-    };
+    <span class="nx">myRequest</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s1">&#39;GET&#39;</span><span class="p">,</span> <span class="s1">&#39;http://&#39;</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+    <span class="nx">myRequest</span><span class="p">.</span><span class="nx">send</span><span class="p">();</span>
+<span class="p">}</span>
 
-    myRequest.open('GET', 'http://', true);
-    myRequest.send();
-}
-
-function updateDatabase () {
-
-    try {   
-        var data = JSON.stringify(myData);
-
-        storage.db = openDatabase(dbName, dbVersion, dbDescription, dbSize);        
-        storage.db.transaction(function (tx) {
-
-            tx.executeSql("UPDATE appdata SET text=? WHERE id=?", [data, dbName]);
-
-        }, handleDbError);
-
-        } catch(e) {                
-            handleDbError(e);
-    }
-}
+<span class="kd">function</span> <span class="nx">updateDatabase</span> <span class="p">()</span> <span class="p">{</span>
+    
+    <span class="k">try</span> <span class="p">{</span> 
+        <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">myData</span><span class="p">);</span>
+                        
+        <span class="nx">storage</span><span class="p">.</span><span class="nx">db</span> <span class="o">=</span> <span class="nx">openDatabase</span><span class="p">(</span><span class="nx">dbName</span><span class="p">,</span> <span class="nx">dbVersion</span><span class="p">,</span> <span class="nx">dbDescription</span><span class="p">,</span> <span class="nx">dbSize</span><span class="p">);</span>       
+        <span class="nx">storage</span><span class="p">.</span><span class="nx">db</span><span class="p">.</span><span class="nx">transaction</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">tx</span><span class="p">)</span> <span class="p">{</span>
+                    
+            <span class="nx">tx</span><span class="p">.</span><span class="nx">executeSql</span><span class="p">(</span><span class="s2">&quot;UPDATE appdata SET text=? WHERE id=?&quot;</span><span class="p">,</span> <span class="p">[</span><span class="nx">data</span><span class="p">,</span> <span class="nx">dbName</span><span class="p">]);</span>
+                    
+        <span class="p">},</span> <span class="nx">handleDbError</span><span class="p">);</span>
+                                    
+        <span class="p">}</span> <span class="k">catch</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>             
+            <span class="nx">handleDbError</span><span class="p">(</span><span class="nx">e</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </code></pre>
+</div>
+
 
 <p>If the app is later launched while offline, local data is then read back from the database and parsed back to an object, so the app only ever requires a single database read operation.</p>
 
-<pre><code>function throwReadError (e) {
+<div class="highlight"><pre><code class="javascript"><span class="kd">function</span> <span class="nx">throwReadError</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+    
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">code</span><span class="p">);</span>
+            
+    <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">myData</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">showAlert</span><span class="p">(</span><span class="s2">&quot;This app requires an internet connection for first launch&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+        
+<span class="kd">function</span> <span class="nx">readFromDatabase</span> <span class="p">()</span> <span class="p">{</span>
+                
+    <span class="nx">storage</span><span class="p">.</span><span class="nx">db</span> <span class="o">=</span> <span class="nx">openDatabase</span><span class="p">(</span><span class="nx">dbName</span><span class="p">,</span> <span class="nx">dbVersion</span><span class="p">,</span> <span class="nx">dbDescription</span><span class="p">,</span> <span class="nx">dbSize</span><span class="p">);</span>
+    <span class="nx">storage</span><span class="p">.</span><span class="nx">db</span><span class="p">.</span><span class="nx">transaction</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">tx</span><span class="p">)</span> <span class="p">{</span>
+                
+        <span class="nx">tx</span><span class="p">.</span><span class="nx">executeSql</span><span class="p">(</span><span class="s1">&#39;SELECT * FROM appdata&#39;</span><span class="p">,</span> <span class="p">[],</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">tx</span><span class="p">,</span> <span class="nx">results</span><span class="p">)</span> <span class="p">{</span>
+                
+            <span class="nx">myData</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">results</span><span class="p">.</span><span class="nx">rows</span><span class="p">.</span><span class="nx">item</span><span class="p">(</span><span class="mi">0</span><span class="p">).</span><span class="nx">text</span><span class="p">);</span>
+            <span class="nx">startApp</span><span class="p">();</span>
+        <span class="p">});</span>
 
-    console.log(e.message);
-    console.log(e.code);
-
-    if(!myData) {
-        showAlert("This app requires an internet connection for first launch");
-    }
-}
-
-function readFromDatabase () {
-
-    storage.db = openDatabase(dbName, dbVersion, dbDescription, dbSize);
-    storage.db.transaction(function (tx) {
-
-        tx.executeSql('SELECT * FROM appdata', [], function (tx, results) {
-
-            myData = JSON.parse(results.rows.item(0).text);
-            startApp();
-        });
-
-    }, throwReadError);     
-}
+    <span class="p">},</span> <span class="nx">throwReadError</span><span class="p">);</span>       
+<span class="p">}</span>
 </code></pre>
+</div>
+
 
 <p>The PlayBook coped with this size of data store very well. We never hit any bugs or performance issues. Updating the client data on subsequent app launches was also pretty trivial due to the very basic data store model. The PlayBook does not appear to ask the user for storage permission at any size of data we tested, although 50MB is likely the limit if other browsers are anything to go by.</p>
 
@@ -141,21 +147,25 @@ function readFromDatabase () {
 
 <p>For offline detection the app initially used <code>navigator.Online</code>, which at first appears to be supported by the PlayBook Browser.</p>
 
-<pre><code>var isOnline = window.navigator.onLine;
+<div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">isOnline</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">navigator</span><span class="p">.</span><span class="nx">onLine</span><span class="p">;</span>
 
-initDatabase();
-
-if (isOnline) {
-    getData();          
-} else {
-    readFromDatabase();
-}
+<span class="nx">initDatabase</span><span class="p">();</span>
+                
+<span class="k">if</span> <span class="p">(</span><span class="nx">isOnline</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">getData</span><span class="p">();</span>           
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="nx">readFromDatabase</span><span class="p">();</span>
+<span class="p">}</span>
 </code></pre>
+</div>
+
 
 <p>However, once the first WebWorks build was made it became clear something was not right, since <code>navigator.Online</code> was always returning <code>true</code> on launch. This turns out to be an <a href="http://supportforums.blackberry.com/t5/Web-and-WebWorks-Development/Bug-report-navigator-onLine-incorrect-status/m-p/1214513/highlight/true#M15043">existing bug</a>, but one that can be easily fixed using a WebWorks API call for offline detection:</p>
 
-<pre><code>var isOnline = 'blackberry' in window ? blackberry.system.hasDataCoverage() : window.navigator.onLine;
+<div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">isOnline</span> <span class="o">=</span> <span class="s1">&#39;blackberry&#39;</span> <span class="k">in</span> <span class="nb">window</span> <span class="o">?</span> <span class="nx">blackberry</span><span class="p">.</span><span class="nx">system</span><span class="p">.</span><span class="nx">hasDataCoverage</span><span class="p">()</span> <span class="o">:</span> <span class="nb">window</span><span class="p">.</span><span class="nx">navigator</span><span class="p">.</span><span class="nx">onLine</span><span class="p">;</span>
 </code></pre>
+</div>
+
 
 <p>Notice here we use a simple feature detect using the <code>blackberry</code> window object, so we can carry on using <code>navigator.Online</code> in the browser (for development purposes).</p>
 
@@ -179,24 +189,26 @@ if (isOnline) {
 
 <p>API wise, the app used 95% browser–based API's. The remaining areas where WebWorks had to step in were for small things, like opening external links in the PlayBook browser and providing native alert boxes.</p>
 
-<pre><code>function showAlert (message) {
-    try {
-        blackberry.ui.dialog.standardAskAsync(message, blackberry.ui.dialog.D_OK, {
-            title : "Alert", 
-            size: blackberry.ui.dialog.SIZE_MEDIUM, 
-            position : blackberry.ui.dialog.CENTER
-        });
-    } catch (e) {
-        alert(message);
-        console.log(e);
-    }
-}
+<div class="highlight"><pre><code class="javascript"><span class="kd">function</span> <span class="nx">showAlert</span> <span class="p">(</span><span class="nx">message</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">try</span> <span class="p">{</span>
+        <span class="nx">blackberry</span><span class="p">.</span><span class="nx">ui</span><span class="p">.</span><span class="nx">dialog</span><span class="p">.</span><span class="nx">standardAskAsync</span><span class="p">(</span><span class="nx">message</span><span class="p">,</span> <span class="nx">blackberry</span><span class="p">.</span><span class="nx">ui</span><span class="p">.</span><span class="nx">dialog</span><span class="p">.</span><span class="nx">D_OK</span><span class="p">,</span> <span class="p">{</span>
+            <span class="nx">title</span> <span class="o">:</span> <span class="s2">&quot;Alert&quot;</span><span class="p">,</span> 
+            <span class="nx">size</span><span class="o">:</span> <span class="nx">blackberry</span><span class="p">.</span><span class="nx">ui</span><span class="p">.</span><span class="nx">dialog</span><span class="p">.</span><span class="nx">SIZE_MEDIUM</span><span class="p">,</span> 
+            <span class="nx">position</span> <span class="o">:</span> <span class="nx">blackberry</span><span class="p">.</span><span class="nx">ui</span><span class="p">.</span><span class="nx">dialog</span><span class="p">.</span><span class="nx">CENTER</span>
+        <span class="p">});</span>
+    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">alert</span><span class="p">(</span><span class="nx">message</span><span class="p">);</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">e</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
-function launchBrowser (url) {
-    var args = new blackberry.invoke.BrowserArguments(url);
-    blackberry.invoke.invoke(blackberry.invoke.APP_BROWSER, args);
-}
+<span class="kd">function</span> <span class="nx">launchBrowser</span> <span class="p">(</span><span class="nx">url</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">args</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">blackberry</span><span class="p">.</span><span class="nx">invoke</span><span class="p">.</span><span class="nx">BrowserArguments</span><span class="p">(</span><span class="nx">url</span><span class="p">);</span>
+    <span class="nx">blackberry</span><span class="p">.</span><span class="nx">invoke</span><span class="p">.</span><span class="nx">invoke</span><span class="p">(</span><span class="nx">blackberry</span><span class="p">.</span><span class="nx">invoke</span><span class="p">.</span><span class="nx">APP_BROWSER</span><span class="p">,</span> <span class="nx">args</span><span class="p">);</span>
+<span class="p">}</span>
 </code></pre>
+</div>
+
 
 <h2>Remote debugging</h2>
 
