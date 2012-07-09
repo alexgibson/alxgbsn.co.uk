@@ -18,6 +18,7 @@ body {
 nav[role=navigation] {
     display: block;
     overflow: hidden;
+    border-bottom: 1px solid #a7a7a7;
 }
 
 nav[role=navigation] > ul {
