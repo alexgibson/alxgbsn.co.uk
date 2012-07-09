@@ -11,20 +11,22 @@ This is largely good news for mobile web developers, as very little needs to be 
 
 Update (07/10/11) - the code below has now been updated to include additional vendor prefix properties, that did not exist at the original time of publishing this article.
 
-	/* High PPI Devices ----------- */
-	@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
-	only screen and (min--moz-device-pixel-ratio: 1.5),
-	only screen and (-o-device-pixel-ratio: 3/2), 
-	only screen and (min-device-pixel-ratio: 1.5) {
-
-		//high resolution images go here
-
-	}
+{% highlight css %}
+/* High PPI Devices ----------- */
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+only screen and (min--moz-device-pixel-ratio: 1.5),
+only screen and (-o-device-pixel-ratio: 3/2), 
+only screen and (min-device-pixel-ratio: 1.5) {
+	/*high resolution images go here*/
+}
+{% endhighlight %}
 
 I won't go into great detail on how to best serve images, but it basically involves creating images that are double the pixel size that you would traditionally need (e.g. a 100x50 pixel image translates to 200x100 pixels). You can then set the [background size in CSS](http://www.w3.org/TR/2002/WD-css3-background-20020802/#background-size) so the large images still take up the same number of CSS pixels as they would on a normal display. [Walt Dickinson](http://blog.iwalt.com/2010/06/targeting-the-iphone-4-retina-display-with-css3-media-queries.html) has already written a nice article that has some more info on how to do this.
 
 Finally, one last tip – you can also test for the same value using using JavaScript:
 
-	if (window.devicePixelRatio == 2) {
-		//Targeted code goes here
-	}
+{% highlight javascript %}
+if (window.devicePixelRatio == 2) {
+	//Targeted code goes here
+}
+{% endhighlight %}

@@ -12,23 +12,31 @@ Setup
 
 First, include the main JavaScript file in the <head> of your HTML document:
 
-	<script src="tap.js"></script>
+{% highlight html %}
+<script src="tap.js"></script>
+{% endhighlight %}
 
 Next create a new Tap instance, passing the element you want to use:
 
-	var el = document.getElementById('my-id'),
-    	myTap = new Tap(el);
+{% highlight javascript %}
+var el = document.getElementById('my-id'),
+    myTap = new Tap(el);
+{% endhighlight %}
     	
 You can then start listening for 'tap' events using the regular JavaScript event listener syntax:
 
-	el.addEventListener('tap', tapDidOccur, false); 
-	function tapDidOccur (e) {
-    	//your code
-    }
+{% highlight javascript %}
+el.addEventListener('tap', tapDidOccur, false); 
+function tapDidOccur (e) {
+    //your code
+}
+{% endhighlight %}
     
 You can stop listening for tap events like so:
 
-	el.removeEventListener('tap', tapDidOccur, false);
+{% highlight javascript %}
+el.removeEventListener('tap', tapDidOccur, false);
+{% endhighlight %}
 	
 Tap.js is open source and available on [GitHub](https://github.com/alexgibson/tap.js).
 

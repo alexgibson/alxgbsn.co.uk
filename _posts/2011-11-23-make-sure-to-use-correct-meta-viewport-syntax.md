@@ -7,11 +7,15 @@ When browsing the web it's not uncommon to come across two slight variations on 
 
 This is the correct syntax:
 
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+{% highlight html %}
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+{% endhighlight %}
 
 This is the incorrect syntax:
 
-	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=no;" />
+{% highlight html %}
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=no;" />
+{% endhighlight %}
 
 Notice the correct syntax uses comma separated values. The incorrect way is to use a semi-colon separator. There is also no real need for the separator on the last value, `user-scalable`.
 
@@ -34,5 +38,7 @@ Please note, you should not necessarily be including all the different propertie
 
 Update - for anyone wishing to use `width=device-width` without also setting `initial-scale=1.0`, the PlayBook can be tamed by inserting the legacy BlackBerry `HandheldFriendly` meta property before the viewport declaration:
 
-	<meta name="HandheldFriendly" content="True" />
-	<meta name="viewport" content="width=device-width" />
+{% highlight html %}
+<meta name="HandheldFriendly" content="True" />
+<meta name="viewport" content="width=device-width" />
+{% endhighlight %}

@@ -22,23 +22,27 @@ This site now serves styling for browsers in the following order:
 * Note: since Internet Explorer 8 (and below) does not support CSS Media Queries, it is served a static set of CSS styles optimized for desktop, via a single conditional comment.
 * Update: IE Mobile is now set as version 7 in the conditional comment. This is because the new Mango update uses mobile IE 9 (thanks [Paul Irish](http://paulirish.com/)!).
 
-	/* Default CSS for mobile here -- */
+{% highlight css %}
+/* Default CSS for mobile here -- */
 
-	/* Tablets (portrait) ----------- */
-	@media (min-width : 570px) and (max-width : 768px) {
+/* Tablets (portrait) ----------- */
+@media (min-width : 570px) and (max-width : 768px) {
 	
-	}
+}
 
-	/* Tablets landscape, and desktop */
-	@media (min-width : 769px) {
+/* Tablets landscape, and desktop */
+@media (min-width : 769px) {
 
-	}
+}
+{% endhighlight %}
 
 Conditional comment for Internet Explorer:
 
-	<!--[if (lt IE 9)&(!IEMobile 7)]>
-	<link href="css/desktop.css" rel="stylesheet" />
-	<![endif]-->
+{% highlight html %}
+<!--[if (lt IE 9)&(!IEMobile 7)]>
+<link href="css/desktop.css" rel="stylesheet" />
+<![endif]-->
+{% endhighlight %}
 
 Responsive design
 -----------------
@@ -52,59 +56,62 @@ Despite MiniApps already using a mobile first approach for CSS, more capable sma
 
 Here is a basic template for the site's structural HTML markup:
 
-	<body>
-        <nav role="navigation"></nav>
-        <header role="banner"></header>
-        <section role="main"></section>
-        <aside role="complementary"></aside>
-        <footer role="contentinfo"></footer>
-	</body>
+{% highlight html %}
+<body>
+    <nav role="navigation"></nav>
+    <header role="banner"></header>
+    <section role="main"></section>
+    <aside role="complementary"></aside>
+    <footer role="contentinfo"></footer>
+</body>
+{% endhighlight %}
 
 Nested inside an appropriate CSS Media Query, small–screen browsers are then be served a different ordering of page content, using the box-ordinal-group property.
 
-	/* Smartphones (portrait and landscape) ----------- */
-	@media (max-width : 569px) {
+{% highlight css %}
+/* Smartphones (portrait and landscape) ----------- */
+@media (max-width : 569px) {
 
-		body {
-        	display: -webkit-box;
-        	display: -moz-box;
-        	display: box;
-        	-webkit-box-orient: vertical;
-        	-moz-box-orient: vertical;
-        	box-orient: vertical;
-		}
-	
-		nav[role=navigation] {
-        	-webkit-box-ordinal-group: 4;
-        	-moz-box-ordinal-group: 4;
-        	box-ordinal-group: 4;
-		}
-
-		header[role=banner] {
-        	-webkit-box-ordinal-group: 1;
-        	-moz-box-ordinal-group: 1;
-        	box-ordinal-group: 1;
-		}
-
-		section[role=main] {
-        	-webkit-box-ordinal-group: 2;
-        	-moz-box-ordinal-group: 2;
-        	box-ordinal-group: 2;
-		}
-	
-		aside[role=complementary] {
-        	-webkit-box-ordinal-group: 3;
-        	-moz-box-ordinal-group: 3;
-        	box-ordinal-group: 3;
-		}
-	
-		footer[role=contentinfo] {
-        	-webkit-box-ordinal-group: 5;
-        	-moz-box-ordinal-group: 5;
-        	box-ordinal-group: 5;
-		}
-
+	body {
+        display: -webkit-box;
+        display: -moz-box;
+        display: box;
+        -webkit-box-orient: vertical;
+        -moz-box-orient: vertical;
+        box-orient: vertical;
 	}
+	
+	nav[role=navigation] {
+        -webkit-box-ordinal-group: 4;
+        -moz-box-ordinal-group: 4;
+        box-ordinal-group: 4;
+	}
+
+	header[role=banner] {
+        -webkit-box-ordinal-group: 1;
+        -moz-box-ordinal-group: 1;
+        box-ordinal-group: 1;
+	}
+
+	section[role=main] {
+        -webkit-box-ordinal-group: 2;
+        -moz-box-ordinal-group: 2;
+        box-ordinal-group: 2;
+	}
+	
+	aside[role=complementary] {
+        -webkit-box-ordinal-group: 3;
+        -moz-box-ordinal-group: 3;
+        box-ordinal-group: 3;
+	}
+	
+	footer[role=contentinfo] {
+        -webkit-box-ordinal-group: 5;
+        -moz-box-ordinal-group: 5;
+        box-ordinal-group: 5;
+	}
+}
+{% endhighlight %}
 
 This gets the user straight to the content they want to see, making much better use of valuable screen real–estate. Each page also features skip links, allowing for quick access to navigation and main content irrespective of the content order.
 

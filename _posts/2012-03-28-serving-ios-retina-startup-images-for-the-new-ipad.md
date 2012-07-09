@@ -7,8 +7,9 @@ In the past we have touched on how to serve iOS startup images for full screen w
 
 Given the potential bandwidth cost incurred by downloading such large images (2048 x 1496 landscape, 1536 x 2006 portrait), the most advisable technique is to use JavaScript to serve only the assets a device requires (rather than downloading every asset, which would happen if we used media queries). This can be done using the following code snippet in the <head> of your page.
 
-	<script>(function(){
-	var p, l, r = window.devicePixelRatio;
+{% highlight javascript %}
+(function(){
+    var p, l, r = window.devicePixelRatio;
 	if (navigator.platform === "iPad") {
     	p = r === 2 ? "img/startup-tablet-portrait-retina.png" : "img/startup-tablet-portrait.png";
     	l = r === 2 ? "img/startup-tablet-landscape-retina.png" : "img/startup-tablet-landscape.png";
@@ -17,6 +18,7 @@ Given the potential bandwidth cost incurred by downloading such large images (20
     	p = r === 2 ? "img/startup-retina.png": "img/startup.png"; 
     	document.write('<link rel="apple-touch-startup-image" href="' + p + '"/>');
     }
-    })()</script>
+})();
+{% endhighlight %}
 
 It would be nice if Apple would provide a better way to do this rather than having to rely on JavaScript. Perhaps in the future we will be able to have the option to use vector formats, such as SVG for startup images?

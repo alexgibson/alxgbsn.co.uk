@@ -14,105 +14,111 @@ While an internet connection would be required to view online images and stream 
 
 Implementation was quite straight forward, with the application creating a simple WebSQL database on first launch, together with a single table called 'appdata' to act as a main store.
 
-	var storage = {},
-    	myData = null,
-    	dbName = 'mydatabase',
-    	dbVersion = '1.0',
-    	dbDescription = 'app data store',
-    	dbSize = 20 * 1024 * 1024;
+{% highlight javascript %}
+var storage = {},
+    myData = null,
+    dbName = 'mydatabase',
+    dbVersion = '1.0',
+    dbDescription = 'app data store',
+    dbSize = 20 * 1024 * 1024;
 
-	function handleDbError (e) {
+function handleDbError (e) {
 	
-		console.log(e.message);
-		console.log(e.code);
-	}
+	console.log(e.message);
+	console.log(e.code);
+}
 
-	function initDatabase () {
+function initDatabase () {
 	
-		try {
-			var data = '';
+	try {
+		var data = '';
 						
-			storage.db = openDatabase(dbName, dbVersion, dbDescription, dbSize);
-			storage.db.transaction(function (tx) {
+		storage.db = openDatabase(dbName, dbVersion, dbDescription, dbSize);
+		storage.db.transaction(function (tx) {
 					
-  				tx.executeSql("CREATE TABLE IF NOT EXISTS appdata (id unique, text)");
+  			tx.executeSql("CREATE TABLE IF NOT EXISTS appdata (id unique, text)");
   						
-			}, handleDbError);
+		}, handleDbError);
   					
-  			storage.db.transaction(function (tx) {
+  		storage.db.transaction(function (tx) {
   					
-  				tx.executeSql("INSERT OR IGNORE INTO appdata (id, text) VALUES(?,?)", [dbName, data]);
+  			tx.executeSql("INSERT OR IGNORE INTO appdata (id, text) VALUES(?,?)", [dbName, data]);
   					
-  			}, handleDbError);
+  		}, handleDbError);
   									
-    		} catch(e) {
-    			handleDbError(e);
-		}
+    	} catch(e) {
+    		handleDbError(e);
 	}
+}
 
-	initDatabase();
+initDatabase();
+{% endhighlight %}
 
 The application then makes a remote server call, and the JSON string returned as a response is then parsed and used immediately. At the same time, the data is saved asynchronously to the local database (in a single table row entry).
 
-	function getData () {
+{% highlight javascript %}
+function getData () {
 			
-		var myRequest = new XMLHttpRequest();
+	var myRequest = new XMLHttpRequest();
 
-		myRequest.onreadystatechange = function () {	
+	myRequest.onreadystatechange = function () {	
 
-			if (myRequest.readyState === 4 && myRequest.status === 200) {
-				myData = JSON.parse(myRequest.responseText);
-				updateDatabase();
-				startApp();			
-			}
-		};
-
-		myRequest.open('GET', 'http://', true);
-		myRequest.send();
-	}
-
-	function updateDatabase () {
-	
-		try {	
-			var data = JSON.stringify(myData);
-						
-			storage.db = openDatabase(dbName, dbVersion, dbDescription, dbSize);		
-  			storage.db.transaction(function (tx) {
-  					
-  				tx.executeSql("UPDATE appdata SET text=? WHERE id=?", [data, dbName]);
-  					
-  			}, handleDbError);
-  									
-    		} catch(e) {    			
-    			handleDbError(e);
+		if (myRequest.readyState === 4 && myRequest.status === 200) {
+			myData = JSON.parse(myRequest.responseText);
+			updateDatabase();
+			startApp();			
 		}
+	};
+
+	myRequest.open('GET', 'http://', true);
+	myRequest.send();
+}
+
+function updateDatabase () {
+	
+	try {	
+		var data = JSON.stringify(myData);
+						
+		storage.db = openDatabase(dbName, dbVersion, dbDescription, dbSize);		
+  		storage.db.transaction(function (tx) {
+  					
+  			tx.executeSql("UPDATE appdata SET text=? WHERE id=?", [data, dbName]);
+  					
+  		}, handleDbError);
+  									
+    	} catch(e) {    			
+    		handleDbError(e);
 	}
+}
+{% endhighlight %}
 
 If the app is later launched while offline, local data is then read back from the database and parsed back to an object, so the app only ever requires a single database read operation.
 
-	function throwReadError (e) {
+{% highlight javascript %}
+function throwReadError (e) {
 	
-		console.log(e.message);
-		console.log(e.code);
+	console.log(e.message);
+	console.log(e.code);
 			
-		if(!myData) {
-			showAlert("This app requires an internet connection for first launch");
-		}
+	if(!myData) {
+		showAlert("This app requires an internet connection for first launch");
 	}
+}
 		
-	function readFromDatabase () {
+function readFromDatabase () {
 				
-		storage.db = openDatabase(dbName, dbVersion, dbDescription, dbSize);
-		storage.db.transaction(function (tx) {
+	storage.db = openDatabase(dbName, dbVersion, dbDescription, dbSize);
+	storage.db.transaction(function (tx) {
   				
-			tx.executeSql('SELECT * FROM appdata', [], function (tx, results) {
+		tx.executeSql('SELECT * FROM appdata', [], function (tx, results) {
   				
-				myData = JSON.parse(results.rows.item(0).text);
-				startApp();
-			});
+			myData = JSON.parse(results.rows.item(0).text);
+			startApp();
+		});
 
-		}, throwReadError);		
-	}
+	}, throwReadError);		
+}
+{% endhighlight %}
 
 The PlayBook coped with this size of data store very well. We never hit any bugs or performance issues. Updating the client data on subsequent app launches was also pretty trivial due to the very basic data store model. The PlayBook does not appear to ask the user for storage permission at any size of data we tested, although 50MB is likely the limit if other browsers are anything to go by.
 
@@ -121,19 +127,23 @@ Offline detection
 
 For offline detection the app initially used `navigator.Online`, which at first appears to be supported by the PlayBook Browser.
 
-	var isOnline = window.navigator.onLine;
+{% highlight javascript %}
+var isOnline = window.navigator.onLine;
 
-	initDatabase();
+initDatabase();
 				
-	if (isOnline) {
-		getData();			
-	} else {
-		readFromDatabase();
-	}
+if (isOnline) {
+	getData();			
+} else {
+	readFromDatabase();
+}
+{% endhighlight %}
 
 However, once the first WebWorks build was made it became clear something was not right, since `navigator.Online` was always returning `true` on launch. This turns out to be an [existing bug](http://supportforums.blackberry.com/t5/Web-and-WebWorks-Development/Bug-report-navigator-onLine-incorrect-status/m-p/1214513/highlight/true#M15043), but one that can be easily fixed using a WebWorks API call for offline detection:
 
-	var isOnline = 'blackberry' in window ? blackberry.system.hasDataCoverage() : window.navigator.onLine;
+{% highlight javascript %}
+var isOnline = 'blackberry' in window ? blackberry.system.hasDataCoverage() : window.navigator.onLine;
+{% endhighlight %}
 
 Notice here we use a simple feature detect using the `blackberry` window object, so we can carry on using `navigator.Online` in the browser (for development purposes).
 
@@ -160,23 +170,25 @@ Native hooks
 
 API wise, the app used 95% browser–based API's. The remaining areas where WebWorks had to step in were for small things, like opening external links in the PlayBook browser and providing native alert boxes.
 
-	function showAlert (message) {
-		try {
-			blackberry.ui.dialog.standardAskAsync(message, blackberry.ui.dialog.D_OK, {
-				title : "Alert", 
-				size: blackberry.ui.dialog.SIZE_MEDIUM, 
-				position : blackberry.ui.dialog.CENTER
-			});
-		} catch (e) {
-			alert(message);
-			console.log(e);
-		}
+{% highlight javascript %}
+function showAlert (message) {
+	try {
+		blackberry.ui.dialog.standardAskAsync(message, blackberry.ui.dialog.D_OK, {
+			title : "Alert", 
+			size: blackberry.ui.dialog.SIZE_MEDIUM, 
+			position : blackberry.ui.dialog.CENTER
+		});
+	} catch (e) {
+		alert(message);
+		console.log(e);
 	}
+}
 
-	function launchBrowser (url) {
-		var args = new blackberry.invoke.BrowserArguments(url);
-		blackberry.invoke.invoke(blackberry.invoke.APP_BROWSER, args);
-	}
+function launchBrowser (url) {
+	var args = new blackberry.invoke.BrowserArguments(url);
+	blackberry.invoke.invoke(blackberry.invoke.APP_BROWSER, args);
+}
+{% endhighlight %}
 
 Remote debugging
 ----------------
