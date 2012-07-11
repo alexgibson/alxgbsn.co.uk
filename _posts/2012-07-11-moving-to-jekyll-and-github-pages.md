@@ -30,7 +30,7 @@ Having to deal with mySQL security issues should be unnecessary for something as
 Collaboration
 -------------
 
-Because the source for this site is available on GitHub, people are free to make suggestions and/or corrections to my posts via submitting a pull request or opening an issue.
+Because the [source](https://github.com/alexgibson/alexgibson.github.com) for this site is available on GitHub, people are free to make suggestions and/or corrections to my posts via submitting a pull request or opening an issue.
 
 Portability
 -----------
