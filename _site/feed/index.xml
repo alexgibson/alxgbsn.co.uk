@@ -4,7 +4,7 @@
  <title>Alex Gibson, Front End Developer</title>
  <link href="http://alxgbsn.co.uk/feed/" rel="self"/>
  <link href="http://alxgbsn.co.uk/"/>
- <updated>2012-07-09T22:44:42+01:00</updated>
+ <updated>2012-07-11T21:44:45+01:00</updated>
  <id>http://alxgbsn.co.uk/</id>
  <author>
    <name>Alex Gibson</name>
@@ -13,13 +13,56 @@
 
  
  <entry>
+   <title>Moving to Jekyll and GitHub Pages</title>
+   <link href="http://alxgbsn.co.uk/2012/07/11/moving-to-jekyll-and-github-pages"/>
+   <updated>2012-07-11T00:00:00+01:00</updated>
+   <id>http://alxgbsn.co.uk/2012/07/11/moving-to-jekyll-and-github-pages</id>
+   <content type="html">&lt;p&gt;I've just finished moving my site to a new home, which is now hosted on &lt;a href=&quot;http://pages.github.com/&quot;&gt;GitHub Pages&lt;/a&gt; and powered by &lt;a href=&quot;http://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt;, the increasingly popular static site generator. Jekyll takes a template directory and then processes it to create a static website consisting of pure HTML files, which you can then host on your chosen web server.&lt;/p&gt;
+
+&lt;p&gt;For the past few years my old blog has served me pretty well. But I have been looking for something simpler and less cumbersome to update and maintain. Here are a list of reasons why I made the decision to choose Jekyll:&lt;/p&gt;
+
+&lt;h2&gt;Authoring new content&lt;/h2&gt;
+
+&lt;p&gt;No more bloated CMS or WYSIWYG editors! I can write draft content using &lt;a href=&quot;http://daringfireball.net/projects/markdown/&quot;&gt;Markdown&lt;/a&gt;, which can be processed directly by Jekyll. With cross-device apps like &lt;a href=&quot;http://www.iawriter.com/&quot;&gt;Ai Writer&lt;/a&gt; and cloud syncing via &lt;a href=&quot;https://www.dropbox.com/&quot;&gt;Dropbox&lt;/a&gt; or &lt;a href=&quot;https://www.icloud.com/&quot;&gt;iCloud&lt;/a&gt;, creating draft content while on the move is now incredibly easy.&lt;/p&gt;
+
+&lt;h2&gt;Built-in version control&lt;/h2&gt;
+
+&lt;p&gt;Because this site is hosted on GitHub, version control comes baked-in. I use one branch (master) for hosting the static site on GitHub Pages, and another (admin) for the source.&lt;/p&gt;
+
+&lt;h2&gt;Performance &amp;amp; reliability&lt;/h2&gt;
+
+&lt;p&gt;No more PHP/MySQL database means pages load faster and the site should be able to handle periods of heavy traffic with less worry.&lt;/p&gt;
+
+&lt;h2&gt;Security&lt;/h2&gt;
+
+&lt;p&gt;Having to deal with mySQL security issues should be unnecessary for something as simple as a personal website or blog. Now I no longer even need think about it.&lt;/p&gt;
+
+&lt;h2&gt;Collaboration&lt;/h2&gt;
+
+&lt;p&gt;Because the source for this site is available on GitHub, people are free to make suggestions and/or corrections to my posts via submitting a pull request or opening an issue.&lt;/p&gt;
+
+&lt;h2&gt;Portability&lt;/h2&gt;
+
+&lt;p&gt;Moving a static site to a new web server in the future couldn't be simpler. I also still retain the original content in markdown format, instead of being locked away inside a database file.&lt;/p&gt;
+
+&lt;h2&gt;Plugins&lt;/h2&gt;
+
+&lt;p&gt;There are a wealth of good &lt;a href=&quot;https://github.com/mojombo/jekyll/wiki/Plugins&quot;&gt;Jekyll plugins&lt;/a&gt; available via the community. Jekyll also works very nicely with the Python syntax highlighter &lt;a href=&quot;http://pygments.org/&quot;&gt;Pygments&lt;/a&gt;, which you can see in use on this site.&lt;/p&gt;
+
+&lt;h2&gt;Overall&lt;/h2&gt;
+
+&lt;p&gt;So far, I'm really enjoying the simplicity of having a static site. Getting Jekyll up and running correctly was initially a little confusing, but it was actually quite simple once I got to it. I'm still learning a lot about making the most out of my template structure, as there is still a lot I need to explore. The new site is by no means complete, and there are still a few things I have yet to work out how do. But I'm pretty happy with what I've managed to put together in just a couple of days.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
    <title>Serving iOS retina startup images for the new iPad</title>
    <link href="http://alxgbsn.co.uk/2012/03/28/serving-ios-retina-startup-images-for-the-new-ipad"/>
    <updated>2012-03-28T00:00:00+01:00</updated>
    <id>http://alxgbsn.co.uk/2012/03/28/serving-ios-retina-startup-images-for-the-new-ipad</id>
    <content type="html">&lt;p&gt;In the past we have touched on how to serve iOS startup images for full screen web apps using both &lt;a href=&quot;http://alxgbsn.co.uk/2011/10/24/ios-startup-images-using-css-media-queries/&quot;&gt;CSS media queries and JavaScript&lt;/a&gt; techniques. Now that the latest iPad sports a retina calibre display, we must again look at the best way to serve startup images in our web apps.&lt;/p&gt;
 
-&lt;p&gt;Given the potential bandwidth cost incurred by downloading such large images (2048 x 1496 landscape, 1536 x 2006 portrait), the most advisable technique is to use JavaScript to serve only the assets a device requires (rather than downloading every asset, which would happen if we used media queries). This can be done using the following code snippet in the &lt;head&gt; of your page.&lt;/p&gt;
+&lt;p&gt;Given the potential bandwidth cost incurred by downloading such large images (2048 x 1496 landscape, 1536 x 2006 portrait), the most advisable technique is to use JavaScript to serve only the assets a device requires (rather than downloading every asset, which would happen if we used media queries). This can be done using the following code snippet in the &lt;code&gt;&amp;lt;head&amp;gt;&lt;/code&gt; of your page.&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
     &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;l&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;r&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;window&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;devicePixelRatio&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
