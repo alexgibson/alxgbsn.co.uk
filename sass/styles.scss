@@ -119,10 +119,15 @@ form.search {
         -webkit-appearance: none;
         width: 60%;
         margin: 0 auto;
+        height: 1.5em;
         border: 1px solid #a7a7a7;     
     }
 
     input[type=search]:focus {
         outline: none;
     }
+
+    ::-webkit-input-placeholder, :-moz-placeholder { 
+        height: 1.5em;
+    } 
 }

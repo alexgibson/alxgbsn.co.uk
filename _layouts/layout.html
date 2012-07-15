@@ -5,9 +5,13 @@
     <meta name="description" content="Alex Gibson is a front–end web developer from Newcastle upon Tyne, United Kingdom." />
     <meta name="author" content="Alex Gibson" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="stylesheet" href="/css/styles.css" />
-    <link rel="alternate" type="application/rss+xml" title="Alex Gibson" href="http://alxgbsn.co.uk/feed/" />
+
     <title>{{ page.title }}</title>
+
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="alternate" type="application/rss+xml" title="Alex Gibson" href="{{ root }}/feed/" />
+    
+    <script src="/js/html5shiv.js"></script>
     <script type="text/javascript">
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-33263279-1']);
@@ -20,12 +24,18 @@
     </script>
 </head>
 <body>
-  	{% include nav.html %}
-    <header role="banner">
-        <h1>{{ page.title }}</h1>
-    </header>
-    {{ content }}
-    {% include search.html %}
-    {% include footer.html %}
+
+{% include nav.html %}
+
+<header role="banner">
+    <h1>{{ page.title }}</h1>
+</header>
+    
+{{ content }}
+
+{% include search.html %}
+
+{% include footer.html %}
+
 </body>
 </html>

@@ -5,9 +5,13 @@
     <meta name="description" content="Alex Gibson is a front–end web developer from Newcastle upon Tyne, United Kingdom." />
     <meta name="author" content="Alex Gibson" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="stylesheet" href="/css/styles.css" />
-    <link rel="alternate" type="application/rss+xml" title="Alex Gibson" href="http://alxgbsn.co.uk/feed/" />
+
     <title>Tap.js - A lightweight ‘tap’ event JavaScript plugin</title>
+
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="alternate" type="application/rss+xml" title="Alex Gibson" href="/feed/" />
+    
+    <script src="/js/html5shiv.js"></script>
     <script type="text/javascript">
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-33263279-1']);
@@ -20,17 +24,20 @@
     </script>
 </head>
 <body>
-  	<nav role="navigation">
+
+<nav role="navigation">
 	<ul>
 		<li><a href="/">Home</a></li>
 		<li><a href="/projects/">Projects</a></li>
 		<li><a href="/contact/">Contact</a></li>
 	</ul>
 </nav>
-    <header role="banner">
-        <h1>Tap.js - A lightweight ‘tap’ event JavaScript plugin</h1>
-    </header>
-    <article role="main">
+
+<header role="banner">
+    <h1>Tap.js - A lightweight ‘tap’ event JavaScript plugin</h1>
+</header>
+    
+<article role="main">
     <time datetime="Mon Mar 12 00:00:00 +0000 2012" pubdate>Published Mar 12 2012</time>
     <p>While the <a href="http://www.w3.org/TR/touch-events/">W3C touch events API</a> is quite flexible in its low-level implementation for dealing with multi-touch interaction, it means that the higher level gestures we use daily in our web apps can take <a href="http://miniapps.co.uk/blog/post/event-delegation-for-touch-events-in-javascript/">quite a lot of work</a> for developers to implement themselves, even down to the basic ‘tap’ event. Many mobile web frameworks already offer support for such gestures, but if your app does not use or require such a framework, something as simple as a 'tap' plugin can become a necessity on nearly every mobile project.</p>
 
@@ -86,12 +93,17 @@
 
 </article>
 
-    <form class="search" action="http://google.com/search" method="get">
-    <input type="hidden" name="q" value="site:alxgbsn.co.uk" />
-    <input class="search" type="search" name="q" results="0" placeholder="Search"/>
+
+<form class="search" action="http://google.com/search" method="get">
+	<div role="search">
+    	<input type="hidden" name="q" value="site:alxgbsn.co.uk" />
+    	<input class="search" type="search" name="q" results="0" placeholder="Search" x-webkit-speech />
+    </div>
 </form>
-    <footer role="contentinfo">
+
+<footer role="contentinfo">
 	<p>Copyright &copy; Alex Gibson | Powered by <a href="http://jekyllrb.com/">Jekyll</a>.</p>
 </footer>
+
 </body>
 </html>

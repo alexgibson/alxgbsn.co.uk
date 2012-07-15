@@ -5,7 +5,7 @@ title: Moving to Jekyll and GitHub Pages
 
 I've just finished moving my site to a new home, which is now hosted on [GitHub Pages](http://pages.github.com/) and powered by [Jekyll](http://jekyllrb.com/), the increasingly popular static site generator. Jekyll takes a template directory and then processes it to create a static website consisting of pure HTML files, which you can then host on your chosen web server.
 
-For the past few years my old blog has served me pretty well. But I have been looking for something simpler and less cumbersome to update and maintain. Here are a list of reasons why I made the decision to choose Jekyll:
+For the past few years my old blog has served me pretty well, but I've been looking for something simpler and less cumbersome to update and maintain. Here are a list of reasons why I made the decision to choose Jekyll:
 
 Authoring new content
 ---------------------

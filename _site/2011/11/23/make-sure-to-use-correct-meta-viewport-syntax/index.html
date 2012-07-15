@@ -5,9 +5,13 @@
     <meta name="description" content="Alex Gibson is a front–end web developer from Newcastle upon Tyne, United Kingdom." />
     <meta name="author" content="Alex Gibson" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="stylesheet" href="/css/styles.css" />
-    <link rel="alternate" type="application/rss+xml" title="Alex Gibson" href="http://alxgbsn.co.uk/feed/" />
+
     <title>Make sure to use correct meta viewport syntax</title>
+
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="alternate" type="application/rss+xml" title="Alex Gibson" href="/feed/" />
+    
+    <script src="/js/html5shiv.js"></script>
     <script type="text/javascript">
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-33263279-1']);
@@ -20,17 +24,20 @@
     </script>
 </head>
 <body>
-  	<nav role="navigation">
+
+<nav role="navigation">
 	<ul>
 		<li><a href="/">Home</a></li>
 		<li><a href="/projects/">Projects</a></li>
 		<li><a href="/contact/">Contact</a></li>
 	</ul>
 </nav>
-    <header role="banner">
-        <h1>Make sure to use correct meta viewport syntax</h1>
-    </header>
-    <article role="main">
+
+<header role="banner">
+    <h1>Make sure to use correct meta viewport syntax</h1>
+</header>
+    
+<article role="main">
     <time datetime="Wed Nov 23 00:00:00 +0000 2011" pubdate>Published Nov 23 2011</time>
     <p>When browsing the web it's not uncommon to come across two slight variations on the syntax for declaring meta viewport content values. It's a bit unclear how the two variations originated, but it should be noted that only one is correct, and using an incorrect syntax can actually create problems on certain web browsers.</p>
 
@@ -80,12 +87,17 @@ Viewport argument value "0;" for key "user-scalable" was truncated to its numeri
 
 </article>
 
-    <form class="search" action="http://google.com/search" method="get">
-    <input type="hidden" name="q" value="site:alxgbsn.co.uk" />
-    <input class="search" type="search" name="q" results="0" placeholder="Search"/>
+
+<form class="search" action="http://google.com/search" method="get">
+	<div role="search">
+    	<input type="hidden" name="q" value="site:alxgbsn.co.uk" />
+    	<input class="search" type="search" name="q" results="0" placeholder="Search" x-webkit-speech />
+    </div>
 </form>
-    <footer role="contentinfo">
+
+<footer role="contentinfo">
 	<p>Copyright &copy; Alex Gibson | Powered by <a href="http://jekyllrb.com/">Jekyll</a>.</p>
 </footer>
+
 </body>
 </html>
