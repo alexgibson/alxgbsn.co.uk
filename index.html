@@ -5,9 +5,13 @@
     <meta name="description" content="Alex Gibson is a front–end web developer from Newcastle upon Tyne, United Kingdom." />
     <meta name="author" content="Alex Gibson" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="stylesheet" href="/css/styles.css" />
-    <link rel="alternate" type="application/rss+xml" title="Alex Gibson" href="http://alxgbsn.co.uk/feed/" />
+
     <title>Alex Gibson’s Dev Blog</title>
+
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="alternate" type="application/rss+xml" title="Alex Gibson" href="/feed/" />
+    
+    <script src="/js/html5shiv.js"></script>
     <script type="text/javascript">
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-33263279-1']);
@@ -20,17 +24,20 @@
     </script>
 </head>
 <body>
-  	<nav role="navigation">
+
+<nav role="navigation">
 	<ul>
 		<li><a href="/">Home</a></li>
 		<li><a href="/projects/">Projects</a></li>
 		<li><a href="/contact/">Contact</a></li>
 	</ul>
 </nav>
-    <header role="banner">
-        <h1>Alex Gibson’s Dev Blog</h1>
-    </header>
-    <article role="main">
+
+<header role="banner">
+    <h1>Alex Gibson’s Dev Blog</h1>
+</header>
+    
+<article role="main">
     <p>Hello there. I'm a front&ndash;end developer living in Newcastle upon Tyne, United Kingdom. I spend most of my time hacking on mobile browsers, and I maintain several open source projects on <a href="https://github.com/alexgibson">GitHub</a> including <a href="https://github.com/alexgibson/tap.js">tap.js</a> and <a href="https://github.com/alexgibson/shake.js">shake.js</a>. I also help out as a co-maintainer on the <a href="http://html5boilerplate.com/mobile">HTML5 Mobile Boilerplate project</a>.</p>
 
     <h2>Blog posts</h2>
@@ -66,12 +73,17 @@
         
     </ul>
 </article>
-    <form class="search" action="http://google.com/search" method="get">
-    <input type="hidden" name="q" value="site:alxgbsn.co.uk" />
-    <input class="search" type="search" name="q" results="0" placeholder="Search"/>
+
+<form class="search" action="http://google.com/search" method="get">
+	<div role="search">
+    	<input type="hidden" name="q" value="site:alxgbsn.co.uk" />
+    	<input class="search" type="search" name="q" results="0" placeholder="Search" x-webkit-speech />
+    </div>
 </form>
-    <footer role="contentinfo">
+
+<footer role="contentinfo">
 	<p>Copyright &copy; Alex Gibson | Powered by <a href="http://jekyllrb.com/">Jekyll</a>.</p>
 </footer>
+
 </body>
 </html>

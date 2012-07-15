@@ -4,7 +4,7 @@
  <title>Alex Gibson, Front End Developer</title>
  <link href="http://alxgbsn.co.uk/feed/" rel="self"/>
  <link href="http://alxgbsn.co.uk/"/>
- <updated>2012-07-11T22:37:26+01:00</updated>
+ <updated>2012-07-15T20:48:44+01:00</updated>
  <id>http://alxgbsn.co.uk/</id>
  <author>
    <name>Alex Gibson</name>
@@ -19,7 +19,7 @@
    <id>http://alxgbsn.co.uk/2012/07/11/moving-to-jekyll-and-github-pages</id>
    <content type="html">&lt;p&gt;I've just finished moving my site to a new home, which is now hosted on &lt;a href=&quot;http://pages.github.com/&quot;&gt;GitHub Pages&lt;/a&gt; and powered by &lt;a href=&quot;http://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt;, the increasingly popular static site generator. Jekyll takes a template directory and then processes it to create a static website consisting of pure HTML files, which you can then host on your chosen web server.&lt;/p&gt;
 
-&lt;p&gt;For the past few years my old blog has served me pretty well. But I have been looking for something simpler and less cumbersome to update and maintain. Here are a list of reasons why I made the decision to choose Jekyll:&lt;/p&gt;
+&lt;p&gt;For the past few years my old blog has served me pretty well, but I've been looking for something simpler and less cumbersome to update and maintain. Here are a list of reasons why I made the decision to choose Jekyll:&lt;/p&gt;
 
 &lt;h2&gt;Authoring new content&lt;/h2&gt;
 

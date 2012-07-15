@@ -5,9 +5,13 @@
     <meta name="description" content="Alex Gibson is a front–end web developer from Newcastle upon Tyne, United Kingdom." />
     <meta name="author" content="Alex Gibson" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="stylesheet" href="/css/styles.css" />
-    <link rel="alternate" type="application/rss+xml" title="Alex Gibson" href="http://alxgbsn.co.uk/feed/" />
+
     <title>Targeting iPhone 4 using CSS Media Queries</title>
+
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="alternate" type="application/rss+xml" title="Alex Gibson" href="/feed/" />
+    
+    <script src="/js/html5shiv.js"></script>
     <script type="text/javascript">
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-33263279-1']);
@@ -20,17 +24,20 @@
     </script>
 </head>
 <body>
-  	<nav role="navigation">
+
+<nav role="navigation">
 	<ul>
 		<li><a href="/">Home</a></li>
 		<li><a href="/projects/">Projects</a></li>
 		<li><a href="/contact/">Contact</a></li>
 	</ul>
 </nav>
-    <header role="banner">
-        <h1>Targeting iPhone 4 using CSS Media Queries</h1>
-    </header>
-    <article role="main">
+
+<header role="banner">
+    <h1>Targeting iPhone 4 using CSS Media Queries</h1>
+</header>
+    
+<article role="main">
     <time datetime="Sat Jun 26 00:00:00 +0100 2010" pubdate>Published Jun 26 2010</time>
     <p>With the release of iPhone 4 and it's 326ppi display, there has been a fair bit of speculation as to what impact this would have on mobile web apps and websites that are optimised for mobile screen sizes. How would web developers target both older iPhones with a 480x320 display, as well as the iPhone 4's 960x640 display? Would we need separate CSS stylesheets for each device? How would images need to be optimised for the new screens?</p>
 
@@ -66,12 +73,17 @@
 
 </article>
 
-    <form class="search" action="http://google.com/search" method="get">
-    <input type="hidden" name="q" value="site:alxgbsn.co.uk" />
-    <input class="search" type="search" name="q" results="0" placeholder="Search"/>
+
+<form class="search" action="http://google.com/search" method="get">
+	<div role="search">
+    	<input type="hidden" name="q" value="site:alxgbsn.co.uk" />
+    	<input class="search" type="search" name="q" results="0" placeholder="Search" x-webkit-speech />
+    </div>
 </form>
-    <footer role="contentinfo">
+
+<footer role="contentinfo">
 	<p>Copyright &copy; Alex Gibson | Powered by <a href="http://jekyllrb.com/">Jekyll</a>.</p>
 </footer>
+
 </body>
 </html>
