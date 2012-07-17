@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Moving to Jekyll and GitHub Pages
+desc: The benefits of using a static site generator such as Jekyll and hosting a blog on GitHub Pages
 ---
 
 I've just finished moving my site to a new home, which is now hosted on [GitHub Pages](http://pages.github.com/) and powered by [Jekyll](http://jekyllrb.com/), the increasingly popular static site generator. Jekyll takes a template directory and then processes it to create a static website consisting of pure HTML files, which you can then host on your chosen web server.

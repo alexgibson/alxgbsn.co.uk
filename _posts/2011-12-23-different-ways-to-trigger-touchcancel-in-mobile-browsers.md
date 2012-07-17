@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Different ways to trigger touchcancel in mobile browsers
+desc: Research on touchcancel and mobile browser implementations and behaviour
 ---
 
 The `touchcancel` event is often neglected when building touch–interfaces using JavaScript. Historically, browsers vendors have never really published documentation detailing the circumstances as to when this event gets fired, and hence it has always been associated with a level of obscurity by many developers. The aim of this post is to try and shed some light on the matter.

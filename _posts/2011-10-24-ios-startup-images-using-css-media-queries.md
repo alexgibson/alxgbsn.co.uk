@@ -1,6 +1,7 @@
 ---
 layout: post
 title: iOS startup images using CSS media queries
+desc: How to serve correctly sized iOS startup images for home screen web apps using CSS media queries
 ---
 
 Ever since the arrival of the iPad and iPhone 4, serving correctly sized `apple-touch-startup-images` for iOS web apps has been somewhat clumbersome, especially if you wish to cater for every type of iOS device.

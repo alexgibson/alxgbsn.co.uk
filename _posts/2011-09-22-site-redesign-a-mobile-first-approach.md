@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Site redesign, a mobile first approach
+desc: Details on the redesign of this site using a mobile first approach to designing websites
 ---
 
 Anyone who has visited this site over the last few weeks will no doubt have noticed a few changes. It has now had a complete design overhaul, which is probably long overdue given the current rise in interest of principals such as [responsive web design](http://www.alistapart.com/articles/responsive-web-design/) and [mobile first](http://www.lukew.com/ff/entry.asp?933). What follows is a run down of basic changes to the site, in what hopefully makes for a much improved reading experience, in our rapidly changing, device-agnostic world.

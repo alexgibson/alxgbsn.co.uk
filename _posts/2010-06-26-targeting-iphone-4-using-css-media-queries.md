@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Targeting iPhone 4 using CSS Media Queries
+desc: How to deliver high resolution web content for mobile devices using CSS Media Queries
 ---
 
 With the release of iPhone 4 and it's 326ppi display, there has been a fair bit of speculation as to what impact this would have on mobile web apps and websites that are optimised for mobile screen sizes. How would web developers target both older iPhones with a 480x320 display, as well as the iPhone 4's 960x640 display? Would we need separate CSS stylesheets for each device? How would images need to be optimised for the new screens?

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Building a PlayBook WebWorks app
+desc: Using HTML5 API's and WebWorks SDK to build an application for the BlackBerry PlayBook
 ---
 
 I was recently hired to develop the front–end HTML, CSS and JavaScript for a BlackBerry PlayBook application, packaged using RIM's [WebWorks SDK](http://us.blackberry.com/developers/tablet/webworks.jsp). The main purpose of the app was to assist the user in consuming a large volume of digital content (in the form of text, images and video) via a streamlined, touch–friendly interface. Despite a reasonably small development window, the PlayBook browser and development tools proved to be very capable in getting the job done.

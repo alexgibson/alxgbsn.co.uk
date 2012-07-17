@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Serving iOS retina startup images for the new iPad
+desc: How to best serve retina sized iPad startup images for home screen web apps
 ---
 
 In the past we have touched on how to serve iOS startup images for full screen web apps using both [CSS media queries and JavaScript](http://alxgbsn.co.uk/2011/10/24/ios-startup-images-using-css-media-queries/) techniques. Now that the latest iPad sports a retina calibre display, we must again look at the best way to serve startup images in our web apps.

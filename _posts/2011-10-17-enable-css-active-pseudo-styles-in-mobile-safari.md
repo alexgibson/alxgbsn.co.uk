@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Enable CSS active pseudo styles in Mobile Safari
+desc: A single line JavaScript hack to enable CSS active pseudo styles in iOS Mobile Safari
 ---
 
 By default Mobile Safari disables CSS active pseudo styles on web pages, instead opting for a generic tap–highlight colour on clickable elements. A little known trick is that you can easily re-enable your active pseudo styles by declaring a `touchstart` event on the page. You don't even need to actually use the event, simply declaring an empty function will suffice.

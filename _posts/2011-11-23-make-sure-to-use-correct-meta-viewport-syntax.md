@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Make sure to use correct meta viewport syntax
+desc: An example of why you should be careful to define meta viewport values using the correct syntax
 ---
 
 When browsing the web it's not uncommon to come across two slight variations on the syntax for declaring meta viewport content values. It's a bit unclear how the two variations originated, but it should be noted that only one is correct, and using an incorrect syntax can actually create problems on certain web browsers.

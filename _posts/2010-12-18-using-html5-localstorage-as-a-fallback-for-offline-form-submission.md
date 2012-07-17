@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Using HTML5 localStorage as a fallback for offline form submission
+desc: A proof of concept demo using HTML5 localStorage as a fallback for form submission when a web browser is offline
 ---
 
 I recently put together a working demo for a client showing how you might use HTML5 localStorage as a fallback for form data submission when a mobile device is offline without signal. I've published the full [source code over on GitHub](https://github.com/alexgibson/OfflineForm) together with a demo for anyone who is interested.

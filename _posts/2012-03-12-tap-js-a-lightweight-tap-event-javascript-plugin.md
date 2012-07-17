@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Tap.js - A lightweight ‘tap’ event JavaScript plugin
+desc: A custom 'tap' event JavaScript plugin for mobile browsers
 ---
 
 While the [W3C touch events API](http://www.w3.org/TR/touch-events/) is quite flexible in its low-level implementation for dealing with multi-touch interaction, it means that the higher level gestures we use daily in our web apps can take [quite a lot of work](http://miniapps.co.uk/blog/post/event-delegation-for-touch-events-in-javascript/) for developers to implement themselves, even down to the basic ‘tap’ event. Many mobile web frameworks already offer support for such gestures, but if your app does not use or require such a framework, something as simple as a 'tap' plugin can become a necessity on nearly every mobile project.

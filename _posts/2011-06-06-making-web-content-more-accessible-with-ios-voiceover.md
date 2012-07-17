@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Making web content more accessible with iOS VoiceOver
+desc: An overview of using VoiceOver with iOS Safari and tips on how to make your web content more accessible
 ---
 
 If you're a web developer and own an iOS device, you may have noticed it comes with a whole range of accessibility features. One such feature is a built-in screen reader for visually impaired users, called VoiceOver. For a touch screen device, VoiceOver is a wonderfully capable piece of assistive technology, and a very useful tool that you can use to help test the accessibility of your web content.
