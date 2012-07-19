@@ -46,7 +46,7 @@ There are a wealth of good [Jekyll plugins](https://github.com/mojombo/jekyll/wi
 Sass/Compass
 ------------
 
-I've been using CSS pre-processors such as [Less](http://lesscss.org/) and [Sass](http://sass-lang.com/)/[Compass](http://compass-style.org/) in work projects for a while now, so this was also a good opportunity to start again from scratch with my personal site (which was at the time still using all hand written) and integrate it into the build process. I've chosen to use Sass as I like the syntax, as well as the wealth reusable patterns and mixins offered by Compass.
+I've been using CSS pre-processors such as [Less](http://lesscss.org/) and [Sass](http://sass-lang.com/)/[Compass](http://compass-style.org/) in work projects for a while now, so this was also a good opportunity to start again from scratch with my personal site (which at the time was still all hand written CSS) and integrate it into the build process. I've chosen to use Sass as I like the syntax, as well as the wealth reusable patterns and mixins offered by Compass.
 
 Overall
 -------
