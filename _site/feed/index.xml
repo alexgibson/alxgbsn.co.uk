@@ -4,7 +4,7 @@
  <title>Alex Gibson, Front End Developer</title>
  <link href="http://alxgbsn.co.uk/feed/" rel="self"/>
  <link href="http://alxgbsn.co.uk/"/>
- <updated>2012-07-19T21:17:05+01:00</updated>
+ <updated>2012-07-19T21:25:56+01:00</updated>
  <id>http://alxgbsn.co.uk/</id>
  <author>
    <name>Alex Gibson</name>
@@ -51,7 +51,7 @@
 
 &lt;h2&gt;Sass/Compass&lt;/h2&gt;
 
-&lt;p&gt;I've been using CSS pre-processors such as &lt;a href=&quot;http://lesscss.org/&quot;&gt;Less&lt;/a&gt; and &lt;a href=&quot;http://sass-lang.com/&quot;&gt;Sass&lt;/a&gt;/&lt;a href=&quot;http://compass-style.org/&quot;&gt;Compass&lt;/a&gt; in work projects for a while now, so this was also a good opportunity to start again from scratch with my personal site (which was at the time still using all hand written) and integrate it into the build process. I've chosen to use Sass as I like the syntax, as well as the wealth reusable patterns and mixins offered by Compass.&lt;/p&gt;
+&lt;p&gt;I've been using CSS pre-processors such as &lt;a href=&quot;http://lesscss.org/&quot;&gt;Less&lt;/a&gt; and &lt;a href=&quot;http://sass-lang.com/&quot;&gt;Sass&lt;/a&gt;/&lt;a href=&quot;http://compass-style.org/&quot;&gt;Compass&lt;/a&gt; in work projects for a while now, so this was also a good opportunity to start again from scratch with my personal site (which at the time was still all hand written CSS) and integrate it into the build process. I've chosen to use Sass as I like the syntax, as well as the wealth reusable patterns and mixins offered by Compass.&lt;/p&gt;
 
 &lt;h2&gt;Overall&lt;/h2&gt;
 
