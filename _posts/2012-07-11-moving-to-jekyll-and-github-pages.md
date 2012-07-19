@@ -4,14 +4,14 @@ title: Moving to Jekyll and GitHub Pages
 desc: The benefits of using a static site generator such as Jekyll and hosting a blog on GitHub Pages
 ---
 
-I've just finished moving my site to a new home, which is now hosted on [GitHub Pages](http://pages.github.com/) and powered by [Jekyll](http://jekyllrb.com/), the increasingly popular static site generator. Jekyll takes a template directory and then processes it to create a static website consisting of pure HTML files, which you can then host on your chosen web server.
+For the past few years my old blog has served me pretty well, but I've been looking for something simpler and less cumbersome to update and maintain. I've just finished moving my content to a new home, which is now hosted on [GitHub Pages](http://pages.github.com/) and powered by [Jekyll](http://jekyllrb.com/). 
 
-For the past few years my old blog has served me pretty well, but I've been looking for something simpler and less cumbersome to update and maintain. Here are a list of reasons why I made the decision to choose Jekyll:
+Jekyll is a popular static site generator written in Ruby. It takes a template directory and then processes it to create a static website consisting of pure HTML files, which you can then host on your chosen web server. Here are a list of reasons why I made the decision to ‘go static’:
 
 Authoring new content
 ---------------------
 
-No more bloated CMS or WYSIWYG editors! I can write draft content using [Markdown](http://daringfireball.net/projects/markdown/), which can be processed directly by Jekyll. With cross-device apps like [Ai Writer](http://www.iawriter.com/) and cloud syncing via [Dropbox](https://www.dropbox.com/) or [iCloud](https://www.icloud.com/), creating draft content while on the move is now incredibly easy.
+No more bloated <abbr>CMS</abbr> or <abbr>WYSIWYG</abbr> editors! I can write draft content using [Markdown](http://daringfireball.net/projects/markdown/), which can be processed directly by Jekyll. With cross-device apps like [iA Writer](http://www.iawriter.com/) and cloud syncing via [Dropbox](https://www.dropbox.com/) or [iCloud](https://www.icloud.com/), writing draft content is now much easier.
 
 Built-in version control
 ------------------------
@@ -42,6 +42,11 @@ Plugins
 -------
 
 There are a wealth of good [Jekyll plugins](https://github.com/mojombo/jekyll/wiki/Plugins) available via the community. Jekyll also works very nicely with the Python syntax highlighter [Pygments](http://pygments.org/), which you can see in use on this site.
+
+Sass/Compass
+------------
+
+I've been using CSS pre-processors such as [Less](http://lesscss.org/) and [Sass](http://sass-lang.com/)/[Compass](http://compass-style.org/) in work projects for a while now, so this was also a good opportunity to start again from scratch with my personal site (which was at the time still using all hand written) and integrate it into the build process. I've chosen to use Sass as I like the syntax, as well as the wealth reusable patterns and mixins offered by Compass.
 
 Overall
 -------
