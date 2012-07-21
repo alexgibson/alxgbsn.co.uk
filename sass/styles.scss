@@ -11,14 +11,14 @@ html {
 body {
     width: 90%;
     max-width: 35em;
-    margin: 1em auto;	
+    margin: 1.5em auto;	
     font-family: Palatino-Roman, Cambria, "Times New Roman", Times, serif;
 }
 
 nav[role=navigation] {
     display: block;
-    overflow: hidden;
-    border-bottom: 1px solid #a7a7a7;
+    overflow: hidden; 
+    border-bottom: 1px solid #a7a7a7;   
 }
 
 nav[role=navigation] > ul {

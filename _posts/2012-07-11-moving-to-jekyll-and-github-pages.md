@@ -51,4 +51,4 @@ I've been using CSS pre-processors such as [Less](http://lesscss.org/) and [Sass
 Overall
 -------
 
-So far, I'm really enjoying the simplicity of having a static site. Getting Jekyll up and running correctly was initially a little confusing, but it was actually quite simple once I got to it. I'm still learning a lot about making the most out of my template structure, as there is still a lot I need to explore. The new site is by no means complete, and there are still a few things I have yet to work out how do. But I'm pretty happy with what I've managed to put together in just a couple of days.
+So far, I'm really enjoying the simplicity of having a static site. Getting Jekyll up and running correctly was quite simple, but I'm still learning a lot about making the most out of my template structure and there is still a lot I need to explore. The new site is by no means complete, but I'm pretty happy with what I've managed to put together in just a couple of days.
