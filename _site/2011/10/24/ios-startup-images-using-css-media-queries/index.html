@@ -43,11 +43,36 @@
 
 <p>A common solution has been to use JavaScript to detect what device the user is on, and then to write the correct image into the <code>&lt;head&gt;</code> of your HTML file.</p>
 
+<div class="highlight"><pre><code class="javascript"><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">filename</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">navigator</span><span class="p">.</span><span class="nx">platform</span> <span class="o">===</span> <span class="s1">&#39;iPad&#39;</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">filename</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">orientation</span> <span class="o">===</span> <span class="mi">90</span> <span class="o">||</span> <span class="nb">window</span><span class="p">.</span><span class="nx">orientation</span> <span class="o">===</span> <span class="o">-</span><span class="mi">90</span> <span class="o">?</span> <span class="s1">&#39;splash-1024x748.png&#39;</span> <span class="o">:</span> <span class="s1">&#39;splash-768x1004.png&#39;</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="nx">filename</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">devicePixelRatio</span> <span class="o">===</span> <span class="mi">2</span> <span class="o">?</span> <span class="s1">&#39;splash-640x920.png&#39;</span> <span class="o">:</span> <span class="s1">&#39;splash-320x460.png&#39;</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s1">&#39;&lt;link rel=&quot;apple-touch-startup-image&quot; href=&quot;&#39;</span> <span class="o">+</span> <span class="nx">filename</span> <span class="o">+</span> <span class="s1">&#39;&quot;/&gt;&#39;</span> <span class="p">);</span>
+<span class="p">})();</span>
+</code></pre>
+</div>
+
+
 <p>To make things more complicated, you also need to serve a high-res startup image for the iPhone 4's retina display. The iPad requires two different splash screen images for each orientation as well. Things quickly start to get a bit messy…</p>
 
 <p>As of iOS5, you can now use CSS Media Queries to serve each type of startup image required, so no need for JavaScript anymore!</p>
 
 <p>Just use any of the following media queries in the <code>&lt;head&gt;</code>of your HTML file.</p>
+
+<div class="highlight"><pre><code class="html"><span class="c">&lt;!-- 320x460 for iPhone 3GS --&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;apple-touch-startup-image&quot;</span> <span class="na">media=</span><span class="s">&quot;(max-device-width: 480px) and not (-webkit-min-device-pixel-ratio: 2)&quot;</span> <span class="na">href=</span><span class="s">&quot;startup-iphone.png&quot;</span> <span class="nt">/&gt;</span>
+<span class="c">&lt;!-- 640x920 for retina display --&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;apple-touch-startup-image&quot;</span> <span class="na">media=</span><span class="s">&quot;(max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2)&quot;</span> <span class="na">href=</span><span class="s">&quot;startup-iphone4.png&quot;</span> <span class="nt">/&gt;</span>
+<span class="c">&lt;!-- iPad Portrait 768x1004 --&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;apple-touch-startup-image&quot;</span> <span class="na">media=</span><span class="s">&quot;(min-device-width: 768px) and (orientation: portrait)&quot;</span> <span class="na">href=</span><span class="s">&quot;startup-iPad-portrait.png&quot;</span> <span class="nt">/&gt;</span>
+<span class="c">&lt;!-- iPad Landscape 1024x748 --&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;apple-touch-startup-image&quot;</span> <span class="na">media=</span><span class="s">&quot;(min-device-width: 768px) and (orientation: landscape)&quot;</span> <span class="na">href=</span><span class="s">&quot;startup-iPad-landscape.png&quot;</span> <span class="nt">/&gt;</span>
+</code></pre>
+</div>
+
 
 <h2>Caveat</h2>
 

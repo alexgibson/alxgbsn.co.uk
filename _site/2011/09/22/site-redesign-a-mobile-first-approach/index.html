@@ -59,7 +59,29 @@
 </ul>
 
 
+<div class="highlight"><pre><code class="css"><span class="c">/* Default CSS for mobile here -- */</span>
+
+<span class="c">/* Tablets (portrait) ----------- */</span>
+<span class="k">@media</span> <span class="o">(</span><span class="nt">min-width</span> <span class="o">:</span> <span class="nt">570px</span><span class="o">)</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">max-width</span> <span class="o">:</span> <span class="nt">768px</span><span class="o">)</span> <span class="p">{</span>
+    
+<span class="p">}</span>
+
+<span class="c">/* Tablets landscape, and desktop */</span>
+<span class="k">@media</span> <span class="o">(</span><span class="nt">min-width</span> <span class="o">:</span> <span class="nt">769px</span><span class="o">)</span> <span class="p">{</span>
+
+<span class="p">}</span>
+</code></pre>
+</div>
+
+
 <p>Conditional comment for Internet Explorer:</p>
+
+<div class="highlight"><pre><code class="html"><span class="c">&lt;!--[if (lt IE 9)&amp;(!IEMobile 7)]&gt;</span>
+<span class="c">&lt;link href=&quot;css/desktop.css&quot; rel=&quot;stylesheet&quot; /&gt;</span>
+<span class="c">&lt;![endif]--&gt;</span>
+</code></pre>
+</div>
+
 
 <h2>Responsive design</h2>
 
@@ -71,7 +93,64 @@
 
 <p>Here is a basic template for the site's structural HTML markup:</p>
 
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;nav</span> <span class="na">role=</span><span class="s">&quot;navigation&quot;</span><span class="nt">&gt;&lt;/nav&gt;</span>
+    <span class="nt">&lt;header</span> <span class="na">role=</span><span class="s">&quot;banner&quot;</span><span class="nt">&gt;&lt;/header&gt;</span>
+    <span class="nt">&lt;section</span> <span class="na">role=</span><span class="s">&quot;main&quot;</span><span class="nt">&gt;&lt;/section&gt;</span>
+    <span class="nt">&lt;aside</span> <span class="na">role=</span><span class="s">&quot;complementary&quot;</span><span class="nt">&gt;&lt;/aside&gt;</span>
+    <span class="nt">&lt;footer</span> <span class="na">role=</span><span class="s">&quot;contentinfo&quot;</span><span class="nt">&gt;&lt;/footer&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+</code></pre>
+</div>
+
+
 <p>Nested inside an appropriate CSS Media Query, small–screen browsers are then be served a different ordering of page content, using the box-ordinal-group property.</p>
+
+<div class="highlight"><pre><code class="css"><span class="c">/* Smartphones (portrait and landscape) ----------- */</span>
+<span class="k">@media</span> <span class="o">(</span><span class="nt">max-width</span> <span class="o">:</span> <span class="nt">569px</span><span class="o">)</span> <span class="p">{</span>
+
+    <span class="nt">body</span> <span class="p">{</span>
+        <span class="k">display</span><span class="o">:</span> <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">box</span><span class="p">;</span>
+        <span class="k">display</span><span class="o">:</span> <span class="o">-</span><span class="n">moz</span><span class="o">-</span><span class="n">box</span><span class="p">;</span>
+        <span class="k">display</span><span class="o">:</span> <span class="n">box</span><span class="p">;</span>
+        <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">box</span><span class="o">-</span><span class="n">orient</span><span class="o">:</span> <span class="n">vertical</span><span class="p">;</span>
+        <span class="o">-</span><span class="n">moz</span><span class="o">-</span><span class="n">box</span><span class="o">-</span><span class="n">orient</span><span class="o">:</span> <span class="n">vertical</span><span class="p">;</span>
+        <span class="n">box</span><span class="o">-</span><span class="n">orient</span><span class="o">:</span> <span class="n">vertical</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+    <span class="nt">nav</span><span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="nt">navigation</span><span class="o">]</span> <span class="p">{</span>
+        <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">box</span><span class="o">-</span><span class="n">ordinal</span><span class="o">-</span><span class="n">group</span><span class="o">:</span> <span class="m">4</span><span class="p">;</span>
+        <span class="o">-</span><span class="n">moz</span><span class="o">-</span><span class="n">box</span><span class="o">-</span><span class="n">ordinal</span><span class="o">-</span><span class="n">group</span><span class="o">:</span> <span class="m">4</span><span class="p">;</span>
+        <span class="n">box</span><span class="o">-</span><span class="n">ordinal</span><span class="o">-</span><span class="n">group</span><span class="o">:</span> <span class="m">4</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="nt">header</span><span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="nt">banner</span><span class="o">]</span> <span class="p">{</span>
+        <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">box</span><span class="o">-</span><span class="n">ordinal</span><span class="o">-</span><span class="n">group</span><span class="o">:</span> <span class="m">1</span><span class="p">;</span>
+        <span class="o">-</span><span class="n">moz</span><span class="o">-</span><span class="n">box</span><span class="o">-</span><span class="n">ordinal</span><span class="o">-</span><span class="n">group</span><span class="o">:</span> <span class="m">1</span><span class="p">;</span>
+        <span class="n">box</span><span class="o">-</span><span class="n">ordinal</span><span class="o">-</span><span class="n">group</span><span class="o">:</span> <span class="m">1</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="nt">section</span><span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="nt">main</span><span class="o">]</span> <span class="p">{</span>
+        <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">box</span><span class="o">-</span><span class="n">ordinal</span><span class="o">-</span><span class="n">group</span><span class="o">:</span> <span class="m">2</span><span class="p">;</span>
+        <span class="o">-</span><span class="n">moz</span><span class="o">-</span><span class="n">box</span><span class="o">-</span><span class="n">ordinal</span><span class="o">-</span><span class="n">group</span><span class="o">:</span> <span class="m">2</span><span class="p">;</span>
+        <span class="n">box</span><span class="o">-</span><span class="n">ordinal</span><span class="o">-</span><span class="n">group</span><span class="o">:</span> <span class="m">2</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+    <span class="nt">aside</span><span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="nt">complementary</span><span class="o">]</span> <span class="p">{</span>
+        <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">box</span><span class="o">-</span><span class="n">ordinal</span><span class="o">-</span><span class="n">group</span><span class="o">:</span> <span class="m">3</span><span class="p">;</span>
+        <span class="o">-</span><span class="n">moz</span><span class="o">-</span><span class="n">box</span><span class="o">-</span><span class="n">ordinal</span><span class="o">-</span><span class="n">group</span><span class="o">:</span> <span class="m">3</span><span class="p">;</span>
+        <span class="n">box</span><span class="o">-</span><span class="n">ordinal</span><span class="o">-</span><span class="n">group</span><span class="o">:</span> <span class="m">3</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+    <span class="nt">footer</span><span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="nt">contentinfo</span><span class="o">]</span> <span class="p">{</span>
+        <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">box</span><span class="o">-</span><span class="n">ordinal</span><span class="o">-</span><span class="n">group</span><span class="o">:</span> <span class="m">5</span><span class="p">;</span>
+        <span class="o">-</span><span class="n">moz</span><span class="o">-</span><span class="n">box</span><span class="o">-</span><span class="n">ordinal</span><span class="o">-</span><span class="n">group</span><span class="o">:</span> <span class="m">5</span><span class="p">;</span>
+        <span class="n">box</span><span class="o">-</span><span class="n">ordinal</span><span class="o">-</span><span class="n">group</span><span class="o">:</span> <span class="m">5</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
 
 <p>This gets the user straight to the content they want to see, making much better use of valuable screen real–estate. Each page also features skip links, allowing for quick access to navigation and main content irrespective of the content order.</p>
 

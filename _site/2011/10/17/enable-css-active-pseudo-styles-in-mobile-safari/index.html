@@ -43,7 +43,19 @@
 
 <p>Just add the following single line of JavaScript to your web page and all your active CSS styles will spring to life.</p>
 
+<div class="highlight"><pre><code class="javascript"><span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;touchstart&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{},</span><span class="kc">false</span><span class="p">);</span>
+</code></pre>
+</div>
+
+
 <p>Note: if you do this trick it is also worth removing the default <code>tap–highlight</code> colour Mobile Safari applies using the following CSS rule.</p>
+
+<div class="highlight"><pre><code class="css"><span class="nt">html</span> <span class="p">{</span>
+    <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">tap</span><span class="o">-</span><span class="n">highlight</span><span class="o">-</span><span class="k">color</span><span class="o">:</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="o">,</span><span class="m">0</span><span class="o">,</span><span class="m">0</span><span class="o">,</span><span class="m">0</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
 
 <p>On a related note, there are also some other useful mobile Webkit oddities that can activated by using empty event declarations, like <a href="http://krijnhoetmer.nl/stuff/javascript/label-checkbox-ios/">making form labels clickable</a>.</p>
 
