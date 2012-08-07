@@ -45,76 +45,16 @@
 
 <p>Here's a very basic example of how to capture a simulated 'tap' event:</p>
 
-<div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">tapArea</span><span class="p">,</span> <span class="nx">moved</span><span class="p">,</span> <span class="nx">startX</span><span class="p">,</span> <span class="nx">startY</span><span class="p">;</span>
-
-<span class="nx">tapArea</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;#list&#39;</span><span class="p">);</span> <span class="c1">//element to delegate</span>
-<span class="nx">moved</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span> <span class="c1">//flags if the finger has moved</span>
-<span class="nx">startX</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">//starting x coordinate</span>
-<span class="nx">startY</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">//starting y coordinate</span>
-
-<span class="c1">//touchstart           </span>
-<span class="nx">tapArea</span><span class="p">.</span><span class="nx">ontouchstart</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
-
-    <span class="nx">moved</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
-    <span class="nx">startX</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">touches</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">clientX</span><span class="p">;</span>
-    <span class="nx">startY</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">touches</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">clientY</span><span class="p">;</span>
-<span class="p">};</span>
-
-<span class="c1">//touchmove    </span>
-<span class="nx">tapArea</span><span class="p">.</span><span class="nx">ontouchmove</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
-
-    <span class="c1">//if finger moves more than 10px flag to cancel</span>
-    <span class="c1">//code.google.com/mobile/articles/fast_buttons.html</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">abs</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">touches</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">clientX</span> <span class="o">-</span> <span class="nx">startX</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">10</span> <span class="o">||</span>
-        <span class="nb">Math</span><span class="p">.</span><span class="nx">abs</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">touches</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">clientY</span> <span class="o">-</span> <span class="nx">startY</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">)</span> <span class="p">{</span>
-            <span class="nx">moved</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">};</span>
-
-<span class="c1">//touchend</span>
-<span class="nx">tapArea</span><span class="p">.</span><span class="nx">ontouchend</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
-
-    <span class="nx">e</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
-
-    <span class="c1">//get element from touch point</span>
-    <span class="kd">var</span> <span class="nx">element</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">changedTouches</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">target</span><span class="p">;</span>
-
-    <span class="c1">//if the element is a text node, get its parent.</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">element</span><span class="p">.</span><span class="nx">nodeType</span> <span class="o">===</span> <span class="mi">3</span><span class="p">)</span> <span class="p">{</span> 
-        <span class="nx">element</span> <span class="o">=</span> <span class="nx">element</span><span class="p">.</span><span class="nx">parentNode</span><span class="p">;</span>
-    <span class="p">}</span>
-
-    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">moved</span><span class="p">)</span> <span class="p">{</span>
-        <span class="c1">//check for the element type you want to capture</span>
-        <span class="k">if</span> <span class="p">(</span><span class="nx">element</span><span class="p">.</span><span class="nx">tagName</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">()</span> <span class="o">===</span> <span class="s1">&#39;label&#39;</span><span class="p">)</span> <span class="p">{</span>
-            <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;tap&#39;</span><span class="p">);</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">};</span>
-
-<span class="c1">//don&#39;t forget about touchcancel!</span>
-<span class="nx">tapArea</span><span class="p">.</span><span class="nx">ontouchcancel</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
-
-    <span class="c1">//reset variables</span>
-    <span class="nx">moved</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
-    <span class="nx">startX</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="nx">startY</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">};</span>
-</code></pre>
-</div>
-
-
 <p>Notice here it is useful to make use of <code>touchmove</code> to detect any finger dragging gestures that might occur after a <code>touchstart</code> has fired. This way it is easy to cancel the 'tap' on <code>touchend</code> if desired.</p>
 
 <p>Update: Originally this article was using the function <code>document.elementFromPoint(x,y)</code> to get the element target in <code>ontouchend</code>. A few people have kindly pointed out that you can actually just use <code>e.changedTouches[0].target</code> or even <code>e.target</code> to get the same result for a simple 'tap'. It should be noted however, that the target attribute in this case always refers to the originating element, so if you do need to reference the element a finger might have moved on/off during <code>touchmove</code> or <code>touchend</code>, you would still need to use:</p>
 
-<div class="highlight"><pre><code class="javascript"><span class="nb">document</span><span class="p">.</span><span class="nx">elementFromPoint</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">changedTouches</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">clientX</span><span class="p">,</span> <span class="nx">e</span><span class="p">.</span><span class="nx">changedTouches</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">clientY</span><span class="p">);</span>
-</code></pre>
-</div>
-
-
 <p>Life would be so much easier if we had a native 'tap' event in mobile browsers!</p>
 
+    <p>
+    	<a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
+		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+	</p>
 </article>
 
 
