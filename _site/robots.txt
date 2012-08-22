@@ -1,0 +1,4 @@
+Disallow: /dropbox/
+
+Allow: /
+Sitemap: http://alxgbsn.co.uk/sitemap.xml
