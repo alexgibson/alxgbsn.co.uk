@@ -94,7 +94,7 @@
 
 <div class="highlight"><pre><code class="javascript"><span class="nx">onResize</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
     <span class="k">if</span> <span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">innerWidth</span> <span class="o">!==</span> <span class="k">this</span><span class="p">.</span><span class="nx">previousWidth</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">this</span><span class="p">.</span><span class="nx">orientation</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerWidth</span> <span class="o">&gt;=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerHeight</span> <span class="o">?</span> <span class="s1">&#39;landscape&#39;</span> <span class="o">:</span> <span class="s1">&#39;portrait&#39;</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">orientation</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerHeight</span> <span class="o">&gt;=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerWidth</span> <span class="o">?</span> <span class="s1">&#39;portrait&#39;</span> <span class="o">:</span> <span class="s1">&#39;landscape&#39;</span><span class="p">;</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre>
