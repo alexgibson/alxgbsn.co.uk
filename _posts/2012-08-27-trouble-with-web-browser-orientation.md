@@ -61,7 +61,7 @@ Android 4.x stock browser fires `resize` whenever the on-screen keyboard is show
 {% highlight javascript %}
 onResize: function () {
 	if (window.innerWidth !== this.previousWidth) {
-		this.orientation = window.innerWidth >= window.innerHeight ? 'landscape' : 'portrait';
+		this.orientation = window.innerHeight >= window.innerWidth ? 'portrait' : 'landscape';
 	}
 }
 {% endhighlight %}
