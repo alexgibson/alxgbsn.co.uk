@@ -47,7 +47,7 @@ strong {
 blockquote {
     font-family: Palatino-Italic, Palatino-Roman, Cambria, "Times New Roman", Times, serif;
     font-style: italic; 
-    font-size: 1.2em;    
+    font-size: 1.1em;
 }
 
 h1 {
@@ -75,12 +75,21 @@ pre {
     word-wrap: normal;
     white-space: pre;
     padding: 1em;
-    background-color: #ffffff;
-    border: 1px solid #a7a7a7;
+    background-color: #f2f2f2;
+    border: 1px solid #c5c5c5;
+    @include border-radius(5px);
 }
 
 code {
     color: #565757;
+    font-size: 0.9em;
+}
+
+p > code {
+    background-color: #f2f2f2;
+    border: 1px solid #c5c5c5;
+    padding: .2em;
+    @include border-radius(3px);
 }
 
 nav[role=navigation] {
