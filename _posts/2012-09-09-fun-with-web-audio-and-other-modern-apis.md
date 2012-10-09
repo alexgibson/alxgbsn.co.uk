@@ -11,9 +11,9 @@ The Web Audio API
 
 The Web Audio API works a bit like wiring together a modular, programmable synthesiser or audio processor. It is not only capable of playing back pre-recorded sounds with sample accuracy, but it can also create raw sound using [oscillators](https://dvcs.w3.org/hg/audio/raw-file/tip/webaudio/specification.html#Oscillator) and waveforms - the core elements of any audio synthesiser. It can route sounds, perform [frequency analysis](https://dvcs.w3.org/hg/audio/raw-file/tip/webaudio/specification.html#RealtimeAnalyserNode) and even apply native effects such as [convolution reverb](https://dvcs.w3.org/hg/audio/raw-file/tip/webaudio/specification.html#ConvolverNode), [delay](https://dvcs.w3.org/hg/audio/raw-file/tip/webaudio/specification.html#DelayNode) and [distortion](https://dvcs.w3.org/hg/audio/raw-file/tip/webaudio/specification.html#WaveShaperNode) effects.
 
-The Web Audio API is currently supported in Chrome, Safari 6 and iOS6 Safari. I thought it was about time to start learning how to use the API and have some fun experimenting, so after a few hours I managed to throw together a relatively simple [synth effect unit](http://alxgbsn.co.uk/wavepad). It's a both mouse and touch friendly, and functions in a similar way to the [Korg Kaoss Pad](http://www.korg.co.uk/products/dance_dj/kp3/dj_kp3.asp), albeit with a much simpler set of features.
+The Web Audio API is currently supported in Chrome, Safari 6 and iOS6 Safari. I thought it was about time to start learning how to use the API and have some fun experimenting, so after a few hours I managed to throw together a relatively simple [synth effect unit](http://alxgbsn.co.uk/wavepad). It's both mouse and touch friendly, and functions in a similar way to the [Korg Kaoss Pad](http://www.korg.co.uk/products/dance_dj/kp3/dj_kp3.asp), albeit with a much simpler set of features.
 
-The basic audio components for the demo are pretty simple. It consists of a single oscillator, a filter a delay node, and two volume gain nodes (one for delay feedback, the other for master output). The demo also uses an audio frequency analyser to create a visual representation of the audio output, which is drawn to the [Canvas](https://developer.mozilla.org/en-US/docs/HTML/Canvas) for added real time, visual feedback.
+The basic audio components for the demo are pretty simple. It consists of a single oscillator, a filter, a delay node, and two volume gain nodes (one for delay feedback, the other for master output). The demo also uses an audio frequency analyser to create a visual representation of the audio output, which is drawn to the [Canvas](https://developer.mozilla.org/en-US/docs/HTML/Canvas) for added real time, visual feedback.
 
 {% highlight javascript %}
 var myAudioContext = new webkitAudioContext() || AudioContext();
@@ -101,7 +101,7 @@ if (window.matchMedia) {
 classList API
 -------------
 
-CSS active and pressed states are applied using the handy new [classList API](https://developer.mozilla.org/en-US/docs/DOM/element.classList).
+CSS active and pressed states are applied using the handy new [classList API](https://developer.mozilla.org/en-US/docs/DOM/element.classList). This makes adding and removing multiple class names in CSS much less of a chore.
 
 {% highlight javascript %}
 var finger = document.querySelector('.finger');
