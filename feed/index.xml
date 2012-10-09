@@ -4,7 +4,7 @@
  <title>Alex Gibson, Front End Developer</title>
  <link href="http://alxgbsn.co.uk/feed/" rel="self"/>
  <link href="http://alxgbsn.co.uk/"/>
- <updated>2012-10-09T21:45:02+01:00</updated>
+ <updated>2012-10-09T22:19:30+01:00</updated>
  <id>http://alxgbsn.co.uk/</id>
  <author>
    <name>Alex Gibson</name>
@@ -23,9 +23,9 @@
 
 &lt;p&gt;The Web Audio API works a bit like wiring together a modular, programmable synthesiser or audio processor. It is not only capable of playing back pre-recorded sounds with sample accuracy, but it can also create raw sound using &lt;a href=&quot;https://dvcs.w3.org/hg/audio/raw-file/tip/webaudio/specification.html#Oscillator&quot;&gt;oscillators&lt;/a&gt; and waveforms - the core elements of any audio synthesiser. It can route sounds, perform &lt;a href=&quot;https://dvcs.w3.org/hg/audio/raw-file/tip/webaudio/specification.html#RealtimeAnalyserNode&quot;&gt;frequency analysis&lt;/a&gt; and even apply native effects such as &lt;a href=&quot;https://dvcs.w3.org/hg/audio/raw-file/tip/webaudio/specification.html#ConvolverNode&quot;&gt;convolution reverb&lt;/a&gt;, &lt;a href=&quot;https://dvcs.w3.org/hg/audio/raw-file/tip/webaudio/specification.html#DelayNode&quot;&gt;delay&lt;/a&gt; and &lt;a href=&quot;https://dvcs.w3.org/hg/audio/raw-file/tip/webaudio/specification.html#WaveShaperNode&quot;&gt;distortion&lt;/a&gt; effects.&lt;/p&gt;
 
-&lt;p&gt;The Web Audio API is currently supported in Chrome, Safari 6 and iOS6 Safari. I thought it was about time to start learning how to use the API and have some fun experimenting, so after a few hours I managed to throw together a relatively simple &lt;a href=&quot;http://alxgbsn.co.uk/wavepad&quot;&gt;synth effect unit&lt;/a&gt;. It's a both mouse and touch friendly, and functions in a similar way to the &lt;a href=&quot;http://www.korg.co.uk/products/dance_dj/kp3/dj_kp3.asp&quot;&gt;Korg Kaoss Pad&lt;/a&gt;, albeit with a much simpler set of features.&lt;/p&gt;
+&lt;p&gt;The Web Audio API is currently supported in Chrome, Safari 6 and iOS6 Safari. I thought it was about time to start learning how to use the API and have some fun experimenting, so after a few hours I managed to throw together a relatively simple &lt;a href=&quot;http://alxgbsn.co.uk/wavepad&quot;&gt;synth effect unit&lt;/a&gt;. It's both mouse and touch friendly, and functions in a similar way to the &lt;a href=&quot;http://www.korg.co.uk/products/dance_dj/kp3/dj_kp3.asp&quot;&gt;Korg Kaoss Pad&lt;/a&gt;, albeit with a much simpler set of features.&lt;/p&gt;
 
-&lt;p&gt;The basic audio components for the demo are pretty simple. It consists of a single oscillator, a filter a delay node, and two volume gain nodes (one for delay feedback, the other for master output). The demo also uses an audio frequency analyser to create a visual representation of the audio output, which is drawn to the &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/HTML/Canvas&quot;&gt;Canvas&lt;/a&gt; for added real time, visual feedback.&lt;/p&gt;
+&lt;p&gt;The basic audio components for the demo are pretty simple. It consists of a single oscillator, a filter, a delay node, and two volume gain nodes (one for delay feedback, the other for master output). The demo also uses an audio frequency analyser to create a visual representation of the audio output, which is drawn to the &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/HTML/Canvas&quot;&gt;Canvas&lt;/a&gt; for added real time, visual feedback.&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;myAudioContext&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;webkitAudioContext&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;AudioContext&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
 &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;myAudioAnalyser&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;myAudioContext&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;createAnalyser&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
@@ -114,7 +114,7 @@
 
 &lt;h2&gt;classList API&lt;/h2&gt;
 
-&lt;p&gt;CSS active and pressed states are applied using the handy new &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/DOM/element.classList&quot;&gt;classList API&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;CSS active and pressed states are applied using the handy new &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/DOM/element.classList&quot;&gt;classList API&lt;/a&gt;. This makes adding and removing multiple class names in CSS much less of a chore.&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;finger&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;querySelector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;.finger&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 
