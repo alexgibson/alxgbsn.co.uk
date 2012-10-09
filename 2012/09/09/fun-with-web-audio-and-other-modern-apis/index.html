@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="description" content="An article on building a synth effect unit using the Web Audio API and other new features available to web developers." />
+    <meta name="author" content="Alex Gibson" />
+    <meta name="viewport" content="width=device-width" />
+
+    <title>Fun with Web Audio and other modern API's</title>
+
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="alternate" type="application/rss+xml" title="Alex Gibson" href="/feed/" />
+    <link rel="canonical" href="http://alxgbsn.co.uk/2012/09/09/fun-with-web-audio-and-other-modern-apis" />
+    
+    <script src="/js/html5shiv.js"></script>
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-33263279-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+</head>
+<body>
+
+<header role="banner">
+    <nav role="navigation">
+	<ul>
+		<li><a href="/">Home</a></li>
+		<li><a href="/projects/">Projects</a></li>
+		<li><a href="/contact/">Contact</a></li>
+	</ul>
+</nav>
+    <h1>Fun with Web Audio and other modern API's</h1>
+</header>
+    
+<article role="main">
+    <time datetime="Sun Sep 09 00:00:00 +0100 2012" pubdate>Published Sep 09 2012</time>
+    <p>Of all the new JavaScript API's becoming available in web browsers today, the <a href="https://dvcs.w3.org/hg/audio/raw-file/tip/webaudio/specification.html">Web Audio API</a> has to be one of the most exciting recent additions for web app and HTML5 game developers. This new API opens a whole range of new possibilities, and requires very little knowledge of DSP to achieve some pretty impressive results. In short, it offers the developer a lot more scope and control when compared to <del>using</del> abusing the poor old <a href="http://html5doctor.com/native-audio-in-the-browser/">HTML5 Audio element</a>.</p>
+
+<h2>The Web Audio API</h2>
+
+<p>The Web Audio API works a bit like wiring together a modular, programmable synthesiser or audio processor. It is not only capable of playing back pre-recorded sounds with sample accuracy, but it can also create raw sound using <a href="https://dvcs.w3.org/hg/audio/raw-file/tip/webaudio/specification.html#Oscillator">oscillators</a> and waveforms - the core elements of any audio synthesiser. It can route sounds, perform <a href="https://dvcs.w3.org/hg/audio/raw-file/tip/webaudio/specification.html#RealtimeAnalyserNode">frequency analysis</a> and even apply native effects such as <a href="https://dvcs.w3.org/hg/audio/raw-file/tip/webaudio/specification.html#ConvolverNode">convolution reverb</a>, <a href="https://dvcs.w3.org/hg/audio/raw-file/tip/webaudio/specification.html#DelayNode">delay</a> and <a href="https://dvcs.w3.org/hg/audio/raw-file/tip/webaudio/specification.html#WaveShaperNode">distortion</a> effects. Exciting stuff!</p>
+
+<p>The Web Audio API is currently supported in Chrome, Safari 6 and iOS6 Safari. I thought it was about time to start learning how to use the API and have some fun experimenting, so after a few hours I managed to throw together a relatively simple <a href="http://alxgbsn.co.uk/wavepad">synth effect unit</a>. It's a both mouse and touch friendly, and functions in a similar way to the <a href="http://www.korg.co.uk/products/dance_dj/kp3/dj_kp3.asp">Korg Kaoss Pad</a>, albeit with a much simpler set of features.</p>
+
+<p>The basic audio components for the demo are pretty simple. It consists of a single oscillator, a filter a delay node, and two volume gain nodes (one for delay feedback, the other for master output). The demo also uses an audio frequency analyser to create a visual representation of the audio output, which is drawn to the <a href="https://developer.mozilla.org/en-US/docs/HTML/Canvas">Canvas</a> for added real time, visual feedback.</p>
+
+<div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">myAudioContext</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">webkitAudioContext</span><span class="p">()</span> <span class="o">||</span> <span class="nx">AudioContext</span><span class="p">();</span>
+<span class="kd">var</span> <span class="nx">myAudioAnalyser</span> <span class="o">=</span> <span class="nx">myAudioContext</span><span class="p">.</span><span class="nx">createAnalyser</span><span class="p">();</span>
+<span class="kd">var</span> <span class="nx">source</span> <span class="o">=</span> <span class="nx">myAudioContext</span><span class="p">.</span><span class="nx">createOscillator</span><span class="p">();</span>
+<span class="kd">var</span> <span class="nx">nodes</span> <span class="o">=</span> <span class="p">{};</span>
+
+<span class="nx">nodes</span><span class="p">.</span><span class="nx">filter</span> <span class="o">=</span> <span class="nx">myAudioContext</span><span class="p">.</span><span class="nx">createBiquadFilter</span><span class="p">();</span>  
+<span class="nx">nodes</span><span class="p">.</span><span class="nx">volume</span> <span class="o">=</span> <span class="nx">myAudioContext</span><span class="p">.</span><span class="nx">createGainNode</span><span class="p">();</span>
+<span class="nx">nodes</span><span class="p">.</span><span class="nx">delay</span> <span class="o">=</span> <span class="nx">myAudioContext</span><span class="p">.</span><span class="nx">createDelayNode</span><span class="p">();</span>
+<span class="nx">nodes</span><span class="p">.</span><span class="nx">feedbackGain</span> <span class="o">=</span> <span class="nx">myAudioContext</span><span class="p">.</span><span class="nx">createGainNode</span><span class="p">();</span>
+</code></pre>
+</div>
+
+
+<p>The <code>source</code> is then routed through the processor <code>nodes</code> and connected to the audio context destination (i.e. the speakers).</p>
+
+<div class="highlight"><pre><code class="javascript"><span class="nx">source</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="nx">nodes</span><span class="p">.</span><span class="nx">filter</span><span class="p">);</span>
+<span class="nx">nodes</span><span class="p">.</span><span class="nx">filter</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="nx">nodes</span><span class="p">.</span><span class="nx">volume</span><span class="p">);</span>
+<span class="nx">nodes</span><span class="p">.</span><span class="nx">filter</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="nx">nodes</span><span class="p">.</span><span class="nx">delay</span><span class="p">);</span>
+<span class="nx">nodes</span><span class="p">.</span><span class="nx">delay</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="nx">nodes</span><span class="p">.</span><span class="nx">feedbackGain</span><span class="p">);</span>
+<span class="nx">nodes</span><span class="p">.</span><span class="nx">feedbackGain</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="nx">nodes</span><span class="p">.</span><span class="nx">volume</span><span class="p">);</span>
+<span class="nx">nodes</span><span class="p">.</span><span class="nx">feedbackGain</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="nx">nodes</span><span class="p">.</span><span class="nx">delay</span><span class="p">);</span>
+<span class="nx">nodes</span><span class="p">.</span><span class="nx">volume</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="nx">myAudioAnalyser</span><span class="p">);</span>
+<span class="nx">myAudioAnalyser</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="nx">myAudioContext</span><span class="p">.</span><span class="nx">destination</span><span class="p">);</span>
+</code></pre>
+</div>
+
+
+<h2>Responding to user input</h2>
+
+<p>Touching the user interface surface manipulates the oscillator frequency along the <code>x</code> axis, and the filter cutoff value along the <code>y</code> axis. To start the sound, <code>source.noteOn(0)</code> is called.</p>
+
+<div class="highlight"><pre><code class="javascript"><span class="nx">source</span><span class="p">.</span><span class="nx">frequency</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="nx">x</span><span class="p">;</span>
+<span class="nx">nodes</span><span class="p">.</span><span class="nx">filter</span><span class="p">.</span><span class="nx">frequency</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="nx">y</span><span class="p">;</span>
+<span class="nx">source</span><span class="p">.</span><span class="nx">noteOn</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+</code></pre>
+</div>
+
+
+<p>There are a range of different waveforms to use in the main oscillator, and multiple different filter types to experiment with. It's more a musical toy than anything serious, but it can produce some interesting sci-fi effects and spaced-out synth sounds by using different delay times and feedback settings. If you haven't already, have some fun and <a href="http://alxgbsn.co.uk/wavepad">try it out</a>.</p>
+
+<p>Because this is a demo that currently runs in only the most modern browsers, I was also free to use some other useful new API's and CSS effects.</p>
+
+<h2>Smoother animations using requestAnimationFrame</h2>
+
+<p>Canvas animation frame rate is handled by the browser using <a href="http://paulirish.com/2011/requestanimationframe-for-smart-animating/">requestAnimationFrame</a>. This helps to achieve smoother animation and better browser performance. It is also better for your CPU (and battery), as <abbr title="requestAnimationFrame">rAF</abbr> will automatically pause animation when the browser tab is not visible.</p>
+
+<div class="highlight"><pre><code class="javascript"><span class="kd">function</span> <span class="nx">animateSpectrum</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">mySpectrum</span> <span class="o">=</span> <span class="nx">requestAnimationFrame</span><span class="p">(</span><span class="nx">animateSpectrum</span><span class="p">,</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;canvas&#39;</span><span class="p">));</span>
+        <span class="nx">drawSpectrum</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+
+<h2>CSS Filter effects</h2>
+
+<p>The red blur effect on the finger tracking element is achieved using <a href="http://www.html5rocks.com/en/tutorials/filters/understanding-css/">CSS filter effects</a>. The main user interface is also blurred slightly when the welcome modal dialog is shown.</p>
+
+<div class="highlight"><pre><code class="css"><span class="nc">.blurred</span> <span class="p">{</span>
+        <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">filter</span><span class="o">:</span> <span class="n">blur</span><span class="p">(</span><span class="m">5px</span><span class="p">);</span>
+        <span class="n">filter</span><span class="o">:</span> <span class="n">blur</span><span class="p">(</span><span class="m">5px</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+
+<h2>window.matchMedia</h2>
+
+<p>The adaptive user interface switches to a mobile optimised interface when the viewport is smaller than a set threshold. This is done using the <a href="https://developer.mozilla.org/en-US/docs/DOM/window.matchMedia">matchMedia</a> API to detect CSS Media Queries in JavaScript.</p>
+
+<div class="highlight"><pre><code class="javascript"><span class="k">if</span> <span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">matchMedia</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">isSmallViewport</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">matchMedia</span><span class="p">(</span><span class="s2">&quot;(max-width: 512px)&quot;</span><span class="p">).</span><span class="nx">matches</span> <span class="o">?</span> <span class="kc">true</span> <span class="o">:</span> <span class="kc">false</span><span class="p">;</span>
+
+        <span class="nb">window</span><span class="p">.</span><span class="nx">matchMedia</span><span class="p">(</span><span class="s2">&quot;(max-width: 512px)&quot;</span><span class="p">).</span><span class="nx">addListener</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">mql</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="nx">mql</span><span class="p">.</span><span class="nx">matches</span><span class="p">)</span> <span class="p">{</span>
+                        <span class="nx">isSmallViewport</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+                <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                        <span class="nx">isSmallViewport</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+                <span class="p">}</span>
+        <span class="p">});</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+
+<h2>classList API</h2>
+
+<p>CSS active and pressed states are applied using the handy new <a href="https://developer.mozilla.org/en-US/docs/DOM/element.classList">classList API</a>.</p>
+
+<div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">finger</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;.finger&#39;</span><span class="p">);</span>
+
+<span class="nx">finger</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">&#39;active&#39;</span><span class="p">);</span> 
+<span class="nx">finger</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">remove</span><span class="p">(</span><span class="s1">&#39;active&#39;</span><span class="p">);</span>
+</code></pre>
+</div>
+
+
+<h2>Page Visibility API</h2>
+
+<p>Audio is automatically muted when the browser tab is not active using the <a href="http://www.nczonline.net/blog/2011/08/09/introduction-to-the-page-visibility-api/">Page Visibility API</a>. This is currently supported in Chrome, but not yet in Safari 6.</p>
+
+<div class="highlight"><pre><code class="javascript"><span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;webkitvisibilitychange&#39;</span><span class="p">,</span> <span class="nx">handleVisibilityChange</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;visibilitychange&#39;</span><span class="p">,</span> <span class="nx">handleVisibilityChange</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
+
+<span class="kd">function</span> <span class="nx">handleVisibilityChange</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">hidden</span> <span class="o">||</span> <span class="nb">document</span><span class="p">.</span><span class="nx">webkitHidden</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nx">myAudioAnalyser</span><span class="p">.</span><span class="nx">disconnect</span><span class="p">();</span>
+        <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+
+<h2>Demo and source code</h2>
+
+<p>You can check out the <a href="http://alxgbsn.co.uk/wavepad">demo here</a>. Try it in Chrome, Safari 6 or iOS6. There are still a few glitches to iron out on iOS6, but feel free to <a href="https://github.com/alexgibson/wavepad/issues">open an issue</a> if you find a bug or have any new ideas for features. Alternatively, feel free to <a href="https://github.com/alexgibson/wavepad">fork and hack away</a>.</p>
+
+    <p>
+    	<a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
+		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+	</p>
+</article>
+
+
+<form class="search" action="http://google.com/search" method="get">
+	<div role="search">
+    	<input type="hidden" name="q" value="site:alxgbsn.co.uk" />
+    	<input class="search" type="search" name="q" placeholder="Search" />
+    </div>
+</form>
+
+<footer role="contentinfo">
+	<p>Copyright &copy; Alex Gibson | <a href="/feed/">RSS feed</a>.</p>
+</footer>
+
+</body>
+</html>
