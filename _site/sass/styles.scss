@@ -1,4 +1,5 @@
 @import "base";
+@-ms-viewport { width: device-width }
 
 html {
     -webkit-text-size-adjust: 100%;
@@ -70,7 +71,6 @@ time {
 
 pre {
     overflow: auto;
-    -webkit-overflow-scrolling: touch;
     text-shadow: none;
     word-wrap: normal;
     white-space: pre;
