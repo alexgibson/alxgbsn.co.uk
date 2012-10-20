@@ -62,8 +62,8 @@ Canvas animation frame rate is handled by the browser using [requestAnimationFra
 
 {% highlight javascript %}
 function animateSpectrum () {
-		var mySpectrum = requestAnimationFrame(animateSpectrum, document.querySelector('canvas'));
-		drawSpectrum();
+	var mySpectrum = requestAnimationFrame(animateSpectrum, document.querySelector('canvas'));
+	drawSpectrum();
 }
 {% endhighlight %}
 
@@ -74,8 +74,8 @@ The red blur effect on the finger tracking element is achieved using [CSS filter
 
 {% highlight css %}
 .blurred {
-		-webkit-filter: blur(5px);
-		filter: blur(5px);
+	-webkit-filter: blur(5px);
+	filter: blur(5px);
 }
 {% endhighlight %}
 
@@ -86,15 +86,11 @@ The adaptive user interface switches to a mobile optimised interface when the vi
 
 {% highlight javascript %}
 if (window.matchMedia) {
-		isSmallViewport = window.matchMedia("(max-width: 512px)").matches ? true : false;
+	var isSmallViewport = window.matchMedia("(max-width: 512px)").matches ? true : false;
 
-		window.matchMedia("(max-width: 512px)").addListener(function (mql) {
-				if (mql.matches) {
-						isSmallViewport = true;
-				} else {
-						isSmallViewport = false;
-				}
-		});
+	window.matchMedia("(max-width: 512px)").addListener(function (mql) {
+		isSmallViewport = mql.matches ? true : false;
+	});
 }
 {% endhighlight %}
 
@@ -120,9 +116,9 @@ document.addEventListener('webkitvisibilitychange', handleVisibilityChange, fals
 document.addEventListener('visibilitychange', handleVisibilityChange, false);
 
 function handleVisibilityChange () {
-		if (document.hidden || document.webkitHidden) {
-				myAudioAnalyser.disconnect();
-		}
+	if (document.hidden || document.webkitHidden) {
+		myAudioAnalyser.disconnect();
+	}
 }
 {% endhighlight %}
 
