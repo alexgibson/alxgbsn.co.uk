@@ -4,13 +4,69 @@
  <title>Alex Gibson, Front End Developer</title>
  <link href="http://alxgbsn.co.uk/feed/" rel="self"/>
  <link href="http://alxgbsn.co.uk/"/>
- <updated>2012-10-20T22:54:53+01:00</updated>
+ <updated>2012-12-27T21:25:29+00:00</updated>
  <id>http://alxgbsn.co.uk/</id>
  <author>
    <name>Alex Gibson</name>
    <email>alxgbsn@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Taking Web Audio Offline in iOS 6 Safari</title>
+   <link href="http://alxgbsn.co.uk/2012/11/27/taking-web-audio-offline-in-ios6-safari"/>
+   <updated>2012-11-27T00:00:00+00:00</updated>
+   <id>http://alxgbsn.co.uk/2012/11/27/taking-web-audio-offline-in-ios6-safari</id>
+   <content type="html">&lt;p&gt;The following words are from of my first &lt;a href=&quot;http://html5doctor.com/author/alexg/&quot;&gt;guest post for HTML5 Doctor&lt;/a&gt;. You can read the &lt;a href=&quot;http://html5doctor.com/taking-web-audio-offline-in-ios-6-safari/&quot;&gt;original article here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Playing cached audio for offline use on iOS Safari has long been a challenge that has proved to be &lt;a href=&quot;http://happyworm.com/blog/2012/05/29/playing-web-audio-offline-on-mobile-safari-mission-impossible/&quot;&gt;mission impossible&lt;/a&gt;. With the advent of the &lt;a href=&quot;https://dvcs.w3.org/hg/audio/raw-file/tip/webaudio/specification.html&quot;&gt;Web Audio API&lt;/a&gt; however, it is now finally achievable (despite still needing to jump through a few hoops).&lt;/p&gt;
+
+&lt;p&gt;The bad news is that you still can't cache an MP3 file using &lt;a href=&quot;http://html5doctor.com/go-offline-with-application-cache/&quot;&gt;Application Cache&lt;/a&gt;, and then simply load it using an &lt;code&gt;XmlHttpRequest&lt;/code&gt;. Safari on iOS6 will cache the MP3, but then refuse to play it and fail silently (how useful!). But all is not lost…&lt;/p&gt;
+
+&lt;h2&gt;Base64 to the rescue&lt;/h2&gt;
+
+&lt;p&gt;Because the Web Audio API offers developers direct control over the &lt;a href=&quot;https://dvcs.w3.org/hg/audio/raw-file/tip/webaudio/specification.html#AudioBufferSourceNode&quot;&gt;audioBuffer&lt;/a&gt;, it means you can now convert data formats on-the-fly and then feed it directly to the Web Audio API for playback. For example, if you encode an MP3 file as a base64 string, you can then decode it to an &lt;a href=&quot;https://developer.mozilla.org/en/JavaScript_typed_arrays/ArrayBuffer&quot;&gt;arrayBuffer&lt;/a&gt; and convert the raw audio data.&lt;/p&gt;
+
+&lt;h2&gt;Encoding an audio file&lt;/h2&gt;
+
+&lt;p&gt;You can easily convert an mp3 file to a base64 string using &lt;a href=&quot;http://www.openssl.org/&quot;&gt;OpenSSL&lt;/a&gt;. If you are on Mac OSX it comes pre-installed, so just open up Terminal and type the following command. Make sure to replace &lt;code&gt;&amp;lt;infile&amp;gt;&lt;/code&gt; with the path to your mp3, and &lt;code&gt;&amp;lt;outfile&amp;gt;&lt;/code&gt; with your chosen destination for the encoded data.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;openssl base64 -in &amp;lt;infile&amp;gt; -out &amp;lt;outfile&amp;gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;This will output a base64 string representation of your sound file. You can then cache the string using any form of web storage you choose (e.g. &lt;a href=&quot;http://html5doctor.com/go-offline-with-application-cache/&quot;&gt;Application Cache&lt;/a&gt;, &lt;a href=&quot;http://html5doctor.com/storing-data-the-simple-html5-way-and-a-few-tricks-you-might-not-have-known/&quot;&gt;localStorage&lt;/a&gt;, &lt;a href=&quot;http://html5doctor.com/introducing-web-sql-databases/&quot;&gt;webSQL&lt;/a&gt;)&lt;/p&gt;
+
+&lt;h2&gt;Base64 to arrayBuffer&lt;/h2&gt;
+
+&lt;p&gt;In order to decode the base64 string back into an &lt;a href=&quot;https://developer.mozilla.org/en/JavaScript_typed_arrays/ArrayBuffer&quot;&gt;arrayBuffer&lt;/a&gt;, you will need to use a custom method. Check out Daniele Guerrero's &lt;a href=&quot;https://github.com/danguer/blog-examples/blob/master/js/base64-binary.js&quot;&gt;base64-binary.js&lt;/a&gt; as a good script that can be used exactly for this purpose. It decodes a base64 string into a &lt;a href=&quot;https://developer.mozilla.org/en/JavaScript_typed_arrays/Uint8Array&quot;&gt;Uint8Array&lt;/a&gt; typed array and stores it in an &lt;code&gt;arrayBuffer&lt;/code&gt;. Once this is done, it is then simply a case of decoding the audio data using the Web Audio API's &lt;code&gt;decodeAudioData()&lt;/code&gt; method.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;arrayBuff&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Base64Binary&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;decodeArrayBuffer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;sound&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;myAudioContext&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;decodeAudioData&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;arrayBuff&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;audioData&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;myBuffer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;audioData&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;Once you have the audio data decoded, it is just a case of passing it to your audio buffer source and playing the sound.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;mySource&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;myAudioContext&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;createBufferSource&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;mySource&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;buffer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;myBuffer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;mySource&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;connect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;myAudioContext&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;destination&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;mySource&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;noteOn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;h2&gt;Full demo and source code&lt;/h2&gt;
+
+&lt;p&gt;Check out the &lt;a href=&quot;http://alxgbsn.co.uk/offlinewebaudio/&quot;&gt;online demo&lt;/a&gt; and &lt;a href=&quot;https://github.com/alexgibson/offlinewebaudio&quot;&gt;source code&lt;/a&gt; for a complete example of the techniques discussed in this article.&lt;/p&gt;
+
+&lt;p&gt;Currently the demo works in Safari 6, Chrome desktop and iOS6 Safari. The technique has potential to work in any browser that supports Web Audio API however, so hopefully Chrome Mobile can soon add support as well.&lt;/p&gt;
+
+&lt;p&gt;The W3C is currently pursuing the Web Audio API &lt;a href=&quot;http://www.w3.org/2011/audio/wiki/W3C_Audio_Publications_and_Milestones&quot;&gt;as a standard&lt;/a&gt;.&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Fun with Web Audio and other modern API's</title>
