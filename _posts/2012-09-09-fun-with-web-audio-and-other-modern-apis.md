@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Fun with Web Audio and other modern API's
+titleinfo: Alex Gibson
 desc: An article on building a synth effect unit using the Web Audio API and other new features available to web developers.
 ---
 

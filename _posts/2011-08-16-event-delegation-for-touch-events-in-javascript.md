@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Event delegation for touch events in JavaScript
+titleinfo: Alex Gibson
 desc: A barebones example of how to perform event delegation for touch events in mobile web browsers
 ---
 

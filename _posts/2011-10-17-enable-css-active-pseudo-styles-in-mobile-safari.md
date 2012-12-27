@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Enable CSS active pseudo styles in Mobile Safari
+titleinfo: Alex Gibson
 desc: A single line JavaScript hack to enable CSS active pseudo styles in iOS Mobile Safari
 ---
 

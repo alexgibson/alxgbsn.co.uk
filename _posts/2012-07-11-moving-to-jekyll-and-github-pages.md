@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Moving to Jekyll and GitHub Pages
+titleinfo: Alex Gibson
 desc: The benefits of using a static site generator such as Jekyll and hosting a blog on GitHub Pages
 ---
 

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Site redesign, a mobile first approach
+titleinfo: Alex Gibson
 desc: Details on the redesign of this site using a mobile first approach to designing websites
 ---
 

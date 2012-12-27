@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Targeting iPhone 4 using CSS Media Queries
+titleinfo: Alex Gibson
 desc: How to deliver high resolution web content for mobile devices using CSS Media Queries
 ---
 

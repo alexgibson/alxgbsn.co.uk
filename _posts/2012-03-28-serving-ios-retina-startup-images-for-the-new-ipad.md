@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Serving iOS retina startup images for the new iPad
+titleinfo: Alex Gibson
 desc: How to best serve retina sized iPad startup images for home screen web apps
 ---
 

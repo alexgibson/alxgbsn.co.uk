@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Using HTML5 localStorage as a fallback for offline form submission
+titleinfo: Alex Gibson
 desc: A proof of concept demo using HTML5 localStorage as a fallback for form submission when a web browser is offline
 ---
 

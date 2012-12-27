@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Taking Web Audio Offline in iOS 6 Safari
+titleinfo: Alex Gibson
 desc: How to cache audio files for offline use using the Web Audio API
 ---
 

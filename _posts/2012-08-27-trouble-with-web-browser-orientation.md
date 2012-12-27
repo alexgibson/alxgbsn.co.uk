@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Trouble with web browser orientation
+titleinfo: Alex Gibson
 desc: A look at the current methods available to determine browser orientation, and details some of the problems found along the way.
 ---
 

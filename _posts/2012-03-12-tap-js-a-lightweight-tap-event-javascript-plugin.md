@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Tap.js - A lightweight ‘tap’ event JavaScript plugin
+titleinfo: Alex Gibson
 desc: A custom 'tap' event JavaScript plugin for mobile browsers
 ---
 

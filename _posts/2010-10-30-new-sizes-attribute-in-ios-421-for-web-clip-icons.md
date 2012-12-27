@@ -1,6 +1,7 @@
 ---
 layout: post
 title: New sizes attribute in iOS 4.2.1 for web clip icons
+titleinfo: Alex Gibson
 desc: How to specify correctly sized iOS home screen web clip icons using the sizes attribute
 ---
 

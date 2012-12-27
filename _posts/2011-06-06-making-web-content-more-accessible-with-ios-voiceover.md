@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Making web content more accessible with iOS VoiceOver
+titleinfo: Alex Gibson
 desc: An overview of using VoiceOver with iOS Safari and tips on how to make your web content more accessible
 ---
 

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: iOS startup images using CSS media queries
+titleinfo: Alex Gibson
 desc: How to serve correctly sized iOS startup images for home screen web apps using CSS media queries
 ---
 
