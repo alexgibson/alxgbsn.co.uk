@@ -4,7 +4,7 @@
  <title>Alex Gibson, Front End Developer</title>
  <link href="http://alxgbsn.co.uk/feed/" rel="self"/>
  <link href="http://alxgbsn.co.uk/"/>
- <updated>2013-01-04T09:48:24+00:00</updated>
+ <updated>2013-01-06T19:45:29+00:00</updated>
  <id>http://alxgbsn.co.uk/</id>
  <author>
    <name>Alex Gibson</name>
@@ -61,6 +61,8 @@
 &lt;h2&gt;Full demo and source code&lt;/h2&gt;
 
 &lt;p&gt;Check out the &lt;a href=&quot;http://alxgbsn.co.uk/offlinewebaudio/&quot;&gt;online demo&lt;/a&gt; and &lt;a href=&quot;https://github.com/alexgibson/offlinewebaudio&quot;&gt;source code&lt;/a&gt; for a complete example of the techniques discussed in this article.&lt;/p&gt;
+
+&lt;h2&gt;Browser support&lt;/h2&gt;
 
 &lt;p&gt;Currently the demo works in Safari 6, Chrome desktop and iOS6 Safari. The technique has potential to work in any browser that supports Web Audio API however, so hopefully Chrome Mobile can soon add support as well.&lt;/p&gt;
 

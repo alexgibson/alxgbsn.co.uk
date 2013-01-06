@@ -52,6 +52,9 @@ Full demo and source code
 
 Check out the [online demo](http://alxgbsn.co.uk/offlinewebaudio/) and [source code](https://github.com/alexgibson/offlinewebaudio) for a complete example of the techniques discussed in this article.
 
+Browser support
+---------------
+
 Currently the demo works in Safari 6, Chrome desktop and iOS6 Safari. The technique has potential to work in any browser that supports Web Audio API however, so hopefully Chrome Mobile can soon add support as well.
 
 The W3C is currently pursuing the Web Audio API [as a standard](http://www.w3.org/2011/audio/wiki/W3C_Audio_Publications_and_Milestones).
