@@ -165,3 +165,25 @@ form.search {
     ::-webkit-input-placeholder, :-moz-placeholder { 
     } 
 }
+
+.influads_block {
+    margin: 2em auto;
+
+    a:link, a:visited {
+        color: #434343 !important;
+        font-weight:bold;
+        text-decoration: none;
+        border-bottom: #a7a7a7 1px dashed;
+    }
+
+    a:hover, a:active, a:focus {
+        color: #838383 !important;
+        text-decoration: none;
+        border-bottom: none;
+        outline: none;
+    }
+
+    .influads_link_img {
+        border-bottom: none !important;
+    }
+}
