@@ -35,6 +35,13 @@ p, ul > li {
     line-height: 1.5em
 }
 
+p {
+    text-align: justify;
+    -webkit-hyphens:auto;
+    -moz-hyphens: auto;
+    hyphens: auto;
+}
+
 em {
     font-family: Palatino-Italic, Palatino-Roman, Cambria, "Times New Roman", Times, serif;
     font-style: italic;  
@@ -135,7 +142,10 @@ section {
 
 footer[role=contentinfo] {
     display: block;
-    text-align: center;
+    
+    p {
+        text-align: center;
+    }
 }
 
 form.search {
