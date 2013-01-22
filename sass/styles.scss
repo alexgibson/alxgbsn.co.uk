@@ -153,6 +153,13 @@ footer[role=contentinfo] {
     p {
         text-align: center;
     }
+
+    small {
+        display: block;
+        margin: 0 auto;
+        max-width: 35em;
+        text-align: center;
+    }
 }
 
 form.search {
