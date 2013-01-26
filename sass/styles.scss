@@ -33,6 +33,23 @@ a:hover, a:active, a:focus {
     outline: none;
 }
 
+.sub {
+    text-align: center; 
+}
+
+.sub > a:link, .sub > a:visited {
+    color: #636568;
+    font-family: Palatino-Italic, Palatino-Roman, Cambria, "Times New Roman", Times, serif;
+    font-size: 1em;
+    font-style: italic;
+    font-weight: normal;
+    text-align: center;   
+}
+
+.sub > a:hover, .sub > a:active, .sub > a:focus {
+    color: #636568;   
+}
+
 p, ul > li {
     line-height: 1.5em
 }
@@ -127,15 +144,6 @@ header[role=banner] {
 
 article[role=main] {
     display: block;
-}
-
-h2.sub {
-    color: #636568;
-    font-family: Palatino-Italic, Palatino-Roman, Cambria, "Times New Roman", Times, serif;
-    font-size: 1em;
-    font-style: italic;
-    font-weight: normal;
-    text-align: center;    
 }
 
 section {
