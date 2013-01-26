@@ -223,23 +223,3 @@ form.search {
 		border-bottom: none !important;
 	}
 }
-
-/* default style */
-.selectnav { display: none; }
-
-/* small screen */
-@media screen and (max-width: 600px) {
-	.js #nav { 
-		display: none; 
-	}
-	.js .selectnav { 
-		display: block; 
-		width: 100%; 
-		height: 35px;
-		line-height: 35px;
-		border: 1px solid #555;
-	}
-	nav[role=navigation] {
-		border-bottom: none;   
-	}
-}
