@@ -1,4 +1,4 @@
-Disallow: /dropbox/
+Disallow: /projects/index.html
 
 Allow: /
 Sitemap: http://alxgbsn.co.uk/sitemap.xml
