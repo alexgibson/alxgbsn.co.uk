@@ -79,6 +79,7 @@ blockquote {
 
 h1 {
 	text-align: center;
+	padding-top: 1.5em;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -120,8 +121,13 @@ p > code {
 
 nav[role=navigation] {
 	display: block;
-	overflow: hidden; 
-	border-bottom: 1px solid #a7a7a7;   
+	position: fixed;
+	top: 0;
+	height: 44px;
+	width: 90%;
+	max-width: 35em;
+	background-color: #ecebe6;
+	border-bottom: 1px solid #a7a7a7; 
 }
 
 nav[role=navigation] > ul {
@@ -131,6 +137,7 @@ nav[role=navigation] > ul {
 	li {
 		float: left;
 		margin-right: 1em;
+		line-height: 44px;
 
 		a:link, a:visited {
 			border-bottom: none;
