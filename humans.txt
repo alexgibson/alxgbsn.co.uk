@@ -4,8 +4,6 @@ Developer & designer: Alex Gibson
 Email: alxgbsn@gmail.com				
 Twitter: @alex_gibson						
 Location: Newcastle upon Tyne, United Kingdom
-
-TEST
 													
 /* SITE */
 					
