@@ -189,6 +189,7 @@ footer[role=contentinfo] {
 form.search {
 
 	margin-top: 1.5em;
+	line-height: 44px;
 	text-align: center;
 
 	input[type=search] {
@@ -216,6 +217,12 @@ form.search {
 
 	::-webkit-input-placeholder, :-moz-placeholder { 
 	} 
+
+	button[type=submit] {
+		-webkit-appearance: button;
+		font-family: Palatino-Roman, Cambria, "Times New Roman", Times, serif;
+		color: #434343;
+	}
 }
 
 .influads_block {
