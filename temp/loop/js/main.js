@@ -39,6 +39,9 @@ var wavepad = (function () {
                 doc.getElementById('stop').addEventListener('click', wavepad.stopSounds, false);
 
                 wavepad.loadSoundFile('alert.mp3');
+                wavepad.loadSoundFile2('sound2.mp3');
+                wavepad.loadSoundFile3('sound3.mp3');
+                wavepad.loadSoundFil4('sound4.mp3');
                   
                 nodes.volume = myAudioContext.createGainNode();
                 nodes.volume2 = myAudioContext.createGainNode();
@@ -68,6 +71,60 @@ var wavepad = (function () {
                 }); 
             },
 
+            loadSoundFile2: function (url) {
+                var xhr = new XMLHttpRequest();
+                xhr.open('GET', url, true);
+                xhr.responseType = 'arraybuffer';
+                xhr.onload = function(e) {
+                    wavepad.initSound2(this.response); // this.response is an ArrayBuffer.
+                };
+                xhr.send();
+            },
+
+            initSound2: function (arrayBuffer) {
+                myAudioContext.decodeAudioData(arrayBuffer, function(buffer) {
+                    audioBuffer2 = buffer;
+                }, function(e) {
+                    console.log('Error decoding file', e);
+                }); 
+            },
+
+            loadSoundFile3: function (url) {
+                var xhr = new XMLHttpRequest();
+                xhr.open('GET', url, true);
+                xhr.responseType = 'arraybuffer';
+                xhr.onload = function(e) {
+                    wavepad.initSound3(this.response); // this.response is an ArrayBuffer.
+                };
+                xhr.send();
+            },
+
+            initSound3: function (arrayBuffer) {
+                myAudioContext.decodeAudioData(arrayBuffer, function(buffer) {
+                    audioBuffer3 = buffer;
+                }, function(e) {
+                    console.log('Error decoding file', e);
+                }); 
+            },
+
+            loadSoundFile4: function (url) {
+                var xhr = new XMLHttpRequest();
+                xhr.open('GET', url, true);
+                xhr.responseType = 'arraybuffer';
+                xhr.onload = function(e) {
+                    wavepad.initSound4(this.response); // this.response is an ArrayBuffer.
+                };
+                xhr.send();
+            },
+
+            initSound4: function (arrayBuffer) {
+                myAudioContext.decodeAudioData(arrayBuffer, function(buffer) {
+                    audioBuffer4 = buffer;
+                }, function(e) {
+                    console.log('Error decoding file', e);
+                }); 
+            },
+
             routeSounds: function () {
 
                 source = myAudioContext.createBufferSource();
@@ -75,15 +132,15 @@ var wavepad = (function () {
                 source.loop = true;
 
                 source2 = myAudioContext.createBufferSource();
-                source2.buffer = audioBuffer;
+                source2.buffer = audioBuffer2;
                 source2.loop = true;
 
                 source3 = myAudioContext.createBufferSource();
-                source3.buffer = audioBuffer;
+                source3.buffer = audioBuffer3;
                 source3.loop = true;
 
                 source4 = myAudioContext.createBufferSource();
-                source4.buffer = audioBuffer;
+                source4.buffer = audioBuffer4;
                 source4.loop = true;
 
                 nodes.volume.gain.value = 1;
