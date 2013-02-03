@@ -41,7 +41,7 @@ var wavepad = (function () {
                 wavepad.loadSoundFile('alert.mp3');
                 wavepad.loadSoundFile2('sound2.mp3');
                 wavepad.loadSoundFile3('sound3.mp3');
-                wavepad.loadSoundFil4('sound4.mp3');
+                wavepad.loadSoundFile4('sound4.mp3');
                   
                 nodes.volume = myAudioContext.createGainNode();
                 nodes.volume2 = myAudioContext.createGainNode();
