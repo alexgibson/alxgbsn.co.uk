@@ -1,4 +1,4 @@
-Disallow: /projects/index.html
+Disallow: /temp/
 
 Allow: /
 Sitemap: http://alxgbsn.co.uk/sitemap.xml
