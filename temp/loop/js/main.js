@@ -41,7 +41,7 @@ var wavepad = (function () {
                 doc.getElementById('play').addEventListener('click', wavepad.playSounds, false);
                 doc.getElementById('stop').addEventListener('click', wavepad.stopSounds, false);
 
-                wavepad.loadSoundFile('alert.mp3');
+                wavepad.loadSoundFile('sound1.mp3');
                 wavepad.loadSoundFile2('sound2.mp3');
                 wavepad.loadSoundFile3('sound3.mp3');
                 wavepad.loadSoundFile4('sound4.mp3');
