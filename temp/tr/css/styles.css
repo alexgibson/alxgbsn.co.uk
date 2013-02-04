@@ -29,17 +29,23 @@ body {
 button {
     -webkit-appearance: button; 
     height: 44px;
-    width: 100px;
+    width: 119px;
 }
 
 button:disabled {
     opacity: 0.5;
 }
 
+label {
+    display: block;
+    margin: 0;
+}
+
 input[type=range] {
     -webkit-appearance: none; 
     width: 300px;
     height: 44px;
+    margin: 0 0 1.5em 0;
     border: 5px solid #333;
     background: #ccc;
     color: #ffffff;
@@ -63,4 +69,21 @@ input[type=range]::-webkit-slider-thumb {
     background: -ms-linear-gradient(top, rgb(253,253,253), rgb(190,190,190));
     background: -o-linear-gradient(top, rgb(253,253,253), rgb(190,190,190));
     background: linear-gradient(top, rgb(253,253,253), rgb(190,190,190));
+}
+
+.mixer {
+    float: left;
+}
+
+#spectrum-output {
+    border: 1px solid #333;
+}
+
+.output-controls {
+    float: left;
+    margin-left: 1.5em;
+}
+
+.button-controls {
+    text-align: center;
 }

@@ -2,27 +2,19 @@ var TRMixer = (function () {
 
     'use strict';
 
-    var surface,
-        finger,
-        source1,
-        source2,
-        source3,
-        source4,
-        buffer1,
-        buffer2,
-        buffer3,
-        buffer4,
+    var brass,
+        highPerc,
+        lowPerc,
+        strings,
+        bufferBrass,
+        bufferHighPerc,
+        bufferLowPerc,
+        bufferStrings,
         nodes = {},
         myAudioContext,
         myAudioAnalyser,
         mySpectrum,
-        impulseResponse,
-        hasTouch = 'ontouchstart' in window || 'createTouch' in document,
-        eventStart = hasTouch ? 'touchstart' : 'mousedown',
-        eventMove = hasTouch ? 'touchmove' : 'mousemove',
-        eventEnd = hasTouch ? 'touchend' : 'mouseup',
-        isSmallViewport = false,
-        isMuted = false;
+        soundsURL = 'sounds/';
 
     return {
 
@@ -41,15 +33,15 @@ var TRMixer = (function () {
             doc.getElementById('play').addEventListener('click', TRMixer.playSounds, false);
             doc.getElementById('stop').addEventListener('click', TRMixer.stopSounds, false);
 
-            TRMixer.loadSoundFile('sound1.mp3', 1);
-            TRMixer.loadSoundFile('sound2.mp3', 2);
-            TRMixer.loadSoundFile('sound3.mp3', 3);
-            TRMixer.loadSoundFile('sound4.mp3', 4);
+            TRMixer.loadSoundFile(soundsURL + 'brass.mp3', 1);
+            TRMixer.loadSoundFile(soundsURL + 'high-perc.mp3', 2);
+            TRMixer.loadSoundFile(soundsURL + 'low-perc.mp3', 3);
+            TRMixer.loadSoundFile(soundsURL + 'strings.mp3', 4);
 
-            nodes.volume1 = myAudioContext.createGainNode();
-            nodes.volume2 = myAudioContext.createGainNode();
-            nodes.volume3 = myAudioContext.createGainNode();
-            nodes.volume4 = myAudioContext.createGainNode();
+            nodes.volumeBrass = myAudioContext.createGainNode();
+            nodes.volumeHighPerc = myAudioContext.createGainNode();
+            nodes.volumeLowPerc = myAudioContext.createGainNode();
+            nodes.volumeStrings = myAudioContext.createGainNode();
             nodes.masterVolume = myAudioContext.createGainNode();
 
             myAudioAnalyser = myAudioContext.createAnalyser();
@@ -78,23 +70,24 @@ var TRMixer = (function () {
             myAudioContext.decodeAudioData(arrayBuffer, function (buffer) {
                 switch (node) {
                 case 1:
-                    buffer1 = buffer;
+                    bufferBrass = buffer;
                     break;
                 case 2:
-                    buffer2 = buffer;
+                    bufferHighPerc = buffer;
                     break;
                 case 3:
-                    buffer3 = buffer;
+                    bufferLowPerc = buffer;
                     break;
                 case 4:
-                    buffer4 = buffer;
+                    bufferStrings = buffer;
                     break;
                 }
 
-                console.log('Audio file decoded: ', buffer);
+                console.log('Sound file decoded: ', buffer);
 
-                if (buffer1 && buffer2 && buffer3 && buffer4) {
+                if (bufferBrass && bufferHighPerc && bufferLowPerc && bufferStrings) {
                     TRMixer.initMixer();
+                    console.log('Mixer status: ready');
                 }
             }, function (e) {
                 console.log('Error decoding file', e);
@@ -104,60 +97,60 @@ var TRMixer = (function () {
 
         initMixer: function () {
             var doc = document,
-                slider1 = doc.getElementById('channel1'),
-                slider2 = doc.getElementById('channel2'),
-                slider3 = doc.getElementById('channel3'),
-                slider4 = doc.getElementById('channel4');
+                brassSlider = doc.getElementById('brass'),
+                highPercSlider = doc.getElementById('high-perc'),
+                lowPercSlider = doc.getElementById('low-perc'),
+                stringsSlider = doc.getElementById('strings');
 
             doc.getElementById('status').innerHTML = 'Status: Ready';
             doc.getElementById('play').removeAttribute('disabled');
             doc.getElementById('stop').removeAttribute('disabled');
 
-            slider1.addEventListener('input', TRMixer.sliderChange, false);
-            slider2.addEventListener('input', TRMixer.sliderChange, false);
-            slider3.addEventListener('input', TRMixer.sliderChange, false);
-            slider4.addEventListener('input', TRMixer.sliderChange, false);
+            brassSlider.addEventListener('input', TRMixer.sliderChange, false);
+            highPercSlider.addEventListener('input', TRMixer.sliderChange, false);
+            lowPercSlider.addEventListener('input', TRMixer.sliderChange, false);
+            stringsSlider.addEventListener('input', TRMixer.sliderChange, false);
 
-            slider1.removeAttribute('disabled');
-            slider2.removeAttribute('disabled');
-            slider3.removeAttribute('disabled');
-            slider4.removeAttribute('disabled');
+            brassSlider.removeAttribute('disabled');
+            highPercSlider.removeAttribute('disabled');
+            lowPercSlider.removeAttribute('disabled');
+            stringsSlider.removeAttribute('disabled');
         },
 
         routeSounds: function () {
             var doc = document;
 
-            source1 = myAudioContext.createBufferSource();
-            source1.buffer = buffer1;
-            source1.loop = true;
+            brass = myAudioContext.createBufferSource();
+            brass.buffer = bufferBrass;
+            brass.loop = true;
 
-            source2 = myAudioContext.createBufferSource();
-            source2.buffer = buffer2;
-            source2.loop = true;
+            highPerc = myAudioContext.createBufferSource();
+            highPerc.buffer = bufferHighPerc;
+            highPerc.loop = true;
 
-            source3 = myAudioContext.createBufferSource();
-            source3.buffer = buffer3;
-            source3.loop = true;
+            lowPerc = myAudioContext.createBufferSource();
+            lowPerc.buffer = bufferLowPerc;
+            lowPerc.loop = true;
 
-            source4 = myAudioContext.createBufferSource();
-            source4.buffer = buffer4;
-            source4.loop = true;
+            strings = myAudioContext.createBufferSource();
+            strings.buffer = bufferStrings;
+            strings.loop = true;
 
-            nodes.volume1.gain.value = doc.getElementById('channel1').value;
-            nodes.volume2.gain.value = doc.getElementById('channel2').value;
-            nodes.volume3.gain.value = doc.getElementById('channel3').value;
-            nodes.volume4.gain.value = doc.getElementById('channel4').value;
+            nodes.volumeBrass.gain.value = doc.getElementById('brass').value;
+            nodes.volumeHighPerc.gain.value = doc.getElementById('high-perc').value;
+            nodes.volumeLowPerc.gain.value = doc.getElementById('low-perc').value;
+            nodes.volumeStrings.gain.value = doc.getElementById('strings').value;
             nodes.masterVolume.gain.value = 1;
 
-            source1.connect(nodes.volume1);
-            source2.connect(nodes.volume2);
-            source3.connect(nodes.volume3);
-            source4.connect(nodes.volume4);
+            brass.connect(nodes.volumeBrass);
+            highPerc.connect(nodes.volumeHighPerc);
+            lowPerc.connect(nodes.volumeLowPerc);
+            strings.connect(nodes.volumeStrings);
 
-            nodes.volume1.connect(nodes.masterVolume);
-            nodes.volume2.connect(nodes.masterVolume);
-            nodes.volume3.connect(nodes.masterVolume);
-            nodes.volume4.connect(nodes.masterVolume);
+            nodes.volumeBrass.connect(nodes.masterVolume);
+            nodes.volumeHighPerc.connect(nodes.masterVolume);
+            nodes.volumeLowPerc.connect(nodes.masterVolume);
+            nodes.volumeStrings.connect(nodes.masterVolume);
 
             nodes.masterVolume.connect(myAudioAnalyser);
             myAudioAnalyser.connect(myAudioContext.destination);
@@ -168,42 +161,44 @@ var TRMixer = (function () {
                 TRMixer.stopSounds();
             }
             TRMixer.routeSounds();
-            source1.noteOn(0);
-            source2.noteOn(0);
-            source3.noteOn(0);
-            source4.noteOn(0);
+            brass.noteOn(0);
+            highPerc.noteOn(0);
+            lowPerc.noteOn(0);
+            strings.noteOn(0);
+            console.log('Mixer -> Playing');
         },
 
         stopSounds: function () {
             if (myAudioContext.activeSourceCount > 0) {
-                source1.noteOff(0);
-                source2.noteOff(0);
-                source3.noteOff(0);
-                source4.noteOff(0);
+                brass.noteOff(0);
+                highPerc.noteOff(0);
+                lowPerc.noteOff(0);
+                strings.noteOff(0);
+                console.log('Mixer -> Stopped');
             }
         },
 
         sliderChange: function (slider) {
             if (myAudioContext.activeSourceCount > 0) {
                 switch (slider.target.id) {
-                case 'channel1':
-                    nodes.volume1.gain.value = slider.target.value;
+                case 'brass':
+                    nodes.volumeBrass.gain.value = slider.target.value;
                     break;
-                case 'channel2':
-                    nodes.volume2.gain.value = slider.target.value;
+                case 'high-perc':
+                    nodes.volumeHighPerc.gain.value = slider.target.value;
                     break;
-                case 'channel3':
-                    nodes.volume3.gain.value = slider.target.value;
+                case 'low-perc':
+                    nodes.volumeLowPerc.gain.value = slider.target.value;
                     break;
-                case 'channel4':
-                    nodes.volume4.gain.value = slider.target.value;
+                case 'strings':
+                    nodes.volumeStrings.gain.value = slider.target.value;
                     break;
                 }
             }
         },
 
         animateSpectrum: function () {
-            mySpectrum = requestAnimationFrame(TRMixer.animateSpectrum, document.querySelector('canvas'));
+            mySpectrum = requestAnimationFrame(TRMixer.animateSpectrum, document.getElementById('spectrum-output'));
             TRMixer.drawSpectrum();
         },
 
@@ -223,7 +218,7 @@ var TRMixer = (function () {
             canvas.height = canvasSize - 10;
 
             ctx.clearRect(0, 0, width, height);
-            ctx.fillStyle = '#1d1c25';
+            ctx.fillStyle = '#333';
 
             myAudioAnalyser.getByteFrequencyData(freqByteData);
 
