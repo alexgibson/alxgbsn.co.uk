@@ -25,12 +25,9 @@ body {
 }
 
 button {
-    -webkit-appearance: button;
+    -webkit-appearance: none;
     height: 44px;
     width: 119px; 
-    -webkit-border-radius: 0;  
-    -moz-border-radius: 0;
-    border-radius: 0;
 }
 
 button:active {
