@@ -1,26 +1,45 @@
+
+/*
+ * 
+ * Tomb Raider Music Mixer
+ * Web Audio API programming by Alex Gibson 2013
+ * http://alxgbsn.co.uk | @alex_gibson
+ * 
+ */
+
+/*global clearInterval: false, clearTimeout: false, document: false, event: false, frames: false, history: false, Image: false, location: false, name: false, navigator: false, Option: false, parent: false, screen: false, setInterval: false, setTimeout: false, window: false, XMLHttpRequest: false, console: false, webkitAudioContext: false, AudioContext: false, requestAnimationFrame: false, Uint8Array: false */
+
 var TRMixer = (function () {
 
     'use strict';
 
-    var brass,
-        highPerc,
-        lowPerc,
-        strings,
-        bufferBrass,
-        bufferHighPerc,
-        bufferLowPerc,
-        bufferStrings,
-        nodes = {},
-        myAudioContext,
-        myAudioAnalyser,
-        mySpectrum,
-        soundsURL = 'sounds/';
+    var brass,                              //brass source node
+        highPerc,                           //high perc source node
+        lowPerc,                            //low perc source node
+        strings,                            //strings source node
+        bufferBrass,                        //brass audio buffer
+        bufferHighPerc,                     //high perc audio buffer
+        bufferLowPerc,                      //low perc audio buffer
+        bufferStrings,                      //strings audio buffer
+        nodes = {},                         //nodes object
+        myAudioContext,                     //web audio context
+        myAudioAnalyser,                    //audio analyser
+        mySpectrum,                         //audio apectrum graph
+        brassFile = 'brass.mp3',            //brass audio filename
+        highPercFile = 'high-perc.mp3',     //high perc audio filename
+        lowPercFile = 'low-perc.mp3',       //low perc audio filename
+        stringsFile = 'strings.mp3',        //strings audio filename
+        soundsURL = 'sounds/';              //sounds URL path
 
     return {
 
+        /*
+         * Initialise loading sound files and create Web Audio component nodes
+         */
         init: function () {
             var doc = document;
 
+            //create an audio context
             if ('webkitAudioContext' in window) {
                 myAudioContext = new webkitAudioContext();
             } else if ('AudioContext' in window) {
@@ -30,45 +49,61 @@ var TRMixer = (function () {
                 return;
             }
 
+            //add click event listeners for play & stop buttons
             doc.getElementById('play').addEventListener('click', TRMixer.playSounds, false);
             doc.getElementById('stop').addEventListener('click', TRMixer.stopSounds, false);
 
-            TRMixer.loadSoundFile(soundsURL + 'brass.mp3', 1);
-            TRMixer.loadSoundFile(soundsURL + 'high-perc.mp3', 2);
-            TRMixer.loadSoundFile(soundsURL + 'low-perc.mp3', 3);
-            TRMixer.loadSoundFile(soundsURL + 'strings.mp3', 4);
+            //load sounds files
+            TRMixer.loadSoundFile(soundsURL + brassFile, 1);
+            TRMixer.loadSoundFile(soundsURL + highPercFile, 2);
+            TRMixer.loadSoundFile(soundsURL + lowPercFile, 3);
+            TRMixer.loadSoundFile(soundsURL + stringsFile, 4);
 
+            //create volume gain nodes for each sound
             nodes.volumeBrass = myAudioContext.createGainNode();
             nodes.volumeHighPerc = myAudioContext.createGainNode();
             nodes.volumeLowPerc = myAudioContext.createGainNode();
             nodes.volumeStrings = myAudioContext.createGainNode();
+
+            //creat master volume gain node
             nodes.masterVolume = myAudioContext.createGainNode();
 
+            //create audio analyser node
             myAudioAnalyser = myAudioContext.createAnalyser();
             myAudioAnalyser.smoothingTimeConstant = 0.85;
 
+            //animate spectrum analyser
             TRMixer.animateSpectrum();
 
+            //prevent default document scrolling
             doc.addEventListener('touchmove', function (e) {
                 if (e.target.type === 'range') { return; }
                 e.preventDefault();
             }, false);
         },
 
-        loadSoundFile: function (url, node) {
+        /**
+         * Helper method to request a sound file and call initialise on load
+         * @param url (string), mixerChannel (number)
+         */
+        loadSoundFile: function (url, mixerChannel) {
             var xhr = new XMLHttpRequest();
             xhr.open('GET', url, true);
             xhr.responseType = 'arraybuffer';
             xhr.onload = function (e) {
                 console.log('Sound file loaded: ', url);
-                TRMixer.initSound(this.response, node); // this.response is an ArrayBuffer.
+                TRMixer.initSound(this.response, mixerChannel); // this.response is an ArrayBuffer.
             };
             xhr.send();
         },
 
-        initSound: function (arrayBuffer, node) {
+        /**
+         * Initialise audioBuffers by decoding mp3 audio data
+         * @param arrayBuffer (arrayBuffer), mixerChannel (number)
+         */
+        initSound: function (arrayBuffer, mixerChannel) {
             myAudioContext.decodeAudioData(arrayBuffer, function (buffer) {
-                switch (node) {
+                switch (mixerChannel) {
                 case 1:
                     bufferBrass = buffer;
                     break;
@@ -82,19 +117,23 @@ var TRMixer = (function () {
                     bufferStrings = buffer;
                     break;
                 }
-
                 console.log('Sound file decoded: ', buffer);
 
+                //if all four audioBuffers are ready, initialise the mixer interface
                 if (bufferBrass && bufferHighPerc && bufferLowPerc && bufferStrings) {
                     TRMixer.initMixer();
-                    console.log('Mixer status: ready');
+                    console.log('Mixer -> Ready');
                 }
             }, function (e) {
-                console.log('Error decoding file', e);
+                //something went wrong loading the sounds, log an error
+                console.error('Error decoding file', e);
                 document.getElementById('status').innerHTML = 'Status: Error loading sounds';
             });
         },
 
+        /**
+         * Initialise the mixer user interface
+         */
         initMixer: function () {
             var doc = document,
                 brassSlider = doc.getElementById('brass'),
@@ -102,60 +141,81 @@ var TRMixer = (function () {
                 lowPercSlider = doc.getElementById('low-perc'),
                 stringsSlider = doc.getElementById('strings');
 
+            //set status to ready
             doc.getElementById('status').innerHTML = 'Status: Ready';
+
+            //enable play & stop buttons
             doc.getElementById('play').removeAttribute('disabled');
             doc.getElementById('stop').removeAttribute('disabled');
 
+            //add input event listeners for slider changes
             brassSlider.addEventListener('input', TRMixer.sliderChange, false);
             highPercSlider.addEventListener('input', TRMixer.sliderChange, false);
             lowPercSlider.addEventListener('input', TRMixer.sliderChange, false);
             stringsSlider.addEventListener('input', TRMixer.sliderChange, false);
 
+            //enable sliders
             brassSlider.removeAttribute('disabled');
             highPercSlider.removeAttribute('disabled');
             lowPercSlider.removeAttribute('disabled');
             stringsSlider.removeAttribute('disabled');
         },
 
+        /**
+         * Set the audioBuffer sources and connect the nodes to destination (speakers)
+         */
         routeSounds: function () {
             var doc = document;
 
+            //brass source
             brass = myAudioContext.createBufferSource();
             brass.buffer = bufferBrass;
             brass.loop = true;
 
+            //high percussion source
             highPerc = myAudioContext.createBufferSource();
             highPerc.buffer = bufferHighPerc;
             highPerc.loop = true;
 
+            //low percussion source
             lowPerc = myAudioContext.createBufferSource();
             lowPerc.buffer = bufferLowPerc;
             lowPerc.loop = true;
 
+            //strings source
             strings = myAudioContext.createBufferSource();
             strings.buffer = bufferStrings;
             strings.loop = true;
 
+            //set volumes based on current slider values
             nodes.volumeBrass.gain.value = doc.getElementById('brass').value;
             nodes.volumeHighPerc.gain.value = doc.getElementById('high-perc').value;
             nodes.volumeLowPerc.gain.value = doc.getElementById('low-perc').value;
             nodes.volumeStrings.gain.value = doc.getElementById('strings').value;
             nodes.masterVolume.gain.value = 1;
 
+            //connect the sources to volume nodes
             brass.connect(nodes.volumeBrass);
             highPerc.connect(nodes.volumeHighPerc);
             lowPerc.connect(nodes.volumeLowPerc);
             strings.connect(nodes.volumeStrings);
 
+            //connect the volume nodes to master gain node
             nodes.volumeBrass.connect(nodes.masterVolume);
             nodes.volumeHighPerc.connect(nodes.masterVolume);
             nodes.volumeLowPerc.connect(nodes.masterVolume);
             nodes.volumeStrings.connect(nodes.masterVolume);
 
+            //connect master gain node to audio analyser
             nodes.masterVolume.connect(myAudioAnalyser);
+
+            //connect audio analyser to the speakers
             myAudioAnalyser.connect(myAudioContext.destination);
         },
 
+        /**
+         * Start playing the sounds
+         */
         playSounds: function () {
             if (myAudioContext.activeSourceCount > 0) {
                 TRMixer.stopSounds();
@@ -168,6 +228,9 @@ var TRMixer = (function () {
             console.log('Mixer -> Playing');
         },
 
+        /**
+         * Stop playing the sounds
+         */
         stopSounds: function () {
             if (myAudioContext.activeSourceCount > 0) {
                 brass.noteOff(0);
@@ -178,6 +241,10 @@ var TRMixer = (function () {
             }
         },
 
+        /**
+         * Event handler for slider input changes
+         * @param slider (event object)
+         */
         sliderChange: function (slider) {
             if (myAudioContext.activeSourceCount > 0) {
                 switch (slider.target.id) {
@@ -197,11 +264,17 @@ var TRMixer = (function () {
             }
         },
 
+        /**
+         * Animation loop for audio analyser canvas output governed by requestAnimationFrame
+         */
         animateSpectrum: function () {
             mySpectrum = requestAnimationFrame(TRMixer.animateSpectrum, document.getElementById('spectrum-output'));
             TRMixer.drawSpectrum();
         },
 
+        /**
+         * Draws audio frequency byte data to canvas
+         */
         drawSpectrum: function () {
             var canvas = document.querySelector('canvas'),
                 ctx = canvas.getContext('2d'),
@@ -225,7 +298,7 @@ var TRMixer = (function () {
             for (i = 0; i < barCount; i += 1) {
                 magnitude = freqByteData[i];
                 // some values need adjusting to fit on the canvas
-                ctx.fillRect(bar_width * i, height, bar_width - 1, - magnitude);
+                ctx.fillRect(bar_width * i, height, bar_width - 1, -magnitude);
             }
         }
     };

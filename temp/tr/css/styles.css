@@ -1,3 +1,11 @@
+/*
+ * 
+ * Tomb Raider Music Mixer
+ * CSS styling by Alex Gibson 2013
+ * http://alxgbsn.co.uk | @alex_gibson
+ * 
+ */
+
 * { 
     -moz-box-sizing: border-box; 
     -webkit-box-sizing: border-box; 
@@ -14,16 +22,6 @@ html {
         
 body {
     font: 15px/20px Helvetica, Arial, Verdana, sans-serif;
-}
-
-#status {
-    margin: 1.5em 0;
-    color: #333;
-}
-
-.channel {
-    display: block;
-    margin: 1.5em 0;
 }
 
 button {
@@ -69,6 +67,16 @@ input[type=range]::-webkit-slider-thumb {
     background: -ms-linear-gradient(top, rgb(253,253,253), rgb(190,190,190));
     background: -o-linear-gradient(top, rgb(253,253,253), rgb(190,190,190));
     background: linear-gradient(top, rgb(253,253,253), rgb(190,190,190));
+}
+
+#status {
+    margin: 1.5em 0;
+    color: #333;
+}
+
+.channel {
+    display: block;
+    margin: 1.5em 0;
 }
 
 .mixer {
