@@ -30,6 +30,10 @@ button {
     width: 119px;
 }
 
+button:active {
+    background: #999;
+}
+
 button:disabled {
     opacity: 0.5;
 }
