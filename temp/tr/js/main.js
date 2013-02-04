@@ -54,6 +54,13 @@ var mixer = (function () {
 
             myAudioAnalyser = myAudioContext.createAnalyser();
             myAudioAnalyser.smoothingTimeConstant = 0.85;
+
+            mixer.animateSpectrum();
+
+            doc.addEventListener('touchmove', function (e) {
+                if (e.target.type === 'range') { return; }
+                e.preventDefault();
+            }, false);
         },
 
         loadSoundFile: function (url, node) {
@@ -189,6 +196,7 @@ var mixer = (function () {
                     nodes.volume4.gain.value = slider.target.value;
                     break;
                 }
+                console.log('Slider value: ', slider.target.value);
             }
         },
 
@@ -200,11 +208,10 @@ var mixer = (function () {
         drawSpectrum: function () {
             var canvas = document.querySelector('canvas'),
                 ctx = canvas.getContext('2d'),
-                canvasSize = isSmallViewport ? 256 : 512,
-                multiplier = isSmallViewport ? 1 : 2,
+                canvasSize = 250,
                 width = canvasSize,
                 height = canvasSize,
-                bar_width = isSmallViewport ? 10 : 20,
+                bar_width = 10,
                 barCount = Math.round(width / bar_width),
                 freqByteData = new Uint8Array(myAudioAnalyser.frequencyBinCount),
                 magnitude,
@@ -221,7 +228,7 @@ var mixer = (function () {
             for (i = 0; i < barCount; i += 1) {
                 magnitude = freqByteData[i];
                 // some values need adjusting to fit on the canvas
-                ctx.fillRect(bar_width * i, height, bar_width - 1, -magnitude * multiplier);
+                ctx.fillRect(bar_width * i, height, bar_width - 1, - magnitude);
             }
         }
     };
