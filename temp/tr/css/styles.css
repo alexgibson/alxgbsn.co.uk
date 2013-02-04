@@ -13,7 +13,12 @@ html {
 } 
         
 body {
+    font: 15px/20px Helvetica, Arial, Verdana, sans-serif;
+}
 
+#status {
+    margin: 1.5em 0;
+    color: #333;
 }
 
 .channel {
