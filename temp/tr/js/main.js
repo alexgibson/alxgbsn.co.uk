@@ -80,6 +80,9 @@ var TRMixer = (function () {
                 if (e.target.type === 'range') { return; }
                 e.preventDefault();
             }, false);
+
+            //enable CSS active pseudo styles
+            doc.addEventListener("touchstart", function() {}, false);
         },
 
         /**
