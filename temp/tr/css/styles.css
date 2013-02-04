@@ -26,6 +26,7 @@ body {
 
 button {
     -webkit-appearance: none;
+    background: #ccc;
     height: 44px;
     width: 119px; 
 }
