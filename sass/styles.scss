@@ -83,8 +83,8 @@ h1 {
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-family: Palatino-Bold, Palatino-Roman, Cambria, "Times New Roman", Times, serif;
-	font-weight: bold;
+	font-family: Avenir-Roman, Helvetica, Arial, Verdana, sans-serif;
+	font-weight: 100;
 	text-shadow: rgba(255,255,255,0.8) 0px 1px 0;
 }
 
@@ -140,6 +140,7 @@ nav[role=navigation] > ul {
 		line-height: 44px;
 
 		a:link, a:visited {
+			line-height: 44px;
 			border-bottom: none;
 		}
 	}
