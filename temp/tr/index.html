@@ -12,26 +12,30 @@
     <script src="js/main.js"></script>
 </head>
 <body>
-<h1>Tomb Raider Music Mixer</h1>
-<div class="mixer">
-    <div class="channels">
-        <label for="brass">Brass:</label>
-        <input id="brass" name="brass" type="range" min="0" max="0.2" step="0.001" value="0.12" disabled />
-        <label for="high-perc">High percussion:</label>
-        <input id="high-perc" name="high-perc" type="range" min="0" max="0.2" step="0.001" value="0.09" disabled />
-        <label for="low-perc">Low percussion:</label>
-        <input id="low-perc" name="low-perc" type="range" min="0" max="0.2" step="0.001" value="0.15" disabled />
-        <label for="strings">Strings:</label>
-        <input id="strings" name="strings" type="range" min="0" max="0.2" step="0.001" value="0.12" disabled />
+<div class="main">
+    <h1>Final Hours of Tomb Raider<br>Mixing Board</h1>
+    <div class="container">
+        <div class="mixer">
+            <div class="channels">
+                <label for="brass">Track 1 - Brass<input id="brass" name="brass" type="range" min="0" max="0.2" step="0.001" value="0.12" disabled /></label>
+                
+                <label for="high-perc">Track 2 - High percussion<input id="high-perc" name="high-perc" type="range" min="0" max="0.2" step="0.001" value="0.09" disabled /></label>
+                
+                <label for="low-perc">Track 3 - Low percussion<input id="low-perc" name="low-perc" type="range" min="0" max="0.2" step="0.001" value="0.15" disabled /></label>
+                
+                <label for="strings">Track 4 - Strings<input id="strings" name="strings" type="range" min="0" max="0.2" step="0.001" value="0.12" disabled /></label>
+                
+            </div>
+        </div>
+        <div class="output-controls">
+            <canvas id="spectrum-output"></canvas>
+            <div class="button-controls">
+                <button id="play" disabled>Play</button>
+                <button id="stop" disabled>Stop</button>
+            </div>
+            <div id="status">Status: Loading sounds</div>
+        </div>
     </div>
-</div>
-<div class="output-controls">
-    <canvas id="spectrum-output"></canvas>
-    <div class="button-controls">
-        <button id="play" disabled>Play</button>
-        <button id="stop" disabled>Stop</button>
-    </div>
-    <div id="status">Status: Loading sounds</div>
 </div>
 </body>
 </html>
