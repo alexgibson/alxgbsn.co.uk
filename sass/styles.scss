@@ -247,6 +247,16 @@ form.search {
 	}
 }
 
+::selection {
+	color: #fff;
+	background: #434343;
+}
+
+::-moz-selection {
+	color: #fff;
+	background: #434343;
+}
+
 .influads_block {
 	margin: 2em auto;
 
