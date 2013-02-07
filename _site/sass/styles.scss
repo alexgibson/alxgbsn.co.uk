@@ -154,12 +154,23 @@ article[role=main] {
 	display: block;
 }
 
-article[role=main] {
+figure {
+	display: block;
+
 	img {
 		display: block;
 		max-width: 100%;
 		height: auto;
 		margin: 0 auto;
+	}
+
+	figcaption {
+		text-align: center;
+		-webkit-hyphens:auto;
+		-moz-hyphens: auto;
+		hyphens: auto;
+		line-height: 1.5em;
+		margin: 0 0 1.5em 0;
 	}
 }
 
@@ -223,6 +234,9 @@ form.search {
 		-webkit-appearance: button;
 		font-family: Palatino-Roman, Cambria, "Times New Roman", Times, serif;
 		color: #434343;
+		font-size: 0.9em;
+		line-height: 1.5em;
+		height: 1.5em;
 	}
 }
 
