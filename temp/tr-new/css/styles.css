@@ -15,6 +15,7 @@
 html { 
     margin: 0;
     padding: 0;
+    background: #fff;
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
     -webkit-user-select: none;

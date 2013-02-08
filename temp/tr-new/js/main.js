@@ -77,10 +77,10 @@ var TRMixer = (function () {
             TRMixer.animateSpectrum();
 
             //prevent default document scrolling
-            doc.addEventListener('touchmove', function (e) {
-                if (e.target.type === 'range') { return; }
-                e.preventDefault();
-            }, false);
+            // doc.addEventListener('touchmove', function (e) {
+            //     if (e.target.type === 'range') { return; }
+            //     e.preventDefault();
+            // }, false);
 
             //enable CSS active pseudo styles
             doc.addEventListener("touchstart", function() {}, false);
