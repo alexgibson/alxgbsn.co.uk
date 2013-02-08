@@ -211,10 +211,13 @@ var TRMixer = (function () {
         },
 
         toggleSounds: function () {
+            var button = document.getElementById('toggle');
             if (myAudioContext.activeSourceCount > 0) {
                 TRMixer.stopSounds();
+                button.classList.remove('on');
             } else {
                 TRMixer.playSounds();
+                button.classList.add('on');
             }
         },
 
