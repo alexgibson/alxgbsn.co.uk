@@ -37,7 +37,9 @@ var TRMixer = (function () {
          * Initialise loading sound files and create Web Audio component nodes
          */
         init: function () {
-            var doc = document;
+            var doc = document,
+                toggle = doc.getElementById('toggle'),
+                myTap = new Tap(toggle);
 
             //create an audio context
             if ('webkitAudioContext' in window) {
@@ -49,8 +51,8 @@ var TRMixer = (function () {
                 return;
             }
 
-            //add click event listeners for play & stop buttons
-            doc.getElementById('toggle').addEventListener('click', TRMixer.toggleSounds, false);
+            //add tap event listener for play & stop button
+            toggle.addEventListener('tap', TRMixer.toggleSounds, false);
 
             //load sounds files
             TRMixer.loadSoundFile(soundsURL + brassFile, 1);
