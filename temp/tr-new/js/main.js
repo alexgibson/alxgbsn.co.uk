@@ -7,7 +7,7 @@
  * 
  */
 
-/*global clearInterval: false, clearTimeout: false, document: false, event: false, frames: false, history: false, Image: false, location: false, name: false, navigator: false, Option: false, parent: false, screen: false, setInterval: false, setTimeout: false, window: false, XMLHttpRequest: false, console: false, webkitAudioContext: false, AudioContext: false, requestAnimationFrame: false, Uint8Array: false */
+/*global clearInterval: false, clearTimeout: false, document: false, event: false, frames: false, history: false, Image: false, location: false, name: false, navigator: false, Option: false, parent: false, screen: false, setInterval: false, setTimeout: false, window: false, XMLHttpRequest: false, console: false, webkitAudioContext: false, AudioContext: false, requestAnimationFrame: false, Uint8Array: false, Tap: false */
 
 var TRMixer = (function () {
 
@@ -77,13 +77,13 @@ var TRMixer = (function () {
             TRMixer.animateSpectrum();
 
             //prevent default document scrolling
-            // doc.addEventListener('touchmove', function (e) {
-            //     if (e.target.type === 'range') { return; }
-            //     e.preventDefault();
-            // }, false);
+            doc.addEventListener('touchmove', function (e) {
+                if (e.target.type === 'range') { return; }
+                e.preventDefault();
+            }, false);
 
             //enable CSS active pseudo styles
-            doc.addEventListener("touchstart", function() {}, false);
+            doc.addEventListener("touchstart", function () {}, false);
         },
 
         /**
@@ -177,12 +177,12 @@ var TRMixer = (function () {
             highPerc.loop = true;
 
             //low percussion source
-            lowPerc = myAudioContext.createBufferSource();   
+            lowPerc = myAudioContext.createBufferSource();
             lowPerc.buffer = bufferLowPerc;
             lowPerc.loop = true;
 
             //strings source
-            strings = myAudioContext.createBufferSource(); 
+            strings = myAudioContext.createBufferSource();
             strings.buffer = bufferStrings;
             strings.loop = true;
 
@@ -213,13 +213,21 @@ var TRMixer = (function () {
         },
 
         toggleSounds: function () {
-            var button = document.getElementById('toggle');
+            var doc = document,
+                button = doc.getElementById('toggle'),
+                onScreen = doc.getElementById('screen-state'),
+                canvas = doc.querySelector('canvas');
+
             if (myAudioContext.activeSourceCount > 0) {
                 TRMixer.stopSounds();
                 button.classList.remove('on');
+                onScreen.style.display = 'none';
+                canvas.style.display = 'none';
             } else {
                 TRMixer.playSounds();
                 button.classList.add('on');
+                onScreen.style.display = 'block';
+                canvas.style.display = 'block';
             }
         },
 

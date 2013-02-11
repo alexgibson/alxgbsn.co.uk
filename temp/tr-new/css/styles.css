@@ -29,23 +29,11 @@ body {
     padding: 0;
 }
 
-@font-face {
-    font-family: SourceSansPro-Bold;
-    src: url('../fonts/SourceSansPro-Bold.otf');
-    font-weight: 400;
-}
-
-@font-face {
-    font-family: MinionPro-Regular;
-    src: url('../fonts/MinionPro-Regular.otf');
-    font-weight: 200;
-}
-
 button {
     -webkit-appearance: none;
     position: absolute;
     top: 458px;
-    left: 500px;
+    left: 499px;
     border: none;
     background: transparent;
     width: 98px;
@@ -133,6 +121,49 @@ input[type=range]::-webkit-slider-thumb {
     right: 152px;
     top: 200px;
     background: transparent;
+    -webkit-animation-name: fadeIn;
+    -moz-animation-name: fadeIn;
+    -o-animation-name: fadeIn;
+    animation-name: fadeIn;
+    -webkit-animation-duration: .3s;
+    -webkit-animation-delay: 0s;
+    -vendor-animation-iteration-count: 1;
+    -moz-animation-duration: .3s;
+    -moz-animation-delay: 0s;
+    -moz-animation-iteration-count: 1;
+    -o-animation-duration: .3s;
+    -o-animation-delay: 0s;
+    -o-animation-iteration-count: 1;
+    animation-duration: .3s;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+}
+
+#screen-state {
+    display: none;
+    position: absolute;
+    right: 140px;
+    top: 201px;
+    width: 356px;
+    height:242px;
+    background: transparent url('../images/on-screen.png') top left no-repeat;
+    background-size: 356px 242px;
+    -webkit-animation-name: fadeIn;
+    -moz-animation-name: fadeIn;
+    -o-animation-name: fadeIn;
+    animation-name: fadeIn;
+    -webkit-animation-duration: .3s;
+    -webkit-animation-delay: 0s;
+    -vendor-animation-iteration-count: 1;
+    -moz-animation-duration: .3s;
+    -moz-animation-delay: 0s;
+    -moz-animation-iteration-count: 1;
+    -o-animation-duration: .3s;
+    -o-animation-delay: 0s;
+    -o-animation-iteration-count: 1;
+    animation-duration: .3s;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
 }
 
 .output-controls {
@@ -141,4 +172,24 @@ input[type=range]::-webkit-slider-thumb {
 
 .button-controls {
     text-align: center;
+}
+
+@-webkit-keyframes fadeIn {
+    0% {opacity: 0;}    
+    100% {opacity: 1;}
+}
+
+@-moz-keyframes fadeIn {
+    0% {opacity: 0;}    
+    100% {opacity: 1;}
+}
+
+@-o-keyframes fadeIn {
+    0% {opacity: 0;}    
+    100% {opacity: 1;}
+}
+
+@keyframes fadeIn {
+    0% {opacity: 0;}    
+    100% {opacity: 1;}
 }
