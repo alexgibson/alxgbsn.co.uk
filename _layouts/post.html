@@ -3,7 +3,7 @@ layout: layout
 ---
 
 <article role="main">
-    <time datetime="{{ page.date }}" pubdate>Published {{ page.date | date: "%b %d %Y" }}</time>
+    <time datetime="{{ page.date | date: "%Y-%m-%d" }}">Published {{ page.date | date: "%b %d %Y" }}</time>
     {{ content }}
     <p>
     	<a href="https://twitter.com/share" class="twitter-share-button" data-text="{{ page.title }}" data-via="alex_gibson" data-size="large">Tweet</a>
