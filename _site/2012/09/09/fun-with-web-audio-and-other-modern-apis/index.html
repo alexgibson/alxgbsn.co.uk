@@ -88,8 +88,7 @@
 <span class="nx">nodes</span><span class="p">.</span><span class="nx">volume</span> <span class="o">=</span> <span class="nx">myAudioContext</span><span class="p">.</span><span class="nx">createGainNode</span><span class="p">();</span>
 <span class="nx">nodes</span><span class="p">.</span><span class="nx">delay</span> <span class="o">=</span> <span class="nx">myAudioContext</span><span class="p">.</span><span class="nx">createDelayNode</span><span class="p">();</span>
 <span class="nx">nodes</span><span class="p">.</span><span class="nx">feedbackGain</span> <span class="o">=</span> <span class="nx">myAudioContext</span><span class="p">.</span><span class="nx">createGainNode</span><span class="p">();</span>
-</code></pre>
-</div>
+</code></pre></div>
 
 
 <p>The <code>source</code> is then routed through the processor <code>nodes</code> and connected to the audio context destination (i.e. the speakers).</p>
@@ -102,8 +101,7 @@
 <span class="nx">nodes</span><span class="p">.</span><span class="nx">feedbackGain</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="nx">nodes</span><span class="p">.</span><span class="nx">delay</span><span class="p">);</span>
 <span class="nx">nodes</span><span class="p">.</span><span class="nx">volume</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="nx">myAudioAnalyser</span><span class="p">);</span>
 <span class="nx">myAudioAnalyser</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="nx">myAudioContext</span><span class="p">.</span><span class="nx">destination</span><span class="p">);</span>
-</code></pre>
-</div>
+</code></pre></div>
 
 
 <h2>Responding to user input</h2>
@@ -113,8 +111,7 @@
 <div class="highlight"><pre><code class="javascript"><span class="nx">source</span><span class="p">.</span><span class="nx">frequency</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="nx">x</span><span class="p">;</span>
 <span class="nx">nodes</span><span class="p">.</span><span class="nx">filter</span><span class="p">.</span><span class="nx">frequency</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="nx">y</span><span class="p">;</span>
 <span class="nx">source</span><span class="p">.</span><span class="nx">noteOn</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
-</code></pre>
-</div>
+</code></pre></div>
 
 
 <p>There are a range of different waveforms to use in the main oscillator, and multiple different filter types to experiment with. It's more a musical toy than anything serious, but it can produce some interesting sci-fi effects and spaced-out synth sounds by using different delay times and feedback settings. If you haven't already, have some fun and <a href="http://alxgbsn.co.uk/wavepad">try it out</a>.</p>
@@ -129,8 +126,7 @@
     <span class="kd">var</span> <span class="nx">mySpectrum</span> <span class="o">=</span> <span class="nx">requestAnimationFrame</span><span class="p">(</span><span class="nx">animateSpectrum</span><span class="p">,</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;canvas&#39;</span><span class="p">));</span>
     <span class="nx">drawSpectrum</span><span class="p">();</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div>
 
 
 <h2>CSS Filter effects</h2>
@@ -141,8 +137,7 @@
     <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">filter</span><span class="o">:</span> <span class="n">blur</span><span class="p">(</span><span class="m">5px</span><span class="p">);</span>
     <span class="n">filter</span><span class="o">:</span> <span class="n">blur</span><span class="p">(</span><span class="m">5px</span><span class="p">);</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div>
 
 
 <h2>window.matchMedia</h2>
@@ -156,8 +151,7 @@
         <span class="nx">isSmallViewport</span> <span class="o">=</span> <span class="nx">mql</span><span class="p">.</span><span class="nx">matches</span> <span class="o">?</span> <span class="kc">true</span> <span class="o">:</span> <span class="kc">false</span><span class="p">;</span>
     <span class="p">});</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div>
 
 
 <h2>classList API</h2>
@@ -168,8 +162,7 @@
 
 <span class="nx">finger</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">&#39;active&#39;</span><span class="p">);</span> 
 <span class="nx">finger</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">remove</span><span class="p">(</span><span class="s1">&#39;active&#39;</span><span class="p">);</span>
-</code></pre>
-</div>
+</code></pre></div>
 
 
 <h2>Page Visibility API</h2>
@@ -184,8 +177,7 @@
         <span class="nx">myAudioAnalyser</span><span class="p">.</span><span class="nx">disconnect</span><span class="p">();</span>
     <span class="p">}</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div>
 
 
 <h2>Demo and source code</h2>

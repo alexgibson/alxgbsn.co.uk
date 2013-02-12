@@ -130,8 +130,7 @@
     <span class="nx">startX</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
     <span class="nx">startY</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">};</span>
-</code></pre>
-</div>
+</code></pre></div>
 
 
 <p>Notice here it is useful to make use of <code>touchmove</code> to detect any finger dragging gestures that might occur after a <code>touchstart</code> has fired. This way it is easy to cancel the 'tap' on <code>touchend</code> if desired.</p>
@@ -139,8 +138,7 @@
 <p>Update: Originally this article was using the function <code>document.elementFromPoint(x,y)</code> to get the element target in <code>ontouchend</code>. A few people have kindly pointed out that you can actually just use <code>e.changedTouches[0].target</code> or even <code>e.target</code> to get the same result for a simple 'tap'. It should be noted however, that the target attribute in this case always refers to the originating element, so if you do need to reference the element a finger might have moved on/off during <code>touchmove</code> or <code>touchend</code>, you would still need to use:</p>
 
 <div class="highlight"><pre><code class="javascript"><span class="nb">document</span><span class="p">.</span><span class="nx">elementFromPoint</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">changedTouches</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">clientX</span><span class="p">,</span> <span class="nx">e</span><span class="p">.</span><span class="nx">changedTouches</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">clientY</span><span class="p">);</span>
-</code></pre>
-</div>
+</code></pre></div>
 
 
 <p>Life would be so much easier if we had a native 'tap' event in mobile browsers!</p>

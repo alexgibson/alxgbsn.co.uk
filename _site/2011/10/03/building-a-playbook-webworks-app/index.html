@@ -116,8 +116,7 @@
 <span class="p">}</span>
 
 <span class="nx">initDatabase</span><span class="p">();</span>
-</code></pre>
-</div>
+</code></pre></div>
 
 
 <p>The application then makes a remote server call, and the JSON string returned as a response is then parsed and used immediately. At the same time, the data is saved asynchronously to the local database (in a single table row entry).</p>
@@ -155,8 +154,7 @@
             <span class="nx">handleDbError</span><span class="p">(</span><span class="nx">e</span><span class="p">);</span>
     <span class="p">}</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div>
 
 
 <p>If the app is later launched while offline, local data is then read back from the database and parsed back to an object, so the app only ever requires a single database read operation.</p>
@@ -184,8 +182,7 @@
 
     <span class="p">},</span> <span class="nx">throwReadError</span><span class="p">);</span>       
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div>
 
 
 <p>The PlayBook coped with this size of data store very well. We never hit any bugs or performance issues. Updating the client data on subsequent app launches was also pretty trivial due to the very basic data store model. The PlayBook does not appear to ask the user for storage permission at any size of data we tested, although 50MB is likely the limit if other browsers are anything to go by.</p>
@@ -203,15 +200,13 @@
 <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
     <span class="nx">readFromDatabase</span><span class="p">();</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div>
 
 
 <p>However, once the first WebWorks build was made it became clear something was not right, since <code>navigator.Online</code> was always returning <code>true</code> on launch. This turns out to be an <a href="http://supportforums.blackberry.com/t5/Web-and-WebWorks-Development/Bug-report-navigator-onLine-incorrect-status/m-p/1214513/highlight/true#M15043">existing bug</a>, but one that can be easily fixed using a WebWorks API call for offline detection:</p>
 
 <div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">isOnline</span> <span class="o">=</span> <span class="s1">&#39;blackberry&#39;</span> <span class="k">in</span> <span class="nb">window</span> <span class="o">?</span> <span class="nx">blackberry</span><span class="p">.</span><span class="nx">system</span><span class="p">.</span><span class="nx">hasDataCoverage</span><span class="p">()</span> <span class="o">:</span> <span class="nb">window</span><span class="p">.</span><span class="nx">navigator</span><span class="p">.</span><span class="nx">onLine</span><span class="p">;</span>
-</code></pre>
-</div>
+</code></pre></div>
 
 
 <p>Notice here we use a simple feature detect using the <code>blackberry</code> window object, so we can carry on using <code>navigator.Online</code> in the browser (for development purposes).</p>
@@ -253,8 +248,7 @@
     <span class="kd">var</span> <span class="nx">args</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">blackberry</span><span class="p">.</span><span class="nx">invoke</span><span class="p">.</span><span class="nx">BrowserArguments</span><span class="p">(</span><span class="nx">url</span><span class="p">);</span>
     <span class="nx">blackberry</span><span class="p">.</span><span class="nx">invoke</span><span class="p">.</span><span class="nx">invoke</span><span class="p">(</span><span class="nx">blackberry</span><span class="p">.</span><span class="nx">invoke</span><span class="p">.</span><span class="nx">APP_BROWSER</span><span class="p">,</span> <span class="nx">args</span><span class="p">);</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div>
 
 
 <h2>Remote debugging</h2>

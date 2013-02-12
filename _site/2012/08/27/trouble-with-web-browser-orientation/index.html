@@ -93,8 +93,7 @@
         <span class="k">break</span><span class="p">;</span>
     <span class="p">}</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div>
 
 
 <p>Unfortunately, there are a lot of <a href="http://www.matthewgifford.com/2011/12/22/a-misconception-about-window-orientation/">common misconceptions</a> about what these values represent. For example, a value of <code>0</code> degrees does not necessarily mean <code>portrait</code>, as it depends on which orientation is considered to be <em>default</em> by the manufacturer. Some tablet browsers, such as the iPad, will use <code>0</code> for portrait. Some Android tablets, such as the Xoom, use <code>0</code> for landscape.</p>
@@ -106,8 +105,7 @@
 <div class="highlight"><pre><code class="javascript"><span class="nx">onOrientationChange</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">orientation</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerHeight</span> <span class="o">&gt;=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerWidth</span> <span class="o">?</span> <span class="s1">&#39;portrait&#39;</span> <span class="o">:</span> <span class="s1">&#39;landscape&#39;</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div>
 
 
 <p>Well, sadly no…</p>
@@ -127,8 +125,7 @@
         <span class="k">this</span><span class="p">.</span><span class="nx">orientation</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerHeight</span> <span class="o">&gt;=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerWidth</span> <span class="o">?</span> <span class="s1">&#39;portrait&#39;</span> <span class="o">:</span> <span class="s1">&#39;landscape&#39;</span><span class="p">;</span>
     <span class="p">}</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div>
 
 
 <h2>CSS Media Queries and window.matchMedia</h2>
@@ -142,8 +139,7 @@
 <span class="k">@media</span> <span class="nt">screen</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">orientation</span><span class="nd">:landscape</span><span class="o">)</span> <span class="p">{</span>
 
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div>
 
 
 <p>This can lead to unintentional styles being applied when the keyboard is visible, unless developers specify <code>min-width</code> or another attribute that must also satisfy the media query. Any JavaScript checks using <code>window.matchMedia</code> will also be affected in the same manner.</p>

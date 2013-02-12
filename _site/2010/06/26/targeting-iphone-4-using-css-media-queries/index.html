@@ -84,8 +84,7 @@
 <span class="nt">only</span> <span class="nt">screen</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">min-device-pixel-ratio</span><span class="o">:</span> <span class="nt">1</span><span class="nc">.5</span><span class="o">)</span> <span class="p">{</span>
     <span class="c">/*high resolution images go here*/</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div>
 
 
 <p>I won't go into great detail on how to best serve images, but it basically involves creating images that are double the pixel size that you would traditionally need (e.g. a 100x50 pixel image translates to 200x100 pixels). You can then set the <a href="http://www.w3.org/TR/2002/WD-css3-background-20020802/#background-size">background size in CSS</a> so the large images still take up the same number of CSS pixels as they would on a normal display. <a href="http://blog.iwalt.com/2010/06/targeting-the-iphone-4-retina-display-with-css3-media-queries.html">Walt Dickinson</a> has already written a nice article that has some more info on how to do this.</p>
@@ -95,10 +94,7 @@
 <div class="highlight"><pre><code class="javascript"><span class="k">if</span> <span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">devicePixelRatio</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1">//Targeted code goes here</span>
 <span class="p">}</span>
-</code></pre>
-</div>
-
-
+</code></pre></div>
 
 
     <p>

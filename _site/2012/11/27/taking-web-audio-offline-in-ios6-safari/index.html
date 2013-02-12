@@ -96,8 +96,7 @@
 <span class="nx">myAudioContext</span><span class="p">.</span><span class="nx">decodeAudioData</span><span class="p">(</span><span class="nx">arrayBuff</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">audioData</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">myBuffer</span> <span class="o">=</span> <span class="nx">audioData</span><span class="p">;</span>
 <span class="p">});</span>
-</code></pre>
-</div>
+</code></pre></div>
 
 
 <p>Once you have the audio data decoded, it is just a case of passing it to your audio buffer source and playing the sound.</p>
@@ -106,8 +105,7 @@
 <span class="nx">mySource</span><span class="p">.</span><span class="nx">buffer</span> <span class="o">=</span> <span class="nx">myBuffer</span><span class="p">;</span>
 <span class="nx">mySource</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="nx">myAudioContext</span><span class="p">.</span><span class="nx">destination</span><span class="p">);</span>
 <span class="nx">mySource</span><span class="p">.</span><span class="nx">noteOn</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
-</code></pre>
-</div>
+</code></pre></div>
 
 
 <h2>Full demo and source code</h2>

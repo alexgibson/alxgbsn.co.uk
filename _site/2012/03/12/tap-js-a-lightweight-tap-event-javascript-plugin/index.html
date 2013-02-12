@@ -78,16 +78,14 @@
 <p>First, include the main JavaScript file in the <head> of your HTML document:</p>
 
 <div class="highlight"><pre><code class="html"><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;tap.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
-</code></pre>
-</div>
+</code></pre></div>
 
 
 <p>Next create a new Tap instance, passing the element you want to use:</p>
 
 <div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">el</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;my-id&#39;</span><span class="p">),</span>
     <span class="nx">myTap</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Tap</span><span class="p">(</span><span class="nx">el</span><span class="p">);</span>
-</code></pre>
-</div>
+</code></pre></div>
 
 
 <p>You can then start listening for 'tap' events using the regular JavaScript event listener syntax:</p>
@@ -96,15 +94,13 @@
 <span class="kd">function</span> <span class="nx">tapDidOccur</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1">//your code</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div>
 
 
 <p>You can stop listening for tap events like so:</p>
 
 <div class="highlight"><pre><code class="javascript"><span class="nx">el</span><span class="p">.</span><span class="nx">removeEventListener</span><span class="p">(</span><span class="s1">&#39;tap&#39;</span><span class="p">,</span> <span class="nx">tapDidOccur</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
-</code></pre>
-</div>
+</code></pre></div>
 
 
 <p>Tap.js is open source and available on <a href="https://github.com/alexgibson/tap.js">GitHub</a>.</p>
