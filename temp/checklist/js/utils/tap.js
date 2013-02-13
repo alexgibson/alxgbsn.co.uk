@@ -8,7 +8,11 @@
  *
  */
 
+/*global window: false, document: false */
+
 (function (window, document) {
+
+	'use strict';
 
 	function Tap(el) {
 		this.element = typeof el === 'object' ? el : document.getElementById(el);
@@ -22,13 +26,12 @@
 
 	//start			
 	Tap.prototype.start = function (e) {
-		console.log('start', e.type);
 		if (e.type === 'touchstart') {
 			this.hasTouchEventOccured = true;
 		}
 		this.moved = false;
-		this.startX = e.type === 'touchstart' ? e.touches[0].clientX : e.clientX,
-		this.startY = e.type === 'touchstart' ? e.touches[0].clientY : e.clientY,
+		this.startX = e.type === 'touchstart' ? e.touches[0].clientX : e.clientX;
+		this.startY = e.type === 'touchstart' ? e.touches[0].clientY : e.clientY;
 		this.element.addEventListener('touchmove', this, false);
 		this.element.addEventListener('touchend', this, false);
 		this.element.addEventListener('touchcancel', this, false);
@@ -51,25 +54,17 @@
 	Tap.prototype.end = function (e) {
 		var evt;
 
-		console.log('end', e.type, this.hasTouchEventOccured);
-
 		if (this.hasTouchEventOccured && e.type === 'mouseup') {
 			e.preventDefault();
 			e.stopPropagation();
 			this.hasTouchEventOccured = false;
-			console.log('mouse cancelled!');
 			return;
 		}
 
 		if (!this.moved) {
-			// //only preventDefault on elements that are not form inputs
-			// if (e.target.tagName !== 'SELECT' && e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA' && e.type === 'touchend') {
-			// 	e.preventDefault();
-			// }
 			evt = document.createEvent('Event');
 			evt.initEvent('tap', true, true);
 			e.target.dispatchEvent(evt);
-			console.log('tap!');
 		}
 		this.element.removeEventListener('touchmove', this, false);
 		this.element.removeEventListener('touchend', this, false);
