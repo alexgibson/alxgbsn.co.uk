@@ -68,8 +68,8 @@
 </header>
     
 <article role="main">
-    <time datetime="2012-03-28">Published Mar 28 2012</time>
-    <p>In the past we have touched on how to serve iOS startup images for full screen web apps using both <a href="http://alxgbsn.co.uk/2011/10/24/ios-startup-images-using-css-media-queries/">CSS media queries and JavaScript</a> techniques. Now that the latest iPad sports a retina calibre display, we must again look at the best way to serve startup images in our web apps.</p>
+	<time datetime="2012-03-28">Published Mar 28 2012</time>
+	<p>In the past we have touched on how to serve iOS startup images for full screen web apps using both <a href="http://alxgbsn.co.uk/2011/10/24/ios-startup-images-using-css-media-queries/">CSS media queries and JavaScript</a> techniques. Now that the latest iPad sports a retina calibre display, we must again look at the best way to serve startup images in our web apps.</p>
 
 <p>Given the potential bandwidth cost incurred by downloading such large images (2048 x 1496 landscape, 1536 x 2006 portrait), the most advisable technique is to use JavaScript to serve only the assets a device requires (rather than downloading every asset, which would happen if we used media queries). This can be done using the following code snippet in the <code>&lt;head&gt;</code> of your page.</p>
 
@@ -89,10 +89,20 @@
 
 <p>It would be nice if Apple would provide a better way to do this rather than having to rely on JavaScript. Perhaps in the future we will be able to have the option to use vector formats, such as SVG for startup images?</p>
 
-    <p>
-    	<a href="https://twitter.com/share" class="twitter-share-button" data-text="Serving iOS retina startup images for the new iPad" data-via="alex_gibson" data-size="large">Tweet</a>
-	</p>
 </article>
+
+<aside role="complimentary">
+	<h2>Leave a tip!</h2>
+	<p>
+		Was this article helpful? If you found it useful then please consider leaving a tip. Instead of using a micro payment system, I thought it might be fun to release a little game for the iPhone called <a href="">Picto Pairs</a>. It only costs 59p and is available to download on the App Store.
+	</p>
+	<p>
+		<a href="">http://appstore.com/pictopairs</a>
+	</p>
+	<p>
+		Hopefully you'll get a little fun out of it too, so we both win :) Your donations encourage me to carry on writing this blog and create new demos. Thanks!
+	</p>
+</aside>
 
 
 <div id='influads_block' class='influads_block'></div><script type='text/javascript'>(function(){var acc='acc_1018d742_pub';var st='css';var or='130';var e=document.getElementsByTagName('script')[0];var d=document.createElement('script');d.src=('https:' == document.location.protocol ?'https://' : 'http://') +'engine.influads.com/show/'+or+'/'+st+'/'+acc;d.type='text/javascript';d.async=true;d.defer=true; e.parentNode.insertBefore(d,e);})();</script>

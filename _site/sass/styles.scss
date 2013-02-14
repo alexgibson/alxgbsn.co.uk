@@ -34,7 +34,7 @@ a:hover, a:active, a:focus {
 }
 
 .sub {
-	text-align: center; 
+	text-align: center;
 }
 
 .sub > a:link, .sub > a:visited {
@@ -152,6 +152,12 @@ header[role=banner] {
 
 article[role=main] {
 	display: block;
+}
+
+aside[role=complimentary] {
+	display: block;
+	border-top: 1px solid #a7a7a7; 
+	margin-top: 2em;
 }
 
 figure {
@@ -277,4 +283,17 @@ form.search {
 	.influads_link_img {
 		border-bottom: none !important;
 	}
+}
+
+.blippy-thing {
+	width: 30px;
+	height: 30px;
+	background-color: #434343;
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+	-webkit-animation: 2s blip infinite ease-in-out;
+	-moz-animation: 2s blip infinite ease-in-out;
+	-o-animation: 2s blip infinite ease-in-out;
+	animation: 2s blip infinite ease-in-out;
 }

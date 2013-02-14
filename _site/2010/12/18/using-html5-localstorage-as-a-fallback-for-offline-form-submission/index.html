@@ -68,17 +68,27 @@
 </header>
     
 <article role="main">
-    <time datetime="2010-12-18">Published Dec 18 2010</time>
-    <p>I recently put together a working demo for a client showing how you might use HTML5 localStorage as a fallback for form data submission when a mobile device is offline without signal. I've published the full <a href="https://github.com/alexgibson/OfflineForm">source code over on GitHub</a> together with a demo for anyone who is interested.</p>
+	<time datetime="2010-12-18">Published Dec 18 2010</time>
+	<p>I recently put together a working demo for a client showing how you might use HTML5 localStorage as a fallback for form data submission when a mobile device is offline without signal. I've published the full <a href="https://github.com/alexgibson/OfflineForm">source code over on GitHub</a> together with a demo for anyone who is interested.</p>
 
 <p>The demo uses <code>window.navigator.onLine</code> to listen for a boolean value of <code>true</code> or <code>false</code>, determining whether the device is online or offline. When online, the app makes a regular XmlHttpRequest and sends data to a server. If the device loses signal and goes offline, the app queues up and saves submitted data to localStorage as a JSON string. When online connection is next restored, the app then re-sends the queued data to the server automatically. Once the data has been sent successfully, the item is then removed from localStorage.</p>
 
 <p>I won't go through all the code line by line as it's reasonably straight forward, but feel free to take a closer look on <a href="https://github.com/alexgibson/OfflineForm">GitHub</a>. Many Webkit based smart phones now support <code>window.navigator.onLine</code>, as does desktop Safari or Firefox. To test, try enabling flight mode on your phone, or disable wifi on your laptop once the app is open.</p>
 
-    <p>
-    	<a href="https://twitter.com/share" class="twitter-share-button" data-text="Using HTML5 localStorage as a fallback for offline form submission" data-via="alex_gibson" data-size="large">Tweet</a>
-	</p>
 </article>
+
+<aside role="complimentary">
+	<h2>Leave a tip!</h2>
+	<p>
+		Was this article helpful? If you found it useful then please consider leaving a tip. Instead of using a micro payment system, I thought it might be fun to release a little game for the iPhone called <a href="">Picto Pairs</a>. It only costs 59p and is available to download on the App Store.
+	</p>
+	<p>
+		<a href="">http://appstore.com/pictopairs</a>
+	</p>
+	<p>
+		Hopefully you'll get a little fun out of it too, so we both win :) Your donations encourage me to carry on writing this blog and create new demos. Thanks!
+	</p>
+</aside>
 
 
 <div id='influads_block' class='influads_block'></div><script type='text/javascript'>(function(){var acc='acc_1018d742_pub';var st='css';var or='130';var e=document.getElementsByTagName('script')[0];var d=document.createElement('script');d.src=('https:' == document.location.protocol ?'https://' : 'http://') +'engine.influads.com/show/'+or+'/'+st+'/'+acc;d.type='text/javascript';d.async=true;d.defer=true; e.parentNode.insertBefore(d,e);})();</script>

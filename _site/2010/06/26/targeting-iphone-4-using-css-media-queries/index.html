@@ -68,8 +68,8 @@
 </header>
     
 <article role="main">
-    <time datetime="2010-06-26">Published Jun 26 2010</time>
-    <p>With the release of iPhone 4 and it's 326ppi display, there has been a fair bit of speculation as to what impact this would have on mobile web apps and websites that are optimised for mobile screen sizes. How would web developers target both older iPhones with a 480x320 display, as well as the iPhone 4's 960x640 display? Would we need separate CSS stylesheets for each device? How would images need to be optimised for the new screens?</p>
+	<time datetime="2010-06-26">Published Jun 26 2010</time>
+	<p>With the release of iPhone 4 and it's 326ppi display, there has been a fair bit of speculation as to what impact this would have on mobile web apps and websites that are optimised for mobile screen sizes. How would web developers target both older iPhones with a 480x320 display, as well as the iPhone 4's 960x640 display? Would we need separate CSS stylesheets for each device? How would images need to be optimised for the new screens?</p>
 
 <p>It turns out that CSS media queries targeting 320px screens still work on iPhone 4. It's all down to Mobile Safari utilising a 'device to pixel ratio' density of 2. There is actually a distinct difference between a device (screen) pixel and a pixel that we typically define in CSS. For example, when the iPhone 4 browser viewport is equal to the device width, 1 CSS pixel actually translates to 2x2 device pixels. For those interested, there is a quite old (but very relevant) Webkit article about <a href="http://webkit.org/blog/55/high-dpi-web-sites/">high dpi websites</a>. It makes for an interesting read.</p>
 
@@ -97,10 +97,20 @@
 </code></pre></div>
 
 
-    <p>
-    	<a href="https://twitter.com/share" class="twitter-share-button" data-text="Targeting iPhone 4 using CSS Media Queries" data-via="alex_gibson" data-size="large">Tweet</a>
-	</p>
 </article>
+
+<aside role="complimentary">
+	<h2>Leave a tip!</h2>
+	<p>
+		Was this article helpful? If you found it useful then please consider leaving a tip. Instead of using a micro payment system, I thought it might be fun to release a little game for the iPhone called <a href="">Picto Pairs</a>. It only costs 59p and is available to download on the App Store.
+	</p>
+	<p>
+		<a href="">http://appstore.com/pictopairs</a>
+	</p>
+	<p>
+		Hopefully you'll get a little fun out of it too, so we both win :) Your donations encourage me to carry on writing this blog and create new demos. Thanks!
+	</p>
+</aside>
 
 
 <div id='influads_block' class='influads_block'></div><script type='text/javascript'>(function(){var acc='acc_1018d742_pub';var st='css';var or='130';var e=document.getElementsByTagName('script')[0];var d=document.createElement('script');d.src=('https:' == document.location.protocol ?'https://' : 'http://') +'engine.influads.com/show/'+or+'/'+st+'/'+acc;d.type='text/javascript';d.async=true;d.defer=true; e.parentNode.insertBefore(d,e);})();</script>

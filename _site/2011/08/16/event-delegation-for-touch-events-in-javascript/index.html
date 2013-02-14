@@ -68,8 +68,8 @@
 </header>
     
 <article role="main">
-    <time datetime="2011-08-16">Published Aug 16 2011</time>
-    <p>Anyone who has experience developing web applications on mobile devices will have no doubt encountered the 300ms delay when firing <code>click</code> events in web browsers such as Mobile Safari. There are some useful <a href="https://github.com/cheeaun/tappable">standalone plugins</a> and <a href="http://code.google.com/mobile/articles/fast_buttons.html">informative articles</a> to help combat this delay, but this post aims to show a super–quick example of how to do simulated 'tap' events on dynamic content using JavaScript event delegation.</p>
+	<time datetime="2011-08-16">Published Aug 16 2011</time>
+	<p>Anyone who has experience developing web applications on mobile devices will have no doubt encountered the 300ms delay when firing <code>click</code> events in web browsers such as Mobile Safari. There are some useful <a href="https://github.com/cheeaun/tappable">standalone plugins</a> and <a href="http://code.google.com/mobile/articles/fast_buttons.html">informative articles</a> to help combat this delay, but this post aims to show a super–quick example of how to do simulated 'tap' events on dynamic content using JavaScript event delegation.</p>
 
 <p>A common technique when dealing with <code>click</code> events in dynamic content is to use event delegation to capture events bubbling up through the DOM. This same technique can be applied to touch events, although it is a little more difficult since there are at least four different events to capture; <code>touchstart</code>, <code>touchmove</code>, <code>touchend</code> and <code>touchcancel</code>.</p>
 
@@ -143,10 +143,20 @@
 
 <p>Life would be so much easier if we had a native 'tap' event in mobile browsers!</p>
 
-    <p>
-    	<a href="https://twitter.com/share" class="twitter-share-button" data-text="Event delegation for touch events in JavaScript" data-via="alex_gibson" data-size="large">Tweet</a>
-	</p>
 </article>
+
+<aside role="complimentary">
+	<h2>Leave a tip!</h2>
+	<p>
+		Was this article helpful? If you found it useful then please consider leaving a tip. Instead of using a micro payment system, I thought it might be fun to release a little game for the iPhone called <a href="">Picto Pairs</a>. It only costs 59p and is available to download on the App Store.
+	</p>
+	<p>
+		<a href="">http://appstore.com/pictopairs</a>
+	</p>
+	<p>
+		Hopefully you'll get a little fun out of it too, so we both win :) Your donations encourage me to carry on writing this blog and create new demos. Thanks!
+	</p>
+</aside>
 
 
 <div id='influads_block' class='influads_block'></div><script type='text/javascript'>(function(){var acc='acc_1018d742_pub';var st='css';var or='130';var e=document.getElementsByTagName('script')[0];var d=document.createElement('script');d.src=('https:' == document.location.protocol ?'https://' : 'http://') +'engine.influads.com/show/'+or+'/'+st+'/'+acc;d.type='text/javascript';d.async=true;d.defer=true; e.parentNode.insertBefore(d,e);})();</script>

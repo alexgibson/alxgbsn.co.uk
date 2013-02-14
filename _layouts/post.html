@@ -3,9 +3,19 @@ layout: layout
 ---
 
 <article role="main">
-    <time datetime="{{ page.date | date: "%Y-%m-%d" }}">Published {{ page.date | date: "%b %d %Y" }}</time>
-    {{ content }}
-    <p>
-    	<a href="https://twitter.com/share" class="twitter-share-button" data-text="{{ page.title }}" data-via="alex_gibson" data-size="large">Tweet</a>
-	</p>
+	<time datetime="{{ page.date | date: "%Y-%m-%d" }}">Published {{ page.date | date: "%b %d %Y" }}</time>
+	{{ content }}
 </article>
+
+<aside role="complimentary">
+	<h2>Leave a tip!</h2>
+	<p>
+		Was this article helpful? If you found it useful then please consider leaving a tip. Instead of using a micro payment system, I thought it might be fun to release a little game for the iPhone called <a href="">Picto Pairs</a>. It only costs 59p and is available to download on the App Store.
+	</p>
+	<p>
+		<a href="">http://appstore.com/pictopairs</a>
+	</p>
+	<p>
+		Hopefully you'll get a little fun out of it too, so we both win :) Your donations encourage me to carry on writing this blog and create new demos. Thanks!
+	</p>
+</aside>
