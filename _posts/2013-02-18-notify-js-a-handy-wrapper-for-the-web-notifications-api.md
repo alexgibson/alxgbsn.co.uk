@@ -65,7 +65,7 @@ Supported web browsers
 - Chrome
 - Safari 6
 
-Browsers that do not yet support the Web Notification API will simply report a console warning instead of a showing notification. I'll be keeping this plugin up to date as more browsers add support for the API and as the spec changes.
+Browsers that do not yet support the Web Notification API will simply report a console warning instead of showing a notification. I'll be keeping this plugin up to date as more browsers add support for the API and as the spec changes.
 
 License
 -------
