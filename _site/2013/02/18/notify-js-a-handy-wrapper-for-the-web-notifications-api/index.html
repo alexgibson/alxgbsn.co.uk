@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Notify.js - A handy wrapper for the Web Notifications API | Alex Gibson</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Site meta -->
+    <meta name="description" content="A JavaScript plugin that provides a simplified wrapper for using the Web Notifications API." />
+    <meta name="keywords" content="web development, front end developer, web design, mobile, iphone, android, ios, webkit, css, html5, javascript, touch" />
+    <meta name="author" content="Alex Gibson" />
+
+    <!-- Prefetch DNS for external assets -->
+    <link rel="dns-prefetch" href="//platform.twitter.com" />
+    <link rel="dns-prefetch" href="//www.google-analytics.com" />
+    <link rel="dns-prefetch" href="//engine.influads.com" />
+    <link rel="dns-prefetch" href="//static2.influads.com" />
+    <link rel="dns-prefetch" href="//p.twitter.com" />
+    <link rel="dns-prefetch" href="//cdn.api.twitter.com" />
+
+    <!-- CSS style sheets -->
+    <link rel="stylesheet" href="/css/styles.css" />
+
+    <!-- RSS feed -->
+    <link rel="alternate" type="application/rss+xml" title="Alex Gibson" href="/feed/" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="http://alxgbsn.co.uk/2013/02/18/notify-js-a-handy-wrapper-for-the-web-notifications-api" />
+
+    <!--[if lt IE 9]>
+        <script src="/js/html5shiv.js"></script>
+    <![endif]-->
+
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/iOS-144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/iOS-114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/iOS-72.png" />
+    <link rel="apple-touch-icon-precomposed" href="/images/iOS-57.png" />
+    <link rel="shortcut icon" href="/images/iOS-57.png" />
+
+    <!-- iOS icon app title -->
+    <meta name="apple-mobile-web-app-title" content="Alex Gibson" />
+
+    <!-- Async Google Analytics -->
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-33263279-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+</head>
+<body>
+
+<header role="banner">
+    <nav role="navigation">
+	<ul>
+		<li><a href="/">Home</a></li>
+		<li><a href="/about/">About</a></li>
+		<li><a href="/work/">Work</a></li>
+		<li><a href="/contact/">Contact</a></li>
+	</ul>
+</nav>
+    <h1>Notify.js - A handy wrapper for the Web Notifications API</h1>
+</header>
+    
+<article role="main">
+	<time datetime="2013-02-18">Published Feb 18 2013</time>
+	<p>I recently spent some time getting to grips with the <a href="http://www.w3.org/TR/notifications/">Web Notifications API</a>, which is currently supported in both Chrome and Safari 6. It enables you to create growl-style notifications for web applications, and if you're on OSX it integrates really nicely with Notification Centre.</p>
+
+<p>I wanted to create something that I could easily resuse in different projects, so I wrote a JavaScript plugin called <a href="https://github.com/alexgibson/notify.js">Notify.js</a> that acts as a simplified wrapper for the API. It automatically handles aspects such as requesting user permission and API level events, allowing you to quickly create notifications and register callbacks for the events you want.</p>
+
+<p>There is a simple <a href="http://alxgbsn.co.uk/notify.js/">online demo here</a>. Installation and setup instructions are as follows:</p>
+
+<h2>Installation</h2>
+
+<ul>
+<li>Download: <a href="https://github.com/alexgibson/notify.js/zipball/master">zip</a></li>
+<li><a href="https://github.com/twitter/bower/">Bower</a>: <code>bower install notify.js</code></li>
+<li>Git: <code>git clone https://github.com/alexgibson/notify.js</code></li>
+</ul>
+
+
+<h2>Setup</h2>
+
+<p>First, include the main notify.js JavaScript file in your HTML document:</p>
+
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;notify.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+</code></pre></div>
+
+
+<p>Next create a new Notify instance, passing the relevant message parameters and callbacks you want to use:</p>
+
+<div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">myNotification</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Notify</span><span class="p">({</span>
+    <span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;Yo dawg!&#39;</span><span class="p">,</span> 
+    <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;This is an awesome notification&#39;</span><span class="p">,</span> 
+    <span class="nx">notifyShow</span><span class="o">:</span> <span class="nx">onNotifyShow</span>
+<span class="p">});</span>
+
+<span class="kd">function</span> <span class="nx">onNotifyShow</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;notification was shown!&#39;</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+
+
+<p>To then show your notification, you can simply call:</p>
+
+<div class="highlight"><pre><code class="javascript"><span class="nx">myNotification</span><span class="p">.</span><span class="nx">show</span><span class="p">();</span> 
+</code></pre></div>
+
+
+<p>Notify.js will automatically handle requesting user permission and the associated API events for you.</p>
+
+<h2>Options</h2>
+
+<ul>
+<li>title: (string) - notification title</li>
+<li>message: (string) - notification message</li>
+<li>notifyShow: (function) - callback when the notification is shown</li>
+<li>notifyClose: (function) - callback when the notification is closed</li>
+<li>notifyClick: (function) - callback when the notification is clicked</li>
+<li>notifyError: (function) - callback when there is a permission error</li>
+</ul>
+
+
+<h2>Supported web browsers</h2>
+
+<ul>
+<li>Chrome</li>
+<li>Safari 6</li>
+</ul>
+
+
+<p>Browsers that do not yet support the Web Notification API will simply report a console warning instead of a showing notification.</p>
+
+</article>
+
+<aside role="complimentary">
+	<h2>Leave a tip!</h2>
+	<p>
+		Was this article helpful? If you found it useful then please consider leaving a tip. Instead of using a micro payment system, I thought it might be fun to release a little game for the iPhone called <a href="">Picto Pairs</a>. It only costs 59p and is available to download on the App Store.
+	</p>
+	<p>
+		<a class="image-link" href="">
+			<img src="/images/appstore.png" height="40" width="135" alt="Download on the App Store" />
+		</a>
+	</p>
+	<p>
+		Hopefully you'll get a little fun out of it too, so we both win :) Your donations encourage me to carry on writing this blog and create new demos. Thanks!
+	</p>
+</aside>
+
+
+<div id='influads_block' class='influads_block'></div><script type='text/javascript'>(function(){var acc='acc_1018d742_pub';var st='css';var or='130';var e=document.getElementsByTagName('script')[0];var d=document.createElement('script');d.src=('https:' == document.location.protocol ?'https://' : 'http://') +'engine.influads.com/show/'+or+'/'+st+'/'+acc;d.type='text/javascript';d.async=true;d.defer=true; e.parentNode.insertBefore(d,e);})();</script>
+
+<form class="search" action="http://google.com/search" method="get">
+	<div role="search">
+    	<input type="hidden" name="q" value="site:alxgbsn.co.uk" />
+    	<input class="search" type="search" name="q" placeholder="Enter a search term" />
+    	<button type="submit">Search</button>
+    </div>
+</form>
+
+<footer role="contentinfo">
+	<p>&copy; Alex Gibson | <a href="/feed/">RSS feed</a></p>
+	<small>
+		EU cookie law notice: this site uses cookies for analytics purposes. You can still use this site with cookies disabled.
+	</small>
+</footer>
+
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+</body>
+</html>

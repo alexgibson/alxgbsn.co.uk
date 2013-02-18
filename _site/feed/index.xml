@@ -4,13 +4,87 @@
  <title>Alex Gibson, Front End Developer</title>
  <link href="http://alxgbsn.co.uk/feed/" rel="self"/>
  <link href="http://alxgbsn.co.uk/"/>
- <updated>2013-02-18T08:58:42+00:00</updated>
+ <updated>2013-02-18T09:29:41+00:00</updated>
  <id>http://alxgbsn.co.uk/</id>
  <author>
    <name>Alex Gibson</name>
    <email>alxgbsn@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Notify.js - A handy wrapper for the Web Notifications API</title>
+   <link href="http://alxgbsn.co.uk/2013/02/18/notify-js-a-handy-wrapper-for-the-web-notifications-api"/>
+   <updated>2013-02-18T00:00:00+00:00</updated>
+   <id>http://alxgbsn.co.uk/2013/02/18/notify-js-a-handy-wrapper-for-the-web-notifications-api</id>
+   <content type="html">&lt;p&gt;I recently spent some time getting to grips with the &lt;a href=&quot;http://www.w3.org/TR/notifications/&quot;&gt;Web Notifications API&lt;/a&gt;, which is currently supported in both Chrome and Safari 6. It enables you to create growl-style notifications for web applications, and if you're on OSX it integrates really nicely with Notification Centre.&lt;/p&gt;
+
+&lt;p&gt;I wanted to create something that I could easily resuse in different projects, so I wrote a JavaScript plugin called &lt;a href=&quot;https://github.com/alexgibson/notify.js&quot;&gt;Notify.js&lt;/a&gt; that acts as a simplified wrapper for the API. It automatically handles aspects such as requesting user permission and API level events, allowing you to quickly create notifications and register callbacks for the events you want.&lt;/p&gt;
+
+&lt;p&gt;There is a simple &lt;a href=&quot;http://alxgbsn.co.uk/notify.js/&quot;&gt;online demo here&lt;/a&gt;. Installation and setup instructions are as follows:&lt;/p&gt;
+
+&lt;h2&gt;Installation&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Download: &lt;a href=&quot;https://github.com/alexgibson/notify.js/zipball/master&quot;&gt;zip&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/twitter/bower/&quot;&gt;Bower&lt;/a&gt;: &lt;code&gt;bower install notify.js&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Git: &lt;code&gt;git clone https://github.com/alexgibson/notify.js&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h2&gt;Setup&lt;/h2&gt;
+
+&lt;p&gt;First, include the main notify.js JavaScript file in your HTML document:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;notify.js&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Next create a new Notify instance, passing the relevant message parameters and callbacks you want to use:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;myNotification&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Notify&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;Yo dawg!&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
+    &lt;span class=&quot;nx&quot;&gt;message&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;This is an awesome notification&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
+    &lt;span class=&quot;nx&quot;&gt;notifyShow&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;onNotifyShow&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;onNotifyShow&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;notification was shown!&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;To then show your notification, you can simply call:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;myNotification&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Notify.js will automatically handle requesting user permission and the associated API events for you.&lt;/p&gt;
+
+&lt;h2&gt;Options&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;title: (string) - notification title&lt;/li&gt;
+&lt;li&gt;message: (string) - notification message&lt;/li&gt;
+&lt;li&gt;notifyShow: (function) - callback when the notification is shown&lt;/li&gt;
+&lt;li&gt;notifyClose: (function) - callback when the notification is closed&lt;/li&gt;
+&lt;li&gt;notifyClick: (function) - callback when the notification is clicked&lt;/li&gt;
+&lt;li&gt;notifyError: (function) - callback when there is a permission error&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h2&gt;Supported web browsers&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Chrome&lt;/li&gt;
+&lt;li&gt;Safari 6&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;Browsers that do not yet support the Web Notification API will simply report a console warning instead of a showing notification.&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Taking Web Audio Offline in iOS 6 Safari</title>
