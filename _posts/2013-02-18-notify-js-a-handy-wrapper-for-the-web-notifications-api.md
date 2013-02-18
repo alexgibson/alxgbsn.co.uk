@@ -7,7 +7,7 @@ desc: A JavaScript plugin that provides a simplified wrapper for using the Web N
 
 I recently spent some time getting to grips with the [Web Notifications API](http://www.w3.org/TR/notifications/), which is currently supported in both Chrome and Safari 6. It enables you to create growl-style notifications for web applications, and if you're on OSX it integrates really nicely with Notification Centre. 
 
-I wanted to create something that I could easily resuse in different projects, so I wrote a JavaScript plugin called [Notify.js](https://github.com/alexgibson/notify.js) that acts as a simplified wrapper for the API. It automatically handles aspects such as requesting user permission and API level events, allowing you to quickly create notifications and register callbacks for the events you want.
+I wanted to create something that I could easily resuse in different projects, so I wrote a JavaScript plugin called [Notify.js](https://github.com/alexgibson/notify.js) that acts as a simplified wrapper for the API. Notify.js automatically handles requesting user permission and associated API events for you. It also goes some way toward bridging the gap between the current WebKit implementation and what's in the official W3C specification, by adding a few fallbacks. 
 
 There is a simple [online demo here](http://alxgbsn.co.uk/notify.js/). Installation and setup instructions are as follows:
 

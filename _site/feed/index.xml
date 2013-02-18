@@ -4,7 +4,7 @@
  <title>Alex Gibson, Front End Developer</title>
  <link href="http://alxgbsn.co.uk/feed/" rel="self"/>
  <link href="http://alxgbsn.co.uk/"/>
- <updated>2013-02-18T14:30:05+00:00</updated>
+ <updated>2013-02-18T17:02:30+00:00</updated>
  <id>http://alxgbsn.co.uk/</id>
  <author>
    <name>Alex Gibson</name>
@@ -19,7 +19,7 @@
    <id>http://alxgbsn.co.uk/2013/02/18/notify-js-a-handy-wrapper-for-the-web-notifications-api</id>
    <content type="html">&lt;p&gt;I recently spent some time getting to grips with the &lt;a href=&quot;http://www.w3.org/TR/notifications/&quot;&gt;Web Notifications API&lt;/a&gt;, which is currently supported in both Chrome and Safari 6. It enables you to create growl-style notifications for web applications, and if you're on OSX it integrates really nicely with Notification Centre.&lt;/p&gt;
 
-&lt;p&gt;I wanted to create something that I could easily resuse in different projects, so I wrote a JavaScript plugin called &lt;a href=&quot;https://github.com/alexgibson/notify.js&quot;&gt;Notify.js&lt;/a&gt; that acts as a simplified wrapper for the API. It automatically handles aspects such as requesting user permission and API level events, allowing you to quickly create notifications and register callbacks for the events you want.&lt;/p&gt;
+&lt;p&gt;I wanted to create something that I could easily resuse in different projects, so I wrote a JavaScript plugin called &lt;a href=&quot;https://github.com/alexgibson/notify.js&quot;&gt;Notify.js&lt;/a&gt; that acts as a simplified wrapper for the API. Notify.js automatically handles requesting user permission and associated API events for you. It also goes some way toward bridging the gap between the current WebKit implementation and what's in the official W3C specification, by adding a few fallbacks.&lt;/p&gt;
 
 &lt;p&gt;There is a simple &lt;a href=&quot;http://alxgbsn.co.uk/notify.js/&quot;&gt;online demo here&lt;/a&gt;. Installation and setup instructions are as follows:&lt;/p&gt;
 
