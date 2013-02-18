@@ -66,3 +66,8 @@ Supported web browsers
 - Safari 6
 
 Browsers that do not yet support the Web Notification API will simply report a console warning instead of a showing notification. I'll be keeping this plugin up to date as more browsers add support for the API and as the spec changes.
+
+License
+-------
+
+This plugin is released under open source [MIT License](https://github.com/alexgibson/notify.js/blob/master/LICENSE.md).
