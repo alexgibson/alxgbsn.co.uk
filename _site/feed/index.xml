@@ -4,7 +4,7 @@
  <title>Alex Gibson, Front End Developer</title>
  <link href="http://alxgbsn.co.uk/feed/" rel="self"/>
  <link href="http://alxgbsn.co.uk/"/>
- <updated>2013-02-18T09:29:41+00:00</updated>
+ <updated>2013-02-18T09:32:58+00:00</updated>
  <id>http://alxgbsn.co.uk/</id>
  <author>
    <name>Alex Gibson</name>
@@ -82,7 +82,7 @@
 &lt;/ul&gt;
 
 
-&lt;p&gt;Browsers that do not yet support the Web Notification API will simply report a console warning instead of a showing notification.&lt;/p&gt;
+&lt;p&gt;Browsers that do not yet support the Web Notification API will simply report a console warning instead of a showing notification. I'll be keeping this plugin up to date as more browsers add support for the API and as the spec changes.&lt;/p&gt;
 </content>
  </entry>
  
