@@ -4,7 +4,7 @@
  <title>Alex Gibson, Front End Developer</title>
  <link href="http://alxgbsn.co.uk/feed/" rel="self"/>
  <link href="http://alxgbsn.co.uk/"/>
- <updated>2013-02-18T12:59:01+00:00</updated>
+ <updated>2013-02-18T13:35:03+00:00</updated>
  <id>http://alxgbsn.co.uk/</id>
  <author>
    <name>Alex Gibson</name>
@@ -60,7 +60,7 @@
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Notify.js will automatically handle requesting user permission and the associated API events for you.&lt;/p&gt;
+&lt;p&gt;Notify.js will automatically handle requesting user permission and the associated API events for you. It also goes some way toward bridging the gap between the current WebKit implementation and what's in the official W3C specification.&lt;/p&gt;
 
 &lt;h2&gt;Options&lt;/h2&gt;
 
