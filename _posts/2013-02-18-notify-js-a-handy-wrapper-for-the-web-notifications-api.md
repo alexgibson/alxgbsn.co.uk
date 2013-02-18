@@ -30,10 +30,12 @@ First, include the main notify.js JavaScript file in your HTML document:
 Next create a new Notify instance, passing the relevant message parameters and callbacks you want to use:
 
 {% highlight javascript %}
-var myNotification = new Notify({
-	title: 'Yo dawg!', 
-	message: 'This is an awesome notification', 
-	notifyShow: onNotifyShow
+var myNotification = new Notify('Yo dawg!', {
+	body: 'This is an awesome notification', 
+	notifyShow: myApp.onShowNotification, 
+	notifyClose: myApp.onCloseNotification, 
+	notifyClick: myApp.onClickNotification, 
+	notifyError: myApp.onErrorNotification
 });
 
 function onNotifyShow() {
@@ -49,11 +51,15 @@ myNotification.show();
 
 Notify.js will automatically handle requesting user permission and the associated API events for you. It also goes some way toward bridging the gap between the current WebKit implementation and what's in the official W3C specification.
 
-Options
--------
+Required parameters
+-------------------
 
-* title: (string) - notification title
-* message: (string) - notification message
+* title (string) - notification title
+
+Optional parameters
+-------------------
+
+* body: (string) - notification message body
 * notifyShow: (function) - callback when the notification is shown
 * notifyClose: (function) - callback when the notification is closed
 * notifyClick: (function) - callback when the notification is clicked

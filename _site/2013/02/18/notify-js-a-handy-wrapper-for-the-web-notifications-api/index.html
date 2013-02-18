@@ -94,10 +94,12 @@
 
 <p>Next create a new Notify instance, passing the relevant message parameters and callbacks you want to use:</p>
 
-<div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">myNotification</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Notify</span><span class="p">({</span>
-    <span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;Yo dawg!&#39;</span><span class="p">,</span> 
-    <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;This is an awesome notification&#39;</span><span class="p">,</span> 
-    <span class="nx">notifyShow</span><span class="o">:</span> <span class="nx">onNotifyShow</span>
+<div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">myNotification</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Notify</span><span class="p">(</span><span class="s1">&#39;Yo dawg!&#39;</span><span class="p">,</span> <span class="p">{</span>
+    <span class="nx">body</span><span class="o">:</span> <span class="s1">&#39;This is an awesome notification&#39;</span><span class="p">,</span> 
+    <span class="nx">notifyShow</span><span class="o">:</span> <span class="nx">myApp</span><span class="p">.</span><span class="nx">onShowNotification</span><span class="p">,</span> 
+    <span class="nx">notifyClose</span><span class="o">:</span> <span class="nx">myApp</span><span class="p">.</span><span class="nx">onCloseNotification</span><span class="p">,</span> 
+    <span class="nx">notifyClick</span><span class="o">:</span> <span class="nx">myApp</span><span class="p">.</span><span class="nx">onClickNotification</span><span class="p">,</span> 
+    <span class="nx">notifyError</span><span class="o">:</span> <span class="nx">myApp</span><span class="p">.</span><span class="nx">onErrorNotification</span>
 <span class="p">});</span>
 
 <span class="kd">function</span> <span class="nx">onNotifyShow</span><span class="p">()</span> <span class="p">{</span>
@@ -114,11 +116,17 @@
 
 <p>Notify.js will automatically handle requesting user permission and the associated API events for you. It also goes some way toward bridging the gap between the current WebKit implementation and what's in the official W3C specification.</p>
 
-<h2>Options</h2>
+<h2>Required parameters</h2>
 
 <ul>
-<li>title: (string) - notification title</li>
-<li>message: (string) - notification message</li>
+<li>title (string) - notification title</li>
+</ul>
+
+
+<h2>Optional parameters</h2>
+
+<ul>
+<li>body: (string) - notification message body</li>
 <li>notifyShow: (function) - callback when the notification is shown</li>
 <li>notifyClose: (function) - callback when the notification is closed</li>
 <li>notifyClick: (function) - callback when the notification is clicked</li>
