@@ -31,11 +31,8 @@ Next create a new Notify instance, passing the relevant message parameters and c
 
 {% highlight javascript %}
 var myNotification = new Notify('Yo dawg!', {
-	body: 'This is an awesome notification', 
-	notifyShow: myApp.onShowNotification, 
-	notifyClose: myApp.onCloseNotification, 
-	notifyClick: myApp.onClickNotification, 
-	notifyError: myApp.onErrorNotification
+	body: 'This is an awesome notification',
+	notifyShow: onNotifyShow
 });
 
 function onNotifyShow() {
@@ -60,10 +57,11 @@ Optional parameters
 -------------------
 
 * body: (string) - notification message body
+* tag: (string) - unique identifier to stop duplicate notifications
 * notifyShow: (function) - callback when the notification is shown
 * notifyClose: (function) - callback when the notification is closed
 * notifyClick: (function) - callback when the notification is clicked
-* notifyError: (function) - callback when there is a permission error
+* permissionDenied: (function) - callback when user has denied permission for domain
 
 Supported web browsers
 ----------------------

@@ -95,11 +95,8 @@
 <p>Next create a new Notify instance, passing the relevant message parameters and callbacks you want to use:</p>
 
 <div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">myNotification</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Notify</span><span class="p">(</span><span class="s1">&#39;Yo dawg!&#39;</span><span class="p">,</span> <span class="p">{</span>
-    <span class="nx">body</span><span class="o">:</span> <span class="s1">&#39;This is an awesome notification&#39;</span><span class="p">,</span> 
-    <span class="nx">notifyShow</span><span class="o">:</span> <span class="nx">myApp</span><span class="p">.</span><span class="nx">onShowNotification</span><span class="p">,</span> 
-    <span class="nx">notifyClose</span><span class="o">:</span> <span class="nx">myApp</span><span class="p">.</span><span class="nx">onCloseNotification</span><span class="p">,</span> 
-    <span class="nx">notifyClick</span><span class="o">:</span> <span class="nx">myApp</span><span class="p">.</span><span class="nx">onClickNotification</span><span class="p">,</span> 
-    <span class="nx">notifyError</span><span class="o">:</span> <span class="nx">myApp</span><span class="p">.</span><span class="nx">onErrorNotification</span>
+    <span class="nx">body</span><span class="o">:</span> <span class="s1">&#39;This is an awesome notification&#39;</span><span class="p">,</span>
+    <span class="nx">notifyShow</span><span class="o">:</span> <span class="nx">onNotifyShow</span>
 <span class="p">});</span>
 
 <span class="kd">function</span> <span class="nx">onNotifyShow</span><span class="p">()</span> <span class="p">{</span>
@@ -127,10 +124,11 @@
 
 <ul>
 <li>body: (string) - notification message body</li>
+<li>tag: (string) - unique identifier to stop duplicate notifications</li>
 <li>notifyShow: (function) - callback when the notification is shown</li>
 <li>notifyClose: (function) - callback when the notification is closed</li>
 <li>notifyClick: (function) - callback when the notification is clicked</li>
-<li>notifyError: (function) - callback when there is a permission error</li>
+<li>permissionDenied: (function) - callback when user has denied permission for domain</li>
 </ul>
 
 
