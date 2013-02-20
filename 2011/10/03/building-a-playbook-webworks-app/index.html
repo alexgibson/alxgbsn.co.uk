@@ -4,29 +4,44 @@
     <meta charset="utf-8" />
     <title>Building a PlayBook WebWorks app | Alex Gibson</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Site meta -->
     <meta name="description" content="Using HTML5 API's and WebWorks SDK to build an application for the BlackBerry PlayBook" />
+    <meta name="keywords" content="web development, front end developer, web design, mobile, iphone, android, ios, webkit, css, html5, javascript, touch" />
     <meta name="author" content="Alex Gibson" />
-    <meta name="apple-mobile-web-app-title" content="Alex Gibson">
 
     <!-- Prefetch DNS for external assets -->
-    <link rel="dns-prefetch" href="//platform.twitter.com">
-    <link rel="dns-prefetch" href="//www.google-analytics.com">
-    <link rel="dns-prefetch" href="//engine.influads.com">
-    <link rel="dns-prefetch" href="//static2.influads.com">
-    <link rel="dns-prefetch" href="//p.twitter.com">
-    <link rel="dns-prefetch" href="//cdn.api.twitter.com">
+    <link rel="dns-prefetch" href="//platform.twitter.com" />
+    <link rel="dns-prefetch" href="//www.google-analytics.com" />
+    <link rel="dns-prefetch" href="//engine.influads.com" />
+    <link rel="dns-prefetch" href="//static2.influads.com" />
+    <link rel="dns-prefetch" href="//p.twitter.com" />
+    <link rel="dns-prefetch" href="//cdn.api.twitter.com" />
 
+    <!-- CSS style sheets -->
     <link rel="stylesheet" href="/css/styles.css" />
+
+    <!-- RSS feed -->
     <link rel="alternate" type="application/rss+xml" title="Alex Gibson" href="/feed/" />
+
+    <!-- Canonical URL -->
     <link rel="canonical" href="http://alxgbsn.co.uk/2011/10/03/building-a-playbook-webworks-app" />
+
     <!--[if lt IE 9]>
         <script src="/js/html5shiv.js"></script>
     <![endif]-->
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/iOS-144.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/iOS-114.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/iOS-72.png">
-    <link rel="apple-touch-icon-precomposed" href="/images/iOS-57.png">
-    <link rel="shortcut icon" href="/images/iOS-57.png">
+
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/iOS-144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/iOS-114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/iOS-72.png" />
+    <link rel="apple-touch-icon-precomposed" href="/images/iOS-57.png" />
+    <link rel="shortcut icon" href="/images/iOS-57.png" />
+
+    <!-- iOS icon app title -->
+    <meta name="apple-mobile-web-app-title" content="Alex Gibson" />
+
+    <!-- Async Google Analytics -->
     <script type="text/javascript">
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-33263279-1']);
@@ -53,8 +68,8 @@
 </header>
     
 <article role="main">
-    <time datetime="Mon Oct 03 00:00:00 +0100 2011" pubdate>Published Oct 03 2011</time>
-    <p>I was recently hired to develop the front–end HTML, CSS and JavaScript for a BlackBerry PlayBook application, packaged using RIM's <a href="http://us.blackberry.com/developers/tablet/webworks.jsp">WebWorks SDK</a>. The main purpose of the app was to assist the user in consuming a large volume of digital content (in the form of text, images and video) via a streamlined, touch–friendly interface. Despite a reasonably small development window, the PlayBook browser and development tools proved to be very capable in getting the job done.</p>
+	<time datetime="2011-10-03">Published Oct 03 2011</time>
+	<p>I was recently hired to develop the front–end HTML, CSS and JavaScript for a BlackBerry PlayBook application, packaged using RIM's <a href="http://us.blackberry.com/developers/tablet/webworks.jsp">WebWorks SDK</a>. The main purpose of the app was to assist the user in consuming a large volume of digital content (in the form of text, images and video) via a streamlined, touch–friendly interface. Despite a reasonably small development window, the PlayBook browser and development tools proved to be very capable in getting the job done.</p>
 
 <p>What follows is a run down of the key HTML5 features used in the application, and how well they performed on the device. Please note the code shown in this article is simplified in places for the sake of clarity, and is by no means complete.</p>
 
@@ -101,8 +116,7 @@
 <span class="p">}</span>
 
 <span class="nx">initDatabase</span><span class="p">();</span>
-</code></pre>
-</div>
+</code></pre></div>
 
 
 <p>The application then makes a remote server call, and the JSON string returned as a response is then parsed and used immediately. At the same time, the data is saved asynchronously to the local database (in a single table row entry).</p>
@@ -140,8 +154,7 @@
             <span class="nx">handleDbError</span><span class="p">(</span><span class="nx">e</span><span class="p">);</span>
     <span class="p">}</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div>
 
 
 <p>If the app is later launched while offline, local data is then read back from the database and parsed back to an object, so the app only ever requires a single database read operation.</p>
@@ -169,8 +182,7 @@
 
     <span class="p">},</span> <span class="nx">throwReadError</span><span class="p">);</span>       
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div>
 
 
 <p>The PlayBook coped with this size of data store very well. We never hit any bugs or performance issues. Updating the client data on subsequent app launches was also pretty trivial due to the very basic data store model. The PlayBook does not appear to ask the user for storage permission at any size of data we tested, although 50MB is likely the limit if other browsers are anything to go by.</p>
@@ -188,15 +200,13 @@
 <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
     <span class="nx">readFromDatabase</span><span class="p">();</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div>
 
 
 <p>However, once the first WebWorks build was made it became clear something was not right, since <code>navigator.Online</code> was always returning <code>true</code> on launch. This turns out to be an <a href="http://supportforums.blackberry.com/t5/Web-and-WebWorks-Development/Bug-report-navigator-onLine-incorrect-status/m-p/1214513/highlight/true#M15043">existing bug</a>, but one that can be easily fixed using a WebWorks API call for offline detection:</p>
 
 <div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">isOnline</span> <span class="o">=</span> <span class="s1">&#39;blackberry&#39;</span> <span class="k">in</span> <span class="nb">window</span> <span class="o">?</span> <span class="nx">blackberry</span><span class="p">.</span><span class="nx">system</span><span class="p">.</span><span class="nx">hasDataCoverage</span><span class="p">()</span> <span class="o">:</span> <span class="nb">window</span><span class="p">.</span><span class="nx">navigator</span><span class="p">.</span><span class="nx">onLine</span><span class="p">;</span>
-</code></pre>
-</div>
+</code></pre></div>
 
 
 <p>Notice here we use a simple feature detect using the <code>blackberry</code> window object, so we can carry on using <code>navigator.Online</code> in the browser (for development purposes).</p>
@@ -238,8 +248,7 @@
     <span class="kd">var</span> <span class="nx">args</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">blackberry</span><span class="p">.</span><span class="nx">invoke</span><span class="p">.</span><span class="nx">BrowserArguments</span><span class="p">(</span><span class="nx">url</span><span class="p">);</span>
     <span class="nx">blackberry</span><span class="p">.</span><span class="nx">invoke</span><span class="p">.</span><span class="nx">invoke</span><span class="p">(</span><span class="nx">blackberry</span><span class="p">.</span><span class="nx">invoke</span><span class="p">.</span><span class="nx">APP_BROWSER</span><span class="p">,</span> <span class="nx">args</span><span class="p">);</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div>
 
 
 <h2>Remote debugging</h2>
@@ -254,10 +263,22 @@
 
 <p>If only it was as easy for RIM to instill the same level of enthusiasm and confidence in tablet–buying consumers!</p>
 
-    <p>
-    	<a href="https://twitter.com/share" class="twitter-share-button">Tweet</a><br><a href="https://twitter.com/alex_gibson" class="twitter-follow-button" data-show-count="true">Follow @alex_gibson</a>
-	</p>
 </article>
+
+<aside role="complimentary">
+	<h2>Leave a tip!</h2>
+	<p>
+		Was this post helpful? If so, then please consider leaving a tip. Instead of using a micro payment system, I thought I'd release a fun little memory game for the iPhone. It's called <a href="http://appstore.com/pictopairs">Picto Pairs</a> and only costs 59p on the App Store.
+	</p>
+	<p>
+		<a class="image-link" href="http://appstore.com/pictopairs">
+			<img src="/images/appstore.png" height="40" width="135" alt="Download on the App Store" />
+		</a>
+	</p>
+	<p>
+		To say thanks, why not buy a copy? Hopefully you'll get a little fun out of it too, so we both win :) Your donations encourage me to carry on writing this blog and publishing open source code. Thanks!
+	</p>
+</aside>
 
 
 <div id='influads_block' class='influads_block'></div><script type='text/javascript'>(function(){var acc='acc_1018d742_pub';var st='css';var or='130';var e=document.getElementsByTagName('script')[0];var d=document.createElement('script');d.src=('https:' == document.location.protocol ?'https://' : 'http://') +'engine.influads.com/show/'+or+'/'+st+'/'+acc;d.type='text/javascript';d.async=true;d.defer=true; e.parentNode.insertBefore(d,e);})();</script>
@@ -265,7 +286,7 @@
 <form class="search" action="http://google.com/search" method="get">
 	<div role="search">
     	<input type="hidden" name="q" value="site:alxgbsn.co.uk" />
-    	<input class="search" type="search" name="q" placeholder="Search" />
+    	<input class="search" type="search" name="q" placeholder="Enter a search term" />
     	<button type="submit">Search</button>
     </div>
 </form>
@@ -273,7 +294,7 @@
 <footer role="contentinfo">
 	<p>&copy; Alex Gibson | <a href="/feed/">RSS feed</a></p>
 	<small>
-		EU cookie law notice: this site uses cookies for Google Analytics purposes. You can still use this site with cookies disabled.
+		EU cookie law notice: this site uses cookies for analytics purposes. You can still use this site with cookies disabled.
 	</small>
 </footer>
 

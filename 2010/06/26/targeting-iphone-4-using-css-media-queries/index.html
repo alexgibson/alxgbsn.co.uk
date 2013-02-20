@@ -4,29 +4,44 @@
     <meta charset="utf-8" />
     <title>Targeting iPhone 4 using CSS Media Queries | Alex Gibson</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Site meta -->
     <meta name="description" content="How to deliver high resolution web content for mobile devices using CSS Media Queries" />
+    <meta name="keywords" content="web development, front end developer, web design, mobile, iphone, android, ios, webkit, css, html5, javascript, touch" />
     <meta name="author" content="Alex Gibson" />
-    <meta name="apple-mobile-web-app-title" content="Alex Gibson">
 
     <!-- Prefetch DNS for external assets -->
-    <link rel="dns-prefetch" href="//platform.twitter.com">
-    <link rel="dns-prefetch" href="//www.google-analytics.com">
-    <link rel="dns-prefetch" href="//engine.influads.com">
-    <link rel="dns-prefetch" href="//static2.influads.com">
-    <link rel="dns-prefetch" href="//p.twitter.com">
-    <link rel="dns-prefetch" href="//cdn.api.twitter.com">
+    <link rel="dns-prefetch" href="//platform.twitter.com" />
+    <link rel="dns-prefetch" href="//www.google-analytics.com" />
+    <link rel="dns-prefetch" href="//engine.influads.com" />
+    <link rel="dns-prefetch" href="//static2.influads.com" />
+    <link rel="dns-prefetch" href="//p.twitter.com" />
+    <link rel="dns-prefetch" href="//cdn.api.twitter.com" />
 
+    <!-- CSS style sheets -->
     <link rel="stylesheet" href="/css/styles.css" />
+
+    <!-- RSS feed -->
     <link rel="alternate" type="application/rss+xml" title="Alex Gibson" href="/feed/" />
+
+    <!-- Canonical URL -->
     <link rel="canonical" href="http://alxgbsn.co.uk/2010/06/26/targeting-iphone-4-using-css-media-queries" />
+
     <!--[if lt IE 9]>
         <script src="/js/html5shiv.js"></script>
     <![endif]-->
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/iOS-144.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/iOS-114.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/iOS-72.png">
-    <link rel="apple-touch-icon-precomposed" href="/images/iOS-57.png">
-    <link rel="shortcut icon" href="/images/iOS-57.png">
+
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/iOS-144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/iOS-114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/iOS-72.png" />
+    <link rel="apple-touch-icon-precomposed" href="/images/iOS-57.png" />
+    <link rel="shortcut icon" href="/images/iOS-57.png" />
+
+    <!-- iOS icon app title -->
+    <meta name="apple-mobile-web-app-title" content="Alex Gibson" />
+
+    <!-- Async Google Analytics -->
     <script type="text/javascript">
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-33263279-1']);
@@ -53,8 +68,8 @@
 </header>
     
 <article role="main">
-    <time datetime="Sat Jun 26 00:00:00 +0100 2010" pubdate>Published Jun 26 2010</time>
-    <p>With the release of iPhone 4 and it's 326ppi display, there has been a fair bit of speculation as to what impact this would have on mobile web apps and websites that are optimised for mobile screen sizes. How would web developers target both older iPhones with a 480x320 display, as well as the iPhone 4's 960x640 display? Would we need separate CSS stylesheets for each device? How would images need to be optimised for the new screens?</p>
+	<time datetime="2010-06-26">Published Jun 26 2010</time>
+	<p>With the release of iPhone 4 and it's 326ppi display, there has been a fair bit of speculation as to what impact this would have on mobile web apps and websites that are optimised for mobile screen sizes. How would web developers target both older iPhones with a 480x320 display, as well as the iPhone 4's 960x640 display? Would we need separate CSS stylesheets for each device? How would images need to be optimised for the new screens?</p>
 
 <p>It turns out that CSS media queries targeting 320px screens still work on iPhone 4. It's all down to Mobile Safari utilising a 'device to pixel ratio' density of 2. There is actually a distinct difference between a device (screen) pixel and a pixel that we typically define in CSS. For example, when the iPhone 4 browser viewport is equal to the device width, 1 CSS pixel actually translates to 2x2 device pixels. For those interested, there is a quite old (but very relevant) Webkit article about <a href="http://webkit.org/blog/55/high-dpi-web-sites/">high dpi websites</a>. It makes for an interesting read.</p>
 
@@ -69,8 +84,7 @@
 <span class="nt">only</span> <span class="nt">screen</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">min-device-pixel-ratio</span><span class="o">:</span> <span class="nt">1</span><span class="nc">.5</span><span class="o">)</span> <span class="p">{</span>
     <span class="c">/*high resolution images go here*/</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div>
 
 
 <p>I won't go into great detail on how to best serve images, but it basically involves creating images that are double the pixel size that you would traditionally need (e.g. a 100x50 pixel image translates to 200x100 pixels). You can then set the <a href="http://www.w3.org/TR/2002/WD-css3-background-20020802/#background-size">background size in CSS</a> so the large images still take up the same number of CSS pixels as they would on a normal display. <a href="http://blog.iwalt.com/2010/06/targeting-the-iphone-4-retina-display-with-css3-media-queries.html">Walt Dickinson</a> has already written a nice article that has some more info on how to do this.</p>
@@ -80,16 +94,25 @@
 <div class="highlight"><pre><code class="javascript"><span class="k">if</span> <span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">devicePixelRatio</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1">//Targeted code goes here</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div>
 
 
-
-
-    <p>
-    	<a href="https://twitter.com/share" class="twitter-share-button">Tweet</a><br><a href="https://twitter.com/alex_gibson" class="twitter-follow-button" data-show-count="true">Follow @alex_gibson</a>
-	</p>
 </article>
+
+<aside role="complimentary">
+	<h2>Leave a tip!</h2>
+	<p>
+		Was this post helpful? If so, then please consider leaving a tip. Instead of using a micro payment system, I thought I'd release a fun little memory game for the iPhone. It's called <a href="http://appstore.com/pictopairs">Picto Pairs</a> and only costs 59p on the App Store.
+	</p>
+	<p>
+		<a class="image-link" href="http://appstore.com/pictopairs">
+			<img src="/images/appstore.png" height="40" width="135" alt="Download on the App Store" />
+		</a>
+	</p>
+	<p>
+		To say thanks, why not buy a copy? Hopefully you'll get a little fun out of it too, so we both win :) Your donations encourage me to carry on writing this blog and publishing open source code. Thanks!
+	</p>
+</aside>
 
 
 <div id='influads_block' class='influads_block'></div><script type='text/javascript'>(function(){var acc='acc_1018d742_pub';var st='css';var or='130';var e=document.getElementsByTagName('script')[0];var d=document.createElement('script');d.src=('https:' == document.location.protocol ?'https://' : 'http://') +'engine.influads.com/show/'+or+'/'+st+'/'+acc;d.type='text/javascript';d.async=true;d.defer=true; e.parentNode.insertBefore(d,e);})();</script>
@@ -97,7 +120,7 @@
 <form class="search" action="http://google.com/search" method="get">
 	<div role="search">
     	<input type="hidden" name="q" value="site:alxgbsn.co.uk" />
-    	<input class="search" type="search" name="q" placeholder="Search" />
+    	<input class="search" type="search" name="q" placeholder="Enter a search term" />
     	<button type="submit">Search</button>
     </div>
 </form>
@@ -105,7 +128,7 @@
 <footer role="contentinfo">
 	<p>&copy; Alex Gibson | <a href="/feed/">RSS feed</a></p>
 	<small>
-		EU cookie law notice: this site uses cookies for Google Analytics purposes. You can still use this site with cookies disabled.
+		EU cookie law notice: this site uses cookies for analytics purposes. You can still use this site with cookies disabled.
 	</small>
 </footer>
 

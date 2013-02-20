@@ -4,29 +4,44 @@
     <meta charset="utf-8" />
     <title>Serving iOS retina startup images for the new iPad | Alex Gibson</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Site meta -->
     <meta name="description" content="How to best serve retina sized iPad startup images for home screen web apps" />
+    <meta name="keywords" content="web development, front end developer, web design, mobile, iphone, android, ios, webkit, css, html5, javascript, touch" />
     <meta name="author" content="Alex Gibson" />
-    <meta name="apple-mobile-web-app-title" content="Alex Gibson">
 
     <!-- Prefetch DNS for external assets -->
-    <link rel="dns-prefetch" href="//platform.twitter.com">
-    <link rel="dns-prefetch" href="//www.google-analytics.com">
-    <link rel="dns-prefetch" href="//engine.influads.com">
-    <link rel="dns-prefetch" href="//static2.influads.com">
-    <link rel="dns-prefetch" href="//p.twitter.com">
-    <link rel="dns-prefetch" href="//cdn.api.twitter.com">
+    <link rel="dns-prefetch" href="//platform.twitter.com" />
+    <link rel="dns-prefetch" href="//www.google-analytics.com" />
+    <link rel="dns-prefetch" href="//engine.influads.com" />
+    <link rel="dns-prefetch" href="//static2.influads.com" />
+    <link rel="dns-prefetch" href="//p.twitter.com" />
+    <link rel="dns-prefetch" href="//cdn.api.twitter.com" />
 
+    <!-- CSS style sheets -->
     <link rel="stylesheet" href="/css/styles.css" />
+
+    <!-- RSS feed -->
     <link rel="alternate" type="application/rss+xml" title="Alex Gibson" href="/feed/" />
+
+    <!-- Canonical URL -->
     <link rel="canonical" href="http://alxgbsn.co.uk/2012/03/28/serving-ios-retina-startup-images-for-the-new-ipad" />
+
     <!--[if lt IE 9]>
         <script src="/js/html5shiv.js"></script>
     <![endif]-->
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/iOS-144.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/iOS-114.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/iOS-72.png">
-    <link rel="apple-touch-icon-precomposed" href="/images/iOS-57.png">
-    <link rel="shortcut icon" href="/images/iOS-57.png">
+
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/iOS-144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/iOS-114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/iOS-72.png" />
+    <link rel="apple-touch-icon-precomposed" href="/images/iOS-57.png" />
+    <link rel="shortcut icon" href="/images/iOS-57.png" />
+
+    <!-- iOS icon app title -->
+    <meta name="apple-mobile-web-app-title" content="Alex Gibson" />
+
+    <!-- Async Google Analytics -->
     <script type="text/javascript">
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-33263279-1']);
@@ -53,8 +68,8 @@
 </header>
     
 <article role="main">
-    <time datetime="Wed Mar 28 00:00:00 +0100 2012" pubdate>Published Mar 28 2012</time>
-    <p>In the past we have touched on how to serve iOS startup images for full screen web apps using both <a href="http://alxgbsn.co.uk/2011/10/24/ios-startup-images-using-css-media-queries/">CSS media queries and JavaScript</a> techniques. Now that the latest iPad sports a retina calibre display, we must again look at the best way to serve startup images in our web apps.</p>
+	<time datetime="2012-03-28">Published Mar 28 2012</time>
+	<p>In the past we have touched on how to serve iOS startup images for full screen web apps using both <a href="http://alxgbsn.co.uk/2011/10/24/ios-startup-images-using-css-media-queries/">CSS media queries and JavaScript</a> techniques. Now that the latest iPad sports a retina calibre display, we must again look at the best way to serve startup images in our web apps.</p>
 
 <p>Given the potential bandwidth cost incurred by downloading such large images (2048 x 1496 landscape, 1536 x 2006 portrait), the most advisable technique is to use JavaScript to serve only the assets a device requires (rather than downloading every asset, which would happen if we used media queries). This can be done using the following code snippet in the <code>&lt;head&gt;</code> of your page.</p>
 
@@ -69,16 +84,27 @@
         <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s1">&#39;&lt;link rel=&quot;apple-touch-startup-image&quot; href=&quot;&#39;</span> <span class="o">+</span> <span class="nx">p</span> <span class="o">+</span> <span class="s1">&#39;&quot;/&gt;&#39;</span><span class="p">);</span>
     <span class="p">}</span>
 <span class="p">})();</span>
-</code></pre>
-</div>
+</code></pre></div>
 
 
 <p>It would be nice if Apple would provide a better way to do this rather than having to rely on JavaScript. Perhaps in the future we will be able to have the option to use vector formats, such as SVG for startup images?</p>
 
-    <p>
-    	<a href="https://twitter.com/share" class="twitter-share-button">Tweet</a><br><a href="https://twitter.com/alex_gibson" class="twitter-follow-button" data-show-count="true">Follow @alex_gibson</a>
-	</p>
 </article>
+
+<aside role="complimentary">
+	<h2>Leave a tip!</h2>
+	<p>
+		Was this post helpful? If so, then please consider leaving a tip. Instead of using a micro payment system, I thought I'd release a fun little memory game for the iPhone. It's called <a href="http://appstore.com/pictopairs">Picto Pairs</a> and only costs 59p on the App Store.
+	</p>
+	<p>
+		<a class="image-link" href="http://appstore.com/pictopairs">
+			<img src="/images/appstore.png" height="40" width="135" alt="Download on the App Store" />
+		</a>
+	</p>
+	<p>
+		To say thanks, why not buy a copy? Hopefully you'll get a little fun out of it too, so we both win :) Your donations encourage me to carry on writing this blog and publishing open source code. Thanks!
+	</p>
+</aside>
 
 
 <div id='influads_block' class='influads_block'></div><script type='text/javascript'>(function(){var acc='acc_1018d742_pub';var st='css';var or='130';var e=document.getElementsByTagName('script')[0];var d=document.createElement('script');d.src=('https:' == document.location.protocol ?'https://' : 'http://') +'engine.influads.com/show/'+or+'/'+st+'/'+acc;d.type='text/javascript';d.async=true;d.defer=true; e.parentNode.insertBefore(d,e);})();</script>
@@ -86,7 +112,7 @@
 <form class="search" action="http://google.com/search" method="get">
 	<div role="search">
     	<input type="hidden" name="q" value="site:alxgbsn.co.uk" />
-    	<input class="search" type="search" name="q" placeholder="Search" />
+    	<input class="search" type="search" name="q" placeholder="Enter a search term" />
     	<button type="submit">Search</button>
     </div>
 </form>
@@ -94,7 +120,7 @@
 <footer role="contentinfo">
 	<p>&copy; Alex Gibson | <a href="/feed/">RSS feed</a></p>
 	<small>
-		EU cookie law notice: this site uses cookies for Google Analytics purposes. You can still use this site with cookies disabled.
+		EU cookie law notice: this site uses cookies for analytics purposes. You can still use this site with cookies disabled.
 	</small>
 </footer>
 

@@ -4,29 +4,44 @@
     <meta charset="utf-8" />
     <title>iOS startup images using CSS media queries | Alex Gibson</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Site meta -->
     <meta name="description" content="How to serve correctly sized iOS startup images for home screen web apps using CSS media queries" />
+    <meta name="keywords" content="web development, front end developer, web design, mobile, iphone, android, ios, webkit, css, html5, javascript, touch" />
     <meta name="author" content="Alex Gibson" />
-    <meta name="apple-mobile-web-app-title" content="Alex Gibson">
 
     <!-- Prefetch DNS for external assets -->
-    <link rel="dns-prefetch" href="//platform.twitter.com">
-    <link rel="dns-prefetch" href="//www.google-analytics.com">
-    <link rel="dns-prefetch" href="//engine.influads.com">
-    <link rel="dns-prefetch" href="//static2.influads.com">
-    <link rel="dns-prefetch" href="//p.twitter.com">
-    <link rel="dns-prefetch" href="//cdn.api.twitter.com">
+    <link rel="dns-prefetch" href="//platform.twitter.com" />
+    <link rel="dns-prefetch" href="//www.google-analytics.com" />
+    <link rel="dns-prefetch" href="//engine.influads.com" />
+    <link rel="dns-prefetch" href="//static2.influads.com" />
+    <link rel="dns-prefetch" href="//p.twitter.com" />
+    <link rel="dns-prefetch" href="//cdn.api.twitter.com" />
 
+    <!-- CSS style sheets -->
     <link rel="stylesheet" href="/css/styles.css" />
+
+    <!-- RSS feed -->
     <link rel="alternate" type="application/rss+xml" title="Alex Gibson" href="/feed/" />
+
+    <!-- Canonical URL -->
     <link rel="canonical" href="http://alxgbsn.co.uk/2011/10/24/ios-startup-images-using-css-media-queries" />
+
     <!--[if lt IE 9]>
         <script src="/js/html5shiv.js"></script>
     <![endif]-->
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/iOS-144.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/iOS-114.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/iOS-72.png">
-    <link rel="apple-touch-icon-precomposed" href="/images/iOS-57.png">
-    <link rel="shortcut icon" href="/images/iOS-57.png">
+
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/iOS-144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/iOS-114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/iOS-72.png" />
+    <link rel="apple-touch-icon-precomposed" href="/images/iOS-57.png" />
+    <link rel="shortcut icon" href="/images/iOS-57.png" />
+
+    <!-- iOS icon app title -->
+    <meta name="apple-mobile-web-app-title" content="Alex Gibson" />
+
+    <!-- Async Google Analytics -->
     <script type="text/javascript">
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-33263279-1']);
@@ -53,8 +68,8 @@
 </header>
     
 <article role="main">
-    <time datetime="Mon Oct 24 00:00:00 +0100 2011" pubdate>Published Oct 24 2011</time>
-    <p>Ever since the arrival of the iPad and iPhone 4, serving correctly sized <code>apple-touch-startup-images</code> for iOS web apps has been somewhat clumbersome, especially if you wish to cater for every type of iOS device.</p>
+	<time datetime="2011-10-24">Published Oct 24 2011</time>
+	<p>Ever since the arrival of the iPad and iPhone 4, serving correctly sized <code>apple-touch-startup-images</code> for iOS web apps has been somewhat clumbersome, especially if you wish to cater for every type of iOS device.</p>
 
 <p>A common solution has been to use JavaScript to detect what device the user is on, and then to write the correct image into the <code>&lt;head&gt;</code> of your HTML file.</p>
 
@@ -67,8 +82,7 @@
     <span class="p">}</span>
     <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s1">&#39;&lt;link rel=&quot;apple-touch-startup-image&quot; href=&quot;&#39;</span> <span class="o">+</span> <span class="nx">filename</span> <span class="o">+</span> <span class="s1">&#39;&quot;/&gt;&#39;</span> <span class="p">);</span>
 <span class="p">})();</span>
-</code></pre>
-</div>
+</code></pre></div>
 
 
 <p>To make things more complicated, you also need to serve a high-res startup image for the iPhone 4's retina display. The iPad requires two different splash screen images for each orientation as well. Things quickly start to get a bit messy…</p>
@@ -85,18 +99,29 @@
 <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;apple-touch-startup-image&quot;</span> <span class="na">media=</span><span class="s">&quot;(min-device-width: 768px) and (orientation: portrait)&quot;</span> <span class="na">href=</span><span class="s">&quot;startup-iPad-portrait.png&quot;</span> <span class="nt">/&gt;</span>
 <span class="c">&lt;!-- iPad Landscape 1024x748 --&gt;</span>
 <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;apple-touch-startup-image&quot;</span> <span class="na">media=</span><span class="s">&quot;(min-device-width: 768px) and (orientation: landscape)&quot;</span> <span class="na">href=</span><span class="s">&quot;startup-iPad-landscape.png&quot;</span> <span class="nt">/&gt;</span>
-</code></pre>
-</div>
+</code></pre></div>
 
 
 <h2>Caveat</h2>
 
 <p>The only drawback to this CSS only method is that every image seems to be downloaded, regardless of which one is used on the device. If your application is supporting both iPhone and iPad, it may be worth using the JavaScript solution still. But the choice is yours to make, depending on the number of files and their respective sizes. Hopefully Apple will eventually support another solution to serving the correct file, such as using the <code>sizes</code> attribute.</p>
 
-    <p>
-    	<a href="https://twitter.com/share" class="twitter-share-button">Tweet</a><br><a href="https://twitter.com/alex_gibson" class="twitter-follow-button" data-show-count="true">Follow @alex_gibson</a>
-	</p>
 </article>
+
+<aside role="complimentary">
+	<h2>Leave a tip!</h2>
+	<p>
+		Was this post helpful? If so, then please consider leaving a tip. Instead of using a micro payment system, I thought I'd release a fun little memory game for the iPhone. It's called <a href="http://appstore.com/pictopairs">Picto Pairs</a> and only costs 59p on the App Store.
+	</p>
+	<p>
+		<a class="image-link" href="http://appstore.com/pictopairs">
+			<img src="/images/appstore.png" height="40" width="135" alt="Download on the App Store" />
+		</a>
+	</p>
+	<p>
+		To say thanks, why not buy a copy? Hopefully you'll get a little fun out of it too, so we both win :) Your donations encourage me to carry on writing this blog and publishing open source code. Thanks!
+	</p>
+</aside>
 
 
 <div id='influads_block' class='influads_block'></div><script type='text/javascript'>(function(){var acc='acc_1018d742_pub';var st='css';var or='130';var e=document.getElementsByTagName('script')[0];var d=document.createElement('script');d.src=('https:' == document.location.protocol ?'https://' : 'http://') +'engine.influads.com/show/'+or+'/'+st+'/'+acc;d.type='text/javascript';d.async=true;d.defer=true; e.parentNode.insertBefore(d,e);})();</script>
@@ -104,7 +129,7 @@
 <form class="search" action="http://google.com/search" method="get">
 	<div role="search">
     	<input type="hidden" name="q" value="site:alxgbsn.co.uk" />
-    	<input class="search" type="search" name="q" placeholder="Search" />
+    	<input class="search" type="search" name="q" placeholder="Enter a search term" />
     	<button type="submit">Search</button>
     </div>
 </form>
@@ -112,7 +137,7 @@
 <footer role="contentinfo">
 	<p>&copy; Alex Gibson | <a href="/feed/">RSS feed</a></p>
 	<small>
-		EU cookie law notice: this site uses cookies for Google Analytics purposes. You can still use this site with cookies disabled.
+		EU cookie law notice: this site uses cookies for analytics purposes. You can still use this site with cookies disabled.
 	</small>
 </footer>
 

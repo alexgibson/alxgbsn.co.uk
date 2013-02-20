@@ -4,29 +4,44 @@
     <meta charset="utf-8" />
     <title>Site redesign, a mobile first approach | Alex Gibson</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Site meta -->
     <meta name="description" content="Details on the redesign of this site using a mobile first approach to designing websites" />
+    <meta name="keywords" content="web development, front end developer, web design, mobile, iphone, android, ios, webkit, css, html5, javascript, touch" />
     <meta name="author" content="Alex Gibson" />
-    <meta name="apple-mobile-web-app-title" content="Alex Gibson">
 
     <!-- Prefetch DNS for external assets -->
-    <link rel="dns-prefetch" href="//platform.twitter.com">
-    <link rel="dns-prefetch" href="//www.google-analytics.com">
-    <link rel="dns-prefetch" href="//engine.influads.com">
-    <link rel="dns-prefetch" href="//static2.influads.com">
-    <link rel="dns-prefetch" href="//p.twitter.com">
-    <link rel="dns-prefetch" href="//cdn.api.twitter.com">
+    <link rel="dns-prefetch" href="//platform.twitter.com" />
+    <link rel="dns-prefetch" href="//www.google-analytics.com" />
+    <link rel="dns-prefetch" href="//engine.influads.com" />
+    <link rel="dns-prefetch" href="//static2.influads.com" />
+    <link rel="dns-prefetch" href="//p.twitter.com" />
+    <link rel="dns-prefetch" href="//cdn.api.twitter.com" />
 
+    <!-- CSS style sheets -->
     <link rel="stylesheet" href="/css/styles.css" />
+
+    <!-- RSS feed -->
     <link rel="alternate" type="application/rss+xml" title="Alex Gibson" href="/feed/" />
+
+    <!-- Canonical URL -->
     <link rel="canonical" href="http://alxgbsn.co.uk/2011/09/22/site-redesign-a-mobile-first-approach" />
+
     <!--[if lt IE 9]>
         <script src="/js/html5shiv.js"></script>
     <![endif]-->
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/iOS-144.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/iOS-114.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/iOS-72.png">
-    <link rel="apple-touch-icon-precomposed" href="/images/iOS-57.png">
-    <link rel="shortcut icon" href="/images/iOS-57.png">
+
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/iOS-144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/iOS-114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/iOS-72.png" />
+    <link rel="apple-touch-icon-precomposed" href="/images/iOS-57.png" />
+    <link rel="shortcut icon" href="/images/iOS-57.png" />
+
+    <!-- iOS icon app title -->
+    <meta name="apple-mobile-web-app-title" content="Alex Gibson" />
+
+    <!-- Async Google Analytics -->
     <script type="text/javascript">
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-33263279-1']);
@@ -53,8 +68,8 @@
 </header>
     
 <article role="main">
-    <time datetime="Thu Sep 22 00:00:00 +0100 2011" pubdate>Published Sep 22 2011</time>
-    <p>Anyone who has visited this site over the last few weeks will no doubt have noticed a few changes. It has now had a complete design overhaul, which is probably long overdue given the current rise in interest of principals such as <a href="http://www.alistapart.com/articles/responsive-web-design/">responsive web design</a> and <a href="http://www.lukew.com/ff/entry.asp?933">mobile first</a>. What follows is a run down of basic changes to the site, in what hopefully makes for a much improved reading experience, in our rapidly changing, device-agnostic world.</p>
+	<time datetime="2011-09-22">Published Sep 22 2011</time>
+	<p>Anyone who has visited this site over the last few weeks will no doubt have noticed a few changes. It has now had a complete design overhaul, which is probably long overdue given the current rise in interest of principals such as <a href="http://www.alistapart.com/articles/responsive-web-design/">responsive web design</a> and <a href="http://www.lukew.com/ff/entry.asp?933">mobile first</a>. What follows is a run down of basic changes to the site, in what hopefully makes for a much improved reading experience, in our rapidly changing, device-agnostic world.</p>
 
 <h2>Establishing a useful baseline</h2>
 
@@ -85,8 +100,7 @@
 <span class="k">@media</span> <span class="o">(</span><span class="nt">min-width</span> <span class="o">:</span> <span class="nt">769px</span><span class="o">)</span> <span class="p">{</span>
 
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div>
 
 
 <p>Conditional comment for Internet Explorer:</p>
@@ -94,8 +108,7 @@
 <div class="highlight"><pre><code class="html"><span class="c">&lt;!--[if (lt IE 9)&amp;(!IEMobile 7)]&gt;</span>
 <span class="c">&lt;link href=&quot;css/desktop.css&quot; rel=&quot;stylesheet&quot; /&gt;</span>
 <span class="c">&lt;![endif]--&gt;</span>
-</code></pre>
-</div>
+</code></pre></div>
 
 
 <h2>Responsive design</h2>
@@ -115,8 +128,7 @@
     <span class="nt">&lt;aside</span> <span class="na">role=</span><span class="s">&quot;complementary&quot;</span><span class="nt">&gt;&lt;/aside&gt;</span>
     <span class="nt">&lt;footer</span> <span class="na">role=</span><span class="s">&quot;contentinfo&quot;</span><span class="nt">&gt;&lt;/footer&gt;</span>
 <span class="nt">&lt;/body&gt;</span>
-</code></pre>
-</div>
+</code></pre></div>
 
 
 <p>Nested inside an appropriate CSS Media Query, small–screen browsers are then be served a different ordering of page content, using the box-ordinal-group property.</p>
@@ -163,18 +175,29 @@
         <span class="n">box</span><span class="o">-</span><span class="n">ordinal</span><span class="o">-</span><span class="n">group</span><span class="o">:</span> <span class="m">5</span><span class="p">;</span>
     <span class="p">}</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div>
 
 
 <p>This gets the user straight to the content they want to see, making much better use of valuable screen real–estate. Each page also features skip links, allowing for quick access to navigation and main content irrespective of the content order.</p>
 
 <p>Note: for the subset of mobile browsers that support CSS Media Queries but do not yet support Flexbox (e.g. Opera Mobile/Mini), featured detection comes to the rescue courtesy of <a href="http://modernizr.com/">Modernizr</a>. A few alternate CSS styling rules are all that is needed for the navigation and footer sections. Modernizr also provides the site's HTML5 shim that enables Internet Explorer to correctly style new sectioning elements.</p>
 
-    <p>
-    	<a href="https://twitter.com/share" class="twitter-share-button">Tweet</a><br><a href="https://twitter.com/alex_gibson" class="twitter-follow-button" data-show-count="true">Follow @alex_gibson</a>
-	</p>
 </article>
+
+<aside role="complimentary">
+	<h2>Leave a tip!</h2>
+	<p>
+		Was this post helpful? If so, then please consider leaving a tip. Instead of using a micro payment system, I thought I'd release a fun little memory game for the iPhone. It's called <a href="http://appstore.com/pictopairs">Picto Pairs</a> and only costs 59p on the App Store.
+	</p>
+	<p>
+		<a class="image-link" href="http://appstore.com/pictopairs">
+			<img src="/images/appstore.png" height="40" width="135" alt="Download on the App Store" />
+		</a>
+	</p>
+	<p>
+		To say thanks, why not buy a copy? Hopefully you'll get a little fun out of it too, so we both win :) Your donations encourage me to carry on writing this blog and publishing open source code. Thanks!
+	</p>
+</aside>
 
 
 <div id='influads_block' class='influads_block'></div><script type='text/javascript'>(function(){var acc='acc_1018d742_pub';var st='css';var or='130';var e=document.getElementsByTagName('script')[0];var d=document.createElement('script');d.src=('https:' == document.location.protocol ?'https://' : 'http://') +'engine.influads.com/show/'+or+'/'+st+'/'+acc;d.type='text/javascript';d.async=true;d.defer=true; e.parentNode.insertBefore(d,e);})();</script>
@@ -182,7 +205,7 @@
 <form class="search" action="http://google.com/search" method="get">
 	<div role="search">
     	<input type="hidden" name="q" value="site:alxgbsn.co.uk" />
-    	<input class="search" type="search" name="q" placeholder="Search" />
+    	<input class="search" type="search" name="q" placeholder="Enter a search term" />
     	<button type="submit">Search</button>
     </div>
 </form>
@@ -190,7 +213,7 @@
 <footer role="contentinfo">
 	<p>&copy; Alex Gibson | <a href="/feed/">RSS feed</a></p>
 	<small>
-		EU cookie law notice: this site uses cookies for Google Analytics purposes. You can still use this site with cookies disabled.
+		EU cookie law notice: this site uses cookies for analytics purposes. You can still use this site with cookies disabled.
 	</small>
 </footer>
 

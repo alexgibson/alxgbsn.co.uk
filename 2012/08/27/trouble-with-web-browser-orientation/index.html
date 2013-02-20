@@ -4,29 +4,44 @@
     <meta charset="utf-8" />
     <title>Trouble with web browser orientation | Alex Gibson</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Site meta -->
     <meta name="description" content="A look at the current methods available to determine browser orientation, and details some of the problems found along the way." />
+    <meta name="keywords" content="web development, front end developer, web design, mobile, iphone, android, ios, webkit, css, html5, javascript, touch" />
     <meta name="author" content="Alex Gibson" />
-    <meta name="apple-mobile-web-app-title" content="Alex Gibson">
 
     <!-- Prefetch DNS for external assets -->
-    <link rel="dns-prefetch" href="//platform.twitter.com">
-    <link rel="dns-prefetch" href="//www.google-analytics.com">
-    <link rel="dns-prefetch" href="//engine.influads.com">
-    <link rel="dns-prefetch" href="//static2.influads.com">
-    <link rel="dns-prefetch" href="//p.twitter.com">
-    <link rel="dns-prefetch" href="//cdn.api.twitter.com">
+    <link rel="dns-prefetch" href="//platform.twitter.com" />
+    <link rel="dns-prefetch" href="//www.google-analytics.com" />
+    <link rel="dns-prefetch" href="//engine.influads.com" />
+    <link rel="dns-prefetch" href="//static2.influads.com" />
+    <link rel="dns-prefetch" href="//p.twitter.com" />
+    <link rel="dns-prefetch" href="//cdn.api.twitter.com" />
 
+    <!-- CSS style sheets -->
     <link rel="stylesheet" href="/css/styles.css" />
+
+    <!-- RSS feed -->
     <link rel="alternate" type="application/rss+xml" title="Alex Gibson" href="/feed/" />
+
+    <!-- Canonical URL -->
     <link rel="canonical" href="http://alxgbsn.co.uk/2012/08/27/trouble-with-web-browser-orientation" />
+
     <!--[if lt IE 9]>
         <script src="/js/html5shiv.js"></script>
     <![endif]-->
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/iOS-144.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/iOS-114.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/iOS-72.png">
-    <link rel="apple-touch-icon-precomposed" href="/images/iOS-57.png">
-    <link rel="shortcut icon" href="/images/iOS-57.png">
+
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/iOS-144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/iOS-114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/iOS-72.png" />
+    <link rel="apple-touch-icon-precomposed" href="/images/iOS-57.png" />
+    <link rel="shortcut icon" href="/images/iOS-57.png" />
+
+    <!-- iOS icon app title -->
+    <meta name="apple-mobile-web-app-title" content="Alex Gibson" />
+
+    <!-- Async Google Analytics -->
     <script type="text/javascript">
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-33263279-1']);
@@ -53,8 +68,8 @@
 </header>
     
 <article role="main">
-    <time datetime="Mon Aug 27 00:00:00 +0100 2012" pubdate>Published Aug 27 2012</time>
-    <p>In a sensible world, determining web browser orientation on mobile and tablet devices should be as straight forward as querying a property such as <code>window.orientation</code> and hoping for a value such as <code>portrait</code> or <code>landscape</code> to get returned. Unfortunately, the harsh reality of current API's and web browser inconsistencies makes the process way more complicated than it should be.</p>
+	<time datetime="2012-08-27">Published Aug 27 2012</time>
+	<p>In a sensible world, determining web browser orientation on mobile and tablet devices should be as straight forward as querying a property such as <code>window.orientation</code> and hoping for a value such as <code>portrait</code> or <code>landscape</code> to get returned. Unfortunately, the harsh reality of current API's and web browser inconsistencies makes the process way more complicated than it should be.</p>
 
 <p>This post takes a look at the current methods available to web developers to determine browser orientation, and details some of the problems found along the way.</p>
 
@@ -78,8 +93,7 @@
         <span class="k">break</span><span class="p">;</span>
     <span class="p">}</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div>
 
 
 <p>Unfortunately, there are a lot of <a href="http://www.matthewgifford.com/2011/12/22/a-misconception-about-window-orientation/">common misconceptions</a> about what these values represent. For example, a value of <code>0</code> degrees does not necessarily mean <code>portrait</code>, as it depends on which orientation is considered to be <em>default</em> by the manufacturer. Some tablet browsers, such as the iPad, will use <code>0</code> for portrait. Some Android tablets, such as the Xoom, use <code>0</code> for landscape.</p>
@@ -91,8 +105,7 @@
 <div class="highlight"><pre><code class="javascript"><span class="nx">onOrientationChange</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">orientation</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerHeight</span> <span class="o">&gt;=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerWidth</span> <span class="o">?</span> <span class="s1">&#39;portrait&#39;</span> <span class="o">:</span> <span class="s1">&#39;landscape&#39;</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div>
 
 
 <p>Well, sadly no…</p>
@@ -112,8 +125,7 @@
         <span class="k">this</span><span class="p">.</span><span class="nx">orientation</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerHeight</span> <span class="o">&gt;=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerWidth</span> <span class="o">?</span> <span class="s1">&#39;portrait&#39;</span> <span class="o">:</span> <span class="s1">&#39;landscape&#39;</span><span class="p">;</span>
     <span class="p">}</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div>
 
 
 <h2>CSS Media Queries and window.matchMedia</h2>
@@ -127,8 +139,7 @@
 <span class="k">@media</span> <span class="nt">screen</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">orientation</span><span class="nd">:landscape</span><span class="o">)</span> <span class="p">{</span>
 
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div>
 
 
 <p>This can lead to unintentional styles being applied when the keyboard is visible, unless developers specify <code>min-width</code> or another attribute that must also satisfy the media query. Any JavaScript checks using <code>window.matchMedia</code> will also be affected in the same manner.</p>
@@ -141,10 +152,22 @@
 
 <p>Given that <code>window.orientation</code> is not really all that useful, and <code>resize</code> event behaviour can differ significantly between browsers, we still lack a robust API to report device orientation accurately. For such a basic feature that is commonly needed today, it is pretty ridiculous that a task like this proves to be so overly complicated.</p>
 
-    <p>
-    	<a href="https://twitter.com/share" class="twitter-share-button">Tweet</a><br><a href="https://twitter.com/alex_gibson" class="twitter-follow-button" data-show-count="true">Follow @alex_gibson</a>
-	</p>
 </article>
+
+<aside role="complimentary">
+	<h2>Leave a tip!</h2>
+	<p>
+		Was this post helpful? If so, then please consider leaving a tip. Instead of using a micro payment system, I thought I'd release a fun little memory game for the iPhone. It's called <a href="http://appstore.com/pictopairs">Picto Pairs</a> and only costs 59p on the App Store.
+	</p>
+	<p>
+		<a class="image-link" href="http://appstore.com/pictopairs">
+			<img src="/images/appstore.png" height="40" width="135" alt="Download on the App Store" />
+		</a>
+	</p>
+	<p>
+		To say thanks, why not buy a copy? Hopefully you'll get a little fun out of it too, so we both win :) Your donations encourage me to carry on writing this blog and publishing open source code. Thanks!
+	</p>
+</aside>
 
 
 <div id='influads_block' class='influads_block'></div><script type='text/javascript'>(function(){var acc='acc_1018d742_pub';var st='css';var or='130';var e=document.getElementsByTagName('script')[0];var d=document.createElement('script');d.src=('https:' == document.location.protocol ?'https://' : 'http://') +'engine.influads.com/show/'+or+'/'+st+'/'+acc;d.type='text/javascript';d.async=true;d.defer=true; e.parentNode.insertBefore(d,e);})();</script>
@@ -152,7 +175,7 @@
 <form class="search" action="http://google.com/search" method="get">
 	<div role="search">
     	<input type="hidden" name="q" value="site:alxgbsn.co.uk" />
-    	<input class="search" type="search" name="q" placeholder="Search" />
+    	<input class="search" type="search" name="q" placeholder="Enter a search term" />
     	<button type="submit">Search</button>
     </div>
 </form>
@@ -160,7 +183,7 @@
 <footer role="contentinfo">
 	<p>&copy; Alex Gibson | <a href="/feed/">RSS feed</a></p>
 	<small>
-		EU cookie law notice: this site uses cookies for Google Analytics purposes. You can still use this site with cookies disabled.
+		EU cookie law notice: this site uses cookies for analytics purposes. You can still use this site with cookies disabled.
 	</small>
 </footer>
 
