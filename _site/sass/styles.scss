@@ -164,9 +164,9 @@ aside[role=complimentary] {
 	margin-top: 2em;
 }
 
-.portfolio h2 {
-	text-align: center;
-}
+// .portfolio h2 {
+// 	text-align: center;
+// }
 
 figure {
 	display: block;
@@ -179,12 +179,16 @@ figure {
 	}
 
 	figcaption {
-		text-align: center;
-		-webkit-hyphens:auto;
-		-moz-hyphens: auto;
-		hyphens: auto;
+		// text-align: center;
+		// -webkit-hyphens:auto;
+		// -moz-hyphens: auto;
+		// hyphens: auto;
 		line-height: 1.5em;
 		margin: 0 0 1.5em 0;
+
+		img {
+			margin: 0;
+		}
 	}
 }
 
