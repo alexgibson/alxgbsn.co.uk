@@ -1,0 +1,76 @@
+<!DOCTYPE html> 
+<html lang="en" manifest=""> 
+<head> 
+<meta charset="utf-8" />
+<title>My App</title>
+<meta name="description" content="" />
+<meta name="author" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<!-- CSS styles -->
+<link rel="stylesheet" href="css/normalize.css" />
+<link rel="stylesheet" href="css/styles.css" />
+
+<!-- JavaScript assets -->
+<script src="js/tap.js"></script>
+<script src="js/main.js"></script>
+
+<!-- iOS full screen mode -->
+<meta name="apple-mobile-web-app-capable" content="no" />
+
+<!-- iOS Status Bar Style (default, black, black-translucent) -->
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+<!-- iOS prevent tel number format detection -->
+<meta name="format-detection" content="telephone=no" />
+
+<!--iOS web app title -->
+<meta name="apple-mobile-web-app-title" content="My App" />
+
+<!-- iOS home screen icons -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/iOS-144.png" />
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/iOS-114.png" />
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/iOS-72.png" />
+<link rel="apple-touch-icon-precomposed" href="images/iOS-57.png" />
+<link rel="icon" href="images/iOS-57.png" />
+
+<!-- Canonical URL -->
+<link rel="canonical" href="" />
+
+<!-- Humans.txt -->
+<link type="text/plain" rel="author" href="humans.txt" />
+
+<!-- Async Google Analytics -->
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-XXXXXXX-X']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+var ga = document.createElement('script');
+ga.src = ('https:' == document.location.protocol ?
+    'https://ssl' : 'http://www') +
+    '.google-analytics.com/ga.js';
+ga.setAttribute('async', 'true');
+document.documentElement.firstChild.appendChild(ga);
+})();
+</script>
+
+</head>
+<body>
+	<button id="kick">Play</button>
+	<button id="snare">Snare</button>
+	<button id="hat">Hat</button>
+	<button id="cymbal">Cymbal</button>
+	<div>
+		<button id="high-conga">High Con</button>
+		<button id="mid-conga">Mid Con</button>
+		<button id="low-conga">Low Con</button>
+	</div>
+	<div>
+		<button id="high-tom">High Tom</button>
+		<button id="mid-tom">Mid Tom</button>
+		<button id="low-tom">Low Tom</button>
+	</div>
+</body>
+</html> 

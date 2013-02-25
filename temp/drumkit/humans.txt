@@ -1,0 +1,15 @@
+/* TEAM */
+
+	Developed by:
+	Site:
+	Twitter:
+	GitHub:
+	Location:
+		
+/* SITE */
+
+	Last update: YYYY/MM/DD
+	Language: English
+	Doctype: HTML5
+	Standards: HTML, CSS, JavaScript
+	Components:

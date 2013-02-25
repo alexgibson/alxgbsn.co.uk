@@ -1,0 +1,40 @@
+/*
+ * Copyright (c) 2013 Alex Gibson
+ * Released under MIT license
+ * http://alxgbsn.co.uk
+ */
+
+* { 
+	-moz-box-sizing: border-box; 
+	-webkit-box-sizing: border-box; 
+	box-sizing: border-box; 
+}
+
+html { 
+	-webkit-user-select: none;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	-webkit-touch-callout: none; 
+	-webkit-text-size-adjust: 100%; 
+	-moz-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%; 
+	text-size-adjust: 100%;
+}
+
+body {
+	font: 17px/22px Helvetica, Arial, Verdana, sans-serif;
+}
+
+button {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	width: 100px;
+	height: 100px;
+	line-height: 100px;
+	margin: 1em;
+}
+
+@media only screen and (-o-min-device-pixel-ratio: 5/4),
+only screen and (-webkit-min-device-pixel-ratio: 1.25),
+only screen and (min-resolution: 120dpi) {
+    /* Style adjustments for high resolution devices */
+}
