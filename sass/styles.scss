@@ -265,7 +265,7 @@ form.search {
 .app-store-badge {
 	width: 135px;
 	height: 40px;
-	@include image-set-bg-fallback('appstore', 'png', '@2x');
+	background-image: url('../images/appstore.png');
 }
 
 .influads_block {
@@ -287,5 +287,19 @@ form.search {
 
 	.influads_link_img {
 		border-bottom: none !important;
+	}
+}
+
+@media print,
+       (-o-min-device-pixel-ratio: 5/4),
+       (-webkit-min-device-pixel-ratio: 1.25),
+       (min-resolution: 120dpi) {
+    /* Style adjustments for high resolution devices */
+
+    .app-store-badge {
+		width: 135px;
+		height: 40px;
+		background-image: url('../images/appstore@2x.png');
+		background-size: 135px 40px;
 	}
 }
