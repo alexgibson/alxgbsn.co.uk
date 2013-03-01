@@ -262,6 +262,12 @@ form.search {
 	background: #434343;
 }
 
+.app-store-badge {
+	width: 135px;
+	height: 40px;
+	@include image-set-bg-fallback('appstore', 'png', '@2x');
+}
+
 .influads_block {
 	margin: 2em auto;
 
