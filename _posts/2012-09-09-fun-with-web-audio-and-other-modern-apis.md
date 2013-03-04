@@ -126,5 +126,5 @@ function handleVisibilityChange () {
 Demo and source code
 --------------------
 
-You can check out the [demo here](http://alxgbsn.co.uk/wavepad). Try it in Chrome, Safari 6 or iOS6. There are still a few glitches to iron out on iOS6, but feel free to [open an issue](https://github.com/alexgibson/wavepad/issues) if you find a bug or have any new ideas for features. Alternatively, feel free to [fork and hack away](https://github.com/alexgibson/wavepad).
+You can check out the [demo here](http://alxgbsn.co.uk/wavepad). Try it in Chrome, Safari 6 or iOS6. There are still a few glitches to iron out on iOS6, but feel free to [open an issue](https://github.com/alexgibson/wavepad/issues) if you find a bug or have any new ideas for features.
 
