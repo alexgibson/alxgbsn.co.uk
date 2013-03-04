@@ -1,65 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <title>Enable CSS active pseudo styles in Mobile Safari | Alex Gibson</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta charset="utf-8" />
+	<title>Enable CSS active pseudo styles in Mobile Safari | Alex Gibson</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <!-- Site meta -->
-    <meta name="description" content="A single line JavaScript hack to enable CSS active pseudo styles in iOS Mobile Safari" />
-    <meta name="keywords" content="web development, front end developer, web design, mobile, iphone, android, ios, webkit, css, html5, javascript, touch" />
-    <meta name="author" content="Alex Gibson" />
+	<!-- Site meta -->
+	<meta name="description" content="A single line JavaScript hack to enable CSS active pseudo styles in iOS Mobile Safari" />
+	<meta name="keywords" content="web development, front end developer, web design, mobile, iphone, android, ios, webkit, css, html5, javascript, touch" />
+	<meta name="author" content="Alex Gibson" />
 
-    <!-- Prefetch DNS for external assets -->
-    <link rel="dns-prefetch" href="//platform.twitter.com" />
-    <link rel="dns-prefetch" href="//www.google-analytics.com" />
-    <link rel="dns-prefetch" href="//engine.influads.com" />
-    <link rel="dns-prefetch" href="//static2.influads.com" />
-    <link rel="dns-prefetch" href="//p.twitter.com" />
-    <link rel="dns-prefetch" href="//cdn.api.twitter.com" />
+	<!-- Prefetch DNS for external assets -->
+	<link rel="dns-prefetch" href="//platform.twitter.com" />
+	<link rel="dns-prefetch" href="//www.google-analytics.com" />
+	<link rel="dns-prefetch" href="//engine.influads.com" />
+	<link rel="dns-prefetch" href="//static2.influads.com" />
+	<link rel="dns-prefetch" href="//p.twitter.com" />
+	<link rel="dns-prefetch" href="//cdn.api.twitter.com" />
 
-    <!-- CSS style sheets -->
-    <link rel="stylesheet" href="/css/styles.css" />
+	<!-- CSS style sheets -->
+	<link rel="stylesheet" href="/css/styles.css" />
 
-    <!-- RSS feed -->
-    <link rel="alternate" type="application/rss+xml" title="Alex Gibson" href="/feed/" />
+	<!-- RSS feed -->
+	<link rel="alternate" type="application/rss+xml" title="Alex Gibson" href="/feed/" />
 
-    <!-- Canonical URL -->
-    <link rel="canonical" href="http://alxgbsn.co.uk/2011/10/17/enable-css-active-pseudo-styles-in-mobile-safari" />
+	<!-- Canonical URL -->
+	<link rel="canonical" href="http://alxgbsn.co.uk/2011/10/17/enable-css-active-pseudo-styles-in-mobile-safari" />
 
-    <!--[if lt IE 9]>
-        <script src="/js/html5shiv.js"></script>
-    <![endif]-->
+	<!--[if lt IE 9]>
+		<script src="/js/html5shiv.js"></script>
+	<![endif]-->
 
-    <!-- Icons -->
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/iOS-144.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/iOS-114.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/iOS-72.png" />
-    <link rel="apple-touch-icon-precomposed" href="/images/iOS-57.png" />
-    <link rel="shortcut icon" href="/images/iOS-57.png" />
+	<!-- Icons -->
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/iOS-144.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/iOS-114.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/iOS-72.png" />
+	<link rel="apple-touch-icon-precomposed" href="/images/iOS-57.png" />
+	<link rel="shortcut icon" href="/images/iOS-57.png" />
 
-    <!-- iOS icon app title -->
-    <meta name="apple-mobile-web-app-title" content="Alex Gibson" />
+	<!-- iOS icon app title -->
+	<meta name="apple-mobile-web-app-title" content="Alex Gibson" />
 
-    <!-- Smart app banner -->
-    <meta name="apple-itunes-app" content="app-id=600524234, affiliate-data=partnerId=30&siteID=5lYXA5M9upo" />
-
-    <!-- Async Google Analytics -->
-    <script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-33263279-1']);
-    _gaq.push(['_trackPageview']);
-    (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-    </script>
+	<!-- Async Google Analytics -->
+	<script type="text/javascript">
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-33263279-1']);
+	_gaq.push(['_trackPageview']);
+	(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	})();
+	</script>
 </head>
 <body>
 
 <header role="banner">
-    <nav role="navigation">
+	<nav role="navigation">
 	<ul>
 		<li><a href="/">Home</a></li>
 		<li><a href="/about/">About</a></li>
@@ -67,9 +64,9 @@
 		<li><a href="/contact/">Contact</a></li>
 	</ul>
 </nav>
-    <h1>Enable CSS active pseudo styles in Mobile Safari</h1>
+	<h1>Enable CSS active pseudo styles in Mobile Safari</h1>
 </header>
-    
+	
 <article role="main">
 	<time datetime="2011-10-17">Published Oct 17 2011</time>
 	<p>By default Mobile Safari disables CSS active pseudo styles on web pages, instead opting for a generic tap–highlight colour on clickable elements. A little known trick is that you can easily re-enable your active pseudo styles by declaring a <code>touchstart</code> event on the page. You don't even need to actually use the event, simply declaring an empty function will suffice.</p>
@@ -95,7 +92,7 @@
 <aside role="complimentary">
 	<h2>Leave a tip!</h2>
 	<p>
-		Was this post helpful? If so, then please consider leaving a tip. Instead of using a micro payment system, I thought I'd release a fun little memory game for the iPhone. It's called <a href="http://appstore.com/pictopairs">Picto Pairs</a> and only costs 69p on the App Store.
+		Was this post helpful? If so, then please consider leaving a tip. Instead of using a micro payment system, I thought I'd release a fun little memory game for the iPhone. It's called <a href="http://alxgbsn.co.uk/pictopairs">Picto Pairs</a> and only costs 69p on the App Store.
 	</p>
 	<p>
 		<a class="image-link" href="http://appstore.com/pictopairs" onClick="_gaq.push(['_trackEvent', 'App Store', 'Link', 'Picto Pairs']);">
@@ -103,7 +100,7 @@
 		</a>
 	</p>
 	<p>
-		To say thanks, why not buy a copy? You can <a href="https://www.youtube.com/watch?v=1SEgRQwX0Lg">watch a video on YouTube</a> to see what it's like. Hopefully you'll get a little fun out of it too, so we both win :) Your donations encourage me to carry on writing this blog and publishing open source code. Thanks!
+		To say thanks, why not buy a copy? You can <a href="http://alxgbsn.co.uk/pictopairs">watch a video of the game in action</a> to see what it's like. Hopefully you'll get a little fun out of it too, so we both win :) Your donations encourage me to carry on writing this blog and publishing open source code. Thanks!
 	</p>
 </aside>
 
