@@ -4,7 +4,7 @@
  <title>Alex Gibson, Front End Developer</title>
  <link href="http://alxgbsn.co.uk/feed/" rel="self"/>
  <link href="http://alxgbsn.co.uk/"/>
- <updated>2013-03-04T21:49:37+00:00</updated>
+ <updated>2013-03-04T21:52:31+00:00</updated>
  <id>http://alxgbsn.co.uk/</id>
  <author>
    <name>Alex Gibson</name>
@@ -268,7 +268,7 @@
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;h2&gt;Demo and source code&lt;/h2&gt;
+&lt;h2&gt;Demo&lt;/h2&gt;
 
 &lt;p&gt;You can check out the &lt;a href=&quot;http://alxgbsn.co.uk/wavepad&quot;&gt;demo here&lt;/a&gt;. Try it in Chrome, Safari 6 or iOS6. There are still a few glitches to iron out on iOS6, but feel free to &lt;a href=&quot;https://github.com/alexgibson/wavepad/issues&quot;&gt;open an issue&lt;/a&gt; if you find a bug or have any new ideas for features.&lt;/p&gt;
 </content>
