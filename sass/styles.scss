@@ -221,13 +221,13 @@ footer[role=contentinfo] {
 
 form.search {
 
-	margin-top: 1.5em;
+	margin: 1.5em auto 0 auto;
 	line-height: 44px;
 	text-align: center;
 
 	input[type=search] {
 		-webkit-appearance: searchfield;
-		width: 250px;
+		width: 200px;
 		border: 1px solid #a7a7a7; 
 		opacity: 0.7;
 		@include transition-property(opacity);
@@ -252,12 +252,9 @@ form.search {
 	} 
 
 	button[type=submit] {
-		-webkit-appearance: button;
 		font-family: Palatino-Roman, Cambria, "Times New Roman", Times, serif;
+		font-weight: bold;
 		color: #434343;
-		font-size: 0.9em;
-		line-height: 1.5em;
-		height: 1.5em;
 	}
 }
 
@@ -296,6 +293,17 @@ form.search {
 
 	.influads_link_img {
 		border-bottom: none !important;
+	}
+}
+
+@media only screen and (max-width : 568px) {
+	form.search {
+		input[type=search] {
+			width: 250px;
+		}
+		button[type=submit] {
+			display:none;
+		}
 	}
 }
 
