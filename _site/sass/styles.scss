@@ -154,7 +154,7 @@ header[role=banner] {
 	display: block;
 }
 
-article[role=main] {
+article[role=main], section[role=main] {
 	display: block;
 }
 
