@@ -5,7 +5,7 @@ titleinfo: Alex Gibson
 desc: A JavaScript plugin that provides a simplified wrapper for using the Web Notifications API.
 ---
 
-I recently spent some time getting to grips with the [Web Notifications API](http://www.w3.org/TR/notifications/), which is currently supported in both Chrome and Safari 6. It enables you to create growl-style notifications for web applications, and if you're on OSX it integrates really nicely with Notification Centre. 
+I recently spent some time getting to grips with the [Web Notifications API](http://www.w3.org/TR/notifications/), which is currently supported in Chrome, Safari 6, and just recently in Firefox nightly builds. It enables you to create growl-style notifications for web applications, and if you're on OSX it integrates really nicely with Notification Centre. 
 
 I wanted to create something that I could easily resuse in different projects, so I wrote a JavaScript plugin called [Notify.js](https://github.com/alexgibson/notify.js) that acts as a simplified wrapper for the API. 
 
@@ -68,7 +68,7 @@ Supported web browsers
 
 - Chrome
 - Safari 6
-- Firefox (nightlies)
+- Firefox (Nightly)
 
 Browsers that do not yet support the Web Notification API will simply report a console warning instead of showing a notification. This plugin will be kept up to date as more browsers add support for the API and as the spec changes.
 
