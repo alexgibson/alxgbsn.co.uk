@@ -4,13 +4,69 @@
  <title>Alex Gibson, Front End Developer</title>
  <link href="http://alxgbsn.co.uk/feed/" rel="self"/>
  <link href="http://alxgbsn.co.uk/"/>
- <updated>2013-04-04T15:01:07+01:00</updated>
+ <updated>2013-04-04T15:41:36+01:00</updated>
  <id>http://alxgbsn.co.uk/</id>
  <author>
    <name>Alex Gibson</name>
    <email>alxgbsn@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Visibility.js - A cross-browser plugin for using the Page Visibility API</title>
+   <link href="http://alxgbsn.co.uk/2013/04/04/visibility-js-a-cross-browser-plugin-for-using-the-page-visibility-api"/>
+   <updated>2013-04-04T00:00:00+01:00</updated>
+   <id>http://alxgbsn.co.uk/2013/04/04/visibility-js-a-cross-browser-plugin-for-using-the-page-visibility-api</id>
+   <content type="html">&lt;p&gt;Since the &lt;a href=&quot;http://www.w3.org/TR/page-visibility/&quot;&gt;Page Visibility API&lt;/a&gt; now has fairly wide &lt;a href=&quot;http://caniuse.com/#feat=pagevisibility&quot;&gt;browser support&lt;/a&gt; (I'm still looking at you though, Safari), I decided to release a simple plugin for handling and detecting web page visibility changes. Because most browsers still use this feature under an experimental vendor prefix, the JavaScript can be somewhat clumbersome and a pain to rewrite more than once. To this end, I just pushed &lt;a href=&quot;https://github.com/alexgibson/visibility.js&quot;&gt;Visibility.js&lt;/a&gt; on GitHub. It handles all the vendor prefix messiness for you, and provides a simple API for registering visibility change callbacks. As always, the plugin is open source and free for anyone to use.&lt;/p&gt;
+
+&lt;h2&gt;Installation&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Download: &lt;a href=&quot;https://github.com/alexgibson/visibility.js/zipball/master&quot;&gt;zip&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/twitter/bower/&quot;&gt;Bower&lt;/a&gt;: &lt;code&gt;bower install visibility.js&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Git: &lt;code&gt;git clone https://github.com/alexgibson/visibility.js&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h2&gt;Setup&lt;/h2&gt;
+
+&lt;p&gt;First, include the main visibility.js JavaScript file in your HTML document:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;visibility.js&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Next just create a new plugin instance, passing the relevant callbacks you want to use:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;page&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Visibility&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;onHidden&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;onHiddenFunc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;onVisible&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;onVisibleFunc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;onHiddenFunc&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;hidden callback&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;onVisibleFunc&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;visible callback&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Useful methods&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;isHidden&lt;/code&gt; (returns boolean) - manually check to see if the page is hidden&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;isSupported&lt;/code&gt; (returns boolean) - test for Page Visibility API browser support&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h2&gt;Supported web browsers&lt;/h2&gt;
+
+&lt;p&gt;See &lt;a href=&quot;http://caniuse.com/#feat=pagevisibility&quot;&gt;http://caniuse.com/#feat=pagevisibility&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2&gt;License&lt;/h2&gt;
+
+&lt;p&gt;Visibility.js is released under open source &lt;a href=&quot;https://github.com/alexgibson/visibility.js/blob/master/LICENSE.md&quot;&gt;MIT License&lt;/a&gt;.&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Notify.js - A handy wrapper for the Web Notifications API</title>
