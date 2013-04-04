@@ -80,7 +80,7 @@
 
 <h2>Setup</h2>
 
-<p>First, include the main visibility.js JavaScript file in your HTML document:</p>
+<p>First, include the visibility.js JavaScript file in the <code>head</code> of your HTML document:</p>
 
 <div class="highlight"><pre><code class="html"><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;visibility.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
 </code></pre></div>
@@ -103,8 +103,9 @@
 <h2>Useful methods</h2>
 
 <ul>
-<li><code>isHidden</code> (returns boolean) - manually check to see if the page is hidden</li>
-<li><code>isSupported</code> (returns boolean) - test for Page Visibility API browser support</li>
+<li><code>isHidden</code> (returns boolean) - manually check to see if the page is hidden.</li>
+<li><code>isSupported</code> (returns boolean) - test for Page Visibility API browser support.</li>
+<li><code>destroy</code> - remove <code>visibilitychange</code> event listener and unregister callbacks.</li>
 </ul>
 
 
