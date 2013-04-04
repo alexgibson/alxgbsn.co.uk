@@ -116,7 +116,7 @@ code {
 	font-size: 0.9em;
 }
 
-p > code {
+p > code, li > code {
 	background-color: #f2f2f2;
 	border: 1px solid #c5c5c5;
 	padding: .2em;
