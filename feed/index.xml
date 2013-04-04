@@ -4,7 +4,7 @@
  <title>Alex Gibson, Front End Developer</title>
  <link href="http://alxgbsn.co.uk/feed/" rel="self"/>
  <link href="http://alxgbsn.co.uk/"/>
- <updated>2013-04-04T15:41:36+01:00</updated>
+ <updated>2013-04-04T16:56:48+01:00</updated>
  <id>http://alxgbsn.co.uk/</id>
  <author>
    <name>Alex Gibson</name>
@@ -30,7 +30,7 @@
 
 &lt;h2&gt;Setup&lt;/h2&gt;
 
-&lt;p&gt;First, include the main visibility.js JavaScript file in your HTML document:&lt;/p&gt;
+&lt;p&gt;First, include the visibility.js JavaScript file in the &lt;code&gt;head&lt;/code&gt; of your HTML document:&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;visibility.js&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -53,8 +53,9 @@
 &lt;h2&gt;Useful methods&lt;/h2&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;code&gt;isHidden&lt;/code&gt; (returns boolean) - manually check to see if the page is hidden&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;isSupported&lt;/code&gt; (returns boolean) - test for Page Visibility API browser support&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;isHidden&lt;/code&gt; (returns boolean) - manually check to see if the page is hidden.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;isSupported&lt;/code&gt; (returns boolean) - test for Page Visibility API browser support.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;destroy&lt;/code&gt; - remove &lt;code&gt;visibilitychange&lt;/code&gt; event listener and unregister callbacks.&lt;/li&gt;
 &lt;/ul&gt;
 
 
