@@ -4,7 +4,7 @@
  <title>Alex Gibson, Front End Developer</title>
  <link href="http://alxgbsn.co.uk/feed/" rel="self"/>
  <link href="http://alxgbsn.co.uk/"/>
- <updated>2013-04-05T13:20:14+01:00</updated>
+ <updated>2013-04-06T19:17:33+01:00</updated>
  <id>http://alxgbsn.co.uk/</id>
  <author>
    <name>Alex Gibson</name>
@@ -17,7 +17,7 @@
    <link href="http://alxgbsn.co.uk/2013/04/04/visibility-js-a-cross-browser-plugin-for-using-the-page-visibility-api"/>
    <updated>2013-04-04T00:00:00+01:00</updated>
    <id>http://alxgbsn.co.uk/2013/04/04/visibility-js-a-cross-browser-plugin-for-using-the-page-visibility-api</id>
-   <content type="html">&lt;p&gt;Since the &lt;a href=&quot;http://www.w3.org/TR/page-visibility/&quot;&gt;Page Visibility API&lt;/a&gt; now has fairly wide &lt;a href=&quot;http://caniuse.com/#feat=pagevisibility&quot;&gt;browser support&lt;/a&gt; (I'm still looking at you though, Safari), I decided to release a simple plugin for handling and detecting web page visibility changes. Because most browsers still use this feature under an experimental vendor prefix, the JavaScript can be somewhat clumbersome and a pain to rewrite more than once. To this end, I just pushed &lt;a href=&quot;https://github.com/alexgibson/visibility.js&quot;&gt;Visibility.js&lt;/a&gt; on GitHub. It handles all the vendor prefix messiness for you, and provides a simple API for registering visibility change callbacks. As always, the plugin is open source and free for anyone to use.&lt;/p&gt;
+   <content type="html">&lt;p&gt;Since the &lt;a href=&quot;http://www.w3.org/TR/page-visibility/&quot;&gt;Page Visibility API&lt;/a&gt; now has fairly wide &lt;a href=&quot;http://caniuse.com/#feat=pagevisibility&quot;&gt;browser support&lt;/a&gt; (I'm still looking at you however, Safari), I decided to release a plugin for handling and detecting web page visibility changes. Because most browsers still use this feature under an experimental vendor prefix, the JavaScript can be somewhat clumbersome and a pain to rewrite. &lt;a href=&quot;https://github.com/alexgibson/visibility.js&quot;&gt;Visibility.js&lt;/a&gt; handles all the vendor prefix messiness for you, and provides a simple API for registering visibility change callbacks. As always, the plugin is open source and free for anyone to use.&lt;/p&gt;
 
 &lt;h2&gt;Installation&lt;/h2&gt;
 
@@ -55,7 +55,7 @@
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;isHidden&lt;/code&gt; (returns boolean) - manually check to see if the page is hidden.&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;isSupported&lt;/code&gt; (returns boolean) - test for Page Visibility API browser support.&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;destroy&lt;/code&gt; - remove &lt;code&gt;visibilitychange&lt;/code&gt; event listener and unregister callbacks.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;destroy&lt;/code&gt; - remove event listener and callbacks.&lt;/li&gt;
 &lt;/ul&gt;
 
 
