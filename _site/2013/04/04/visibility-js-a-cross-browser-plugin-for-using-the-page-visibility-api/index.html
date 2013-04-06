@@ -67,7 +67,7 @@
 	
 <article role="main">
 	<time datetime="2013-04-04">Published Apr 04 2013</time>
-	<p>Since the <a href="http://www.w3.org/TR/page-visibility/">Page Visibility API</a> now has fairly wide <a href="http://caniuse.com/#feat=pagevisibility">browser support</a> (I'm still looking at you though, Safari), I decided to release a simple plugin for handling and detecting web page visibility changes. Because most browsers still use this feature under an experimental vendor prefix, the JavaScript can be somewhat clumbersome and a pain to rewrite more than once. To this end, I just pushed <a href="https://github.com/alexgibson/visibility.js">Visibility.js</a> on GitHub. It handles all the vendor prefix messiness for you, and provides a simple API for registering visibility change callbacks. As always, the plugin is open source and free for anyone to use.</p>
+	<p>Since the <a href="http://www.w3.org/TR/page-visibility/">Page Visibility API</a> now has fairly wide <a href="http://caniuse.com/#feat=pagevisibility">browser support</a> (I'm still looking at you however, Safari), I decided to release a plugin for handling and detecting web page visibility changes. Because most browsers still use this feature under an experimental vendor prefix, the JavaScript can be somewhat clumbersome and a pain to rewrite. <a href="https://github.com/alexgibson/visibility.js">Visibility.js</a> handles all the vendor prefix messiness for you, and provides a simple API for registering visibility change callbacks. As always, the plugin is open source and free for anyone to use.</p>
 
 <h2>Installation</h2>
 
@@ -105,7 +105,7 @@
 <ul>
 <li><code>isHidden</code> (returns boolean) - manually check to see if the page is hidden.</li>
 <li><code>isSupported</code> (returns boolean) - test for Page Visibility API browser support.</li>
-<li><code>destroy</code> - remove <code>visibilitychange</code> event listener and unregister callbacks.</li>
+<li><code>destroy</code> - remove event listener and callbacks.</li>
 </ul>
 
 

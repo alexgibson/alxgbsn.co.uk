@@ -5,7 +5,7 @@ titleinfo: Alex Gibson
 desc: A JavaScript plugin providing cross browser support for using the Page Visibility API
 ---
 
-Since the [Page Visibility API](http://www.w3.org/TR/page-visibility/) now has fairly wide [browser support](http://caniuse.com/#feat=pagevisibility) (I'm still looking at you though, Safari), I decided to release a simple plugin for handling and detecting web page visibility changes. Because most browsers still use this feature under an experimental vendor prefix, the JavaScript can be somewhat clumbersome and a pain to rewrite more than once. To this end, I just pushed [Visibility.js](https://github.com/alexgibson/visibility.js) on GitHub. It handles all the vendor prefix messiness for you, and provides a simple API for registering visibility change callbacks. As always, the plugin is open source and free for anyone to use.
+Since the [Page Visibility API](http://www.w3.org/TR/page-visibility/) now has fairly wide [browser support](http://caniuse.com/#feat=pagevisibility) (I'm still looking at you however, Safari), I decided to release a plugin for handling and detecting web page visibility changes. Because most browsers still use this feature under an experimental vendor prefix, the JavaScript can be somewhat clumbersome and a pain to rewrite. [Visibility.js](https://github.com/alexgibson/visibility.js) handles all the vendor prefix messiness for you, and provides a simple API for registering visibility change callbacks. As always, the plugin is open source and free for anyone to use.
 
 Installation
 ---------------------------------------
@@ -42,7 +42,7 @@ Useful methods
 
 * `isHidden` (returns boolean) - manually check to see if the page is hidden.
 * `isSupported` (returns boolean) - test for Page Visibility API browser support.
-* `destroy` - remove `visibilitychange` event listener and unregister callbacks.
+* `destroy` - remove event listener and callbacks.
 
 
 Supported web browsers
