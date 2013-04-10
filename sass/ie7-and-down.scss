@@ -10,9 +10,9 @@ div[role=search] {
 	input[type=search] {
 		display: block;
 		float: none;
-		height: 35px;
+		height: auto;
 		width: 200px;
-		margin: 0 auto 20px auto;
+		margin: 0 auto;
 		border: 1px solid #434343;
 		margin-bottom: 10px;
 	}
@@ -21,8 +21,8 @@ div[role=search] {
 		display: block;
 		float: none;
 		width: 70px;
-		height: 35px;
-		margin: 0 auto;
+		height: auto;
+		margin: 10px auto 0 auto;
 		border: 1px solid #434343;
 	}
 }
