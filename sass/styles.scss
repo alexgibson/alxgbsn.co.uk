@@ -226,8 +226,8 @@ form.search {
 
 div[role=search] {
 	position: relative;
-	width: 280px;
-	height: 30px;
+	width: 270px;
+	height: 35px;
 	margin: 0 auto;
 	padding: 15px 5px;
 	text-align: center;
@@ -237,19 +237,20 @@ div[role=search] {
 		-webkit-appearance: none;
 		-moz-appearance: none;
 		float: left;
-		height: 30px;
+		height: 35px;
+		line-height: 35px;
 		width: 200px;
 		padding-left: .5em;
 		border: 1px solid #ccc;
 		-webkit-border-radius: 0;
-		-webkit-border-top-left-radius: 3px;
-		-webkit-border-bottom-left-radius: 3px;
+		-webkit-border-top-left-radius: 5px;
+		-webkit-border-bottom-left-radius: 5px;
 		-moz-border-radius: 0;
-		-moz-border-radius-topleft: 3px;
-		-moz-border-radius-bottomleft: 3px;
+		-moz-border-radius-topleft: 5px;
+		-moz-border-radius-bottomleft: 5px;
 		border-radius: 0;
-		border-top-left-radius: 3px;
-		border-bottom-left-radius: 3px;
+		border-top-left-radius: 5px;
+		border-bottom-left-radius: 5px;
 		-moz-box-sizing: border-box; 
 		-webkit-box-sizing: border-box; 
 		box-sizing: border-box; 
@@ -265,7 +266,8 @@ div[role=search] {
 		-moz-appearance: none;
 		float: left;
 		width: 70px;
-		height: 30px;
+		height: 35px;
+		line-height: 35px;
 		padding: 0;
 		font-family: Palatino-Roman, Cambria, "Times New Roman", Times, serif;
 		font-weight: bold;
@@ -281,12 +283,12 @@ div[role=search] {
 		background: linear-gradient(to bottom, #fff 0%,#dedede 100%);
 		border: 1px solid #ccc;
 		border-left: none;
-		-webkit-border-top-right-radius: 3px;
-		-webkit-border-bottom-right-radius: 3px;
-		-moz-border-radius-topright: 3px;
-		-moz-border-radius-bottomright: 3px;
-		border-top-right-radius: 3px;
-		border-bottom-right-radius: 3px;
+		-webkit-border-top-right-radius: 5px;
+		-webkit-border-bottom-right-radius: 5px;
+		-moz-border-radius-topright: 5px;
+		-moz-border-radius-bottomright: 5px;
+		border-top-right-radius: 5px;
+		border-bottom-right-radius: 5px;
 	}
 
 	button[type=submit]:focus {
