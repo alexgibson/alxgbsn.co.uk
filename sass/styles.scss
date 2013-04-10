@@ -295,20 +295,13 @@ div[role=search] {
 		border: 1px solid #0089CB;
 	}
 
-	::-webkit-input-placeholder {
-	   	line-height: 35px;
-	}
-
-	:-moz-placeholder { /* Firefox 18- */
-	   line-height: 35px; 
-	}
-
-	::-moz-placeholder {  /* Firefox 19+ */
-	   line-height: 35px;  
-	}
-
-	:-ms-input-placeholder {  
-	   line-height: 35px; 
+	label {
+		position: absolute;
+		left: -10000px;
+		top: auto;
+		width: 1px;
+		height: 1px;
+		overflow: hidden;
 	}
 }
 
