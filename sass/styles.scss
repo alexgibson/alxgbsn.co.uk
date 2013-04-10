@@ -131,7 +131,6 @@ nav[role=navigation] {
 	width: 90%;
 	max-width: 35em;
 	background-color: #ecebe6;
-	background-color: rgba(236, 235, 230, 0.9);
 	border-bottom: 1px solid #a7a7a7; 
 }
 
@@ -295,6 +294,22 @@ div[role=search] {
 	button[type=submit]:focus {
 		outline: none;
 		border: 1px solid #0089CB;
+	}
+
+	::-webkit-input-placeholder {
+	   	line-height: 35px;
+	}
+
+	:-moz-placeholder { /* Firefox 18- */
+	   line-height: 35px; 
+	}
+
+	::-moz-placeholder {  /* Firefox 19+ */
+	   line-height: 35px;  
+	}
+
+	:-ms-input-placeholder {  
+	   line-height: 35px; 
 	}
 }
 
