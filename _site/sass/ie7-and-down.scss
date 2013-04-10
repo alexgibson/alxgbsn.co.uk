@@ -1,13 +1,18 @@
+nav[role=navigation] {
+	background-color: #ecebe6;
+	z-index: 10;
+}
+
 div[role=search] {
 
-	height: 90px;
+	height: 70px;
 
 	input[type=search] {
 		display: block;
 		float: none;
 		height: 35px;
 		width: 200px;
-		margin: 0 auto 10px auto;
+		margin: 0 auto 20px auto;
 		border: 1px solid #434343;
 		margin-bottom: 10px;
 	}
