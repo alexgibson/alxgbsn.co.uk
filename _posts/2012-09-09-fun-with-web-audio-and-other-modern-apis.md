@@ -16,8 +16,10 @@ The Web Audio API is currently supported in Chrome, Safari 6 and iOS6 Safari. I 
 
 The basic audio components for the demo are pretty simple. It consists of a single oscillator, a filter, a delay node, and two volume gain nodes (one for delay feedback, the other for master output). The demo also uses an audio frequency analyser to create a visual representation of the audio output, which is drawn to the [Canvas](https://developer.mozilla.org/en-US/docs/HTML/Canvas) for added real time, visual feedback.
 
+Please note that the current WebKit implementation shown in the code examples below may differ from the final unprefixed version, according to the official [W3C specification](https://dvcs.w3.org/hg/audio/raw-file/tip/webaudio/specification.html).
+
 {% highlight javascript %}
-var myAudioContext = new webkitAudioContext() || AudioContext();
+var myAudioContext = new webkitAudioContext();
 var myAudioAnalyser = myAudioContext.createAnalyser();
 var source = myAudioContext.createOscillator();
 var nodes = {};
@@ -71,7 +73,7 @@ function animateSpectrum () {
 CSS Filter effects
 ------------------
 
-The red blur effect on the finger tracking element is achieved using [CSS filter effects](http://www.html5rocks.com/en/tutorials/filters/understanding-css/). The main user interface is also blurred slightly when the welcome modal dialog is shown.
+The red blur effect on the finger tracking element is achieved using [CSS filter effects](http://www.html5rocks.com/en/tutorials/filters/understanding-css/).
 
 {% highlight css %}
 .blurred {
@@ -111,17 +113,6 @@ Page Visibility API
 -------------------
 
 Audio is automatically muted when the browser tab is not active using the [Page Visibility API](http://www.nczonline.net/blog/2011/08/09/introduction-to-the-page-visibility-api/). This is currently supported in Chrome, but not yet in Safari 6.
-
-{% highlight javascript %}
-document.addEventListener('webkitvisibilitychange', handleVisibilityChange, false);
-document.addEventListener('visibilitychange', handleVisibilityChange, false);
-
-function handleVisibilityChange () {
-	if (document.hidden || document.webkitHidden) {
-		myAudioAnalyser.disconnect();
-	}
-}
-{% endhighlight %}
 
 Demo
 ----

@@ -81,7 +81,9 @@
 
 <p>The basic audio components for the demo are pretty simple. It consists of a single oscillator, a filter, a delay node, and two volume gain nodes (one for delay feedback, the other for master output). The demo also uses an audio frequency analyser to create a visual representation of the audio output, which is drawn to the <a href="https://developer.mozilla.org/en-US/docs/HTML/Canvas">Canvas</a> for added real time, visual feedback.</p>
 
-<div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">myAudioContext</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">webkitAudioContext</span><span class="p">()</span> <span class="o">||</span> <span class="nx">AudioContext</span><span class="p">();</span>
+<p>Please note that the current WebKit implementation shown in the code examples below may differ from the final unprefixed version, according to the official <a href="https://dvcs.w3.org/hg/audio/raw-file/tip/webaudio/specification.html">W3C specification</a>.</p>
+
+<div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">myAudioContext</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">webkitAudioContext</span><span class="p">();</span>
 <span class="kd">var</span> <span class="nx">myAudioAnalyser</span> <span class="o">=</span> <span class="nx">myAudioContext</span><span class="p">.</span><span class="nx">createAnalyser</span><span class="p">();</span>
 <span class="kd">var</span> <span class="nx">source</span> <span class="o">=</span> <span class="nx">myAudioContext</span><span class="p">.</span><span class="nx">createOscillator</span><span class="p">();</span>
 <span class="kd">var</span> <span class="nx">nodes</span> <span class="o">=</span> <span class="p">{};</span>
@@ -133,7 +135,7 @@
 
 <h2>CSS Filter effects</h2>
 
-<p>The red blur effect on the finger tracking element is achieved using <a href="http://www.html5rocks.com/en/tutorials/filters/understanding-css/">CSS filter effects</a>. The main user interface is also blurred slightly when the welcome modal dialog is shown.</p>
+<p>The red blur effect on the finger tracking element is achieved using <a href="http://www.html5rocks.com/en/tutorials/filters/understanding-css/">CSS filter effects</a>.</p>
 
 <div class="highlight"><pre><code class="css"><span class="nc">.blurred</span> <span class="p">{</span>
     <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">filter</span><span class="o">:</span> <span class="n">blur</span><span class="p">(</span><span class="m">5px</span><span class="p">);</span>
@@ -170,17 +172,6 @@
 <h2>Page Visibility API</h2>
 
 <p>Audio is automatically muted when the browser tab is not active using the <a href="http://www.nczonline.net/blog/2011/08/09/introduction-to-the-page-visibility-api/">Page Visibility API</a>. This is currently supported in Chrome, but not yet in Safari 6.</p>
-
-<div class="highlight"><pre><code class="javascript"><span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;webkitvisibilitychange&#39;</span><span class="p">,</span> <span class="nx">handleVisibilityChange</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
-<span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;visibilitychange&#39;</span><span class="p">,</span> <span class="nx">handleVisibilityChange</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
-
-<span class="kd">function</span> <span class="nx">handleVisibilityChange</span> <span class="p">()</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">hidden</span> <span class="o">||</span> <span class="nb">document</span><span class="p">.</span><span class="nx">webkitHidden</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">myAudioAnalyser</span><span class="p">.</span><span class="nx">disconnect</span><span class="p">();</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
-
 
 <h2>Demo</h2>
 
