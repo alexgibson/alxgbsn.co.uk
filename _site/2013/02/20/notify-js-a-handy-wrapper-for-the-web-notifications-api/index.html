@@ -1,77 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8" />
-	<title>Notify.js - A handy wrapper for the Web Notifications API | Alex Gibson</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <title>Notify.js - A handy wrapper for the Web Notifications API | Alex Gibson</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-	<!-- Site meta -->
-	<meta name="description" content="A JavaScript plugin that provides a simplified wrapper for using the Web Notifications API." />
-	<meta name="keywords" content="web development, front end developer, web design, mobile, iphone, android, ios, webkit, css, html5, javascript, touch" />
-	<meta name="author" content="Alex Gibson" />
+    <!-- Site meta -->
+    <meta name="description" content="A JavaScript plugin that provides a simplified wrapper for using the Web Notifications API." />
+    <meta name="keywords" content="web development, front end developer, web design, mobile, iphone, android, ios, webkit, css, html5, javascript, touch" />
+    <meta name="author" content="Alex Gibson" />
 
-	<!-- Prefetch DNS for external assets -->
-	<link rel="dns-prefetch" href="//platform.twitter.com" />
-	<link rel="dns-prefetch" href="//www.google-analytics.com" />
-	<link rel="dns-prefetch" href="//p.twitter.com" />
-	<link rel="dns-prefetch" href="//cdn.api.twitter.com" />
+    <!-- Prefetch DNS for external assets -->
+    <link rel="dns-prefetch" href="//platform.twitter.com" />
+    <link rel="dns-prefetch" href="//www.google-analytics.com" />
+    <link rel="dns-prefetch" href="//p.twitter.com" />
+    <link rel="dns-prefetch" href="//cdn.api.twitter.com" />
 
-	<!-- CSS style sheets -->
-	<link rel="stylesheet" href="/css/styles.css" />
+    <!-- CSS style sheets -->
+    <link rel="stylesheet" href="/css/styles.css" />
 
-	<!--[if lte IE 7]>
-	<link rel="stylesheet" href="/css/ie7-and-down.css" />
-	<![endif]-->
+    <!--[if lte IE 7]>
+    <link rel="stylesheet" href="/css/ie7-and-down.css" />
+    <![endif]-->
 
-	<!-- RSS feed -->
-	<link rel="alternate" type="application/rss+xml" title="Alex Gibson" href="/feed/" />
+    <!-- RSS feed -->
+    <link rel="alternate" type="application/rss+xml" title="Alex Gibson" href="/feed/" />
 
-	<!-- Canonical URL -->
-	<link rel="canonical" href="http://alxgbsn.co.uk/2013/02/20/notify-js-a-handy-wrapper-for-the-web-notifications-api" />
+    <!-- Canonical URL -->
+    <link rel="canonical" href="http://alxgbsn.co.uk/2013/02/20/notify-js-a-handy-wrapper-for-the-web-notifications-api" />
 
-	<!--[if lt IE 9]>
-		<script src="/js/html5shiv.js"></script>
-	<![endif]-->
+    <!--[if lt IE 9]>
+        <script src="/js/html5shiv.js"></script>
+    <![endif]-->
 
-	<!-- Icons -->
-	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/iOS-144.png" />
-	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/iOS-114.png" />
-	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/iOS-72.png" />
-	<link rel="apple-touch-icon-precomposed" href="/images/iOS-57.png" />
-	<link rel="shortcut icon" href="/images/iOS-57.png" />
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/iOS-144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/iOS-114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/iOS-72.png" />
+    <link rel="apple-touch-icon-precomposed" href="/images/iOS-57.png" />
+    <link rel="shortcut icon" href="/images/iOS-57.png" />
 
-	<!-- iOS icon app title -->
-	<meta name="apple-mobile-web-app-title" content="Alex Gibson" />
+    <!-- iOS icon app title -->
+    <meta name="apple-mobile-web-app-title" content="Alex Gibson" />
 
-	<!-- Async Google Analytics -->
-	<script type="text/javascript">
-	var _gaq = _gaq || [];
-	_gaq.push(['_setAccount', 'UA-33263279-1']);
-	_gaq.push(['_trackPageview']);
-	(function() {
-		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-	})();
-	</script>
+    <!-- Async Google Analytics -->
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-33263279-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
 </head>
 <body>
 
 <header role="banner">
-	<nav role="navigation">
-	<ul>
-		<li><a href="/">Home</a></li>
-		<li><a href="/about/">About</a></li>
-		<li><a href="/work/">Work</a></li>
-		<li><a href="/contact/">Contact</a></li>
-	</ul>
+    <nav role="navigation">
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/work/">Work</a></li>
+        <li><a href="/contact/">Contact</a></li>
+    </ul>
 </nav>
-	<h1>Notify.js - A handy wrapper for the Web Notifications API</h1>
+    <h1>Notify.js - A handy wrapper for the Web Notifications API</h1>
 </header>
-	
+    
 <article role="main">
-	<time datetime="2013-02-20">Published Feb 20 2013</time>
-	<p>I recently spent some time getting to grips with the <a href="http://www.w3.org/TR/notifications/">Web Notifications API</a>, which is currently supported in Chrome, Safari 6, and just recently in Firefox nightly builds. It enables you to create growl-style notifications for web applications, and if you're on OSX it integrates really nicely with Notification Centre.</p>
+    <time datetime="2013-02-20">Published Feb 20 2013</time>
+    <p>I recently spent some time getting to grips with the <a href="http://www.w3.org/TR/notifications/">Web Notifications API</a>, which is currently supported in Chrome, Safari 6, and just recently in Firefox nightly builds. It enables you to create growl-style notifications for web applications, and if you're on OSX it integrates really nicely with Notification Centre.</p>
 
 <p>I wanted to create something that I could easily resuse in different projects, so I wrote a JavaScript plugin called <a href="https://github.com/alexgibson/notify.js">Notify.js</a> that acts as a simplified wrapper for the API.</p>
 
@@ -153,19 +153,19 @@
 
 
 <form class="search" action="http://google.com/search" method="get" title="Search this site">
-	<div role="search">
-		<label for="q">Search</label>
-		<input type="hidden" name="q" value="site:alxgbsn.co.uk" />
-		<input class="search" type="search" name="q" id="q" placeholder="Enter a search term&hellip;" />
-		<button type="submit">Search</button>
-	</div>
+    <div role="search">
+        <label for="q">Search</label>
+        <input type="hidden" name="q" value="site:alxgbsn.co.uk" />
+        <input class="search" type="search" name="q" id="q" placeholder="Enter a search term&hellip;" />
+        <button type="submit">Search</button>
+    </div>
 </form>
 
 <footer role="contentinfo">
-	<p>
-		<a href="https://twitter.com/alex_gibson" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @alex_gibson</a>
-	</p>
-	<p>Copyright &copy; 2013 Alex Gibson</p>
+    <p>
+        <a href="https://twitter.com/alex_gibson" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @alex_gibson</a>
+    </p>
+    <p>Copyright &copy; 2013 Alex Gibson</p>
 </footer>
 
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
