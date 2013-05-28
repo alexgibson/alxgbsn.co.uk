@@ -1,77 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8" />
-	<title>Serving iOS retina startup images for the new iPad | Alex Gibson</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <title>Serving iOS retina startup images for the new iPad | Alex Gibson</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-	<!-- Site meta -->
-	<meta name="description" content="How to best serve retina sized iPad startup images for home screen web apps" />
-	<meta name="keywords" content="web development, front end developer, web design, mobile, iphone, android, ios, webkit, css, html5, javascript, touch" />
-	<meta name="author" content="Alex Gibson" />
+    <!-- Site meta -->
+    <meta name="description" content="How to best serve retina sized iPad startup images for home screen web apps" />
+    <meta name="keywords" content="web development, front end developer, web design, mobile, iphone, android, ios, webkit, css, html5, javascript, touch" />
+    <meta name="author" content="Alex Gibson" />
 
-	<!-- Prefetch DNS for external assets -->
-	<link rel="dns-prefetch" href="//platform.twitter.com" />
-	<link rel="dns-prefetch" href="//www.google-analytics.com" />
-	<link rel="dns-prefetch" href="//p.twitter.com" />
-	<link rel="dns-prefetch" href="//cdn.api.twitter.com" />
+    <!-- Prefetch DNS for external assets -->
+    <link rel="dns-prefetch" href="//platform.twitter.com" />
+    <link rel="dns-prefetch" href="//www.google-analytics.com" />
+    <link rel="dns-prefetch" href="//p.twitter.com" />
+    <link rel="dns-prefetch" href="//cdn.api.twitter.com" />
 
-	<!-- CSS style sheets -->
-	<link rel="stylesheet" href="/css/styles.css" />
+    <!-- CSS style sheets -->
+    <link rel="stylesheet" href="/css/styles.css" />
 
-	<!--[if lte IE 7]>
-	<link rel="stylesheet" href="/css/ie7-and-down.css" />
-	<![endif]-->
+    <!--[if lte IE 7]>
+    <link rel="stylesheet" href="/css/ie7-and-down.css" />
+    <![endif]-->
 
-	<!-- RSS feed -->
-	<link rel="alternate" type="application/rss+xml" title="Alex Gibson" href="/feed/" />
+    <!-- RSS feed -->
+    <link rel="alternate" type="application/rss+xml" title="Alex Gibson" href="/feed/" />
 
-	<!-- Canonical URL -->
-	<link rel="canonical" href="http://alxgbsn.co.uk/2012/03/28/serving-ios-retina-startup-images-for-the-new-ipad" />
+    <!-- Canonical URL -->
+    <link rel="canonical" href="http://alxgbsn.co.uk/2012/03/28/serving-ios-retina-startup-images-for-the-new-ipad" />
 
-	<!--[if lt IE 9]>
-		<script src="/js/html5shiv.js"></script>
-	<![endif]-->
+    <!--[if lt IE 9]>
+        <script src="/js/html5shiv.js"></script>
+    <![endif]-->
 
-	<!-- Icons -->
-	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/iOS-144.png" />
-	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/iOS-114.png" />
-	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/iOS-72.png" />
-	<link rel="apple-touch-icon-precomposed" href="/images/iOS-57.png" />
-	<link rel="shortcut icon" href="/images/iOS-57.png" />
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/iOS-144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/iOS-114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/iOS-72.png" />
+    <link rel="apple-touch-icon-precomposed" href="/images/iOS-57.png" />
+    <link rel="shortcut icon" href="/images/iOS-57.png" />
 
-	<!-- iOS icon app title -->
-	<meta name="apple-mobile-web-app-title" content="Alex Gibson" />
+    <!-- iOS icon app title -->
+    <meta name="apple-mobile-web-app-title" content="Alex Gibson" />
 
-	<!-- Async Google Analytics -->
-	<script type="text/javascript">
-	var _gaq = _gaq || [];
-	_gaq.push(['_setAccount', 'UA-33263279-1']);
-	_gaq.push(['_trackPageview']);
-	(function() {
-		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-	})();
-	</script>
+    <!-- Async Google Analytics -->
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-33263279-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
 </head>
 <body>
 
 <header role="banner">
-	<nav role="navigation">
-	<ul>
-		<li><a href="/">Home</a></li>
-		<li><a href="/about/">About</a></li>
-		<li><a href="/work/">Work</a></li>
-		<li><a href="/contact/">Contact</a></li>
-	</ul>
+    <nav role="navigation">
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/work/">Work</a></li>
+        <li><a href="/contact/">Contact</a></li>
+    </ul>
 </nav>
-	<h1>Serving iOS retina startup images for the new iPad</h1>
+    <h1>Serving iOS retina startup images for the new iPad</h1>
 </header>
-	
+    
 <article role="main">
-	<time datetime="2012-03-28">Published Mar 28 2012</time>
-	<p>In the past we have touched on how to serve iOS startup images for full screen web apps using both <a href="http://alxgbsn.co.uk/2011/10/24/ios-startup-images-using-css-media-queries/">CSS media queries and JavaScript</a> techniques. Now that the latest iPad sports a retina calibre display, we must again look at the best way to serve startup images in our web apps.</p>
+    <time datetime="2012-03-28">Published Mar 28 2012</time>
+    <p>In the past we have touched on how to serve iOS startup images for full screen web apps using both <a href="http://alxgbsn.co.uk/2011/10/24/ios-startup-images-using-css-media-queries/">CSS media queries and JavaScript</a> techniques. Now that the latest iPad sports a retina calibre display, we must again look at the best way to serve startup images in our web apps.</p>
 
 <p>Given the potential bandwidth cost incurred by downloading such large images (2048 x 1496 landscape, 1536 x 2006 portrait), the most advisable technique is to use JavaScript to serve only the assets a device requires (rather than downloading every asset, which would happen if we used media queries). This can be done using the following code snippet in the <code>&lt;head&gt;</code> of your page.</p>
 
@@ -95,19 +95,19 @@
 
 
 <form class="search" action="http://google.com/search" method="get" title="Search this site">
-	<div role="search">
-		<label for="q">Search</label>
-		<input type="hidden" name="q" value="site:alxgbsn.co.uk" />
-		<input class="search" type="search" name="q" id="q" placeholder="Enter a search term&hellip;" />
-		<button type="submit">Search</button>
-	</div>
+    <div role="search">
+        <label for="q">Search</label>
+        <input type="hidden" name="q" value="site:alxgbsn.co.uk" />
+        <input class="search" type="search" name="q" id="q" placeholder="Enter a search term&hellip;" />
+        <button type="submit">Search</button>
+    </div>
 </form>
 
 <footer role="contentinfo">
-	<p>
-		<a href="https://twitter.com/alex_gibson" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @alex_gibson</a>
-	</p>
-	<p>Copyright &copy; 2013 Alex Gibson</p>
+    <p>
+        <a href="https://twitter.com/alex_gibson" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @alex_gibson</a>
+    </p>
+    <p>Copyright &copy; 2013 Alex Gibson</p>
 </footer>
 
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
