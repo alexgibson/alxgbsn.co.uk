@@ -2,10 +2,4 @@
 @import "pygments";
 @import "compass";
 @import "animations";
-
-$image-path: '../images/';
-
-@mixin image-set-bg-fallback($asset, $ext, $conv) {
-	background-image: url('#{$image-path}#{$asset}.#{$ext}');
-	background-image: -webkit-image-set(url('#{$image-path}#{$asset}.#{$ext}') 1x, url('#{$image-path}#{$asset}#{$conv}.#{$ext}') 2x);
-}
+@import "responsive-nav";
