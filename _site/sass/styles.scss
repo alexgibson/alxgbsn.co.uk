@@ -13,14 +13,13 @@ body {
     width: 90%;
     max-width: 35em;
     margin: 0 auto 1.5em auto; 
-    font-family: Palatino-Roman, Cambria, "Times New Roman", Times, serif;
+    font-family: HelveticaNeue-Light, Helvetica, Arial, Verdana, sans-serif;
 }
 
 a:link, a:visited {
     color: #434343;
-    font-weight:bold;
-    text-decoration: none;
-    border-bottom: #a7a7a7 1px dashed;
+    font-weight: 500;
+    text-decoration: underline;
     @include transition-property(all);
     @include transition-duration(0.1s);
     @include transition-timing-function(ease-in);
@@ -29,29 +28,11 @@ a:link, a:visited {
 a:hover, a:active, a:focus {
     color: #838383;
     text-decoration: none;
-    border-bottom: none;
     outline: none;
 }
 
 a.image-link {
     border-bottom: none;
-}
-
-.sub {
-    text-align: center;
-}
-
-.sub > a:link, .sub > a:visited {
-    color: #636568;
-    font-family: Palatino-Italic, Palatino-Roman, Cambria, "Times New Roman", Times, serif;
-    font-size: 1em;
-    font-style: italic;
-    font-weight: normal;
-    text-align: center;   
-}
-
-.sub > a:hover, .sub > a:active, .sub > a:focus {
-    color: #636568;   
 }
 
 p, ul > li {
@@ -66,17 +47,17 @@ p {
 }
 
 em {
-    font-family: Palatino-Italic, Palatino-Roman, Cambria, "Times New Roman", Times, serif;
+    font-family: HelveticaNeue-LightItalic, Helvetica, Arial, Verdana, sans-serif;
     font-style: italic;  
 }
 
 strong {
-    font-family: Palatino-Bold, Palatino-Roman, Cambria, "Times New Roman", Times, serif;
+    font-family: HelveticaNeue-Medium, Helvetica, Arial, Verdana, sans-serif;
     font-weight: bold;  
 }
 
 blockquote {
-    font-family: Palatino-Italic, Palatino-Roman, Cambria, "Times New Roman", Times, serif;
+    font-family: HelveticaNeue-LightItalic, Helvetica, Arial, Verdana, sans-serif;
     font-style: italic; 
     font-size: 1.1em;
 }
@@ -94,7 +75,7 @@ h1, h2, h3, h4, h5, h6 {
 time {
     display: block;
     color: #636568;
-    font-family: Palatino-Italic, Palatino-Roman, Cambria, "Times New Roman", Times, serif;
+    font-family: HelveticaNeue-LightItalic, Helvetica, Arial, Verdana, sans-serif;
     font-style: italic;
     text-align: center;
 }
@@ -113,13 +94,6 @@ pre {
 code {
     color: #565757;
     font-size: 0.9em;
-}
-
-p > code, li > code {
-    background-color: #f2f2f2;
-    border: 1px solid #c5c5c5;
-    padding: .2em;
-    @include border-radius(3px);
 }
 
 header[role=banner] {
