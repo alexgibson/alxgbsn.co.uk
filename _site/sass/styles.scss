@@ -37,6 +37,13 @@ a.image-link {
 
 p, ul > li {
     line-height: 1.5em;
+    -webkit-hyphens:auto;
+    -moz-hyphens: auto;
+    hyphens: auto;
+}
+
+p {
+    text-align: justify;
 }
 
 em {
