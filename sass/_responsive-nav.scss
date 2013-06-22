@@ -36,13 +36,15 @@
     white-space: nowrap;
     overflow: hidden;
     font-size: 2em;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    tap-highlight-color: rgba(0,0,0,0);
 }
 
 #nav-toggle:before {
     position: absolute;
     content: "";
     top: .5em;
-    left: 0;
+    right: 0;
     width: .75em;
     height: 0.125em;
     border-top: 0.375em double #434343;
