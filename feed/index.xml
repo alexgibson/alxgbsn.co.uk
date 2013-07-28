@@ -4,7 +4,7 @@
  <title>Alex Gibson, Front End Developer</title>
  <link href="http://alxgbsn.co.uk/feed/" rel="self"/>
  <link href="http://alxgbsn.co.uk/"/>
- <updated>2013-06-22T23:17:23+01:00</updated>
+ <updated>2013-07-28T21:12:29+01:00</updated>
  <id>http://alxgbsn.co.uk/</id>
  <author>
    <name>Alex Gibson</name>
@@ -74,11 +74,11 @@
    <link href="http://alxgbsn.co.uk/2013/02/20/notify-js-a-handy-wrapper-for-the-web-notifications-api"/>
    <updated>2013-02-20T00:00:00+00:00</updated>
    <id>http://alxgbsn.co.uk/2013/02/20/notify-js-a-handy-wrapper-for-the-web-notifications-api</id>
-   <content type="html">&lt;p&gt;I recently spent some time getting to grips with the &lt;a href=&quot;http://www.w3.org/TR/notifications/&quot;&gt;Web Notifications API&lt;/a&gt;, which is currently supported in Chrome, Safari 6, and just recently in Firefox nightly builds. It enables you to create growl-style notifications for web applications, and if you're on OSX it integrates really nicely with Notification Centre.&lt;/p&gt;
+   <content type="html">&lt;p&gt;I recently spent some time getting to grips with the &lt;a href=&quot;http://www.w3.org/TR/notifications/&quot;&gt;Web Notifications API&lt;/a&gt;, which is currently supported in Chrome, Safari 6, and just recently in Firefox. It enables you to create growl-style notifications for web applications, and if you're on OSX it integrates really nicely with Notification Centre.&lt;/p&gt;
 
 &lt;p&gt;I wanted to create something that I could easily resuse in different projects, so I wrote a JavaScript plugin called &lt;a href=&quot;https://github.com/alexgibson/notify.js&quot;&gt;Notify.js&lt;/a&gt; that acts as a simplified wrapper for the API.&lt;/p&gt;
 
-&lt;p&gt;Notify.js automatically handles requesting user permission and associated API events for you. It also goes some way toward bridging the gap between the current WebKit implementation and what's in the official W3C specification.&lt;/p&gt;
+&lt;p&gt;Notify.js automatically handles requesting user permission and associated Web Notification API events, as well as adding a few extra convenience methods.&lt;/p&gt;
 
 &lt;p&gt;There is a simple &lt;a href=&quot;http://alxgbsn.co.uk/notify.js/&quot;&gt;online demo here&lt;/a&gt;. Installation and setup instructions are as follows:&lt;/p&gt;
 
@@ -93,13 +93,9 @@
 
 &lt;h2&gt;Setup&lt;/h2&gt;
 
-&lt;p&gt;First, include the main notify.js JavaScript file in your HTML document:&lt;/p&gt;
+&lt;p&gt;This component can be used as an AMD module, or a global.&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;notify.js&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;Next create a new Notify instance, passing the relevant message parameters and callbacks you want to use:&lt;/p&gt;
+&lt;p&gt;To initialize a web notification create a new &lt;code&gt;Notify&lt;/code&gt; instance, passing the message &lt;code&gt;title&lt;/code&gt; as well as any other options you wish to use.&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;myNotification&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Notify&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;Yo dawg!&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;nx&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;This is an awesome notification&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
@@ -112,7 +108,7 @@
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;To then show your notification, you can simply call:&lt;/p&gt;
+&lt;p&gt;Then show the notification.&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;myNotification&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt; 
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -129,24 +125,47 @@
 
 &lt;ul&gt;
 &lt;li&gt;body: (string) - notification message body&lt;/li&gt;
+&lt;li&gt;icon: (string) - path for icon to display in notification&lt;/li&gt;
 &lt;li&gt;tag: (string) - unique identifier to stop duplicate notifications&lt;/li&gt;
-&lt;li&gt;notifyShow: (function) - callback when the notification is shown&lt;/li&gt;
-&lt;li&gt;notifyClose: (function) - callback when the notification is closed&lt;/li&gt;
-&lt;li&gt;notifyClick: (function) - callback when the notification is clicked&lt;/li&gt;
-&lt;li&gt;permissionDenied: (function) - callback when user has denied permission for domain&lt;/li&gt;
+&lt;li&gt;notifyShow: (function) - callback when notification is shown&lt;/li&gt;
+&lt;li&gt;notifyClose: (function) - callback when notification is closed&lt;/li&gt;
+&lt;li&gt;notifyClick: (function) - callback when notification is clicked&lt;/li&gt;
+&lt;li&gt;notifyError: (function) - callback when notification throws an error&lt;/li&gt;
+&lt;li&gt;permissionDenied: (function) - callback when user has denied permission&lt;/li&gt;
 &lt;/ul&gt;
 
 
-&lt;h2&gt;Supported web browsers&lt;/h2&gt;
+&lt;h2&gt;Useful methods&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;isSupported()&lt;/code&gt; - (returns boolean) test for Web Notifications API browser support&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;destroy()&lt;/code&gt; - remove event listeners&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h2&gt;Testing&lt;/h2&gt;
+
+&lt;p&gt;Install &lt;a href=&quot;http://nodejs.org&quot;&gt;Node&lt;/a&gt;. Testing relies on the Karma test-runner, which can be installed globally using the following command.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+npm install -g karma
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;In the project root, to perform a single pass of the tests using Firefox run:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+npm test
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2&gt;Browser support&lt;/h2&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Chrome&lt;/li&gt;
-&lt;li&gt;Safari 6&lt;/li&gt;
-&lt;li&gt;Firefox (Nightly)&lt;/li&gt;
+&lt;li&gt;Safari&lt;/li&gt;
+&lt;li&gt;Firefox&lt;/li&gt;
+&lt;li&gt;Firefox Mobile (Android)&lt;/li&gt;
 &lt;/ul&gt;
 
-
-&lt;p&gt;Browsers that do not yet support the Web Notification API will simply report a console warning instead of showing a notification. This plugin will be kept up to date as more browsers add support for the API and as the spec changes.&lt;/p&gt;
 
 &lt;h2&gt;License&lt;/h2&gt;
 
