@@ -5,11 +5,11 @@ titleinfo: Alex Gibson
 desc: A JavaScript plugin that provides a simplified wrapper for using the Web Notifications API.
 ---
 
-I recently spent some time getting to grips with the [Web Notifications API](http://www.w3.org/TR/notifications/), which is currently supported in Chrome, Safari 6, and just recently in Firefox nightly builds. It enables you to create growl-style notifications for web applications, and if you're on OSX it integrates really nicely with Notification Centre. 
+I recently spent some time getting to grips with the [Web Notifications API](http://www.w3.org/TR/notifications/), which is currently supported in Chrome, Safari 6, and just recently in Firefox. It enables you to create growl-style notifications for web applications, and if you're on OSX it integrates really nicely with Notification Centre. 
 
 I wanted to create something that I could easily resuse in different projects, so I wrote a JavaScript plugin called [Notify.js](https://github.com/alexgibson/notify.js) that acts as a simplified wrapper for the API. 
 
-Notify.js automatically handles requesting user permission and associated API events for you. It also goes some way toward bridging the gap between the current WebKit implementation and what's in the official W3C specification. 
+Notify.js automatically handles requesting user permission and associated Web Notification API events, as well as adding a few extra convenience methods.
 
 There is a simple [online demo here](http://alxgbsn.co.uk/notify.js/). Installation and setup instructions are as follows:
 
@@ -23,13 +23,9 @@ Installation
 Setup
 ---------
 
-First, include the main notify.js JavaScript file in your HTML document:
+This component can be used as an AMD module, or a global.
 
-{% highlight html %}
-<script src="notify.js"></script>
-{% endhighlight %}
-
-Next create a new Notify instance, passing the relevant message parameters and callbacks you want to use:
+To initialize a web notification create a new `Notify` instance, passing the message `title` as well as any other options you wish to use.
 
 {% highlight javascript %}
 var myNotification = new Notify('Yo dawg!', {
@@ -42,7 +38,7 @@ function onNotifyShow() {
 }
 {% endhighlight %}
 
-To then show your notification, you can simply call:
+Then show the notification.
 
 {% highlight javascript %}
 myNotification.show(); 
@@ -57,20 +53,43 @@ Optional parameters
 -------------------
 
 * body: (string) - notification message body
+* icon: (string) - path for icon to display in notification
 * tag: (string) - unique identifier to stop duplicate notifications
-* notifyShow: (function) - callback when the notification is shown
-* notifyClose: (function) - callback when the notification is closed
-* notifyClick: (function) - callback when the notification is clicked
-* permissionDenied: (function) - callback when user has denied permission for domain
+* notifyShow: (function) - callback when notification is shown
+* notifyClose: (function) - callback when notification is closed
+* notifyClick: (function) - callback when notification is clicked
+* notifyError: (function) - callback when notification throws an error
+* permissionDenied: (function) - callback when user has denied permission
 
-Supported web browsers
-----------------------
+Useful methods
+--------------
+
+* `isSupported()` - (returns boolean) test for Web Notifications API browser support
+* `destroy()` - remove event listeners
+
+Testing
+-------
+
+Install [Node](http://nodejs.org). Testing relies on the Karma test-runner, which can be installed globally using the following command.
+
+```
+npm install -g karma
+```
+
+In the project root, to perform a single pass of the tests using Firefox run:
+
+```
+npm test
+```
+
+Browser support
+---------------------------------------
 
 - Chrome
-- Safari 6
-- Firefox (Nightly)
+- Safari
+- Firefox
+- Firefox Mobile (Android)
 
-Browsers that do not yet support the Web Notification API will simply report a console warning instead of showing a notification. This plugin will be kept up to date as more browsers add support for the API and as the spec changes.
 
 License
 -------

@@ -70,11 +70,11 @@
     
 <article role="main">
     <time datetime="2013-02-20">Published Feb 20 2013</time>
-    <p>I recently spent some time getting to grips with the <a href="http://www.w3.org/TR/notifications/">Web Notifications API</a>, which is currently supported in Chrome, Safari 6, and just recently in Firefox nightly builds. It enables you to create growl-style notifications for web applications, and if you're on OSX it integrates really nicely with Notification Centre.</p>
+    <p>I recently spent some time getting to grips with the <a href="http://www.w3.org/TR/notifications/">Web Notifications API</a>, which is currently supported in Chrome, Safari 6, and just recently in Firefox. It enables you to create growl-style notifications for web applications, and if you're on OSX it integrates really nicely with Notification Centre.</p>
 
 <p>I wanted to create something that I could easily resuse in different projects, so I wrote a JavaScript plugin called <a href="https://github.com/alexgibson/notify.js">Notify.js</a> that acts as a simplified wrapper for the API.</p>
 
-<p>Notify.js automatically handles requesting user permission and associated API events for you. It also goes some way toward bridging the gap between the current WebKit implementation and what's in the official W3C specification.</p>
+<p>Notify.js automatically handles requesting user permission and associated Web Notification API events, as well as adding a few extra convenience methods.</p>
 
 <p>There is a simple <a href="http://alxgbsn.co.uk/notify.js/">online demo here</a>. Installation and setup instructions are as follows:</p>
 
@@ -89,13 +89,9 @@
 
 <h2>Setup</h2>
 
-<p>First, include the main notify.js JavaScript file in your HTML document:</p>
+<p>This component can be used as an AMD module, or a global.</p>
 
-<div class="highlight"><pre><code class="html"><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;notify.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
-</code></pre></div>
-
-
-<p>Next create a new Notify instance, passing the relevant message parameters and callbacks you want to use:</p>
+<p>To initialize a web notification create a new <code>Notify</code> instance, passing the message <code>title</code> as well as any other options you wish to use.</p>
 
 <div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">myNotification</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Notify</span><span class="p">(</span><span class="s1">&#39;Yo dawg!&#39;</span><span class="p">,</span> <span class="p">{</span>
     <span class="nx">body</span><span class="o">:</span> <span class="s1">&#39;This is an awesome notification&#39;</span><span class="p">,</span>
@@ -108,7 +104,7 @@
 </code></pre></div>
 
 
-<p>To then show your notification, you can simply call:</p>
+<p>Then show the notification.</p>
 
 <div class="highlight"><pre><code class="javascript"><span class="nx">myNotification</span><span class="p">.</span><span class="nx">show</span><span class="p">();</span> 
 </code></pre></div>
@@ -125,24 +121,47 @@
 
 <ul>
 <li>body: (string) - notification message body</li>
+<li>icon: (string) - path for icon to display in notification</li>
 <li>tag: (string) - unique identifier to stop duplicate notifications</li>
-<li>notifyShow: (function) - callback when the notification is shown</li>
-<li>notifyClose: (function) - callback when the notification is closed</li>
-<li>notifyClick: (function) - callback when the notification is clicked</li>
-<li>permissionDenied: (function) - callback when user has denied permission for domain</li>
+<li>notifyShow: (function) - callback when notification is shown</li>
+<li>notifyClose: (function) - callback when notification is closed</li>
+<li>notifyClick: (function) - callback when notification is clicked</li>
+<li>notifyError: (function) - callback when notification throws an error</li>
+<li>permissionDenied: (function) - callback when user has denied permission</li>
 </ul>
 
 
-<h2>Supported web browsers</h2>
+<h2>Useful methods</h2>
+
+<ul>
+<li><code>isSupported()</code> - (returns boolean) test for Web Notifications API browser support</li>
+<li><code>destroy()</code> - remove event listeners</li>
+</ul>
+
+
+<h2>Testing</h2>
+
+<p>Install <a href="http://nodejs.org">Node</a>. Testing relies on the Karma test-runner, which can be installed globally using the following command.</p>
+
+<p><code>
+npm install -g karma
+</code></p>
+
+<p>In the project root, to perform a single pass of the tests using Firefox run:</p>
+
+<p><code>
+npm test
+</code></p>
+
+<h2>Browser support</h2>
 
 <ul>
 <li>Chrome</li>
-<li>Safari 6</li>
-<li>Firefox (Nightly)</li>
+<li>Safari</li>
+<li>Firefox</li>
+<li>Firefox Mobile (Android)</li>
 </ul>
 
-
-<p>Browsers that do not yet support the Web Notification API will simply report a console warning instead of showing a notification. This plugin will be kept up to date as more browsers add support for the API and as the spec changes.</p>
 
 <h2>License</h2>
 
