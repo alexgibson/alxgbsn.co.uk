@@ -4,7 +4,7 @@
  <title>Alex Gibson, Front End Developer</title>
  <link href="http://alxgbsn.co.uk/feed/" rel="self"/>
  <link href="http://alxgbsn.co.uk/"/>
- <updated>2013-07-28T21:12:29+01:00</updated>
+ <updated>2013-07-29T21:09:33+01:00</updated>
  <id>http://alxgbsn.co.uk/</id>
  <author>
    <name>Alex Gibson</name>
@@ -124,22 +124,21 @@
 &lt;h2&gt;Optional parameters&lt;/h2&gt;
 
 &lt;ul&gt;
-&lt;li&gt;body: (string) - notification message body&lt;/li&gt;
-&lt;li&gt;icon: (string) - path for icon to display in notification&lt;/li&gt;
-&lt;li&gt;tag: (string) - unique identifier to stop duplicate notifications&lt;/li&gt;
-&lt;li&gt;notifyShow: (function) - callback when notification is shown&lt;/li&gt;
-&lt;li&gt;notifyClose: (function) - callback when notification is closed&lt;/li&gt;
-&lt;li&gt;notifyClick: (function) - callback when notification is clicked&lt;/li&gt;
-&lt;li&gt;notifyError: (function) - callback when notification throws an error&lt;/li&gt;
-&lt;li&gt;permissionDenied: (function) - callback when user has denied permission&lt;/li&gt;
+&lt;li&gt;body: (string) - notification message body.&lt;/li&gt;
+&lt;li&gt;icon: (string) - path for icon to display in notification.&lt;/li&gt;
+&lt;li&gt;tag: (string) - unique identifier to stop duplicate notifications.&lt;/li&gt;
+&lt;li&gt;notifyShow: (function) - callback when notification is shown.&lt;/li&gt;
+&lt;li&gt;notifyClose: (function) - callback when notification is closed.&lt;/li&gt;
+&lt;li&gt;notifyClick: (function) - callback when notification is clicked.&lt;/li&gt;
+&lt;li&gt;notifyError: (function) - callback when notification throws an error.&lt;/li&gt;
+&lt;li&gt;permissionDenied: (function) - callback when user has denied permission.&lt;/li&gt;
 &lt;/ul&gt;
 
 
 &lt;h2&gt;Useful methods&lt;/h2&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;code&gt;isSupported()&lt;/code&gt; - (returns boolean) test for Web Notifications API browser support&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;destroy()&lt;/code&gt; - remove event listeners&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;isSupported()&lt;/code&gt; - (returns boolean) test for Web Notifications API browser support.&lt;/li&gt;
 &lt;/ul&gt;
 
 
