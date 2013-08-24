@@ -61,6 +61,8 @@ Optional parameters
 * notifyError: (function) - callback when notification throws an error.
 * permissionDenied: (function) - callback when user has denied permission.
 
+Note: Firefox OS currently supports `notifyClose` and `notifyClick` callbacks only.
+
 Useful methods
 --------------
 
@@ -87,8 +89,8 @@ Browser support
 - Chrome
 - Safari
 - Firefox
+- Firefox OS
 - Firefox Mobile (Android)
-
 
 License
 -------

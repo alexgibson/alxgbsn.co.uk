@@ -5,7 +5,7 @@ titleinfo: Alex Gibson
 desc: A JavaScript plugin providing cross browser support for using the Page Visibility API
 ---
 
-Since the [Page Visibility API](http://www.w3.org/TR/page-visibility/) now has fairly wide [browser support](http://caniuse.com/#feat=pagevisibility) (I'm still looking at you however, Safari), I decided to release a plugin for handling and detecting web page visibility changes. Because most browsers still use this feature under an experimental vendor prefix, the JavaScript can be somewhat clumbersome and a pain to rewrite. [Visibility.js](https://github.com/alexgibson/visibility.js) handles all the vendor prefix messiness for you, and provides a simple API for registering visibility change callbacks. As always, the plugin is open source and free for anyone to use.
+Since the [Page Visibility API](http://www.w3.org/TR/page-visibility/) now has fairly wide [browser support](http://caniuse.com/#feat=pagevisibility), I decided to put together a simple component for handling and detecting web page visibility changes. Because most browsers still use this feature under an experimental vendor prefix, the JavaScript can be somewhat clumbersome and a pain to rewrite. [Visibility.js](https://github.com/alexgibson/visibility.js) handles all the vendor prefix messiness for you, and provides a simple API for registering visibility change callbacks.
 
 Installation
 ---------------------------------------
@@ -17,22 +17,21 @@ Installation
 Setup
 ---------
 
-First, include the visibility.js JavaScript file in the `head` of your HTML document:
+This component can be used as an AMD module, or a global.
 
-{% highlight html %}
-<script src="visibility.js"></script>
-{% endhighlight %}
-
-Next just create a new plugin instance, passing the relevant callbacks you want to use:
+To use create a new `Visibility` instance, passing the relevant callbacks you need.
 
 {% highlight javascript %}
-var page = new Visibility({onHidden: onHiddenFunc, onVisible: onVisibleFunc});
+var page = new Visibility({
+	onHidden: hiddenCallback, 
+	onVisible: visibleCallback
+});
 
-function onHiddenFunc () {
+function hiddenCallback () {
 	console.log('hidden callback');
 }
 
-function onVisibleFunc () {
+function visibleCallback () {
 	console.log('visible callback');
 }
 {% endhighlight %}

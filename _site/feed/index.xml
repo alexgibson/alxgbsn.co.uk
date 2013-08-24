@@ -4,7 +4,7 @@
  <title>Alex Gibson, Front End Developer</title>
  <link href="http://alxgbsn.co.uk/feed/" rel="self"/>
  <link href="http://alxgbsn.co.uk/"/>
- <updated>2013-07-29T21:09:33+01:00</updated>
+ <updated>2013-08-24T21:24:58+01:00</updated>
  <id>http://alxgbsn.co.uk/</id>
  <author>
    <name>Alex Gibson</name>
@@ -17,7 +17,7 @@
    <link href="http://alxgbsn.co.uk/2013/04/04/visibility-js-a-cross-browser-plugin-for-using-the-page-visibility-api"/>
    <updated>2013-04-04T00:00:00+01:00</updated>
    <id>http://alxgbsn.co.uk/2013/04/04/visibility-js-a-cross-browser-plugin-for-using-the-page-visibility-api</id>
-   <content type="html">&lt;p&gt;Since the &lt;a href=&quot;http://www.w3.org/TR/page-visibility/&quot;&gt;Page Visibility API&lt;/a&gt; now has fairly wide &lt;a href=&quot;http://caniuse.com/#feat=pagevisibility&quot;&gt;browser support&lt;/a&gt; (I'm still looking at you however, Safari), I decided to release a plugin for handling and detecting web page visibility changes. Because most browsers still use this feature under an experimental vendor prefix, the JavaScript can be somewhat clumbersome and a pain to rewrite. &lt;a href=&quot;https://github.com/alexgibson/visibility.js&quot;&gt;Visibility.js&lt;/a&gt; handles all the vendor prefix messiness for you, and provides a simple API for registering visibility change callbacks. As always, the plugin is open source and free for anyone to use.&lt;/p&gt;
+   <content type="html">&lt;p&gt;Since the &lt;a href=&quot;http://www.w3.org/TR/page-visibility/&quot;&gt;Page Visibility API&lt;/a&gt; now has fairly wide &lt;a href=&quot;http://caniuse.com/#feat=pagevisibility&quot;&gt;browser support&lt;/a&gt;, I decided to put together a simple component for handling and detecting web page visibility changes. Because most browsers still use this feature under an experimental vendor prefix, the JavaScript can be somewhat clumbersome and a pain to rewrite. &lt;a href=&quot;https://github.com/alexgibson/visibility.js&quot;&gt;Visibility.js&lt;/a&gt; handles all the vendor prefix messiness for you, and provides a simple API for registering visibility change callbacks.&lt;/p&gt;
 
 &lt;h2&gt;Installation&lt;/h2&gt;
 
@@ -30,21 +30,20 @@
 
 &lt;h2&gt;Setup&lt;/h2&gt;
 
-&lt;p&gt;First, include the visibility.js JavaScript file in the &lt;code&gt;head&lt;/code&gt; of your HTML document:&lt;/p&gt;
+&lt;p&gt;This component can be used as an AMD module, or a global.&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;visibility.js&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;To use create a new &lt;code&gt;Visibility&lt;/code&gt; instance, passing the relevant callbacks you need.&lt;/p&gt;
 
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;page&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Visibility&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;onHidden&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;hiddenCallback&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
+    &lt;span class=&quot;nx&quot;&gt;onVisible&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;visibleCallback&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
 
-&lt;p&gt;Next just create a new plugin instance, passing the relevant callbacks you want to use:&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;page&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Visibility&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;onHidden&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;onHiddenFunc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;onVisible&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;onVisibleFunc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;onHiddenFunc&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;hiddenCallback&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;hidden callback&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 
-&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;onVisibleFunc&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;visibleCallback&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;visible callback&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -135,6 +134,8 @@
 &lt;/ul&gt;
 
 
+&lt;p&gt;Note: Firefox OS currently supports &lt;code&gt;notifyClose&lt;/code&gt; and &lt;code&gt;notifyClick&lt;/code&gt; callbacks only.&lt;/p&gt;
+
 &lt;h2&gt;Useful methods&lt;/h2&gt;
 
 &lt;ul&gt;
@@ -162,6 +163,7 @@ npm test
 &lt;li&gt;Chrome&lt;/li&gt;
 &lt;li&gt;Safari&lt;/li&gt;
 &lt;li&gt;Firefox&lt;/li&gt;
+&lt;li&gt;Firefox OS&lt;/li&gt;
 &lt;li&gt;Firefox Mobile (Android)&lt;/li&gt;
 &lt;/ul&gt;
 
