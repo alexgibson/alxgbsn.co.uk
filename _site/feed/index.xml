@@ -4,7 +4,7 @@
  <title>Alex Gibson, Front End Developer</title>
  <link href="http://alxgbsn.co.uk/feed/" rel="self"/>
  <link href="http://alxgbsn.co.uk/"/>
- <updated>2013-08-24T21:24:58+01:00</updated>
+ <updated>2013-08-28T09:38:51+01:00</updated>
  <id>http://alxgbsn.co.uk/</id>
  <author>
    <name>Alex Gibson</name>
@@ -57,6 +57,20 @@
 &lt;li&gt;&lt;code&gt;destroy&lt;/code&gt; - remove event listener and callbacks.&lt;/li&gt;
 &lt;/ul&gt;
 
+
+&lt;h2&gt;Testing&lt;/h2&gt;
+
+&lt;p&gt;Testing relies upon Karma test runner and Phantom JS. To install these dependencies, run the following command from the project root.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+npm install
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Then to perform a single pass of the tests run:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+npm test
+&lt;/code&gt;&lt;/p&gt;
 
 &lt;h2&gt;Supported web browsers&lt;/h2&gt;
 

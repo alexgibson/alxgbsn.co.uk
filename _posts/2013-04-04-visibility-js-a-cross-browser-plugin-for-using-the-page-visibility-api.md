@@ -43,6 +43,20 @@ Useful methods
 * `isSupported` (returns boolean) - test for Page Visibility API browser support.
 * `destroy` - remove event listener and callbacks.
 
+Testing
+-------
+
+Testing relies upon Karma test runner and Phantom JS. To install these dependencies, run the following command from the project root.
+
+```
+npm install
+```
+
+Then to perform a single pass of the tests run:
+
+```
+npm test
+```
 
 Supported web browsers
 ---------------------------------------
