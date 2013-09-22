@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Concierge - A responsive UI component for installing Open Web Apps. | Alex Gibson</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Site meta -->
+    <meta name="description" content="A JavaScript plugin for installing Open Web Apps via the browser." />
+    <meta name="author" content="Alex Gibson" />
+
+    <!-- Prefetch DNS for external assets -->
+    <link rel="dns-prefetch" href="//platform.twitter.com" />
+    <link rel="dns-prefetch" href="//www.google-analytics.com" />
+    <link rel="dns-prefetch" href="//p.twitter.com" />
+    <link rel="dns-prefetch" href="//cdn.api.twitter.com" />
+
+    <script src="/js/site.js"></script>
+    
+    <link rel="stylesheet" href="/css/styles.css" />
+
+    <!--[if lte IE 7]>
+    <link rel="stylesheet" href="/css/ie7-and-down.css" />
+    <![endif]-->
+
+    <script src="/js/responsive-nav.min.js"></script>
+
+    <link rel="alternate" type="application/rss+xml" title="Alex Gibson" href="/feed/" />
+    <link rel="canonical" href="http://alxgbsn.co.uk/2013/09/22/concierge-a-responsive-ui-component-for-installing-open-web-apps" />
+
+    <!--[if lt IE 9]>
+        <script src="/js/html5shiv.js"></script>
+    <![endif]-->
+
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/iOS-144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/iOS-114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/iOS-72.png" />
+    <link rel="apple-touch-icon-precomposed" href="/images/iOS-57.png" />
+    <link rel="shortcut icon" href="/images/iOS-57.png" />
+
+    <!-- iOS icon app title -->
+    <meta name="apple-mobile-web-app-title" content="Alex Gibson" />
+
+    <!-- Async Google Analytics -->
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-33263279-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+</head>
+<body>
+
+<header role="banner">
+    <nav id="nav" role="navigation">
+    <ul>
+        <li><a href="/">Blog</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/work/">Work</a></li>
+        <li><a href="/contact/">Contact</a></li>
+    </ul>
+</nav>
+
+    <h1>Concierge - A responsive UI component for installing Open Web Apps.</h1>
+</header>
+    
+<article role="main">
+    <time datetime="2013-09-22">Published Sep 22 2013</time>
+    <p>Concierge is a responsive UI component for installing <a href="https://developer.mozilla.org/en-US/docs/Web/Apps">Open Web Apps</a> via the browser. It creates an automated "install" button that can be used in any web app, using app manifest meta data to populate the UI.</p>
+
+<h2>Features</h2>
+
+<ul>
+<li>Displays the app name and icon as part of the install button UI.</li>
+<li>Only shows on browsers that support installable Open Web Apps.</li>
+<li>Button will only appear if the app has not yet been installed on a device.</li>
+</ul>
+
+
+<p>Try the demo below on Firefox OS, Firefox for Android, or Firefox for desktop (Nightly recommended).</p>
+
+<p>Demo: <a href="https://alexgibson.github.com/concierge">https://alexgibson.github.com/concierge</a></p>
+
+<h2>Installation</h2>
+
+<ul>
+<li>Download: <a href="https://github.com/alexgibson/concierge/archive/master.zip">zip</a></li>
+<li><a href="https://github.com/twitter/bower/">Bower</a>: <code>bower install concierge</code></li>
+<li>Git: <code>git clone https://github.com/alexgibson/concierge.git</code></li>
+</ul>
+
+
+<h2>Setup</h2>
+
+<p>This component can be used as an AMD module, or a global.</p>
+
+<div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">Concierge</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;concierge&#39;</span><span class="p">);</span>
+</code></pre></div>
+
+
+<p>To use create a new <code>Concierge</code> instance, passing the relevant callbacks you need.</p>
+
+<div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">install</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Concierge</span><span class="p">({</span>
+    <span class="nx">onSuccess</span><span class="o">:</span> <span class="nx">successCallback</span><span class="p">,</span>
+    <span class="nx">onError</span><span class="o">:</span> <span class="nx">errorCallback</span>
+<span class="p">});</span>
+
+<span class="kd">function</span> <span class="nx">successCallback</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;App installed!&#39;</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">errorCallback</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s1">&#39;Concierge() error: &#39;</span> <span class="o">+</span> <span class="nx">error</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+
+
+<p>Also make sure to include the CSS styles in your template.</p>
+
+<div class="highlight"><pre><code class="css"><span class="o">&lt;</span><span class="nt">link</span> <span class="nt">type</span><span class="o">=</span><span class="s2">&quot;text/css&quot;</span> <span class="nt">rel</span><span class="o">=</span><span class="s2">&quot;stylesheet&quot;</span> <span class="nt">href</span><span class="o">=</span><span class="s2">&quot;concierge.css&quot;</span> <span class="o">/&gt;</span>
+</code></pre></div>
+
+
+<h2>Supported web browsers</h2>
+
+<p>Open Web Apps are currently supported by Firefox OS, Firefox for Android and Firefox for desktop (Nightly recommended).</p>
+
+<h2>License</h2>
+
+<p>Concierge is released under open source <a href="https://github.com/alexgibson/concierge/blob/master/LICENSE.md">MIT License</a>.</p>
+
+</article>
+
+
+<form class="search" action="http://google.com/search" method="get" title="Search this site">
+    <div role="search">
+        <label for="q">Search</label>
+        <input type="hidden" name="q" value="site:alxgbsn.co.uk" />
+        <input class="search" type="search" name="q" id="q" placeholder="Enter a search term&hellip;" />
+        <button type="submit">Search</button>
+    </div>
+</form>
+
+<footer role="contentinfo">
+    <p>
+        <a href="https://twitter.com/alex_gibson" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @alex_gibson</a>
+    </p>
+    <p>Copyright &copy; 2013 Alex Gibson</p>
+</footer>
+
+<script src="/js/main.js"></script>
+
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+</body>
+</html>
