@@ -4,13 +4,83 @@
  <title>Alex Gibson, Front End Developer</title>
  <link href="http://alxgbsn.co.uk/feed/" rel="self"/>
  <link href="http://alxgbsn.co.uk/"/>
- <updated>2013-08-28T09:45:36+01:00</updated>
+ <updated>2013-09-22T20:41:23+01:00</updated>
  <id>http://alxgbsn.co.uk/</id>
  <author>
    <name>Alex Gibson</name>
    <email>alxgbsn@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Concierge - A responsive UI component for installing Open Web Apps.</title>
+   <link href="http://alxgbsn.co.uk/2013/09/22/concierge-a-responsive-ui-component-for-installing-open-web-apps"/>
+   <updated>2013-09-22T00:00:00+01:00</updated>
+   <id>http://alxgbsn.co.uk/2013/09/22/concierge-a-responsive-ui-component-for-installing-open-web-apps</id>
+   <content type="html">&lt;p&gt;Concierge is a responsive UI component for installing &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/Apps&quot;&gt;Open Web Apps&lt;/a&gt; via the browser. It creates an automated &quot;install&quot; button that can be used in any web app, using app manifest meta data to populate the UI.&lt;/p&gt;
+
+&lt;h2&gt;Features&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Displays the app name and icon as part of the install button UI.&lt;/li&gt;
+&lt;li&gt;Only shows on browsers that support installable Open Web Apps.&lt;/li&gt;
+&lt;li&gt;Button will only appear if the app has not yet been installed on a device.&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;Try the demo below on Firefox OS, Firefox for Android, or Firefox for desktop (Nightly recommended).&lt;/p&gt;
+
+&lt;p&gt;Demo: &lt;a href=&quot;https://alexgibson.github.com/concierge&quot;&gt;https://alexgibson.github.com/concierge&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2&gt;Installation&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Download: &lt;a href=&quot;https://github.com/alexgibson/concierge/archive/master.zip&quot;&gt;zip&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/twitter/bower/&quot;&gt;Bower&lt;/a&gt;: &lt;code&gt;bower install concierge&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Git: &lt;code&gt;git clone https://github.com/alexgibson/concierge.git&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h2&gt;Setup&lt;/h2&gt;
+
+&lt;p&gt;This component can be used as an AMD module, or a global.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Concierge&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;concierge&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;To use create a new &lt;code&gt;Concierge&lt;/code&gt; instance, passing the relevant callbacks you need.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Concierge&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;onSuccess&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;successCallback&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;onError&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;errorCallback&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;successCallback&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;App installed!&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;errorCallback&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;Concierge() error: &amp;#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Also make sure to include the CSS styles in your template.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;css&quot;&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;link&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;text/css&amp;quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;rel&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;stylesheet&amp;quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;href&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;concierge.css&amp;quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Supported web browsers&lt;/h2&gt;
+
+&lt;p&gt;Open Web Apps are currently supported by Firefox OS, Firefox for Android and Firefox for desktop (Nightly recommended).&lt;/p&gt;
+
+&lt;h2&gt;License&lt;/h2&gt;
+
+&lt;p&gt;Concierge is released under open source &lt;a href=&quot;https://github.com/alexgibson/concierge/blob/master/LICENSE.md&quot;&gt;MIT License&lt;/a&gt;.&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Visibility.js - A cross-browser plugin for using the Page Visibility API</title>
@@ -1338,58 +1408,6 @@ Viewport argument value &quot;0;&quot; for key &quot;user-scalable&quot; was tru
 &lt;p&gt;The demo uses &lt;code&gt;window.navigator.onLine&lt;/code&gt; to listen for a boolean value of &lt;code&gt;true&lt;/code&gt; or &lt;code&gt;false&lt;/code&gt;, determining whether the device is online or offline. When online, the app makes a regular XmlHttpRequest and sends data to a server. If the device loses signal and goes offline, the app queues up and saves submitted data to localStorage as a JSON string. When online connection is next restored, the app then re-sends the queued data to the server automatically. Once the data has been sent successfully, the item is then removed from localStorage.&lt;/p&gt;
 
 &lt;p&gt;I won't go through all the code line by line as it's reasonably straight forward, but feel free to take a closer look on &lt;a href=&quot;https://github.com/alexgibson/OfflineForm&quot;&gt;GitHub&lt;/a&gt;. Many Webkit based smart phones now support &lt;code&gt;window.navigator.onLine&lt;/code&gt;, as does desktop Safari or Firefox. To test, try enabling flight mode on your phone, or disable wifi on your laptop once the app is open.&lt;/p&gt;
-</content>
- </entry>
- 
- <entry>
-   <title>New sizes attribute in iOS 4.2.1 for web clip icons</title>
-   <link href="http://alxgbsn.co.uk/2010/10/30/new-sizes-attribute-in-ios-421-for-web-clip-icons"/>
-   <updated>2010-10-30T00:00:00+01:00</updated>
-   <id>http://alxgbsn.co.uk/2010/10/30/new-sizes-attribute-in-ios-421-for-web-clip-icons</id>
-   <content type="html">&lt;p&gt;A small but relatively undiscovered new feature in iOS 4.2.1 is the new &lt;a href=&quot;http://developer.apple.com/library/safari/#documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html&quot;&gt;'sizes' attribute&lt;/a&gt; for defining different sized web clip icons. This new attribute allows you to cater for different device resolutions on iOS when publishing home screen icons for your websites. Here's an example:&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;link&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;rel=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;apple-touch-icon&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;touch-icon-iphone.png&amp;quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;link&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;rel=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;apple-touch-icon&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;sizes=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;72x72&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;touch-icon-ipad.png&amp;quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;link&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;rel=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;apple-touch-icon&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;sizes=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;114x114&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;touch-icon-iphone4.png&amp;quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;Now what we really need is for this new attribute to also work on &lt;code&gt;apple-touch-startup-image&lt;/code&gt;, so we can finally define different resolution startup images.&lt;/p&gt;
-</content>
- </entry>
- 
- <entry>
-   <title>Targeting iPhone 4 using CSS Media Queries</title>
-   <link href="http://alxgbsn.co.uk/2010/06/26/targeting-iphone-4-using-css-media-queries"/>
-   <updated>2010-06-26T00:00:00+01:00</updated>
-   <id>http://alxgbsn.co.uk/2010/06/26/targeting-iphone-4-using-css-media-queries</id>
-   <content type="html">&lt;p&gt;With the release of iPhone 4 and it's 326ppi display, there has been a fair bit of speculation as to what impact this would have on mobile web apps and websites that are optimised for mobile screen sizes. How would web developers target both older iPhones with a 480x320 display, as well as the iPhone 4's 960x640 display? Would we need separate CSS stylesheets for each device? How would images need to be optimised for the new screens?&lt;/p&gt;
-
-&lt;p&gt;It turns out that CSS media queries targeting 320px screens still work on iPhone 4. It's all down to Mobile Safari utilising a 'device to pixel ratio' density of 2. There is actually a distinct difference between a device (screen) pixel and a pixel that we typically define in CSS. For example, when the iPhone 4 browser viewport is equal to the device width, 1 CSS pixel actually translates to 2x2 device pixels. For those interested, there is a quite old (but very relevant) Webkit article about &lt;a href=&quot;http://webkit.org/blog/55/high-dpi-web-sites/&quot;&gt;high dpi websites&lt;/a&gt;. It makes for an interesting read.&lt;/p&gt;
-
-&lt;p&gt;This is largely good news for mobile web developers, as very little needs to be done to our mobile CSS stylesheets for iPhone 4. Device pixels are translated to CSS pixels automatically. But what about images? Well, this is where some work needs to be done. In order for images to look crisp on the new iPhone 4 display, we now need to serve images that have a higher ppi than the standard web traditionally uses. To do this, the iPhone 4 (and any other high ppi device) can be targeted using the following CSS media query (Notice I have included rules both with and without the -webkit venor prefix).&lt;/p&gt;
-
-&lt;p&gt;Update (07/10/11) - the code below has now been updated to include additional vendor prefix properties, that did not exist at the original time of publishing this article.&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;css&quot;&gt;&lt;span class=&quot;c&quot;&gt;/* High PPI Devices ----------- */&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;@media&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;only&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;screen&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-webkit-min-device-pixel-ratio&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;.5&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;),&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;only&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;screen&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;min--moz-device-pixel-ratio&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;.5&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;),&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;only&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;screen&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-o-device-pixel-ratio&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;),&lt;/span&gt; 
-&lt;span class=&quot;nt&quot;&gt;only&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;screen&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;min-device-pixel-ratio&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;.5&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;c&quot;&gt;/*high resolution images go here*/&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;I won't go into great detail on how to best serve images, but it basically involves creating images that are double the pixel size that you would traditionally need (e.g. a 100x50 pixel image translates to 200x100 pixels). You can then set the &lt;a href=&quot;http://www.w3.org/TR/2002/WD-css3-background-20020802/#background-size&quot;&gt;background size in CSS&lt;/a&gt; so the large images still take up the same number of CSS pixels as they would on a normal display. &lt;a href=&quot;http://blog.iwalt.com/2010/06/targeting-the-iphone-4-retina-display-with-css3-media-queries.html&quot;&gt;Walt Dickinson&lt;/a&gt; has already written a nice article that has some more info on how to do this.&lt;/p&gt;
-
-&lt;p&gt;Finally, one last tip – you can also test for the same value using using JavaScript:&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;window&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;devicePixelRatio&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;//Targeted code goes here&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 </content>
  </entry>
  
