@@ -4,7 +4,7 @@
  <title>Alex Gibson, Front End Developer</title>
  <link href="http://alxgbsn.co.uk/feed/" rel="self"/>
  <link href="http://alxgbsn.co.uk/"/>
- <updated>2013-10-25T20:22:04+01:00</updated>
+ <updated>2013-11-24T20:06:45+00:00</updated>
  <id>http://alxgbsn.co.uk/</id>
  <author>
    <name>Alex Gibson</name>
@@ -161,7 +161,7 @@ npm test
 
 &lt;p&gt;I wanted to create something that I could easily resuse in different projects, so I wrote a JavaScript plugin called &lt;a href=&quot;https://github.com/alexgibson/notify.js&quot;&gt;Notify.js&lt;/a&gt; that acts as a simplified wrapper for the API.&lt;/p&gt;
 
-&lt;p&gt;Notify.js automatically handles requesting user permission and associated Web Notification API events, as well as adding a few extra convenience methods.&lt;/p&gt;
+&lt;p&gt;Notify.js aims to simplify requesting user permission and associated Web Notification API events, as well as providing a few extra callbacks and convenience methods.&lt;/p&gt;
 
 &lt;p&gt;There is a simple &lt;a href=&quot;http://alxgbsn.co.uk/notify.js/&quot;&gt;online demo here&lt;/a&gt;. Installation and setup instructions are as follows:&lt;/p&gt;
 
@@ -193,7 +193,7 @@ npm test
 
 &lt;p&gt;Then show the notification.&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;myNotification&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt; 
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;myNotification&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
@@ -207,23 +207,26 @@ npm test
 &lt;h2&gt;Optional parameters&lt;/h2&gt;
 
 &lt;ul&gt;
-&lt;li&gt;body: (string) - notification message body.&lt;/li&gt;
-&lt;li&gt;icon: (string) - path for icon to display in notification.&lt;/li&gt;
-&lt;li&gt;tag: (string) - unique identifier to stop duplicate notifications.&lt;/li&gt;
-&lt;li&gt;notifyShow: (function) - callback when notification is shown.&lt;/li&gt;
-&lt;li&gt;notifyClose: (function) - callback when notification is closed.&lt;/li&gt;
-&lt;li&gt;notifyClick: (function) - callback when notification is clicked.&lt;/li&gt;
-&lt;li&gt;notifyError: (function) - callback when notification throws an error.&lt;/li&gt;
-&lt;li&gt;permissionDenied: (function) - callback when user has denied permission.&lt;/li&gt;
+&lt;li&gt;body: (string) - notification message body&lt;/li&gt;
+&lt;li&gt;icon: (string) - path for icon to display in notification&lt;/li&gt;
+&lt;li&gt;tag: (string) - unique identifier to stop duplicate notifications&lt;/li&gt;
+&lt;li&gt;notifyShow: (function) - callback when notification is shown&lt;/li&gt;
+&lt;li&gt;notifyClose: (function) - callback when notification is closed&lt;/li&gt;
+&lt;li&gt;notifyClick: (function) - callback when notification is clicked&lt;/li&gt;
+&lt;li&gt;notifyError: (function) - callback when notification throws an error&lt;/li&gt;
+&lt;li&gt;permissionGranted: (function) - callback when user has granted permission&lt;/li&gt;
+&lt;li&gt;permissionDenied: (function) - callback when user has denied permission&lt;/li&gt;
 &lt;/ul&gt;
 
 
-&lt;p&gt;Note: Firefox OS currently supports &lt;code&gt;notifyClose&lt;/code&gt; and &lt;code&gt;notifyClick&lt;/code&gt; callbacks only.&lt;/p&gt;
+&lt;p&gt;Note: Firefox OS does not currently support &lt;code&gt;notifyShow&lt;/code&gt; and &lt;code&gt;notifyError&lt;/code&gt; callbacks, since it uses the slightly older &lt;code&gt;mozNotification&lt;/code&gt; API.&lt;/p&gt;
 
 &lt;h2&gt;Useful methods&lt;/h2&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;code&gt;isSupported()&lt;/code&gt; - (returns boolean) test for Web Notifications API browser support.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;needsPermission()&lt;/code&gt; - (returns boolean) check is permission is needed for the user to receive notifications.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;requestPermission()&lt;/code&gt; - requests permission from the user if needed and handles permission callbacks.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;isSupported()&lt;/code&gt; - (returns boolean) test for Web Notifications API browser support&lt;/li&gt;
 &lt;/ul&gt;
 
 
@@ -247,7 +250,7 @@ npm test
 &lt;li&gt;Chrome&lt;/li&gt;
 &lt;li&gt;Safari&lt;/li&gt;
 &lt;li&gt;Firefox&lt;/li&gt;
-&lt;li&gt;Firefox OS&lt;/li&gt;
+&lt;li&gt;Firefox OS (using &lt;code&gt;mozNotification&lt;/code&gt; API)&lt;/li&gt;
 &lt;li&gt;Firefox Mobile (Android)&lt;/li&gt;
 &lt;/ul&gt;
 

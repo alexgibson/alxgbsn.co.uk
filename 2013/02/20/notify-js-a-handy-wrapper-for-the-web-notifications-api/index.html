@@ -75,7 +75,7 @@
 
 <p>I wanted to create something that I could easily resuse in different projects, so I wrote a JavaScript plugin called <a href="https://github.com/alexgibson/notify.js">Notify.js</a> that acts as a simplified wrapper for the API.</p>
 
-<p>Notify.js automatically handles requesting user permission and associated Web Notification API events, as well as adding a few extra convenience methods.</p>
+<p>Notify.js aims to simplify requesting user permission and associated Web Notification API events, as well as providing a few extra callbacks and convenience methods.</p>
 
 <p>There is a simple <a href="http://alxgbsn.co.uk/notify.js/">online demo here</a>. Installation and setup instructions are as follows:</p>
 
@@ -107,7 +107,7 @@
 
 <p>Then show the notification.</p>
 
-<div class="highlight"><pre><code class="javascript"><span class="nx">myNotification</span><span class="p">.</span><span class="nx">show</span><span class="p">();</span> 
+<div class="highlight"><pre><code class="javascript"><span class="nx">myNotification</span><span class="p">.</span><span class="nx">show</span><span class="p">();</span>
 </code></pre></div>
 
 
@@ -121,23 +121,26 @@
 <h2>Optional parameters</h2>
 
 <ul>
-<li>body: (string) - notification message body.</li>
-<li>icon: (string) - path for icon to display in notification.</li>
-<li>tag: (string) - unique identifier to stop duplicate notifications.</li>
-<li>notifyShow: (function) - callback when notification is shown.</li>
-<li>notifyClose: (function) - callback when notification is closed.</li>
-<li>notifyClick: (function) - callback when notification is clicked.</li>
-<li>notifyError: (function) - callback when notification throws an error.</li>
-<li>permissionDenied: (function) - callback when user has denied permission.</li>
+<li>body: (string) - notification message body</li>
+<li>icon: (string) - path for icon to display in notification</li>
+<li>tag: (string) - unique identifier to stop duplicate notifications</li>
+<li>notifyShow: (function) - callback when notification is shown</li>
+<li>notifyClose: (function) - callback when notification is closed</li>
+<li>notifyClick: (function) - callback when notification is clicked</li>
+<li>notifyError: (function) - callback when notification throws an error</li>
+<li>permissionGranted: (function) - callback when user has granted permission</li>
+<li>permissionDenied: (function) - callback when user has denied permission</li>
 </ul>
 
 
-<p>Note: Firefox OS currently supports <code>notifyClose</code> and <code>notifyClick</code> callbacks only.</p>
+<p>Note: Firefox OS does not currently support <code>notifyShow</code> and <code>notifyError</code> callbacks, since it uses the slightly older <code>mozNotification</code> API.</p>
 
 <h2>Useful methods</h2>
 
 <ul>
-<li><code>isSupported()</code> - (returns boolean) test for Web Notifications API browser support.</li>
+<li><code>needsPermission()</code> - (returns boolean) check is permission is needed for the user to receive notifications.</li>
+<li><code>requestPermission()</code> - requests permission from the user if needed and handles permission callbacks.</li>
+<li><code>isSupported()</code> - (returns boolean) test for Web Notifications API browser support</li>
 </ul>
 
 
@@ -161,7 +164,7 @@ npm test
 <li>Chrome</li>
 <li>Safari</li>
 <li>Firefox</li>
-<li>Firefox OS</li>
+<li>Firefox OS (using <code>mozNotification</code> API)</li>
 <li>Firefox Mobile (Android)</li>
 </ul>
 
