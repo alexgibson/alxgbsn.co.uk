@@ -52,17 +52,15 @@ Required parameters
 Optional parameters
 -------------------
 
-* body: (string) - notification message body
-* icon: (string) - path for icon to display in notification
-* tag: (string) - unique identifier to stop duplicate notifications
-* notifyShow: (function) - callback when notification is shown
-* notifyClose: (function) - callback when notification is closed
-* notifyClick: (function) - callback when notification is clicked
-* notifyError: (function) - callback when notification throws an error
-* permissionGranted: (function) - callback when user has granted permission
-* permissionDenied: (function) - callback when user has denied permission
-
-Note: Firefox OS does not currently support `notifyShow` and `notifyError` callbacks, since it uses the slightly older `mozNotification` API.
+* `body`: (string) - notification message body
+* `icon`: (string) - path for icon to display in notification
+* `tag`: (string) - unique identifier to stop duplicate notifications
+* `notifyShow`: (function) - callback when notification is shown
+* `notifyClose`: (function) - callback when notification is closed
+* `notifyClick`: (function) - callback when notification is clicked
+* `notifyError`: (function) - callback when notification throws an error
+* `permissionGranted`: (function) - callback when user has granted permission
+* `permissionDenied`: (function) - callback when user has denied permission
 
 Useful methods
 --------------
@@ -70,6 +68,11 @@ Useful methods
 * `needsPermission()` - (returns boolean) check is permission is needed for the user to receive notifications.
 * `requestPermission()` - requests permission from the user if needed and handles permission callbacks.
 * `isSupported()` - (returns boolean) test for Web Notifications API browser support
+
+A note about Chrome
+-------------------
+
+Unlike other browsers that implement the Web Notification API, Chrome does not permit requesting permission on page load (it must be as a result of user interaction, such as a `click` event). You can find out more in the [Chromium bug for this issue](https://code.google.com/p/chromium/issues/detail?id=274284).
 
 Testing
 -------
@@ -89,10 +92,10 @@ npm test
 Browser support
 ---------------------------------------
 
-- Chrome
+- Chrome (desktop)
 - Safari
 - Firefox
-- Firefox OS (using `mozNotification` API)
+- Firefox OS (v1.2+)
 - Firefox Mobile (Android)
 
 License

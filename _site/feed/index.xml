@@ -4,7 +4,7 @@
  <title>Alex Gibson, Front End Developer</title>
  <link href="http://alxgbsn.co.uk/feed/" rel="self"/>
  <link href="http://alxgbsn.co.uk/"/>
- <updated>2013-11-24T20:06:45+00:00</updated>
+ <updated>2013-12-10T20:30:32+00:00</updated>
  <id>http://alxgbsn.co.uk/</id>
  <author>
    <name>Alex Gibson</name>
@@ -207,19 +207,17 @@ npm test
 &lt;h2&gt;Optional parameters&lt;/h2&gt;
 
 &lt;ul&gt;
-&lt;li&gt;body: (string) - notification message body&lt;/li&gt;
-&lt;li&gt;icon: (string) - path for icon to display in notification&lt;/li&gt;
-&lt;li&gt;tag: (string) - unique identifier to stop duplicate notifications&lt;/li&gt;
-&lt;li&gt;notifyShow: (function) - callback when notification is shown&lt;/li&gt;
-&lt;li&gt;notifyClose: (function) - callback when notification is closed&lt;/li&gt;
-&lt;li&gt;notifyClick: (function) - callback when notification is clicked&lt;/li&gt;
-&lt;li&gt;notifyError: (function) - callback when notification throws an error&lt;/li&gt;
-&lt;li&gt;permissionGranted: (function) - callback when user has granted permission&lt;/li&gt;
-&lt;li&gt;permissionDenied: (function) - callback when user has denied permission&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;body&lt;/code&gt;: (string) - notification message body&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;icon&lt;/code&gt;: (string) - path for icon to display in notification&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;tag&lt;/code&gt;: (string) - unique identifier to stop duplicate notifications&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;notifyShow&lt;/code&gt;: (function) - callback when notification is shown&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;notifyClose&lt;/code&gt;: (function) - callback when notification is closed&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;notifyClick&lt;/code&gt;: (function) - callback when notification is clicked&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;notifyError&lt;/code&gt;: (function) - callback when notification throws an error&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;permissionGranted&lt;/code&gt;: (function) - callback when user has granted permission&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;permissionDenied&lt;/code&gt;: (function) - callback when user has denied permission&lt;/li&gt;
 &lt;/ul&gt;
 
-
-&lt;p&gt;Note: Firefox OS does not currently support &lt;code&gt;notifyShow&lt;/code&gt; and &lt;code&gt;notifyError&lt;/code&gt; callbacks, since it uses the slightly older &lt;code&gt;mozNotification&lt;/code&gt; API.&lt;/p&gt;
 
 &lt;h2&gt;Useful methods&lt;/h2&gt;
 
@@ -229,6 +227,10 @@ npm test
 &lt;li&gt;&lt;code&gt;isSupported()&lt;/code&gt; - (returns boolean) test for Web Notifications API browser support&lt;/li&gt;
 &lt;/ul&gt;
 
+
+&lt;h2&gt;A note about Chrome&lt;/h2&gt;
+
+&lt;p&gt;Unlike other browsers that implement the Web Notification API, Chrome does not permit requesting permission on page load (it must be as a result of user interaction, such as a &lt;code&gt;click&lt;/code&gt; event). You can find out more in the &lt;a href=&quot;https://code.google.com/p/chromium/issues/detail?id=274284&quot;&gt;Chromium bug for this issue&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h2&gt;Testing&lt;/h2&gt;
 
@@ -247,10 +249,10 @@ npm test
 &lt;h2&gt;Browser support&lt;/h2&gt;
 
 &lt;ul&gt;
-&lt;li&gt;Chrome&lt;/li&gt;
+&lt;li&gt;Chrome (desktop)&lt;/li&gt;
 &lt;li&gt;Safari&lt;/li&gt;
 &lt;li&gt;Firefox&lt;/li&gt;
-&lt;li&gt;Firefox OS (using &lt;code&gt;mozNotification&lt;/code&gt; API)&lt;/li&gt;
+&lt;li&gt;Firefox OS (v1.2+)&lt;/li&gt;
 &lt;li&gt;Firefox Mobile (Android)&lt;/li&gt;
 &lt;/ul&gt;
 
