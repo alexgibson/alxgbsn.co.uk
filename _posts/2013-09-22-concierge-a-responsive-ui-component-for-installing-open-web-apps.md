@@ -5,7 +5,7 @@ titleinfo: Alex Gibson
 desc: A JavaScript plugin for installing Open Web Apps via the browser.
 ---
 
-Concierge is a responsive UI component for installing [Open Web Apps](https://developer.mozilla.org/en-US/docs/Web/Apps) via the browser. It creates an automated "install" button that can be used in any web app, using app manifest meta data to populate the UI.
+[Concierge](https://github.com/alexgibson/concierge) is a responsive UI component for installing [Open Web Apps](https://developer.mozilla.org/en-US/docs/Web/Apps) via the browser. It creates an automated "install" button that can be used in any web app, using app manifest meta data to populate the UI.
 
 Features
 ----------
@@ -66,4 +66,3 @@ License
 -------
 
 Concierge is released under open source [MIT License](https://github.com/alexgibson/concierge/blob/master/LICENSE.md).
-
