@@ -1,77 +1,76 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 <head>
-    <meta charset="utf-8" />
-    <title>Trouble with web browser orientation | Alex Gibson</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8" />
+  <title>Trouble with web browser orientation | Alex Gibson</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <!-- Site meta -->
-    <meta name="description" content="A look at the current methods available to determine browser orientation, and details some of the problems found along the way." />
-    <meta name="author" content="Alex Gibson" />
+  <!-- Site meta -->
+  <meta name="description" content="A look at the current methods available to determine browser orientation, and details some of the problems found along the way." />
+  <meta name="author" content="Alex Gibson" />
 
-    <!-- Prefetch DNS for external assets -->
-    <link rel="dns-prefetch" href="//platform.twitter.com" />
-    <link rel="dns-prefetch" href="//www.google-analytics.com" />
-    <link rel="dns-prefetch" href="//p.twitter.com" />
-    <link rel="dns-prefetch" href="//cdn.api.twitter.com" />
+  <!-- Prefetch DNS for external assets -->
+  <link rel="dns-prefetch" href="//platform.twitter.com" />
+  <link rel="dns-prefetch" href="//www.google-analytics.com" />
+  <link rel="dns-prefetch" href="//p.twitter.com" />
+  <link rel="dns-prefetch" href="//cdn.api.twitter.com" />
 
-    <script src="/js/site.js"></script>
-    
-    <link rel="stylesheet" href="/css/styles.css" />
+  <script src="/js/site.js"></script>
 
-    <!--[if lte IE 7]>
-    <link rel="stylesheet" href="/css/ie7-and-down.css" />
-    <![endif]-->
+  <link rel="stylesheet" href="/css/styles.css" />
 
-    <script src="/js/responsive-nav.min.js"></script>
+  <!--[if lte IE 7]>
+  <link rel="stylesheet" href="/css/ie7-and-down.css" />
+  <![endif]-->
 
-    <link rel="alternate" type="application/rss+xml" title="Alex Gibson" href="/feed/" />
-    <link rel="canonical" href="http://alxgbsn.co.uk/2012/08/27/trouble-with-web-browser-orientation" />
+  <script src="/js/responsive-nav.min.js"></script>
 
-    <!--[if lt IE 9]>
-        <script src="/js/html5shiv.js"></script>
-    <![endif]-->
+  <link rel="alternate" type="application/rss+xml" title="Alex Gibson" href="/feed/" />
+  <link rel="canonical" href="http://alxgbsn.co.uk/2012/08/27/trouble-with-web-browser-orientation" />
 
-    <!-- Icons -->
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/iOS-144.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/iOS-114.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/iOS-72.png" />
-    <link rel="apple-touch-icon-precomposed" href="/images/iOS-57.png" />
-    <link rel="shortcut icon" href="/images/iOS-57.png" />
+  <!--[if lt IE 9]>
+      <script src="/js/html5shiv.js"></script>
+  <![endif]-->
 
-    <!-- iOS icon app title -->
-    <meta name="apple-mobile-web-app-title" content="Alex Gibson" />
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/iOS-144.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/iOS-114.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/iOS-72.png" />
+  <link rel="apple-touch-icon-precomposed" href="/images/iOS-57.png" />
+  <link rel="shortcut icon" href="/images/iOS-57.png" />
 
-    <!-- Async Google Analytics -->
-    <script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-33263279-1']);
-    _gaq.push(['_trackPageview']);
-    (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-    </script>
+  <!-- iOS icon app title -->
+  <meta name="apple-mobile-web-app-title" content="Alex Gibson" />
+
+  <!-- Async Google Analytics -->
+  <script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-33263279-1']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+  </script>
 </head>
 <body>
-
-<header role="banner">
-    <nav id="nav" role="navigation">
-    <ul>
-        <li><a href="/">Blog</a></li>
-        <li><a href="/about/">About</a></li>
-        <li><a href="/work/">Work</a></li>
-        <li><a href="/contact/">Contact</a></li>
-    </ul>
+  <main role="main">
+    <header role="banner">
+      <nav id="nav" role="navigation">
+  <ul>
+    <li><a href="/">Blog</a></li>
+    <li><a href="/about/">About</a></li>
+    <li><a href="/work/">Work</a></li>
+    <li><a href="/contact/">Contact</a></li>
+  </ul>
 </nav>
 
-    <h1>Trouble with web browser orientation</h1>
-</header>
-    
-<article role="main">
-    <time datetime="2012-08-27">Published Aug 27 2012</time>
-    <p>In a sensible world, determining web browser orientation on mobile and tablet devices should be as straight forward as querying a property such as <code>window.orientation</code> and hoping for a value such as <code>portrait</code> or <code>landscape</code> to get returned. Unfortunately, the harsh reality of current API's and web browser inconsistencies makes the process way more complicated than it should be.</p>
+      <h1>Trouble with web browser orientation</h1>
+    </header>
+    <article>
+  <time datetime="2012-08-27">Published Aug 27 2012</time>
+  <p>In a sensible world, determining web browser orientation on mobile and tablet devices should be as straight forward as querying a property such as <code>window.orientation</code> and hoping for a value such as <code>portrait</code> or <code>landscape</code> to get returned. Unfortunately, the harsh reality of current API's and web browser inconsistencies makes the process way more complicated than it should be.</p>
 
 <p>This post takes a look at the current methods available to web developers to determine browser orientation, and details some of the problems found along the way.</p>
 
@@ -156,25 +155,23 @@
 
 </article>
 
-
-<form class="search" action="http://google.com/search" method="get" title="Search this site">
-    <div role="search">
-        <label for="q">Search</label>
-        <input type="hidden" name="q" value="site:alxgbsn.co.uk" />
-        <input class="search" type="search" name="q" id="q" placeholder="Enter a search term&hellip;" />
-        <button type="submit">Search</button>
-    </div>
+    <form class="search" action="http://google.com/search" method="get" title="Search this site">
+  <div role="search">
+    <label for="q">Search</label>
+    <input type="hidden" name="q" value="site:alxgbsn.co.uk" />
+    <input class="search" type="search" name="q" id="q" placeholder="Enter a search term&hellip;" />
+    <button type="submit">Search</button>
+  </div>
 </form>
 
-<footer role="contentinfo">
-    <p>
-        <a href="https://twitter.com/alex_gibson" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @alex_gibson</a>
-    </p>
-    <p>Copyright &copy; 2013 Alex Gibson</p>
+    <footer role="contentinfo">
+  <p><a href="https://twitter.com/alex_gibson" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @alex_gibson</a></p>
+  <p>Copyright &copy; Alex Gibson</p>
 </footer>
 
-<script src="/js/main.js"></script>
+  </main>
 
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+  <script src="/js/main.js"></script>
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 </body>
 </html>
