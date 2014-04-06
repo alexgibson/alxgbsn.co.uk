@@ -4,7 +4,7 @@
  <title>Alex Gibson, Front End Developer</title>
  <link href="http://alxgbsn.co.uk/feed/" rel="self"/>
  <link href="http://alxgbsn.co.uk/"/>
- <updated>2014-04-06T22:23:00+01:00</updated>
+ <updated>2014-04-06T22:40:24+01:00</updated>
  <id>http://alxgbsn.co.uk/</id>
  <author>
    <name>Alex Gibson</name>
@@ -30,7 +30,7 @@
 
 &lt;p&gt;Try the demo below on Firefox OS, Firefox for Android, or Firefox for desktop (Nightly recommended).&lt;/p&gt;
 
-&lt;p&gt;Demo: &lt;a href=&quot;https://alexgibson.github.com/concierge&quot;&gt;https://alexgibson.github.com/concierge&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://alexgibson.github.com/concierge&quot;&gt;Try out the demo&lt;/a&gt;&lt;/p&gt;
 
 &lt;h2&gt;Installation&lt;/h2&gt;
 
@@ -144,7 +144,7 @@ npm test
 
 &lt;h2&gt;Supported web browsers&lt;/h2&gt;
 
-&lt;p&gt;See &lt;a href=&quot;http://caniuse.com/#feat=pagevisibility&quot;&gt;http://caniuse.com/#feat=pagevisibility&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://caniuse.com/#feat=pagevisibility&quot;&gt;caniuse.com/#feat=pagevisibility&lt;/a&gt;&lt;/p&gt;
 
 &lt;h2&gt;License&lt;/h2&gt;
 
