@@ -61,7 +61,7 @@ npm test
 Supported web browsers
 ---------------------------------------
 
-See [http://caniuse.com/#feat=pagevisibility](http://caniuse.com/#feat=pagevisibility)
+[caniuse.com/#feat=pagevisibility](http://caniuse.com/#feat=pagevisibility)
 
 License
 -------

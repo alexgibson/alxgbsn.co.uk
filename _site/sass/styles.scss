@@ -35,9 +35,6 @@ a.image-link {
 
 p, ul > li {
     line-height: 1.5;
-    -webkit-hyphens:auto;
-    -moz-hyphens: auto;
-    hyphens: auto;
 }
 
 em {
@@ -71,6 +68,14 @@ time {
     line-height: 1.3;
 }
 
+code {
+    color: #565757;
+    font-size: 0.9em;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto;
+}
+
 pre {
     overflow: auto;
     text-shadow: none;
@@ -79,11 +84,12 @@ pre {
     padding: 1em;
     background-color: #434343;
     @include border-radius(5px);
-}
-
-code {
-    color: #565757;
-    font-size: 0.9em;
+    code {
+        color: #fff;
+        -webkit-hyphens: none;
+        -moz-hyphens: none;
+        hyphens: none;
+    }
 }
 
 header[role="banner"] {
