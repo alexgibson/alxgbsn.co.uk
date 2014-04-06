@@ -3,6 +3,6 @@ layout: layout
 ---
 
 <article>
-  <time datetime="{{ page.date | date: "%Y-%m-%d" }}">Published {{ page.date | date: "%b %d %Y" }}</time>
+  <time pubdate datetime="{{ page.date }}">Published {{ page.date | date: "%b %d %Y" }}</time>
   {{ content }}
 </article>
