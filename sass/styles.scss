@@ -18,18 +18,15 @@ body {
 
 a:link, a:visited {
     color: #434343;
-    text-decoration: underline;
+    text-decoration: none;
+    font-weight:bold;
     @include transition-property(all);
     @include transition-duration(0.1s);
     @include transition-timing-function(ease-in);
 }
 
 a:hover, a:active, a:focus {
-    text-decoration: none;
-}
-
-a.image-link {
-    border-bottom: none;
+    text-decoration: underline;
 }
 
 p, ul > li {
@@ -108,13 +105,14 @@ nav[role="navigation"] li {
     width: 100%;
     display: inline;
     line-height: 44px;
-    margin-right: 1em;
+    margin-right: .7em;
+    a {
+        font-weight: normal;
+    }
+    &:last-child {
+        margin-right: 0;
+    }
 }
-
-nav[role="navigation"] li:last-child {
-    margin-right: 0;
-}
-
 
 article,
 section {
@@ -168,12 +166,20 @@ section.posts {
     time {
         float: right;
         margin: 0 0 .5em .5em;
+        font-style: normal;
     }
     h2 {
         text-align: center;
     }
     h3 {
         font-size: 16px;
+        text-shadow: none;
+    }
+    article {
+        border-bottom: 1px solid #a7a7a7;
+        &:last-child {
+            border-bottom: none;
+        }
     }
 }
 
@@ -181,8 +187,8 @@ section.posts {
     section.posts {
         time {
             float: none;
-            margin: 0 0 .5em 0;
-            text-align: left
+            margin: 1em 0 .5em 0;
+            text-align: left;
         }
         h3 {
             font-size: 16px;
