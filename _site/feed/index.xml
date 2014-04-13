@@ -4,7 +4,7 @@
  <title>Alex Gibson, Front End Developer</title>
  <link href="http://alxgbsn.co.uk/feed/" rel="self"/>
  <link href="http://alxgbsn.co.uk/"/>
- <updated>2014-04-11T21:20:50+01:00</updated>
+ <updated>2014-04-13T21:34:13+01:00</updated>
  <id>http://alxgbsn.co.uk/</id>
  <author>
    <name>Alex Gibson</name>
@@ -13,11 +13,36 @@
 
  
  <entry>
+   <title>My first year working at Mozilla</title>
+   <link href="http://alxgbsn.co.uk/2014/04/15/my-first-year-working-at-mozilla"/>
+   <updated>2014-04-15T00:00:00+01:00</updated>
+   <id>http://alxgbsn.co.uk/2014/04/15/my-first-year-working-at-mozilla</id>
+   <content type="html">&lt;p&gt;Today marks my first year Mozillaversary, which is pretty hard to believe! I feel very fortunate to work at &lt;a href=&quot;https://www.mozilla.org&quot;&gt;Mozilla&lt;/a&gt;, as I get to work with a very &lt;a href=&quot;https://wiki.mozilla.org/Webdev/Web_Production&quot;&gt;talented bunch of people&lt;/a&gt;. The last 12 months have flown by and it’s pretty hard to put it all into a single blog post, so I thought I would try and put things into perspective using some simple statistics (hooray for open workflow and bug trackers!).&lt;/p&gt;
+
+&lt;p&gt;Over the past 365 days I have:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Contributed to a total of 5 Mozilla projects/websites.&lt;/li&gt;
+&lt;li&gt;Made over &lt;a href=&quot;https://github.com/mozilla/bedrock/commits?author=alexgibson&quot;&gt;118 commits&lt;/a&gt; to &lt;a href=&quot;https://www.mozilla.org&quot;&gt;www.mozilla.org&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Made over &lt;a href=&quot;https://github.com/mozilla/remo/commits?author=alexgibson&quot;&gt;31 commits&lt;/a&gt; to &lt;a href=&quot;https://reps.mozilla.org&quot;&gt;reps.mozilla.org&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;On &lt;a href=&quot;https://bugzilla.mozilla.org/&quot;&gt;Bugzilla&lt;/a&gt; I have filed 39 bugs, been assigned 94 bugs and commented on 254 bugs.&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;Looking past the numbers, I have got to work on some pretty &lt;a href=&quot;https://blog.mozilla.org/ux/2014/03/introducing-the-update-experience-for-australis/&quot;&gt;interesting projects&lt;/a&gt; and built some cool things to help visualise Mozilla’s world wide &lt;a href=&quot;http://www.mozilla.org/en-US/contact/communities/&quot;&gt;community of contributors&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;I was lucky enough to spend some time visiting a bunch of different places, including Mozilla’s offices in &lt;a href=&quot;http://www.mozilla.org/en-US/contact/spaces/toronto/&quot;&gt;Toronto&lt;/a&gt;, &lt;a href=&quot;http://www.mozilla.org/en-US/contact/spaces/san-francisco/&quot;&gt;San Francisco&lt;/a&gt; and &lt;a href=&quot;http://www.mozilla.org/en-US/contact/spaces/mountain-view/&quot;&gt;Mountain View&lt;/a&gt; (Ironically, I  have yet to visit the London office!). I also got to attend the &lt;a href=&quot;http://summit.mozilla.org/&quot;&gt;Mozilla Summit&lt;/a&gt; in Brussels, where I got to meet and hang out with lots of other &lt;a href=&quot;https://mozillians.org/en-US/&quot;&gt;Mozillians&lt;/a&gt;. I also managed to squeeze in a quick trip to sunny ol’ Blighty for &lt;a href=&quot;http://2013.full-frontal.org/&quot;&gt;Full Frontal&lt;/a&gt;. It was all a blast.&lt;/p&gt;
+
+&lt;p&gt;I’m looking forward to the next 365 days and what they have to offer. Mozilla is a great community to be part of, it’s more than just a “cool” company to work for. I think Mozilla’s &lt;a href=&quot;http://www.mozilla.org/mission/&quot;&gt;mission&lt;/a&gt; is pretty important right now, so it feels good to be a small part of it.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
    <title>Concierge - A responsive UI component for installing Open Web Apps.</title>
    <link href="http://alxgbsn.co.uk/2013/09/22/concierge-a-responsive-ui-component-for-installing-open-web-apps"/>
    <updated>2013-09-22T00:00:00+01:00</updated>
    <id>http://alxgbsn.co.uk/2013/09/22/concierge-a-responsive-ui-component-for-installing-open-web-apps</id>
-   <content type="html">&lt;p&gt;&lt;a href=&quot;https://github.com/alexgibson/concierge&quot;&gt;Concierge&lt;/a&gt; is a responsive UI component for installing &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/Apps&quot;&gt;Open Web Apps&lt;/a&gt; via the browser. It creates an automated &quot;install&quot; button that can be used in any web app, using app manifest meta data to populate the UI.&lt;/p&gt;
+   <content type="html">&lt;p&gt;&lt;a href=&quot;https://github.com/alexgibson/concierge&quot;&gt;Concierge&lt;/a&gt; is a responsive UI component for installing &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/Apps&quot;&gt;Open Web Apps&lt;/a&gt; via the browser. It creates an automated “install” button that can be used in any web app, using app manifest meta data to populate the UI.&lt;/p&gt;
 
 &lt;h2&gt;Features&lt;/h2&gt;
 

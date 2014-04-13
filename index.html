@@ -8,11 +8,12 @@ desc: Alex Gibson is a front–end web developer living in Newcastle upon Tyne, 
 <img class="profile fadeIn" src="{{root}}/images/profile.png" width="150" height="150" alt="Alex Gibson" />
 
 <section class="posts">
-  <h2>Blog posts</h2>
+  <h2>Words</h2>
     {% for post in site.posts %}
       <article>
         <time pubdate datetime="{{ post.date }}">{{ post.date | date: "%b %d %Y" }}</time>
         <h3><a rel="bookmark" href="{{ post.url }}">{{ post.title }}</a></h3>
       </article>
     {% endfor %}
+    <p><a class="feed" href="{{ root }}/feed/" title="Subscribe to blog">RSS feed</a></p>
 </section>

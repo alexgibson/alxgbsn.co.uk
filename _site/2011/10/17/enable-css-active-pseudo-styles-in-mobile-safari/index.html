@@ -2,7 +2,7 @@
 <html class="no-js" lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Enable CSS active pseudo styles in Mobile Safari | Alex Gibson</title>
+  <title>Enable CSS active pseudo styles in Mobile Safari - Alex Gibson</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <!-- Site meta -->
@@ -18,11 +18,6 @@
   <script src="/js/site.js"></script>
 
   <link rel="stylesheet" href="/css/styles.css" />
-
-  <!--[if lte IE 7]>
-    <link rel="stylesheet" href="/css/ie7-and-down.css" />
-  <![endif]-->
-
   <link rel="alternate" type="application/rss+xml" title="Alex Gibson" href="/feed/" />
   <link rel="canonical" href="http://alxgbsn.co.uk/2011/10/17/enable-css-active-pseudo-styles-in-mobile-safari" />
 
@@ -66,7 +61,7 @@
 
       <h1>Enable CSS active pseudo styles in Mobile Safari</h1>
     </header>
-    <article>
+    <section class="post">
   <time pubdate datetime="Mon Oct 17 00:00:00 +0100 2011">Published Oct 17 2011</time>
   <p>By default Mobile Safari disables CSS active pseudo styles on web pages, instead opting for a generic tap–highlight colour on clickable elements. A little known trick is that you can easily re-enable your active pseudo styles by declaring a <code>touchstart</code> event on the page. You don't even need to actually use the event, simply declaring an empty function will suffice.</p>
 
@@ -86,13 +81,13 @@
 
 <p>On a related note, there are also some other useful mobile Webkit oddities that can activated by using empty event declarations, like <a href="http://krijnhoetmer.nl/stuff/javascript/label-checkbox-ios/">making form labels clickable</a>.</p>
 
-</article>
+</section>
 
     <form class="search" action="http://google.com/search" method="get" title="Search this site">
   <div role="search">
     <label for="q">Search</label>
     <input type="hidden" name="q" value="site:alxgbsn.co.uk" />
-    <input class="search" type="search" name="q" id="q" placeholder="Enter a search term&hellip;" />
+    <input class="search" type="search" name="q" id="q" placeholder="Search this site&hellip;" />
     <button type="submit">Search</button>
   </div>
 </form>
