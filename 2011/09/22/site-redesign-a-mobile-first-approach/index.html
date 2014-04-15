@@ -2,7 +2,7 @@
 <html class="no-js" lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Site redesign, a mobile first approach | Alex Gibson</title>
+  <title>Site redesign, a mobile first approach - Alex Gibson</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <!-- Site meta -->
@@ -18,11 +18,6 @@
   <script src="/js/site.js"></script>
 
   <link rel="stylesheet" href="/css/styles.css" />
-
-  <!--[if lte IE 7]>
-    <link rel="stylesheet" href="/css/ie7-and-down.css" />
-  <![endif]-->
-
   <link rel="alternate" type="application/rss+xml" title="Alex Gibson" href="/feed/" />
   <link rel="canonical" href="http://alxgbsn.co.uk/2011/09/22/site-redesign-a-mobile-first-approach" />
 
@@ -66,7 +61,7 @@
 
       <h1>Site redesign, a mobile first approach</h1>
     </header>
-    <article>
+    <section class="post">
   <time pubdate datetime="Thu Sep 22 00:00:00 +0100 2011">Published Sep 22 2011</time>
   <p>Anyone who has visited this site over the last few weeks will no doubt have noticed a few changes. It has now had a complete design overhaul, which is probably long overdue given the current rise in interest of principals such as <a href="http://www.alistapart.com/articles/responsive-web-design/">responsive web design</a> and <a href="http://www.lukew.com/ff/entry.asp?933">mobile first</a>. What follows is a run down of basic changes to the site, in what hopefully makes for a much improved reading experience, in our rapidly changing, device-agnostic world.</p>
 
@@ -181,13 +176,13 @@
 
 <p>Note: for the subset of mobile browsers that support CSS Media Queries but do not yet support Flexbox (e.g. Opera Mobile/Mini), featured detection comes to the rescue courtesy of <a href="http://modernizr.com/">Modernizr</a>. A few alternate CSS styling rules are all that is needed for the navigation and footer sections. Modernizr also provides the site's HTML5 shim that enables Internet Explorer to correctly style new sectioning elements.</p>
 
-</article>
+</section>
 
     <form class="search" action="http://google.com/search" method="get" title="Search this site">
   <div role="search">
     <label for="q">Search</label>
     <input type="hidden" name="q" value="site:alxgbsn.co.uk" />
-    <input class="search" type="search" name="q" id="q" placeholder="Enter a search term&hellip;" />
+    <input class="search" type="search" name="q" id="q" placeholder="Search this site&hellip;" />
     <button type="submit">Search</button>
   </div>
 </form>

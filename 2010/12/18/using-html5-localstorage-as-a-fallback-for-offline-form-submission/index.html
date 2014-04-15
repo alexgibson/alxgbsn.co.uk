@@ -2,7 +2,7 @@
 <html class="no-js" lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Using HTML5 localStorage as a fallback for offline form submission | Alex Gibson</title>
+  <title>Using HTML5 localStorage as a fallback for offline form submission - Alex Gibson</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <!-- Site meta -->
@@ -18,11 +18,6 @@
   <script src="/js/site.js"></script>
 
   <link rel="stylesheet" href="/css/styles.css" />
-
-  <!--[if lte IE 7]>
-    <link rel="stylesheet" href="/css/ie7-and-down.css" />
-  <![endif]-->
-
   <link rel="alternate" type="application/rss+xml" title="Alex Gibson" href="/feed/" />
   <link rel="canonical" href="http://alxgbsn.co.uk/2010/12/18/using-html5-localstorage-as-a-fallback-for-offline-form-submission" />
 
@@ -66,7 +61,7 @@
 
       <h1>Using HTML5 localStorage as a fallback for offline form submission</h1>
     </header>
-    <article>
+    <section class="post">
   <time pubdate datetime="Sat Dec 18 00:00:00 +0000 2010">Published Dec 18 2010</time>
   <p>I recently put together a working demo for a client showing how you might use HTML5 localStorage as a fallback for form data submission when a mobile device is offline without signal. I've published the full <a href="https://github.com/alexgibson/OfflineForm">source code over on GitHub</a> together with a demo for anyone who is interested.</p>
 
@@ -74,13 +69,13 @@
 
 <p>I won't go through all the code line by line as it's reasonably straight forward, but feel free to take a closer look on <a href="https://github.com/alexgibson/OfflineForm">GitHub</a>. Many Webkit based smart phones now support <code>window.navigator.onLine</code>, as does desktop Safari or Firefox. To test, try enabling flight mode on your phone, or disable wifi on your laptop once the app is open.</p>
 
-</article>
+</section>
 
     <form class="search" action="http://google.com/search" method="get" title="Search this site">
   <div role="search">
     <label for="q">Search</label>
     <input type="hidden" name="q" value="site:alxgbsn.co.uk" />
-    <input class="search" type="search" name="q" id="q" placeholder="Enter a search term&hellip;" />
+    <input class="search" type="search" name="q" id="q" placeholder="Search this site&hellip;" />
     <button type="submit">Search</button>
   </div>
 </form>
