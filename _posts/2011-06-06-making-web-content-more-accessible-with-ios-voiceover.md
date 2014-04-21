@@ -7,7 +7,7 @@ desc: An overview of using VoiceOver with iOS Safari and tips on how to make you
 
 If you're a web developer and own an iOS device, you may have noticed it comes with a whole range of accessibility features. One such feature is a built-in screen reader for visually impaired users, called VoiceOver. For a touch screen device, VoiceOver is a wonderfully capable piece of assistive technology, and a very useful tool that you can use to help test the accessibility of your web content.
 
-This article gives an introduction to using VoiceOver on iOS, followed by some basic tips to help improve the accessibility of your web content. While covering iOS specifically for example's sake, many of these tips are also applicable to improving accessibility for screen reader users in general.
+This article gives an introduction to using VoiceOver on iOS, followed by some basic tips to help improve the accessibility of your web content on mobile. While covering iOS specifically for example's sake, many of these tips are also applicable to improving accessibility for screen reader users in general.
 
 Navigating a web page using VoiceOver on iOS
 --------------------------------------------
@@ -30,22 +30,24 @@ As you will have discovered after trying VoiceOver, one of the fastest ways to n
 Here's some basic HTML5 markup for a common web page complete with landmark roles:
 
 {% highlight html %}
-<header role="banner">
-    <h1>Page heading</h1>
-</header>
+<main role="main">
+    <header role="banner">
+        <h1>Page heading</h1>
+    </header>
 
-<div role="main">
-    <section role="region">
-        <h2>Sub heading 1</h2>
-     </section>
-    <section role="region">
-        <h2>Sub heading 2</h2>
-    </section>
-</div>
+    <article>
+        <section role="region">
+            <h2>Sub heading 1</h2>
+         </section>
+        <section role="region">
+            <h2>Sub heading 2</h2>
+        </section>
+    </article>
 
-<footer role="contentinfo">
-     <h4>Footer title</h4>
-</footer>
+    <footer role="contentinfo">
+         <h4>Footer title</h4>
+    </footer>
+</main>
 {% endhighlight %}
 
 Note: as of iOS 4.3 the 'landmark' option is not included as a default rotator setting, and must be selected first in the general accessibility options. iOS does not currently read out the landmark types either, it just simply describes each as 'landmark start' and 'landmark end'.
@@ -53,23 +55,30 @@ Note: as of iOS 4.3 the 'landmark' option is not included as a default rotator s
 Hiding and showing content
 --------------------------
 
-Because many client-based web applications are often just single page controllers that hide and show content when switching between views, it is important to make sure that only visible content is accessible to screen readers. If you can't visually see something on screen, then (usually) it should be hidden from assistive technologies as well. Some mobile web applications simply slide elements in and out of the viewport when transitioning between screens. This can be problematic since elements that are not visible can still be read out and accessed by VoiceOver.
+Because many mobile web applications are often just single page controllers that hide and show content when switching between views, it is important to make sure that only visible content is accessible to screen readers. If you can't visually see something on screen, then (usually) it should be hidden from assistive technologies as well. Some mobile web applications simply slide elements in and out of the viewport when transitioning between screens. This can be problematic, since elements that are not visible can still be read out and accessed by VoiceOver.
 
 You can hide an HTML element from screen readers by setting the `aria-hidden` attribute to true. Likewise, setting the value to false will un-hide the element again.
 
 {% highlight javascript %}
-document.querySelector('#panel').setAttribute('aria-hidden', 'true'); //not visible
-document.querySelector('#panel').setAttribute('aria-hidden', 'false'); //visible
+var panel = document.getElementById('panel');
+
+panel.setAttribute('aria-hidden', 'true');
+panel.setAttribute('aria-hidden', 'false');
 {% endhighlight %}
 
 If you wish to visually hide the content as well, you can also take advantage of this attribute to set the element's `display` property in CSS like so.
 
 {% highlight css %}
-#panel[aria-hidden="true"] { display: none; }
-#panel[aria-hidden="false"] { display: block; }
+#panel[aria-hidden='true'] { 
+    display: none; 
+}
+
+#panel[aria-hidden='false'] { 
+    display: block; 
+}
 {% endhighlight %}
 
-Note here we are only changing the `display` property for the element `#panel` and not simply for every element that might have `aria-hidden` applied. There are situations where you might want content hidden from screen readers, but still visible on screen. Take for example, if your website creates a floating dialog box that is displayed on top of the existing page. In this case the content is still visible behind the dialog box, but should not be accessible until the user responds and the dialog box is closed. Here you might want to apply `aria-hidden` to the page behind, but not actually change the `display` property.
+Note that we are only changing the `display` property for the element `#panel` and not simply for every element that might have `aria-hidden` applied, as there are situations where you might want content hidden from screen readers, but still visible on screen.
 
 Making faux-buttons behave like buttons
 ---------------------------------------
@@ -91,35 +100,21 @@ Now that VoiceOver identifies the element as a button and not just a piece of te
 Providing textual descriptions for icons
 ----------------------------------------
 
-It is common to use visual icons to represent actions that buttons perform on mobile devices. Icons have the advantage of saving valuable screen space and are often universally understood. For assistive technologies, it is still important to provide a textual alternative. Take for example the following faux-button that does not contain any inner text.
+It is common to use visual icons to represent actions that buttons perform on mobile devices. Icons have the advantage of saving valuable screen space and are often universally understood. For assistive technologies however, it is still important to provide a textual description for the icon.
+
+In order to hide button text visually on the screen, but not from assistive technology, we can apply a simple `visually-hidden` CSS class like below:
 
 {% highlight html %}
-<div id="edit-button" role="button"></div>
+<div id="edit-button" role="button" class="visually-hidden">Edit item</div>
 {% endhighlight %}
-
-Here we must use another piece of HTML markup that is visible to assistive technologies, in order to provide a textual label.
-
-{% highlight html %}
-<p class="hide" id="edit-label">Edit item</p>
-{% endhighlight %}
-
-We can then link the button with the textual label using the `aria-labelledby` attribute on our faux-button.
-
-{% highlight html %}
-<div id="edit-button" role="button" aria-labelledby="edit-label"></div>
-{% endhighlight %}
-
-In order to hide the textual label visually on the screen, but not from assistive technology, we can position the label off screen.
 
 {% highlight css %}
-.hide {
-	position: absolute;
-	top: -20em;
-	left: -200em;
+.visually-hidden {
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
 }
 {% endhighlight %}
-
-When VoiceOver gains focus on the element, it will now read out the label, before describing the role.
 
 Final Note
 ----------
