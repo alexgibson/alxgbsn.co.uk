@@ -174,7 +174,10 @@ section.posts {
         border-bottom: 1px dotted #a7a7a7;
     }
     .feed {
-        font-weight: normal;
+        text-align: center;
+        a {
+            font-weight: normal;
+        }
     }
 }
 
