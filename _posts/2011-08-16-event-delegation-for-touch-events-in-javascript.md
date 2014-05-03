@@ -14,7 +14,7 @@ Here's a very basic example of how to capture a simulated 'tap' event:
 {% highlight javascript %}
 var tapArea, moved, startX, startY;
 
-tapArea = document.querySelector('#list'); //element to delegate
+tapArea = document.getElementById('list'); //element to delegate
 moved = false; //flags if the finger has moved
 startX = 0; //starting x coordinate
 startY = 0; //starting y coordinate
@@ -54,7 +54,7 @@ tapArea.ontouchend = function(e) {
 	if (!moved) {
         //check for the element type you want to capture
 		if (element.tagName.toLowerCase() === 'label') {
-            alert('tap');
+            console.log('tap!');
         }
 	}
 };
@@ -71,7 +71,7 @@ tapArea.ontouchcancel = function(e) {
 
 Notice here it is useful to make use of `touchmove` to detect any finger dragging gestures that might occur after a `touchstart` has fired. This way it is easy to cancel the 'tap' on `touchend` if desired.
 
-Update: Originally this article was using the function `document.elementFromPoint(x,y)` to get the element target in `ontouchend`. A few people have kindly pointed out that you can actually just use `e.changedTouches[0].target` or even `e.target` to get the same result for a simple 'tap'. It should be noted however, that the target attribute in this case always refers to the originating element, so if you do need to reference the element a finger might have moved on/off during `touchmove` or `touchend`, you would still need to use:
+Update: Originally this article was using the function `document.elementFromPoint(x,y)` to get the element target in `ontouchend`. A few people have kindly pointed out that you can actually just use `e.changedTouches[0].target` or even `e.target` to get the same result for a simple 'tap'. It should be noted however, that the target in this case always refers to the originating element, so if you do need to reference an element a finger might have moved on/off during `touchmove` or `touchend`, you would still need to use:
 
 {% highlight javascript %}
 document.elementFromPoint(e.changedTouches[0].clientX, e.changedTouches[0].clientY);
