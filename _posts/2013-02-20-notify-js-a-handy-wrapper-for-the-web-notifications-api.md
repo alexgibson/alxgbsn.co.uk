@@ -17,13 +17,26 @@ Installation
 ---------------------------------------
 
 * Download: [zip](https://github.com/alexgibson/notify.js/zipball/master)
+* [NPM](https://www.npmjs.org/): `npm install notifyjs`
 * [Bower](https://github.com/twitter/bower/): `bower install notify.js`
 * Git: `git clone https://github.com/alexgibson/notify.js`
 
 Setup
 ---------
 
-This component can be used as an AMD module, or a global.
+This component can be used as an AMD module, CommonJS module, or a global.
+
+### for AMD module:
+
+{% highlight javascript %}
+var Notify = require('notify');
+{% endhighlight %}
+
+### for CommonJS:
+
+{% highlight javascript %}
+var Notify = require('notifyjs');
+{% endhighlight %}
 
 To initialize a web notification create a new `Notify` instance, passing the message `title` as well as any other options you wish to use.
 
@@ -52,22 +65,23 @@ Required parameters
 Optional parameters
 -------------------
 
-* `body`: (string) - notification message body
-* `icon`: (string) - path for icon to display in notification
-* `tag`: (string) - unique identifier to stop duplicate notifications
-* `notifyShow`: (function) - callback when notification is shown
-* `notifyClose`: (function) - callback when notification is closed
-* `notifyClick`: (function) - callback when notification is clicked
-* `notifyError`: (function) - callback when notification throws an error
-* `permissionGranted`: (function) - callback when user has granted permission
-* `permissionDenied`: (function) - callback when user has denied permission
+* body: (string) - notification message body
+* icon: (string) - path for icon to display in notification
+* tag: (string) - unique identifier to stop duplicate notifications
+* timeout: (integer) - number of seconds to close the notification automatically
+* notifyShow: (function) - callback when notification is shown
+* notifyClose: (function) - callback when notification is closed
+* notifyClick: (function) - callback when notification is clicked
+* notifyError: (function) - callback when notification throws an error
+* permissionGranted: (function) - callback when user has granted permission
+* permissionDenied: (function) - callback when user has denied permission
 
 Useful methods
 --------------
 
-* `needsPermission()` - (returns boolean) check is permission is needed for the user to receive notifications.
-* `requestPermission()` - requests permission from the user if needed and handles permission callbacks.
-* `isSupported()` - (returns boolean) test for Web Notifications API browser support
+* `Notify.needsPermission()` - (returns boolean) check is permission is needed for the user to receive notifications.
+* `Notify.requestPermission()` - requests permission from the user if needed and handles permission callbacks.
+* `Notify.isSupported()` - (returns boolean) test for Web Notifications API browser support
 
 A note about Chrome
 -------------------
@@ -97,8 +111,3 @@ Browser support
 - Firefox
 - Firefox OS (v1.2+)
 - Firefox Mobile (Android)
-
-License
--------
-
-Notify.js is released under open source [MIT License](https://github.com/alexgibson/notify.js/blob/master/LICENSE.md).

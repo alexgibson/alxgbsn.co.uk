@@ -141,6 +141,35 @@ ul.social {
     li {
         margin: 0;
         padding: 0;
+
+        &:before {
+            font-family: 'FontAwesome';
+            font-style: normal;
+            font-weight: normal;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            margin-right: .5em;
+        }
+
+        &.github:before {
+            content: '\f09b';
+        }
+
+        &.twitter:before {
+            content: '\f099';
+        }
+
+        &.instagram:before {
+            content: '\f16d';
+        }
+
+        &.rss:before {
+            content: '\f09e';
+        }
+
+        &.email:before {
+            content: '\f1d8'
+        }
     }
 }
 
@@ -183,7 +212,7 @@ section.posts {
     article {
         border-bottom: 1px dotted #a7a7a7;
     }
-    .feed {
+    .rss {
         text-align: center;
         a {
             font-weight: normal;
@@ -288,32 +317,4 @@ form[role="search"] {
         height: 1px;
         overflow: hidden;
     }
-}
-
-a.icon:before {
-    font-family: 'FontAwesome';
-    font-style: normal;
-    font-weight: normal;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-a.github:before {
-    content: '\f09b\00a0';
-}
-
-a.twitter:before {
-    content: '\f099\00a0';
-}
-
-a.instagram:before {
-    content: '\f16d\00a0';
-}
-
-a.rss:before {
-    content: '\f09e\00a0';
-}
-
-a.email:before {
-    content: '\f1d8\00a0'
 }

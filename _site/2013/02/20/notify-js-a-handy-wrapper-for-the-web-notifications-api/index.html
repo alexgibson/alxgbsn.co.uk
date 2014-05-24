@@ -76,6 +76,7 @@
 
 <ul>
 <li>Download: <a href="https://github.com/alexgibson/notify.js/zipball/master">zip</a></li>
+<li><a href="https://www.npmjs.org/">NPM</a>: <code>npm install notifyjs</code></li>
 <li><a href="https://github.com/twitter/bower/">Bower</a>: <code>bower install notify.js</code></li>
 <li>Git: <code>git clone https://github.com/alexgibson/notify.js</code></li>
 </ul>
@@ -83,7 +84,19 @@
 
 <h2>Setup</h2>
 
-<p>This component can be used as an AMD module, or a global.</p>
+<p>This component can be used as an AMD module, CommonJS module, or a global.</p>
+
+<h3>for AMD module:</h3>
+
+<div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">Notify</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;notify&#39;</span><span class="p">);</span>
+</code></pre></div>
+
+
+<h3>for CommonJS:</h3>
+
+<div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">Notify</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;notifyjs&#39;</span><span class="p">);</span>
+</code></pre></div>
+
 
 <p>To initialize a web notification create a new <code>Notify</code> instance, passing the message <code>title</code> as well as any other options you wish to use.</p>
 
@@ -114,24 +127,25 @@
 <h2>Optional parameters</h2>
 
 <ul>
-<li><code>body</code>: (string) - notification message body</li>
-<li><code>icon</code>: (string) - path for icon to display in notification</li>
-<li><code>tag</code>: (string) - unique identifier to stop duplicate notifications</li>
-<li><code>notifyShow</code>: (function) - callback when notification is shown</li>
-<li><code>notifyClose</code>: (function) - callback when notification is closed</li>
-<li><code>notifyClick</code>: (function) - callback when notification is clicked</li>
-<li><code>notifyError</code>: (function) - callback when notification throws an error</li>
-<li><code>permissionGranted</code>: (function) - callback when user has granted permission</li>
-<li><code>permissionDenied</code>: (function) - callback when user has denied permission</li>
+<li>body: (string) - notification message body</li>
+<li>icon: (string) - path for icon to display in notification</li>
+<li>tag: (string) - unique identifier to stop duplicate notifications</li>
+<li>timeout: (integer) - number of seconds to close the notification automatically</li>
+<li>notifyShow: (function) - callback when notification is shown</li>
+<li>notifyClose: (function) - callback when notification is closed</li>
+<li>notifyClick: (function) - callback when notification is clicked</li>
+<li>notifyError: (function) - callback when notification throws an error</li>
+<li>permissionGranted: (function) - callback when user has granted permission</li>
+<li>permissionDenied: (function) - callback when user has denied permission</li>
 </ul>
 
 
 <h2>Useful methods</h2>
 
 <ul>
-<li><code>needsPermission()</code> - (returns boolean) check is permission is needed for the user to receive notifications.</li>
-<li><code>requestPermission()</code> - requests permission from the user if needed and handles permission callbacks.</li>
-<li><code>isSupported()</code> - (returns boolean) test for Web Notifications API browser support</li>
+<li><code>Notify.needsPermission()</code> - (returns boolean) check is permission is needed for the user to receive notifications.</li>
+<li><code>Notify.requestPermission()</code> - requests permission from the user if needed and handles permission callbacks.</li>
+<li><code>Notify.isSupported()</code> - (returns boolean) test for Web Notifications API browser support</li>
 </ul>
 
 
@@ -163,10 +177,6 @@ npm test
 <li>Firefox Mobile (Android)</li>
 </ul>
 
-
-<h2>License</h2>
-
-<p>Notify.js is released under open source <a href="https://github.com/alexgibson/notify.js/blob/master/LICENSE.md">MIT License</a>.</p>
 
 </section>
 
