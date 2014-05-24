@@ -134,6 +134,16 @@ aside[role="complimentary"] {
     box-shadow: 0 0 2px rgba(0,0,0,0.2), 0 3px 5px rgba(0,0,0,0.1);
 }
 
+ul.social {
+    list-style-type: none;
+    margin: 20px 0;
+    padding: 0;
+    li {
+        margin: 0;
+        padding: 0;
+    }
+}
+
 figure {
     display: block;
 
@@ -278,4 +288,32 @@ form[role="search"] {
         height: 1px;
         overflow: hidden;
     }
+}
+
+a.icon:before {
+    font-family: 'FontAwesome';
+    font-style: normal;
+    font-weight: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+a.github:before {
+    content: '\f09b\00a0';
+}
+
+a.twitter:before {
+    content: '\f099\00a0';
+}
+
+a.instagram:before {
+    content: '\f16d\00a0';
+}
+
+a.rss:before {
+    content: '\f09e\00a0';
+}
+
+a.email:before {
+    content: '\f1d8\00a0'
 }
