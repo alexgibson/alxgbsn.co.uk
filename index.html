@@ -11,7 +11,7 @@ desc: Alex Gibson is a front–end web developer living in Newcastle upon Tyne, 
   <h2>Words</h2>
     {% for post in site.posts %}
       <article>
-        <time pubdate datetime="{{ post.date }}">{{ post.date | date: "%b %d %Y" }}</time>
+        <time pubdate datetime="{{ post.date }}">{{ post.date | date: "%B %d %Y" }}</time>
         <h3><a rel="bookmark" href="{{ post.url }}">{{ post.title }}</a></h3>
       </article>
     {% endfor %}

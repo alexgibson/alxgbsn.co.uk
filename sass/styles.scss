@@ -61,6 +61,15 @@ time {
     font-style: italic;
     text-align: center;
     line-height: 1.3;
+    &:before {
+        font-family: 'FontAwesome';
+            font-style: normal;
+            font-weight: normal;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            margin-right: .5em;
+        content: '\f017';
+    }
 }
 
 code {
@@ -217,6 +226,15 @@ section.posts {
         a {
             font-weight: normal;
         }
+    }
+    .fork:before {
+        font-family: 'FontAwesome';
+        font-style: normal;
+        font-weight: normal;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        margin-right: .5em;
+        content:'\f126';
     }
 }
 
