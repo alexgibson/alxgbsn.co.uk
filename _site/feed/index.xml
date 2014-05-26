@@ -4,7 +4,7 @@
  <title>Alex Gibson, Front End Developer</title>
  <link href="http://alxgbsn.co.uk/feed/" rel="self"/>
  <link href="http://alxgbsn.co.uk/"/>
- <updated>2014-05-25T08:43:41+01:00</updated>
+ <updated>2014-05-26T07:22:32+01:00</updated>
  <id>http://alxgbsn.co.uk/</id>
  <author>
    <name>Alex Gibson</name>
@@ -192,6 +192,8 @@ npm test
 
 &lt;h2&gt;Installation&lt;/h2&gt;
 
+&lt;p&gt;Notify.js can be installed using any of the following options:&lt;/p&gt;
+
 &lt;ul&gt;
 &lt;li&gt;Download: &lt;a href=&quot;https://github.com/alexgibson/notify.js/zipball/master&quot;&gt;zip&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://www.npmjs.org/&quot;&gt;NPM&lt;/a&gt;: &lt;code&gt;npm install notifyjs&lt;/code&gt;&lt;/li&gt;
@@ -202,7 +204,13 @@ npm test
 
 &lt;h2&gt;Setup&lt;/h2&gt;
 
-&lt;p&gt;This component can be used as an AMD module, CommonJS module, or a global.&lt;/p&gt;
+&lt;p&gt;This component can be used as an AMD module, CommonJS module, or a browser global.&lt;/p&gt;
+
+&lt;h3&gt;for browser:&lt;/h3&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;notify.js&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
 
 &lt;h3&gt;for AMD module:&lt;/h3&gt;
 
@@ -238,27 +246,27 @@ npm test
 &lt;h2&gt;Required parameters&lt;/h2&gt;
 
 &lt;ul&gt;
-&lt;li&gt;title (string) - notification title&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;title&lt;/code&gt; (string) - notification title&lt;/li&gt;
 &lt;/ul&gt;
 
 
 &lt;h2&gt;Optional parameters&lt;/h2&gt;
 
 &lt;ul&gt;
-&lt;li&gt;body: (string) - notification message body&lt;/li&gt;
-&lt;li&gt;icon: (string) - path for icon to display in notification&lt;/li&gt;
-&lt;li&gt;tag: (string) - unique identifier to stop duplicate notifications&lt;/li&gt;
-&lt;li&gt;timeout: (integer) - number of seconds to close the notification automatically&lt;/li&gt;
-&lt;li&gt;notifyShow: (function) - callback when notification is shown&lt;/li&gt;
-&lt;li&gt;notifyClose: (function) - callback when notification is closed&lt;/li&gt;
-&lt;li&gt;notifyClick: (function) - callback when notification is clicked&lt;/li&gt;
-&lt;li&gt;notifyError: (function) - callback when notification throws an error&lt;/li&gt;
-&lt;li&gt;permissionGranted: (function) - callback when user has granted permission&lt;/li&gt;
-&lt;li&gt;permissionDenied: (function) - callback when user has denied permission&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;body&lt;/code&gt;: (string) - notification message body&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;icon&lt;/code&gt;: (string) - path for icon to display in notification&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;tag&lt;/code&gt;: (string) - unique identifier to stop duplicate notifications&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;timeout&lt;/code&gt;: (integer) - number of seconds to close the notification automatically&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;notifyShow&lt;/code&gt;: (function) - callback when notification is shown&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;notifyClose&lt;/code&gt;: (function) - callback when notification is closed&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;notifyClick&lt;/code&gt;: (function) - callback when notification is clicked&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;notifyError&lt;/code&gt;: (function) - callback when notification throws an error&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;permissionGranted&lt;/code&gt;: (function) - callback when user has granted permission&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;permissionDenied&lt;/code&gt;: (function) - callback when user has denied permission&lt;/li&gt;
 &lt;/ul&gt;
 
 
-&lt;h2&gt;Useful methods&lt;/h2&gt;
+&lt;h2&gt;Static methods&lt;/h2&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;Notify.needsPermission()&lt;/code&gt; - (returns boolean) check is permission is needed for the user to receive notifications.&lt;/li&gt;
@@ -275,15 +283,13 @@ npm test
 
 &lt;p&gt;Install &lt;a href=&quot;http://nodejs.org&quot;&gt;Node&lt;/a&gt;. Testing relies on the Karma test-runner, which can be installed globally using the following command.&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;
-npm install -g karma
-&lt;/code&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;npm install -g karma
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;In the project root, to perform a single pass of the tests using Firefox run:&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;
-npm test
-&lt;/code&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;npm test
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;h2&gt;Browser support&lt;/h2&gt;
 

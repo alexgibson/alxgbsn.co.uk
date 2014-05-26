@@ -10,9 +10,7 @@
   <meta name="author" content="Alex Gibson" />
 
   <!-- Prefetch DNS for external assets -->
-  <link rel="dns-prefetch" href="//platform.twitter.com" />
   <link rel="dns-prefetch" href="//www.google-analytics.com" />
-  <link rel="dns-prefetch" href="//p.twitter.com" />
   <link rel="dns-prefetch" href="//cdn.api.twitter.com" />
 
   <script src="/js/site.js"></script>
@@ -74,6 +72,8 @@
 
 <h2>Installation</h2>
 
+<p>Notify.js can be installed using any of the following options:</p>
+
 <ul>
 <li>Download: <a href="https://github.com/alexgibson/notify.js/zipball/master">zip</a></li>
 <li><a href="https://www.npmjs.org/">NPM</a>: <code>npm install notifyjs</code></li>
@@ -84,7 +84,13 @@
 
 <h2>Setup</h2>
 
-<p>This component can be used as an AMD module, CommonJS module, or a global.</p>
+<p>This component can be used as an AMD module, CommonJS module, or a browser global.</p>
+
+<h3>for browser:</h3>
+
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;notify.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+</code></pre></div>
+
 
 <h3>for AMD module:</h3>
 
@@ -120,27 +126,27 @@
 <h2>Required parameters</h2>
 
 <ul>
-<li>title (string) - notification title</li>
+<li><code>title</code> (string) - notification title</li>
 </ul>
 
 
 <h2>Optional parameters</h2>
 
 <ul>
-<li>body: (string) - notification message body</li>
-<li>icon: (string) - path for icon to display in notification</li>
-<li>tag: (string) - unique identifier to stop duplicate notifications</li>
-<li>timeout: (integer) - number of seconds to close the notification automatically</li>
-<li>notifyShow: (function) - callback when notification is shown</li>
-<li>notifyClose: (function) - callback when notification is closed</li>
-<li>notifyClick: (function) - callback when notification is clicked</li>
-<li>notifyError: (function) - callback when notification throws an error</li>
-<li>permissionGranted: (function) - callback when user has granted permission</li>
-<li>permissionDenied: (function) - callback when user has denied permission</li>
+<li><code>body</code>: (string) - notification message body</li>
+<li><code>icon</code>: (string) - path for icon to display in notification</li>
+<li><code>tag</code>: (string) - unique identifier to stop duplicate notifications</li>
+<li><code>timeout</code>: (integer) - number of seconds to close the notification automatically</li>
+<li><code>notifyShow</code>: (function) - callback when notification is shown</li>
+<li><code>notifyClose</code>: (function) - callback when notification is closed</li>
+<li><code>notifyClick</code>: (function) - callback when notification is clicked</li>
+<li><code>notifyError</code>: (function) - callback when notification throws an error</li>
+<li><code>permissionGranted</code>: (function) - callback when user has granted permission</li>
+<li><code>permissionDenied</code>: (function) - callback when user has denied permission</li>
 </ul>
 
 
-<h2>Useful methods</h2>
+<h2>Static methods</h2>
 
 <ul>
 <li><code>Notify.needsPermission()</code> - (returns boolean) check is permission is needed for the user to receive notifications.</li>
@@ -157,15 +163,13 @@
 
 <p>Install <a href="http://nodejs.org">Node</a>. Testing relies on the Karma test-runner, which can be installed globally using the following command.</p>
 
-<p><code>
-npm install -g karma
-</code></p>
+<pre><code>npm install -g karma
+</code></pre>
 
 <p>In the project root, to perform a single pass of the tests using Firefox run:</p>
 
-<p><code>
-npm test
-</code></p>
+<pre><code>npm test
+</code></pre>
 
 <h2>Browser support</h2>
 
@@ -180,18 +184,22 @@ npm test
 
 </section>
 
-    <form role="search" class="search" action="http://google.com/search" method="get" title="Search this site">
-  <label for="q">Search</label>
-  <input type="hidden" name="q" value="site:alxgbsn.co.uk" />
-  <input class="search" type="search" name="q" id="q" placeholder="Search this site&hellip;" />
-  <button type="submit">Search</button>
-</form>
-
     <footer role="contentinfo">
-	<p><a href="https://twitter.com/alex_gibson" class="twitter-follow-button" data-show-count="false" data-size="large" data-show-screen-name="false" data-dnt="true">Follow @alex_gibson</a></p>
+
+    <form role="search" class="search" action="http://google.com/search" method="get" title="Search this site">
+      <label for="q">Search</label>
+      <input type="hidden" name="q" value="site:alxgbsn.co.uk" />
+      <input class="search" type="search" name="q" id="q" placeholder="Search this site&hellip;" />
+      <button type="submit">Search</button>
+    </form>
+
+    <ul class="social">
+        <li class="rss"><a href="/feed/" title="RSS feed">Subscribe</a></li>
+        <li class="twitter"><a href="https://twitter.com/intent/user?screen_name=alex_gibson">Follow me on Twitter</a></li>
+    </ul>
+
 </footer>
 
   </main>
-  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 </body>
 </html>

@@ -16,6 +16,8 @@ There is a simple [online demo here](http://alxgbsn.co.uk/notify.js/). Installat
 Installation
 ---------------------------------------
 
+Notify.js can be installed using any of the following options:
+
 * Download: [zip](https://github.com/alexgibson/notify.js/zipball/master)
 * [NPM](https://www.npmjs.org/): `npm install notifyjs`
 * [Bower](https://github.com/twitter/bower/): `bower install notify.js`
@@ -24,7 +26,13 @@ Installation
 Setup
 ---------
 
-This component can be used as an AMD module, CommonJS module, or a global.
+This component can be used as an AMD module, CommonJS module, or a browser global.
+
+### for browser:
+
+{% highlight html %}
+<script src="notify.js"></script>
+{% endhighlight %}
 
 ### for AMD module:
 
@@ -60,23 +68,23 @@ myNotification.show();
 Required parameters
 -------------------
 
-* title (string) - notification title
+* `title` (string) - notification title
 
 Optional parameters
 -------------------
 
-* body: (string) - notification message body
-* icon: (string) - path for icon to display in notification
-* tag: (string) - unique identifier to stop duplicate notifications
-* timeout: (integer) - number of seconds to close the notification automatically
-* notifyShow: (function) - callback when notification is shown
-* notifyClose: (function) - callback when notification is closed
-* notifyClick: (function) - callback when notification is clicked
-* notifyError: (function) - callback when notification throws an error
-* permissionGranted: (function) - callback when user has granted permission
-* permissionDenied: (function) - callback when user has denied permission
+* `body`: (string) - notification message body
+* `icon`: (string) - path for icon to display in notification
+* `tag`: (string) - unique identifier to stop duplicate notifications
+* `timeout`: (integer) - number of seconds to close the notification automatically
+* `notifyShow`: (function) - callback when notification is shown
+* `notifyClose`: (function) - callback when notification is closed
+* `notifyClick`: (function) - callback when notification is clicked
+* `notifyError`: (function) - callback when notification throws an error
+* `permissionGranted`: (function) - callback when user has granted permission
+* `permissionDenied`: (function) - callback when user has denied permission
 
-Useful methods
+Static methods
 --------------
 
 * `Notify.needsPermission()` - (returns boolean) check is permission is needed for the user to receive notifications.
@@ -93,15 +101,11 @@ Testing
 
 Install [Node](http://nodejs.org). Testing relies on the Karma test-runner, which can be installed globally using the following command.
 
-```
-npm install -g karma
-```
+	npm install -g karma
 
 In the project root, to perform a single pass of the tests using Firefox run:
 
-```
-npm test
-```
+	npm test
 
 Browser support
 ---------------------------------------

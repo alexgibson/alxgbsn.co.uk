@@ -209,7 +209,6 @@ section.posts {
     time {
         float: right;
         margin: 0 0 .5em .5em;
-        font-style: normal;
     }
     h2 {
         text-align: center;
@@ -220,11 +219,8 @@ section.posts {
     }
     article {
         border-bottom: 1px dotted #a7a7a7;
-    }
-    .rss {
-        text-align: center;
-        a {
-            font-weight: normal;
+        &:last-child {
+            border-bottom: none;
         }
     }
     .fork:before {
@@ -242,6 +238,12 @@ section.post {
     margin-top: 2em;
 }
 
+.contact {
+    p, ul li {
+        text-align: center;
+    }
+}
+
 @media all and (max-width: 30em) {
     section.posts {
         time {
@@ -254,6 +256,7 @@ section.post {
 
 footer[role="contentinfo"] {
     display: block;
+    margin: 40px 0;
 
     p {
         text-align: center;
@@ -264,6 +267,14 @@ footer[role="contentinfo"] {
         margin: 0 auto;
         max-width: 35em;
         text-align: center;
+    }
+
+    .social li {
+        text-align: center;
+        margin-bottom: 20px;
+        a {
+            font-weight: normal;
+        }
     }
 }
 
@@ -276,7 +287,7 @@ form[role="search"] {
     width: 270px;
     height: 38px;
     margin: 0 auto;
-    padding: 15px 5px;
+    padding: 10px 5px;
     text-align: center;
     overflow: hidden;
 
