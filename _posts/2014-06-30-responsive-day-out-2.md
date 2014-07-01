@@ -52,25 +52,25 @@ The CSS Grid Layout Module also allows developers control over content ordering,
 
 For more on CSS Grid Layout, you can read [Rachel's blog post](http://rachelandrew.co.uk/archives/2014/06/27/css-grid-layout-getting-to-grips-with-the-chrome-implementation/) and see her [code examples](http://rachelandrew.co.uk/presentations/css-grid).
 
-Dan Donald: *CSS Element Queries*
----------------------------------
+Dan Donald: *Designing Evolution: Elements*
+-------------------------------------------
 
 [Dan Donald](http://hereinthehive.com/) talked about building flexible web components using [CSS Element Queries](http://ianstormtaylor.com/media-queries-are-a-hack/). These aren't actually a real thing (yet), but lots of folks have shown interest in wanting them, and Dan even built a [prototype](https://github.com/bbc-sport/responsive-modules) while he was working at the BBC to show how they might behave.
 
 There was some discussion on whether any browser vendors we're looking at implementing such a thing, and concensus seems to be that this is a somewhat difficult feature to implement, due to hard problems such as [circular dependencies](http://www.xanthir.com/b4PR0).
 
-Inayaili de León Persson: *Making Ubuntu responsive*
+Inayaili de León Persson: *Realistic Responsive Design*
 ----------------------------------------------------
 
 [Yaili](http://yaili.com/) talked about how to make an existing site responsive when you're not always able to start from scratch, using the [Ubuntu website](http://www.ubuntu.com/) as a case study. She discussed the processes in making sure the existing static desktop design went uneffected, whilst still making pages responsive and looking good on smaller screens. The main points here seemed to be to set priorities and keep goals in check during the process.
 
-Oliver Reichenstein: *Information Architecture*
------------------------------------------------
+Oliver Reichenstein: *The Container Model*
+------------------------------------------
 
-[Oliver Reichenstein](http://ia.net/) gave a very clever and humerous talk on information architecture, in which he made the case that home pages, site navigation and side bars are often badly designed simply due to internal politics. He argued that a single-column, [modular approach](http://next.theguardian.com/blog/container-model-blended-content/) to design works much better. Containers should be full width, and should never appear beside each other unless the contain directly related content.
+[Oliver Reichenstein](http://ia.net/) gave a very clever and humerous talk on information architecture, in which he made the case that home pages, site navigation and side bars are often badly designed simply due to internal politics. He argued that a single-column, [container model approach](http://next.theguardian.com/blog/container-model-blended-content/) works much better. Containers should be full width, and should never appear beside each other unless they contain directly related content.
 
-Kirsty Burgoine: *Mistakes and sucesses*
-----------------------------------------
+Kirsty Burgoine: *A Question of Deliverables*
+---------------------------------------------
 
 [Kirsty Burgoine](http://www.kirstyburgoine.co.uk/) gave another entertaining and humerous talk on some of her experiences building responsive websites for clients. The process of designing and building a website used to be relatively straight forward, with PSD design and hand-off for development being clearly defined, separate steps. But now we build responsive websites this is not as easy as it used to be. Kirsty discussed her processes and ways of helping to manage client expectations, together with the failures and sucesses she encountered along the way.
 
@@ -105,8 +105,8 @@ The `overflow-block` media feature can be used to control the behavior of a devi
 
 There was some discussion around this talk about why there seems to be so much work going on adding Media Query features that either aren't really that useful, or do not seem to be well thought out. Why are developers getting light-level sensor API's instead of really useful things, like CSS Element Queries? The concensus was that standards work takes time, and we don't often know what we want or need in advance. These features may have seemed like really clever additions a few years ago, but needs and wants change quickly.
 
-Ethan Marcotte: *Laziness*
-----------------------------------------
+Ethan Marcotte: *Laziness in the Time of Responsive Design*
+-----------------------------------------------------------
 
 [Ethan Marcotte](http://ethanmarcotte.com/) rounded off the day with a talk about keeping things simple. He describes himself as a lazy developer, but lazy in the sense that making smart decisions means you don't need to do as much work. Why design for multiple types of devices each with different interactions? If you're smart, you can design something that works well everywhere. Ethan also showed off some nice CSS techniques using `nth-child` selectors to create flexible grids.
 

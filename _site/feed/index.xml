@@ -4,7 +4,7 @@
  <title>Alex Gibson, Front End Developer</title>
  <link href="http://alxgbsn.co.uk/feed/" rel="self"/>
  <link href="http://alxgbsn.co.uk/"/>
- <updated>2014-07-01T21:50:55+01:00</updated>
+ <updated>2014-07-01T22:50:03+01:00</updated>
  <id>http://alxgbsn.co.uk/</id>
  <author>
    <name>Alex Gibson</name>
@@ -60,21 +60,21 @@
 
 &lt;p&gt;For more on CSS Grid Layout, you can read &lt;a href=&quot;http://rachelandrew.co.uk/archives/2014/06/27/css-grid-layout-getting-to-grips-with-the-chrome-implementation/&quot;&gt;Rachel's blog post&lt;/a&gt; and see her &lt;a href=&quot;http://rachelandrew.co.uk/presentations/css-grid&quot;&gt;code examples&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h2&gt;Dan Donald: &lt;em&gt;CSS Element Queries&lt;/em&gt;&lt;/h2&gt;
+&lt;h2&gt;Dan Donald: &lt;em&gt;Designing Evolution: Elements&lt;/em&gt;&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://hereinthehive.com/&quot;&gt;Dan Donald&lt;/a&gt; talked about building flexible web components using &lt;a href=&quot;http://ianstormtaylor.com/media-queries-are-a-hack/&quot;&gt;CSS Element Queries&lt;/a&gt;. These aren't actually a real thing (yet), but lots of folks have shown interest in wanting them, and Dan even built a &lt;a href=&quot;https://github.com/bbc-sport/responsive-modules&quot;&gt;prototype&lt;/a&gt; while he was working at the BBC to show how they might behave.&lt;/p&gt;
 
 &lt;p&gt;There was some discussion on whether any browser vendors we're looking at implementing such a thing, and concensus seems to be that this is a somewhat difficult feature to implement, due to hard problems such as &lt;a href=&quot;http://www.xanthir.com/b4PR0&quot;&gt;circular dependencies&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h2&gt;Inayaili de León Persson: &lt;em&gt;Making Ubuntu responsive&lt;/em&gt;&lt;/h2&gt;
+&lt;h2&gt;Inayaili de León Persson: &lt;em&gt;Realistic Responsive Design&lt;/em&gt;&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://yaili.com/&quot;&gt;Yaili&lt;/a&gt; talked about how to make an existing site responsive when you're not always able to start from scratch, using the &lt;a href=&quot;http://www.ubuntu.com/&quot;&gt;Ubuntu website&lt;/a&gt; as a case study. She discussed the processes in making sure the existing static desktop design went uneffected, whilst still making pages responsive and looking good on smaller screens. The main points here seemed to be to set priorities and keep goals in check during the process.&lt;/p&gt;
 
-&lt;h2&gt;Oliver Reichenstein: &lt;em&gt;Information Architecture&lt;/em&gt;&lt;/h2&gt;
+&lt;h2&gt;Oliver Reichenstein: &lt;em&gt;The Container Model&lt;/em&gt;&lt;/h2&gt;
 
-&lt;p&gt;&lt;a href=&quot;http://ia.net/&quot;&gt;Oliver Reichenstein&lt;/a&gt; gave a very clever and humerous talk on information architecture, in which he made the case that home pages, site navigation and side bars are often badly designed simply due to internal politics. He argued that a single-column, &lt;a href=&quot;http://next.theguardian.com/blog/container-model-blended-content/&quot;&gt;modular approach&lt;/a&gt; to design works much better. Containers should be full width, and should never appear beside each other unless the contain directly related content.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://ia.net/&quot;&gt;Oliver Reichenstein&lt;/a&gt; gave a very clever and humerous talk on information architecture, in which he made the case that home pages, site navigation and side bars are often badly designed simply due to internal politics. He argued that a single-column, &lt;a href=&quot;http://next.theguardian.com/blog/container-model-blended-content/&quot;&gt;container model approach&lt;/a&gt; works much better. Containers should be full width, and should never appear beside each other unless they contain directly related content.&lt;/p&gt;
 
-&lt;h2&gt;Kirsty Burgoine: &lt;em&gt;Mistakes and sucesses&lt;/em&gt;&lt;/h2&gt;
+&lt;h2&gt;Kirsty Burgoine: &lt;em&gt;A Question of Deliverables&lt;/em&gt;&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://www.kirstyburgoine.co.uk/&quot;&gt;Kirsty Burgoine&lt;/a&gt; gave another entertaining and humerous talk on some of her experiences building responsive websites for clients. The process of designing and building a website used to be relatively straight forward, with PSD design and hand-off for development being clearly defined, separate steps. But now we build responsive websites this is not as easy as it used to be. Kirsty discussed her processes and ways of helping to manage client expectations, together with the failures and sucesses she encountered along the way.&lt;/p&gt;
 
@@ -108,7 +108,7 @@
 
 &lt;p&gt;There was some discussion around this talk about why there seems to be so much work going on adding Media Query features that either aren't really that useful, or do not seem to be well thought out. Why are developers getting light-level sensor API's instead of really useful things, like CSS Element Queries? The concensus was that standards work takes time, and we don't often know what we want or need in advance. These features may have seemed like really clever additions a few years ago, but needs and wants change quickly.&lt;/p&gt;
 
-&lt;h2&gt;Ethan Marcotte: &lt;em&gt;Laziness&lt;/em&gt;&lt;/h2&gt;
+&lt;h2&gt;Ethan Marcotte: &lt;em&gt;Laziness in the Time of Responsive Design&lt;/em&gt;&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://ethanmarcotte.com/&quot;&gt;Ethan Marcotte&lt;/a&gt; rounded off the day with a talk about keeping things simple. He describes himself as a lazy developer, but lazy in the sense that making smart decisions means you don't need to do as much work. Why design for multiple types of devices each with different interactions? If you're smart, you can design something that works well everywhere. Ethan also showed off some nice CSS techniques using &lt;code&gt;nth-child&lt;/code&gt; selectors to create flexible grids.&lt;/p&gt;
 
