@@ -4,13 +4,121 @@
  <title>Alex Gibson, Front End Developer</title>
  <link href="http://alxgbsn.co.uk/feed/" rel="self"/>
  <link href="http://alxgbsn.co.uk/"/>
- <updated>2014-05-26T07:22:32+01:00</updated>
+ <updated>2014-07-01T21:50:55+01:00</updated>
  <id>http://alxgbsn.co.uk/</id>
  <author>
    <name>Alex Gibson</name>
    <email>alxgbsn@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Responsive Day Out 2 - The Squishening</title>
+   <link href="http://alxgbsn.co.uk/2014/06/30/responsive-day-out-2"/>
+   <updated>2014-06-30T00:00:00+01:00</updated>
+   <id>http://alxgbsn.co.uk/2014/06/30/responsive-day-out-2</id>
+   <content type="html">&lt;p&gt;On Friday 27 June I was in Brighton to attend &lt;a href=&quot;http://responsiveconf.com/&quot;&gt;Responsive Day Out 2: &lt;em&gt;The Squishening&lt;/em&gt;&lt;/a&gt;. It was a fun one day conference for designers and developers to share and discuss their workflow strategies, techniques and experiences with responsive web design. I usually go to more JavaScript focused events, but I am also keen to try and keep up with all the latest HTML/CSS talk, particularly when it comes to building responsive websites.&lt;/p&gt;
+
+&lt;p&gt;The general flow for the day made a nice change to the usual conference format. The day was split into three distinct parts, each featuring a series of speakers doing talks back-to-back. The talks we're then followed by a panel discussion between each section's speakers, led by &lt;a href=&quot;http://adactio.com/&quot;&gt;Jeremy&lt;/a&gt; fielding questions from the audience.&lt;/p&gt;
+
+&lt;p&gt;What follows here is not a full account of each talk, you can listen to the &lt;a href=&quot;http://huffduffer.com/adactio/tags/responsiveconf2&quot;&gt;audio recordings&lt;/a&gt; for that. This is more a collection of my main take-aways for the day, and what I found most interesting.&lt;/p&gt;
+
+&lt;h2&gt;Stephen Hay: &lt;em&gt;Scultping Text&lt;/em&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.the-haystack.com/&quot;&gt;Stephen Hay&lt;/a&gt; started the day off discussing the merits of using well structured content and semantic HTML to help “sculpt” a design. We have spent years designing websites using placeholder text and empty containers of colour yet to be filled with content. But how can we produce the best responsive designs for content we don't yet have? It seems backward and yet here we are. Stephen showed how to design directly around raw HTML content in the browser, starting with small screen sizes and then adding CSS rules and Media Query breakpoints that are dictated by the content, not the viewport size. Everyone seemed to agree it feels like common sense to work this way, yet it's still not practiced enough in reality.&lt;/p&gt;
+
+&lt;h2&gt;Sally Jenkinson: &lt;em&gt;More than Media Queries&lt;/em&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.sallyjenkinson.co.uk/&quot;&gt;Sally Jenkinson&lt;/a&gt; focused on designing websites responsibly, not just responsively. It takes much more than just figuring out CSS breakpoints. We can't forget about performance when concentrating on design requirements. Deadlines are often tight, but if we ship fast we must seriously consider the implications of any given choice.&lt;/p&gt;
+
+&lt;h2&gt;Ida Aalen: &lt;em&gt;The Core Model&lt;/em&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://iallenkelhet.no/&quot;&gt;Ida Aalen&lt;/a&gt; discussed what she considered to be the “core model” for information architecture, and focused on the work her team did for the &lt;a href=&quot;https://kreftforeningen.no/&quot;&gt;Norweigian Cancer Society&lt;/a&gt;. There we're some interesting statistics, particularly on dispelling common myth's such as &lt;em&gt;“people don't want to fill in web forms on mobile”&lt;/em&gt;. The core model approach looks to identify the main business goals and user needs, and apply them in a device agnostic way.&lt;/p&gt;
+
+&lt;h2&gt;Rachel Andrew: &lt;em&gt;CSS Grid Layout Module&lt;/em&gt;&lt;/h2&gt;
+
+&lt;p&gt;As a developer I found &lt;a href=&quot;http://www.rachelandrew.co.uk/&quot;&gt;Rachel Andrew's&lt;/a&gt; talk on the &lt;a href=&quot;http://dev.w3.org/csswg/css-grid/&quot;&gt;CSS Grid Layout Module&lt;/a&gt; the most interesting presentation of the day. This spec started out life as an initial implementation in IE10, but has since evolved considerably and been standardized. It is now available to test in Chrome Canary (currently behind a flag). The module gives developers the ability to define their own layout grids, columns and gutters, whilst still preserving a strict separation between markup and presentation.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;css&quot;&gt;&lt;span class=&quot;nc&quot;&gt;.wrapper&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;grid&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;grid&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;template&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;columns&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;200px&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;40px&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;auto&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;40px&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;200px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;grid&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;template&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rows&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;auto&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nc&quot;&gt;.content&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;grid&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;column&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;start&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;grid&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;column&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;grid&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;row&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;start&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;grid&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;row&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;There was discussion over why developers should use this over say, &lt;a href=&quot;http://www.w3.org/TR/css3-flexbox/&quot;&gt;CSS Flexbox&lt;/a&gt;. The feeling seems to be that Flexbox is great for smaller layout details, but is not as well suited to overall site layout. There was mention that Flexbox has &lt;a href=&quot;http://www.smashingmagazine.com/2013/05/23/building-the-new-financial-times-web-app-a-case-study/&quot;&gt;performance issues&lt;/a&gt;, although that has &lt;a href=&quot;http://updates.html5rocks.com/2013/10/Flexbox-layout-isn-t-slow&quot;&gt;been refuted&lt;/a&gt; by others.&lt;/p&gt;
+
+&lt;p&gt;The CSS Grid Layout Module also allows developers control over content ordering, which can be especially useful for responsive design on smaller viewports. There was an accessibility concern raised about re-ordering content in the discussion around this. Such things have already been possible for a while now with Flexbox, but it suffers from the side effect of &lt;em&gt;visual ordering&lt;/em&gt; becoming different from the &lt;em&gt;source ordering&lt;/em&gt; readaloud by screen readers. Will this implementation be the same? Jeremy pointed out that this has been a problem ever since we could to &lt;code&gt;position: absolute;&lt;/code&gt; in browsers.&lt;/p&gt;
+
+&lt;p&gt;For more on CSS Grid Layout, you can read &lt;a href=&quot;http://rachelandrew.co.uk/archives/2014/06/27/css-grid-layout-getting-to-grips-with-the-chrome-implementation/&quot;&gt;Rachel's blog post&lt;/a&gt; and see her &lt;a href=&quot;http://rachelandrew.co.uk/presentations/css-grid&quot;&gt;code examples&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2&gt;Dan Donald: &lt;em&gt;CSS Element Queries&lt;/em&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://hereinthehive.com/&quot;&gt;Dan Donald&lt;/a&gt; talked about building flexible web components using &lt;a href=&quot;http://ianstormtaylor.com/media-queries-are-a-hack/&quot;&gt;CSS Element Queries&lt;/a&gt;. These aren't actually a real thing (yet), but lots of folks have shown interest in wanting them, and Dan even built a &lt;a href=&quot;https://github.com/bbc-sport/responsive-modules&quot;&gt;prototype&lt;/a&gt; while he was working at the BBC to show how they might behave.&lt;/p&gt;
+
+&lt;p&gt;There was some discussion on whether any browser vendors we're looking at implementing such a thing, and concensus seems to be that this is a somewhat difficult feature to implement, due to hard problems such as &lt;a href=&quot;http://www.xanthir.com/b4PR0&quot;&gt;circular dependencies&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2&gt;Inayaili de León Persson: &lt;em&gt;Making Ubuntu responsive&lt;/em&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://yaili.com/&quot;&gt;Yaili&lt;/a&gt; talked about how to make an existing site responsive when you're not always able to start from scratch, using the &lt;a href=&quot;http://www.ubuntu.com/&quot;&gt;Ubuntu website&lt;/a&gt; as a case study. She discussed the processes in making sure the existing static desktop design went uneffected, whilst still making pages responsive and looking good on smaller screens. The main points here seemed to be to set priorities and keep goals in check during the process.&lt;/p&gt;
+
+&lt;h2&gt;Oliver Reichenstein: &lt;em&gt;Information Architecture&lt;/em&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://ia.net/&quot;&gt;Oliver Reichenstein&lt;/a&gt; gave a very clever and humerous talk on information architecture, in which he made the case that home pages, site navigation and side bars are often badly designed simply due to internal politics. He argued that a single-column, &lt;a href=&quot;http://next.theguardian.com/blog/container-model-blended-content/&quot;&gt;modular approach&lt;/a&gt; to design works much better. Containers should be full width, and should never appear beside each other unless the contain directly related content.&lt;/p&gt;
+
+&lt;h2&gt;Kirsty Burgoine: &lt;em&gt;Mistakes and sucesses&lt;/em&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.kirstyburgoine.co.uk/&quot;&gt;Kirsty Burgoine&lt;/a&gt; gave another entertaining and humerous talk on some of her experiences building responsive websites for clients. The process of designing and building a website used to be relatively straight forward, with PSD design and hand-off for development being clearly defined, separate steps. But now we build responsive websites this is not as easy as it used to be. Kirsty discussed her processes and ways of helping to manage client expectations, together with the failures and sucesses she encountered along the way.&lt;/p&gt;
+
+&lt;h2&gt;Stephanie Rieger: &lt;em&gt;CSS Media Queries Level 4&lt;/em&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://yiibu.com/&quot;&gt;Stephanie Rieger&lt;/a&gt; devled into &lt;a href=&quot;http://dev.w3.org/csswg/mediaqueries4/&quot;&gt;CSS Media Queries Level 4&lt;/a&gt; and dissected what browser vendors are currently working on when it comes to new media features. She covered various new media features in her talk, and questioned the practicality of some.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;css&quot;&gt;&lt;span class=&quot;k&quot;&gt;@media&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;scripting&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;:enabled&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;The &lt;code&gt;scripting&lt;/code&gt; media feature detects if JavaScript is enabled in the browser. This seems well intentioned enough, but is it actually all that useful? Lack of JS support should not be a problem if you're already using &lt;em&gt;progressive enhancement&lt;/em&gt;. More often than not, problems occur due to slow connectivity or scripts that fail.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;css&quot;&gt;&lt;span class=&quot;k&quot;&gt;@media&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;light-level&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;:dim&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;The &lt;code&gt;light-level&lt;/code&gt; media feature allows developers to apply specific CSS styles based on (one of three) different luminosity levels detected by a device sensor. Real world testing shows that many device sensors are either not calibrated correctly, or differ enough to make significant use of this pretty impractical.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;css&quot;&gt;&lt;span class=&quot;k&quot;&gt;@media&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;pointer&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;:coarse&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;The &lt;code&gt;pointer&lt;/code&gt; media type can be used to detect the primary type of pointing device avilable to a user. Values can be &lt;code&gt;none&lt;/code&gt; (e.g. TV), &lt;code&gt;coarse&lt;/code&gt; (e.g. touchscreen) or &lt;code&gt;fine&lt;/code&gt; (e.g. mouse or stylus). But what about devices with multiple input types? It is up to the user-agent to decide which is the primary input type, but what about users who switch inputs or prefer the secondary input type?&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;css&quot;&gt;&lt;span class=&quot;k&quot;&gt;@media&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;overflow-block&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;:scroll&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;The &lt;code&gt;overflow-block&lt;/code&gt; media feature can be used to control the behavior of a device when content overflows the viewport i.e. does it get cut off, or can you scroll?&lt;/p&gt;
+
+&lt;p&gt;There was some discussion around this talk about why there seems to be so much work going on adding Media Query features that either aren't really that useful, or do not seem to be well thought out. Why are developers getting light-level sensor API's instead of really useful things, like CSS Element Queries? The concensus was that standards work takes time, and we don't often know what we want or need in advance. These features may have seemed like really clever additions a few years ago, but needs and wants change quickly.&lt;/p&gt;
+
+&lt;h2&gt;Ethan Marcotte: &lt;em&gt;Laziness&lt;/em&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://ethanmarcotte.com/&quot;&gt;Ethan Marcotte&lt;/a&gt; rounded off the day with a talk about keeping things simple. He describes himself as a lazy developer, but lazy in the sense that making smart decisions means you don't need to do as much work. Why design for multiple types of devices each with different interactions? If you're smart, you can design something that works well everywhere. Ethan also showed off some nice CSS techniques using &lt;code&gt;nth-child&lt;/code&gt; selectors to create flexible grids.&lt;/p&gt;
+
+&lt;h2&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;I came away at the end of the day feeling glad that I made the effort to attend this small conference. I knew I would get a lot out of the technical talks, but I also got thinking about workflows and strategies more than I anticipated. It was a nice mixture and balance of speakers.&lt;/p&gt;
+
+&lt;p&gt;I also left with the impression that we still have a long way to go before we will really get the features we need to make building responsive websites easier. Browser vendors and spec writers are working on some seemingly great things, such as CSS Grids, but there is also a lot of piecemeal stuff being added to the Media Queries spec that either don't seem to be as valuable, or fall short in their real potential.&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>My first year working at Mozilla</title>
