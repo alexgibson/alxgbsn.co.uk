@@ -4,13 +4,22 @@
  <title>Alex Gibson, Front End Developer</title>
  <link href="http://alxgbsn.co.uk/feed/" rel="self"/>
  <link href="http://alxgbsn.co.uk/"/>
- <updated>2014-07-01T22:50:03+01:00</updated>
+ <updated>2014-08-18T15:16:16+01:00</updated>
  <id>http://alxgbsn.co.uk/</id>
  <author>
    <name>Alex Gibson</name>
    <email>alxgbsn@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Animating the Firefox desktop pages using CSS and SVG</title>
+   <link href="http://alxgbsn.co.uk/2014/08/18/animating-the-firefox-desktop-pages-using-css-and-svg"/>
+   <updated>2014-08-18T00:00:00+01:00</updated>
+   <id>http://alxgbsn.co.uk/2014/08/18/animating-the-firefox-desktop-pages-using-css-and-svg</id>
+   <content type="html">&lt;p&gt;I recently co-authored a post over on the Mozilla Web Development blog! It's a technical run through of how we did some of the CSS and SVG animations on the new &lt;a href=&quot;https://www.mozilla.org/firefox/desktop&quot;&gt;Firefox desktop web pages&lt;/a&gt; over on mozilla.org. If that's your sort of thing, you can &lt;a href=&quot;https://blog.mozilla.org/webdev/2014/08/14/animating-firefox-desktop/&quot;&gt;read the full article here&lt;/a&gt;.&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Responsive Day Out 2 - The Squishening</title>
