@@ -4,7 +4,7 @@
  <title>Alex Gibson, Front End Developer</title>
  <link href="http://alxgbsn.co.uk/feed/" rel="self"/>
  <link href="http://alxgbsn.co.uk/"/>
- <updated>2015-01-15T21:07:48+00:00</updated>
+ <updated>2015-01-15T21:22:10+00:00</updated>
  <id>http://alxgbsn.co.uk/</id>
  <author>
    <name>Alex Gibson</name>
@@ -26,9 +26,7 @@
 &lt;pre&gt;&lt;code&gt;mozregression --good=2014-10-01 --bad=2014-10-02 -a &quot;https://example.com&quot;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;After each run, mozregression asks you if the build is &quot;good&quot; or &quot;bad&quot; and then continues to narrow down the regression range until it finds when the bug was introduced. The process takes a while to run, but in the end it then spits out a pushlog like this:&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://hg.mozilla.org/integration/mozilla-inbound/pushloghtml?fromchange=33a3fd4d1970&amp;amp;tochange=28519d825a23&quot;&gt;https://hg.mozilla.org/integration/mozilla-inbound/pushloghtml?fromchange=33a3fd4d1970&amp;amp;tochange=28519d825a23&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;After each run, mozregression asks you if the build is &quot;good&quot; or &quot;bad&quot; and then continues to narrow down the regression range until it finds when the bug was introduced. The process takes a while to run, but in the end it then spits out a &lt;a href=&quot;https://hg.mozilla.org/integration/mozilla-inbound/pushloghtml?fromchange=33a3fd4d1970&amp;amp;tochange=28519d825a23&quot;&gt;pushlog like this&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;This helped narrowed down the cause of the regression considerably, and together with a &lt;a href=&quot;https://bug1083079.bugzilla.mozilla.org/attachment.cgi?id=8516184&quot;&gt;reduced test case&lt;/a&gt; we we&#39;re then able to work out which commit was the cause and get it fixed. The same patch also turned out to fix another bug that was effecting &lt;a href=&quot;https://bugzilla.mozilla.org/show_bug.cgi?id=1105762&quot;&gt;Leaflet.js maps&lt;/a&gt; in Firefox. Result!&lt;/p&gt;
 </content>
