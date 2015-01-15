@@ -61,7 +61,7 @@
       <h1>Building a PlayBook WebWorks app</h1>
     </header>
     <section class="post">
-  <time pubdate datetime="Mon Oct 03 00:00:00 +0100 2011">Published October 03 2011</time>
+  <time pubdate datetime="2011-10-03 00:00:00 +0100">Published October 03 2011</time>
   <p>I was recently hired to develop the front–end HTML, CSS and JavaScript for a BlackBerry PlayBook application, packaged using RIM's <a href="http://us.blackberry.com/developers/tablet/webworks.jsp">WebWorks SDK</a>. The main purpose of the app was to assist the user in consuming a large volume of digital content (in the form of text, images and video) via a streamlined, touch–friendly interface. Despite a reasonably small development window, the PlayBook browser and development tools proved to be very capable in getting the job done.</p>
 
 <p>What follows is a run down of the key HTML5 features used in the application, and how well they performed on the device. Please note the code shown in this article is simplified in places for the sake of clarity, and is by no means complete.</p>
@@ -72,7 +72,7 @@
 
 <p>Implementation was quite straight forward, with the application creating a simple WebSQL database on first launch, together with a single table called 'appdata' to act as a main store.</p>
 
-<div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">storage</span> <span class="o">=</span> <span class="p">{},</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">storage</span> <span class="o">=</span> <span class="p">{},</span>
     <span class="nx">myData</span> <span class="o">=</span> <span class="kc">null</span><span class="p">,</span>
     <span class="nx">dbName</span> <span class="o">=</span> <span class="s1">&#39;mydatabase&#39;</span><span class="p">,</span>
     <span class="nx">dbVersion</span> <span class="o">=</span> <span class="s1">&#39;1.0&#39;</span><span class="p">,</span>
@@ -108,13 +108,12 @@
     <span class="p">}</span>
 <span class="p">}</span>
 
-<span class="nx">initDatabase</span><span class="p">();</span>
-</code></pre></div>
+<span class="nx">initDatabase</span><span class="p">();</span></code></pre></div>
 
 
 <p>The application then makes a remote server call, and the JSON string returned as a response is then parsed and used immediately. At the same time, the data is saved asynchronously to the local database (in a single table row entry).</p>
 
-<div class="highlight"><pre><code class="javascript"><span class="kd">function</span> <span class="nx">getData</span> <span class="p">()</span> <span class="p">{</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">getData</span> <span class="p">()</span> <span class="p">{</span>
             
     <span class="kd">var</span> <span class="nx">myRequest</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>
 
@@ -146,13 +145,12 @@
         <span class="p">}</span> <span class="k">catch</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>             
             <span class="nx">handleDbError</span><span class="p">(</span><span class="nx">e</span><span class="p">);</span>
     <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
+<span class="p">}</span></code></pre></div>
 
 
 <p>If the app is later launched while offline, local data is then read back from the database and parsed back to an object, so the app only ever requires a single database read operation.</p>
 
-<div class="highlight"><pre><code class="javascript"><span class="kd">function</span> <span class="nx">throwReadError</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">throwReadError</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
     
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">code</span><span class="p">);</span>
@@ -174,8 +172,7 @@
         <span class="p">});</span>
 
     <span class="p">},</span> <span class="nx">throwReadError</span><span class="p">);</span>       
-<span class="p">}</span>
-</code></pre></div>
+<span class="p">}</span></code></pre></div>
 
 
 <p>The PlayBook coped with this size of data store very well. We never hit any bugs or performance issues. Updating the client data on subsequent app launches was also pretty trivial due to the very basic data store model. The PlayBook does not appear to ask the user for storage permission at any size of data we tested, although 50MB is likely the limit if other browsers are anything to go by.</p>
@@ -184,7 +181,7 @@
 
 <p>For offline detection the app initially used <code>navigator.Online</code>, which at first appears to be supported by the PlayBook Browser.</p>
 
-<div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">isOnline</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">navigator</span><span class="p">.</span><span class="nx">onLine</span><span class="p">;</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">isOnline</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">navigator</span><span class="p">.</span><span class="nx">onLine</span><span class="p">;</span>
 
 <span class="nx">initDatabase</span><span class="p">();</span>
                 
@@ -192,14 +189,12 @@
     <span class="nx">getData</span><span class="p">();</span>           
 <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
     <span class="nx">readFromDatabase</span><span class="p">();</span>
-<span class="p">}</span>
-</code></pre></div>
+<span class="p">}</span></code></pre></div>
 
 
 <p>However, once the first WebWorks build was made it became clear something was not right, since <code>navigator.Online</code> was always returning <code>true</code> on launch. This turns out to be an <a href="http://supportforums.blackberry.com/t5/Web-and-WebWorks-Development/Bug-report-navigator-onLine-incorrect-status/m-p/1214513/highlight/true#M15043">existing bug</a>, but one that can be easily fixed using a WebWorks API call for offline detection:</p>
 
-<div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">isOnline</span> <span class="o">=</span> <span class="s1">&#39;blackberry&#39;</span> <span class="k">in</span> <span class="nb">window</span> <span class="o">?</span> <span class="nx">blackberry</span><span class="p">.</span><span class="nx">system</span><span class="p">.</span><span class="nx">hasDataCoverage</span><span class="p">()</span> <span class="o">:</span> <span class="nb">window</span><span class="p">.</span><span class="nx">navigator</span><span class="p">.</span><span class="nx">onLine</span><span class="p">;</span>
-</code></pre></div>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">isOnline</span> <span class="o">=</span> <span class="s1">&#39;blackberry&#39;</span> <span class="k">in</span> <span class="nb">window</span> <span class="o">?</span> <span class="nx">blackberry</span><span class="p">.</span><span class="nx">system</span><span class="p">.</span><span class="nx">hasDataCoverage</span><span class="p">()</span> <span class="o">:</span> <span class="nb">window</span><span class="p">.</span><span class="nx">navigator</span><span class="p">.</span><span class="nx">onLine</span><span class="p">;</span></code></pre></div>
 
 
 <p>Notice here we use a simple feature detect using the <code>blackberry</code> window object, so we can carry on using <code>navigator.Online</code> in the browser (for development purposes).</p>
@@ -224,7 +219,7 @@
 
 <p>API wise, the app used 95% browser–based API's. The remaining areas where WebWorks had to step in were for small things, like opening external links in the PlayBook browser and providing native alert boxes.</p>
 
-<div class="highlight"><pre><code class="javascript"><span class="kd">function</span> <span class="nx">showAlert</span> <span class="p">(</span><span class="nx">message</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">showAlert</span> <span class="p">(</span><span class="nx">message</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">try</span> <span class="p">{</span>
         <span class="nx">blackberry</span><span class="p">.</span><span class="nx">ui</span><span class="p">.</span><span class="nx">dialog</span><span class="p">.</span><span class="nx">standardAskAsync</span><span class="p">(</span><span class="nx">message</span><span class="p">,</span> <span class="nx">blackberry</span><span class="p">.</span><span class="nx">ui</span><span class="p">.</span><span class="nx">dialog</span><span class="p">.</span><span class="nx">D_OK</span><span class="p">,</span> <span class="p">{</span>
             <span class="nx">title</span> <span class="o">:</span> <span class="s2">&quot;Alert&quot;</span><span class="p">,</span> 
@@ -240,8 +235,7 @@
 <span class="kd">function</span> <span class="nx">launchBrowser</span> <span class="p">(</span><span class="nx">url</span><span class="p">)</span> <span class="p">{</span>
     <span class="kd">var</span> <span class="nx">args</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">blackberry</span><span class="p">.</span><span class="nx">invoke</span><span class="p">.</span><span class="nx">BrowserArguments</span><span class="p">(</span><span class="nx">url</span><span class="p">);</span>
     <span class="nx">blackberry</span><span class="p">.</span><span class="nx">invoke</span><span class="p">.</span><span class="nx">invoke</span><span class="p">(</span><span class="nx">blackberry</span><span class="p">.</span><span class="nx">invoke</span><span class="p">.</span><span class="nx">APP_BROWSER</span><span class="p">,</span> <span class="nx">args</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div>
+<span class="p">}</span></code></pre></div>
 
 
 <h2>Remote debugging</h2>

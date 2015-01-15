@@ -61,7 +61,7 @@
       <h1>Responsive Day Out 2 - The Squishening</h1>
     </header>
     <section class="post">
-  <time pubdate datetime="Mon Jun 30 00:00:00 +0100 2014">Published June 30 2014</time>
+  <time pubdate datetime="2014-06-30 00:00:00 +0100">Published June 30 2014</time>
   <p>On Friday 27 June I was in Brighton to attend <a href="http://responsiveconf.com/">Responsive Day Out 2: <em>The Squishening</em></a>. It was a fun one day conference for designers and developers to share and discuss their workflow strategies, techniques and experiences with responsive web design. I usually go to more JavaScript focused events, but I am also keen to try and keep up with all the latest HTML/CSS talk, particularly when it comes to building responsive websites.</p>
 
 <p>The general flow for the day made a nice change to the usual conference format. The day was split into three distinct parts, each featuring a series of speakers doing talks back-to-back. The talks we're then followed by a panel discussion between each section's speakers, led by <a href="http://adactio.com/">Jeremy</a> fielding questions from the audience.</p>
@@ -84,7 +84,7 @@
 
 <p>As a developer I found <a href="http://www.rachelandrew.co.uk/">Rachel Andrew's</a> talk on the <a href="http://dev.w3.org/csswg/css-grid/">CSS Grid Layout Module</a> the most interesting presentation of the day. This spec started out life as an initial implementation in IE10, but has since evolved considerably and been standardized. It is now available to test in Chrome Canary (currently behind a flag). The module gives developers the ability to define their own layout grids, columns and gutters, whilst still preserving a strict separation between markup and presentation.</p>
 
-<div class="highlight"><pre><code class="css"><span class="nc">.wrapper</span> <span class="p">{</span>
+<div class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.wrapper</span> <span class="p">{</span>
     <span class="k">display</span><span class="o">:</span> <span class="n">grid</span><span class="p">;</span>
     <span class="n">grid</span><span class="o">-</span><span class="n">template</span><span class="o">-</span><span class="n">columns</span><span class="o">:</span> <span class="m">200px</span> <span class="m">40px</span> <span class="k">auto</span> <span class="m">40px</span> <span class="m">200px</span><span class="p">;</span>
     <span class="n">grid</span><span class="o">-</span><span class="n">template</span><span class="o">-</span><span class="n">rows</span><span class="o">:</span> <span class="k">auto</span> <span class="m">1</span><span class="n">fr</span><span class="p">;</span>
@@ -95,8 +95,7 @@
     <span class="n">grid</span><span class="o">-</span><span class="n">column</span><span class="o">-</span><span class="n">end</span><span class="o">:</span> <span class="m">4</span><span class="p">;</span>
     <span class="n">grid</span><span class="o">-</span><span class="n">row</span><span class="o">-</span><span class="n">start</span><span class="o">:</span> <span class="m">2</span><span class="p">;</span>
     <span class="n">grid</span><span class="o">-</span><span class="n">row</span><span class="o">-</span><span class="n">end</span><span class="o">:</span> <span class="m">3</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
+<span class="p">}</span></code></pre></div>
 
 
 <p>There was discussion over why developers should use this over say, <a href="http://www.w3.org/TR/css3-flexbox/">CSS Flexbox</a>. The feeling seems to be that Flexbox is great for smaller layout details, but is not as well suited to overall site layout. There was mention that Flexbox has <a href="http://www.smashingmagazine.com/2013/05/23/building-the-new-financial-times-web-app-a-case-study/">performance issues</a>, although that has <a href="http://updates.html5rocks.com/2013/10/Flexbox-layout-isn-t-slow">been refuted</a> by others.</p>
@@ -127,26 +126,22 @@
 
 <p><a href="http://yiibu.com/">Stephanie Rieger</a> devled into <a href="http://dev.w3.org/csswg/mediaqueries4/">CSS Media Queries Level 4</a> and dissected what browser vendors are currently working on when it comes to new media features. She covered various new media features in her talk, and questioned the practicality of some.</p>
 
-<div class="highlight"><pre><code class="css"><span class="k">@media</span> <span class="o">(</span><span class="nt">scripting</span><span class="nd">:enabled</span><span class="o">)</span> <span class="p">{}</span>
-</code></pre></div>
+<div class="highlight"><pre><code class="language-css" data-lang="css"><span class="k">@media</span> <span class="o">(</span><span class="nt">scripting</span><span class="nd">:enabled</span><span class="o">)</span> <span class="p">{}</span></code></pre></div>
 
 
 <p>The <code>scripting</code> media feature detects if JavaScript is enabled in the browser. This seems well intentioned enough, but is it actually all that useful? Lack of JS support should not be a problem if you're already using <em>progressive enhancement</em>. More often than not, problems occur due to slow connectivity or scripts that fail.</p>
 
-<div class="highlight"><pre><code class="css"><span class="k">@media</span> <span class="o">(</span><span class="nt">light-level</span><span class="nd">:dim</span><span class="o">)</span> <span class="p">{}</span>
-</code></pre></div>
+<div class="highlight"><pre><code class="language-css" data-lang="css"><span class="k">@media</span> <span class="o">(</span><span class="nt">light-level</span><span class="nd">:dim</span><span class="o">)</span> <span class="p">{}</span></code></pre></div>
 
 
 <p>The <code>light-level</code> media feature allows developers to apply specific CSS styles based on (one of three) different luminosity levels detected by a device sensor. Real world testing shows that many device sensors are either not calibrated correctly, or differ enough to make significant use of this pretty impractical.</p>
 
-<div class="highlight"><pre><code class="css"><span class="k">@media</span> <span class="o">(</span><span class="nt">pointer</span><span class="nd">:coarse</span><span class="o">)</span> <span class="p">{}</span>
-</code></pre></div>
+<div class="highlight"><pre><code class="language-css" data-lang="css"><span class="k">@media</span> <span class="o">(</span><span class="nt">pointer</span><span class="nd">:coarse</span><span class="o">)</span> <span class="p">{}</span></code></pre></div>
 
 
 <p>The <code>pointer</code> media type can be used to detect the primary type of pointing device avilable to a user. Values can be <code>none</code> (e.g. TV), <code>coarse</code> (e.g. touchscreen) or <code>fine</code> (e.g. mouse or stylus). But what about devices with multiple input types? It is up to the user-agent to decide which is the primary input type, but what about users who switch inputs or prefer the secondary input type?</p>
 
-<div class="highlight"><pre><code class="css"><span class="k">@media</span> <span class="o">(</span><span class="nt">overflow-block</span><span class="nd">:scroll</span><span class="o">)</span> <span class="p">{}</span>
-</code></pre></div>
+<div class="highlight"><pre><code class="language-css" data-lang="css"><span class="k">@media</span> <span class="o">(</span><span class="nt">overflow-block</span><span class="nd">:scroll</span><span class="o">)</span> <span class="p">{}</span></code></pre></div>
 
 
 <p>The <code>overflow-block</code> media feature can be used to control the behavior of a device when content overflows the viewport i.e. does it get cut off, or can you scroll?</p>

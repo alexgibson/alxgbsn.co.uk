@@ -61,19 +61,17 @@
       <h1>Make sure to use correct meta viewport syntax</h1>
     </header>
     <section class="post">
-  <time pubdate datetime="Wed Nov 23 00:00:00 +0000 2011">Published November 23 2011</time>
+  <time pubdate datetime="2011-11-23 00:00:00 +0000">Published November 23 2011</time>
   <p>When browsing the web it's not uncommon to come across two slight variations on the syntax for declaring meta viewport content values. It's a bit unclear how the two variations originated, but it should be noted that only one is correct, and using an incorrect syntax can actually create problems on certain web browsers.</p>
 
 <p>This is the correct syntax:</p>
 
-<div class="highlight"><pre><code class="html"><span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content=</span><span class="s">&quot;width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no&quot;</span> <span class="nt">/&gt;</span>
-</code></pre></div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content=</span><span class="s">&quot;width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no&quot;</span> <span class="nt">/&gt;</span></code></pre></div>
 
 
 <p>This is the incorrect syntax:</p>
 
-<div class="highlight"><pre><code class="html"><span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content=</span><span class="s">&quot;width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=no;&quot;</span> <span class="nt">/&gt;</span>
-</code></pre></div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content=</span><span class="s">&quot;width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=no;&quot;</span> <span class="nt">/&gt;</span></code></pre></div>
 
 
 <p>Notice the correct syntax uses comma separated values. The incorrect way is to use a semi-colon separator. There is also no real need for the separator on the last value, <code>user-scalable</code>.</p>
@@ -98,9 +96,8 @@ Viewport argument value "0;" for key "user-scalable" was truncated to its numeri
 
 <p>Update - for anyone wishing to use <code>width=device-width</code> without also setting <code>initial-scale=1.0</code>, the PlayBook can be tamed by inserting the legacy BlackBerry <code>HandheldFriendly</code> meta property before the viewport declaration:</p>
 
-<div class="highlight"><pre><code class="html"><span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;HandheldFriendly&quot;</span> <span class="na">content=</span><span class="s">&quot;True&quot;</span> <span class="nt">/&gt;</span>
-<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content=</span><span class="s">&quot;width=device-width&quot;</span> <span class="nt">/&gt;</span>
-</code></pre></div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;HandheldFriendly&quot;</span> <span class="na">content=</span><span class="s">&quot;True&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content=</span><span class="s">&quot;width=device-width&quot;</span> <span class="nt">/&gt;</span></code></pre></div>
 
 
 </section>

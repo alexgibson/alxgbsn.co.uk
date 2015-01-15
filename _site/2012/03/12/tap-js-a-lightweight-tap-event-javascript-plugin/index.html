@@ -61,7 +61,7 @@
       <h1>Tap.js - A lightweight ‘tap’ event JavaScript plugin</h1>
     </header>
     <section class="post">
-  <time pubdate datetime="Mon Mar 12 00:00:00 +0000 2012">Published March 12 2012</time>
+  <time pubdate datetime="2012-03-12 00:00:00 +0000">Published March 12 2012</time>
   <p>While the <a href="http://www.w3.org/TR/touch-events/">W3C touch events API</a> is quite flexible in its low-level implementation for dealing with multi-touch interaction, it means that the higher level gestures we use daily in our web apps can take <a href="http://alxgbsn.co.uk/2011/08/16/event-delegation-for-touch-events-in-javascript/">quite a lot of work</a> for developers to implement themselves, even down to the basic ‘tap’ event. Many mobile web frameworks already offer support for such gestures, but if your app does not use or require such a framework, something as simple as a 'tap' plugin can become a necessity on nearly every mobile project.</p>
 
 <p><a href="https://github.com/alexgibson/tap.js">Tap.js</a> is a simple, lightweight plugin for a common ‘tap’ gesture. It has no dependencies and can be used just like any regular JavaScript event, along with standard event listener syntax. It also falls back to using regular mouse events when touch is not supported, so you don't need to manually feature detect or provide two different event types in your code.</p>
@@ -70,30 +70,26 @@
 
 <p>First, include the main JavaScript file in the <head> of your HTML document:</p>
 
-<div class="highlight"><pre><code class="html"><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;tap.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
-</code></pre></div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;tap.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span></code></pre></div>
 
 
 <p>Next create a new Tap instance, passing the element you want to use:</p>
 
-<div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">el</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;my-id&#39;</span><span class="p">),</span>
-    <span class="nx">myTap</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Tap</span><span class="p">(</span><span class="nx">el</span><span class="p">);</span>
-</code></pre></div>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">el</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;my-id&#39;</span><span class="p">),</span>
+    <span class="nx">myTap</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Tap</span><span class="p">(</span><span class="nx">el</span><span class="p">);</span></code></pre></div>
 
 
 <p>You can then start listening for 'tap' events using the regular JavaScript event listener syntax:</p>
 
-<div class="highlight"><pre><code class="javascript"><span class="nx">el</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;tap&#39;</span><span class="p">,</span> <span class="nx">tapDidOccur</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span> 
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">el</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;tap&#39;</span><span class="p">,</span> <span class="nx">tapDidOccur</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span> 
 <span class="kd">function</span> <span class="nx">tapDidOccur</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1">//your code</span>
-<span class="p">}</span>
-</code></pre></div>
+<span class="p">}</span></code></pre></div>
 
 
 <p>You can stop listening for tap events like so:</p>
 
-<div class="highlight"><pre><code class="javascript"><span class="nx">el</span><span class="p">.</span><span class="nx">removeEventListener</span><span class="p">(</span><span class="s1">&#39;tap&#39;</span><span class="p">,</span> <span class="nx">tapDidOccur</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
-</code></pre></div>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">el</span><span class="p">.</span><span class="nx">removeEventListener</span><span class="p">(</span><span class="s1">&#39;tap&#39;</span><span class="p">,</span> <span class="nx">tapDidOccur</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span></code></pre></div>
 
 
 <p>Tap.js is open source and available on <a href="https://github.com/alexgibson/tap.js">GitHub</a>.</p>

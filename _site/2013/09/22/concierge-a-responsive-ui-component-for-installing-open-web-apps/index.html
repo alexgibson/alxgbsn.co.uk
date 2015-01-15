@@ -61,7 +61,7 @@
       <h1>Concierge - A responsive UI component for installing Open Web Apps.</h1>
     </header>
     <section class="post">
-  <time pubdate datetime="Sun Sep 22 00:00:00 +0100 2013">Published September 22 2013</time>
+  <time pubdate datetime="2013-09-22 00:00:00 +0100">Published September 22 2013</time>
   <p><a href="https://github.com/alexgibson/concierge">Concierge</a> is a responsive UI component for installing <a href="https://developer.mozilla.org/en-US/docs/Web/Apps">Open Web Apps</a> via the browser. It creates an automated “install” button that can be used in any web app, using app manifest meta data to populate the UI.</p>
 
 <h2>Features</h2>
@@ -90,13 +90,12 @@
 
 <p>This component can be used as an AMD module, or a global.</p>
 
-<div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">Concierge</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;concierge&#39;</span><span class="p">);</span>
-</code></pre></div>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">Concierge</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;concierge&#39;</span><span class="p">);</span></code></pre></div>
 
 
 <p>To use create a new <code>Concierge</code> instance, passing the relevant callbacks you need.</p>
 
-<div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">install</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Concierge</span><span class="p">({</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">install</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Concierge</span><span class="p">({</span>
     <span class="nx">onSuccess</span><span class="o">:</span> <span class="nx">successCallback</span><span class="p">,</span>
     <span class="nx">onError</span><span class="o">:</span> <span class="nx">errorCallback</span>
 <span class="p">});</span>
@@ -107,14 +106,12 @@
 
 <span class="kd">function</span> <span class="nx">errorCallback</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s1">&#39;Concierge() error: &#39;</span> <span class="o">+</span> <span class="nx">error</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div>
+<span class="p">}</span></code></pre></div>
 
 
 <p>Also make sure to include the CSS styles in your template.</p>
 
-<div class="highlight"><pre><code class="css"><span class="o">&lt;</span><span class="nt">link</span> <span class="nt">type</span><span class="o">=</span><span class="s2">&quot;text/css&quot;</span> <span class="nt">rel</span><span class="o">=</span><span class="s2">&quot;stylesheet&quot;</span> <span class="nt">href</span><span class="o">=</span><span class="s2">&quot;concierge.css&quot;</span> <span class="o">/&gt;</span>
-</code></pre></div>
+<div class="highlight"><pre><code class="language-css" data-lang="css"><span class="o">&lt;</span><span class="nt">link</span> <span class="nt">type</span><span class="o">=</span><span class="s2">&quot;text/css&quot;</span> <span class="nt">rel</span><span class="o">=</span><span class="s2">&quot;stylesheet&quot;</span> <span class="nt">href</span><span class="o">=</span><span class="s2">&quot;concierge.css&quot;</span> <span class="o">/&gt;</span></code></pre></div>
 
 
 <h2>Supported web browsers</h2>

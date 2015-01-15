@@ -61,7 +61,7 @@
       <h1>Notify.js - A handy wrapper for the Web Notifications API</h1>
     </header>
     <section class="post">
-  <time pubdate datetime="Wed Feb 20 00:00:00 +0000 2013">Published February 20 2013</time>
+  <time pubdate datetime="2013-02-20 00:00:00 +0000">Published February 20 2013</time>
   <p>I recently spent some time getting to grips with the <a href="http://www.w3.org/TR/notifications/">Web Notifications API</a>, which is currently supported in Chrome, Safari 6, and just recently in Firefox. It enables you to create growl-style notifications for web applications, and if you're on OSX it integrates really nicely with Notification Centre.</p>
 
 <p>I wanted to create something that I could easily resuse in different projects, so I wrote a JavaScript plugin called <a href="https://github.com/alexgibson/notify.js">Notify.js</a> that acts as a simplified wrapper for the API.</p>
@@ -88,39 +88,34 @@
 
 <h3>for browser:</h3>
 
-<div class="highlight"><pre><code class="html"><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;notify.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
-</code></pre></div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;notify.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span></code></pre></div>
 
 
 <h3>for AMD module:</h3>
 
-<div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">Notify</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;notify&#39;</span><span class="p">);</span>
-</code></pre></div>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">Notify</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;notify&#39;</span><span class="p">);</span></code></pre></div>
 
 
 <h3>for CommonJS:</h3>
 
-<div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">Notify</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;notifyjs&#39;</span><span class="p">);</span>
-</code></pre></div>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">Notify</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;notifyjs&#39;</span><span class="p">);</span></code></pre></div>
 
 
 <p>To initialize a web notification create a new <code>Notify</code> instance, passing the message <code>title</code> as well as any other options you wish to use.</p>
 
-<div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">myNotification</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Notify</span><span class="p">(</span><span class="s1">&#39;Yo dawg!&#39;</span><span class="p">,</span> <span class="p">{</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">myNotification</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Notify</span><span class="p">(</span><span class="s1">&#39;Yo dawg!&#39;</span><span class="p">,</span> <span class="p">{</span>
     <span class="nx">body</span><span class="o">:</span> <span class="s1">&#39;This is an awesome notification&#39;</span><span class="p">,</span>
     <span class="nx">notifyShow</span><span class="o">:</span> <span class="nx">onNotifyShow</span>
 <span class="p">});</span>
 
 <span class="kd">function</span> <span class="nx">onNotifyShow</span><span class="p">()</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;notification was shown!&#39;</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div>
+<span class="p">}</span></code></pre></div>
 
 
 <p>Then show the notification.</p>
 
-<div class="highlight"><pre><code class="javascript"><span class="nx">myNotification</span><span class="p">.</span><span class="nx">show</span><span class="p">();</span>
-</code></pre></div>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">myNotification</span><span class="p">.</span><span class="nx">show</span><span class="p">();</span></code></pre></div>
 
 
 <h2>Required parameters</h2>

@@ -61,7 +61,7 @@
       <h1>Taking Web Audio Offline in iOS 6 Safari</h1>
     </header>
     <section class="post">
-  <time pubdate datetime="Tue Nov 27 00:00:00 +0000 2012">Published November 27 2012</time>
+  <time pubdate datetime="2012-11-27 00:00:00 +0000">Published November 27 2012</time>
   <p>The following words are from of my first <a href="http://html5doctor.com/author/alexg/">guest post for HTML5 Doctor</a>. You can read the <a href="http://html5doctor.com/taking-web-audio-offline-in-ios-6-safari/">original article here</a>.</p>
 
 <p>Playing cached audio for offline use on iOS Safari has long been a challenge that has proved to be <a href="http://happyworm.com/blog/2012/05/29/playing-web-audio-offline-on-mobile-safari-mission-impossible/">mission impossible</a>. With the advent of the <a href="https://dvcs.w3.org/hg/audio/raw-file/tip/webaudio/specification.html">Web Audio API</a> however, it is now finally achievable (despite still needing to jump through a few hoops).</p>
@@ -84,21 +84,19 @@
 
 <p>In order to decode the base64 string back into an <a href="https://developer.mozilla.org/en/JavaScript_typed_arrays/ArrayBuffer">arrayBuffer</a>, you will need to use a custom method. Check out Daniele Guerrero's <a href="https://github.com/danguer/blog-examples/blob/master/js/base64-binary.js">base64-binary.js</a> as a good script that can be used exactly for this purpose. It decodes a base64 string into a <a href="https://developer.mozilla.org/en/JavaScript_typed_arrays/Uint8Array">Uint8Array</a> typed array and stores it in an <code>arrayBuffer</code>. Once this is done, it is then simply a case of decoding the audio data using the Web Audio API's <code>decodeAudioData()</code> method.</p>
 
-<div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">arrayBuff</span> <span class="o">=</span> <span class="nx">Base64Binary</span><span class="p">.</span><span class="nx">decodeArrayBuffer</span><span class="p">(</span><span class="nx">sound</span><span class="p">);</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">arrayBuff</span> <span class="o">=</span> <span class="nx">Base64Binary</span><span class="p">.</span><span class="nx">decodeArrayBuffer</span><span class="p">(</span><span class="nx">sound</span><span class="p">);</span>
 
 <span class="nx">myAudioContext</span><span class="p">.</span><span class="nx">decodeAudioData</span><span class="p">(</span><span class="nx">arrayBuff</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">audioData</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">myBuffer</span> <span class="o">=</span> <span class="nx">audioData</span><span class="p">;</span>
-<span class="p">});</span>
-</code></pre></div>
+<span class="p">});</span></code></pre></div>
 
 
 <p>Once you have the audio data decoded, it is just a case of passing it to your audio buffer source and playing the sound.</p>
 
-<div class="highlight"><pre><code class="javascript"><span class="nx">mySource</span> <span class="o">=</span> <span class="nx">myAudioContext</span><span class="p">.</span><span class="nx">createBufferSource</span><span class="p">();</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">mySource</span> <span class="o">=</span> <span class="nx">myAudioContext</span><span class="p">.</span><span class="nx">createBufferSource</span><span class="p">();</span>
 <span class="nx">mySource</span><span class="p">.</span><span class="nx">buffer</span> <span class="o">=</span> <span class="nx">myBuffer</span><span class="p">;</span>
 <span class="nx">mySource</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="nx">myAudioContext</span><span class="p">.</span><span class="nx">destination</span><span class="p">);</span>
-<span class="nx">mySource</span><span class="p">.</span><span class="nx">noteOn</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
-</code></pre></div>
+<span class="nx">mySource</span><span class="p">.</span><span class="nx">noteOn</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span></code></pre></div>
 
 
 <h2>Full demo and source code</h2>

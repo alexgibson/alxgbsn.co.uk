@@ -61,14 +61,14 @@
       <h1>Event delegation for touch events in JavaScript</h1>
     </header>
     <section class="post">
-  <time pubdate datetime="Tue Aug 16 00:00:00 +0100 2011">Published August 16 2011</time>
+  <time pubdate datetime="2011-08-16 00:00:00 +0100">Published August 16 2011</time>
   <p>Anyone who has experience developing web applications on mobile devices will have no doubt encountered the 300ms delay when firing <code>click</code> events in web browsers such as Mobile Safari. There are some useful <a href="https://github.com/cheeaun/tappable">standalone plugins</a> and <a href="http://code.google.com/mobile/articles/fast_buttons.html">informative articles</a> to help combat this delay, but this post aims to show a super–quick example of how to do simulated 'tap' events on dynamic content using JavaScript event delegation.</p>
 
 <p>A common technique when dealing with <code>click</code> events in dynamic content is to use event delegation to capture events bubbling up through the DOM. This same technique can be applied to touch events, although it is a little more difficult since there are at least four different events to capture; <code>touchstart</code>, <code>touchmove</code>, <code>touchend</code> and <code>touchcancel</code>.</p>
 
 <p>Here's a very basic example of how to capture a simulated 'tap' event:</p>
 
-<div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">tapArea</span><span class="p">,</span> <span class="nx">moved</span><span class="p">,</span> <span class="nx">startX</span><span class="p">,</span> <span class="nx">startY</span><span class="p">;</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">tapArea</span><span class="p">,</span> <span class="nx">moved</span><span class="p">,</span> <span class="nx">startX</span><span class="p">,</span> <span class="nx">startY</span><span class="p">;</span>
 
 <span class="nx">tapArea</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;list&#39;</span><span class="p">);</span> <span class="c1">//element to delegate</span>
 <span class="nx">moved</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span> <span class="c1">//flags if the finger has moved</span>
@@ -122,16 +122,14 @@
     <span class="nx">moved</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
     <span class="nx">startX</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
     <span class="nx">startY</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">};</span>
-</code></pre></div>
+<span class="p">};</span></code></pre></div>
 
 
 <p>Notice here it is useful to make use of <code>touchmove</code> to detect any finger dragging gestures that might occur after a <code>touchstart</code> has fired. This way it is easy to cancel the 'tap' on <code>touchend</code> if desired.</p>
 
 <p>Update: Originally this article was using the function <code>document.elementFromPoint(x,y)</code> to get the element target in <code>ontouchend</code>. A few people have kindly pointed out that you can actually just use <code>e.changedTouches[0].target</code> or even <code>e.target</code> to get the same result for a simple 'tap'. It should be noted however, that the target in this case always refers to the originating element, so if you do need to reference an element a finger might have moved on/off during <code>touchmove</code> or <code>touchend</code>, you would still need to use:</p>
 
-<div class="highlight"><pre><code class="javascript"><span class="nb">document</span><span class="p">.</span><span class="nx">elementFromPoint</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">changedTouches</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">clientX</span><span class="p">,</span> <span class="nx">e</span><span class="p">.</span><span class="nx">changedTouches</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">clientY</span><span class="p">);</span>
-</code></pre></div>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nb">document</span><span class="p">.</span><span class="nx">elementFromPoint</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">changedTouches</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">clientX</span><span class="p">,</span> <span class="nx">e</span><span class="p">.</span><span class="nx">changedTouches</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">clientY</span><span class="p">);</span></code></pre></div>
 
 
 <p>Life would be so much easier if we had a native 'tap' event in mobile browsers!</p>

@@ -61,7 +61,7 @@
       <h1>Fun with Web Audio and other modern API's</h1>
     </header>
     <section class="post">
-  <time pubdate datetime="Sun Sep 09 00:00:00 +0100 2012">Published September 09 2012</time>
+  <time pubdate datetime="2012-09-09 00:00:00 +0100">Published September 09 2012</time>
   <p>Of all the new JavaScript API's becoming available in web browsers today, the <a href="https://dvcs.w3.org/hg/audio/raw-file/tip/webaudio/specification.html">Web Audio API</a> has to be one of the most exciting recent additions for web app and HTML5 game developers. This API opens a whole range of new possibilities, and requires very little knowledge of DSP to achieve some pretty impressive results. In short, it offers the developer a lot more scope and control when compared to <del>using</del> abusing the poor old <a href="http://html5doctor.com/native-audio-in-the-browser/">HTML5 Audio element</a>.</p>
 
 <h2>The Web Audio API</h2>
@@ -74,7 +74,7 @@
 
 <p>Please note that the current WebKit implementation shown in the code examples below may differ from the final unprefixed version, according to the official <a href="https://dvcs.w3.org/hg/audio/raw-file/tip/webaudio/specification.html">W3C specification</a>.</p>
 
-<div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">myAudioContext</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">webkitAudioContext</span><span class="p">();</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">myAudioContext</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">webkitAudioContext</span><span class="p">();</span>
 <span class="kd">var</span> <span class="nx">myAudioAnalyser</span> <span class="o">=</span> <span class="nx">myAudioContext</span><span class="p">.</span><span class="nx">createAnalyser</span><span class="p">();</span>
 <span class="kd">var</span> <span class="nx">source</span> <span class="o">=</span> <span class="nx">myAudioContext</span><span class="p">.</span><span class="nx">createOscillator</span><span class="p">();</span>
 <span class="kd">var</span> <span class="nx">nodes</span> <span class="o">=</span> <span class="p">{};</span>
@@ -82,31 +82,28 @@
 <span class="nx">nodes</span><span class="p">.</span><span class="nx">filter</span> <span class="o">=</span> <span class="nx">myAudioContext</span><span class="p">.</span><span class="nx">createBiquadFilter</span><span class="p">();</span>  
 <span class="nx">nodes</span><span class="p">.</span><span class="nx">volume</span> <span class="o">=</span> <span class="nx">myAudioContext</span><span class="p">.</span><span class="nx">createGainNode</span><span class="p">();</span>
 <span class="nx">nodes</span><span class="p">.</span><span class="nx">delay</span> <span class="o">=</span> <span class="nx">myAudioContext</span><span class="p">.</span><span class="nx">createDelayNode</span><span class="p">();</span>
-<span class="nx">nodes</span><span class="p">.</span><span class="nx">feedbackGain</span> <span class="o">=</span> <span class="nx">myAudioContext</span><span class="p">.</span><span class="nx">createGainNode</span><span class="p">();</span>
-</code></pre></div>
+<span class="nx">nodes</span><span class="p">.</span><span class="nx">feedbackGain</span> <span class="o">=</span> <span class="nx">myAudioContext</span><span class="p">.</span><span class="nx">createGainNode</span><span class="p">();</span></code></pre></div>
 
 
 <p>The <code>source</code> is then routed through the processor <code>nodes</code> and connected to the audio context destination (i.e. the speakers).</p>
 
-<div class="highlight"><pre><code class="javascript"><span class="nx">source</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="nx">nodes</span><span class="p">.</span><span class="nx">filter</span><span class="p">);</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">source</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="nx">nodes</span><span class="p">.</span><span class="nx">filter</span><span class="p">);</span>
 <span class="nx">nodes</span><span class="p">.</span><span class="nx">filter</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="nx">nodes</span><span class="p">.</span><span class="nx">volume</span><span class="p">);</span>
 <span class="nx">nodes</span><span class="p">.</span><span class="nx">filter</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="nx">nodes</span><span class="p">.</span><span class="nx">delay</span><span class="p">);</span>
 <span class="nx">nodes</span><span class="p">.</span><span class="nx">delay</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="nx">nodes</span><span class="p">.</span><span class="nx">feedbackGain</span><span class="p">);</span>
 <span class="nx">nodes</span><span class="p">.</span><span class="nx">feedbackGain</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="nx">nodes</span><span class="p">.</span><span class="nx">volume</span><span class="p">);</span>
 <span class="nx">nodes</span><span class="p">.</span><span class="nx">feedbackGain</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="nx">nodes</span><span class="p">.</span><span class="nx">delay</span><span class="p">);</span>
 <span class="nx">nodes</span><span class="p">.</span><span class="nx">volume</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="nx">myAudioAnalyser</span><span class="p">);</span>
-<span class="nx">myAudioAnalyser</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="nx">myAudioContext</span><span class="p">.</span><span class="nx">destination</span><span class="p">);</span>
-</code></pre></div>
+<span class="nx">myAudioAnalyser</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="nx">myAudioContext</span><span class="p">.</span><span class="nx">destination</span><span class="p">);</span></code></pre></div>
 
 
 <h2>Responding to user input</h2>
 
 <p>Touching the user interface surface manipulates the oscillator frequency along the <code>x</code> axis, and the filter cutoff value along the <code>y</code> axis. To start the sound, <code>source.noteOn(0)</code> is called.</p>
 
-<div class="highlight"><pre><code class="javascript"><span class="nx">source</span><span class="p">.</span><span class="nx">frequency</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="nx">x</span><span class="p">;</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">source</span><span class="p">.</span><span class="nx">frequency</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="nx">x</span><span class="p">;</span>
 <span class="nx">nodes</span><span class="p">.</span><span class="nx">filter</span><span class="p">.</span><span class="nx">frequency</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="nx">y</span><span class="p">;</span>
-<span class="nx">source</span><span class="p">.</span><span class="nx">noteOn</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
-</code></pre></div>
+<span class="nx">source</span><span class="p">.</span><span class="nx">noteOn</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span></code></pre></div>
 
 
 <p>There are a range of different waveforms to use in the main oscillator, and multiple different filter types to experiment with. It's more a musical toy than anything serious, but it can produce some interesting sci-fi effects and spaced-out synth sounds by using different delay times and feedback settings. If you haven't already, have some fun and <a href="http://alxgbsn.co.uk/wavepad">try it out</a>.</p>
@@ -117,47 +114,43 @@
 
 <p>Canvas animation frame rate is handled by the browser using <a href="http://paulirish.com/2011/requestanimationframe-for-smart-animating/">requestAnimationFrame</a>. This helps to achieve smoother animation and better browser performance. It is also better for your CPU (and battery), as <abbr title="requestAnimationFrame">rAF</abbr> will automatically pause animation when the browser tab is not visible.</p>
 
-<div class="highlight"><pre><code class="javascript"><span class="kd">function</span> <span class="nx">animateSpectrum</span> <span class="p">()</span> <span class="p">{</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">animateSpectrum</span> <span class="p">()</span> <span class="p">{</span>
     <span class="kd">var</span> <span class="nx">mySpectrum</span> <span class="o">=</span> <span class="nx">requestAnimationFrame</span><span class="p">(</span><span class="nx">animateSpectrum</span><span class="p">,</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;canvas&#39;</span><span class="p">));</span>
     <span class="nx">drawSpectrum</span><span class="p">();</span>
-<span class="p">}</span>
-</code></pre></div>
+<span class="p">}</span></code></pre></div>
 
 
 <h2>CSS Filter effects</h2>
 
 <p>The red blur effect on the finger tracking element is achieved using <a href="http://www.html5rocks.com/en/tutorials/filters/understanding-css/">CSS filter effects</a>.</p>
 
-<div class="highlight"><pre><code class="css"><span class="nc">.blurred</span> <span class="p">{</span>
+<div class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.blurred</span> <span class="p">{</span>
     <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">filter</span><span class="o">:</span> <span class="n">blur</span><span class="p">(</span><span class="m">5px</span><span class="p">);</span>
     <span class="n">filter</span><span class="o">:</span> <span class="n">blur</span><span class="p">(</span><span class="m">5px</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div>
+<span class="p">}</span></code></pre></div>
 
 
 <h2>window.matchMedia</h2>
 
 <p>The adaptive user interface switches to a mobile optimised interface when the viewport is smaller than a set threshold. This is done using the <a href="https://developer.mozilla.org/en-US/docs/DOM/window.matchMedia">matchMedia</a> API to detect CSS Media Queries in JavaScript.</p>
 
-<div class="highlight"><pre><code class="javascript"><span class="k">if</span> <span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">matchMedia</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="k">if</span> <span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">matchMedia</span><span class="p">)</span> <span class="p">{</span>
     <span class="kd">var</span> <span class="nx">isSmallViewport</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">matchMedia</span><span class="p">(</span><span class="s2">&quot;(max-width: 512px)&quot;</span><span class="p">).</span><span class="nx">matches</span> <span class="o">?</span> <span class="kc">true</span> <span class="o">:</span> <span class="kc">false</span><span class="p">;</span>
 
     <span class="nb">window</span><span class="p">.</span><span class="nx">matchMedia</span><span class="p">(</span><span class="s2">&quot;(max-width: 512px)&quot;</span><span class="p">).</span><span class="nx">addListener</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">mql</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">isSmallViewport</span> <span class="o">=</span> <span class="nx">mql</span><span class="p">.</span><span class="nx">matches</span> <span class="o">?</span> <span class="kc">true</span> <span class="o">:</span> <span class="kc">false</span><span class="p">;</span>
     <span class="p">});</span>
-<span class="p">}</span>
-</code></pre></div>
+<span class="p">}</span></code></pre></div>
 
 
 <h2>classList API</h2>
 
 <p>CSS active and pressed states are applied using the handy new <a href="https://developer.mozilla.org/en-US/docs/DOM/element.classList">classList API</a>. This makes adding and removing multiple class names in CSS much less of a chore.</p>
 
-<div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">finger</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;.finger&#39;</span><span class="p">);</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">finger</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;.finger&#39;</span><span class="p">);</span>
 
 <span class="nx">finger</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">&#39;active&#39;</span><span class="p">);</span> 
-<span class="nx">finger</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">remove</span><span class="p">(</span><span class="s1">&#39;active&#39;</span><span class="p">);</span>
-</code></pre></div>
+<span class="nx">finger</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">remove</span><span class="p">(</span><span class="s1">&#39;active&#39;</span><span class="p">);</span></code></pre></div>
 
 
 <h2>Page Visibility API</h2>

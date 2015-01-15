@@ -61,21 +61,19 @@
       <h1>Enable CSS active pseudo styles in Mobile Safari</h1>
     </header>
     <section class="post">
-  <time pubdate datetime="Mon Oct 17 00:00:00 +0100 2011">Published October 17 2011</time>
+  <time pubdate datetime="2011-10-17 00:00:00 +0100">Published October 17 2011</time>
   <p>By default Mobile Safari disables CSS active pseudo styles on web pages, instead opting for a generic tap–highlight colour on clickable elements. A little known trick is that you can easily re-enable your active pseudo styles by declaring a <code>touchstart</code> event on the page. You don't even need to actually use the event, simply declaring an empty function will suffice.</p>
 
 <p>Just add the following single line of JavaScript to your web page and all your active CSS styles will spring to life.</p>
 
-<div class="highlight"><pre><code class="javascript"><span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;touchstart&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{},</span><span class="kc">false</span><span class="p">);</span>
-</code></pre></div>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;touchstart&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{},</span><span class="kc">false</span><span class="p">);</span></code></pre></div>
 
 
 <p>Note: if you do this trick it is also worth removing the default <code>tap–highlight</code> colour Mobile Safari applies using the following CSS rule.</p>
 
-<div class="highlight"><pre><code class="css"><span class="nt">html</span> <span class="p">{</span>
+<div class="highlight"><pre><code class="language-css" data-lang="css"><span class="nt">html</span> <span class="p">{</span>
     <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">tap</span><span class="o">-</span><span class="n">highlight</span><span class="o">-</span><span class="k">color</span><span class="o">:</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="o">,</span><span class="m">0</span><span class="o">,</span><span class="m">0</span><span class="o">,</span><span class="m">0</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div>
+<span class="p">}</span></code></pre></div>
 
 
 <p>On a related note, there are also some other useful mobile Webkit oddities that can activated by using empty event declarations, like <a href="http://krijnhoetmer.nl/stuff/javascript/label-checkbox-ios/">making form labels clickable</a>.</p>

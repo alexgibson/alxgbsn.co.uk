@@ -61,7 +61,7 @@
       <h1>Visibility.js - A cross-browser plugin for using the Page Visibility API</h1>
     </header>
     <section class="post">
-  <time pubdate datetime="Thu Apr 04 00:00:00 +0100 2013">Published April 04 2013</time>
+  <time pubdate datetime="2013-04-04 00:00:00 +0100">Published April 04 2013</time>
   <p>Since the <a href="http://www.w3.org/TR/page-visibility/">Page Visibility API</a> now has fairly wide <a href="http://caniuse.com/#feat=pagevisibility">browser support</a>, I decided to put together a simple component for handling and detecting web page visibility changes. Because most browsers still use this feature under an experimental vendor prefix, the JavaScript can be somewhat clumbersome and a pain to rewrite. <a href="https://github.com/alexgibson/visibility.js">Visibility.js</a> handles all the vendor prefix messiness for you, and provides a simple API for registering visibility change callbacks.</p>
 
 <h2>Installation</h2>
@@ -79,7 +79,7 @@
 
 <p>To use create a new <code>Visibility</code> instance, passing the relevant callbacks you need.</p>
 
-<div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">page</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Visibility</span><span class="p">({</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">page</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Visibility</span><span class="p">({</span>
     <span class="nx">onHidden</span><span class="o">:</span> <span class="nx">hiddenCallback</span><span class="p">,</span> 
     <span class="nx">onVisible</span><span class="o">:</span> <span class="nx">visibleCallback</span>
 <span class="p">});</span>
@@ -90,8 +90,7 @@
 
 <span class="kd">function</span> <span class="nx">visibleCallback</span> <span class="p">()</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;visible callback&#39;</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div>
+<span class="p">}</span></code></pre></div>
 
 
 <h2>Useful methods</h2>
@@ -107,15 +106,13 @@
 
 <p>Testing relies upon Karma test runner and Phantom JS. To install these dependencies, run the following command from the project root.</p>
 
-<p><code>
-npm install
-</code></p>
+<pre><code>npm install
+</code></pre>
 
 <p>Then to perform a single pass of the tests run:</p>
 
-<p><code>
-npm test
-</code></p>
+<pre><code>npm test
+</code></pre>
 
 <h2>Supported web browsers</h2>
 
