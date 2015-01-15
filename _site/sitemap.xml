@@ -2,6 +2,15 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://alxgbsn.co.uk/2015/01/15/how-to-help-find-a-regression-range-in-firefox-nightly</loc>
+    
+    <lastmod>2015-01-15T00:00:00+00:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
     <loc>http://alxgbsn.co.uk/2014/08/18/animating-the-firefox-desktop-pages-using-css-and-svg</loc>
     
     <lastmod>2014-08-18T00:00:00+01:00</lastmod>
@@ -149,7 +158,7 @@
   
   <url>
     <loc>http://alxgbsn.co.uk/about</loc>
-    <lastmod>2015-01-15T20:34:27+00:00</lastmod>
+    <lastmod>2015-01-15T21:07:48+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -158,7 +167,7 @@
   
   <url>
     <loc>http://alxgbsn.co.uk/contact</loc>
-    <lastmod>2015-01-15T20:34:27+00:00</lastmod>
+    <lastmod>2015-01-15T21:07:48+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -167,7 +176,7 @@
   
   <url>
     <loc>http://alxgbsn.co.uk</loc>
-    <lastmod>2015-01-15T20:34:27+00:00</lastmod>
+    <lastmod>2015-01-15T21:07:48+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -176,7 +185,7 @@
   
   <url>
     <loc>http://alxgbsn.co.uk/projects</loc>
-    <lastmod>2015-01-15T20:34:27+00:00</lastmod>
+    <lastmod>2015-01-15T21:07:48+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>

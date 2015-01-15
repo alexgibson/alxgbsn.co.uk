@@ -4,13 +4,35 @@
  <title>Alex Gibson, Front End Developer</title>
  <link href="http://alxgbsn.co.uk/feed/" rel="self"/>
  <link href="http://alxgbsn.co.uk/"/>
- <updated>2015-01-15T20:34:27+00:00</updated>
+ <updated>2015-01-15T21:07:48+00:00</updated>
  <id>http://alxgbsn.co.uk/</id>
  <author>
    <name>Alex Gibson</name>
    <email>alxgbsn@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>How to help find a regression range in Firefox Nightly</title>
+   <link href="http://alxgbsn.co.uk/2015/01/15/how-to-help-find-a-regression-range-in-firefox-nightly"/>
+   <updated>2015-01-15T00:00:00+00:00</updated>
+   <id>http://alxgbsn.co.uk/2015/01/15/how-to-help-find-a-regression-range-in-firefox-nightly</id>
+   <content type="html">&lt;p&gt;I recently spotted a &lt;a href=&quot;https://bug1083079.bugzilla.mozilla.org/attachment.cgi?id=8506255&quot;&gt;visual glitch&lt;/a&gt; in a CSS animation that was only happening in Firefox Nightly. I was pretty confident the animation played fine just a couple of weeks ago, so after some debugging and ruling out any obvious wrong-doing in the code, I was pretty confident that a recent change in Firefox must have somehow caused a regression. Not knowing quite what else to do, I decided to &lt;a href=&quot;https://bugzilla.mozilla.org/show_bug.cgi?id=1083079&quot;&gt;file a bug&lt;/a&gt; to see if anyone else could figure out what was going wrong.&lt;/p&gt;
+
+&lt;p&gt;After some initial discussion it turned out the animation was only broken in Firefox on OSX, so definitely a bug! It could have been caused by any number of code changes in the previous few weeks and could not be reproduced on other platforms. So how could I go about helping to find the cause of the regression?&lt;/p&gt;
+
+&lt;p&gt;It was then someone pointed me to a tool I hadn&#39;t heard of before, called &lt;a href=&quot;http://mozilla.github.io/mozregression/&quot;&gt;mozregression&lt;/a&gt;. It&#39;s an interactive regression range finder for Mozilla nightly and inbound builds. Once installed, all you need to do is pass in a last known &quot;good date&quot; together with a known &quot;bad date&quot; and a URL to test. The tool then automates downloading and running different nightly builds against the affected URL.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;mozregression --good=2014-10-01 --bad=2014-10-02 -a &quot;https://example.com&quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;After each run, mozregression asks you if the build is &quot;good&quot; or &quot;bad&quot; and then continues to narrow down the regression range until it finds when the bug was introduced. The process takes a while to run, but in the end it then spits out a pushlog like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://hg.mozilla.org/integration/mozilla-inbound/pushloghtml?fromchange=33a3fd4d1970&amp;amp;tochange=28519d825a23&quot;&gt;https://hg.mozilla.org/integration/mozilla-inbound/pushloghtml?fromchange=33a3fd4d1970&amp;amp;tochange=28519d825a23&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;This helped narrowed down the cause of the regression considerably, and together with a &lt;a href=&quot;https://bug1083079.bugzilla.mozilla.org/attachment.cgi?id=8516184&quot;&gt;reduced test case&lt;/a&gt; we we&#39;re then able to work out which commit was the cause and get it fixed. The same patch also turned out to fix another bug that was effecting &lt;a href=&quot;https://bugzilla.mozilla.org/show_bug.cgi?id=1105762&quot;&gt;Leaflet.js maps&lt;/a&gt; in Firefox. Result!&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Animating the Firefox desktop pages using CSS and SVG</title>
