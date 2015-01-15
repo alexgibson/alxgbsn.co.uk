@@ -73,7 +73,9 @@
 
 <p>After each run, mozregression asks you if the build is "good" or "bad" and then continues to narrow down the regression range until it finds when the bug was introduced. The process takes a while to run, but in the end it then spits out a <a href="https://hg.mozilla.org/integration/mozilla-inbound/pushloghtml?fromchange=33a3fd4d1970&amp;tochange=28519d825a23">pushlog like this</a>.</p>
 
-<p>This helped narrowed down the cause of the regression considerably, and together with a <a href="https://bug1083079.bugzilla.mozilla.org/attachment.cgi?id=8516184">reduced test case</a> we we're then able to work out which commit was the cause and get it fixed. The same patch also turned out to fix another bug that was effecting <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1105762">Leaflet.js maps</a> in Firefox. Result!</p>
+<p>This helped to narrow down the cause of the regression considerably, and together with a <a href="https://bug1083079.bugzilla.mozilla.org/attachment.cgi?id=8516184">reduced test case</a> we we're then able to work out which commit was the cause.</p>
+
+<p>The resulting patch also turned out to fix another bug that was effecting <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1105762">Leaflet.js maps</a> in Firefox. Result!</p>
 
 </section>
 
