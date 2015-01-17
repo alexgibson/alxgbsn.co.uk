@@ -25,6 +25,9 @@ indent_size = 4
 [*.html]
 indent_size = 2
 
+[*.xml]
+indent_size = 2
+
 # Matches the exact files package.json and .travis.yml
 [{package.json}]
 indent_size = 2
