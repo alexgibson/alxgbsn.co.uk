@@ -6,7 +6,7 @@ var options = {
     branch: 'master'
 };
 
-gulp.task('deploy', ['jekyll:build', 'compass:compile'], function () {
+gulp.task('deploy', ['compass:compile', 'jekyll:build'], function () {
     return gulp.src('./_site/**/*')
         .pipe(deploy(options));
 });
