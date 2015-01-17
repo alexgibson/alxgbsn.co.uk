@@ -1,4 +1,3 @@
-Disallow: /temp/
-
-Allow: /
+User-agent: *
 Sitemap: http://alxgbsn.co.uk/sitemap.xml
+Disallow:
