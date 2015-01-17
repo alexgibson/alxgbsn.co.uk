@@ -3,5 +3,5 @@ permalink: /:year/:month/:day/:title
 rdiscount extensions: [smart]
 highlighter: pygments
 domain: http://alxgbsn.co.uk
-exclude: ['config.rb', 'sass', 'node_modules', 'LICENSE.md']
+exclude: ['config.rb', 'sass', 'node_modules', 'LICENSE.md', 'gulpfile.js', 'package.json']
 
