@@ -1,0 +1,20 @@
+{
+  "name": "alexgibson",
+  "version": "1.0.1",
+  "description": "Personal blog",
+  "private": true,
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^3.8.10",
+    "gulp-gh-pages": "^0.4.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alexgibson/alexgibson.github.com.git"
+  },
+  "author": "Alex Gibson <alxgbsn@gmail.com> (http://alxgbsn.co.uk/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alexgibson/alexgibson.github.com/issues"
+  }
+}
