@@ -17,7 +17,11 @@
 
   <link rel="stylesheet" href="{{ root }}/css/styles.css" />
   <link rel="alternate" type="application/rss+xml" title="Alex Gibson" href="{{ root }}/feed/" />
-  <link rel="canonical" href="http://alxgbsn.co.uk{{ page.url }}" />
+  {% if page.canonical != null and page.canonical != empty %}
+  <link rel="canonical" href="http://alxgbsn.co.uk{{ page.canonical }}" />
+  {% else %}
+  <link rel="canonical" href="http://alxgbsn.co.uk{{ page.url }}/" />
+  {% endif %}
 
   <!--[if lt IE 9]>
     <script src="/js/html5shiv.js"></script>
