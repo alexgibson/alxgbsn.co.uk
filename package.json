@@ -6,6 +6,7 @@
   "dependencies": {},
   "devDependencies": {
     "gulp": "^3.8.10",
+    "gulp-compass": "^2.0.3",
     "gulp-gh-pages": "^0.4.0"
   },
   "repository": {
