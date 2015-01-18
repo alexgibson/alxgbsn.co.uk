@@ -238,12 +238,6 @@ section.post {
     margin-top: 2em;
 }
 
-.contact {
-    p, ul li {
-        text-align: center;
-    }
-}
-
 .page-number {
     text-align: center;
 }
@@ -277,8 +271,13 @@ section.post {
             white-space: nowrap;
         }
     }
+}
 
-
+.reading-time {
+    margin-top: 0;
+    color: #636568;
+    text-align: center;
+    font-style: italic;
 }
 
 @media all and (max-width: 30em) {
