@@ -3,7 +3,7 @@ permalink: /:year/:month/:day/:title
 rdiscount extensions: [smart]
 highlighter: pygments
 domain: http://alxgbsn.co.uk
-exclude: ['config.rb', 'sass', 'node_modules', 'LICENSE.md', 'gulpfile.js', 'package.json']
+exclude: ['config.rb', 'node_modules', 'LICENSE.md', 'gulpfile.js', 'package.json']
 paginate: 10
 paginate_path: 'archive/:num/'
 
