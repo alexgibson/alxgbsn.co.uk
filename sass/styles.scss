@@ -244,6 +244,43 @@ section.post {
     }
 }
 
+.page-number {
+    text-align: center;
+}
+
+.pagination {
+    position: relative;
+    margin: 0 0 1.5em 0;
+    text-align: center;
+    overflow: hidden;
+
+    a {
+        font-weight: normal;
+    }
+
+    .disabled {
+        opacity: 0.5;
+    }
+
+    .previous {
+        float: left;
+        &:before {
+            content: '« '; /* laquo nbsp */
+            white-space: nowrap;
+        }
+    }
+
+    .next {
+        float: right;
+        &:after {
+            content: ' »'; /* nbsp raquo */
+            white-space: nowrap;
+        }
+    }
+
+
+}
+
 @media all and (max-width: 30em) {
     section.posts {
         time {

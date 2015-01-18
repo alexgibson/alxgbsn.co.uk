@@ -9,11 +9,32 @@ canonical: '/'
 <img class="profile fadeIn" src="{{root}}/images/profile.png" width="150" height="150" alt="Alex Gibson">
 
 <section class="posts">
-  <h2>Words</h2>
-    {% for post in site.posts %}
-      <article>
-        <time pubdate datetime="{{ post.date }}">{{ post.date | date: "%B %d %Y" }}</time>
-        <h3><a rel="bookmark" href="{{ post.url }}">{{ post.title }}</a></h3>
-      </article>
-    {% endfor %}
+  {% if paginator.page == 1 %}
+    <h2>Recent articles</h2>
+  {% else %}
+    <h2>Archive</h2>
+  {% endif %}
+
+  {% for post in paginator.posts %}
+    <article>
+      <time pubdate datetime="{{ post.date }}">{{ post.date | date: "%B %d %Y" }}</time>
+      <h3><a rel="bookmark" href="{{ post.url }}">{{ post.title }}</a></h3>
+    </article>
+  {% endfor %}
+
+  <nav class="pagination">
+    <p class="page-number">Page: {{ paginator.page }} of {{ paginator.total_pages }}</p>
+    {% if paginator.previous_page %}
+      <a href="{{ paginator.previous_page_path }}" class="previous">Previous</a>
+    {% else %}
+      <span class="previous disabled">Previous</span>
+    {% endif %}
+
+    {% if paginator.next_page %}
+      <a href="{{ paginator.next_page_path }}" class="next">Next</a>
+    {% else %}
+      <span class="next disabled">Next</span>
+    {% endif %}
+  </nav>
+
 </section>
