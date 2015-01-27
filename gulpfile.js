@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 var deploy = require('gulp-gh-pages');
 var compass = require('gulp-compass');
+var jshint = require('gulp-jshint');
 var header = require('gulp-header');
 
 var pkg = require('./package.json');
@@ -18,7 +19,7 @@ var options = {
     branch: 'master'
 };
 
-gulp.task('deploy', ['compass:compile', 'jekyll:build'], function () {
+gulp.task('deploy', ['compass:compile', 'js:lint', 'jekyll:build'], function () {
     return gulp.src('./_site/**/*')
         .pipe(deploy(options));
 });
@@ -40,4 +41,10 @@ gulp.task('compass:compile', function() {
         }))
     .pipe(header(banner, { pkg : pkg }))
     .pipe(gulp.dest('css'));
+});
+
+gulp.task('js:lint', function() {
+    return gulp.src(['./js/*.js', '!./js/lib/*.js'])
+        .pipe(jshint())
+        .pipe(jshint.reporter('default'));
 });
