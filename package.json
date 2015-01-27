@@ -7,14 +7,21 @@
   "devDependencies": {
     "gulp": "^3.8.10",
     "gulp-compass": "^2.0.3",
-    "gulp-gh-pages": "^0.4.0"
+    "gulp-gh-pages": "^0.4.0",
+    "gulp-header": "^1.2.2"
   },
+  "homepage": "http://alxgbsn.co.uk",
   "repository": {
     "type": "git",
     "url": "https://github.com/alexgibson/alexgibson.github.com.git"
   },
   "author": "Alex Gibson <alxgbsn@gmail.com> (http://alxgbsn.co.uk/)",
-  "license": "MIT",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://raw.githubusercontent.com/alexgibson/alexgibson.github.com/admin/LICENSE.md"
+    }
+  ],
   "bugs": {
     "url": "https://github.com/alexgibson/alexgibson.github.com/issues"
   }

@@ -1,6 +1,18 @@
 var gulp = require('gulp');
 var deploy = require('gulp-gh-pages');
 var compass = require('gulp-compass');
+var header = require('gulp-header');
+
+var pkg = require('./package.json');
+var banner = [
+    '/**',
+    ' * <%= pkg.name %> - <%= pkg.description %>',
+    ' * @version v<%= pkg.version %>',
+    ' * @link <%= pkg.homepage %>',
+    ' * @license <%= pkg.licenses[0].type %>',
+    ' */',
+    ''
+].join('\n');
 
 var options = {
     branch: 'master'
@@ -26,5 +38,6 @@ gulp.task('compass:compile', function() {
             config_file: './config.rb',
             sass: 'sass'
         }))
+    .pipe(header(banner, { pkg : pkg }))
     .pipe(gulp.dest('css'));
 });
