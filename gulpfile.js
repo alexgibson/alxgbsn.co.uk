@@ -1,19 +1,9 @@
+'use strict';
+
 var gulp = require('gulp');
 var deploy = require('gulp-gh-pages');
 var compass = require('gulp-compass');
 var jshint = require('gulp-jshint');
-var header = require('gulp-header');
-
-var pkg = require('./package.json');
-var banner = [
-    '/**',
-    ' * <%= pkg.name %> - <%= pkg.description %>',
-    ' * @version v<%= pkg.version %>',
-    ' * @link <%= pkg.homepage %>',
-    ' * @license <%= pkg.licenses[0].type %>',
-    ' */',
-    ''
-].join('\n');
 
 var options = {
     branch: 'master'
@@ -34,13 +24,12 @@ gulp.task('jekyll:build', function (gulpCallBack){
 });
 
 gulp.task('compass:compile', function() {
-    gulp.src('./sass/*.scss')
+    return gulp.src('./sass/*.scss')
         .pipe(compass({
             config_file: './config.rb',
             sass: 'sass'
         }))
-    .pipe(header(banner, { pkg : pkg }))
-    .pipe(gulp.dest('css'));
+        .pipe(gulp.dest('css'));
 });
 
 gulp.task('js:lint', function() {
