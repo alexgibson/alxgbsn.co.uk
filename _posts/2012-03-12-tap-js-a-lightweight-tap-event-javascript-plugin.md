@@ -12,7 +12,7 @@ While the [W3C touch events API](http://www.w3.org/TR/touch-events/) is quite fl
 Setup
 -----
 
-First, include the main JavaScript file in the <head> of your HTML document:
+First, include the main JavaScript file in the `<head>` of your HTML document:
 
 {% highlight html %}
 <script src="tap.js"></script>
@@ -24,22 +24,22 @@ Next create a new Tap instance, passing the element you want to use:
 var el = document.getElementById('my-id'),
     myTap = new Tap(el);
 {% endhighlight %}
-    	
+
 You can then start listening for 'tap' events using the regular JavaScript event listener syntax:
 
 {% highlight javascript %}
-el.addEventListener('tap', tapDidOccur, false); 
+el.addEventListener('tap', tapDidOccur, false);
 function tapDidOccur (e) {
     //your code
 }
 {% endhighlight %}
-    
+
 You can stop listening for tap events like so:
 
 {% highlight javascript %}
 el.removeEventListener('tap', tapDidOccur, false);
 {% endhighlight %}
-	
+
 Tap.js is open source and available on [GitHub](https://github.com/alexgibson/tap.js).
 
 Tested browsers
