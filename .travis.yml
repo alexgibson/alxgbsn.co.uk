@@ -1,8 +1,8 @@
 language: ruby
 rvm:
 - 2.1
-before_install: gem install jekyll html-proofer rdiscount
-script: jekyll build && htmlproof ./_site --only_4xx --check_html --check_favicon
+before_install: gem install jekyll rdiscount
+script: jekyll build
 
 # branch whitelist
 branches:
