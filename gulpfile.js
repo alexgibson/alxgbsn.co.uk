@@ -6,12 +6,13 @@ var deploy = require('gulp-gh-pages');
 var compass = require('gulp-compass');
 var jshint = require('gulp-jshint');
 var del = require('del');
+var runSequence = require('run-sequence');
 
 var options = {
     branch: 'master'
 };
 
-gulp.task('deploy', ['clean', 'compass:compile', 'js:lint', 'jekyll:build'], function () {
+gulp.task('deploy', ['build:site'], function () {
     return gulp.src('./_site/**/*')
         .pipe(deploy(options));
 });
@@ -23,6 +24,10 @@ gulp.task('jekyll:build', function (gulpCallBack){
     jekyll.on('exit', function(code) {
         gulpCallBack(code === 0 ? null : 'ERROR: Jekyll process exited with code: ' + code);
     });
+});
+
+gulp.task('build:site', function(callback) {
+    runSequence('clean', ['compass:compile', 'js:lint'], 'jekyll:build', callback);
 });
 
 gulp.task('compass:compile', function() {
@@ -41,10 +46,8 @@ gulp.task('js:lint', function() {
         .pipe(jshint.reporter('default'));
 });
 
-gulp.task('clean', function (cb) {
-    del([
-        '_site/**',
-    ], cb);
+gulp.task('clean', function () {
+    return del(['_site/**']);
 });
 
 gulp.task('default', function () {

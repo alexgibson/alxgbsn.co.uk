@@ -10,7 +10,8 @@
     "gulp-compass": "^2.0.3",
     "gulp-gh-pages": "^0.4.0",
     "gulp-jshint": "^1.9.0",
-    "gulp-watch": "^4.1.0"
+    "gulp-watch": "^4.1.0",
+    "run-sequence": "^1.0.2"
   },
   "homepage": "http://alxgbsn.co.uk",
   "repository": {
