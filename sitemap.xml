@@ -16,7 +16,7 @@ layout: null
   </url>
   {% endfor %}
   {% for page in site.pages %}
-  {% if page.canonical != null and page.canonical != empty %}
+  {% if page.canonical != null and page.canonical != empty and page.canonical != '/404.html' %}
   <url>
     <loc>http://alxgbsn.co.uk{{ page.canonical }}</loc>
     <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
