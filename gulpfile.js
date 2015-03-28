@@ -12,7 +12,7 @@ var options = {
     branch: 'master'
 };
 
-gulp.task('deploy', ['build:site'], function () {
+gulp.task('deploy', ['site:build'], function () {
     return gulp.src('./_site/**/*')
         .pipe(deploy(options));
 });
@@ -26,7 +26,7 @@ gulp.task('jekyll:build', function (gulpCallBack){
     });
 });
 
-gulp.task('build:site', function(callback) {
+gulp.task('site:build', function(callback) {
     runSequence('clean', ['compass:compile', 'js:lint'], 'jekyll:build', callback);
 });
 
