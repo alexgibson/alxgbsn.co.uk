@@ -34,7 +34,7 @@ In order to decode the base64 string back into an [arrayBuffer](https://develope
 var arrayBuff = Base64Binary.decodeArrayBuffer(sound);
 
 myAudioContext.decodeAudioData(arrayBuff, function(audioData) {
-	myBuffer = audioData;
+    myBuffer = audioData;
 });
 {% endhighlight %}
 

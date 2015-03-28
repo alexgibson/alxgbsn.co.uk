@@ -25,32 +25,32 @@ var storage = {},
     dbSize = 20 * 1024 * 1024;
 
 function handleDbError (e) {
-	
-	console.log(e.message);
-	console.log(e.code);
+
+    console.log(e.message);
+    console.log(e.code);
 }
 
 function initDatabase () {
-	
-	try {
-		var data = '';
-						
-		storage.db = openDatabase(dbName, dbVersion, dbDescription, dbSize);
-		storage.db.transaction(function (tx) {
-					
-  			tx.executeSql("CREATE TABLE IF NOT EXISTS appdata (id unique, text)");
-  						
-		}, handleDbError);
-  					
-  		storage.db.transaction(function (tx) {
-  					
-  			tx.executeSql("INSERT OR IGNORE INTO appdata (id, text) VALUES(?,?)", [dbName, data]);
-  					
-  		}, handleDbError);
-  									
-    	} catch(e) {
-    		handleDbError(e);
-	}
+
+    try {
+        var data = '';
+
+        storage.db = openDatabase(dbName, dbVersion, dbDescription, dbSize);
+        storage.db.transaction(function (tx) {
+
+            tx.executeSql("CREATE TABLE IF NOT EXISTS appdata (id unique, text)");
+
+        }, handleDbError);
+
+        storage.db.transaction(function (tx) {
+
+            tx.executeSql("INSERT OR IGNORE INTO appdata (id, text) VALUES(?,?)", [dbName, data]);
+
+        }, handleDbError);
+
+        } catch(e) {
+            handleDbError(e);
+    }
 }
 
 initDatabase();
@@ -60,37 +60,37 @@ The application then makes a remote server call, and the JSON string returned as
 
 {% highlight javascript %}
 function getData () {
-			
-	var myRequest = new XMLHttpRequest();
 
-	myRequest.onreadystatechange = function () {	
+    var myRequest = new XMLHttpRequest();
 
-		if (myRequest.readyState === 4 && myRequest.status === 200) {
-			myData = JSON.parse(myRequest.responseText);
-			updateDatabase();
-			startApp();			
-		}
-	};
+    myRequest.onreadystatechange = function () {
 
-	myRequest.open('GET', 'http://', true);
-	myRequest.send();
+        if (myRequest.readyState === 4 && myRequest.status === 200) {
+            myData = JSON.parse(myRequest.responseText);
+            updateDatabase();
+            startApp();
+        }
+    };
+
+    myRequest.open('GET', 'http://', true);
+    myRequest.send();
 }
 
 function updateDatabase () {
-	
-	try {	
-		var data = JSON.stringify(myData);
-						
-		storage.db = openDatabase(dbName, dbVersion, dbDescription, dbSize);		
-  		storage.db.transaction(function (tx) {
-  					
-  			tx.executeSql("UPDATE appdata SET text=? WHERE id=?", [data, dbName]);
-  					
-  		}, handleDbError);
-  									
-    	} catch(e) {    			
-    		handleDbError(e);
-	}
+
+    try {
+        var data = JSON.stringify(myData);
+
+        storage.db = openDatabase(dbName, dbVersion, dbDescription, dbSize);
+        storage.db.transaction(function (tx) {
+
+            tx.executeSql("UPDATE appdata SET text=? WHERE id=?", [data, dbName]);
+
+        }, handleDbError);
+
+        } catch(e) {
+            handleDbError(e);
+    }
 }
 {% endhighlight %}
 
@@ -98,27 +98,27 @@ If the app is later launched while offline, local data is then read back from th
 
 {% highlight javascript %}
 function throwReadError (e) {
-	
-	console.log(e.message);
-	console.log(e.code);
-			
-	if(!myData) {
-		showAlert("This app requires an internet connection for first launch");
-	}
-}
-		
-function readFromDatabase () {
-				
-	storage.db = openDatabase(dbName, dbVersion, dbDescription, dbSize);
-	storage.db.transaction(function (tx) {
-  				
-		tx.executeSql('SELECT * FROM appdata', [], function (tx, results) {
-  				
-			myData = JSON.parse(results.rows.item(0).text);
-			startApp();
-		});
 
-	}, throwReadError);		
+    console.log(e.message);
+    console.log(e.code);
+
+    if(!myData) {
+        showAlert("This app requires an internet connection for first launch");
+    }
+}
+
+function readFromDatabase () {
+
+    storage.db = openDatabase(dbName, dbVersion, dbDescription, dbSize);
+    storage.db.transaction(function (tx) {
+
+        tx.executeSql('SELECT * FROM appdata', [], function (tx, results) {
+
+            myData = JSON.parse(results.rows.item(0).text);
+            startApp();
+        });
+
+    }, throwReadError);
 }
 {% endhighlight %}
 
@@ -133,11 +133,11 @@ For offline detection the app initially used `navigator.Online`, which at first 
 var isOnline = window.navigator.onLine;
 
 initDatabase();
-				
+
 if (isOnline) {
-	getData();			
+    getData();
 } else {
-	readFromDatabase();
+    readFromDatabase();
 }
 {% endhighlight %}
 
@@ -174,21 +174,21 @@ API wise, the app used 95% browser–based API's. The remaining areas where WebW
 
 {% highlight javascript %}
 function showAlert (message) {
-	try {
-		blackberry.ui.dialog.standardAskAsync(message, blackberry.ui.dialog.D_OK, {
-			title : "Alert", 
-			size: blackberry.ui.dialog.SIZE_MEDIUM, 
-			position : blackberry.ui.dialog.CENTER
-		});
-	} catch (e) {
-		alert(message);
-		console.log(e);
-	}
+    try {
+        blackberry.ui.dialog.standardAskAsync(message, blackberry.ui.dialog.D_OK, {
+            title : "Alert",
+            size: blackberry.ui.dialog.SIZE_MEDIUM,
+            position : blackberry.ui.dialog.CENTER
+        });
+    } catch (e) {
+        alert(message);
+        console.log(e);
+    }
 }
 
 function launchBrowser (url) {
-	var args = new blackberry.invoke.BrowserArguments(url);
-	blackberry.invoke.invoke(blackberry.invoke.APP_BROWSER, args);
+    var args = new blackberry.invoke.BrowserArguments(url);
+    blackberry.invoke.invoke(blackberry.invoke.APP_BROWSER, args);
 }
 {% endhighlight %}
 

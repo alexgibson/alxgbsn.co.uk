@@ -27,10 +27,10 @@ A real world example is the BlackBerry Playbook. It has a good web browser, but 
 
 Safari and Chrome are currently the only web browsers that display a series of errors/warnings for an incorrect meta viewport declaration:
 
-	Viewport argument value "device-width;" for key "width" not recognized. Content ignored.
-	Viewport argument value "1.0;" for key "initial-scale" was truncated to its numeric prefix.
-	Viewport argument value "1.0;" for key "maximum-scale" was truncated to its numeric prefix.
-	Viewport argument value "0;" for key "user-scalable" was truncated to its numeric prefix.
+    Viewport argument value "device-width;" for key "width" not recognized. Content ignored.
+    Viewport argument value "1.0;" for key "initial-scale" was truncated to its numeric prefix.
+    Viewport argument value "1.0;" for key "maximum-scale" was truncated to its numeric prefix.
+    Viewport argument value "0;" for key "user-scalable" was truncated to its numeric prefix.
 
 It would be nice if more browsers did this. Maybe once [@viewport](http://dev.opera.com/articles/view/an-introduction-to-meta-viewport-and-viewport/) becomes more widely adopted, we could then begin to phase out the messy meta viewport altogether?
 

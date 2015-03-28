@@ -16,20 +16,20 @@ window.orientation
 
 {% highlight javascript %}
 onOrientationChange: function () {
-	switch(window.orientation) {
-	case 0:
-		//default orientation
-		break;
+    switch(window.orientation) {
+    case 0:
+        //default orientation
+        break;
     case 90:
-    	//90 degrees clockwise from default
- 		break;
+        //90 degrees clockwise from default
+        break;
     case -90:
-    	//90 degrees anti-clockwise from default
-		break;
+        //90 degrees anti-clockwise from default
+        break;
     case 180:
-    	//180 degrees from default
-		break;
-	}
+        //180 degrees from default
+        break;
+    }
 }
 {% endhighlight %}
 
@@ -41,7 +41,7 @@ So just how do we check if a device is being held in portrait or landscape? We c
 
 {% highlight javascript %}
 onOrientationChange: function () {
-	this.orientation = window.innerHeight >= window.innerWidth ? 'portrait' : 'landscape';
+    this.orientation = window.innerHeight >= window.innerWidth ? 'portrait' : 'landscape';
 }
 {% endhighlight %}
 
@@ -61,9 +61,9 @@ Android 4.x stock browser fires `resize` whenever the on-screen keyboard is show
 
 {% highlight javascript %}
 onResize: function () {
-	if (window.innerWidth !== this.previousWidth) {
-		this.orientation = window.innerHeight >= window.innerWidth ? 'portrait' : 'landscape';
-	}
+    if (window.innerWidth !== this.previousWidth) {
+        this.orientation = window.innerHeight >= window.innerWidth ? 'portrait' : 'landscape';
+    }
 }
 {% endhighlight %}
 

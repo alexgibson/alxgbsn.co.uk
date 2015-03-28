@@ -23,16 +23,16 @@ To use create a new `Visibility` instance, passing the relevant callbacks you ne
 
 {% highlight javascript %}
 var page = new Visibility({
-	onHidden: hiddenCallback, 
-	onVisible: visibleCallback
+    onHidden: hiddenCallback,
+    onVisible: visibleCallback
 });
 
 function hiddenCallback () {
-	console.log('hidden callback');
+    console.log('hidden callback');
 }
 
 function visibleCallback () {
-	console.log('visible callback');
+    console.log('visible callback');
 }
 {% endhighlight %}
 

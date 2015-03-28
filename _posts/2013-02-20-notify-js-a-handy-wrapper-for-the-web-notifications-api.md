@@ -50,12 +50,12 @@ To initialize a web notification create a new `Notify` instance, passing the mes
 
 {% highlight javascript %}
 var myNotification = new Notify('Yo dawg!', {
-	body: 'This is an awesome notification',
-	notifyShow: onNotifyShow
+    body: 'This is an awesome notification',
+    notifyShow: onNotifyShow
 });
 
 function onNotifyShow() {
-	console.log('notification was shown!');
+    console.log('notification was shown!');
 }
 {% endhighlight %}
 
@@ -101,11 +101,11 @@ Testing
 
 Install [Node](http://nodejs.org). Testing relies on the Karma test-runner, which can be installed globally using the following command.
 
-	npm install -g karma
+    npm install -g karma
 
 In the project root, to perform a single pass of the tests using Firefox run:
 
-	npm test
+    npm test
 
 Browser support
 ---------------------------------------

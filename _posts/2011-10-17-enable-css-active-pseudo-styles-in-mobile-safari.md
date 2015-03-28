@@ -17,7 +17,7 @@ Note: if you do this trick it is also worth removing the default `tap–highligh
 
 {% highlight css %}
 html {
-	-webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 {% endhighlight %}
 
