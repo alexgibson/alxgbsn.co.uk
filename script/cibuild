@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+set -e # halt script on error
+
+bundle exec jekyll build
+bundle exec htmlproof ./_site --href-ignore /feed/ --check-html --check-favicon --only-4xx

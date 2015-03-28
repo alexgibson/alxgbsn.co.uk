@@ -10,8 +10,16 @@ This is the source code repository for my [personal blog](http://alxgbsn.co.uk),
 Install
 -------
 
+Dependencies are handled using [Bundler](http://bundler.io/), which must be installed first:
+
 ```
-gem install jekyll html-proofer
+gem install bundle
+```
+
+Site dependencies can then be installed using:
+
+```
+bundle install --path vendor/bundle
 ```
 
 Run
@@ -20,7 +28,7 @@ Run
 To generate the static site and watch for changes:
 
 ```
-jekyll serve
+bundle exec jekyll serve
 ```
 
 To automatically compile Sass, lint JS and watch for changes:

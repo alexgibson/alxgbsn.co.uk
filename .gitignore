@@ -1,6 +1,9 @@
 .DS_Store
 .sass-cache/
 node_modules
-_site
+_site/
+.bundle/
+Gemfile.lock
 *.css.map
 .publish/
+/vendor
