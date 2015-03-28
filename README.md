@@ -11,7 +11,7 @@ Install
 -------
 
 ```
-gem install jekyll html-proofer rdiscount
+gem install jekyll html-proofer
 ```
 
 Run
