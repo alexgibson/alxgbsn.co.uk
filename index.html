@@ -24,10 +24,14 @@ canonical: '/'
 
   <nav class="pagination">
     <p class="page-number">Page: {{ paginator.page }} of {{ paginator.total_pages }}</p>
-    {% if paginator.previous_page %}
-      <a href="{{ paginator.previous_page_path }}" class="previous">Newer</a>
+    {% if paginator.previous_page == 1 %}
+      <a href="{{ root }}/" class="previous">Newer</a>
     {% else %}
-      <span class="previous disabled">Newer</span>
+      {% if paginator.previous_page %}
+      <a href="{{ paginator.previous_page_path }}" class="previous">Newer</a>
+      {% else %}
+        <span class="previous disabled">Newer</span>
+      {% endif %}
     {% endif %}
 
     {% if paginator.next_page %}
