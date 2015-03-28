@@ -11,7 +11,7 @@ exclude:
 - Gemfile.lock
 - gulpfile.js
 - package.json
-- *.css.map
+- '*.css.map'
 - travis.yml
 - vendor
 paginate: 10
