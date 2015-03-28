@@ -1,7 +1,9 @@
 language: ruby
 rvm:
 - 2.1
-before_script: bundle update
+before_script:
+    - bundle update
+    - chmod +x ./script/cibuild
 script: script/cibuild
 
 # branch whitelist
