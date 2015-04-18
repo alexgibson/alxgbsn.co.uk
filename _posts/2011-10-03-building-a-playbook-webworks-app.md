@@ -202,6 +202,6 @@ Hopefully one day we will have this kind of support on the other major mobile we
 Conclusion
 ----------
 
-For web developers, building native applications using the WebWorks SDK is overall a very good experience. There is still room for improvement in key areas such as hardware acceleration performance, but otherwise the Playbook browser is a close second to iOS Safari in terms of [browser features and support](http://www.sencha.com/blog/blackberry-playbook-the-html5-developer-scorecard/).
+For web developers, building native applications using the WebWorks SDK is overall a very good experience. There is still room for improvement in key areas such as hardware acceleration performance, but otherwise the Playbook browser is a close second to iOS Safari in terms of [browser features and support](http://www.sencha.com/blog/html5-scorecard-rim-blackberry-playbook-2/).
 
 If only it was as easy for RIM to instill the same level of enthusiasm and confidence in tablet buying consumers!
