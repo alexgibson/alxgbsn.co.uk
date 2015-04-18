@@ -13,6 +13,6 @@ Much of my time has been spent working on Firefox on-boarding. Following the suc
 
 In between all that I worked on quite a bit of other stuff, including being asked to build the 2015 [mozilla.org](https://www.mozilla.org) homepage redesign. Something I consider quite a privilege!
 
-On the travel front, I got to visit both San Fransisco and Santa Clara a bunch more times (I'm kind of losing count now). I also got to visit Portland for the first time when Mozilla had their all-hands week last December, which was such a great experience!
+On the travel front, I got to visit both San Fransisco and Santa Clara a bunch more times (I'm kind of losing count now). I also got to visit Portland for the first time when Mozilla had their all-hands week last December, which was such a great city!
 
 I'm looking forward to whatever year three has in store!
