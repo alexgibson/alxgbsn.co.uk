@@ -5,6 +5,7 @@ var watch = require('gulp-watch');
 var deploy = require('gulp-gh-pages');
 var compass = require('gulp-compass');
 var jshint = require('gulp-jshint');
+var htmlmin = require('gulp-html-minifier');
 var del = require('del');
 var runSequence = require('run-sequence');
 
@@ -27,7 +28,7 @@ gulp.task('jekyll:build', function (gulpCallBack){
 });
 
 gulp.task('site:build', function(callback) {
-    runSequence('clean', ['compass:compile', 'js:lint'], 'jekyll:build', callback);
+    runSequence('clean', ['compass:compile', 'js:lint'], 'jekyll:build', 'minify:html', callback);
 });
 
 gulp.task('compass:compile', function() {
@@ -38,6 +39,12 @@ gulp.task('compass:compile', function() {
             sass: 'sass',
         }))
         .pipe(gulp.dest('css'));
+});
+
+gulp.task('minify:html', function() {
+  gulp.src('./_site/**/*.html')
+    .pipe(htmlmin({collapseWhitespace: true }))
+    .pipe(gulp.dest('./_site'));
 });
 
 gulp.task('js:lint', function() {
