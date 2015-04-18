@@ -70,7 +70,7 @@ onResize: function () {
 CSS Media Queries and window.matchMedia
 ---------------------------------------
 
-As a side note, this `resize` event behaviour on Android 4.x stock browser will also trigger CSS orientation media queries, such as:
+As a side note, this `resize` event behavior on Android 4.x stock browser will also trigger CSS orientation media queries, such as:
 
 {% highlight css %}
 @media screen and (orientation:portrait) {
@@ -92,4 +92,4 @@ There are some other solutions out there for determining browser orientation, in
 Conclusion
 ----------
 
-Given that `window.orientation` is not really all that useful, and `resize` event behaviour can differ significantly between browsers, we still lack a robust API to report device orientation accurately. For such a basic feature that is commonly needed today, it is pretty ridiculous that a task like this proves to be so overly complicated.
+Given that `window.orientation` is not really all that useful, and `resize` event behavior can differ significantly between browsers, we still lack a robust API to report device orientation accurately. For such a basic feature that is commonly needed today, it is pretty ridiculous that a task like this proves to be so overly complicated.

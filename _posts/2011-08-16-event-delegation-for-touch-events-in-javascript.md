@@ -2,10 +2,10 @@
 layout: post
 title: Event delegation for touch events in JavaScript
 titleinfo: Alex Gibson
-desc: A barebones example of how to perform event delegation for touch events in mobile web browsers
+desc: A bare-bones example of how to perform event delegation for touch events in mobile web browsers
 ---
 
-Anyone who has experience developing web applications on mobile devices will have no doubt encountered the 300ms delay when firing `click` events in web browsers such as Mobile Safari. There are some useful [standalone plugins](https://github.com/cheeaun/tappable) and [informative articles](http://code.google.com/mobile/articles/fast_buttons.html) to help combat this delay, but this post aims to show a super–quick example of how to do simulated 'tap' events on dynamic content using JavaScript event delegation.
+Anyone who has experience developing web applications on mobile devices will have no doubt encountered the 300ms delay when firing `click` events in web browsers such as Mobile Safari. There are some useful [standalone plugins](https://github.com/cheeaun/tappable) and [informative articles](http://code.google.com/mobile/articles/fast_buttons.html) to help combat this delay, but this post aims to show a super quick example of how to do simulated 'tap' events on dynamic content using JavaScript event delegation.
 
 A common technique when dealing with `click` events in dynamic content is to use event delegation to capture events bubbling up through the DOM. This same technique can be applied to touch events, although it is a little more difficult since there are at least four different events to capture; `touchstart`, `touchmove`, `touchend` and `touchcancel`.
 

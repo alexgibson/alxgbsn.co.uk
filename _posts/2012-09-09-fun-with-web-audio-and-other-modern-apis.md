@@ -10,13 +10,13 @@ Of all the new JavaScript API's becoming available in web browsers today, the [W
 The Web Audio API
 -----------------
 
-The Web Audio API works a bit like wiring together a modular, programmable synthesiser or audio processor. It is not only capable of playing back pre-recorded sounds with sample accuracy, but it can also create raw sound using [oscillators](https://dvcs.w3.org/hg/audio/raw-file/tip/webaudio/specification.html#Oscillator) and waveforms - the core elements of any audio synthesiser. It can route sounds, perform [frequency analysis](https://dvcs.w3.org/hg/audio/raw-file/tip/webaudio/specification.html#RealtimeAnalyserNode) and even apply native effects such as [convolution reverb](https://dvcs.w3.org/hg/audio/raw-file/tip/webaudio/specification.html#ConvolverNode), [delay](https://dvcs.w3.org/hg/audio/raw-file/tip/webaudio/specification.html#DelayNode) and [distortion](https://dvcs.w3.org/hg/audio/raw-file/tip/webaudio/specification.html#WaveShaperNode) effects.
+The Web Audio API works a bit like wiring together a modular, programmable synthesizer or audio processor. It is not only capable of playing back pre-recorded sounds with sample accuracy, but it can also create raw sound using [oscillators](https://dvcs.w3.org/hg/audio/raw-file/tip/webaudio/specification.html#Oscillator) and waveforms - the core elements of any audio synthesizer. It can route sounds, perform [frequency analysis](https://dvcs.w3.org/hg/audio/raw-file/tip/webaudio/specification.html#RealtimeAnalyserNode) and even apply native effects such as [convolution reverb](https://dvcs.w3.org/hg/audio/raw-file/tip/webaudio/specification.html#ConvolverNode), [delay](https://dvcs.w3.org/hg/audio/raw-file/tip/webaudio/specification.html#DelayNode) and [distortion](https://dvcs.w3.org/hg/audio/raw-file/tip/webaudio/specification.html#WaveShaperNode) effects.
 
 The Web Audio API is currently supported in Chrome, Safari 6 and iOS6 Safari. I thought it was about time to start learning how to use the API and have some fun experimenting, so after a few hours I managed to throw together a relatively simple [synth effect unit](http://alxgbsn.co.uk/wavepad). It's both mouse and touch friendly, and functions in a similar way to the [Korg Kaoss Pad](http://www.korg.com/uk/products/dj/kaoss_pad_kp3_plus/), albeit with a much simpler set of features.
 
-The basic audio components for the demo are pretty simple. It consists of a single oscillator, a filter, a delay node, and two volume gain nodes (one for delay feedback, the other for master output). The demo also uses an audio frequency analyser to create a visual representation of the audio output, which is drawn to the [Canvas](https://developer.mozilla.org/en-US/docs/HTML/Canvas) for added real time, visual feedback.
+The basic audio components for the demo are pretty simple. It consists of a single oscillator, a filter, a delay node, and two volume gain nodes (one for delay feedback, the other for master output). The demo also uses an audio frequency analyzer to create a visual representation of the audio output, which is drawn to the [Canvas](https://developer.mozilla.org/en-US/docs/HTML/Canvas) for added real time, visual feedback.
 
-Please note that the current WebKit implementation shown in the code examples below may differ from the final unprefixed version, according to the official [W3C specification](https://dvcs.w3.org/hg/audio/raw-file/tip/webaudio/specification.html).
+Please note that the current WebKit implementation shown in the code examples below may differ from the final non-prefixed version, according to the official [W3C specification](https://dvcs.w3.org/hg/audio/raw-file/tip/webaudio/specification.html).
 
 {% highlight javascript %}
 var myAudioContext = new webkitAudioContext();
@@ -85,7 +85,7 @@ The red blur effect on the finger tracking element is achieved using [CSS filter
 window.matchMedia
 -----------------
 
-The adaptive user interface switches to a mobile optimised interface when the viewport is smaller than a set threshold. This is done using the [matchMedia](https://developer.mozilla.org/en-US/docs/DOM/window.matchMedia) API to detect CSS Media Queries in JavaScript.
+The adaptive user interface switches to a mobile optimized interface when the viewport is smaller than a set threshold. This is done using the [matchMedia](https://developer.mozilla.org/en-US/docs/DOM/window.matchMedia) API to detect CSS Media Queries in JavaScript.
 
 {% highlight javascript %}
 if (window.matchMedia) {

@@ -7,7 +7,7 @@ desc: How to cache audio files for offline use using the Web Audio API
 
 The following words are from of my first [guest post for HTML5 Doctor](http://html5doctor.com/author/alexg/). You can read the [original article here](http://html5doctor.com/taking-web-audio-offline-in-ios-6-safari/).
 
-Playing cached audio for offline use on iOS Safari has long been a challenge that has proved to be mission impossible. With the advent of the [Web Audio API](https://dvcs.w3.org/hg/audio/raw-file/tip/webaudio/specification.html) however, it is now finally achievable (despite still needing to jump through a few hoops).
+Playing cached audio for off-line use on iOS Safari has long been a challenge that has proved to be mission impossible. With the advent of the [Web Audio API](https://dvcs.w3.org/hg/audio/raw-file/tip/webaudio/specification.html) however, it is now finally achievable (despite still needing to jump through a few hoops).
 
 The bad news is that you still can't cache an MP3 file using [Application Cache](http://html5doctor.com/go-offline-with-application-cache/), and then simply load it using an `XmlHttpRequest`. Safari on iOS6 will cache the MP3, but then refuse to play it and fail silently (how useful!). But all is not lost…
 
@@ -50,7 +50,7 @@ mySource.noteOn(0);
 Full demo and source code
 -------------------------
 
-Check out the [online demo](http://alxgbsn.co.uk/offlinewebaudio/) and [source code](https://github.com/alexgibson/offlinewebaudio) for a complete example of the techniques discussed in this article.
+Check out the [on-line demo](http://alxgbsn.co.uk/offlinewebaudio/) and [source code](https://github.com/alexgibson/offlinewebaudio) for a complete example of the techniques discussed in this article.
 
 Browser support
 ---------------
