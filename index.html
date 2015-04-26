@@ -23,7 +23,7 @@ canonical: '/'
   {% endfor %}
 
   <nav class="pagination">
-    <p class="page-number">Page: {{ paginator.page }} <em>of</em> {{ paginator.total_pages }}</p>
+    <p class="page-number">Page: <em>{{ paginator.page }} of {{ paginator.total_pages }}</em></p>
     {% if paginator.previous_page == 1 %}
       <a href="{{ root }}/" class="previous">Newer</a>
     {% else %}
