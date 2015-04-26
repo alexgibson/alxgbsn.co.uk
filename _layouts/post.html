@@ -3,7 +3,7 @@ layout: layout
 ---
 
 <section class="post">
-  <time pubdate datetime="{{ page.date }}">Published: {{ page.date | date: "%B %d %Y" }}</time>
+  <time datetime="{{ page.date | date: "%Y-%m-%d" }}">Published: {{ page.date | date: "%B %d %Y" }}</time>
   <p class="reading-time">{% include reading_time.html %} read</p>
   {{ content }}
 </section>
