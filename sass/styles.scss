@@ -36,10 +36,6 @@ em {
     font-style: italic;
 }
 
-strong {
-    font-weight: bold;
-}
-
 blockquote {
     font-style: italic;
     font-size: 1.1em;
@@ -96,14 +92,15 @@ nav[role="navigation"] ul {
     padding: 0;
     width: 100%;
     display: block;
-    list-style: none;
+    list-style-type: none;
     text-align: center;
 
     li {
         width: 100%;
         display: inline;
         line-height: 44px;
-        margin: .4em;
+        margin: 0 .4em;
+        padding: 0;
         a {
             font-weight: normal;
         }
@@ -163,25 +160,6 @@ ul.social {
 
         &.email:before {
             content: '\f1d8'
-        }
-    }
-}
-
-figure {
-    img {
-        display: block;
-        max-width: 100%;
-        height: auto;
-        margin: 0 auto;
-    }
-
-    figcaption {
-        @include hyphens-auto;
-        line-height: 1.5;
-        margin: 0 0 1.5em 0;
-
-        img {
-            margin: 0;
         }
     }
 }
@@ -318,7 +296,7 @@ form[role="search"] {
         border-radius: 0;
         border-top-left-radius: 5px;
         border-bottom-left-radius: 5px;
-       @include box-sizing(border-box);
+        @include box-sizing(border-box);
     }
 
     button[type="submit"] {
