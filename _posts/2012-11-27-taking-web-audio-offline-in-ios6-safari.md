@@ -21,7 +21,7 @@ Encoding an audio file
 
 You can easily convert an mp3 file to a base64 string using [OpenSSL](http://www.openssl.org/). If you are on Mac OSX it comes pre-installed, so just open up Terminal and type the following command. Make sure to replace `<infile>` with the path to your mp3, and `<outfile>` with your chosen destination for the encoded data.
 
-`openssl base64 -in <infile> -out <outfile>`
+    openssl base64 -in <infile> -out <outfile>
 
 This will output a base64 string representation of your sound file. You can then cache the string using any form of web storage you choose (e.g. [Application Cache](http://html5doctor.com/go-offline-with-application-cache/), [localStorage](http://html5doctor.com/storing-data-the-simple-html5-way-and-a-few-tricks-you-might-not-have-known/), [webSQL](http://html5doctor.com/introducing-web-sql-databases/))
 

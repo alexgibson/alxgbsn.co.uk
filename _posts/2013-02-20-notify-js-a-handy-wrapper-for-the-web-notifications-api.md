@@ -14,37 +14,12 @@ Notify.js aims to simplify requesting user permission and associated Web Notific
 There is a simple [online demo here](http://alxgbsn.co.uk/notify.js/). Installation and setup instructions are as follows:
 
 Installation
----------------------------------------
+------------
 
-Notify.js can be installed using any of the following options:
+Please see the [GitHub repo](https://github.com/alexgibson/notify.js) for setup instructions.
 
-* Download: [zip](https://github.com/alexgibson/notify.js/zipball/master)
-* [NPM](https://www.npmjs.org/): `npm install notifyjs`
-* [Bower](https://github.com/twitter/bower/): `bower install notify.js`
-* Git: `git clone https://github.com/alexgibson/notify.js`
-
-Setup
----------
-
-This component can be used as an AMD module, CommonJS module, or a browser global.
-
-### for browser:
-
-{% highlight html %}
-<script src="notify.js"></script>
-{% endhighlight %}
-
-### for AMD module:
-
-{% highlight javascript %}
-var Notify = require('notify');
-{% endhighlight %}
-
-### for CommonJS:
-
-{% highlight javascript %}
-var Notify = require('notifyjs');
-{% endhighlight %}
+Usage
+-----
 
 To initialize a web notification create a new `Notify` instance, passing the message `title` as well as any other options you wish to use.
 
@@ -110,8 +85,4 @@ In the project root, to perform a single pass of the tests using Firefox run:
 Browser support
 ---------------------------------------
 
-- Chrome (desktop)
-- Safari
-- Firefox
-- Firefox OS (v1.2+)
-- Firefox Mobile (Android)
+Please see the [GitHub readme](https://github.com/alexgibson/notify.js/#browser-support) for up to date browser support details.
