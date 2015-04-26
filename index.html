@@ -10,9 +10,9 @@ canonical: '/'
 
 <section class="posts">
   {% if paginator.page == 1 %}
-    <h2>Recent articles</h2>
+    <h2>Recent posts</h2>
   {% else %}
-    <h2>Archive</h2>
+    <h2>Older posts</h2>
   {% endif %}
 
   {% for post in paginator.posts %}
@@ -23,7 +23,7 @@ canonical: '/'
   {% endfor %}
 
   <nav class="pagination">
-    <p class="page-number">Page: {{ paginator.page }} of {{ paginator.total_pages }}</p>
+    <p class="page-number">Page: {{ paginator.page }} <em>of</em> {{ paginator.total_pages }}</p>
     {% if paginator.previous_page == 1 %}
       <a href="{{ root }}/" class="previous">Newer</a>
     {% else %}

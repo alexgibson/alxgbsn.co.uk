@@ -75,7 +75,6 @@ time {
 code {
     color: $tertiary-color;
     font-size: 0.9em;
-    @include hyphens-auto;
 }
 
 pre {
@@ -89,12 +88,7 @@ pre {
 
     code {
         color: #fff;
-        @include hyphens-auto;
     }
-}
-
-header[role="banner"] {
-    display: block;
 }
 
 nav[role="navigation"] ul {
@@ -104,28 +98,19 @@ nav[role="navigation"] ul {
     display: block;
     list-style: none;
     text-align: center;
-}
 
-nav[role="navigation"] li {
-    width: 100%;
-    display: inline;
-    line-height: 44px;
-    margin-right: .7em;
-    a {
-        font-weight: normal;
+    li {
+        width: 100%;
+        display: inline;
+        line-height: 44px;
+        margin: .4em;
+        a {
+            font-weight: normal;
+        }
     }
-    &:last-child {
-        margin-right: 0;
-    }
-}
-
-article,
-section {
-    display: block;
 }
 
 aside[role="complimentary"] {
-    display: block;
     border-top: 1px solid $border-color;
     margin-top: 2em;
 }
@@ -179,8 +164,6 @@ ul.social {
 }
 
 figure {
-    display: block;
-
     img {
         display: block;
         max-width: 100%;
@@ -284,7 +267,6 @@ section.post {
 }
 
 footer[role="contentinfo"] {
-    display: block;
     margin: 40px 0;
 
     p {
