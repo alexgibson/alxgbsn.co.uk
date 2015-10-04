@@ -11,7 +11,3 @@ branches:
   only:
   - admin # test the admin branch only
   - /admin-(.*)/ # test every branch which starts with "admin-"
-
-env:
-  global:
-  - NOKOGIRI_USE_SYSTEM_LIBRARIES=true # speeds up installation of html-proofer

@@ -13,7 +13,7 @@ Install
 Dependencies are handled using [Bundler](http://bundler.io/), which must be installed first:
 
 ```
-gem install bundle
+gem install bundler
 ```
 
 Site dependencies can then be installed using:
@@ -36,17 +36,6 @@ To automatically compile Sass, lint JS and watch for changes:
 ```
 gulp
 ```
-
-Test
-----
-
-Once the static site is built you can then validate the HTML and all site links by running:
-
-```
-htmlproof ./_site --href-ignore /feed/ --check-html --check-favicon --only-4xx
-```
-
-This will also be done automatically by Travis CI after every commit to the `admin` branch.
 
 Deploy
 ------
