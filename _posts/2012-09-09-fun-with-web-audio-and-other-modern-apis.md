@@ -12,7 +12,7 @@ The Web Audio API
 
 The Web Audio API works a bit like wiring together a modular, programmable synthesizer or audio processor. It is not only capable of playing back pre-recorded sounds with sample accuracy, but it can also create raw sound using [oscillators](https://dvcs.w3.org/hg/audio/raw-file/tip/webaudio/specification.html#Oscillator) and waveforms - the core elements of any audio synthesizer. It can route sounds, perform [frequency analysis](https://dvcs.w3.org/hg/audio/raw-file/tip/webaudio/specification.html#RealtimeAnalyserNode) and even apply native effects such as [convolution reverb](https://dvcs.w3.org/hg/audio/raw-file/tip/webaudio/specification.html#ConvolverNode), [delay](https://dvcs.w3.org/hg/audio/raw-file/tip/webaudio/specification.html#DelayNode) and [distortion](https://dvcs.w3.org/hg/audio/raw-file/tip/webaudio/specification.html#WaveShaperNode) effects.
 
-The Web Audio API is currently supported in Chrome, Safari 6 and iOS6 Safari. I thought it was about time to start learning how to use the API and have some fun experimenting, so after a few hours I managed to throw together a relatively simple [synth effect unit](http://alxgbsn.co.uk/wavepad). It's both mouse and touch friendly, and functions in a similar way to the [Korg Kaoss Pad](http://www.korg.com/uk/products/dj/kaoss_pad_kp3_plus/), albeit with a much simpler set of features.
+The Web Audio API is currently supported in Chrome, Safari 6 and iOS6 Safari. I thought it was about time to start learning how to use the API and have some fun experimenting, so after a few hours I managed to throw together a relatively simple [synth effect unit](https://alexgibson.github.io/wavepad). It's both mouse and touch friendly, and functions in a similar way to the [Korg Kaoss Pad](http://www.korg.com/uk/products/dj/kaoss_pad_kp3_plus/), albeit with a much simpler set of features.
 
 The basic audio components for the demo are pretty simple. It consists of a single oscillator, a filter, a delay node, and two volume gain nodes (one for delay feedback, the other for master output). The demo also uses an audio frequency analyzer to create a visual representation of the audio output, which is drawn to the [Canvas](https://developer.mozilla.org/en-US/docs/HTML/Canvas) for added real time, visual feedback.
 
@@ -54,7 +54,7 @@ nodes.filter.frequency.value = y;
 source.noteOn(0);
 {% endhighlight %}
 
-There are a range of different waveforms to use in the main oscillator, and multiple different filter types to experiment with. It's more a musical toy than anything serious, but it can produce some interesting sci-fi effects and spaced-out synth sounds by using different delay times and feedback settings. If you haven't already, have some fun and [try it out](http://alxgbsn.co.uk/wavepad).
+There are a range of different waveforms to use in the main oscillator, and multiple different filter types to experiment with. It's more a musical toy than anything serious, but it can produce some interesting sci-fi effects and spaced-out synth sounds by using different delay times and feedback settings. If you haven't already, have some fun and [try it out](https://alexgibson.github.io/wavepad).
 
 Because this is a demo that currently runs in only the most modern browsers, I was also free to use some other useful new API's and CSS effects.
 
@@ -118,4 +118,4 @@ Audio is automatically muted when the browser tab is not active using the [Page 
 Demo
 ----
 
-You can check out the [demo here](http://alxgbsn.co.uk/wavepad). Try it in Chrome, Safari 6 or iOS6. There are still a few glitches to iron out on iOS6, but feel free to [open an issue](https://github.com/alexgibson/wavepad/issues) if you find a bug or have any new ideas for features.
+You can check out the [demo here](https://alexgibson.github.io/wavepad). Try it in Chrome, Safari 6 or iOS6. There are still a few glitches to iron out on iOS6, but feel free to [open an issue](https://github.com/alexgibson/wavepad/issues) if you find a bug or have any new ideas for features.

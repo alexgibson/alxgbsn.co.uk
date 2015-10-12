@@ -11,7 +11,7 @@ I wanted to create something that I could easily reuse in different projects, so
 
 Notify.js aims to simplify requesting user permission and associated Web Notification API events, as well as providing a few extra callbacks and convenience methods.
 
-There is a simple [online demo here](http://alxgbsn.co.uk/notify.js/). Installation and setup instructions are as follows:
+There is a simple [online demo here](https://alexgibson.github.io/notify.js). Installation and setup instructions are as follows:
 
 Installation
 ------------

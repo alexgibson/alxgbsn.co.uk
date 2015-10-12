@@ -50,7 +50,7 @@ mySource.noteOn(0);
 Full demo and source code
 -------------------------
 
-Check out the [on-line demo](http://alxgbsn.co.uk/offlinewebaudio/) and [source code](https://github.com/alexgibson/offlinewebaudio) for a complete example of the techniques discussed in this article.
+Check out the [on-line demo](https://alexgibson.github.io/offlinewebaudio) and [source code](https://github.com/alexgibson/offlinewebaudio) for a complete example of the techniques discussed in this article.
 
 Browser support
 ---------------
