@@ -12,3 +12,5 @@
 301     /concierge/         https://alexgibson.github.io/concierge/
 301     /checklist          https://alexgibson.github.io/checklist/
 301     /checklist/         https://alexgibson.github.io/checklist/
+301     /feed               /feed/index.xml
+301     /feed/              /feed/index.xml
