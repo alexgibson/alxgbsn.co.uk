@@ -16,7 +16,7 @@
   "homepage": "http://alxgbsn.co.uk",
   "repository": {
     "type": "git",
-    "url": "https://github.com/alexgibson/alexgibson.github.com.git"
+    "url": "https://github.com/alexgibson/alxgbsn.co.uk.git"
   },
   "author": "Alex Gibson <alxgbsn@gmail.com> (http://alxgbsn.co.uk/)",
   "licenses": [
@@ -26,6 +26,6 @@
     }
   ],
   "bugs": {
-    "url": "https://github.com/alexgibson/alexgibson.github.com/issues"
+    "url": "https://github.com/alexgibson/alxgbsn.co.uk/issues/issues"
   }
 }
