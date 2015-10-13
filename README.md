@@ -2,10 +2,10 @@
 alxgbsn.co.uk
 =============
 
-[![Build Status](https://travis-ci.org/alexgibson/alexgibson.github.com.svg?branch=admin)](https://travis-ci.org/alexgibson/alexgibson.github.com)
-[![devDependency Status](https://david-dm.org/alexgibson/alexgibson.github.com/admin/dev-status.svg)](https://david-dm.org/alexgibson/alexgibson.github.com/admin/#info=devDependencies)
+[![Build Status](https://travis-ci.org/alexgibson/alxgbsn.co.uk.svg?branch=admin)](https://travis-ci.org/alexgibson/alxgbsn.co.uk)
+[![devDependency Status](https://david-dm.org/alexgibson/alxgbsn.co.uk/admin/dev-status.svg)](https://david-dm.org/alexgibson/alxgbsn.co.uk/#info=devDependencies)
 
-This is the source code repository for my [personal blog](http://alxgbsn.co.uk), a simple static site built using [Jekyll](http://jekyllrb.com/) and published on [GitHub Pages](https://pages.github.com/).
+This is the source code repository for my [personal blog](http://alxgbsn.co.uk), a simple static site built using [Jekyll](http://jekyllrb.com/) and published on [Surge](https://surge.sh/).
 
 Install
 -------
