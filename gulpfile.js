@@ -2,7 +2,6 @@
 
 var gulp = require('gulp');
 var watch = require('gulp-watch');
-var deploy = require('gulp-gh-pages');
 var compass = require('gulp-compass');
 var jshint = require('gulp-jshint');
 var htmlmin = require('gulp-html-minifier');
@@ -12,11 +11,6 @@ var runSequence = require('run-sequence');
 var options = {
     branch: 'master'
 };
-
-gulp.task('deploy', ['site:build'], function () {
-    return gulp.src('./_site/**/*')
-        .pipe(deploy(options));
-});
 
 gulp.task('jekyll:build', function (gulpCallBack){
     var spawn = require('child_process').spawn;

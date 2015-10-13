@@ -45,19 +45,3 @@ Once the static site is built you can then validate the HTML and all site links 
 ```
 htmlproof ./_site --href-ignore /feed/ --check-html --check-favicon --only-4xx
 ```
-
-This will also be done automatically by Travis CI after every commit to the `admin` branch.
-
-Deploy
-------
-
-To automatically build and deploy the static site to the `master` branch:
-
-```
-gulp deploy
-```
-
-Contributing
-------------
-
-If you would like to contribute, please make a pull request against the [admin branch](https://github.com/alexgibson/alexgibson.github.com/tree/admin). If you name your branch starting with `admin-`, [Travis CI](https://travis-ci.org/) will automatically build and test your changes when you open a pull request.
