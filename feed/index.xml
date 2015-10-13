@@ -5,7 +5,7 @@ layout: null
 <feed xmlns="http://www.w3.org/2005/Atom">
 
  <title>Alex Gibson, Front End Developer</title>
- <link href="http://alxgbsn.co.uk/feed/" rel="self"/>
+ <link href="http://alxgbsn.co.uk/feed/index.xml" rel="self"/>
  <link href="http://alxgbsn.co.uk/"/>
  <updated>{{ site.time | date_to_xmlschema }}</updated>
  <id>http://alxgbsn.co.uk/</id>
