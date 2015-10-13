@@ -5,7 +5,7 @@ titleinfo: Alex Gibson
 desc: The benefits of using a static site generator such as Jekyll and hosting a blog on GitHub Pages
 ---
 
-For the past few years my old blog has served me pretty well, but I've been looking for something simpler and less cumbersome to update and maintain. I've just finished moving my content to a new home, which is now hosted on [GitHub Pages](http://pages.github.com/) and powered by [Jekyll](http://jekyllrb.com/). 
+For the past few years my old blog has served me pretty well, but I've been looking for something simpler and less cumbersome to update and maintain. I've just finished moving my content to a new home, which is now hosted on [GitHub Pages](http://pages.github.com/) and powered by [Jekyll](http://jekyllrb.com/).
 
 Jekyll is a popular static site generator written in Ruby. It takes a template directory and then processes it to create a static website consisting of pure HTML files, which you can then host on your chosen web server. Here are a list of reasons why I made the decision to ‘go static’:
 
@@ -20,7 +20,7 @@ Built-in version control
 Because this site is hosted on GitHub, version control comes baked-in. I use one branch (master) for hosting the static site on GitHub Pages, and another (admin) for the source.
 
 Performance & reliability
-------------------------- 
+-------------------------
 
 No more PHP/MySQL database means pages load faster and the site should be able to handle periods of heavy traffic with less worry.
 
@@ -32,7 +32,7 @@ Having to deal with mySQL security issues should be unnecessary for something as
 Collaboration
 -------------
 
-Because the [source](https://github.com/alexgibson/alexgibson.github.com) for this site is available on GitHub, people are free to make suggestions and/or corrections to my posts via submitting a pull request or opening an issue.
+Because the [source](https://github.com/alexgibson/alxgbsn.co.uk) for this site is available on GitHub, people are free to make suggestions and/or corrections to my posts via submitting a pull request or opening an issue.
 
 Portability
 -----------
