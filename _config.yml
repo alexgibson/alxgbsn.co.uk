@@ -2,7 +2,7 @@ markdown: kramdown
 permalink: /:year/:month/:day/:title
 rdiscount extensions: [smart]
 highlighter: pygments
-domain: http://alxgbsn.co.uk
+domain: https://alxgbsn.co.uk
 exclude:
 - config.rb
 - node_modules
@@ -16,4 +16,3 @@ exclude:
 - vendor
 paginate: 10
 paginate_path: 'archive/:num/'
-
