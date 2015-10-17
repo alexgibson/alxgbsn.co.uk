@@ -1,0 +1,24 @@
+{
+  "lang": "en",
+  "name": "Alex Gibson",
+  "short_name": "AG",
+  "icons": [
+    {
+      "src": "images/avatar-180.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "images/avatar-196.png",
+      "sizes": "196x196",
+      "type": "image/png"
+    },
+    {
+      "src": "images/avatar-300.png",
+      "sizes": "300x300",
+      "type": "image/png"
+    },
+  ],
+  "start_url": "/",
+  "display": "browser"
+}
