@@ -17,7 +17,7 @@ canonical: '/'
 
   {% for post in paginator.posts %}
     <article>
-      <time datetime="{{ post.date | date: "%Y-%m-%d" }}">{{ post.date | date: "%B %d %Y" }}</time>
+      <time datetime="{{ post.date | date: "%Y-%m-%d" }}">{{ post.date | date: "%b %d %Y" }}</time>
       <h3><a rel="bookmark" href="{{ post.url }}">{{ post.title }}</a></h3>
     </article>
   {% endfor %}
