@@ -2,7 +2,7 @@ language: ruby
 rvm:
 - 2.1
 before_script:
-    - bundle update
+    - bundle install
     - chmod +x ./script/cibuild
 script: script/cibuild
 
