@@ -1,8 +1,8 @@
+sudo: false
 language: ruby
 rvm:
 - 2.1
 before_script:
-    - bundle install
     - chmod +x ./script/cibuild
 script: script/cibuild
 
