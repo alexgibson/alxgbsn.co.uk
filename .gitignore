@@ -3,7 +3,6 @@
 node_modules
 _site/
 .bundle/
-Gemfile.lock
 *.css.map
 .publish/
 /vendor
