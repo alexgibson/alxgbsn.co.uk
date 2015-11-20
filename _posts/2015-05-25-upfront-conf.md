@@ -5,6 +5,8 @@ titleinfo: Alex Gibson
 desc: My notes from UpFront Conference 2015
 ---
 
+![UpFront Conf 2015](/images/posts/upfront-2015.png)
+
 I took a trip to Manchester last week to attend [UpFront Conf 2015](http://upfrontconf.com/). It was a full day of talks on web design and front-end development, and covered a range of topics including UI design, web performance, front-end testing, and typography. It even had a talk dedicated games console browsers! The line up of speakers delivered a good balance of both creative and technical talks, which made for an enjoyable day of brain-food. Here are my notes from the talks:
 
 Brad Frost - Atomic design

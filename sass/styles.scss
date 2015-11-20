@@ -86,6 +86,11 @@ pre {
     }
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 nav[role="navigation"] ul {
     margin: 0;
     padding: 0;
