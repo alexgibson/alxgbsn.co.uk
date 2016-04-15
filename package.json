@@ -29,7 +29,7 @@
     "url": "https://github.com/alexgibson/alxgbsn.co.uk/issues/issues"
   },
   "scripts": {
-    "deploy": "bundle exec jekyll serve && surge _site/"  
+    "deploy": "bundle exec jekyll build && surge _site/"  
   }
 
 }
