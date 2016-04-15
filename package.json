@@ -11,7 +11,8 @@
     "gulp-html-minifier": "^0.1.6",
     "gulp-jshint": "^1.9.0",
     "gulp-watch": "^4.1.0",
-    "run-sequence": "^1.0.2"
+    "run-sequence": "^1.0.2",
+    "surge": "^0.17.7"
   },
   "homepage": "http://alxgbsn.co.uk",
   "repository": {
@@ -29,7 +30,7 @@
     "url": "https://github.com/alexgibson/alxgbsn.co.uk/issues/issues"
   },
   "scripts": {
-    "deploy": "bundle exec jekyll build && surge _site/"  
+    "test": "echo \"Error: no test specified.\""
   }
 
 }
