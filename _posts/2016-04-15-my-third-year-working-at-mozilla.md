@@ -39,7 +39,7 @@ I worked on building an [integration test suite](http://bedrock.readthedocs.org/
 we now run as part of our new automated [deployment pipeline](http://bedrock.readthedocs.org/en/latest/pipeline.html).
 
 - Continuing my [prior work](https://alxgbsn.co.uk/2015/04/18/my-second-year-working-at-mozilla/) on
-Firefox user on-boarding, I got help build the interactive tour that
+Firefox user on-boarding, I got to help build the interactive tour that
 demonstrates how Tracking Protection works in the new Firefox [Private Browsing](https://www.mozilla.org/firefox/private-browsing/) mode. This is a
 feature I’m very proud that Mozilla decided to ship, so I'm really happy I got
 help introduce it to a lot of people.

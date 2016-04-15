@@ -20,5 +20,3 @@ html {
     -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 {% endhighlight %}
-
-On a related note, there are also some other useful mobile Webkit oddities that can activated by using empty event declarations, like [making form labels clickable](http://krijnhoetmer.nl/stuff/javascript/label-checkbox-ios/).

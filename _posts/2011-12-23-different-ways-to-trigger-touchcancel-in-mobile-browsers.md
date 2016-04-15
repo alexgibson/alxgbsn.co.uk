@@ -7,7 +7,7 @@ desc: Research on touchcancel and mobile browser implementations and behaviour
 
 The `touchcancel` event is often neglected when building touch–interfaces using JavaScript. Historically, browsers vendors have never really published documentation detailing the circumstances as to when this event gets fired, and hence it has always been associated with a level of obscurity by many developers. The aim of this post is to try and shed some light on the matter.
 
-Apple originally created touch events for iOS Safari, which have since been adopted as a basis for the [W3C Touch Events Specification](http://www.w3.org/TR/2011/WD-touch-events-20110505/). The original [Safari DOM Additions Reference](http://developer.apple.com/library/safari/#documentation/UserExperience/Reference/TouchEventClassReference/TouchEvent/TouchEvent.html%23//apple_ref/doc/uid/TP40009358) documentation provides very little information on touchcancel:
+Apple originally created touch events for iOS Safari, which have since been adopted as a basis for the [W3C Touch Events Specification](http://www.w3.org/TR/2011/WD-touch-events-20110505/). The original [Safari DOM Additions Reference](https://developer.apple.com/library/iad/documentation/UserExperience/Reference/TouchEventClassReference/) documentation provides very little information on touchcancel:
 
 > Sent when the system cancels tracking for the touch.
 

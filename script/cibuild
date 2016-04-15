@@ -2,4 +2,4 @@
 set -e # halt script on error
 
 bundle exec jekyll build
-bundle exec htmlproof ./_site --href-ignore /feed/ --check-html --check-favicon --only-4xx
+bundle exec htmlproof ./_site --url-ignore /feed/ --check-html --check-favicon --only-4xx

@@ -49,5 +49,5 @@ Test
 Once the static site has been generated you can then validate the HTML and all site links by running:
 
 ```
-htmlproof ./_site --href-ignore /feed/ --check-html --check-favicon --only-4xx
+bundle exec htmlproof ./_site --url-ignore /feed/ --check-html --check-favicon --only-4xx
 ```
