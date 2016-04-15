@@ -3,6 +3,7 @@ language: ruby
 rvm:
 - 2.1
 before_install:
+  - bundle install --path vendor/bundle
   - nvm install 4.4.3
   - nvm use 4.4.3
 install:
@@ -10,7 +11,6 @@ install:
 before_script:
   - chmod +x ./script/cibuild
 script: script/cibuild
-
 env:
   global:
   - NOKOGIRI_USE_SYSTEM_LIBRARIES=true # speeds up installation of html-proofer
