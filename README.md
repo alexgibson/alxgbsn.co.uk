@@ -10,7 +10,7 @@ This is the source code repository for my [personal blog](https://alxgbsn.co.uk)
 Install
 -------
 
-Dependencies are handled using [Bundler](http://bundler.io/), which must be installed first:
+First install [Bundler](http://bundler.io/):
 
 ```
 gem install bundler
@@ -20,6 +20,12 @@ Site dependencies can then be installed using:
 
 ```
 bundle install --path vendor/bundle
+```
+
+Finally install dev dependencies from npm:
+
+```
+npm install
 ```
 
 Run
