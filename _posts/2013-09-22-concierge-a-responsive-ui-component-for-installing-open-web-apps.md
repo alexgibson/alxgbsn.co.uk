@@ -1,7 +1,6 @@
 ---
 layout: post
 title: Concierge - A responsive UI component for installing Open Web Apps.
-titleinfo: Alex Gibson
 desc: A JavaScript plugin for installing Open Web Apps via the browser.
 ---
 

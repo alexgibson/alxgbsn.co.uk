@@ -1,29 +1,27 @@
 ---
 layout: layout
 title: Alex Gibson
-titleinfo: Front-end Web Developer
+titleinfo: Web Developer
 desc: Alex Gibson is a front–end web developer living in Newcastle upon Tyne, United Kingdom.
 canonical: '/'
 ---
 
-<img class="profile fadeIn" src="{{root}}/images/avatar-300.png" width="150" height="150" alt="Alex Gibson">
-
 <section class="posts">
   {% if paginator.page == 1 %}
-    <h2>Recent posts</h2>
+    <h3>Recent posts</h3>
   {% else %}
-    <h2>Older posts</h2>
+    <h3>Older posts</h3>
   {% endif %}
 
   {% for post in paginator.posts %}
     <article>
       <time datetime="{{ post.date | date: "%Y-%m-%d" }}">{{ post.date | date: "%b %d %Y" }}</time>
-      <h3><a rel="bookmark" href="{{ post.url }}">{{ post.title }}</a></h3>
+      <h4><a rel="bookmark" href="{{ post.url }}">{{ post.title }}</a></h4>
     </article>
   {% endfor %}
 
   <nav class="pagination">
-    <p class="page-number">Page: <em>{{ paginator.page }} of {{ paginator.total_pages }}</em></p>
+    <p class="page-number">Page: {{ paginator.page }} of {{ paginator.total_pages }}</p>
     {% if paginator.previous_page == 1 %}
       <a href="{{ root }}/" class="previous">Newer</a>
     {% else %}

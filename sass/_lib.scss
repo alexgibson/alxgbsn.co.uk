@@ -1,16 +1,13 @@
-$bg-color: #ecebe6;
+$bg-color: #fff;
 $primary-color: #434343;
 $secondary-color: #636568;
-$tertiary-color: #565757;
-$border-color: #a7a7a7;
+$tertiary-color: #aaa;
+$border-color: #434343;
+$link-color: #0b62a0;
+$link-color-highlight: #000;
 
 @mixin hyphens-auto {
     -webkit-hyphens: auto;
     -moz-hyphens: auto;
     hyphens: auto;
-}
-
-@mixin smooth-fonts {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
 }

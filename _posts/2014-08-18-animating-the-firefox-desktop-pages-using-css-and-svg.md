@@ -1,7 +1,6 @@
 ---
 layout: post
 title: Animating the Firefox desktop pages using CSS and SVG
-titleinfo: Alex Gibson
 desc: A technical run through of CSS and SVG animations on the new Firefox desktop web pages
 ---
 

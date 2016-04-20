@@ -1,7 +1,6 @@
 ---
 layout: post
 title: How to help find a regression range in Firefox Nightly
-titleinfo: Alex Gibson
 desc: Using mozregression track down the cause of a regression in Firefox
 ---
 
@@ -18,4 +17,3 @@ After each run, mozregression asks you if the build is "good" or "bad" and then 
 This helped to narrow down the cause of the regression considerably, and together with a [reduced test case](https://bug1083079.bugzilla.mozilla.org/attachment.cgi?id=8516184) we we're then able to work out which commit was the cause.
 
 The resulting patch also turned out to fix another bug that was effecting [Leaflet.js maps](https://bugzilla.mozilla.org/show_bug.cgi?id=1105762) in Firefox. Result!
-

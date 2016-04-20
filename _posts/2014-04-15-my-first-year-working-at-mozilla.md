@@ -1,7 +1,6 @@
 ---
 layout: post
 title: My first year working at Mozilla
-titleinfo: Alex Gibson
 desc: A look back at my first year working at Mozilla
 ---
 

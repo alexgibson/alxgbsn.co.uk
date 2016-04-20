@@ -1,7 +1,6 @@
 ---
 layout: post
 title: Building a PlayBook WebWorks app
-titleinfo: Alex Gibson
 desc: Using HTML5 API's and WebWorks SDK to build an application for the BlackBerry PlayBook
 ---
 

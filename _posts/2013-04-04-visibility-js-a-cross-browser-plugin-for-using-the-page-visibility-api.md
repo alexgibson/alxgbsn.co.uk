@@ -1,7 +1,6 @@
 ---
 layout: post
 title: Visibility.js - A cross-browser plugin for using the Page Visibility API
-titleinfo: Alex Gibson
 desc: A JavaScript plugin providing cross browser support for using the Page Visibility API
 ---
 

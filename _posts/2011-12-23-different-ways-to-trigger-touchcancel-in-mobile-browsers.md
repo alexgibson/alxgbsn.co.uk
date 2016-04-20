@@ -1,7 +1,6 @@
 ---
 layout: post
 title: Different ways to trigger touchcancel in mobile browsers
-titleinfo: Alex Gibson
 desc: Research on touchcancel and mobile browser implementations and behaviour
 ---
 

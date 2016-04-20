@@ -1,7 +1,6 @@
 ---
 layout: post
 title: Notify.js - A handy wrapper for the Web Notifications API
-titleinfo: Alex Gibson
 desc: A JavaScript plugin that provides a simplified wrapper for using the Web Notifications API.
 ---
 

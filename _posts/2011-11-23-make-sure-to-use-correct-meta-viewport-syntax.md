@@ -1,7 +1,6 @@
 ---
 layout: post
 title: Make sure to use correct meta viewport syntax
-titleinfo: Alex Gibson
 desc: An example of why you should be careful to define meta viewport values using the correct syntax
 ---
 

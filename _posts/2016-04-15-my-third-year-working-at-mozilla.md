@@ -1,11 +1,10 @@
 ---
 layout: post
 title: My third year working at Mozilla
-titleinfo: Alex Gibson
 desc: A look back at my third year working at Mozilla
 ---
 
-![Whistler 2015](/images/posts/whistler-2015.png)
+<div><img src="/images/posts/whistler-2015.png" alt="Whistler 2015"></div>
 
 Today marks my third year working for [Mozilla](https://www.mozilla.org)!
 I usually try and put together a short recap on the things I’ve accomplished

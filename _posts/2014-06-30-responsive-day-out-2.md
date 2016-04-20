@@ -1,7 +1,6 @@
 ---
 layout: post
 title: Responsive Day Out 2 - The Squishening
-titleinfo: Alex Gibson
 desc: My notes from Responsive Day Out 2 - The Squishening
 ---
 
