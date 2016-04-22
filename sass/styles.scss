@@ -25,12 +25,20 @@ a:hover, a:active, a:focus {
     color: $link-color-highlight;
 }
 
+p {
+    padding: 0 10px;
+}
+
 p, ul > li {
     line-height: 1.7;
 }
 
-p {
-    padding: 0 10px;
+ul > li {
+    padding-right: 10px;
+}
+
+ul > li > p {
+    padding: 0;
 }
 
 em {
@@ -120,7 +128,7 @@ header[role="banner"] {
     margin-bottom: 40px;
 
     h1 {
-        margin: .67em 0 .2em;
+        margin: .67em 0 0;
     }
 
     h2 {
@@ -181,19 +189,6 @@ section.post {
     time {
         display: inline;
         padding: 0;
-    }
-}
-
-section.projects {
-    time {
-        float: right;
-        margin: 0 0 .5em 2em;
-    }
-    h2 {
-        text-align: center;
-        margin: 1.5em 0;
-        color: $secondary-color;
-        font-weight: 400;
     }
 }
 
