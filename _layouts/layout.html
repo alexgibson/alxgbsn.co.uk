@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>{{ page.title }} &ndash; {{ page.titleinfo }}</title>
+  <title>{{ page.title }} &ndash; {% if page.titleinfo %}{{ page.titleinfo }}{% else %}Alex Gibson{% endif %}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="{{ page.desc }}">
   <meta name="author" content="Alex Gibson">
@@ -27,14 +27,16 @@
 </head>
 <body>
   <main role="main">
-    <header role="banner">
-      {% include nav.html %}
-      <h1>{{ page.title }}</h1>
-      {% if page.titleinfo %}
-      <h2>{{ page.titleinfo %}}</h2>
-      {% endif %}
-    </header>
-    {{ content }}
+    <article>
+      <header role="banner">
+        {% include nav.html %}
+        <h1>{{ page.title }}</h1>
+        {% if page.titleinfo %}
+        <h2>{{ page.titleinfo %}}</h2>
+        {% endif %}
+      </header>
+      {{ content }}
+    </article>
     {% include footer.html %}
   </main>
 </body>

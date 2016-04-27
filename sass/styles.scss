@@ -37,8 +37,10 @@ ul > li {
     padding-right: 10px;
 }
 
-ul > li > p {
-    padding: 0;
+ul > li {
+    p, h3, h4, h5, h6 {
+        padding: 0;
+    }
 }
 
 em {
@@ -162,10 +164,6 @@ aside[role="complimentary"] {
     margin-top: 2em;
 }
 
-.contact {
-    text-align: center;
-}
-
 section.posts {
     time {
         float: right;
@@ -274,7 +272,7 @@ form.search {
 
 form[role="search"] {
     position: relative;
-    width: 270px;
+    width: 250px;
     height: 38px;
     margin: 0 auto;
     padding: 10px 5px;
