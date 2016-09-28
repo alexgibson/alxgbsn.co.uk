@@ -169,9 +169,16 @@ section.posts {
         float: right;
         margin: 0 0 .5em 2em;
     }
+
     h3 {
         text-align: center;
         margin: 1.5em 0;
+        color: $secondary-color;
+    }
+
+    h4 {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+        font-weight: 400;
     }
 }
 
