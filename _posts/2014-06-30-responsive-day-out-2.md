@@ -54,7 +54,7 @@ For more on CSS Grid Layout, you can read [Rachel's blog post](http://rachelandr
 Dan Donald: *Designing Evolution: Elements*
 -------------------------------------------
 
-[Dan Donald](http://hereinthehive.com/) talked about building flexible web components using [CSS Element Queries](http://ianstormtaylor.com/media-queries-are-a-hack/). These aren't actually a real thing (yet), but lots of folks have shown interest in wanting them, and Dan even built a [prototype](https://github.com/bbc-sport/responsive-modules) while he was working at the BBC to show how they might behave.
+[Dan Donald](http://hereinthehive.com/) talked about building flexible web components using [CSS Element Queries](http://ianstormtaylor.com/media-queries-are-a-hack/). These aren't actually a real thing (yet), but lots of folks have shown interest in wanting them, and Dan even built a prototype while he was working at the BBC to show how they might behave.
 
 There was some discussion on whether any browser vendors we're looking at implementing such a thing, and consensus seems to be that this is a somewhat difficult feature to implement, due to hard problems such as [circular dependencies](http://www.xanthir.com/b4PR0).
 
