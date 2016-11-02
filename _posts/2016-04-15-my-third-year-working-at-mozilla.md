@@ -56,7 +56,7 @@ demonstrates how Tracking Protection works in the new Firefox [Private Browsing]
 This is a feature I’m very proud that Mozilla decided to ship, so I'm really happy we got
 to help introduce it to a lot of people via /whatsnew.
 
-<div><img src="/images/posts/tracking-protection-whatsnew.png" alt="Screenshot of Firefox Tracking Protection tour" srcset="/images/posts/tracking-protection-whatsnew-high-res.png 1.5x"></div>
+<div><img src="/images/posts/tracking-protection-whatsnew.png" alt="Screenshot of Firefox Tracking Protection /whatsnew page" srcset="/images/posts/tracking-protection-whatsnew-high-res.png 1.5x"></div>
 
 All-hands weeks
 ---------------
