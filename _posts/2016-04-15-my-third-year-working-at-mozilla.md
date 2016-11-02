@@ -4,7 +4,9 @@ title: My third year working at Mozilla
 desc: A look back at my third year working at Mozilla
 ---
 
-<div><img src="/images/posts/whistler-2015.png" alt="Whistler 2015"></div>
+<figure>
+    <img src="/images/posts/whistler-2015.png" alt="Whistler 2015">
+</figure>
 
 Today marks my third year working for [Mozilla](https://www.mozilla.org)!
 I usually try and put together a short recap on the things I’ve accomplished
@@ -51,12 +53,18 @@ Continuing my [prior work](https://alxgbsn.co.uk/2015/04/18/my-second-year-worki
 on Firefox user on-boarding, I got to help build the interactive tour that
 demonstrates how Tracking Protection works in the new Firefox [Private Browsing](https://www.mozilla.org/firefox/private-browsing/) mode.
 
-<div><img src="/images/posts/tracking-protection-tour.png" alt="Screenshot of Firefox Tracking Protection tour" srcset="/images/posts/tracking-protection-tour-high-res.png 1.5x"></div>
+<figure>
+    <img src="/images/posts/tracking-protection-tour.png" alt="" srcset="/images/posts/tracking-protection-tour-high-res.png 1.5x">
+    <figcaption>Screenshot of Firefox Tracking Protection tour</figcaption>
+</figure>
 
 This is a feature I’m very proud that Mozilla decided to ship, so I'm really happy we got
 to help introduce it to a lot of people via /whatsnew.
 
-<div><img src="/images/posts/tracking-protection-whatsnew.png" alt="Screenshot of Firefox Tracking Protection /whatsnew page" srcset="/images/posts/tracking-protection-whatsnew-high-res.png 1.5x"></div>
+<figure>
+    <img src="/images/posts/tracking-protection-whatsnew.png" alt="" srcset="/images/posts/tracking-protection-whatsnew-high-res.png 1.5x">
+    <figcaption>Screenshot of Firefox Tracking Protection /whatsnew page</figcaption>
+</figure>
 
 All-hands weeks
 ---------------
@@ -71,7 +79,10 @@ the rest of my team, or being able to bring my family along to
 [Disney World](https://disneyworld.disney.go.com/) so my son could have an
 experience he’ll always remember.
 
-<div><img src="/images/posts/zip-line-whistler.png" alt="Our team preparing to zip-line from the top of a mountain!"></div>
+<figure>
+    <img src="/images/posts/zip-line-whistler.png" alt="">
+    <figcaption>Our team preparing to zip-line from the top of a mountain!</figcaption>
+</figure>
 
 I feel hugely appreciative to Mozilla for being able to share experiences like
 this with colleagues, friends and family alike.

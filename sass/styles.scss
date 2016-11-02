@@ -125,6 +125,17 @@ img {
     height: auto;
 }
 
+figure {
+    margin: 20px 0;
+
+    figcaption {
+        color: $secondary-color;
+        font-style: italic;
+        margin: 10px 0 40px;
+        text-align: center;
+    }
+}
+
 header[role="banner"] {
     padding: 0 10px;
     margin-bottom: 40px;
