@@ -37,14 +37,16 @@ fascinating to watch.
 I have now filed over 280 bugs on [Bugzilla](https://bugzilla.mozilla.org/),
 been assigned over 350 bugs, and made over 2700 comments.
 
-Selenium testing
-----------------
+Continuous integration and functional testing
+---------------------------------------------
 
-I spent considerable time learning the ins and outs of
-[Selenium](http://www.seleniumhq.org/) and automated cross-browser testing,
-which also required learning more Python. Together with Mozilla’s [WebQA team](https://quality.mozilla.org/teams/web-qa/), I worked on building an
-[integration test suite](http://bedrock.readthedocs.org/en/latest/testing.html)
-for bedrock, which we now run as part of our new automated [deployment pipeline](http://bedrock.readthedocs.org/en/latest/pipeline.html).
+I spent considerable time learning all about [Selenium](http://www.seleniumhq.org/)
+and automated cross-browser testing, which also required learning more Python.
+Together with Mozilla’s [WebQA team](https://quality.mozilla.org/teams/web-qa/),
+I worked on building an [integration test suite](http://bedrock.readthedocs.org/en/latest/testing.html)
+for bedrock, which we now run as part of our new [automated deployment pipeline](http://bedrock.readthedocs.org/en/latest/pipeline.html). This was a
+real learning curve for me being primarily a front-end developer, but something
+that has helped broaden my skills considerably.
 
 Tracking Protection
 -------------------

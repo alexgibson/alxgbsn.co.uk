@@ -13,7 +13,30 @@ Over the past 365 days I have:
 * Made over [31 commits](https://github.com/mozilla/remo/commits?author=alexgibson) to [reps.mozilla.org](https://reps.mozilla.org)
 * On [Bugzilla](https://bugzilla.mozilla.org/) I have filed 39 bugs, been assigned 94 bugs and commented on 254 bugs.
 
-Looking past the numbers, I have got to work on some pretty [interesting projects](https://blog.mozilla.org/ux/2014/03/introducing-the-update-experience-for-australis/) and built some cool things to help visualize Mozilla's world wide [community of contributors](http://www.mozilla.org/en-US/contact/communities/).
+Firefox Australis on-boarding
+-----------------------------
+
+Looking deeper into the numbers above, I got to work on some pretty interesting projects.
+Probably the biggest thing I worked on was a new interactive tour to guide users through
+the redesigned Firefox UI (codenamed "Australis") that was released along with version 29.
+
+<figure>
+    <img src="/images/posts/firefox-australis-tour.png" alt="">
+    <figcaption>Screenshot of Firefox 29 Australis firstrun tour</figcaption>
+</figure>
+
+This tour involved the creation of a new, privileged JavaScript API called [UITour](http://bedrock.readthedocs.io/en/latest/uitour.html), which pages on
+whitelisted Mozilla properties can use to interact with Firefox. So instead of
+showing a screenshot and text describing where a button can be found in the UI,
+we can open a menu directly and physically highlight the button instead. Pretty
+cool!
+
+Delivering this tour to every Firefox user in the world as they updated their
+browser was probably one of the most exciting (and scary!) things I've ever
+worked on.
+
+Travel
+------
 
 I was lucky enough to spend some time visiting a bunch of different places, including Mozilla's offices in [Toronto](http://www.mozilla.org/en-US/contact/spaces/toronto/), [San Francisco](http://www.mozilla.org/en-US/contact/spaces/san-francisco/) and [Mountain View](http://www.mozilla.org/en-US/contact/spaces/mountain-view/) (Ironically, I  have yet to visit the London office!). I also got to attend the [Mozilla Summit](https://wiki.mozilla.org/Summit2013) in Brussels, where I got to meet and hang out with lots of other [Mozillians](https://mozillians.org/en-US/). I also managed to squeeze in a quick trip to sunny ol’ Blighty for [Full Frontal](http://2013.full-frontal.org/). It was all a blast.
 
