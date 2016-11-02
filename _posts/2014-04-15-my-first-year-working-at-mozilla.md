@@ -21,8 +21,8 @@ Probably the biggest thing I worked on was a new interactive tour to guide users
 the redesigned Firefox UI (codenamed "Australis") that was released along with version 29.
 
 <figure>
-    <img src="/images/posts/firefox-australis-tour.png" alt="Screenshot of Firefox 29 Australis firstrun tour">
-    <figcaption>Screenshot of Firefox 29 Australis firstrun tour</figcaption>
+    <img src="/images/posts/firefox-australis-tour.png" alt="Screenshot of Firefox 29 “Australis” /firstrun tour">
+    <figcaption>Firefox 29 “Australis” /firstrun tour</figcaption>
 </figure>
 
 This tour involved the creation of a new, privileged JavaScript API called [UITour](http://bedrock.readthedocs.io/en/latest/uitour.html), which pages on
@@ -40,4 +40,4 @@ Travel
 
 I was lucky enough to spend some time visiting a bunch of different places, including Mozilla's offices in [Toronto](http://www.mozilla.org/en-US/contact/spaces/toronto/), [San Francisco](http://www.mozilla.org/en-US/contact/spaces/san-francisco/) and [Mountain View](http://www.mozilla.org/en-US/contact/spaces/mountain-view/) (Ironically, I  have yet to visit the London office!). I also got to attend the [Mozilla Summit](https://wiki.mozilla.org/Summit2013) in Brussels, where I got to meet and hang out with lots of other [Mozillians](https://mozillians.org/en-US/). I also managed to squeeze in a quick trip to sunny ol’ Blighty for [Full Frontal](http://2013.full-frontal.org/). It was all a blast.
 
-I'm looking forward to the next 365 days and what they have to offer. Mozilla is a great community to be part of, it's more than just a “cool” company to work for. I think Mozilla's [mission](http://www.mozilla.org/mission/) is pretty important right now, so it feels good to be a small part of it.
+I'm looking forward to the next 365 days and what they have to offer. Mozilla is a great community to be part of, it's more than just a “cool” company to work for. I think [Mozilla's mission](https://www.mozilla.org/mission/) is pretty important right now, so it feels good to be a small part of it.

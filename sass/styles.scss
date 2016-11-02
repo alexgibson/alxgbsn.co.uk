@@ -171,6 +171,11 @@ nav[role="navigation"] ul {
     }
 }
 
+.profile {
+    display: block;
+    margin: 0 auto;
+}
+
 aside[role="complimentary"] {
     border-top: 1px solid $border-color;
     margin-top: 2em;
