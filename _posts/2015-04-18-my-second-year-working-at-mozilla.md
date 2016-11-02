@@ -17,7 +17,7 @@ Firefox on-boarding
 Much of my time has been spent working on Firefox on-boarding. Following the success of the on-boarding flow we built for the [Firefox 29 Australis redesign](https://blog.mozilla.org/ux/2014/03/introducing-the-update-experience-for-australis/) last year, I went on to work on several more on-boarding flows to help introduce new features in Firefox. This included a UITour for the newly rebranded [Firefox Developer Edition](https://www.mozilla.org/firefox/developer/) firstrun experience, as well as updates to the existing Firefox tour for new features such as the [refined search UI](https://blog.mozilla.org/ux/2014/11/find-it-faster/) and [Firefox Hello](https://www.mozilla.org/en-US/firefox/hello/).
 
 <figure>
-    <img src="/images/posts/dev-edition-firstrun.png" alt="" srcset="/images/posts/dev-edition-firstrun-high-res.png 1.5x">
+    <img src="/images/posts/dev-edition-firstrun.png" alt="Screenshot of Firefox Developer Edition /firstrun tour" srcset="/images/posts/dev-edition-firstrun-high-res.png 1.5x">
     <figcaption>Screenshot of Firefox Developer Edition /firstrun tour</figcaption>
 </figure>
 
@@ -32,7 +32,7 @@ Mozilla homepage
 In between all that I also got to work on some other cool things, including the 2015 [mozilla.org](https://www.mozilla.org) homepage redesign. Something I consider quite a privilege!
 
 <figure>
-    <img src="/images/posts/homepage.png" alt="" srcset="/images/posts/homepage-high-res.png 1.5x">
+    <img src="/images/posts/homepage.png" alt="Screenshot of 2015 Mozilla homepage" srcset="/images/posts/homepage-high-res.png 1.5x">
     <figcaption>Screenshot of 2015 Mozilla homepage</figcaption>
 </figure>
 

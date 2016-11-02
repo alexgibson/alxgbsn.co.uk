@@ -21,7 +21,7 @@ Probably the biggest thing I worked on was a new interactive tour to guide users
 the redesigned Firefox UI (codenamed "Australis") that was released along with version 29.
 
 <figure>
-    <img src="/images/posts/firefox-australis-tour.png" alt="">
+    <img src="/images/posts/firefox-australis-tour.png" alt="Screenshot of Firefox 29 Australis firstrun tour">
     <figcaption>Screenshot of Firefox 29 Australis firstrun tour</figcaption>
 </figure>
 

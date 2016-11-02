@@ -56,7 +56,7 @@ on Firefox user on-boarding, I got to help build the interactive tour that
 demonstrates how Tracking Protection works in the new Firefox [Private Browsing](https://www.mozilla.org/firefox/private-browsing/) mode.
 
 <figure>
-    <img src="/images/posts/tracking-protection-tour.png" alt="" srcset="/images/posts/tracking-protection-tour-high-res.png 1.5x">
+    <img src="/images/posts/tracking-protection-tour.png" alt="Screenshot of Firefox Tracking Protection tour" srcset="/images/posts/tracking-protection-tour-high-res.png 1.5x">
     <figcaption>Screenshot of Firefox Tracking Protection tour</figcaption>
 </figure>
 
@@ -64,7 +64,7 @@ This is a feature I’m very proud that Mozilla decided to ship, so I'm really h
 to help introduce it to a lot of people via /whatsnew.
 
 <figure>
-    <img src="/images/posts/tracking-protection-whatsnew.png" alt="" srcset="/images/posts/tracking-protection-whatsnew-high-res.png 1.5x">
+    <img src="/images/posts/tracking-protection-whatsnew.png" alt="Screenshot of Firefox Tracking Protection /whatsnew page" srcset="/images/posts/tracking-protection-whatsnew-high-res.png 1.5x">
     <figcaption>Screenshot of Firefox Tracking Protection /whatsnew page</figcaption>
 </figure>
 
@@ -82,7 +82,7 @@ the rest of my team, or being able to bring my family along to
 experience he’ll always remember.
 
 <figure>
-    <img src="/images/posts/zip-line-whistler.png" alt="">
+    <img src="/images/posts/zip-line-whistler.png" alt="Our team preparing to zip-line from the top of a mountain!">
     <figcaption>Our team preparing to zip-line from the top of a mountain!</figcaption>
 </figure>
 
