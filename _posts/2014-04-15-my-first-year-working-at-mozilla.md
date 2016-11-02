@@ -33,7 +33,7 @@ cool!
 
 Delivering this tour to every Firefox user in the world as they updated their
 browser was probably one of the most exciting (and scary!) things I've ever
-worked on.
+worked on. You can [read more about the tour here](https://blog.mozilla.org/ux/2014/03/introducing-the-update-experience-for-australis/).
 
 Travel
 ------
