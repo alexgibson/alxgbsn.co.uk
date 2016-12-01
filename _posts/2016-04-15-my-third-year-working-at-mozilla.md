@@ -11,13 +11,12 @@ desc: A look back at my third year working at Mozilla
 Today marks my third year working for [Mozilla](https://www.mozilla.org)!
 I usually try and put together a short recap on the things I’ve accomplished
 during the past year here. There are so many things I could pick out, but I find
-it hard to know quite where to begin. Three years seems to have flown by very
-quickly, but looking back at the time when I started, I feel like I have grown
-considerably. I guess this has been my first year at Mozilla where I no longer
-feel “new”, although I am still learning constantly by being surrounded by so
-many smart people.
+it hard to know quite where to begin. Three years have flown by very quickly, but
+looking back at the time when I started, I feel like I have grown considerably.
+I guess this has been my first year at Mozilla where I no longer feel “new”,
+although I am still learning constantly by being surrounded by so many smart people.
 
-Here are some of my personal highlights (and random stats) from the past year:
+Here are some of my personal highlights (and random stats) from the past year.
 
 Contributions
 -------------
@@ -25,14 +24,17 @@ Contributions
 I made over [269 commits](https://github.com/mozilla/bedrock/commits?author=alexgibson) to [bedrock](https://github.com/mozilla/bedrock) (the repository codename for
 [www.mozilla.org](https://www.mozilla.org)). I enjoy working on the site because
 it’s high traffic, spans a large code base, and gets translated into a huge
-number of languages (now over 100 locales!). During the past year our small
-team made big progress paying off technical debt and shaping changes for the
-future. We finished migrating away from the old legacy PHP/SVN site, and
-finally moved everything over to Python/GitHub. This has taken several years to
-complete in itself (amongst other priorities). We also did a ton of
-infrastructure work moving the site to [AWS](http://aws.amazon.com/), which
-being largely a front-end person who is not accustomed to such work, was really
-fascinating to watch.
+number of languages (now over 100 locales). It also has it's own little place in
+internet [history](https://www.youtube.com/watch?v=4Q7FTjhvZ7Y), which I think
+is kinda cool.
+
+During the past year our small team made big progress paying off technical debt
+and shaping changes for the future. We finished migrating away from the old
+legacy PHP/SVN site, and finally moved everything over to Python/GitHub. This
+has taken several years to complete in itself (amongst other priorities). We
+also did a ton of infrastructure work moving the site to [AWS](http://aws.amazon.com/),
+which being largely a front-end person who is not accustomed to such work, was
+really fascinating to watch.
 
 I have now filed over 280 bugs on [Bugzilla](https://bugzilla.mozilla.org/),
 been assigned over 350 bugs, and made over 2700 comments.
@@ -46,7 +48,7 @@ Together with Mozilla’s [WebQA team](https://quality.mozilla.org/teams/web-qa/
 I worked on building an [integration test suite](http://bedrock.readthedocs.org/en/latest/testing.html)
 for bedrock, which we now run as part of our new [automated deployment pipeline](http://bedrock.readthedocs.org/en/latest/pipeline.html). This was a
 real learning curve for me being primarily a front-end developer, but something
-that has helped broaden my skills considerably.
+that I think has helped broaden my skills.
 
 Tracking Protection
 -------------------
@@ -61,7 +63,7 @@ demonstrates how Tracking Protection works in the new Firefox [Private Browsing]
 </figure>
 
 This is a feature I’m very proud that Mozilla decided to ship, so I'm really happy we got
-to help introduce it to a lot of people via /whatsnew.
+to help introduce it to a lot of people updating their Firefox via a /whatsnew page.
 
 <figure>
     <img src="/images/posts/tracking-protection-whatsnew.png" alt="Screenshot of Firefox /whatsnew page" srcset="/images/posts/tracking-protection-whatsnew-high-res.png 1.5x">
