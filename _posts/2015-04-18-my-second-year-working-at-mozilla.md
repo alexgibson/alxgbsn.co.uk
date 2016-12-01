@@ -24,7 +24,14 @@ Much of my time has been spent working on Firefox on-boarding. Following the suc
 Firefox Hello FTU
 -----------------
 
-As well as all these browser tour updates, I also got to work on the first time user experience (FTU) for when a user makes their [first Firefox Hello video call](http://hollyhabstritt.com/blog/2015/1/18/your-first-hello). This was another UITour page that communicated with Hello and guided users through how to use the feature. It was all a *crazy* amount of work from a lot of different people, but something I really enjoyed getting to work on alongside various other teams at Mozilla.
+As well as all these browser tour updates, I also got to work on the first time user experience (FTU) for when a user makes their [first Firefox Hello video call](http://hollyhabstritt.com/blog/2015/1/18/your-first-hello).
+
+<figure>
+    <img src="/images/posts/firefox-hello-screenshot.png" alt="Screenshot of Firefox Hello" srcset="/images/posts/firefox-hello-screenshot-high-res.png 1.5x">
+    <figcaption>Firefox Hello</figcaption>
+</figure>
+
+This was another UITour page that communicated with Hello and guided users through how to use the feature. It was all a *crazy* amount of work from a lot of different people, but something I really enjoyed getting to work on alongside various other teams at Mozilla.
 
 Mozilla homepage
 ----------------

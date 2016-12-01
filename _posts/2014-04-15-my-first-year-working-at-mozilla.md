@@ -4,6 +4,10 @@ title: My first year working at Mozilla
 desc: A look back at my first year working at Mozilla
 ---
 
+<figure>
+    <img src="/images/posts/mozilla-summit-brussels.png" alt="Mozilla Summit 2013, Brussels">
+</figure>
+
 Today marks my first year Mozillaversary, which is pretty hard to believe! I feel very fortunate to work at [Mozilla](https://www.mozilla.org), as I get to work with a very [talented bunch of people](https://wiki.mozilla.org/Webdev/Web_Production). The last 12 months have flown by and it's pretty hard to put it all into a single blog post, so I thought I would try and put things into perspective using some simple statistics (hooray for open work flow and bug trackers!).
 
 Over the past 365 days I have:
