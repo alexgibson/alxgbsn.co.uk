@@ -32,7 +32,7 @@ onOrientationChange: function () {
 }
 {% endhighlight %}
 
-Unfortunately, there are a lot of [common misconceptions](http://www.matthewgifford.com/2011/12/22/a-misconception-about-window-orientation/) about what these values represent. For example, a value of `0` degrees does not necessarily mean `portrait`, as it depends on which orientation is considered to be *default* by the manufacturer. Some tablet browsers, such as the iPad, will use `0` for portrait. Some Android tablets, such as the Xoom, use `0` for landscape.
+Unfortunately, there are a lot of common misconceptions about what these values represent. For example, a value of `0` degrees does not necessarily mean `portrait`, as it depends on which orientation is considered to be *default* by the manufacturer. Some tablet browsers, such as the iPad, will use `0` for portrait. Some Android tablets, such as the Xoom, use `0` for landscape.
 
 I have seen certain mobile web frameworks fall at this first hurdle, by assuming all browsers and devices share the same implementation as iOS Safari. It is the framework assumptions here that are at fault, not the browser implementation.
 

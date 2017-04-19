@@ -5,7 +5,7 @@ desc: A look back at my fourth year working at Mozilla
 ---
 
 <figure>
-    <img src="/images/posts/hawaii-staff-photo.png" alt="" srcset="/images/posts/hawaii-staff-photo-high-res.png 1.5x">
+    <img src="/images/posts/hawaii-staff-photo.png" alt="Mozilla staff photo from All-Hands event in Hawaii, December 2016" srcset="/images/posts/hawaii-staff-photo-high-res.png 1.5x">
     <figcaption>Mozilla staff photo from All-Hands event in Hawaii, December 2016</figcaption>
 </figure>
 
@@ -38,7 +38,7 @@ Firefox Download Pages
 The main [Firefox download page](https://www.mozilla.org/firefox/new/) is one of the most high traffic pages on mozorg, so it's naturally something we pay close attention to when making changes. This year we experimented on the page **a lot**. It got redesigned it no less than three times, and continually tweaked over the course of multiple A/B tests. Lots of scrutiny goes into every change, especially in relation to page weight, loading time, and the impact that can have on download conversions. Ultimately what used to be a relatively plain looking page turned into something quite beautiful.
 
 <figure>
-    <img src="/images/posts/download-page-horizon.png" alt="" srcset="/images/posts/download-page-horizon-high-res.png 1.5x">
+    <img src="/images/posts/download-page-horizon.png" alt="Redesigned Firefox download page" srcset="/images/posts/download-page-horizon-high-res.png 1.5x">
     <figcaption>Redesigned Firefox download page</figcaption>
 </figure>
 
