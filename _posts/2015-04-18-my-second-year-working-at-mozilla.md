@@ -27,7 +27,7 @@ Firefox Hello FTU
 Because of the UITour experience I have gained, I also got pulled in to work on the first time user experience (FTU) for when a user makes their [first Firefox Hello video call](http://hollyhabstritt.com/blog/2015/1/18/your-first-hello). Hello is a new feature in Firefox that enables real time video chat via WebRTC.
 
 <figure>
-    <img src="/images/posts/firefox-hello-screenshot.png" alt="Screenshot of Firefox Hello" srcset="/images/posts/firefox-hello-screenshot-high-res.png 1.5x">
+    <img src="/images/posts/firefox-hello-screenshot.jpg" alt="Screenshot of Firefox Hello" srcset="/images/posts/firefox-hello-screenshot-high-res.jpg 1.5x">
     <figcaption>Firefox Hello</figcaption>
 </figure>
 

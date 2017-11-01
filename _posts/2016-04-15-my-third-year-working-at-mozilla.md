@@ -5,7 +5,7 @@ desc: A look back at my third year working at Mozilla
 ---
 
 <figure>
-    <img src="/images/posts/whistler-2015.png" alt="Whistler 2015">
+    <img src="/images/posts/whistler-2015.jpg" alt="Whistler 2015">
 </figure>
 
 Today marks my third year working for [Mozilla](https://www.mozilla.org)!
@@ -84,7 +84,7 @@ the rest of my team, or being able to bring my family along to
 experience he’ll always remember.
 
 <figure>
-    <img src="/images/posts/zip-line-whistler.png" alt="Our team preparing to zip-line from the top of a mountain!">
+    <img src="/images/posts/zip-line-whistler.jpg" alt="Our team preparing to zip-line from the top of a mountain!">
     <figcaption>Our team getting ready to zip-line!</figcaption>
 </figure>
 
