@@ -66,7 +66,7 @@ Inayaili de León Persson: *Realistic Responsive Design*
 Oliver Reichenstein: *The Container Model*
 ------------------------------------------
 
-[Oliver Reichenstein](http://ia.net/) gave a very clever and humorous talk on information architecture, in which he made the case that home pages, site navigation and side bars are often badly designed simply due to internal politics. He argued that a single-column, [container model approach](http://next.theguardian.com/blog/container-model-blended-content/) works much better. Containers should be full width, and should never appear beside each other unless they contain directly related content.
+[Oliver Reichenstein](http://ia.net/) gave a very clever and humorous talk on information architecture, in which he made the case that home pages, site navigation and side bars are often badly designed simply due to internal politics. He argued that a single-column, container model approach works much better. Containers should be full width, and should never appear beside each other unless they contain directly related content.
 
 Kirsty Burgoine: *A Question of Deliverables*
 ---------------------------------------------

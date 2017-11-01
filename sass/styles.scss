@@ -17,12 +17,12 @@ body {
 
 a:link, a:visited {
     color: $link-color;
-    text-decoration: none;
+    text-decoration: underline;
     transition: color .1s ease-in-out;
 }
 
 a:hover, a:active, a:focus {
-    text-decoration: underline;
+    color: $link-color-highlight;
 }
 
 p {
