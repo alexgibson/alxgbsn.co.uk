@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 set -e # halt script on error
 
+npm install -g gulp-cli
 gulp site:build
 bundle exec htmlproof ./_site --url-ignore /feed/ --check-html --check-favicon --only-4xx
