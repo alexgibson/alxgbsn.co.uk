@@ -175,6 +175,8 @@ nav[role="navigation"] ul {
     display: block;
     margin: 0 auto;
     border-radius: 100%;
+    border: 6px solid #fff;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .3);
 }
 
 aside[role="complimentary"] {
