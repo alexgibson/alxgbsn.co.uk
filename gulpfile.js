@@ -29,7 +29,7 @@ gulp.task('compass:compile', () => {
     return gulp.src('./sass/*.scss')
         .pipe(compass({
             config_file: './config.rb',
-            sourcemap: true,
+            sourcemap: false,
             sass: 'sass',
         }))
         .pipe(gulp.dest('css'));
@@ -55,7 +55,7 @@ gulp.task('default', () => {
     watch('./sass/*.scss', () => {
         gulp.start('compass:compile');
     });
-    watch('./js/*.js', () => {
+    watch(['./js/*.js', 'sw.js'], () => {
         gulp.start('js:lint');
     });
 });
