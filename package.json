@@ -7,7 +7,6 @@
   "devDependencies": {
     "del": "^3.0.0",
     "gulp": "^3.8.10",
-    "gulp-compass": "^2.0.3",
     "gulp-html-minifier": "^0.1.6",
     "gulp-jshint": "^2.0.0",
     "gulp-watch": "^4.1.0",

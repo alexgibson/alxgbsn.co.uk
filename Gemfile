@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
 gem 'jekyll'
-gem 'compass'
+gem 'jekyll-paginate'
 gem 'html-proofer'
+gem 'rouge'

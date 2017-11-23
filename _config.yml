@@ -1,7 +1,12 @@
+gems:
+  - jekyll-paginate
+sass:
+  sass_dir: _sass
+  stlye: compressed
 markdown: kramdown
 permalink: /:year/:month/:day/:title
 rdiscount extensions: [smart]
-highlighter: pygments
+highlighter: rouge
 domain: https://alxgbsn.co.uk
 exclude:
 - config.rb

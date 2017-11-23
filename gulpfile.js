@@ -2,7 +2,6 @@
 
 const gulp = require('gulp');
 const watch = require('gulp-watch');
-const compass = require('gulp-compass');
 const jshint = require('gulp-jshint');
 const htmlmin = require('gulp-html-minifier');
 const del = require('del');
@@ -22,17 +21,7 @@ gulp.task('jekyll:build', (gulpCallBack) => {
 });
 
 gulp.task('site:build', (callback) => {
-    runSequence('clean', ['compass:compile', 'js:lint'], 'jekyll:build', 'minify:html', callback);
-});
-
-gulp.task('compass:compile', () => {
-    return gulp.src('./sass/*.scss')
-        .pipe(compass({
-            config_file: './config.rb',
-            sourcemap: false,
-            sass: 'sass',
-        }))
-        .pipe(gulp.dest('css'));
+    runSequence('clean', ['js:lint'], 'jekyll:build', 'minify:html', callback);
 });
 
 gulp.task('minify:html', () => {
@@ -52,9 +41,6 @@ gulp.task('clean', () => {
 });
 
 gulp.task('default', () => {
-    watch('./sass/*.scss', () => {
-        gulp.start('compass:compile');
-    });
     watch(['./js/*.js', 'sw.js'], () => {
         gulp.start('js:lint');
     });

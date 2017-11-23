@@ -1,3 +1,6 @@
+---
+---
+
 @import "base";
 
 html {
@@ -297,7 +300,8 @@ form[role="search"] {
     overflow: hidden;
 
     input[type="search"] {
-        @include appearance(none);
+        -webkit-appearance: none;
+        -moz-appearance: none;
         float: left;
         height: 38px;
         line-height: 38px;
@@ -307,11 +311,14 @@ form[role="search"] {
         border-radius: 0;
         border-top-left-radius: 5px;
         border-bottom-left-radius: 5px;
-        @include box-sizing(border-box);
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
     }
 
     button[type="submit"] {
-        @include appearance(none);
+        -webkit-appearance: none;
+        -moz-appearance: none;
         float: left;
         width: 50px;
         height: 38px;
@@ -319,7 +326,9 @@ form[role="search"] {
         font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
         font-weight: normal;
         color: $primary-color;
-        @include box-sizing(border-box);
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
         background: #dedede;
         background: linear-gradient(to bottom, #fff 0%, #dedede 100%);
         border: 1px solid $secondary-color;
