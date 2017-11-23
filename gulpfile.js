@@ -31,7 +31,7 @@ gulp.task('minify:html', () => {
 });
 
 gulp.task('js:lint', () => {
-    return gulp.src(['./js/*.js', '!./js/lib/*.js'])
+    return gulp.src(['./_assets/js/*.js'])
         .pipe(jshint())
         .pipe(jshint.reporter('default'));
 });
@@ -41,7 +41,7 @@ gulp.task('clean', () => {
 });
 
 gulp.task('default', () => {
-    watch(['./js/*.js', 'sw.js'], () => {
+    watch(['./_assets/js/*.js'], () => {
         gulp.start('js:lint');
     });
 });

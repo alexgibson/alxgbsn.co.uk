@@ -1,7 +1,7 @@
 sudo: false
 language: ruby
 rvm:
-- 2.1
+- 2.4.2
 before_install:
   - gem install sass --version "=3.4.19"
   - gem install compass --version "=1.0.3"

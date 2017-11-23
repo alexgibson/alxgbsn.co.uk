@@ -1,23 +1,29 @@
-gems:
+plugins:
+  - jekyll-assets
   - jekyll-paginate
-sass:
-  sass_dir: _sass
-  stlye: compressed
+assets:
+  digest: true
+  compress: false
+  source_maps: false
+  precompile: [
+    avatar-180.png,
+    avatar-196.png,
+    avatar-300.png
+  ]
 markdown: kramdown
 permalink: /:year/:month/:day/:title
 rdiscount extensions: [smart]
 highlighter: rouge
 domain: https://alxgbsn.co.uk
 exclude:
-- config.rb
-- node_modules
-- script
-- Gemfile
-- Gemfile.lock
-- gulpfile.js
-- package.json
-- '*.css.map'
-- travis.yml
-- vendor
+  - config.rb
+  - node_modules
+  - script
+  - Gemfile
+  - Gemfile.lock
+  - gulpfile.js
+  - package.json
+  - travis.yml
+  - vendor
 paginate: 10
 paginate_path: 'archive/:num/'
