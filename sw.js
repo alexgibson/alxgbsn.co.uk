@@ -2,10 +2,11 @@
 ---
 
 
-const version = '1.0.1';
+const version = '{{site.time | date: '%Y%m%d%H%M%S'}}';
+const cacheName = `static::${version}`;
 
 function updateStaticCache() {
-    return caches.open(`static-${version}`)
+    return caches.open(cacheName)
         .then(function(cache) {
             return Promise.all(
                 [
@@ -33,7 +34,7 @@ function clearOldCache() {
         // Remove caches whose name is no longer valid.
         return Promise.all(keys
             .filter(function(key) {
-                return key.indexOf(version) === -1;
+                return key !== cacheName;
             })
             .map(function(key) {
                 console.log(`Service Worker: removing cache ${key}`);
@@ -45,7 +46,7 @@ function clearOldCache() {
 
 self.addEventListener('install', function(event) {
     event.waitUntil(updateStaticCache().then(function() {
-        console.log(`Service Worker: cache updated to version: ${version}`);
+        console.log(`Service Worker: cache updated to version: ${cacheName}`);
     }));
 });
 

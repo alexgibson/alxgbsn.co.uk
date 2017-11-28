@@ -31,7 +31,7 @@ gulp.task('minify:html', () => {
 });
 
 gulp.task('js:lint', () => {
-    return gulp.src(['./_assets/js/*.js'])
+    return gulp.src(['./_assets/js/*.js', '!./_assets/js/lib/*.js'])
         .pipe(jshint())
         .pipe(jshint.reporter('default'));
 });
