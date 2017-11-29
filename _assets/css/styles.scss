@@ -6,13 +6,13 @@ html {
 }
 
 body {
-    width: 100%;
-    max-width: 40em;
-    margin: 0 auto 1.5em auto;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-weight: 400;
     font-size: 18px;
+    font-weight: 400;
+    margin: 0 auto 1.5em auto;
+    max-width: 40em;
     scroll-behavior: smooth;
+    width: 100%;
 }
 
 a:link, a:visited {
@@ -48,9 +48,9 @@ em {
 }
 
 blockquote {
-    font-style: italic;
-    color: $secondary-color;
     border-left: 3px solid $tertiary-color;
+    color: $secondary-color;
+    font-style: italic;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -92,12 +92,12 @@ h6 {
 }
 
 time {
-    display: block;
     color: $secondary-color;
+    display: block;
     font-style: italic;
-    text-align: center;
     line-height: 1.3;
     padding: 0 10px;
+    text-align: center;
 }
 
 code {
@@ -106,14 +106,14 @@ code {
 }
 
 pre {
-    overflow: auto;
-    text-shadow: none;
-    word-wrap: normal;
-    white-space: pre;
-    padding: 1em;
-    margin: 0 10px;
     background-color: $primary-color;
     border-radius: 3px;
+    margin: 0 10px;
+    overflow: auto;
+    padding: 1em;
+    text-shadow: none;
+    white-space: pre;
+    word-wrap: normal;
 
     code {
         color: #fff;
@@ -121,8 +121,8 @@ pre {
 }
 
 img {
-    max-width: 100%;
     height: auto;
+    max-width: 100%;
 }
 
 figure {
@@ -138,29 +138,29 @@ figure {
 }
 
 header[role="banner"] {
-    padding: 0 10px;
     margin-bottom: 40px;
+    padding: 0 10px;
 
     h1 {
         margin: .67em 0 0;
     }
 
     h2 {
-        margin: 0 0 .75em;
+        color: $secondary-color;
         font-style: italic;
         font-weight: 200;
+        margin: 0 0 .75em;
         text-align: center;
-        color: $secondary-color;
     }
 }
 
 nav[role="navigation"] ul {
-    margin: 0;
-    padding: 0;
-    width: 100%;
     display: block;
     list-style-type: none;
+    margin: 0;
+    padding: 0;
     text-align: center;
+    width: 100%;
 
     li {
         display: inline;
@@ -171,11 +171,13 @@ nav[role="navigation"] ul {
 }
 
 .profile {
-    display: block;
-    margin: 0 auto;
     border-radius: 100%;
     border: 6px solid #fff;
     box-shadow: 0 0 6px 0 rgba(0, 0, 0, .3);
+    display: block;
+    height: 90px;
+    margin: 0 auto;
+    width: 90px;
 }
 
 aside[role="complimentary"] {
@@ -190,9 +192,9 @@ section.posts {
     }
 
     h3 {
-        text-align: center;
-        margin: 1.5em 0;
         color: $secondary-color;
+        margin: 1.5em 0;
+        text-align: center;
     }
 }
 
@@ -201,9 +203,9 @@ section.post {
 }
 
 .meta {
-    text-align: center;
     color: $secondary-color;
     font-style: italic;
+    text-align: center;
 
     time {
         display: inline;
@@ -216,11 +218,11 @@ section.post {
 }
 
 .pagination {
-    position: relative;
     margin: 0 0 1.5em 0;
-    padding: 0 10px;
-    text-align: center;
     overflow: hidden;
+    padding: 0 10px;
+    position: relative;
+    text-align: center;
 
     a {
         font-weight: normal;
@@ -228,6 +230,7 @@ section.post {
 
     .previous {
         float: left;
+
         &:before {
             content: '« '; /* laquo nbsp */
             white-space: nowrap;
@@ -236,6 +239,7 @@ section.post {
 
     .next {
         float: right;
+
         &:after {
             content: ' »'; /* nbsp raquo */
             white-space: nowrap;
@@ -244,10 +248,10 @@ section.post {
 }
 
 .reading-time {
-    margin-top: 0;
     color: $secondary-color;
-    text-align: center;
     font-style: italic;
+    margin-top: 0;
+    text-align: center;
 }
 
 @media all and (max-width: 30em) {
@@ -275,8 +279,9 @@ footer[role="contentinfo"] {
     }
 
     li {
-        text-align: center;
         margin-bottom: 20px;
+        text-align: center;
+
         a {
             font-weight: normal;
         }
@@ -288,51 +293,52 @@ form.search {
 }
 
 form[role="search"] {
-    position: relative;
-    width: 250px;
     height: 38px;
     margin: 0 auto;
-    padding: 10px 5px;
-    text-align: center;
     overflow: hidden;
+    padding: 10px 5px;
+    position: relative;
+    text-align: center;
+    width: 250px;
 
     input[type="search"] {
-        -webkit-appearance: none;
         -moz-appearance: none;
+        -moz-box-sizing: border-box;
+        -webkit-appearance: none;
+        -webkit-box-sizing: border-box;
+        border-bottom-left-radius: 5px;
+        border-top-left-radius: 5px;
+        border: 1px solid $secondary-color;
+        box-sizing: border-box;
         float: left;
         height: 38px;
         line-height: 38px;
-        width: 200px;
         padding-left: .5em;
-        border: 1px solid $secondary-color;
-        border-radius: 0;
-        border-top-left-radius: 5px;
-        border-bottom-left-radius: 5px;
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        box-sizing: border-box;
+        width: 200px;
     }
 
     button[type="submit"] {
-        -webkit-appearance: none;
         -moz-appearance: none;
-        float: left;
-        width: 50px;
-        height: 38px;
-        padding: 0;
-        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-        font-weight: normal;
-        color: $primary-color;
-        -webkit-box-sizing: border-box;
         -moz-box-sizing: border-box;
-        box-sizing: border-box;
+        -webkit-appearance: none;
+        -webkit-box-sizing: border-box;
         background: #dedede;
         background: linear-gradient(to bottom, #fff 0%, #dedede 100%);
-        border: 1px solid $secondary-color;
-        border-left: none;
-        border-top-right-radius: 5px;
         border-bottom-right-radius: 5px;
+        border-bottom: 1px solid $secondary-color;
+        border-left: none;
+        border-right: 1px solid $secondary-color;
+        border-top-right-radius: 5px;
+        border-top: 1px solid $secondary-color;
+        box-sizing: border-box;
+        color: $primary-color;
+        float: left;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-weight: normal;
+        height: 38px;
+        padding: 0;
         transition: color .1s ease-in-out;
+        width: 50px;
     }
 
     button[type="submit"]:hover,
@@ -342,11 +348,11 @@ form[role="search"] {
     }
 
     label {
-        position: absolute;
+        height: 1px;
         left: -9999px;
+        overflow: hidden;
+        position: absolute;
         top: auto;
         width: 1px;
-        height: 1px;
-        overflow: hidden;
     }
 }

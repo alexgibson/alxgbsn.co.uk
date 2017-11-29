@@ -1,19 +1,13 @@
-plugins:
-  - jekyll-assets
-  - jekyll-paginate
 assets:
   digest: true
-  compress: false
+  compression: false
   source_maps: false
   precompile: [
     avatar-180.png,
     avatar-196.png,
     avatar-300.png
   ]
-markdown: kramdown
-permalink: /:year/:month/:day/:title
-rdiscount extensions: [smart]
-highlighter: rouge
+author: Alex Gibson
 domain: https://alxgbsn.co.uk
 exclude:
   - config.rb
@@ -25,5 +19,16 @@ exclude:
   - package.json
   - travis.yml
   - vendor
+feed:
+  path: /feed/index.xml
+highlighter: rouge
+markdown: kramdown
 paginate: 10
 paginate_path: 'archive/:num/'
+permalink: /:year/:month/:day/:title
+plugins:
+  - jekyll-assets
+  - jekyll-feed
+  - jekyll-paginate
+rdiscount extensions: [smart]
+title: Alex Gibson, Front End Developer
