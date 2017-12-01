@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 gem 'jekyll'
-gem 'jekyll-assets', '~> 3.0', '>= 3.0.2'
+gem 'jekyll-assets', '~> 3.0', '>= 3.0.3'
 gem 'jekyll-feed'
 gem 'jekyll-paginate'
 gem 'html-proofer'

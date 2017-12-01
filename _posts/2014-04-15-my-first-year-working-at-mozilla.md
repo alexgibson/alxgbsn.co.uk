@@ -2,6 +2,7 @@
 layout: post
 title: My first year working at Mozilla
 desc: A look back at my first year working at Mozilla
+excerpt: Today marks my first year Mozillaversary, which is pretty hard to believe! I feel very fortunate to work at Mozilla, as I get to work with a very talented bunch of people. The last 12 months have flown by and it's pretty hard to put it all into a single blog post, so I thought I would try and put things into perspective using some simple statistics (hooray for open work flow and bug trackers).
 ---
 
 <figure>

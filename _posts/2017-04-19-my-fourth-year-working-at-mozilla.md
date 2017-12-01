@@ -2,6 +2,7 @@
 layout: post
 title: My fourth year working at Mozilla
 desc: A look back at my fourth year working at Mozilla
+excerpt: This week marks my 4th year Mozillaversary! As usual, I try to put together a short post to recap on some of the things that happened during the past year. It feels like I have some things to talk about this time around which are slightly more process-heavy than previous year's efforts, but gladly there's some good work in there too. Here goes!
 ---
 
 <figure>

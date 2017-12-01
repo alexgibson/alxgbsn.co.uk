@@ -2,6 +2,7 @@
 layout: post
 title: How to help find a regression range in Firefox Nightly
 desc: Using mozregression track down the cause of a regression in Firefox
+excerpt: I recently spotted a visual glitch in a CSS animation that was only happening in Firefox Nightly. I was pretty confident the animation played fine just a couple of weeks ago, so after some debugging and ruling out any obvious wrong-doing in the code, I was pretty confident that a recent change in Firefox must have somehow caused a regression. Not knowing quite what else to do, I decided to file a bug to see if anyone else could figure out what was going wrong.
 ---
 
 I recently spotted a [visual glitch](https://bug1083079.bugzilla.mozilla.org/attachment.cgi?id=8506255) in a CSS animation that was only happening in Firefox Nightly. I was pretty confident the animation played fine just a couple of weeks ago, so after some debugging and ruling out any obvious wrong-doing in the code, I was pretty confident that a recent change in Firefox must have somehow caused a regression. Not knowing quite what else to do, I decided to [file a bug](https://bugzilla.mozilla.org/show_bug.cgi?id=1083079) to see if anyone else could figure out what was going wrong.

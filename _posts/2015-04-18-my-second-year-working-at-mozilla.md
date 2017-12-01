@@ -2,6 +2,7 @@
 layout: post
 title: My second year working at Mozilla
 desc: A look back at my second year working at Mozilla
+excerpt: This week marked my second year Mozillaversary. I did plan to write this blog post of the 15th April, which would have marked the day I started, but this week flew by so quickly I almost completely missed it!
 ---
 
 This week marked my second year Mozillaversary. I did plan to write this blog post of the 15th April, which would have marked the day I started, but this week flew by so quickly I almost completely missed it!

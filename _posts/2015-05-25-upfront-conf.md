@@ -2,6 +2,7 @@
 layout: post
 title: UpFront Conference 2015
 desc: My notes from UpFront Conference 2015
+excerpt: I took a trip to Manchester last week to attend UpFront Conf 2015. It was a full day of talks on web design and front-end development, and covered a range of topics including UI design, web performance, front-end testing, and typography. It even had a talk dedicated games console browsers! The line up of speakers delivered a good balance of both creative and technical talks, which made for an enjoyable day of brain-food. Here are my notes from the talks
 ---
 
 <figure>

@@ -2,6 +2,7 @@
 layout: post
 title: My third year working at Mozilla
 desc: A look back at my third year working at Mozilla
+excerpt: Today marks my third year working for Mozilla! I usually try and put together a short recap on the things I’ve accomplished during the past year here. There are so many things I could pick out, but I find it hard to know quite where to begin. Three years have flown by very quickly, but looking back at the time when I started, I feel like I have grown considerably. I guess this has been my first year at Mozilla where I no longer feel “new”, although I am still learning constantly by being surrounded by so many smart people.
 ---
 
 <figure>

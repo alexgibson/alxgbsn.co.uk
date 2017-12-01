@@ -19,7 +19,7 @@ GEM
     fastimage (2.1.0)
     ffi (1.9.18)
     forwardable-extended (2.6.0)
-    html-proofer (3.7.4)
+    html-proofer (3.7.5)
       activesupport (>= 4.2, < 6.0)
       addressable (~> 2.3)
       colorize (~> 0.8)
@@ -41,7 +41,7 @@ GEM
       pathutil (~> 0.9)
       rouge (>= 1.7, < 3)
       safe_yaml (~> 1.0)
-    jekyll-assets (3.0.2)
+    jekyll-assets (3.0.3)
       activesupport (~> 5.0)
       execjs (~> 2.7)
       extras (~> 0.2)
@@ -61,7 +61,7 @@ GEM
       sass (~> 3.4)
     jekyll-watch (1.5.0)
       listen (~> 3.0, < 3.1)
-    kramdown (1.15.0)
+    kramdown (1.16.2)
     liquid (4.0.0)
     liquid-tag-parser (1.8.0)
       extras (~> 0.3)
@@ -105,7 +105,7 @@ PLATFORMS
 DEPENDENCIES
   html-proofer
   jekyll
-  jekyll-assets (~> 3.0, >= 3.0.2)
+  jekyll-assets (~> 3.0, >= 3.0.3)
   jekyll-feed
   jekyll-paginate
   rouge

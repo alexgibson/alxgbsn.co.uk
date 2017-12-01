@@ -2,6 +2,7 @@
 layout: post
 title: Responsive Day Out 2 - The Squishening
 desc: My notes from Responsive Day Out 2 - The Squishening
+excerpt: On Friday 27 June I was in Brighton to attend Responsive Day Out 2 The Squishening. It was a fun one day conference for designers and developers to share and discuss their work flow strategies, techniques and experiences with responsive web design. I usually go to more JavaScript focused events, but I am also keen to try and keep up with all the latest HTML/CSS talk, particularly when it comes to building responsive websites.
 ---
 
 On Friday 27 June I was in Brighton to attend [Responsive Day Out 2: *The Squishening*](http://responsiveconf.com/). It was a fun one day conference for designers and developers to share and discuss their work flow strategies, techniques and experiences with responsive web design. I usually go to more JavaScript focused events, but I am also keen to try and keep up with all the latest HTML/CSS talk, particularly when it comes to building responsive websites.
