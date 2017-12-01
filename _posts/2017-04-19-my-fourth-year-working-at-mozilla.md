@@ -6,7 +6,7 @@ excerpt: This week marks my 4th year Mozillaversary! As usual, I try to put toge
 ---
 
 <figure>
-    <img src="/images/posts/hawaii-staff-photo.jpg" alt="Mozilla staff photo from All-Hands event in Hawaii, December 2016" srcset="/images/posts/hawaii-staff-photo-high-res.jpg 1.5x">
+    <img src="/images/posts/hawaii-staff-photo.jpg" alt="Mozilla staff photo from All-Hands event in Hawaii, December 2016." srcset="/images/posts/hawaii-staff-photo-high-res.jpg 1.5x">
     <figcaption>Mozilla staff photo from All-Hands event in Hawaii, December 2016</figcaption>
 </figure>
 
@@ -63,6 +63,9 @@ As part of Mozilla's new branding rollout, I also got to build the first prototy
 All-hands and travel
 --------------------
 
-<img src="/images/posts/hawaii-volcano.jpg" alt="Photo of me in the crater of a volcano!" srcset="/images/posts/hawaii-volcano-high-res.jpg 1.5x">
+<figure>
+    <img src="/images/posts/hawaii-volcano.jpg" alt="In the crater of a volcano!" srcset="/images/posts/hawaii-volcano-high-res.jpg 1.5x">
+    <figcaption>In the crater of a volcano!</figcaption>
+</figure>
 
 Mozilla's [All-Hands events](https://wiki.mozilla.org/All_Hands) are always pretty amazing. This time they happened in [London](https://wiki.mozilla.org/All_Hands/2016_London) and [Hawaii](https://wiki.mozilla.org/All_Hands/2016_Hawaii). While London wasn't really high on the excitement levels, it was nice to get to welcome all my colleagues to the UK. Hawaii was naturally the real highlight for me, especially because I got to go visit a real, live volcano! In between all that I also got to pay my second visit to the Mozilla Toronto office, almost exactly 4 years since my last visit (which was my very first week working for Mozilla!).
