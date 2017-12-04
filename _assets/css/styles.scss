@@ -133,7 +133,7 @@ figure {
         color: $secondary-color;
         font-size: .83em;
         font-style: italic;
-        margin: 10px 10px 40px;
+        margin: 10px;
         text-align: center;
     }
 }
@@ -308,7 +308,9 @@ form[role="search"] {
         -webkit-appearance: none;
         -webkit-box-sizing: border-box;
         border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 0;
         border-top-left-radius: 5px;
+        border-top-right-radius: 0;
         border: 1px solid $secondary-color;
         box-sizing: border-box;
         float: left;
@@ -325,10 +327,12 @@ form[role="search"] {
         -webkit-box-sizing: border-box;
         background: #dedede;
         background: linear-gradient(to bottom, #fff 0%, #dedede 100%);
+        border-bottom-left-radius: 0;
         border-bottom-right-radius: 5px;
         border-bottom: 1px solid $secondary-color;
         border-left: none;
         border-right: 1px solid $secondary-color;
+        border-top-left-radius: 0;
         border-top-right-radius: 5px;
         border-top: 1px solid $secondary-color;
         box-sizing: border-box;
