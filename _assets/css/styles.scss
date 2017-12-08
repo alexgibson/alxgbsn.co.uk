@@ -101,12 +101,12 @@ time {
 }
 
 code {
-    color: $secondary-color;
+    color: $primary-color;
     font-size: 0.9em;
 }
 
 pre {
-    background-color: $primary-color;
+    background-color: #000;
     border-radius: 3px;
     margin: 0 10px;
     overflow: auto;
