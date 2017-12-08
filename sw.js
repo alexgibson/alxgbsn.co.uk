@@ -5,27 +5,14 @@ const version = '{{site.time | date: '%Y%m%d%H%M%S'}}';
 const cacheName = `static::${version}`;
 
 function updateStaticCache() {
-    return caches.open(cacheName)
-        .then(function(cache) {
-            return Promise.all(
-                [
-                    '{{ assets['styles.scss'].digest_path }}',
-                    '{{ assets['main.js'].digest_path }}',
-                    '{{ assets['avatar-180.png'].digest_path }}',
-                    '/offline/'
-                ].map(function(url) {
-                    // Cache-bust using a random query string.
-                    return fetch(`${url}?${Math.random()}`).then(function(response) {
-                        // Fail on 404, 500 etc.
-                        if (!response.ok) {
-                            throw Error(`Service Worker: failed to add to cache: ${url}`);
-                        }
-                        return cache.put(url, response);
-                    })
-                })
-            )
-        }
-    );
+    return caches.open(cacheName).then(function(cache) {
+        return cache.addAll([
+            '{{ assets['styles.scss'].digest_path }}',
+            '{{ assets['main.js'].digest_path }}',
+            '{{ assets['avatar-180.png'].digest_path }}',
+            '/offline/'
+        ]);
+    });
 }
 
 function clearOldCache() {
