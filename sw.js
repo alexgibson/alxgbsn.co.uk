@@ -4,25 +4,30 @@
 const version = '{{site.time | date: '%Y%m%d%H%M%S'}}';
 const cacheName = `static::${version}`;
 
+{% raw %}
 function updateStaticCache() {
-    return caches.open(cacheName).then(function(cache) {
+    return caches.open(cacheName).then(cache => {
         return cache.addAll([
+            {% endraw %}
             '{{ assets['styles.scss'].digest_path }}',
             '{{ assets['main.js'].digest_path }}',
             '{{ assets['avatar-180.png'].digest_path }}',
             '/offline/'
+            {% raw %}
         ]);
     });
 }
+{% endraw %}
 
+{% raw %}
 function clearOldCache() {
-    return caches.keys().then(function(keys) {
+    return caches.keys().then(keys => {
         // Remove caches whose name is no longer valid.
         return Promise.all(keys
-            .filter(function(key) {
+            .filter(key => {
                 return key !== cacheName;
             })
-            .map(function(key) {
+            .map(key => {
                 console.log(`Service Worker: removing cache ${key}`);
                 return caches.delete(key);
             })
@@ -30,17 +35,17 @@ function clearOldCache() {
     });
 }
 
-self.addEventListener('install', function(event) {
-    event.waitUntil(updateStaticCache().then(function() {
+self.addEventListener('install', event => {
+    event.waitUntil(updateStaticCache().then(() => {
         console.log(`Service Worker: cache updated to version: ${cacheName}`);
     }));
 });
 
-self.addEventListener('activate', function(event) {
+self.addEventListener('activate', event => {
     event.waitUntil(clearOldCache());
 });
 
-self.addEventListener('fetch', function(event) {
+self.addEventListener('fetch', event => {
     let request = event.request;
     let url = new URL(request.url);
 
@@ -58,9 +63,7 @@ self.addEventListener('fetch', function(event) {
     // For HTML requests, try the network first else fall back to the offline page.
     if (request.headers.get('Accept').indexOf('text/html') !== -1) {
         event.respondWith(
-            fetch(request).catch(function() {
-                return caches.match('/offline/');
-            })
+            fetch(request).catch(() => caches.match('/offline/'))
         );
         return;
     }
@@ -68,7 +71,7 @@ self.addEventListener('fetch', function(event) {
     // For non-HTML requests, look in the cache first else fall back to the network.
     event.respondWith(
         caches.match(request)
-            .then(function(response) {
+            .then(response => {
                 if (response) {
                     console.log('Serving cached: ', event.request.url);
                     return response;
@@ -78,3 +81,4 @@ self.addEventListener('fetch', function(event) {
             })
     );
 });
+{% endraw %}
