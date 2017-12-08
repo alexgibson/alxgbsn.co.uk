@@ -94,7 +94,7 @@ There is a potential issue here however. What if a visitor requests an HTML page
 Immutability to the rescue!
 ---------------------------
 
-Jekyll doesn't support immutable assets out-of-the-box, but luckily there is already a plugin called [jekyll-assets](https://github.com/envygeeks/jekyll-assets) that can hash asset filenames for you (and more). Once I had this installed, I updated my both my liquid templates and my service worker's `updateStaticCache` function to use the hashed filenames. This ensures that my service worker never accidentally responds with an outdated asset that a web page might be using, since the actual file names are individually hashed:
+Jekyll doesn't support immutable assets out-of-the-box, but luckily there is already a plugin called [jekyll-assets](https://github.com/envygeeks/jekyll-assets) that can hash asset filenames for you (and more). Once I had this installed, I updated both my liquid templates and my service worker's `updateStaticCache` function to use the hashed filenames. This ensures that my service worker never accidentally responds with an outdated asset that a web page might be using, since the actual file names are individually hashed:
 
 {% highlight javascript %}
 function updateStaticCache() {
