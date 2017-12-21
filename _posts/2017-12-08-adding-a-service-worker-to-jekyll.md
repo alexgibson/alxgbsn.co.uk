@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Adding Service Worker to Jekyll
+title: Adding a Service Worker to Jekyll
 desc: How to integrate a Service Worker in your Jekyll blog to help improve website performance
 excerpt: Implementing a Service Worker is something I've only really toyed with in the past. I recently felt like I needed to get reacquainted with their inner workings again, so I decided to implement one for this blog. Here are some tips and tricks I learned along the way.
 ---
