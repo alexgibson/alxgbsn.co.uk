@@ -1,6 +1,6 @@
 assets:
   digest: true
-  compression: false
+  compression: true
   source_maps: false
   precompile: [
     avatar-180.png,
