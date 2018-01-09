@@ -186,14 +186,29 @@ aside[role="complimentary"] {
 
 section.posts {
     time {
-        float: right;
-        margin: 0 0 .5em 2em;
+        margin: 1em 0 0;
+        text-align: left;
     }
 
     h3 {
         color: $secondary-color;
         margin: 1.5em 0;
         text-align: center;
+    }
+
+    h4 {
+        margin-top: .2em;
+    }
+
+    @media all and (min-width: 30em) {
+        time {
+            float: right;
+            margin: 0 0 .5em 2em;
+        }
+
+        h4 {
+            margin: 1.12em 0;
+        }
     }
 }
 
@@ -255,20 +270,6 @@ section.post {
     font-style: italic;
     margin-top: 0;
     text-align: center;
-}
-
-@media all and (max-width: 30em) {
-    section.posts {
-        time {
-            float: none;
-            margin: 1em 0 0;
-            text-align: left;
-        }
-
-        h4 {
-            margin-top: .2em;
-        }
-    }
 }
 
 footer[role="contentinfo"] {
