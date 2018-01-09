@@ -18,7 +18,6 @@ body {
 a:link, a:visited {
     color: $link-color;
     text-decoration: underline;
-    text-decoration-skip: ink;
     transition: color .1s ease-in-out;
 }
 
