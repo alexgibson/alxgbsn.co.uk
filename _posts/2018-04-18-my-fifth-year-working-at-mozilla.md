@@ -25,7 +25,7 @@ Mozilla also went through a major rebranding excersize over the past year. In th
 Performance
 -----------
 
-To try and help us redesign fast and performant websites at Mozilla, one of my personal goals has been to try and help our team more closely monitor website performance. To this end, I built a [web performance dashboard](https://mozmeao-perf-dashboard.netlify.com/) to help monitor the sites we are accountable for. It uses [WebPageTest API](https://www.webpagetest.org/) and [Google Lighthouse](https://developers.google.com/web/tools/lighthouse/) to measure the performance of key high-traffic pages on our properties. I hope to hack on this some more in the near future, but it's already helped us identify some key issues that we're otherwise difficult to spot.
+To try and help us redesign fast and performant websites at Mozilla, one of my personal goals has been to try and help our team more closely monitor website performance. To this end, I built a [web performance dashboard](https://mozmeao-perf-dashboard.netlify.com/) to help monitor the sites we are accountable for. It uses [WebPageTest API](https://www.webpagetest.org/) and [Google Lighthouse](https://developers.google.com/web/tools/lighthouse/) to measure the performance of key high-traffic pages on our properties. I hope to hack on this some more in the near future, but it's already helped us identify some key issues that were otherwise difficult to spot.
 
 Design System
 -------------
@@ -42,3 +42,8 @@ Travel
 ------
 
 On the travel front, I got to visit both Austin and San Francisco for Mozilla all-hands weeks. As always, both weeks we're fun but exhausting. Austin is a great city, and we ate way too much BBQ.
+
+<figure>
+    <img src="/images/posts/austin-all-hands-closing-party.jpg" alt="Mozilla Austin all-hands closing party, December 2017." srcset="/images/posts/austin-all-hands-closing-party-high-res.jpg 1.5x">
+    <figcaption>Mozilla Austin all-hands closing party, December 2017.</figcaption>
+</figure>
