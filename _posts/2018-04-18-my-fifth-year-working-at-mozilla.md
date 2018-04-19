@@ -20,7 +20,7 @@ In November we shipped one of Firefox's biggest updates ever, called [Firefox Qu
 Mozilla rebranding
 ------------------
 
-Mozilla also went through a major rebranding excersize over the past year. In the midst of launching Firefox Quantum, we were also busy redesigning [www.mozilla.org](https://www.mozilla.org/) to incorporate the look and feel of our new brand. This is a huge task in itself, and something that is likely to take quite some time to complete given the size and number of the web properties we own.
+Mozilla also went through a major rebranding exercise over the past year. In the midst of launching Firefox Quantum, we were also busy redesigning [www.mozilla.org](https://www.mozilla.org/) to incorporate the look and feel of our new brand. This is a huge task in itself, and something that is likely to take quite some time to complete given the size and number of the web properties we own.
 
 Performance
 -----------
