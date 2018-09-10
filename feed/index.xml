@@ -1,0 +1,578 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="/feed/index.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2018-09-10T18:41:20+01:00</updated><id>/</id><title type="html">Alex Gibson, Front End Developer</title><author><name>Alex Gibson</name></author><entry><title type="html">My fifth year working at Mozilla</title><link href="/2018/04/18/my-fifth-year-working-at-mozilla" rel="alternate" type="text/html" title="My fifth year working at Mozilla" /><published>2018-04-18T00:00:00+01:00</published><updated>2018-04-18T00:00:00+01:00</updated><id>/2018/04/18/my-fifth-year-working-at-mozilla</id><content type="html" xml:base="/2018/04/18/my-fifth-year-working-at-mozilla">&lt;figure&gt;
+    &lt;img src=&quot;/images/posts/sf-2017-staff-photo.jpg&quot; alt=&quot;Mozilla staff photo from All-Hands event in Austin, December 2017.&quot; srcset=&quot;/images/posts/sf-2017-staff-photo-high-res.jpg 1.5x&quot; /&gt;
+    &lt;figcaption&gt;Mozilla staff photo from All-Hands event in Austin, December 2017.&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Today marks my fifth year working for Mozilla! This past year has been both fun and frantic, and overall was a really good year for both Mozilla and Firefox. Here’s a run down a few of the things I got to work on.&lt;/p&gt;
+
+&lt;h2 id=&quot;firefox-quantum-launch&quot;&gt;Firefox Quantum launch&lt;/h2&gt;
+
+&lt;p&gt;In November we shipped one of Firefox’s biggest updates ever, called &lt;a href=&quot;https://blog.mozilla.org/blog/2017/11/14/introducing-firefox-quantum/&quot;&gt;Firefox Quantum&lt;/a&gt;. It was a huge update that took a ton of work, and the very successful launch was a real focused effort from many different teams across Mozilla. In all my time here, I don’t think I’ve seen such a combined focus in both improving our core product and getting the message across loud and clear that Firefox is fast again. My own small contribution was building some of the main &lt;a href=&quot;https://www.mozilla.org/firefox/&quot;&gt;download&lt;/a&gt; &lt;a href=&quot;https://www.mozilla.orgfirefox/new/&quot;&gt;pages&lt;/a&gt; that were used for the launch campaign.&lt;/p&gt;
+
+&lt;h2 id=&quot;mozilla-rebranding&quot;&gt;Mozilla rebranding&lt;/h2&gt;
+
+&lt;p&gt;Mozilla also went through a major rebranding exercise over the past year. In the midst of launching Firefox Quantum, we were also busy redesigning &lt;a href=&quot;https://www.mozilla.org/&quot;&gt;www.mozilla.org&lt;/a&gt; to incorporate the look and feel of our new brand. This is a huge task in itself, and something that is likely to take quite some time to complete given the size and number of the web properties we own.&lt;/p&gt;
+
+&lt;h2 id=&quot;performance&quot;&gt;Performance&lt;/h2&gt;
+
+&lt;p&gt;To try and help us redesign fast and performant websites at Mozilla, one of my personal goals has been to try and help our team more closely monitor website performance. To this end, I built a &lt;a href=&quot;https://mozmeao-perf-dashboard.netlify.com/&quot;&gt;web performance dashboard&lt;/a&gt; to help monitor the sites we are accountable for. It uses &lt;a href=&quot;https://www.webpagetest.org/&quot;&gt;WebPageTest API&lt;/a&gt; and &lt;a href=&quot;https://developers.google.com/web/tools/lighthouse/&quot;&gt;Google Lighthouse&lt;/a&gt; to measure the performance of key high-traffic pages on our properties. I hope to hack on this some more in the near future, but it’s already helped us identify some key issues that were otherwise difficult to spot.&lt;/p&gt;
+
+&lt;h2 id=&quot;design-system&quot;&gt;Design System&lt;/h2&gt;
+
+&lt;p&gt;After talking about it for way too long, we finally got buy-in to start building a design system for Mozilla websites! This is something we’re only just starting on, but it’s big enough to warrant a mention here as it will help us shape the future for our design and development processes. It’s called &lt;a href=&quot;https://github.com/mozilla/protocol/&quot;&gt;Protocol&lt;/a&gt; (which is a hat-tip to the internal code name that was used for the redesigned Mozilla logo).&lt;/p&gt;
+
+&lt;h2 id=&quot;contributions&quot;&gt;Contributions&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;I made over 224 commits to bedrock this past year.&lt;/li&gt;
+  &lt;li&gt;I have now filed over 522 bugs on Bugzilla, been assigned over 632 bugs and made over 4985 comments.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;travel&quot;&gt;Travel&lt;/h2&gt;
+
+&lt;p&gt;On the travel front, I got to visit both Austin and San Francisco for Mozilla all-hands weeks. As always, both weeks we’re fun but exhausting. Austin is a great city, and we ate way too much BBQ.&lt;/p&gt;
+
+&lt;figure&gt;
+    &lt;img src=&quot;/images/posts/austin-all-hands-closing-party.jpg&quot; alt=&quot;Mozilla Austin all-hands closing party, December 2017.&quot; srcset=&quot;/images/posts/austin-all-hands-closing-party-high-res.jpg 1.5x&quot; /&gt;
+    &lt;figcaption&gt;Mozilla Austin all-hands closing party, December 2017.&lt;/figcaption&gt;
+&lt;/figure&gt;</content><author><name>Alex Gibson</name></author><summary type="html">Today marks my fifth year working for Mozilla! This past year has been both fun and frantic, and overall was a really good year for both Mozilla and Firefox. Here's a run down a few of the things I got to work on.</summary></entry><entry><title type="html">Adding a Service Worker to Jekyll</title><link href="/2017/12/08/adding-a-service-worker-to-jekyll" rel="alternate" type="text/html" title="Adding a Service Worker to Jekyll" /><published>2017-12-08T00:00:00+00:00</published><updated>2017-12-08T00:00:00+00:00</updated><id>/2017/12/08/adding-a-service-worker-to-jekyll</id><content type="html" xml:base="/2017/12/08/adding-a-service-worker-to-jekyll">&lt;p&gt;Implementing a Service Worker is something I’ve only really &lt;a href=&quot;https://github.com/alexgibson/wavepad&quot;&gt;toyed with in the past&lt;/a&gt;. I recently felt like I needed to get reacquainted with their inner workings again, so I decided to implement one for this blog. Here are some tips and tricks I learned along the way.&lt;/p&gt;
+
+&lt;h2 id=&quot;choose-a-caching-strategy&quot;&gt;Choose a caching strategy&lt;/h2&gt;
+
+&lt;p&gt;Caching is one of the hardest problems in programming, and also one of the main reasons why service workers can be a bit difficult to understand at first. Choosing the wrong caching strategy for your service worker can lead to unexpected and sometimes difficult to reproduce bugs, so it’s important to spend some time thinking about what will work best for your website.&lt;/p&gt;
+
+&lt;p&gt;The last service worker I wrote used an &lt;em&gt;offline first&lt;/em&gt; approach. This worked out OK since it was only a single HTML page with a limited number of static assets. The service worker looked in the cache first for any &lt;code class=&quot;highlighter-rouge&quot;&gt;GET&lt;/code&gt; request, and only went out to the network if there was no match:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addEventListener&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'fetch'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;request&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;// Always fetch non-GET requests from the network.&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;method&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!==&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'GET'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;respondWith&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;fetch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;// Look to the cache first, then fall back to the network.&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;respondWith&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;caches&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;match&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;then&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;response&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;response&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;fetch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;For this blog that’s not really what I wanted though, since when people visit I want to be sure they always see the most recent content straight away. For this reason I went for a &lt;em&gt;network first&lt;/em&gt; approach for HTML pages, and falling back to a simple &lt;em&gt;offline&lt;/em&gt; page if a request fails:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addEventListener&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'fetch'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;request&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;// Always fetch non-GET requests from the network.&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;method&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!==&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'GET'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;respondWith&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;fetch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;// For HTML requests, try the network first else fall back to the offline page.&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;headers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Accept'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;indexOf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'text/html'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!==&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;respondWith&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+            &lt;span class=&quot;nx&quot;&gt;fetch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;catch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;caches&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;match&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'/offline/'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;I could have additionally chosen to cache pages that users have already visited, and served those up if the network fails and there is a match in the service worker cache. I’m not convinced however, that my personal blog posts are really interesting enough that people actually want them heavily cached on their hard drives, so for now a simple offline page will suffice ;)&lt;/p&gt;
+
+&lt;h2 id=&quot;dealing-with-static-assets&quot;&gt;Dealing with static assets&lt;/h2&gt;
+
+&lt;p&gt;In order to get page load performance benefits out of my service worker whilst using a network first strategy for HTML pages, I chose a slightly different strategy for serving static assets such as CSS, JavaScript and image files. Here we look in the service worker cache first and return a response straight away. If no match is found, we go out to the network:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addEventListener&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'fetch'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;request&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;// Always fetch non-GET requests from the network.&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;method&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!==&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'GET'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;respondWith&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;fetch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;// For HTML requests, try the network first else fall back to the offline page.&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;headers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Accept'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;indexOf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'text/html'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!==&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;respondWith&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+            &lt;span class=&quot;nx&quot;&gt;fetch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;catch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;caches&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;match&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'/offline/'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;// For non-HTML requests, look in the cache first else fall back to the network.&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;respondWith&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;caches&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;match&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;then&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;response&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;response&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;fetch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;There is a potential issue here however. What if a visitor requests an HTML page, but that page uses updated assets that no longer match what’s stored in the current service worker cache? This could lead to both visual bugs and broken behavior, which is not good. Rather than try to fight against the cache, using immutable assets is a good strategy here.&lt;/p&gt;
+
+&lt;h2 id=&quot;immutability-to-the-rescue&quot;&gt;Immutability to the rescue!&lt;/h2&gt;
+
+&lt;p&gt;Jekyll doesn’t support immutable assets out-of-the-box, but luckily there is already a plugin called &lt;a href=&quot;https://github.com/envygeeks/jekyll-assets&quot;&gt;jekyll-assets&lt;/a&gt; that can hash asset filenames for you (and more). Once I had this installed, I updated both my liquid templates and my service worker’s &lt;code class=&quot;highlighter-rouge&quot;&gt;updateStaticCache&lt;/code&gt; function to use the hashed filenames. This ensures that my service worker never accidentally responds with an outdated asset that a web page might be using, since the actual file names are individually hashed:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;updateStaticCache&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;caches&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;open&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;cacheName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;then&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;cache&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;cache&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addAll&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;
+            &lt;span class=&quot;s1&quot;&gt;'{{ assets['&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;styles&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;scss&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'].digest_path }}'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;s1&quot;&gt;'{{ assets['&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;js&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'].digest_path }}'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;s1&quot;&gt;'{{ assets['&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;avatar&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;180&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;png&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'].digest_path }}'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;s1&quot;&gt;'/offline/'&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;In order to get Jekyll to parse the JavaScript here, I had to trick it into thinking the file is a piece of YAML front-matter. You can do this by inserting two rows of three dashes at the top of the service worker file. I also used Jekll’s date/time functions to automatically version the Service Worker each time the static site is generated:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;o&quot;&gt;---&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;---&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;version&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'{{site.time | date: '&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Y&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;H&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;M&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;S&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'}}'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;cacheName&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;`static::&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;version&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;If you’re curious to see everything together, you can view my &lt;a href=&quot;https://github.com/alexgibson/alxgbsn.co.uk/blob/master/sw.js&quot;&gt;full service worker code here&lt;/a&gt;.&lt;/p&gt;</content><author><name>Alex Gibson</name></author><summary type="html">Implementing a Service Worker is something I've only really toyed with in the past. I recently felt like I needed to get reacquainted with their inner workings again, so I decided to implement one for this blog. Here are some tips and tricks I learned along the way.</summary></entry><entry><title type="html">My fourth year working at Mozilla</title><link href="/2017/04/19/my-fourth-year-working-at-mozilla" rel="alternate" type="text/html" title="My fourth year working at Mozilla" /><published>2017-04-19T00:00:00+01:00</published><updated>2017-04-19T00:00:00+01:00</updated><id>/2017/04/19/my-fourth-year-working-at-mozilla</id><content type="html" xml:base="/2017/04/19/my-fourth-year-working-at-mozilla">&lt;figure&gt;
+    &lt;img src=&quot;/images/posts/hawaii-staff-photo.jpg&quot; alt=&quot;Mozilla staff photo from All-Hands event in Hawaii, December 2016.&quot; srcset=&quot;/images/posts/hawaii-staff-photo-high-res.jpg 1.5x&quot; /&gt;
+    &lt;figcaption&gt;Mozilla staff photo from All-Hands event in Hawaii, December 2016&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;This week marks my 4th year &lt;em&gt;Mozillaversary&lt;/em&gt;! As usual, I try to put together a short post to recap on some of the things that happened during the past year. It feels like I have some things to talk about this time around which are slightly more process-heavy than previous year’s efforts, but gladly there’s some good work in there too. Here goes!&lt;/p&gt;
+
+&lt;h2 id=&quot;our-team-grew&quot;&gt;Our team grew&lt;/h2&gt;
+
+&lt;p&gt;Our &lt;a href=&quot;https://mozilla.github.io/meao/2017/01/16/introducing-mozmeao/&quot;&gt;functional team grew&lt;/a&gt; over the past year which is really great to see. We now manage the development and infrastructure for both &lt;a href=&quot;https://www.mozilla.org/&quot;&gt;www.mozilla.org&lt;/a&gt; and &lt;a href=&quot;https://developer.mozilla.org/&quot;&gt;MDN&lt;/a&gt;. The idea is that having both teams more closely aligned will lead to increased sharing of knowledge and skills, as well as standardization on common tools, libraries, infra, deployment and testing. It’s great to have some more talented people on the team, hooray!&lt;/p&gt;
+
+&lt;h2 id=&quot;are-we-agile-yet&quot;&gt;Are we agile yet?&lt;/h2&gt;
+
+&lt;p&gt;While most of my day-to-day work is still spent tending to the needs of &lt;a href=&quot;https://www.mozilla.org/&quot;&gt;www.mozilla.org&lt;/a&gt;, a lot has changed in the last year with regard to how our development team manages work processes. The larger marketing organization at Mozilla has switched to a new &lt;em&gt;agile sprint model&lt;/em&gt;, with dedicated durable teams for each focus area. While I think this is a good move for the marketing org as a whole, it has also been a struggle for many teams to adjust (the mozorg team included). While two week sprints can work well for product focused teams, a website such as mozorg can be quite a different beast; with multiple stakeholders, moving parts, technical debt, and often rapidly shifting priorities. It is also an &lt;a href=&quot;https://github.com/mozilla/bedrock&quot;&gt;open source project&lt;/a&gt;, with &lt;a href=&quot;https://github.com/mozilla/bedrock/graphs/contributors&quot;&gt;real contributors&lt;/a&gt;. We’re still experimenting with trying to make this new process fit the needs of our project, but I do wonder if we’ll slowly creep back to &lt;a href=&quot;https://en.wikipedia.org/wiki/Kanban_%28development%29&quot;&gt;Kanban&lt;/a&gt; (our previous methodology) during the course of the next year. Let’s wait and see ;)&lt;/p&gt;
+
+&lt;h2 id=&quot;contributions-and-other-stats&quot;&gt;Contributions and other stats&lt;/h2&gt;
+
+&lt;p&gt;Here are the usual stats from the past year:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;I made over &lt;a href=&quot;https://github.com/mozilla/bedrock/commits?author=alexgibson&quot;&gt;166 commits&lt;/a&gt; to bedrock this past year (down from 269 commits last year).&lt;/li&gt;
+  &lt;li&gt;I have now filed over 424 bugs on &lt;a href=&quot;https://bugzilla.mozilla.org/&quot;&gt;Bugzilla&lt;/a&gt;, been assigned over 474 bugs and made over 3967 comments.&lt;/li&gt;
+  &lt;li&gt;I cycled over 1657 miles on my lunch breaks (one of my personal goals this past year was to become more healthy!).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Now, the number of commits to bedrock aren’t always a good representation of the level of work that occurred during the year. I did work on some large, far reaching bugs which took a lot of time and effort. But it does make me wonder if our new sprint process is actually &lt;em&gt;less&lt;/em&gt; productive overall? Are all those smaller bugs going left unattended for longer? Would we have still have been hitting our high level goals doing Kanban? It’s hard to quantify, but there’s some food for thought here.&lt;/p&gt;
+
+&lt;h2 id=&quot;firefox-download-pages&quot;&gt;Firefox Download Pages&lt;/h2&gt;
+
+&lt;p&gt;The main &lt;a href=&quot;https://www.mozilla.org/firefox/new/&quot;&gt;Firefox download page&lt;/a&gt; is one of the most high traffic pages on mozorg, so it’s naturally something we pay close attention to when making changes. This year we experimented on the page &lt;strong&gt;a lot&lt;/strong&gt;. It got redesigned it no less than three times, and continually tweaked over the course of multiple A/B tests. Lots of scrutiny goes into every change, especially in relation to page weight, loading time, and the impact that can have on download conversions. Ultimately what used to be a relatively plain looking page turned into something quite beautiful.&lt;/p&gt;
+
+&lt;figure&gt;
+    &lt;img src=&quot;/images/posts/download-page-horizon.png&quot; alt=&quot;Redesigned Firefox download page&quot; srcset=&quot;/images/posts/download-page-horizon-high-res.png 1.5x&quot; /&gt;
+    &lt;figcaption&gt;Redesigned Firefox download page&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;We also experimented with things like making the sun rise over the horizon, but sadly this proved to be a bit too much of a distraction for some visitors. Nevertheless, kudos to our design team for the beautiful visuals. It was quite fun to work on :)&lt;/p&gt;
+
+&lt;h2 id=&quot;firefox-stub-attribution&quot;&gt;Firefox Stub Attribution&lt;/h2&gt;
+
+&lt;p&gt;Another notable feature I spent time on was adding support to bedrock for &lt;a href=&quot;https://bugzilla.mozilla.org/show_bug.cgi?id=1279291&quot;&gt;tracking campaign referral data&lt;/a&gt;, and passing that along to the Firefox Stub Installer for profiling in &lt;a href=&quot;https://wiki.mozilla.org/Telemetry&quot;&gt;Telemetry&lt;/a&gt;. The idea is that the Firefox Retention Team can look at data in Telemetry and try to attribute specific changes in retention (how long users actively use the product) to downloads triggered by specific referral sources or media campaigns. This work required coordination with multiple engineering teams within Mozilla, and took considerable time to test and gradually roll out. We’re still crunching the data and hope it can provide some useful insights going forward.&lt;/p&gt;
+
+&lt;h2 id=&quot;sha-1-bouncer-support&quot;&gt;SHA-1 Bouncer Support&lt;/h2&gt;
+
+&lt;p&gt;Firefox 52 marked the &lt;a href=&quot;https://blog.mozilla.org/security/2017/02/23/the-end-of-sha-1-on-the-public-web/&quot;&gt;end of SHA-1 certificate support&lt;/a&gt; on the Web. In order to continue serving downloads to users, we had to switch &lt;a href=&quot;https://github.com/mozilla-services/go-bouncer/&quot;&gt;Bouncer&lt;/a&gt; to SHA-2 only, and then set up a SHA-1 mirror to continue supporting users on Windows XP/Vista. This required modifying our download button logic in bedrock (something I was once a bit scared of doing) to provide SHA-1 specific links that get shown only to the users who need it. Once XP/Vista are &lt;a href=&quot;https://blog.mozilla.org/futurereleases/2016/12/23/firefox-support-for-xp-and-vista/&quot;&gt;officially no longer supported&lt;/a&gt; by Firefox ESR we can remove this logic.&lt;/p&gt;
+
+&lt;h2 id=&quot;mozilla-global-navigation&quot;&gt;Mozilla Global Navigation&lt;/h2&gt;
+
+&lt;p&gt;As part of Mozilla’s new branding rollout, I also got to build the first prototype of the new &lt;a href=&quot;https://www.mozilla.org/en-US/&quot;&gt;global navigation for mozorg&lt;/a&gt;. We’re still iterating and refining how it works and performs, but the aim is that one day it can be used across many Mozilla web properties. I’m hopeful it may help to solve some of the information architecture issues we’ve faced on mozorg in recent years.&lt;/p&gt;
+
+&lt;h2 id=&quot;all-hands-and-travel&quot;&gt;All-hands and travel&lt;/h2&gt;
+
+&lt;figure&gt;
+    &lt;img src=&quot;/images/posts/hawaii-volcano.jpg&quot; alt=&quot;In the crater of a volcano!&quot; srcset=&quot;/images/posts/hawaii-volcano-high-res.jpg 1.5x&quot; /&gt;
+    &lt;figcaption&gt;In the crater of a volcano!&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Mozilla’s &lt;a href=&quot;https://wiki.mozilla.org/All_Hands&quot;&gt;All-Hands events&lt;/a&gt; are always pretty amazing. This time they happened in &lt;a href=&quot;https://wiki.mozilla.org/All_Hands/2016_London&quot;&gt;London&lt;/a&gt; and &lt;a href=&quot;https://wiki.mozilla.org/All_Hands/2016_Hawaii&quot;&gt;Hawaii&lt;/a&gt;. While London wasn’t really high on the excitement levels, it was nice to get to welcome all my colleagues to the UK. Hawaii was naturally the real highlight for me, especially because I got to go visit a real, live volcano! In between all that I also got to pay my second visit to the Mozilla Toronto office, almost exactly 4 years since my last visit (which was my very first week working for Mozilla!).&lt;/p&gt;</content><author><name>Alex Gibson</name></author><summary type="html">This week marks my 4th year Mozillaversary! As usual, I try to put together a short post to recap on some of the things that happened during the past year. It feels like I have some things to talk about this time around which are slightly more process-heavy than previous year's efforts, but gladly there's some good work in there too. Here goes!</summary></entry><entry><title type="html">5 lessons from working at Mozilla remotely</title><link href="/2016/12/01/lessons-from-working-at-mozilla-remotely" rel="alternate" type="text/html" title="5 lessons from working at Mozilla remotely" /><published>2016-12-01T00:00:00+00:00</published><updated>2016-12-01T00:00:00+00:00</updated><id>/2016/12/01/lessons-from-working-at-mozilla-remotely</id><content type="html" xml:base="/2016/12/01/lessons-from-working-at-mozilla-remotely">&lt;p&gt;I’ve been working remotely at &lt;a href=&quot;https://www.mozilla.org/&quot;&gt;Mozilla&lt;/a&gt; as a full time staff member for nearly 4 years now. People often ask me if remote working is boring. The typical question is usually along the lines of &lt;em&gt;“How do you ever get work done with all the distractions at home?”&lt;/em&gt;. Well, I love what I do, so my usual response is &lt;em&gt;“Getting work done isn’t usually the problem, it’s knowing when to stop working that’s the hard part”&lt;/em&gt;. The next question is often &lt;em&gt;“Don’t you feel lonely not speaking to anyone all day?”&lt;/em&gt;. Then I explain about this thing called &lt;a href=&quot;http://www.vidyo.com/&quot;&gt;Vidyo&lt;/a&gt;, and while I’m not in an office every day we do actually talk face-to-face, even though we’re not in the same room, or even in the same country a lot of the time. Remote working is just &lt;em&gt;different&lt;/em&gt; to what a lot of people tend to expect. There are definite downsides, but there are some wonderful upsides too. Here are some lessons I’ve learned over the last 4 years that might be helpful to others.&lt;/p&gt;
+
+&lt;h2 id=&quot;make-a-daily-schedule-and-stick-to-it&quot;&gt;Make a daily schedule and stick to it&lt;/h2&gt;
+
+&lt;p&gt;While I work in a globally distributed team, the majority of my daily meetings are done via video to either the &lt;a href=&quot;https://www.mozilla.org/contact/spaces/san-francisco/&quot;&gt;San Francisco&lt;/a&gt; or &lt;a href=&quot;https://www.mozilla.org/contact/spaces/mountain-view/&quot;&gt;Mountain View&lt;/a&gt; Mozilla offices. This means the last two hours of my working day are usually back-to-back meetings. Between 4.30pm and 6.30pm is a bit like an extended rush hour, so I try not to plan on getting any actual coding done in that time. Everything is about updating team members on progress, planning for tomorrow, and a bit of daily chatter on IRC before the next meeting starts.&lt;/p&gt;
+
+&lt;p&gt;By the time I finish, my brain is usually pretty tired and I’m ready to unplug for the evening. Thankfully, my mornings are nearly always blissfully quiet being an employee in the UK. Most people are asleep and IRC is pretty dead at that time, so I have very little in terms of distractions to break my concentration. I find 9am to 12pm is usually my most productive time of the day for coding. This is when I &lt;strong&gt;get shit done&lt;/strong&gt;. My afternoons are taken up by things like reviewing other people’s code, answering emails/bugmail, and finishing up any left over tasks I had from earlier in the morning.&lt;/p&gt;
+
+&lt;p&gt;Of course, the idea of working until 6.30pm most days is probably not appealing a lot of people, particularly to those who are used to regular office based jobs. Having meetings at the time I do is pretty unavoidable, so I have to learn to be my own boss when it comes to time management. I usually force myself to take a decent break in the middle of my working day to go out and get some exercise, or spend some time with my family. Before starting each day I also make a routine to walk my son to school, which is something I never used to get to do when I had a daily commute. I’m also there to welcome him when he comes home again, which he really likes. This kind of freedom is one of the biggest blessings when working remotely, so make the most of it.&lt;/p&gt;
+
+&lt;p&gt;When it comes to late meeting invites, I try and be pretty strict. If something pops up in my calendar that is later than 6pm I generally just decline it straight away. In my first few months at the company I accepted a few late meetings (being a newbie) and generally found that I could have skipped most of them. It just wasn’t essential to be there a lot of the time, and usually there is someone who takes notes, updates bugs and can easily fill in the details for you. If something is really critical to attend, then all parties can find a reasonable time that suits each timezone. Don’t be afraid to say no to things.&lt;/p&gt;
+
+&lt;h2 id=&quot;take-a-break-and-exercise&quot;&gt;Take a break and exercise&lt;/h2&gt;
+
+&lt;p&gt;This is something I failed at for my first two years working remotely and somewhat paid the price. No longer having a daily commute meant I just wasn’t getting enough basic exercise. I started to put on some weight, and just generally felt less energetic and more &lt;em&gt;bleurrgh&lt;/em&gt;. Being a programmer I also spent a lot of time sitting at a desk for long hours. Over the years I have suffered from some pretty severe back pain, to the extent that I regularly paid to go to a chiropractor in order just to function properly.&lt;/p&gt;
+
+&lt;p&gt;In my third year working remote I made a change for the better, and decided to take up cycling as a hobby. Mozilla even allowed me to expense the cost of a bike as part of their &lt;em&gt;Health and Wellness Scheme&lt;/em&gt; (did I mention &lt;a href=&quot;https://careers.mozilla.org/&quot;&gt;working for Mozilla&lt;/a&gt; was awesome?). I also switched to using a standing desk at home, which together with cycling has helped with my back issues immensely. I haven’t been back to the chiropractor in nearly 12 months and have never felt better.&lt;/p&gt;
+
+&lt;p&gt;Cycling has helped me in other ways too. Aside from losing over a stone in weight, it’s also been a great way of forcing my brain to do other things. Instead of spending my lunch break absently drifting back to thinking about whatever bug I’ve been fixing, instead I’m forced to concentrate on the path in front of me - &lt;em&gt;“Shit, look out for that pot-hole!”&lt;/em&gt;. It’s also nice to have a hobby that is outdoors, and does not involve looking at a screen.&lt;/p&gt;
+
+&lt;h2 id=&quot;work-in-different-surroundings&quot;&gt;Work in different surroundings&lt;/h2&gt;
+
+&lt;p&gt;For my first few years working remote I used the spare bedroom in my house as a home office. While this was great in terms of having a dedicated space that I could use to create a boundary between home and work, it actually felt pretty isolating at times. Since the arrival of my daughter (our second child!), I have since given up that room started working out of our kitchen a lot more. I find this a much more pleasant space to work in most of the time as it’s more of a social room in the household (and has a good coffee machine). For times when I need concentration, I invested in a quality pair of noise cancelling headphones for listening to music. I also go to a co-working space in the city some days (usually dictated by when it’s raining and I don’t want to cycle), where I can be around other remote workers and freelancers.&lt;/p&gt;
+
+&lt;h2 id=&quot;pick-a-source-for-all-truth&quot;&gt;Pick a source for all truth&lt;/h2&gt;
+
+&lt;p&gt;With people in different locations all working on the same team, asynchronous communication is vital. Someone is always writing code, filing bugs, sending emails, creating documents, or posting things in IRC (or Slack, if that’s your thing). When working in a different timezone to the majority of other team members, it becomes especially helpful to start my day and not have to hunt around in multiple different places to try and piece together what needs to be done. For this reason I’m always a bit of a stickler about trying to keep all our information together in one place. This place is usually &lt;a href=&quot;https://bugzilla.mozilla.org/&quot;&gt;Bugzilla&lt;/a&gt;, since that’s ultimately the tool we use as a paper trail in our commit history. This is at times an uphill struggle, and something I’m still trying to improve upon. At times I end up trying to chase people toward the end of my day in order to find the pieces of information I need to unblock my work for the next day. This isn’t really fun for either party, as when I’m tired and finishing my day other people are often just getting started with theirs. I’ve found that setting recurring reminders for people in bugs and making clear deadlines upfront is the easiest way to alleviate this rush for answers, but it’s not always easy to predict what you’ll need and when. Trying to keep things async like this also gives people more time to think when responding to requests.&lt;/p&gt;
+
+&lt;h2 id=&quot;make-the-most-of-time-together&quot;&gt;Make the most of time together&lt;/h2&gt;
+
+&lt;p&gt;Being a globally distributed company, Mozilla hosts &lt;a href=&quot;https://wiki.mozilla.org/All_Hands&quot;&gt;All Hands&lt;/a&gt; weeks twice a year where the whole company can get together and plan for the future. These weeks are generally exhausting but also pretty amazing, with so many people being together in one place. We also get to do the odd work week with our functional or durable teams to work on different projects. This usually involves traveling to one of the many &lt;a href=&quot;https://www.mozilla.org/en-US/contact/spaces/&quot;&gt;Mozilla spaces&lt;/a&gt; to work closely together for a week. Making the most of this in-person time is great for things like planning and sprint work, but the main thing I think everyone gets out of it is just spending time together. Talking every day on video is one thing, but also getting to do stuff together in the same location is really important. Not just for the work itself, but also for team building. I try and take as many of these opportunities as I can.&lt;/p&gt;</content><author><name>Alex Gibson</name></author><summary type="html">I've been working remotely at Mozilla as a full time staff member for nearly 4 years now. People often ask me if remote working is boring. The typical question is usually along the lines of &quot;How do you ever get work done with all the distractions at home?&quot;. Well, I love what I do, so my usual response is &quot;Getting work done isn't usually the problem, it's knowing when to stop working that's the hard part&quot;. The next question is often &quot;Don't you feel lonely not speaking to anyone all day?&quot;. Then I explain about this thing called Vidyo, and while I'm not in an office every day we do actually talk face-to-face, even though we're not in the same room, or even in the same country a lot of the time. Remote working is just different to what a lot of people tend to expect. There are definite downsides, but there are some wonderful upsides too. Here are some lessons I've learned over the last 4 years that might be helpful to others.</summary></entry><entry><title type="html">My third year working at Mozilla</title><link href="/2016/04/15/my-third-year-working-at-mozilla" rel="alternate" type="text/html" title="My third year working at Mozilla" /><published>2016-04-15T00:00:00+01:00</published><updated>2016-04-15T00:00:00+01:00</updated><id>/2016/04/15/my-third-year-working-at-mozilla</id><content type="html" xml:base="/2016/04/15/my-third-year-working-at-mozilla">&lt;figure&gt;
+    &lt;img src=&quot;/images/posts/whistler-2015.jpg&quot; alt=&quot;Whistler 2015&quot; /&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Today marks my third year working for &lt;a href=&quot;https://www.mozilla.org&quot;&gt;Mozilla&lt;/a&gt;!
+I usually try and put together a short recap on the things I’ve accomplished
+during the past year here. There are so many things I could pick out, but I find
+it hard to know quite where to begin. Three years have flown by very quickly, but
+looking back at the time when I started, I feel like I have grown considerably.
+I guess this has been my first year at Mozilla where I no longer feel “new”,
+although I am still learning constantly by being surrounded by so many smart people.&lt;/p&gt;
+
+&lt;p&gt;Here are some of my personal highlights (and random stats) from the past year.&lt;/p&gt;
+
+&lt;h2 id=&quot;contributions&quot;&gt;Contributions&lt;/h2&gt;
+
+&lt;p&gt;I made over &lt;a href=&quot;https://github.com/mozilla/bedrock/commits?author=alexgibson&quot;&gt;269 commits&lt;/a&gt; to &lt;a href=&quot;https://github.com/mozilla/bedrock&quot;&gt;bedrock&lt;/a&gt; (the repository codename for
+&lt;a href=&quot;https://www.mozilla.org&quot;&gt;www.mozilla.org&lt;/a&gt;). I enjoy working on the site because
+it’s high traffic, spans a large code base, and gets translated into a huge
+number of languages (now over 100 locales). It also has it’s own little place in
+internet &lt;a href=&quot;https://www.youtube.com/watch?v=4Q7FTjhvZ7Y&quot;&gt;history&lt;/a&gt;, which I think
+is kinda cool.&lt;/p&gt;
+
+&lt;p&gt;During the past year our small team made big progress paying off technical debt
+and shaping changes for the future. We finished migrating away from the old
+legacy PHP/SVN site, and finally moved everything over to Python/GitHub. This
+has taken several years to complete in itself (amongst other priorities). We
+also did a ton of infrastructure work moving the site to &lt;a href=&quot;http://aws.amazon.com/&quot;&gt;AWS&lt;/a&gt;,
+which being largely a front-end person who is not accustomed to such work, was
+really fascinating to watch.&lt;/p&gt;
+
+&lt;p&gt;I have now filed over 280 bugs on &lt;a href=&quot;https://bugzilla.mozilla.org/&quot;&gt;Bugzilla&lt;/a&gt;,
+been assigned over 350 bugs, and made over 2700 comments.&lt;/p&gt;
+
+&lt;h2 id=&quot;continuous-integration-and-functional-testing&quot;&gt;Continuous integration and functional testing&lt;/h2&gt;
+
+&lt;p&gt;I spent considerable time learning all about &lt;a href=&quot;http://www.seleniumhq.org/&quot;&gt;Selenium&lt;/a&gt;
+and automated cross-browser testing, which also required learning more Python.
+Together with Mozilla’s &lt;a href=&quot;https://quality.mozilla.org/teams/web-qa/&quot;&gt;WebQA team&lt;/a&gt;,
+I worked on building an &lt;a href=&quot;http://bedrock.readthedocs.org/en/latest/testing.html&quot;&gt;integration test suite&lt;/a&gt;
+for bedrock, which we now run as part of our new &lt;a href=&quot;http://bedrock.readthedocs.org/en/latest/pipeline.html&quot;&gt;automated deployment pipeline&lt;/a&gt;. This was a
+real learning curve for me being primarily a front-end developer, but something
+that I think has helped broaden my skills.&lt;/p&gt;
+
+&lt;h2 id=&quot;tracking-protection&quot;&gt;Tracking Protection&lt;/h2&gt;
+
+&lt;p&gt;Continuing my &lt;a href=&quot;https://alxgbsn.co.uk/2015/04/18/my-second-year-working-at-mozilla/&quot;&gt;prior work&lt;/a&gt;
+on Firefox user on-boarding, I got to help build the interactive tour that
+demonstrates how Tracking Protection works in the new Firefox &lt;a href=&quot;https://www.mozilla.org/firefox/private-browsing/&quot;&gt;Private Browsing&lt;/a&gt; mode.&lt;/p&gt;
+
+&lt;figure&gt;
+    &lt;img src=&quot;/images/posts/tracking-protection-tour.png&quot; alt=&quot;Screenshot of Firefox Tracking Protection tour page&quot; srcset=&quot;/images/posts/tracking-protection-tour-high-res.png 1.5x&quot; /&gt;
+    &lt;figcaption&gt;Tracking Protection tour page&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;This is a feature I’m very proud that Mozilla decided to ship, so I’m really happy we got
+to help introduce it to a lot of people updating their Firefox via a /whatsnew page.&lt;/p&gt;
+
+&lt;figure&gt;
+    &lt;img src=&quot;/images/posts/tracking-protection-whatsnew.png&quot; alt=&quot;Screenshot of Firefox /whatsnew page&quot; srcset=&quot;/images/posts/tracking-protection-whatsnew-high-res.png 1.5x&quot; /&gt;
+    &lt;figcaption&gt;Firefox /whatsnew page&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&quot;all-hands-weeks&quot;&gt;All-hands weeks&lt;/h2&gt;
+
+&lt;p&gt;On the travel front, I got to visit &lt;a href=&quot;http://www.whistler.com/&quot;&gt;Whistler&lt;/a&gt; in
+British Columbia and &lt;a href=&quot;https://en.wikipedia.org/wiki/Orlando,_Florida&quot;&gt;Orlando&lt;/a&gt;
+in Florida for Mozilla all-hands weeks. I find these types of weeks generally
+exhausting, but at the same time I feel very privileged to be able to attend
+company events on this scale. I don’t think I’ll ever forget
+&lt;a href=&quot;http://www.superflyziplines.com/&quot;&gt;zip-lining from the top of a mountain&lt;/a&gt; with
+the rest of my team, or being able to bring my family along to
+&lt;a href=&quot;https://disneyworld.disney.go.com/&quot;&gt;Disney World&lt;/a&gt; so my son could have an
+experience he’ll always remember.&lt;/p&gt;
+
+&lt;figure&gt;
+    &lt;img src=&quot;/images/posts/zip-line-whistler.jpg&quot; alt=&quot;Our team preparing to zip-line from the top of a mountain!&quot; /&gt;
+    &lt;figcaption&gt;Our team getting ready to zip-line!&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;I feel hugely appreciative to Mozilla for being able to share experiences like
+this with colleagues, friends and family alike.&lt;/p&gt;</content><author><name>Alex Gibson</name></author><summary type="html">Today marks my third year working for Mozilla! I usually try and put together a short recap on the things I’ve accomplished during the past year here. There are so many things I could pick out, but I find it hard to know quite where to begin. Three years have flown by very quickly, but looking back at the time when I started, I feel like I have grown considerably. I guess this has been my first year at Mozilla where I no longer feel “new”, although I am still learning constantly by being surrounded by so many smart people.</summary></entry><entry><title type="html">Full Frontal Conference 2015</title><link href="/2015/11/14/ffconf" rel="alternate" type="text/html" title="Full Frontal Conference 2015" /><published>2015-11-14T00:00:00+00:00</published><updated>2015-11-14T00:00:00+00:00</updated><id>/2015/11/14/ffconf</id><content type="html" xml:base="/2015/11/14/ffconf">&lt;figure&gt;
+    &lt;img src=&quot;/images/posts/ffconf-2015.jpg&quot; alt=&quot;ffconf 2015&quot; /&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;This year I was lucky enough to grab a ticket for &lt;a href=&quot;http://2015.ffconf.org/&quot;&gt;ffconf 2015&lt;/a&gt;
+before it sold out. I missed the boat last year, but I had attended once before
+in 2013, so felt confident that it would once again be a worthy pilgrimage to
+(not so sunny) Brighton. I always liked that the speakers for ffconf are never
+announced ahead of tickets going on sale. Everything boils down to the content
+and how talks are curated. Here are my notes from the day:&lt;/p&gt;
+
+&lt;h2 id=&quot;robin-mehner---javascript-that-doesnt-hurt-your-feelings&quot;&gt;Robin Mehner - JavaScript that doesn’t hurt your feelings&lt;/h2&gt;
+
+&lt;p&gt;Robin started off the day talking about new shiny features in ES2015, and how
+it can help us write nicer, cleaner JavaScript with less boilerplate. He showed
+off many code examples highlighting practical every day uses. These are just a
+few of the key features he discussed:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/docs/Web/JavaScript/Reference/template_strings&quot;&gt;Template string literals&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/docs/Web/JavaScript/Reference/Functions/Default_parameters&quot;&gt;Default parameter values&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/docs/Web/JavaScript/Reference/Functions/rest_parameters&quot;&gt;Rest parameters&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/docs/Web/JavaScript/Reference/Operators/Spread_operator&quot;&gt;Spread operator&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;Block scope variables &lt;a href=&quot;https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/let&quot;&gt;let&lt;/a&gt; and &lt;a href=&quot;https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/const&quot;&gt;const&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment&quot;&gt;Destructuring assignment&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/docs/Web/JavaScript/Reference/Functions/Arrow_functions&quot;&gt;Arrow functions&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/docs/Web/JavaScript/Reference/Classes&quot;&gt;Classes&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;In addition to major new features, Robin took some time to cover some smaller,
+lesser talked about bits and pieces that are also very useful:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array/find&quot;&gt;Array.find()&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String/startsWith&quot;&gt;String.startsWith()&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String/endsWith&quot;&gt;String.endsWith()&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String/includes&quot;&gt;String.includes()&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object/assign&quot;&gt;Object.assign()&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Many of these features are already &lt;a href=&quot;https://kangax.github.io/compat-table/es6/&quot;&gt;supported in browsers today&lt;/a&gt;, or you can of
+course use a transpiler such as &lt;a href=&quot;https://babeljs.io/&quot;&gt;Babel&lt;/a&gt; to convert your code to ES5.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=4NmkIjUBZmU&amp;amp;index=1&amp;amp;list=PLXmT1r4krsTqtLdWln2ritJZTjd5a06h2&quot;&gt;Watch Robin’s talk on YouTube&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;sara-soueidan---svg-in-motion&quot;&gt;Sara Soueidan - SVG in motion&lt;/h2&gt;
+
+&lt;p&gt;Sara gave a really comprehensive talk on pretty much everything you need to know
+about SVG when it comes to animation. She gave a very detailed run through of
+all the main embedding techniques, their appropriate fallbacks, and how to choose
+the most suitable method depending on what you need to animate. I’ve done a
+little bit of SVG based CSS animation, and I know from bitter experience just
+how many pitfalls there can be to get things to work cross-browser. I still don’t
+think I truly understand everything I need to know when it comes to properties like
+&lt;code class=&quot;highlighter-rouge&quot;&gt;viewbox&lt;/code&gt;, but Sara’s talk was especially useful in helping to explain things more
+clearly. She also went on to give demos of other interesting techniques that I
+had not seen before, such as SVG Sprite Animation and ‘repsonsive’ SVG animation
+based on viewport size.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=3TP2UVkbGHs&amp;amp;index=2&amp;amp;list=PLXmT1r4krsTqtLdWln2ritJZTjd5a06h2&quot;&gt;Watch Sara’s talk on YouTube&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;anna-shipman---operations-a-developers-guide&quot;&gt;Anna Shipman - Operations: a developer’s guide&lt;/h2&gt;
+
+&lt;p&gt;Anna gave a really useful talk on operations aimed at developers, explaining the
+difference between concepts such as &lt;em&gt;virtualization&lt;/em&gt; and &lt;em&gt;containerization&lt;/em&gt;.
+She covered weird sounding terms such as &lt;a href=&quot;https://en.wikipedia.org/wiki/Hypervisor&quot;&gt;&lt;em&gt;hypervisor&lt;/em&gt;&lt;/a&gt;, and explained the differences between tools such as
+&lt;a href=&quot;https://www.vagrantup.com/&quot;&gt;Vagrant&lt;/a&gt;/&lt;a href=&quot;https://ottoproject.io/&quot;&gt;Otto&lt;/a&gt; and
+&lt;a href=&quot;https://www.docker.com/&quot;&gt;Docker&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Anna also gave some great examples of using simple Unix command line tools such
+as &lt;code class=&quot;highlighter-rouge&quot;&gt;make&lt;/code&gt;, which can quite easily do many of the common build tasks we often
+leave to NPM/Gulp/Grunt.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=y6hbrS3DheU&amp;amp;list=PLXmT1r4krsTqtLdWln2ritJZTjd5a06h2&amp;amp;index=3&quot;&gt;Watch Anna’s talk on YouTube&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;john-k-paul---the-web-audio-phenomenon-that-shall-not-be-named&quot;&gt;John K. Paul - The Web Audio Phenomenon that Shall Not Be Named&lt;/h2&gt;
+
+&lt;p&gt;John talked about his interests in both programming and linguistics. Both
+have their own syntax and semantics, but natural languages can have different
+kinds of semantics depending on the sentence. Programming is more like a set
+instruction. Natural languages can also have pragmatics, something which does not
+exist in code. For example, what might a person have been thinking when they
+conveyed a sentence to another person? How could computers accomplish this
+understanding?&lt;/p&gt;
+
+&lt;p&gt;John went on to give a demo of a &lt;a href=&quot;https://makemcgurk.com/&quot;&gt;website he made&lt;/a&gt; to
+highlight something called the &lt;a href=&quot;https://en.wikipedia.org/wiki/McGurk_effect&quot;&gt;McGurk effect&lt;/a&gt;.
+He used Web API’s such as &lt;code class=&quot;highlighter-rouge&quot;&gt;getUserMedia&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;Web Audio&lt;/code&gt;, and the &lt;a href=&quot;https://developer.mozilla.org/docs/Web/API/MediaRecorder_API&quot;&gt;Media Recorder API&lt;/a&gt;
+to build a Node app that lets people record their own McGurk videos to share with
+friends.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=ztZ3fFlShmg&amp;amp;list=PLXmT1r4krsTqtLdWln2ritJZTjd5a06h2&amp;amp;index=4&quot;&gt;Watch John’s talk on YouTube&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;marcy-sutton---how-to-win-at-mobile-accessibility&quot;&gt;Marcy Sutton - How to win at mobile accessibility&lt;/h2&gt;
+
+&lt;p&gt;Marcy gave a talk on mobile web accessibility, covering common barriers to
+accessibility on mobile and how we can overcome them to help build more inclusive
+experiences for everyone.&lt;/p&gt;
+
+&lt;p&gt;Common accessibility barriers include:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Preventing pinch/zoom.&lt;/li&gt;
+  &lt;li&gt;Scroll highjacking.&lt;/li&gt;
+  &lt;li&gt;Ambiguous icons without labels.&lt;/li&gt;
+  &lt;li&gt;Conflicting gestures such as swipe.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Marcy noted that mobile web browsers often have much spottier ARIA support
+compared to their desktop counterparts, and as such the most used button for
+a11y on mobile websites is often the &lt;em&gt;reader mode&lt;/em&gt; button. This is what we’re
+competing against! She then went on to demo several websites on iOS using
+VoiceOver, pointing out common accessibility issues and how to fix them.
+Marcy also covered things such as the importance of semantics, touch target
+sizing, tab order, and making sure that hidden content is reachable.&lt;/p&gt;
+
+&lt;p&gt;Useful resources for accessibility include:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.bbc.co.uk/guidelines/futuremedia/accessibility/mobile&quot;&gt;BBC Mobile Accessibility Guidelines&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.microsoft.com/en-us/design/practice#toolkit&quot;&gt;Microsoft Inclusive Design Toolkit&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=Jp6-9X-ZClk&amp;amp;list=PLXmT1r4krsTqtLdWln2ritJZTjd5a06h2&amp;amp;index=5&quot;&gt;Watch Marcy’s talk on YouTube&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;paul-lewis---you-should-use-insert-libraryframework-its-the-bestestest&quot;&gt;Paul Lewis - You should use &amp;lt;insert library/framework&amp;gt;, it’s the bestestest!&lt;/h2&gt;
+
+&lt;p&gt;Paul talked about the &lt;a href=&quot;https://aerotwist.com/blog/the-cost-of-frameworks/&quot;&gt;cost of using JavaScript frameworks&lt;/a&gt;, a follow up to
+his earlier blog post about &lt;a href=&quot;https://aerotwist.com/blog/react-plus-performance-equals-what/&quot;&gt;React performance&lt;/a&gt;.
+He conducted several tests using popular JavaScript frameworks
+and &lt;a href=&quot;http://todomvc.com/&quot;&gt;TodoMVC&lt;/a&gt; as a common baseline, and emphasized that
+developers should stop taking the latest or most popular frameworks to be
+&lt;em&gt;silver bullets&lt;/em&gt;. Every framework has best practices that need to be followed.
+This can be especially true when it comes to mobile devices, where both time to
+first paint and interaction can be so crucial. The bottom line is that &lt;em&gt;all
+code has a cost&lt;/em&gt;, and we must consider that what is good for developers needs
+can’t justifiably outweigh the needs of users.&lt;/p&gt;
+
+&lt;p&gt;Paul also gave a demo of a new project he’s been working on called &lt;a href=&quot;https://aerotwist.com/blog/bigrig/&quot;&gt;Big Rig&lt;/a&gt;, which gives automated load and
+scroll performance analysis for websites. I would love to see this working in
+Firefox soon as well as Chrome!&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=_yCz1TA0EL4&amp;amp;list=PLXmT1r4krsTqtLdWln2ritJZTjd5a06h2&amp;amp;index=6&quot;&gt;Watch Paul’s talk on YouTube&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;martin-kleppe---code-calligrams&quot;&gt;Martin Kleppe - Code Calligrams&lt;/h2&gt;
+
+&lt;p&gt;Martin gave a really interesting talk about both the art and the technique that
+goes into making code &lt;a href=&quot;https://en.wikipedia.org/wiki/Calligram&quot;&gt;calligrams&lt;/a&gt;.
+I’ve always been aware of these types of things superficially, but never took
+the time to understand how they are constructed. Very clever stuff, and most
+definitely something that I’d like to spend some time learning more about.&lt;/p&gt;
+
+&lt;p&gt;Code calligram examples:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://aem1k.com/&quot;&gt;aem1k.com&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.jsfuck.com/&quot;&gt;jsfuck.com&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=-QZSJx8oXus&amp;amp;list=PLXmT1r4krsTqtLdWln2ritJZTjd5a06h2&amp;amp;index=7&quot;&gt;Watch Martin’s talk on YouTube&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;lena-reinhard---a-talk-about-everything&quot;&gt;Lena Reinhard - A Talk about Everything&lt;/h2&gt;
+
+&lt;p&gt;The last presentation of the day was from Lena, who gave a very honest, powerful
+and sometimes uncomfortable talk about the challenges many people face every day
+in the software industry. I tried to put together some words here that might do
+the talk justice, but everything I tried to write down fell short of hitting home.
+You should just go watch the video instead (you could hear a pin drop in the venue).&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=CZx7rYoq1Uw&amp;amp;index=8&amp;amp;list=PLXmT1r4krsTqtLdWln2ritJZTjd5a06h2&quot;&gt;Watch Lena’s talk on YouTube&lt;/a&gt;.&lt;/p&gt;</content><author><name>Alex Gibson</name></author><summary type="html">This year I was lucky enough to grab a ticket for ffconf 2015 before it sold out. I missed the boat last year, but I had attended once before in 2013, so felt confident that it would once again be a worthy pilgrimage to (not so sunny) Brighton. I always liked that the speakers for ffconf are never announced ahead of tickets going on sale. Everything boils down to the content and how talks are curated. Here are my notes from the day.</summary></entry><entry><title type="html">UpFront Conference 2015</title><link href="/2015/05/25/upfront-conf" rel="alternate" type="text/html" title="UpFront Conference 2015" /><published>2015-05-25T00:00:00+01:00</published><updated>2015-05-25T00:00:00+01:00</updated><id>/2015/05/25/upfront-conf</id><content type="html" xml:base="/2015/05/25/upfront-conf">&lt;figure&gt;
+    &lt;img src=&quot;/images/posts/upfront-2015.jpg&quot; alt=&quot;UpFront Conf 2015&quot; /&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;I took a trip to Manchester last week to attend &lt;a href=&quot;http://upfrontconf.com/&quot;&gt;UpFront Conf 2015&lt;/a&gt;. It was a full day of talks on web design and front-end development, and covered a range of topics including UI design, web performance, front-end testing, and typography. It even had a talk dedicated games console browsers! The line up of speakers delivered a good balance of both creative and technical talks, which made for an enjoyable day of brain-food. Here are my notes from the talks:&lt;/p&gt;
+
+&lt;h2 id=&quot;brad-frost---atomic-design&quot;&gt;Brad Frost - Atomic design&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://bradfrost.com/&quot;&gt;Brad Frost&lt;/a&gt; started off the day by sharing his experience working with clients to design reusable, responsive UI components. &lt;a href=&quot;http://atomicdesign.bradfrost.com/&quot;&gt;Atomic Design&lt;/a&gt; focuses on building individual components instead of web pages. This helps to promote reusability, which in turn improves workflow, speeds up prototyping, and makes things more easily testable. Brad says we should be investing more time in keeping our &lt;a href=&quot;http://styleguides.io/&quot;&gt;style guides&lt;/a&gt; up to date, as well as developing common &lt;a href=&quot;http://patternlab.io/&quot;&gt;pattern libraries&lt;/a&gt;. These are things that often get treated as auxiliary aspects of a project, but if we prioritize our work using a clear methodology, we can work more efficiently in the long run.&lt;/p&gt;
+
+&lt;h2 id=&quot;alica-sedlock---jumping-into-front-end-testing&quot;&gt;Alica Sedlock - Jumping into front end testing&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.aliciability.com/&quot;&gt;Alica Sedlock&lt;/a&gt; gave a useful high-level overview of front-end testing, which covered areas such as &lt;em&gt;Unit tests&lt;/em&gt;, &lt;em&gt;Integration tests&lt;/em&gt;, and &lt;em&gt;Visual Regression testing&lt;/em&gt;. A lot of the usual suspects for unit &amp;amp; integration tests we’re covered, such as Jasmine, Mocha, Karma, and headless browsers such as PhantomJS. What I found particularly interesting (or new to me anyway), was how to test for visual regressions. This can be done using tools such as &lt;a href=&quot;https://github.com/Huddle/PhantomCSS&quot;&gt;PhantomCSS&lt;/a&gt; and &lt;a href=&quot;http://casperjs.org/&quot;&gt;CasperJS&lt;/a&gt; to take screenshots of before &amp;amp; after states, and then diff the changes. Pretty neat!&lt;/p&gt;
+
+&lt;h2 id=&quot;soledad-penadés---the-disconnected-ensemble-scattered-clouds-underground&quot;&gt;Soledad Penadés - The disconnected ensemble: Scattered clouds, underground&lt;/h2&gt;
+
+&lt;p&gt;Mozilla’s own &lt;a href=&quot;http://soledadpenades.com/&quot;&gt;Soledad Penadés&lt;/a&gt; gave a really fun talk &amp;amp; tech demo, sharing some of her experiments exploring the concepts of a &lt;a href=&quot;https://github.com/sole/the-p2p-web&quot;&gt;P2P Web&lt;/a&gt;, and how this could be applied to mobile platforms such as Firefox OS. Sole built some musical toys, using Web Audio API and Web Components, which could be run and shared over a local network. This showed off some pretty interesting tech, including how an app can run its own local web server and share addresses to clients using NFC. Very cool!&lt;/p&gt;
+
+&lt;p&gt;I’d also never met Sole in person before, despite working at the same company (in the same country, even), so it was nice to get to say hi and chat a bit in the break!&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/sole/disconnected-ensemble-src&quot;&gt;View Sole’s demo source code&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;dean-hume---faster-mobile-websites&quot;&gt;Dean Hume - Faster mobile websites&lt;/h2&gt;
+
+&lt;p&gt;In the first talk of the day dedicated to web performance, &lt;a href=&quot;http://deanhume.com/&quot;&gt;Dean Hume&lt;/a&gt; gave an overview on why page loading speed is so important, and how we are often failing horribly at performance when it comes to mobile. Dean gave an insight into using the &lt;em&gt;RAIL approach&lt;/em&gt; (Response, Animate, Idle, Load) to help improve overall page speed, covering techniques such as &lt;a href=&quot;http://imageoptimization.info/&quot;&gt;image optimization&lt;/a&gt;, &lt;a href=&quot;https://github.com/addyosmani/critical&quot;&gt;critical CSS&lt;/a&gt;, &lt;a href=&quot;http://responsiveimages.org/&quot;&gt;responsive images&lt;/a&gt;, and more. The most high level goals are to reduce overall page weight, minimize the number of requests a page needs to make, and speed up the time to first paint.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://speakerdeck.com/deanohume/faster-mobile-websites&quot;&gt;View Dean’s slides&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;ben-foxall---the-internet-of-browsers&quot;&gt;Ben Foxall - The Internet of browsers&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://benjaminbenben.com/&quot;&gt;Ben Foxall&lt;/a&gt; demoed a fun interactive concept that played on the &lt;em&gt;“Internet of Things”&lt;/em&gt;, and showed that technology is very much a part of our physical world. Ben used browser meta data from devices in the audience to produce a visualization which highlighted where people we’re sat in relation to the speaker. This was accomplished using common Web API’s such as geolocation, orientation, proximity, ambient light, touch and sound.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://thing.benjaminbenben.com/&quot;&gt;View Ben’s interactive demo&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;richard-rutter---web-typography-you-could-be-doing-now&quot;&gt;Richard Rutter - Web typography you could be doing now&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://clagnut.com/&quot;&gt;Richard Rutter&lt;/a&gt; gave a talk on common typography best practices, and how best to apply them to web design. I found this quite insightful being more developer oriented, and also learnt a few new CSS properties that I never even knew existed (e.g. &lt;code class=&quot;highlighter-rouge&quot;&gt;font-variant-numeric&lt;/code&gt;). Richard also made a great point that we should all be serving &lt;a href=&quot;http://caniuse.com/#feat=woff2&quot;&gt;woff2&lt;/a&gt; for our web fonts by now, which can save up to 30% in file size.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://webtypography.net/talks/upfront2015/&quot;&gt;View Richard’s slides&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;anna-debenham---games-console-browsers&quot;&gt;Anna Debenham - Games Console browsers&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.maban.co.uk/&quot;&gt;Anna Debenham&lt;/a&gt; gave a really interesting talk on the rise in use of &lt;a href=&quot;http://console.maban.co.uk/&quot;&gt;games console browsers&lt;/a&gt;. Apparently 18% of people in the UK used a games console to log onto a social media web site in 2013. Another interesting group are 14-16 year olds, 20% of whom in the UK use a games console browser to access the internet (likely they don’t yet have a mobile device with data contract).&lt;/p&gt;
+
+&lt;p&gt;Anna went on to showcase the wide range of user inputs a games console can have, including gestures, voice commands, keypads, touch screens, and styluses to name just a few. Web browsers on these devices can also have very tight memory constraints, as well as pretty poor standards support. We need to try and optimize our web pages to be as light as possible, as well as make sure to always support common inputs such as keyboard, and use focus styles more effectively.&lt;/p&gt;
+
+&lt;h2 id=&quot;yesenia-perez-cruz---design-decisions-through-the-lens-of-performance&quot;&gt;Yesenia Perez-Cruz - Design decisions through the lens of performance&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.yeseniaperezcruz.com/&quot;&gt;Yesenia Perez-Cruz&lt;/a&gt; gave the second talk to focus on web performance, which was also the final talk of the day. I thought this one was particularly good as Yesenia shared how she works as a web designer to make informed decisions that won’t negatively impact a web page, taking into consideration factors like overall page weight, loading time and number of requests. This is something that designers don’t often prioritize, or consider being something a developer only needs worry about.&lt;/p&gt;
+
+&lt;p&gt;In Yesenia’s experience, slow and heavy sites are often a result of poor planning, communication, and awareness. Traditional waterfall processes often result with optimization being only an afterthought, or something that the developer needs to try and squeeze in toward the end of a project. It shouldn’t be this way. As a designer, Yesenia asks questions like, &lt;em&gt;“How many requests will a carousel add?”&lt;/em&gt;, &lt;em&gt;“How will performance be effected if we add another font weight?”&lt;/em&gt;, &lt;em&gt;“Do we really need that parallax background?”&lt;/em&gt; Her suggestion to help weigh up these questions is to establish a &lt;a href=&quot;https://clearleft.com/posts/98&quot;&gt;web performance budget&lt;/a&gt; for any given page, and to make performance an overall project goal from the outset. Performance should be considered a design feature, not just a side effect of development.&lt;/p&gt;</content><author><name>Alex Gibson</name></author><summary type="html">I took a trip to Manchester last week to attend UpFront Conf 2015. It was a full day of talks on web design and front-end development, and covered a range of topics including UI design, web performance, front-end testing, and typography. It even had a talk dedicated games console browsers! The line up of speakers delivered a good balance of both creative and technical talks, which made for an enjoyable day of brain-food. Here are my notes from the talks</summary></entry><entry><title type="html">My second year working at Mozilla</title><link href="/2015/04/18/my-second-year-working-at-mozilla" rel="alternate" type="text/html" title="My second year working at Mozilla" /><published>2015-04-18T00:00:00+01:00</published><updated>2015-04-18T00:00:00+01:00</updated><id>/2015/04/18/my-second-year-working-at-mozilla</id><content type="html" xml:base="/2015/04/18/my-second-year-working-at-mozilla">&lt;p&gt;This week marked my second year Mozillaversary. I did plan to write this blog post of the 15th April, which would have marked the day I started, but this week flew by so quickly I almost completely missed it!&lt;/p&gt;
+
+&lt;h2 id=&quot;contributions&quot;&gt;Contributions&lt;/h2&gt;
+
+&lt;p&gt;Carrying on from &lt;a href=&quot;http://alxgbsn.co.uk/2014/04/15/my-first-year-working-at-mozilla/&quot;&gt;last years blog post&lt;/a&gt;, most of my second year at Mozilla has been spent working on various parts of &lt;a href=&quot;https://www.mozilla.org&quot;&gt;www.mozilla.org&lt;/a&gt;, to which I made a total of &lt;a href=&quot;https://github.com/mozilla/bedrock/commits?author=alexgibson&quot;&gt;196 commits&lt;/a&gt; this year.&lt;/p&gt;
+
+&lt;h2 id=&quot;firefox-on-boarding&quot;&gt;Firefox on-boarding&lt;/h2&gt;
+
+&lt;p&gt;Much of my time has been spent working on Firefox on-boarding. Following the success of the on-boarding flow we built for the Firefox 29 Australis redesign &lt;a href=&quot;https://alxgbsn.co.uk/2014/04/15/my-first-year-working-at-mozilla/&quot;&gt;last year&lt;/a&gt;, I went on to work on several more on-boarding flows to help introduce new features in Firefox. This included a UITour for the newly rebranded &lt;a href=&quot;https://www.mozilla.org/firefox/developer/&quot;&gt;Firefox Developer Edition&lt;/a&gt; /firstrun experience, as well as updates to the existing Firefox tour for new features such as the &lt;a href=&quot;https://blog.mozilla.org/ux/2014/11/find-it-faster/&quot;&gt;refined search UI&lt;/a&gt; and &lt;a href=&quot;https://www.mozilla.org/en-US/firefox/hello/&quot;&gt;Firefox Hello&lt;/a&gt;.&lt;/p&gt;
+
+&lt;figure&gt;
+    &lt;img src=&quot;/images/posts/dev-edition-firstrun.png&quot; alt=&quot;Screenshot of Firefox Developer Edition /firstrun tour page&quot; srcset=&quot;/images/posts/dev-edition-firstrun-high-res.png 1.5x&quot; /&gt;
+    &lt;figcaption&gt;Firefox Developer Edition /firstrun tour page&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&quot;firefox-hello-ftu&quot;&gt;Firefox Hello FTU&lt;/h2&gt;
+
+&lt;p&gt;Because of the UITour experience I have gained, I also got pulled in to work on the first time user experience (FTU) for when a user makes their &lt;a href=&quot;http://hollyhabstritt.com/blog/2015/1/18/your-first-hello&quot;&gt;first Firefox Hello video call&lt;/a&gt;. Hello is a new feature in Firefox that enables real time video chat via WebRTC.&lt;/p&gt;
+
+&lt;figure&gt;
+    &lt;img src=&quot;/images/posts/firefox-hello-screenshot.jpg&quot; alt=&quot;Screenshot of Firefox Hello&quot; srcset=&quot;/images/posts/firefox-hello-screenshot-high-res.jpg 1.5x&quot; /&gt;
+    &lt;figcaption&gt;Firefox Hello&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;The FTU was another UITour page that communicated with Hello, guiding users through how to use the feature to make their first video call. It was all a &lt;em&gt;crazy&lt;/em&gt; amount of work from a lot of different people, but something I really enjoyed getting to work on alongside various other teams at Mozilla.&lt;/p&gt;
+
+&lt;h2 id=&quot;mozilla-homepage&quot;&gt;Mozilla homepage&lt;/h2&gt;
+
+&lt;p&gt;Outside of Firefox oriented work, I also got to work on the redesigned 2015 &lt;a href=&quot;https://www.mozilla.org&quot;&gt;www.mozilla.org&lt;/a&gt; homepage. Being the main front-page that represents Mozilla and what we do, this is something I consider quite a privilege to work on.&lt;/p&gt;
+
+&lt;figure&gt;
+    &lt;img src=&quot;/images/posts/homepage.png&quot; alt=&quot;Screenshot of Mozilla 2015 homepage&quot; srcset=&quot;/images/posts/homepage-high-res.png 1.5x&quot; /&gt;
+    &lt;figcaption&gt;Mozilla 2015 homepage&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&quot;all-hands-and-work-weeks&quot;&gt;All-hands and work weeks&lt;/h2&gt;
+
+&lt;p&gt;On the travel front, I got to visit both San Fransisco and Santa Clara a bunch more times (I’m kind of losing count now). I also got to visit Portland for the first time when Mozilla had their all-hands week last December, which was such a great city to spend time in.&lt;/p&gt;
+
+&lt;p&gt;I’m looking forward to whatever year three has in store!&lt;/p&gt;</content><author><name>Alex Gibson</name></author><summary type="html">This week marked my second year Mozillaversary. I did plan to write this blog post of the 15th April, which would have marked the day I started, but this week flew by so quickly I almost completely missed it!</summary></entry><entry><title type="html">How to help find a regression range in Firefox Nightly</title><link href="/2015/01/15/how-to-help-find-a-regression-range-in-firefox-nightly" rel="alternate" type="text/html" title="How to help find a regression range in Firefox Nightly" /><published>2015-01-15T00:00:00+00:00</published><updated>2015-01-15T00:00:00+00:00</updated><id>/2015/01/15/how-to-help-find-a-regression-range-in-firefox-nightly</id><content type="html" xml:base="/2015/01/15/how-to-help-find-a-regression-range-in-firefox-nightly">&lt;p&gt;I recently spotted a &lt;a href=&quot;https://bug1083079.bugzilla.mozilla.org/attachment.cgi?id=8506255&quot;&gt;visual glitch&lt;/a&gt; in a CSS animation that was only happening in Firefox Nightly. I was pretty confident the animation played fine just a couple of weeks ago, so after some debugging and ruling out any obvious wrong-doing in the code, I was pretty confident that a recent change in Firefox must have somehow caused a regression. Not knowing quite what else to do, I decided to &lt;a href=&quot;https://bugzilla.mozilla.org/show_bug.cgi?id=1083079&quot;&gt;file a bug&lt;/a&gt; to see if anyone else could figure out what was going wrong.&lt;/p&gt;
+
+&lt;p&gt;After some initial discussion it turned out the animation was only broken in Firefox on OSX, so definitely a bug! It could have been caused by any number of code changes in the previous few weeks and could not be reproduced on other platforms. So how could I go about helping to find the cause of the regression?&lt;/p&gt;
+
+&lt;p&gt;It was then someone pointed me to a tool I hadn’t heard of before, called &lt;a href=&quot;http://mozilla.github.io/mozregression/&quot;&gt;mozregression&lt;/a&gt;. It’s an interactive regression range finder for Mozilla nightly and inbound builds. Once installed, all you need to do is pass in a last known “good date” together with a known “bad date” and a URL to test. The tool then automates downloading and running different nightly builds against the affected URL.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mozregression --good=2014-10-01 --bad=2014-10-02 -a &quot;https://example.com&quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;After each run, mozregression asks you if the build is “good” or “bad” and then continues to narrow down the regression range until it finds when the bug was introduced. The process takes a while to run, but in the end it then spits out a &lt;a href=&quot;https://hg.mozilla.org/integration/mozilla-inbound/pushloghtml?fromchange=33a3fd4d1970&amp;amp;tochange=28519d825a23&quot;&gt;pushlog like this&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;This helped to narrow down the cause of the regression considerably, and together with a &lt;a href=&quot;https://bug1083079.bugzilla.mozilla.org/attachment.cgi?id=8516184&quot;&gt;reduced test case&lt;/a&gt; we we’re then able to work out which commit was the cause.&lt;/p&gt;
+
+&lt;p&gt;The resulting patch also turned out to fix another bug that was effecting &lt;a href=&quot;https://bugzilla.mozilla.org/show_bug.cgi?id=1105762&quot;&gt;Leaflet.js maps&lt;/a&gt; in Firefox. Result!&lt;/p&gt;</content><author><name>Alex Gibson</name></author><summary type="html">I recently spotted a visual glitch in a CSS animation that was only happening in Firefox Nightly. I was pretty confident the animation played fine just a couple of weeks ago, so after some debugging and ruling out any obvious wrong-doing in the code, I was pretty confident that a recent change in Firefox must have somehow caused a regression. Not knowing quite what else to do, I decided to file a bug to see if anyone else could figure out what was going wrong.</summary></entry><entry><title type="html">Animating the Firefox desktop pages using CSS and SVG</title><link href="/2014/08/18/animating-the-firefox-desktop-pages-using-css-and-svg" rel="alternate" type="text/html" title="Animating the Firefox desktop pages using CSS and SVG" /><published>2014-08-18T00:00:00+01:00</published><updated>2014-08-18T00:00:00+01:00</updated><id>/2014/08/18/animating-the-firefox-desktop-pages-using-css-and-svg</id><content type="html" xml:base="/2014/08/18/animating-the-firefox-desktop-pages-using-css-and-svg">&lt;p&gt;I recently co-authored a post over on the Mozilla Web Development blog! It’s a technical run through of how we did some of the CSS and SVG animations on the new &lt;a href=&quot;https://www.mozilla.org/firefox/desktop&quot;&gt;Firefox desktop web pages&lt;/a&gt; over on mozilla.org. If that’s your sort of thing, you can &lt;a href=&quot;https://blog.mozilla.org/webdev/2014/08/14/animating-firefox-desktop/&quot;&gt;read the full article here&lt;/a&gt;.&lt;/p&gt;</content><author><name>Alex Gibson</name></author><summary type="html">I recently co-authored a post over on the Mozilla Web Development blog! It's a technical run through of how we did some of the CSS and SVG animations on the new Firefox desktop web pages over on mozilla.org. If that's your sort of thing, you can read the full article here.</summary></entry></feed>

@@ -1,0 +1,24 @@
+{
+  "lang": "en",
+  "name": "Alex Gibson",
+  "short_name": "alxgbsn",
+  "icons": [
+    {
+      "src": "/assets/avatar-180-a1b105f177ccb815e56ac246a8958ead865bf75115d4e851fab3172195d9e903.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/avatar-196-08ced917c23964bfe35d9047b34ef916e0cb0402eeb80a1d182927b93abc059d.png",
+      "sizes": "196x196",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/avatar-300-5b37cc6b11b5f31176d267718eae8b35ab5f95da5e771d892c3f8b23d036016e.png",
+      "sizes": "300x300",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/",
+  "display": "browser"
+}
