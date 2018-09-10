@@ -6,10 +6,15 @@ const jshint = require('gulp-jshint');
 const htmlmin = require('gulp-html-minifier');
 const del = require('del');
 const runSequence = require('run-sequence');
+const ghpages = require('gh-pages');
 
-let options = {
-    branch: 'master'
-};
+const dist = '_site';
+
+gulp.task('deploy', ['site:build'], () => {
+    ghpages.publish(dist, function(err) {
+        console.error(err);
+    });
+});
 
 gulp.task('jekyll:build', (gulpCallBack) => {
     let spawn = require('child_process').spawn;

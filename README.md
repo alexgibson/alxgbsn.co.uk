@@ -51,3 +51,12 @@ Once the static site has been generated you can then validate the HTML and all s
 ```
 bundle exec htmlproofer ./_site --url-ignore /feed/ --check-html --check-favicon --only-4xx --assume-extension --disable-external
 ```
+
+Deploy
+------
+To automatically build and deploy the static site to the `gh-pages` branch:
+
+```
+gulp deploy
+```
+
