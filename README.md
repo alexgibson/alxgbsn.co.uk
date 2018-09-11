@@ -5,7 +5,7 @@ alxgbsn.co.uk
 [![Build Status](https://travis-ci.org/alexgibson/alxgbsn.co.uk.svg?branch=master)](https://travis-ci.org/alexgibson/alxgbsn.co.uk)
 [![dependencies Status](https://david-dm.org/alexgibson/alxgbsn.co.uk/status.svg)](https://david-dm.org/alexgibson/alxgbsn.co.uk)
 
-This is the source code repository for my [personal blog](https://alxgbsn.co.uk), a simple static site built using [Jekyll](http://jekyllrb.com/) and hosted on [Surge](https://surge.sh/).
+This is the source code repository for my [personal blog](https://alxgbsn.co.uk), a simple static site built using [Jekyll](http://jekyllrb.com/) and hosted on GitHub pages.
 
 Install
 -------
