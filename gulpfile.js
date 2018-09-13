@@ -2,7 +2,7 @@
 
 const gulp = require('gulp');
 const watch = require('gulp-watch');
-const jshint = require('gulp-jshint');
+const eslint = require('gulp-eslint');
 const htmlmin = require('gulp-html-minifier');
 const del = require('del');
 const runSequence = require('run-sequence');
@@ -12,7 +12,7 @@ const dist = '_site';
 
 gulp.task('deploy', ['site:build'], () => {
     ghpages.publish(dist, function(err) {
-        console.error(err);
+        console.error(err); // eslint-disable-line no-console
     });
 });
 
@@ -30,15 +30,16 @@ gulp.task('site:build', (callback) => {
 });
 
 gulp.task('minify:html', () => {
-  gulp.src('./_site/**/*.html')
-    .pipe(htmlmin({collapseWhitespace: true }))
-    .pipe(gulp.dest('./_site'));
+    gulp.src('./_site/**/*.html')
+        .pipe(htmlmin({collapseWhitespace: true }))
+        .pipe(gulp.dest('./_site'));
 });
 
 gulp.task('js:lint', () => {
-    return gulp.src(['./_assets/js/*.js', '!./_assets/js/lib/*.js'])
-        .pipe(jshint())
-        .pipe(jshint.reporter('default'));
+    return gulp.src(['gulpfile.js', './_assets/js/*.js', '!./_assets/js/lib/*.js'])
+        .pipe(eslint())
+        .pipe(eslint.format())
+        .pipe(eslint.failAfterError());
 });
 
 gulp.task('clean', () => {

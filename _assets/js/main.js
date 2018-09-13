@@ -8,10 +8,10 @@
         }
 
         navigator.serviceWorker.register('/sw.js')
-            .then(registration => {
-                console.log('Service Worker: registered');
+            .then(() => {
+                console.log('Service Worker: registered'); // eslint-disable-line no-console
             }).catch(err => {
-                console.log('Service Worker: registration failed ', err);
+                console.log('Service Worker: registration failed ', err); // eslint-disable-line no-console
             });
     }
 
