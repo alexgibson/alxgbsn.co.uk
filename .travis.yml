@@ -5,8 +5,8 @@ rvm:
 before_install:
   - gem install sass --version "=3.4.19"
   - gem install compass --version "=1.0.3"
-  - nvm install 4.4.3
-  - nvm use 4.4.3
+  - nvm install 6.14.3
+  - nvm use 6.14.3
 install:
   - bundle install --path vendor/bundle
   - npm install
