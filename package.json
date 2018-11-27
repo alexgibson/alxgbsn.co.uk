@@ -10,7 +10,7 @@
     "gh-pages": "^1.2.0",
     "gulp": "^3.8.10",
     "gulp-eslint": "^5.0.0",
-    "gulp-html-minifier": "^0.1.6",
+    "gulp-htmlmin": "^5.0.1",
     "gulp-watch": "^5.0.1",
     "run-sequence": "^2.2.0"
   },
