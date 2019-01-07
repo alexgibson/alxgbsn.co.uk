@@ -101,12 +101,16 @@ time {
 }
 
 code {
-    color: $primary-color;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 2px;
+    border: 1px solid #ddd;
     font-size: 0.9em;
+    padding: 1px 5px;
 }
 
 pre {
     background-color: #000;
+    border-radius: 2px;
     overflow: auto;
     padding: 1em;
     text-shadow: none;
@@ -114,7 +118,11 @@ pre {
     word-wrap: normal;
 
     code {
+        background-color: transparent;
+        border-radius: 0;
+        border: none;
         color: #fff;
+        padding: 0;
     }
 }
 
