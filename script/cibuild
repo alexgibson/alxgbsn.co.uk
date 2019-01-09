@@ -2,5 +2,5 @@
 set -e # halt script on error
 
 npm install -g gulp-cli
-gulp site:build
-bundle exec htmlproofer ./_site --url-ignore /feed/ --check-html --check-favicon --only-4xx --assume-extension --disable-external
+gulp build
+npm test
