@@ -31,16 +31,19 @@ npm install
 Run
 ---
 
-To compile the static site run:
+To compile the static site, start the local dev server and watch for changes:
 
 ```
-gulp site:build
+gulp
 ```
 
-To start a local server:
+Build
+-----
+
+To just compile the static site:
 
 ```
-bundle exec jekyll serve
+gulp build
 ```
 
 Test
@@ -49,7 +52,7 @@ Test
 Once the static site has been generated you can then validate the HTML and all site links by running:
 
 ```
-bundle exec htmlproofer ./_site --url-ignore /feed/ --check-html --check-favicon --only-4xx --assume-extension --disable-external
+npm test
 ```
 
 Deploy

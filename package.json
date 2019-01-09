@@ -8,11 +8,9 @@
     "del": "^3.0.0",
     "eslint": "^5.5.0",
     "gh-pages": "^1.2.0",
-    "gulp": "^3.8.10",
+    "gulp": "^4.0.0",
     "gulp-eslint": "^5.0.0",
-    "gulp-htmlmin": "^5.0.1",
-    "gulp-watch": "^5.0.1",
-    "run-sequence": "^2.2.0"
+    "gulp-htmlmin": "^5.0.1"
   },
   "homepage": "http://alxgbsn.co.uk",
   "repository": {
@@ -30,6 +28,6 @@
     "url": "https://github.com/alexgibson/alxgbsn.co.uk/issues/issues"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified.\""
+    "test": "bundle exec htmlproofer ./_site --url-ignore /feed/ --check-html --check-favicon --only-4xx --assume-extension --disable-external"
   }
 }

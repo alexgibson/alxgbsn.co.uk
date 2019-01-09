@@ -1,53 +1,67 @@
 'use strict';
 
 const gulp = require('gulp');
-const watch = require('gulp-watch');
 const eslint = require('gulp-eslint');
 const htmlmin = require('gulp-htmlmin');
 const del = require('del');
-const runSequence = require('run-sequence');
 const ghpages = require('gh-pages');
-
 const dist = '_site';
 
-gulp.task('deploy', ['site:build'], () => {
+function deploy(cb) {
     ghpages.publish(dist, function(err) {
         console.error(err); // eslint-disable-line no-console
     });
-});
 
-gulp.task('jekyll:build', (gulpCallBack) => {
+    cb();
+}
+
+function buildJekyll(cb) {
     let spawn = require('child_process').spawn;
     let jekyll = spawn('bundle', ['exec', 'jekyll', 'build'], {stdio: 'inherit'});
 
     jekyll.on('exit', (code) => {
-        gulpCallBack(code === 0 ? null : 'ERROR: Jekyll process exited with code: ' + code);
+        cb(code === 0 ? null : 'ERROR: Jekyll process exited with code: ' + code);
     });
-});
+}
 
-gulp.task('site:build', (callback) => {
-    runSequence('clean', ['js:lint'], 'jekyll:build', 'minify:html', callback);
-});
+function serveJekyll(cb) {
+    let spawn = require('child_process').spawn;
+    let jekyll = spawn('bundle', ['exec', 'jekyll', 'serve'], {stdio: 'inherit'});
 
-gulp.task('minify:html', () => {
-    gulp.src('./_site/**/*.html')
+    jekyll.on('exit', (code) => {
+        cb(code === 0 ? null : 'ERROR: Jekyll process exited with code: ' + code);
+    });
+}
+
+function minifyHtml() {
+    return gulp.src('./_site/**/*.html')
         .pipe(htmlmin({collapseWhitespace: true }))
         .pipe(gulp.dest('./_site'));
-});
+}
 
-gulp.task('js:lint', () => {
+function clean(cb) {
+    del(['_site/**']).then(() => {
+        cb();
+    });
+}
+
+function lintJS() {
     return gulp.src(['gulpfile.js', './_assets/js/*.js', '!./_assets/js/lib/*.js'])
         .pipe(eslint())
         .pipe(eslint.format())
         .pipe(eslint.failAfterError());
-});
+}
 
-gulp.task('clean', () => {
-    return del(['_site/**']);
-});
+function defaultTask(cb) {
+    gulp.watch(['./_assets/js/*.js'], lintJS);
+    cb();
+}
 
-gulp.task('default', () => {
-    watch(['./_assets/js/*.js'], () => {
-        gulp.start('js:lint');
-    });
-});
+const build = gulp.series(clean, lintJS, buildJekyll, minifyHtml);
+const serve = gulp.series(clean, lintJS, serveJekyll, defaultTask);
+
+gulp.task('default', serve);
+gulp.task('build', build);
+gulp.task('deploy', gulp.series(build, deploy));
+
+module.exports = serve;
