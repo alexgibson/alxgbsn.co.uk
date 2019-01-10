@@ -5,7 +5,7 @@ alxgbsn.co.uk
 [![Build Status](https://travis-ci.org/alexgibson/alxgbsn.co.uk.svg?branch=master)](https://travis-ci.org/alexgibson/alxgbsn.co.uk)
 [![dependencies Status](https://david-dm.org/alexgibson/alxgbsn.co.uk/status.svg)](https://david-dm.org/alexgibson/alxgbsn.co.uk)
 
-This is the source code repository for my [personal blog](https://alxgbsn.co.uk), a simple static site built using [Jekyll](http://jekyllrb.com/) and hosted on GitHub pages.
+This is the source code repository for my [personal blog](https://alxgbsn.co.uk), a simple static site built using [Jekyll](http://jekyllrb.com/) and hosted on [Surge](https://surge.sh/).
 
 Install
 -------
@@ -31,19 +31,16 @@ npm install
 Run
 ---
 
-To compile the static site, start the local dev server and watch for changes:
+To compile the static site run:
 
 ```
-gulp
+gulp site:build
 ```
 
-Build
------
-
-To just compile the static site:
+To start a local server:
 
 ```
-gulp build
+bundle exec jekyll serve
 ```
 
 Test
@@ -52,7 +49,7 @@ Test
 Once the static site has been generated you can then validate the HTML and all site links by running:
 
 ```
-npm test
+bundle exec htmlproofer ./_site --url-ignore /feed/ --check-html --check-favicon --only-4xx --assume-extension --disable-external
 ```
 
 Deploy
