@@ -1,10 +1,36 @@
-$bg-color: #ecebe6;
-$primary-color: #434343;
-$secondary-color: #636568;
-$tertiary-color: #565757;
-$border-color: #a7a7a7;
-$link-color: $primary-color;
-$link-color-highlight: #000;
+$color-background: #ecebe6;
+$color-background-secondary: #fff;
+$color-border: #a7a7a7;
+$color-link-highlight: #000;
+$color-link: #434343;
+$color-text-primary: #434343;
+$color-text-secondary: #636568;
+$color-text-tertiary: #565757;
+$color-button-text: #434343;
+
+:root {
+    --color-background: #{$color-background};
+    --color-background-secondary: #{$color-background-secondary};
+    --color-border: #{$color-border};
+    --color-link-highlight: #{$color-link-highlight};
+    --color-link: #{$color-link};
+    --color-text-primary: #{$color-text-primary};
+    --color-text-secondary: #{$color-text-secondary};
+    --color-text-tertiary: #{$color-text-tertiary};
+    --color-button-text: #{$color-button-text};
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-background: #222;
+        --color-background-secondary: #000;
+        --color-link-highlight: #fff;
+        --color-link: #eee;
+        --color-text-primary: #eee;
+        --color-text-secondary: #ddd;
+        --color-text-tertiary: #ccc;
+    }
+}
 
 @mixin hyphens-auto {
     -webkit-hyphens: auto;
