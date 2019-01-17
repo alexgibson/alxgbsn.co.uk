@@ -240,6 +240,19 @@ section.post {
     }
 }
 
+section.post,
+section.general {
+    a:link, a:visited {
+        color: $color-body-link;
+        color: var(--color-body-link);
+    }
+
+    a:hover, a:active, a:focus {
+        color: $color-body-link-highlight;
+        color: var(--color-body-link-highlight);
+    }
+}
+
 .meta {
     color: $color-text-secondary;
     color: var(--color-text-secondary);
@@ -262,10 +275,6 @@ section.post {
     padding: 0 10px;
     position: relative;
     text-align: center;
-
-    a {
-        font-weight: normal;
-    }
 
     .previous {
         float: left;
@@ -307,10 +316,6 @@ footer[role="contentinfo"] {
     li {
         margin-bottom: 20px;
         text-align: center;
-
-        a {
-            font-weight: normal;
-        }
     }
 }
 
