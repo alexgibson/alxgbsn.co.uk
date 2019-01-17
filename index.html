@@ -24,16 +24,16 @@ canonical: '/'
 
   <nav class="pagination">
     <p class="page-number">Page: {{ paginator.page }} of {{ paginator.total_pages }}</p>
-    {% if paginator.previous_page == 1 %}
-      <a href="{{ root }}/" class="previous">Prev</a>
-    {% else %}
-      {% if paginator.previous_page %}
-      <a href="{{ paginator.previous_page_path }}" class="previous">Prev</a>
-      {% endif %}
+    {% if paginator.next_page %}
+      <a href="{{ paginator.next_page_path }}" class="older">Older</a>
     {% endif %}
 
-    {% if paginator.next_page %}
-      <a href="{{ paginator.next_page_path }}" class="next">Next</a>
+    {% if paginator.previous_page == 1 %}
+      <a href="{{ root }}/" class="newer">Newer</a>
+    {% else %}
+      {% if paginator.previous_page %}
+      <a href="{{ paginator.previous_page_path }}" class="newer">Newer</a>
+      {% endif %}
     {% endif %}
   </nav>
 

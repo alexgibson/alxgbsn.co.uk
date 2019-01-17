@@ -9,6 +9,9 @@ $color-text-primary: #434343;
 $color-text-secondary: #636568;
 $color-text-tertiary: #565757;
 $color-button-text: #434343;
+$color-button-background: #dedede;
+$color-white: #fff;
+$color-black: #000;
 
 $color-background-theme-dark: #222;
 $color-background-secondary-theme-dark: #000;
@@ -32,6 +35,9 @@ $color-text-tertiary-theme-dark: #ccc;
     --color-text-secondary: #{$color-text-secondary};
     --color-text-tertiary: #{$color-text-tertiary};
     --color-button-text: #{$color-button-text};
+    --color-button-background: #{$color-button-background};
+    --color-white: #{$color-white};
+    --color-black: #{$color-black};
 }
 
 :root.dark {

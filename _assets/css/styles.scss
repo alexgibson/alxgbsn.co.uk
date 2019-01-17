@@ -1,5 +1,8 @@
 @import "base";
 
+//* -------------------------------------------------------------------------- */
+// Common elements
+
 html {
     background-color: var(--color-background);
     color: var(--color-text-primary);
@@ -109,7 +112,8 @@ code {
 }
 
 pre {
-    background-color: #000;
+    background-color: $color-black;
+    background-color: var(--color-black);
     border-radius: 3px;
     overflow: auto;
     padding: 1em;
@@ -121,7 +125,7 @@ pre {
         background-color: transparent;
         border-radius: 0;
         border: none;
-        color: #fff;
+        color: var(--color-white);
         padding: 0;
     }
 }
@@ -144,22 +148,8 @@ figure {
     }
 }
 
-header[role="banner"] {
-    margin-bottom: 40px;
-    padding: 0 10px;
-
-    h1 {
-        margin: .67em 0 0;
-    }
-
-    h2 {
-        color: var(--color-text-secondary);
-        font-style: italic;
-        font-weight: 200;
-        margin: 0 0 .75em;
-        text-align: center;
-    }
-}
+//* -------------------------------------------------------------------------- */
+// Main mavigation
 
 nav[role="navigation"] ul {
     display: block;
@@ -177,19 +167,37 @@ nav[role="navigation"] ul {
     }
 }
 
+//* -------------------------------------------------------------------------- */
+// Page header
+
+header[role="banner"] {
+    margin-bottom: 40px;
+    padding: 0 10px;
+
+    h1 {
+        margin: .67em 0 0;
+    }
+
+    h2 {
+        color: var(--color-text-secondary);
+        font-style: italic;
+        font-weight: 200;
+        margin: 0 0 .75em;
+        text-align: center;
+    }
+}
+
 .profile {
     border-radius: 100%;
-    border: 6px solid #fff;
+    border: 6px solid var(--color-white);
     display: block;
     height: 90px;
     margin: 0 auto;
     width: 90px;
 }
 
-aside[role="complimentary"] {
-    border-top: 1px solid var(--color-border);
-    margin-top: 2em;
-}
+//* -------------------------------------------------------------------------- */
+// Blog index
 
 section.posts {
     time {
@@ -218,6 +226,42 @@ section.posts {
         }
     }
 }
+
+//* -------------------------------------------------------------------------- */
+// Pagination
+
+.page-number {
+    text-align: center;
+}
+
+.pagination {
+    margin: 0 0 1.5em 0;
+    overflow: hidden;
+    padding: 0 10px;
+    position: relative;
+    text-align: center;
+
+    .newer {
+        float: left;
+
+        &:before {
+            content: '« '; /* laquo nbsp */
+            white-space: nowrap;
+        }
+    }
+
+    .older {
+        float: right;
+
+        &:after {
+            content: ' »'; /* nbsp raquo */
+            white-space: nowrap;
+        }
+    }
+}
+
+//* -------------------------------------------------------------------------- */
+// Article styles
 
 section.post {
     margin-top: 2em;
@@ -249,42 +293,15 @@ section.general {
     }
 }
 
-.page-number {
-    text-align: center;
-}
-
-.pagination {
-    margin: 0 0 1.5em 0;
-    overflow: hidden;
-    padding: 0 10px;
-    position: relative;
-    text-align: center;
-
-    .previous {
-        float: left;
-
-        &:before {
-            content: '« '; /* laquo nbsp */
-            white-space: nowrap;
-        }
-    }
-
-    .next {
-        float: right;
-
-        &:after {
-            content: ' »'; /* nbsp raquo */
-            white-space: nowrap;
-        }
-    }
-}
-
 .reading-time {
     color: var(--color-text-secondary);
     font-style: italic;
     margin-top: 0;
     text-align: center;
 }
+
+//* -------------------------------------------------------------------------- */
+// Main footer
 
 footer[role="contentinfo"] {
     margin: 40px 0;
@@ -301,6 +318,9 @@ footer[role="contentinfo"] {
         text-align: center;
     }
 }
+
+//* -------------------------------------------------------------------------- */
+// Site search form
 
 form.search {
     margin: 1.5em auto 0 auto;
@@ -338,8 +358,7 @@ form[role="search"] {
         -moz-box-sizing: border-box;
         -webkit-appearance: none;
         -webkit-box-sizing: border-box;
-        background: #dedede;
-        background: linear-gradient(to bottom, #fff 0%, #dedede 100%);
+        background: linear-gradient(to bottom, var(--color-white) 0%, var(--color-button-background) 100%);
         border-bottom-left-radius: 0;
         border-bottom-right-radius: 5px;
         border-bottom: 1px solid var(--color-border);
@@ -361,7 +380,7 @@ form[role="search"] {
 
     button[type="submit"]:hover,
     button[type="submit"]:focus {
-        color: #000;
+        color: var(--color-black);
         cursor: pointer;
     }
 
