@@ -10,6 +10,16 @@ $color-text-secondary: #636568;
 $color-text-tertiary: #565757;
 $color-button-text: #434343;
 
+$color-background-theme-dark: #222;
+$color-background-secondary-theme-dark: #000;
+$color-link-highlight-theme-dark: #fff;
+$color-link-theme-dark: #eee;
+$color-body-link-theme-dark: #5ac8fa;
+$color-body-link-highlight-theme-dark: #7ed6ff;
+$color-text-primary-theme-dark: #ddd;
+$color-text-secondary-theme-dark: #ccc;
+$color-text-tertiary-theme-dark: #ccc;
+
 :root {
     --color-background: #{$color-background};
     --color-background-secondary: #{$color-background-secondary};
@@ -24,17 +34,29 @@ $color-button-text: #434343;
     --color-button-text: #{$color-button-text};
 }
 
+:root.dark {
+    --color-background: #{$color-background-theme-dark};
+    --color-background-secondary: #{$color-background-secondary-theme-dark};
+    --color-link-highlight: #{$color-link-highlight-theme-dark};
+    --color-link: #{$color-link-theme-dark};
+    --color-body-link: #{$color-body-link-theme-dark};
+    --color-body-link-highlight: #{$color-body-link-highlight-theme-dark};
+    --color-text-primary: #{$color-text-primary-theme-dark};
+    --color-text-secondary: #{$color-text-secondary-theme-dark};
+    --color-text-tertiary: #{$color-text-tertiary-theme-dark};
+}
+
 @media (prefers-color-scheme: dark) {
     :root {
-        --color-background: #222;
-        --color-background-secondary: #000;
-        --color-link-highlight: #fff;
-        --color-link: #eee;
-        --color-body-link: #5ac8fa;
-        --color-body-link-highlight: #7ed6ff;
-        --color-text-primary: #ddd;
-        --color-text-secondary: #ccc;
-        --color-text-tertiary: #bbb;
+        --color-background: #{$color-background-theme-dark};
+        --color-background-secondary: #{$color-background-secondary-theme-dark};
+        --color-link-highlight: #{$color-link-highlight-theme-dark};
+        --color-link: #{$color-link-theme-dark};
+        --color-body-link: #{$color-body-link-theme-dark};
+        --color-body-link-highlight: #{$color-body-link-highlight-theme-dark};
+        --color-text-primary: #{$color-text-primary-theme-dark};
+        --color-text-secondary: #{$color-text-secondary-theme-dark};
+        --color-text-tertiary: #{$color-text-tertiary-theme-dark};
     }
 }
 
