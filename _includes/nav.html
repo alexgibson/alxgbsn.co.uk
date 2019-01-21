@@ -1,7 +1,19 @@
-<nav role="navigation">
-  <ul>
-    <li><a href="{{ root }}/">Blog</a></li>
-    <li><a href="{{ root }}/about/">About</a></li>
-    <li><a href="{{ root }}/contact/">Contact</a></li>
-  </ul>
-</nav>
+<div class="masthead">
+  <nav role="navigation">
+    <ul>
+      <li><a href="{{ root }}/">Blog</a></li>
+      <li><a href="{{ root }}/about/">About</a></li>
+      <li><a href="{{ root }}/contact/">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="theme-selector">
+    <form class="theme-form" method="get">
+      <input type="radio" id="t-light" name="theme" value="t-light">
+      <label for="t-light" title="Light theme">Light</label>
+
+      <input type="radio" id="t-dark" name="theme" value="t-dark">
+      <label for="t-dark" title="Dark theme">Dark</label>
+    </form>
+  </div>
+</div>
