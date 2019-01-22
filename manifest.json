@@ -7,17 +7,17 @@
   "short_name": "alxgbsn",
   "icons": [
     {
-      "src": "{{ assets['avatar-180.png'].digest_path }}",
+      "src": "{{ assets['avatar-180.jpg'].digest_path }}",
       "sizes": "180x180",
       "type": "image/png"
     },
     {
-      "src": "{{ assets['avatar-196.png'].digest_path }}",
+      "src": "{{ assets['avatar-196.jpg'].digest_path }}",
       "sizes": "196x196",
       "type": "image/png"
     },
     {
-      "src": "{{ assets['avatar-300.png'].digest_path }}",
+      "src": "{{ assets['avatar-300.jpg'].digest_path }}",
       "sizes": "300x300",
       "type": "image/png"
     }

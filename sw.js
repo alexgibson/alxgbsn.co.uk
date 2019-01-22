@@ -11,7 +11,7 @@ function updateStaticCache() {
             {% endraw %}
             '{{ assets['styles.scss'].digest_path }}',
             '{{ assets['main.js'].digest_path }}',
-            '{{ assets['avatar-180.png'].digest_path }}',
+            '{{ assets['avatar-180.jpg'].digest_path }}',
             '/offline/'
             {% raw %}
         ]);

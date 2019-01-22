@@ -3,9 +3,9 @@ assets:
   compression: true
   source_maps: false
   precompile: [
-    avatar-180.png,
-    avatar-196.png,
-    avatar-300.png
+    avatar-180.jpg,
+    avatar-196.jpg,
+    avatar-300.jpg
   ]
 author: Alex Gibson
 domain: https://alxgbsn.co.uk
