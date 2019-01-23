@@ -1,1 +1,0 @@
-!function(){"use strict";function e(){navigator.serviceWorker&&navigator.serviceWorker.register("/sw.js").then(()=>{console.log("Service Worker: registered")})["catch"](e=>{console.log("Service Worker: registration failed ",e)})}e()}();
