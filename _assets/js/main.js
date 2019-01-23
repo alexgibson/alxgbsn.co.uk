@@ -18,8 +18,9 @@ function updateRadioInput(id) {
 }
 
 function initThemeSelector() {
+    const themeSelector = document.querySelector('.theme-selector');
+    const themeToggle = themeSelector.querySelectorAll('.theme-form input[type="radio"]');
     const prefersDarkColorScheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const themeToggle = document.querySelectorAll('.theme-form input[type="radio"]');
     const themeLightId = 't-light';
     const themeDarkId = 't-dark';
 
@@ -44,6 +45,8 @@ function initThemeSelector() {
             updateRadioInput(id);
         });
     });
+
+    themeSelector.classList.remove('hidden');
 }
 
 initThemeSelector();
