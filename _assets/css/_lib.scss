@@ -1,8 +1,7 @@
 $color-background: #f4ecd8;
 $color-background-secondary: #fff;
-$color-border: #a7a7a7;
+$color-border: #aaa;
 $color-link: #d3551b;
-$color-link-highlight: #fc6420;
 $color-text-primary: #434343;
 $color-text-secondary: #636568;
 $color-text-tertiary: #565757;
@@ -14,8 +13,8 @@ $color-black: #000;
 
 $color-background-theme-dark: #222;
 $color-background-secondary-theme-dark: #000;
+$color-border-theme-dark: #565757;
 $color-link-theme-dark: #5ac8fa;
-$color-link-highlight-theme-dark: #8fdbff;
 $color-text-primary-theme-dark: #ddd;
 $color-text-secondary-theme-dark: #ccc;
 $color-text-tertiary-theme-dark: #ccc;
@@ -26,7 +25,6 @@ $color-selected-theme-dark: #5ac8fa;
     --color-background: #{$color-background};
     --color-background-secondary: #{$color-background-secondary};
     --color-border: #{$color-border};
-    --color-link-highlight: #{$color-link-highlight};
     --color-link: #{$color-link};
     --color-text-primary: #{$color-text-primary};
     --color-text-secondary: #{$color-text-secondary};
@@ -41,7 +39,7 @@ $color-selected-theme-dark: #5ac8fa;
 @mixin t-dark {
     --color-background: #{$color-background-theme-dark};
     --color-background-secondary: #{$color-background-secondary-theme-dark};
-    --color-link-highlight: #{$color-link-highlight-theme-dark};
+    --color-border: #{$color-border-theme-dark};
     --color-link: #{$color-link-theme-dark};
     --color-text-primary: #{$color-text-primary-theme-dark};
     --color-text-secondary: #{$color-text-secondary-theme-dark};

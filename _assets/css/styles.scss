@@ -38,12 +38,12 @@ body {
 
 a:link, a:visited {
     color: var(--color-link);
-    text-decoration: underline;
+    text-decoration: none;
     transition: color .1s ease-in-out;
 }
 
 a:hover, a:active, a:focus {
-    color: var(--color-link-highlight);
+    text-decoration: underline;
 }
 
 p {
@@ -177,13 +177,18 @@ figure {
 // Main mavigation
 
 .masthead {
+    background-color: $color-background;
+    background-color: var(--color-background);
+    column-gap: 10px;
     display: grid;
     grid-column-gap: 10px;
-    column-gap: 10px;
     grid-template-columns: 2fr 1fr;
-    margin: 10px 0 40px;
-    padding: 0 10px;
+    left: 0;
     line-height: 1.5;
+    margin-bottom: 40px;
+    padding: 10px;
+    position: sticky;
+    top: 0;
 
     nav[role="navigation"] ul {
         display: inline-block;
@@ -252,7 +257,7 @@ figure {
 // Page header
 
 header[role="banner"] {
-    margin-bottom: 40px;
+    margin-bottom: 1em;
     padding: 0 10px;
 
     h1 {
