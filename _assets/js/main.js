@@ -11,6 +11,10 @@ function registerServiceWorker() {
     });
 }
 
+function isCSSVariablesSupported() {
+    return window.CSS && window.CSS.supports('color', 'var(--fake-color');
+}
+
 function updateRadioInput(id) {
     if (id) {
         document.getElementById(id).checked = true;
@@ -49,5 +53,8 @@ function initThemeSelector() {
     themeSelector.classList.remove('hidden');
 }
 
-initThemeSelector();
+if (isCSSVariablesSupported()) {
+    initThemeSelector();
+}
+
 registerServiceWorker();

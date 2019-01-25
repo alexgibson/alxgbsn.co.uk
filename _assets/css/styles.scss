@@ -177,14 +177,13 @@ figure {
 // Main mavigation
 
 .masthead {
-    background-color: $color-background;
+    background-color: $color-white;
     background-color: var(--color-background);
     column-gap: 10px;
     display: grid;
     grid-column-gap: 10px;
     grid-template-columns: 2fr 1fr;
     left: 0;
-    line-height: 1.5;
     margin-bottom: 40px;
     padding: 10px;
     position: -webkit-sticky;
