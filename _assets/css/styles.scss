@@ -3,17 +3,16 @@
 //* -------------------------------------------------------------------------- */
 // Base themes
 
-:root,
-:root.t-light {
+:root {
     @include t-light;
 }
 
-:root.t-dark {
+:root.js-t-dark {
     @include t-dark;
 }
 
 @media (prefers-color-scheme: dark) {
-    :root {
+    :root.no-js {
         @include t-dark;
     }
 }

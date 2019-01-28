@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
   <meta charset="utf-8">
   <title>{{ page.title }} &ndash; {% if page.titleinfo %}{{ page.titleinfo }}{% else %}Alex Gibson{% endif %}</title>
@@ -12,6 +12,21 @@
   {% else %}
   <link rel="canonical" href="https://alxgbsn.co.uk{{ page.url }}/">
   {% endif %}
+  <script type="module">
+    try {
+      const currentPref = sessionStorage.getItem('t-dark');
+      const prefersDarkMode = currentPref === 'true' || (currentPref !== 'false' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+      if (prefersDarkMode) {
+          document.documentElement.classList.add('js-t-dark');
+      }
+
+      // remove no-js class that supports dark theme with JS disabled.
+      document.documentElement.classList.remove('no-js');
+    } catch (e) {
+      // do nothing.
+    }
+  </script>
   {% asset styles.css %}
   <link rel="alternate" type="application/rss+xml" title="Alex Gibson" href="{{ root }}/feed/">
   <link rel="manifest" href="{{ root }}/manifest.json">

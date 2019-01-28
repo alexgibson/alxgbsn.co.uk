@@ -15,41 +15,51 @@ function isCSSVariablesSupported() {
     return window.CSS && window.CSS.supports('color', 'var(--fake-color');
 }
 
-function updateRadioInput(id) {
-    if (id) {
-        document.getElementById(id).checked = true;
+function changeTheme(e) {
+    const id = e.target.value;
+    const isDark = id === 't-dark' ? true : false;
+
+    if (isDark) {
+        document.documentElement.classList.add('js-t-dark');
+    } else {
+        document.documentElement.classList.remove('js-t-dark');
+    }
+
+    try {
+        sessionStorage.setItem('t-dark', isDark);
+    } catch(e) {
+        // do nothing.
+    }
+}
+
+function prefersDarkTheme() {
+    try {
+        const currentPref = sessionStorage.getItem('t-dark');
+
+        if (currentPref === 'true' || (currentPref !== 'false' && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            return true;
+        } else {
+            return false;
+        }
+    } catch(e) {
+        return false;
     }
 }
 
 function initThemeSelector() {
     const themeSelector = document.querySelector('.theme-selector');
     const themeToggle = themeSelector.querySelectorAll('.theme-form input[type="radio"]');
-    const prefersDarkColorScheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const themeLightId = 't-light';
-    const themeDarkId = 't-dark';
 
-    if (prefersDarkColorScheme) {
-        updateRadioInput(themeDarkId);
-    } else {
-        updateRadioInput(themeLightId);
+    if (prefersDarkTheme()) {
+        document.getElementById('t-dark').checked = true;
+        document.documentElement.classList.add('js-t-dark');
     }
 
     themeToggle.forEach((toggle) => {
-        toggle.addEventListener('click', (e) => {
-            const id = e.target.value;
-
-            if (id === themeDarkId) {
-                document.documentElement.classList.remove(themeLightId);
-                document.documentElement.classList.add(themeDarkId);
-            } else {
-                document.documentElement.classList.remove(themeDarkId);
-                document.documentElement.classList.add(themeLightId);
-            }
-
-            updateRadioInput(id);
-        });
+        toggle.addEventListener('click', changeTheme);
     });
 
+    // show the theme selector.
     themeSelector.classList.remove('hidden');
 }
 
