@@ -46,17 +46,38 @@ function prefersDarkTheme() {
     }
 }
 
+function toggleDarkTheme(dark) {
+
+    if (dark) {
+        document.getElementById('t-dark').checked = true;
+        document.documentElement.classList.add('js-t-dark');
+    } else {
+        document.getElementById('t-light').checked = true;
+        document.documentElement.classList.remove('js-t-dark');
+    }
+
+    try {
+        sessionStorage.setItem('t-dark', dark);
+    } catch(e) {
+        // do nothing.
+    }
+}
+
 function initThemeSelector() {
     const themeSelector = document.querySelector('.theme-selector');
     const themeToggle = themeSelector.querySelectorAll('.theme-form input[type="radio"]');
+    const mqPrefersDarkTheme = window.matchMedia('(prefers-color-scheme: dark)');
 
     if (prefersDarkTheme()) {
-        document.getElementById('t-dark').checked = true;
-        document.documentElement.classList.add('js-t-dark');
+        toggleDarkTheme(true);
     }
 
     themeToggle.forEach((toggle) => {
         toggle.addEventListener('click', changeTheme);
+    });
+
+    mqPrefersDarkTheme.addListener((mq) => {
+        toggleDarkTheme(mq.matches);
     });
 
     // show the theme selector.
