@@ -9,6 +9,7 @@ assets:
   ]
 author: Alex Gibson
 domain: https://alxgbsn.co.uk
+url: https://alxgbsn.co.uk
 exclude:
   - config.rb
   - node_modules

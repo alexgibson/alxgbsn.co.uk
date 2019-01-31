@@ -8,9 +8,9 @@
   <meta name="author" content="Alex Gibson">
   <meta name="generator" content="Jekyll">
   {% if page.canonical != null and page.canonical != empty %}
-  <link rel="canonical" href="https://alxgbsn.co.uk{{ page.canonical }}">
+  <link rel="canonical" href="{{ site.url }}{{ page.canonical }}">
   {% else %}
-  <link rel="canonical" href="https://alxgbsn.co.uk{{ page.url }}">
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}">
   {% endif %}
   <script type="module">
     try {
