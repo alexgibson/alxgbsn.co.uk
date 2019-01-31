@@ -54,7 +54,7 @@ that I think has helped broaden my skills.
 Tracking Protection
 -------------------
 
-Continuing my [prior work](https://alxgbsn.co.uk/2015/04/18/my-second-year-working-at-mozilla/)
+Continuing my [prior work](https://alxgbsn.co.uk/2015/04/18/my-second-year-working-at-mozilla)
 on Firefox user on-boarding, I got to help build the interactive tour that
 demonstrates how Tracking Protection works in the new Firefox [Private Browsing](https://www.mozilla.org/firefox/private-browsing/) mode.
 
