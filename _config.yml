@@ -26,7 +26,7 @@ highlighter: rouge
 markdown: kramdown
 paginate: 10
 paginate_path: 'archive/:num/'
-permalink: /:year/:month/:day/:title
+permalink: /:year/:month/:day/:title/
 plugins:
   - jekyll-assets
   - jekyll-feed
