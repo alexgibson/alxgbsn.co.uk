@@ -1,0 +1,101 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="utf-8"><title>Creating a dark mode theme using CSS Custom Properties – Alex Gibson</title><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="How to create a simple and efficient dark mode colour theme using CSS Custom Properties."><meta name="author" content="Alex Gibson"><meta name="generator" content="Jekyll"><link rel="canonical" href="https://alxgbsn.co.uk/2019/02/08/blog-theming-css-variables/"><script type="module">try {
+      const currentPref = sessionStorage.getItem('t-dark');
+      const prefersDarkMode = currentPref === 'true' || (currentPref !== 'false' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+      if (prefersDarkMode) {
+          document.documentElement.classList.add('js-t-dark');
+      }
+
+      // remove no-js class that supports dark theme with JS disabled.
+      document.documentElement.classList.remove('no-js');
+    } catch (e) {
+      // do nothing.
+    }</script><link rel="stylesheet" type="text/css" href="/assets/styles-716af2c26f9a48f20aca949ffb0307b6a12e8c81642ed53c9a03b11649d74cdf.css"><link rel="alternate" type="application/rss+xml" title="Alex Gibson" href="/feed/"><link rel="manifest" href="/manifest.json"><!--[if lt IE 9]>
+    <script type="text/javascript" src="/assets/lib/html5shiv-6e9566e51098627c2824e546909ee18725d233fc9cdd81910819e7e108cf36c0.js"></script>
+  <![endif]--><meta name="apple-mobile-web-app-title" content="Alex Gibson"><link rel="apple-touch-icon" type="image/png" sizes="180x180" href="/assets/avatar-180-b1f192dbbe4ceec9c13c327fb0908af5ddbf621002116885f0cc2e8d8b6787c8.jpg"><link rel="icon" type="image/png" sizes="196x196" href="/assets/avatar-196-a65772ff09fa529d865e4f60735ded2bfb50711bafb1bd79cb2111d7c4ec461c.jpg"><link href="/assets/favicon-28523dd6d2b5917829586fe5248f9a408486e09f98117add94210f56aa7ead33.ico" rel="shortcut icon"></head><body><main role="main"><div class="masthead"><nav role="navigation"><ul><li><a href="/">Home</a></li><li><a href="/about/">About</a></li><li><a href="/contact/">Contact</a></li></ul></nav><div class="theme-selector hidden"><form class="theme-form" method="get"><input type="radio" id="t-light" name="theme" value="t-light" checked="checked"> <label for="t-light" title="Light theme">Light</label> <input type="radio" id="t-dark" name="theme" value="t-dark"> <label for="t-dark" title="Dark theme">Dark</label></form></div></div><article><header role="banner"><h1>Creating a dark mode theme using CSS Custom Properties</h1></header><section class="post"><p class="meta"><time datetime="2019-02-08">February 08 2019</time> 6 min read.</p><p>The use of variables in CSS preprocessors such as <a href="https://sass-lang.com/">Sass</a> and <a href="http://lesscss.org/">Less</a> have been common practise in front-end development for some time now. Using variables to reference recurring values (such as for <code class="highlighter-rouge">color</code>, <code class="highlighter-rouge">margin</code> and <code class="highlighter-rouge">padding</code> etc), helps us to write cleaner, more maintainable, and consistent CSS. Whilst preprocessors have extended CSS with some great patterns that we now often take for granted, using variables when compiling to static CSS has some limitations. This is especially true when it comes to theming.</p><p>As an example, let’s take a look at creating a dark mode theme using Sass. Here’s a simplified example for what could be a basic page header:</p><div class="language-scss highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nv">$color-background</span><span class="p">:</span> <span class="mh">#fff</span><span class="p">;</span>
+<span class="nv">$color-text</span><span class="p">:</span> <span class="mh">#000</span><span class="p">;</span>
+<span class="nv">$color-title</span><span class="p">:</span> <span class="mh">#999</span><span class="p">;</span>
+
+<span class="nv">$color-background-dark</span><span class="p">:</span> <span class="mh">#000</span><span class="p">;</span>
+<span class="nv">$color-text-dark</span><span class="p">:</span> <span class="mh">#fff</span><span class="p">;</span>
+<span class="nv">$color-title-dark</span><span class="p">:</span> <span class="mh">#ccc</span><span class="p">;</span>
+
+<span class="nc">.header</span> <span class="p">{</span>
+    <span class="c1">// default theme colours
+</span>    <span class="nl">background-color</span><span class="p">:</span> <span class="nv">$color-background</span><span class="p">;</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="nv">$color-text</span><span class="p">;</span>
+
+    <span class="nc">.header-title</span> <span class="p">{</span>
+        <span class="nl">color</span><span class="p">:</span> <span class="nv">$color-title</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// dark theme colours
+</span>    <span class="nc">.t-dark</span> <span class="k">&amp;</span> <span class="p">{</span>
+        <span class="nl">background-color</span><span class="p">:</span> <span class="nv">$color-background-dark</span><span class="p">;</span>
+        <span class="nl">color</span><span class="p">:</span> <span class="nv">$color-text-dark</span><span class="p">;</span>
+
+        <span class="nc">.header-title</span> <span class="p">{</span>
+            <span class="nl">color</span><span class="p">:</span> <span class="nv">$color-title-dark</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div><p>The above example isn’t very complicated, but it also isn’t terribly efficient. Because Sass has to compile all our styles down to static CSS at build time, we lose all the benefits that dynamic variables could provide. We end up generating selectors for each theme style, and repeating the same properties for each colour change. Here’s what the generated CSS looks like:</p><div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.header</span> <span class="p">{</span>
+    <span class="nl">background-color</span><span class="p">:</span> <span class="m">#fff</span><span class="p">;</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="m">#000</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.header</span> <span class="nc">.header-title</span> <span class="p">{</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="m">#999</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.t-dark</span> <span class="nc">.header</span> <span class="p">{</span>
+    <span class="nl">background-color</span><span class="p">:</span> <span class="m">#000</span><span class="p">;</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="m">#fff</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.t-dark</span> <span class="nc">.header</span> <span class="nc">.header-title</span> <span class="p">{</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="m">#ccc</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div><p>This may not look like much, but for large or complex projects with many of components, this pattern can end up creating a lot of extra CSS. Bundling every selector required to do each theme is suboptimal in terms of performance. We could try to solve this by compiling each theme to a separate stylesheet and then dynamically loading our CSS, or by removing unused CSS post-compilation, but this all adds more complexity when it should be simple.</p><p>Another issue with the above pattern is related to maintainability. Ensuring that selectors and matching properties exist for each theme can easily be prone to human error. We could try and alleviate this by using component mixins to generate our CSS, but this still doesn’t fix the underlying problem we see with static compilation. Wouldn’t it be great if we could just update the variables at runtime and be done with it all?</p><h2 id="hello-custom-properties">Hello Custom Properties</h2><p><a href="https://developer.mozilla.org/docs/Web/CSS/--*">CSS Custom Properties</a> (or CSS variables, as they are commonly referred to) help to solve many of these problems. Unlike preprocessors which compile variables to static values in CSS, custom properties are <em>dynamic</em>. This makes them incredibly flexible and a perfect fit for writing efficient, practical CSS themes.</p><p>Custom properties are powerful because they follow the rules of <a href="https://developer.mozilla.org/docs/Learn/CSS/Introduction_to_CSS/Cascade_and_inheritance">inheritance</a> and the <a href="https://developer.mozilla.org/docs/Web/CSS/Cascade">cascade</a>, just like regular CSS properties. If the value of a custom property changes, all DOM elements associated with a selector that uses that property are repainted by the browser automatically.</p><p>Here’s the same header example implemented using CSS custom properties:</p><div class="language-scss highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">:root</span> <span class="p">{</span>
+    <span class="na">--color-background</span><span class="p">:</span> <span class="mh">#fff</span><span class="p">;</span>
+    <span class="na">--color-text</span><span class="p">:</span> <span class="mh">#000</span><span class="p">;</span>
+    <span class="na">--color-title</span><span class="p">:</span> <span class="mh">#999</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nd">:root</span><span class="nc">.t-dark</span> <span class="p">{</span>
+    <span class="na">--color-background</span><span class="p">:</span> <span class="mh">#000</span><span class="p">;</span>
+    <span class="na">--color-text</span><span class="p">:</span> <span class="mh">#fff</span><span class="p">;</span>
+    <span class="na">--color-title</span><span class="p">:</span> <span class="mh">#ccc</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.header</span> <span class="p">{</span>
+    <span class="nl">background-color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="o">--</span><span class="n">color-background</span><span class="p">);</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="o">--</span><span class="n">color-text</span><span class="p">);</span>
+
+    <span class="nc">.header-title</span> <span class="p">{</span>
+        <span class="nl">color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="o">--</span><span class="n">color-title</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div><p>Much more readable and succinct! We only ever have to write our header component CSS once, and our theme colours can be updated dynamically at runtime in the browser. Whilst this is only a basic example, it is easy to see how this scales <em>so much</em> better. And because custom properties are <em>dynamic</em> it means we can do all kinds of new things, such as change their values from within CSS media queries, or even via JavaScript.</p><h2 id="supporting-dark-mode-in-macos-mojave">Supporting dark mode in macOS Mojave</h2><p>Safari recently added support for a <code class="highlighter-rouge">prefers-color-scheme</code> media query that works with macOS Mojave’s new dark mode feature. This enables web pages to opt-in to whichever mode the system preference is set to.</p><div class="language-scss highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">@media</span> <span class="p">(</span><span class="n">prefers-color-scheme</span><span class="o">:</span> <span class="n">dark</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nd">:root</span> <span class="p">{</span>
+        <span class="na">--color-background</span><span class="p">:</span> <span class="mh">#000</span><span class="p">;</span>
+        <span class="na">--color-text</span><span class="p">:</span> <span class="mh">#fff</span><span class="p">;</span>
+        <span class="na">--color-title</span><span class="p">:</span> <span class="mh">#ccc</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div><p>You can also detect the preference in JavaScript like so:</p><div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// detect dark mode preference.</span>
+<span class="kd">const</span> <span class="nx">prefersDarkMode</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">matchMedia</span><span class="p">(</span><span class="s1">'(prefers-color-scheme: dark)'</span><span class="p">).</span><span class="nx">matches</span><span class="p">;</span>
+</code></pre></div></div><p>Because I’m a big fan of dark UI’s (I find them much easier on the eye, especially over extended periods of time), I couldn’t resist adding a custom theme to this blog. For browsers which don’t yet support <code class="highlighter-rouge">prefers-color-scheme</code>, I also added a theme toggle to the top right navigation.</p><h2 id="detecting-support-for-css-custom-properties">Detecting support for CSS custom properties</h2><p>Detecting browser support for custom properties is pretty straight forward, and can be done in either CSS or JavaScript.</p><p>You can detect support for custom properties in CSS using <code class="highlighter-rouge">@supports</code>:</p><div class="language-scss highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">@supports</span> <span class="o">(</span><span class="nt">--color-background</span><span class="nd">:</span> <span class="nn">#fff</span><span class="o">)</span> <span class="p">{</span>
+    <span class="nd">:root</span> <span class="p">{</span>
+        <span class="na">--color-background</span><span class="p">:</span> <span class="mh">#fff</span><span class="p">;</span>
+        <span class="na">--color-text</span><span class="p">:</span> <span class="mh">#000</span><span class="p">;</span>
+        <span class="na">--color-title</span><span class="p">:</span> <span class="mh">#999</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div><p>You can also provide fallbacks for older browsers just by using a previous declaration, which is often simpler.</p><div class="language-scss highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.header</span> <span class="p">{</span>
+    <span class="nl">background-color</span><span class="p">:</span> <span class="mh">#fff</span><span class="p">;</span>
+    <span class="nl">background-color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="o">--</span><span class="n">color-background</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div><p>It’s worth noting here that providing a fallback does create more redundant properties in your CSS. Depending on your project, not using any fallback may be just fine. Browsers that don’t support custom properties will resort to default user agent styles, which are still perfectly accessible.</p><p>You can also detect support for custom properties in JavaScript using the following line of code (I’m using this to determine whether or not to initialise the theme selector in the navigation).</p><div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">supportsCustomProperties</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">CSS</span> <span class="o">&amp;&amp;</span> <span class="nb">window</span><span class="p">.</span><span class="nx">CSS</span><span class="p">.</span><span class="nx">supports</span><span class="p">(</span><span class="s1">'color'</span><span class="p">,</span> <span class="s1">'var(--fake-color'</span><span class="p">);</span>
+</code></pre></div></div><h2 id="take-a-closer-look">Take a closer look</h2><p>If you would like to take a closer look at the code I used to implement my dark mode theme, feel free to poke around at the source code on <a href="https://github.com/alexgibson/alxgbsn.co.uk">GitHub</a>.</p></section></article><footer role="contentinfo"><form role="search" class="search" action="https://duckduckgo.com/" method="get" title="Search this site"><label for="q">Search</label> <input type="hidden" name="sites" value="alxgbsn.co.uk"> <input class="search" type="search" name="q" id="q" placeholder="Search this site"> <button type="submit">Go</button></form><ul><li><a href="/feed/index.xml" title="RSS feed">Subscribe (RSS)</a></li></ul></footer></main><script type="module" src="/assets/theme-c123fb25e83dfa3f6932ea2db49aee4caa925d23bf05bed3593562542dd7fd66.js"></script><script type="module" src="/assets/main-e720254e216df6f38df9183d48fc5096b498cf7aa00bfdf57bf8aa71c31a7980.js"></script></body></html>

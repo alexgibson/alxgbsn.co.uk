@@ -1,4 +1,148 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="https://alxgbsn.co.uk/feed/index.xml" rel="self" type="application/atom+xml" /><link href="https://alxgbsn.co.uk/" rel="alternate" type="text/html" /><updated>2019-02-01T09:27:09+00:00</updated><id>https://alxgbsn.co.uk/</id><title type="html">Alex Gibson, Front End Developer</title><author><name>Alex Gibson</name></author><entry><title type="html">Using ES modules as a modern baseline for progressive enhancement</title><link href="https://alxgbsn.co.uk/2019/01/31/a-modern-baseline-for-progressive-enhancement/" rel="alternate" type="text/html" title="Using ES modules as a modern baseline for progressive enhancement" /><published>2019-01-31T00:00:00+00:00</published><updated>2019-01-31T00:00:00+00:00</updated><id>https://alxgbsn.co.uk/2019/01/31/a-modern-baseline-for-progressive-enhancement</id><content type="html" xml:base="https://alxgbsn.co.uk/2019/01/31/a-modern-baseline-for-progressive-enhancement/">&lt;p&gt;It’s pretty commonplace today to write JavaScript using ES2015 (or ES6), and then to transpile that code to ES5 in a build step, using something like &lt;a href=&quot;https://babeljs.io/&quot;&gt;Babel&lt;/a&gt;. Transpiling enables us to write code using the latest ECMAScript syntax and features, but then compiles it in a backward compatible way so that it works with older browsers. The downside to this is that transpiling can also lead to increased bundle sizes if you’re not careful, and for browsers that already support ES2015 features, you’re potentially shipping a lot of redundant code. Modern browsers need neither the transpiled code, nor the polyfills that can get bundled along with it.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="https://alxgbsn.co.uk/feed/index.xml" rel="self" type="application/atom+xml" /><link href="https://alxgbsn.co.uk/" rel="alternate" type="text/html" /><updated>2019-02-08T10:16:34+00:00</updated><id>https://alxgbsn.co.uk/</id><title type="html">Alex Gibson, Front End Developer</title><author><name>Alex Gibson</name></author><entry><title type="html">Creating a dark mode theme using CSS Custom Properties</title><link href="https://alxgbsn.co.uk/2019/02/08/blog-theming-css-variables/" rel="alternate" type="text/html" title="Creating a dark mode theme using CSS Custom Properties" /><published>2019-02-08T00:00:00+00:00</published><updated>2019-02-08T00:00:00+00:00</updated><id>https://alxgbsn.co.uk/2019/02/08/blog-theming-css-variables</id><content type="html" xml:base="https://alxgbsn.co.uk/2019/02/08/blog-theming-css-variables/">&lt;p&gt;The use of variables in CSS preprocessors such as &lt;a href=&quot;https://sass-lang.com/&quot;&gt;Sass&lt;/a&gt; and &lt;a href=&quot;http://lesscss.org/&quot;&gt;Less&lt;/a&gt; have been common practise in front-end development for some time now. Using variables to reference recurring values (such as for &lt;code class=&quot;highlighter-rouge&quot;&gt;color&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;margin&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;padding&lt;/code&gt; etc), helps us to write cleaner, more maintainable, and consistent CSS. Whilst preprocessors have extended CSS with some great patterns that we now often take for granted, using variables when compiling to static CSS has some limitations. This is especially true when it comes to theming.&lt;/p&gt;
+
+&lt;p&gt;As an example, let’s take a look at creating a dark mode theme using Sass. Here’s a simplified example for what could be a basic page header:&lt;/p&gt;
+
+&lt;div class=&quot;language-scss highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;nv&quot;&gt;$color-background&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mh&quot;&gt;#fff&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$color-text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mh&quot;&gt;#000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$color-title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mh&quot;&gt;#999&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;nv&quot;&gt;$color-background-dark&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mh&quot;&gt;#000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$color-text-dark&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mh&quot;&gt;#fff&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$color-title-dark&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mh&quot;&gt;#ccc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;nc&quot;&gt;.header&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// default theme colours
+&lt;/span&gt;    &lt;span class=&quot;nl&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$color-background&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$color-text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;nc&quot;&gt;.header-title&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$color-title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;// dark theme colours
+&lt;/span&gt;    &lt;span class=&quot;nc&quot;&gt;.t-dark&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$color-background-dark&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$color-text-dark&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+        &lt;span class=&quot;nc&quot;&gt;.header-title&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;nl&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$color-title-dark&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The above example isn’t very complicated, but it also isn’t terribly efficient. Because Sass has to compile all our styles down to static CSS at build time, we lose all the benefits that dynamic variables could provide. We end up generating selectors for each theme style, and repeating the same properties for each colour change. Here’s what the generated CSS looks like:&lt;/p&gt;
+
+&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nc&quot;&gt;.header&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#fff&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nc&quot;&gt;.header&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;.header-title&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#999&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nc&quot;&gt;.t-dark&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;.header&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#fff&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nc&quot;&gt;.t-dark&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;.header&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;.header-title&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#ccc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;This may not look like much, but for large or complex projects with many of components, this pattern can end up creating a lot of extra CSS. Bundling every selector required to do each theme is suboptimal in terms of performance. We could try to solve this by compiling each theme to a separate stylesheet and then dynamically loading our CSS, or by removing unused CSS post-compilation, but this all adds more complexity when it should be simple.&lt;/p&gt;
+
+&lt;p&gt;Another issue with the above pattern is related to maintainability. Ensuring that selectors and matching properties exist for each theme can easily be prone to human error. We could try and alleviate this by using component mixins to generate our CSS, but this still doesn’t fix the underlying problem we see with static compilation. Wouldn’t it be great if we could just update the variables at runtime and be done with it all?&lt;/p&gt;
+
+&lt;h2 id=&quot;hello-custom-properties&quot;&gt;Hello Custom Properties&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://developer.mozilla.org/docs/Web/CSS/--*&quot;&gt;CSS Custom Properties&lt;/a&gt; (or CSS variables, as they are commonly referred to) help to solve many of these problems. Unlike preprocessors which compile variables to static values in CSS, custom properties are &lt;em&gt;dynamic&lt;/em&gt;. This makes them incredibly flexible and a perfect fit for writing efficient, practical CSS themes.&lt;/p&gt;
+
+&lt;p&gt;Custom properties are powerful because they follow the rules of &lt;a href=&quot;https://developer.mozilla.org/docs/Learn/CSS/Introduction_to_CSS/Cascade_and_inheritance&quot;&gt;inheritance&lt;/a&gt; and the &lt;a href=&quot;https://developer.mozilla.org/docs/Web/CSS/Cascade&quot;&gt;cascade&lt;/a&gt;, just like regular CSS properties. If the value of a custom property changes, all DOM elements associated with a selector that uses that property are repainted by the browser automatically.&lt;/p&gt;
+
+&lt;p&gt;Here’s the same header example implemented using CSS custom properties:&lt;/p&gt;
+
+&lt;div class=&quot;language-scss highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nd&quot;&gt;:root&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;--color-background&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mh&quot;&gt;#fff&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;--color-text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mh&quot;&gt;#000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;--color-title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mh&quot;&gt;#999&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nd&quot;&gt;:root&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;.t-dark&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;--color-background&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mh&quot;&gt;#000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;--color-text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mh&quot;&gt;#fff&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;--color-title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mh&quot;&gt;#ccc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nc&quot;&gt;.header&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;var&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;color-background&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;var&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;color-text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+    &lt;span class=&quot;nc&quot;&gt;.header-title&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;var&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;color-title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Much more readable and succinct! We only ever have to write our header component CSS once, and our theme colours can be updated dynamically at runtime in the browser. Whilst this is only a basic example, it is easy to see how this scales &lt;em&gt;so much&lt;/em&gt; better. And because custom properties are &lt;em&gt;dynamic&lt;/em&gt; it means we can do all kinds of new things, such as change their values from within CSS media queries, or even via JavaScript.&lt;/p&gt;
+
+&lt;h2 id=&quot;supporting-dark-mode-in-macos-mojave&quot;&gt;Supporting dark mode in macOS Mojave&lt;/h2&gt;
+
+&lt;p&gt;Safari recently added support for a &lt;code class=&quot;highlighter-rouge&quot;&gt;prefers-color-scheme&lt;/code&gt; media query that works with macOS Mojave’s new dark mode feature. This enables web pages to opt-in to whichever mode the system preference is set to.&lt;/p&gt;
+
+&lt;div class=&quot;language-scss highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;@media&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;prefers-color-scheme&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dark&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nd&quot;&gt;:root&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;--color-background&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mh&quot;&gt;#000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;--color-text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mh&quot;&gt;#fff&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;--color-title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mh&quot;&gt;#ccc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;You can also detect the preference in JavaScript like so:&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// detect dark mode preference.&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;prefersDarkMode&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;window&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;matchMedia&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'(prefers-color-scheme: dark)'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;matches&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Because I’m a big fan of dark UI’s (I find them much easier on the eye, especially over extended periods of time), I couldn’t resist adding a custom theme to this blog. For browsers which don’t yet support &lt;code class=&quot;highlighter-rouge&quot;&gt;prefers-color-scheme&lt;/code&gt;, I also added a theme toggle to the top right navigation.&lt;/p&gt;
+
+&lt;h2 id=&quot;detecting-support-for-css-custom-properties&quot;&gt;Detecting support for CSS custom properties&lt;/h2&gt;
+
+&lt;p&gt;Detecting browser support for custom properties is pretty straight forward, and can be done in either CSS or JavaScript.&lt;/p&gt;
+
+&lt;p&gt;You can detect support for custom properties in CSS using &lt;code class=&quot;highlighter-rouge&quot;&gt;@supports&lt;/code&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;language-scss highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;@supports&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;--color-background&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;#fff&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nd&quot;&gt;:root&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;--color-background&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mh&quot;&gt;#fff&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;--color-text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mh&quot;&gt;#000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;--color-title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mh&quot;&gt;#999&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;You can also provide fallbacks for older browsers just by using a previous declaration, which is often simpler.&lt;/p&gt;
+
+&lt;div class=&quot;language-scss highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nc&quot;&gt;.header&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mh&quot;&gt;#fff&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;var&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;color-background&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;It’s worth noting here that providing a fallback does create more redundant properties in your CSS. Depending on your project, not using any fallback may be just fine. Browsers that don’t support custom properties will resort to default user agent styles, which are still perfectly accessible.&lt;/p&gt;
+
+&lt;p&gt;You can also detect support for custom properties in JavaScript using the following line of code (I’m using this to determine whether or not to initialise the theme selector in the navigation).&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;supportsCustomProperties&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;window&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;CSS&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;window&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;CSS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;supports&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'color'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'var(--fake-color'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;take-a-closer-look&quot;&gt;Take a closer look&lt;/h2&gt;
+
+&lt;p&gt;If you would like to take a closer look at the code I used to implement my dark mode theme, feel free to poke around at the source code on &lt;a href=&quot;https://github.com/alexgibson/alxgbsn.co.uk&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;</content><author><name>Alex Gibson</name></author><summary type="html">The use of variables in CSS preprocessors such as Sass and Less have been common practise in front-end development for some time now. Using variables to reference recurring values (such as for color, margin and padding etc), helps us to write cleaner, more maintainable, and consistent CSS. Whilst preprocessors have extended CSS with some great patterns that we now often take for granted, using variables when compiling to static CSS has some limitations. This is especially true when it comes to theming.</summary></entry><entry><title type="html">Using ES modules as a modern baseline for progressive enhancement</title><link href="https://alxgbsn.co.uk/2019/01/31/a-modern-baseline-for-progressive-enhancement/" rel="alternate" type="text/html" title="Using ES modules as a modern baseline for progressive enhancement" /><published>2019-01-31T00:00:00+00:00</published><updated>2019-01-31T00:00:00+00:00</updated><id>https://alxgbsn.co.uk/2019/01/31/a-modern-baseline-for-progressive-enhancement</id><content type="html" xml:base="https://alxgbsn.co.uk/2019/01/31/a-modern-baseline-for-progressive-enhancement/">&lt;p&gt;It’s pretty commonplace today to write JavaScript using ES2015 (or ES6), and then to transpile that code to ES5 in a build step, using something like &lt;a href=&quot;https://babeljs.io/&quot;&gt;Babel&lt;/a&gt;. Transpiling enables us to write code using the latest ECMAScript syntax and features, but then compiles it in a backward compatible way so that it works with older browsers. The downside to this is that transpiling can also lead to increased bundle sizes if you’re not careful, and for browsers that already support ES2015 features, you’re potentially shipping a lot of redundant code. Modern browsers need neither the transpiled code, nor the polyfills that can get bundled along with it.&lt;/p&gt;
 
 &lt;p&gt;Before we get into the details of this post, I’ll start by emphasizing that depending on your project and its target audience, transpiling and bundling your JavaScript may be the &lt;em&gt;exact right&lt;/em&gt; thing to do still. Browser segmentation and page load times are key metrics to measure. However, the with technologies like &lt;a href=&quot;https://en.wikipedia.org/wiki/HTTP/2&quot;&gt;HTTP/2&lt;/a&gt; and support for &lt;a href=&quot;https://hacks.mozilla.org/2018/03/es-modules-a-cartoon-deep-dive/&quot;&gt;ES modules&lt;/a&gt; landing in &lt;a href=&quot;https://caniuse.com/#feat=es6-module&quot;&gt;all major browsers&lt;/a&gt;, we now have other options on the table. There is a new opportunity to build &lt;a href=&quot;https://developer.mozilla.org/docs/Glossary/Progressive_Enhancement&quot;&gt;progressively enhanced&lt;/a&gt; websites using modern ES2015 features, but without as much of the bloat and complicated build steps we’ve become accustomed to.&lt;/p&gt;
 
@@ -628,17 +772,4 @@ You should just go watch the video instead (you could hear a pin drop in the ven
 
 &lt;p&gt;On the travel front, I got to visit both San Fransisco and Santa Clara a bunch more times (I’m kind of losing count now). I also got to visit Portland for the first time when Mozilla had their all-hands week last December, which was such a great city to spend time in.&lt;/p&gt;
 
-&lt;p&gt;I’m looking forward to whatever year three has in store!&lt;/p&gt;</content><author><name>Alex Gibson</name></author><summary type="html">This week marked my second year Mozillaversary. I did plan to write this blog post of the 15th April, which would have marked the day I started, but this week flew by so quickly I almost completely missed it!</summary></entry><entry><title type="html">How to help find a regression range in Firefox Nightly</title><link href="https://alxgbsn.co.uk/2015/01/15/how-to-help-find-a-regression-range-in-firefox-nightly/" rel="alternate" type="text/html" title="How to help find a regression range in Firefox Nightly" /><published>2015-01-15T00:00:00+00:00</published><updated>2015-01-15T00:00:00+00:00</updated><id>https://alxgbsn.co.uk/2015/01/15/how-to-help-find-a-regression-range-in-firefox-nightly</id><content type="html" xml:base="https://alxgbsn.co.uk/2015/01/15/how-to-help-find-a-regression-range-in-firefox-nightly/">&lt;p&gt;I recently spotted a &lt;a href=&quot;https://bug1083079.bugzilla.mozilla.org/attachment.cgi?id=8506255&quot;&gt;visual glitch&lt;/a&gt; in a CSS animation that was only happening in Firefox Nightly. I was pretty confident the animation played fine just a couple of weeks ago, so after some debugging and ruling out any obvious wrong-doing in the code, I was pretty confident that a recent change in Firefox must have somehow caused a regression. Not knowing quite what else to do, I decided to &lt;a href=&quot;https://bugzilla.mozilla.org/show_bug.cgi?id=1083079&quot;&gt;file a bug&lt;/a&gt; to see if anyone else could figure out what was going wrong.&lt;/p&gt;
-
-&lt;p&gt;After some initial discussion it turned out the animation was only broken in Firefox on OSX, so definitely a bug! It could have been caused by any number of code changes in the previous few weeks and could not be reproduced on other platforms. So how could I go about helping to find the cause of the regression?&lt;/p&gt;
-
-&lt;p&gt;It was then someone pointed me to a tool I hadn’t heard of before, called &lt;a href=&quot;http://mozilla.github.io/mozregression/&quot;&gt;mozregression&lt;/a&gt;. It’s an interactive regression range finder for Mozilla nightly and inbound builds. Once installed, all you need to do is pass in a last known “good date” together with a known “bad date” and a URL to test. The tool then automates downloading and running different nightly builds against the affected URL.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mozregression --good=2014-10-01 --bad=2014-10-02 -a &quot;https://example.com&quot;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;After each run, mozregression asks you if the build is “good” or “bad” and then continues to narrow down the regression range until it finds when the bug was introduced. The process takes a while to run, but in the end it then spits out a &lt;a href=&quot;https://hg.mozilla.org/integration/mozilla-inbound/pushloghtml?fromchange=33a3fd4d1970&amp;amp;tochange=28519d825a23&quot;&gt;pushlog like this&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;This helped to narrow down the cause of the regression considerably, and together with a &lt;a href=&quot;https://bug1083079.bugzilla.mozilla.org/attachment.cgi?id=8516184&quot;&gt;reduced test case&lt;/a&gt; we we’re then able to work out which commit was the cause.&lt;/p&gt;
-
-&lt;p&gt;The resulting patch also turned out to fix another bug that was effecting &lt;a href=&quot;https://bugzilla.mozilla.org/show_bug.cgi?id=1105762&quot;&gt;Leaflet.js maps&lt;/a&gt; in Firefox. Result!&lt;/p&gt;</content><author><name>Alex Gibson</name></author><summary type="html">I recently spotted a visual glitch in a CSS animation that was only happening in Firefox Nightly. I was pretty confident the animation played fine just a couple of weeks ago, so after some debugging and ruling out any obvious wrong-doing in the code, I was pretty confident that a recent change in Firefox must have somehow caused a regression. Not knowing quite what else to do, I decided to file a bug to see if anyone else could figure out what was going wrong.</summary></entry></feed>
+&lt;p&gt;I’m looking forward to whatever year three has in store!&lt;/p&gt;</content><author><name>Alex Gibson</name></author><summary type="html">This week marked my second year Mozillaversary. I did plan to write this blog post of the 15th April, which would have marked the day I started, but this week flew by so quickly I almost completely missed it!</summary></entry></feed>
