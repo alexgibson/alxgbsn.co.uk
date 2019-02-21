@@ -218,12 +218,10 @@ figure {
 
         label {
             @include image-replaced;
-            width: 18px;
-            height: 18px;
+            width: 20px;
+            height: 20px;
             display: inline-block;
             margin-right: .2em;
-            border-radius: 100%;
-            border: 2px solid var(--color-background);
             transition: border-color .1s ease-in-out;
 
             &:last-child {
@@ -231,20 +229,17 @@ figure {
             }
         }
 
-        input[type="radio"] {
+        input[type="checkbox"] {
             display: none;
 
-            &:checked + label {
-                border-color: var(--color-selected);
+            & + label {
+                background-image: asset_url('moon.svg?210219:15:40');
+                background-size: 20px 20px;
             }
-        }
 
-        label[for="t-light"] {
-            background-color: $color-background-secondary;
-        }
-
-        label[for="t-dark"] {
-            background-color: $color-background-secondary-theme-dark;
+            &:checked + label {
+                background-image: asset_url('moon-dark.svg?210219:15:40');
+            }
         }
     }
 

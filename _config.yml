@@ -5,7 +5,9 @@ assets:
   precompile: [
     avatar-180.jpg,
     avatar-196.jpg,
-    avatar-300.jpg
+    avatar-300.jpg,
+    moon.svg,
+    moon-dark.svg
   ]
 author: Alex Gibson
 domain: https://alxgbsn.co.uk

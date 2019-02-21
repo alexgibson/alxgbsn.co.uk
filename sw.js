@@ -13,6 +13,8 @@ function updateStaticCache() {
             '{{ assets['theme.js'].digest_path }}',
             '{{ assets['main.js'].digest_path }}',
             '{{ assets['avatar-180.jpg'].digest_path }}',
+            '{{ assets['moon.svg'].digest_path }}',
+            '{{ assets['moon-dark.svg'].digest_path }}',
             '/offline/'
             {% raw %}
         ]);

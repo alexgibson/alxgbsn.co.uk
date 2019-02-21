@@ -3,8 +3,7 @@ function isCSSVariablesSupported() {
 }
 
 function changeTheme(e) {
-    const id = e.target.value;
-    const isDark = id === 't-dark' ? true : false;
+    const isDark = e.target.checked ? true : false;
 
     if (isDark) {
         document.documentElement.classList.add('js-t-dark');
@@ -34,12 +33,13 @@ function prefersDarkTheme() {
 }
 
 function toggleDarkTheme(dark) {
+    const themeToggle = document.getElementById('theme');
 
     if (dark) {
-        document.getElementById('t-dark').checked = true;
+        themeToggle.checked = true;
         document.documentElement.classList.add('js-t-dark');
     } else {
-        document.getElementById('t-light').checked = true;
+        themeToggle.checked = false;
         document.documentElement.classList.remove('js-t-dark');
     }
 
@@ -52,16 +52,14 @@ function toggleDarkTheme(dark) {
 
 function initThemeSelector() {
     const themeSelector = document.querySelector('.theme-selector');
-    const themeToggle = themeSelector.querySelectorAll('.theme-form input[type="radio"]');
+    const themeToggle = document.getElementById('theme');
     const mqPrefersDarkTheme = window.matchMedia('(prefers-color-scheme: dark)');
 
     if (prefersDarkTheme()) {
         toggleDarkTheme(true);
     }
 
-    themeToggle.forEach((toggle) => {
-        toggle.addEventListener('click', changeTheme);
-    });
+    themeToggle.addEventListener('click', changeTheme);
 
     mqPrefersDarkTheme.addListener((mq) => {
         toggleDarkTheme(mq.matches);
