@@ -1,4 +1,4 @@
-const version = '20190208101846';
+const version = '20190221154435';
 const cacheName = `static::${version}`;
 
 
@@ -6,10 +6,12 @@ function updateStaticCache() {
     return caches.open(cacheName).then(cache => {
         return cache.addAll([
             
-            '/assets/styles-716af2c26f9a48f20aca949ffb0307b6a12e8c81642ed53c9a03b11649d74cdf.css',
-            '/assets/theme-c123fb25e83dfa3f6932ea2db49aee4caa925d23bf05bed3593562542dd7fd66.js',
+            '/assets/styles-6a2b1c65c23d9d00ac844a27059282ccef71f332fd4fbb8817b16d78e70a7875.css',
+            '/assets/theme-77026091a174da81bd4e08d59206f16043046cb6f5d13d856dfc667c7d57987b.js',
             '/assets/main-e720254e216df6f38df9183d48fc5096b498cf7aa00bfdf57bf8aa71c31a7980.js',
             '/assets/avatar-180-b1f192dbbe4ceec9c13c327fb0908af5ddbf621002116885f0cc2e8d8b6787c8.jpg',
+            '/assets/moon-534f836c46e20dbb5fe8c00cd108cad912550c41e63a3fa3ec1b7e0ff6d8603b.svg',
+            '/assets/moon-dark-1648cc3096172f7578f4ec30271cd1258b127bca184b437affa00b029aa8bbb7.svg',
             '/offline/'
             
         ]);
