@@ -58,7 +58,7 @@ sum
 1 passing (10ms)
 ```
 
-Because Mocha is a Node based testing framework, I was also able to port the project's backend tests to use the same framework. Running both suite of tests via the `npm test` command can be done in `package.json` like so:
+Because Mocha is a Node based testing framework, I was also able to port the project's backend tests to use the same framework. Being able to run both suite of tests via an npm script in `package.json` is pretty nice:
 
 ```
 "scripts": {
