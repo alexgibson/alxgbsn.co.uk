@@ -34,7 +34,7 @@ SyntaxError: Unexpected identifier
 
 
 1 passing (10ms)
-</code></pre></div></div><p>Because Mocha is a Node based testing framework, I was also able to port the project’s backend tests to use the same framework. Running both suite of tests via the <code class="highlighter-rouge">npm test</code> command can be done in <code class="highlighter-rouge">package.json</code> like so:</p><div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"scripts": {
+</code></pre></div></div><p>Because Mocha is a Node based testing framework, I was also able to port the project’s backend tests to use the same framework. Being able to run both suite of tests via an npm script in <code class="highlighter-rouge">package.json</code> is pretty nice:</p><div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"scripts": {
   "test": "npm run test-node &amp;&amp; npm run test-browser",
   "test-browser": "mocha --recursive './test/browser/**/*.js' --require esm",
   "test-node": "mocha --recursive './test/node/**/*.js'",
