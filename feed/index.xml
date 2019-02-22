@@ -1,4 +1,59 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://alxgbsn.co.uk/feed/index.xml" rel="self" type="application/atom+xml" /><link href="https://alxgbsn.co.uk/" rel="alternate" type="text/html" /><updated>2019-02-21T15:44:35+00:00</updated><id>https://alxgbsn.co.uk/</id><title type="html">Alex Gibson, Front End Developer</title><author><name>Alex Gibson</name></author><entry><title type="html">Creating a dark mode theme using CSS Custom Properties</title><link href="https://alxgbsn.co.uk/2019/02/08/blog-theming-css-variables/" rel="alternate" type="text/html" title="Creating a dark mode theme using CSS Custom Properties" /><published>2019-02-08T00:00:00+00:00</published><updated>2019-02-08T00:00:00+00:00</updated><id>https://alxgbsn.co.uk/2019/02/08/blog-theming-css-variables</id><content type="html" xml:base="https://alxgbsn.co.uk/2019/02/08/blog-theming-css-variables/">&lt;p&gt;The use of variables in CSS preprocessors such as &lt;a href=&quot;https://sass-lang.com/&quot;&gt;Sass&lt;/a&gt; and &lt;a href=&quot;http://lesscss.org/&quot;&gt;Less&lt;/a&gt; has been common practise in front-end development for some time now. Using variables to reference recurring values (such as for &lt;code class=&quot;highlighter-rouge&quot;&gt;color&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;margin&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;padding&lt;/code&gt; etc), helps us to write cleaner, more maintainable, and consistent CSS. Whilst preprocessors have extended CSS with some great patterns that we now often take for granted, using variables when compiling to static CSS has some limitations. This is especially true when it comes to theming.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://alxgbsn.co.uk/feed/index.xml" rel="self" type="application/atom+xml" /><link href="https://alxgbsn.co.uk/" rel="alternate" type="text/html" /><updated>2019-02-22T10:10:31+00:00</updated><id>https://alxgbsn.co.uk/</id><title type="html">Alex Gibson, Front End Developer</title><author><name>Alex Gibson</name></author><entry><title type="html">Testing native ES modules using Mocha and esm.</title><link href="https://alxgbsn.co.uk/2019/02/22/testing-native-es-modules-mocha-esm/" rel="alternate" type="text/html" title="Testing native ES modules using Mocha and esm." /><published>2019-02-22T00:00:00+00:00</published><updated>2019-02-22T00:00:00+00:00</updated><id>https://alxgbsn.co.uk/2019/02/22/testing-native-es-modules-mocha-esm</id><content type="html" xml:base="https://alxgbsn.co.uk/2019/02/22/testing-native-es-modules-mocha-esm/">&lt;p&gt;I recently worked on a project where I wanted to switch to using native ES modules in the browser. Migrating the existing code to ES modules was easy enough, but the tricky part came when I wanted to maintain the existing unit tests. Turns out, many JavaScript testing frameworks don’t yet support native ES modules out of the box, and I was struggling to find an easy solution that didn’t require transpiling my code back to ES5.&lt;/p&gt;
+
+&lt;p&gt;I managed to hack together &lt;a href=&quot;(https://medium.com/dailyjs/running-mocha-tests-as-native-es6-modules-in-a-browser-882373f2ecb0)&quot;&gt;Mocha’s browser test runner&lt;/a&gt; to use ES modules, but I couldn’t find a simple way to automate this in CI. The project I was working on also has a suite of Node based unit tests, which we’re written using &lt;a href=&quot;https://jestjs.io/&quot;&gt;Jest&lt;/a&gt;. Node doesn’t yet support native ES modules however, and I wanted to try and avoid using two different testing frameworks in the future if at all possible. I was stuck.&lt;/p&gt;
+
+&lt;p&gt;The solution came when I heard about a rather clever library called &lt;a href=&quot;https://github.com/standard-things/esm&quot;&gt;esm&lt;/a&gt;. It’s is a fast, production ready, zero-dependency ES module loader for Node. Using it with Mocha turned out to be relatively straight forward. Here’s a basic example for how to do it.&lt;/p&gt;
+
+&lt;p&gt;First, make sure you have both &lt;a href=&quot;https://mochajs.org/&quot;&gt;Mocha&lt;/a&gt; and &lt;a href=&quot;https://github.com/standard-things/esm&quot;&gt;esm&lt;/a&gt; installed. Next, write a simple ES module called &lt;code class=&quot;highlighter-rouge&quot;&gt;sum.js&lt;/code&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;default&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;A unit test for this module could look like this:&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;sum&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'./sum.js'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;expect&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'chai'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;describe&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'sum'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+
+    &lt;span class=&quot;nx&quot;&gt;it&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'should return the sum of two arguments'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;expect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;to&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;equal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;If we try to now run this test using &lt;code class=&quot;highlighter-rouge&quot;&gt;mocha 'sum.test.js'&lt;/code&gt; we get a error, since Node doesn’t understand the ES import syntax:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;import sum from './sum.js';
+       ^^^
+
+SyntaxError: Unexpected identifier
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Obviously this is not what we want. Thankfully, passing in &lt;code class=&quot;highlighter-rouge&quot;&gt;esm&lt;/code&gt; as a require to Mocha is &lt;em&gt;really easy&lt;/em&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mocha 'sum.test.js' --require esm
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The test now passes without any further configuration changes. Success!&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sum
+  ✓ should return the sum of two arguments
+
+
+1 passing (10ms)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Because Mocha is a Node based testing framework, I was also able to port the project’s backend tests to use the same framework. Running both suite of tests via the &lt;code class=&quot;highlighter-rouge&quot;&gt;npm test&lt;/code&gt; command can be done in &lt;code class=&quot;highlighter-rouge&quot;&gt;package.json&lt;/code&gt; like so:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&quot;scripts&quot;: {
+  &quot;test&quot;: &quot;npm run test-node &amp;amp;&amp;amp; npm run test-browser&quot;,
+  &quot;test-browser&quot;: &quot;mocha --recursive './test/browser/**/*.js' --require esm&quot;,
+  &quot;test-node&quot;: &quot;mocha --recursive './test/node/**/*.js'&quot;,
+},
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Alex Gibson</name></author><summary type="html">I recently worked on a project where I wanted to switch to using native ES modules in the browser. Migrating the existing code to ES modules was easy enough, but the tricky part came when I wanted to maintain the existing unit tests. Turns out, many JavaScript testing frameworks don't yet support native ES modules out of the box, and I was struggling to find an easy solution that didn't require transpiling my code back to ES5.</summary></entry><entry><title type="html">Creating a dark mode theme using CSS Custom Properties</title><link href="https://alxgbsn.co.uk/2019/02/08/blog-theming-css-variables/" rel="alternate" type="text/html" title="Creating a dark mode theme using CSS Custom Properties" /><published>2019-02-08T00:00:00+00:00</published><updated>2019-02-08T00:00:00+00:00</updated><id>https://alxgbsn.co.uk/2019/02/08/blog-theming-css-variables</id><content type="html" xml:base="https://alxgbsn.co.uk/2019/02/08/blog-theming-css-variables/">&lt;p&gt;The use of variables in CSS preprocessors such as &lt;a href=&quot;https://sass-lang.com/&quot;&gt;Sass&lt;/a&gt; and &lt;a href=&quot;http://lesscss.org/&quot;&gt;Less&lt;/a&gt; has been common practise in front-end development for some time now. Using variables to reference recurring values (such as for &lt;code class=&quot;highlighter-rouge&quot;&gt;color&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;margin&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;padding&lt;/code&gt; etc), helps us to write cleaner, more maintainable, and consistent CSS. Whilst preprocessors have extended CSS with some great patterns that we now often take for granted, using variables when compiling to static CSS has some limitations. This is especially true when it comes to theming.&lt;/p&gt;
 
 &lt;p&gt;As an example, let’s take a look at creating a dark mode theme using Sass. Here’s a simplified example for what could be a basic page header:&lt;/p&gt;
 
@@ -733,43 +788,4 @@ You should just go watch the video instead (you could hear a pin drop in the ven
 
 &lt;p&gt;&lt;a href=&quot;http://www.yeseniaperezcruz.com/&quot;&gt;Yesenia Perez-Cruz&lt;/a&gt; gave the second talk to focus on web performance, which was also the final talk of the day. I thought this one was particularly good as Yesenia shared how she works as a web designer to make informed decisions that won’t negatively impact a web page, taking into consideration factors like overall page weight, loading time and number of requests. This is something that designers don’t often prioritize, or consider being something a developer only needs worry about.&lt;/p&gt;
 
-&lt;p&gt;In Yesenia’s experience, slow and heavy sites are often a result of poor planning, communication, and awareness. Traditional waterfall processes often result with optimization being only an afterthought, or something that the developer needs to try and squeeze in toward the end of a project. It shouldn’t be this way. As a designer, Yesenia asks questions like, &lt;em&gt;“How many requests will a carousel add?”&lt;/em&gt;, &lt;em&gt;“How will performance be effected if we add another font weight?”&lt;/em&gt;, &lt;em&gt;“Do we really need that parallax background?”&lt;/em&gt; Her suggestion to help weigh up these questions is to establish a &lt;a href=&quot;https://clearleft.com/posts/98&quot;&gt;web performance budget&lt;/a&gt; for any given page, and to make performance an overall project goal from the outset. Performance should be considered a design feature, not just a side effect of development.&lt;/p&gt;</content><author><name>Alex Gibson</name></author><summary type="html">I took a trip to Manchester last week to attend UpFront Conf 2015. It was a full day of talks on web design and front-end development, and covered a range of topics including UI design, web performance, front-end testing, and typography. It even had a talk dedicated games console browsers! The line up of speakers delivered a good balance of both creative and technical talks, which made for an enjoyable day of brain-food. Here are my notes from the talks</summary></entry><entry><title type="html">My second year working at Mozilla</title><link href="https://alxgbsn.co.uk/2015/04/18/my-second-year-working-at-mozilla/" rel="alternate" type="text/html" title="My second year working at Mozilla" /><published>2015-04-18T00:00:00+01:00</published><updated>2015-04-18T00:00:00+01:00</updated><id>https://alxgbsn.co.uk/2015/04/18/my-second-year-working-at-mozilla</id><content type="html" xml:base="https://alxgbsn.co.uk/2015/04/18/my-second-year-working-at-mozilla/">&lt;p&gt;This week marked my second year Mozillaversary. I did plan to write this blog post of the 15th April, which would have marked the day I started, but this week flew by so quickly I almost completely missed it!&lt;/p&gt;
-
-&lt;h2 id=&quot;contributions&quot;&gt;Contributions&lt;/h2&gt;
-
-&lt;p&gt;Carrying on from &lt;a href=&quot;https://alxgbsn.co.uk/2014/04/15/my-first-year-working-at-mozilla/&quot;&gt;last years blog post&lt;/a&gt;, most of my second year at Mozilla has been spent working on various parts of &lt;a href=&quot;https://www.mozilla.org&quot;&gt;www.mozilla.org&lt;/a&gt;, to which I made a total of &lt;a href=&quot;https://github.com/mozilla/bedrock/commits?author=alexgibson&quot;&gt;196 commits&lt;/a&gt; this year.&lt;/p&gt;
-
-&lt;h2 id=&quot;firefox-on-boarding&quot;&gt;Firefox on-boarding&lt;/h2&gt;
-
-&lt;p&gt;Much of my time has been spent working on Firefox on-boarding. Following the success of the on-boarding flow we built for the Firefox 29 Australis redesign &lt;a href=&quot;https://alxgbsn.co.uk/2014/04/15/my-first-year-working-at-mozilla/&quot;&gt;last year&lt;/a&gt;, I went on to work on several more on-boarding flows to help introduce new features in Firefox. This included a UITour for the newly rebranded &lt;a href=&quot;https://www.mozilla.org/firefox/developer/&quot;&gt;Firefox Developer Edition&lt;/a&gt; /firstrun experience, as well as updates to the existing Firefox tour for new features such as the &lt;a href=&quot;https://blog.mozilla.org/ux/2014/11/find-it-faster/&quot;&gt;refined search UI&lt;/a&gt; and &lt;a href=&quot;https://www.mozilla.org/en-US/firefox/hello/&quot;&gt;Firefox Hello&lt;/a&gt;.&lt;/p&gt;
-
-&lt;figure&gt;
-    &lt;img src=&quot;/images/posts/dev-edition-firstrun.png&quot; alt=&quot;Screenshot of Firefox Developer Edition /firstrun tour page&quot; srcset=&quot;/images/posts/dev-edition-firstrun-high-res.png 1.5x&quot; /&gt;
-    &lt;figcaption&gt;Firefox Developer Edition /firstrun tour page&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;h2 id=&quot;firefox-hello-ftu&quot;&gt;Firefox Hello FTU&lt;/h2&gt;
-
-&lt;p&gt;Because of the UITour experience I have gained, I also got pulled in to work on the first time user experience (FTU) for when a user makes their &lt;a href=&quot;http://hollyhabstritt.com/blog/2015/1/18/your-first-hello&quot;&gt;first Firefox Hello video call&lt;/a&gt;. Hello is a new feature in Firefox that enables real time video chat via WebRTC.&lt;/p&gt;
-
-&lt;figure&gt;
-    &lt;img src=&quot;/images/posts/firefox-hello-screenshot.jpg&quot; alt=&quot;Screenshot of Firefox Hello&quot; srcset=&quot;/images/posts/firefox-hello-screenshot-high-res.jpg 1.5x&quot; /&gt;
-    &lt;figcaption&gt;Firefox Hello&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;p&gt;The FTU was another UITour page that communicated with Hello, guiding users through how to use the feature to make their first video call. It was all a &lt;em&gt;crazy&lt;/em&gt; amount of work from a lot of different people, but something I really enjoyed getting to work on alongside various other teams at Mozilla.&lt;/p&gt;
-
-&lt;h2 id=&quot;mozilla-homepage&quot;&gt;Mozilla homepage&lt;/h2&gt;
-
-&lt;p&gt;Outside of Firefox oriented work, I also got to work on the redesigned 2015 &lt;a href=&quot;https://www.mozilla.org&quot;&gt;www.mozilla.org&lt;/a&gt; homepage. Being the main front-page that represents Mozilla and what we do, this is something I consider quite a privilege to work on.&lt;/p&gt;
-
-&lt;figure&gt;
-    &lt;img src=&quot;/images/posts/homepage.png&quot; alt=&quot;Screenshot of Mozilla 2015 homepage&quot; srcset=&quot;/images/posts/homepage-high-res.png 1.5x&quot; /&gt;
-    &lt;figcaption&gt;Mozilla 2015 homepage&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;h2 id=&quot;all-hands-and-work-weeks&quot;&gt;All-hands and work weeks&lt;/h2&gt;
-
-&lt;p&gt;On the travel front, I got to visit both San Fransisco and Santa Clara a bunch more times (I’m kind of losing count now). I also got to visit Portland for the first time when Mozilla had their all-hands week last December, which was such a great city to spend time in.&lt;/p&gt;
-
-&lt;p&gt;I’m looking forward to whatever year three has in store!&lt;/p&gt;</content><author><name>Alex Gibson</name></author><summary type="html">This week marked my second year Mozillaversary. I did plan to write this blog post of the 15th April, which would have marked the day I started, but this week flew by so quickly I almost completely missed it!</summary></entry></feed>
+&lt;p&gt;In Yesenia’s experience, slow and heavy sites are often a result of poor planning, communication, and awareness. Traditional waterfall processes often result with optimization being only an afterthought, or something that the developer needs to try and squeeze in toward the end of a project. It shouldn’t be this way. As a designer, Yesenia asks questions like, &lt;em&gt;“How many requests will a carousel add?”&lt;/em&gt;, &lt;em&gt;“How will performance be effected if we add another font weight?”&lt;/em&gt;, &lt;em&gt;“Do we really need that parallax background?”&lt;/em&gt; Her suggestion to help weigh up these questions is to establish a &lt;a href=&quot;https://clearleft.com/posts/98&quot;&gt;web performance budget&lt;/a&gt; for any given page, and to make performance an overall project goal from the outset. Performance should be considered a design feature, not just a side effect of development.&lt;/p&gt;</content><author><name>Alex Gibson</name></author><summary type="html">I took a trip to Manchester last week to attend UpFront Conf 2015. It was a full day of talks on web design and front-end development, and covered a range of topics including UI design, web performance, front-end testing, and typography. It even had a talk dedicated games console browsers! The line up of speakers delivered a good balance of both creative and technical talks, which made for an enjoyable day of brain-food. Here are my notes from the talks</summary></entry></feed>
