@@ -27,6 +27,7 @@ html {
 }
 
 body {
+    background-color: inherit;
     font-family: system-ui, sans-serif;
     font-size: 18px;
     font-weight: 400;
@@ -40,6 +41,10 @@ body {
     body {
         scroll-behavior: auto;
     }
+}
+
+main {
+    background-color: inherit;
 }
 
 a:link, a:visited {
@@ -149,6 +154,7 @@ pre {
         background-color: transparent;
         border-radius: 0;
         border: none;
+        color: $color-white;
         color: var(--color-white);
         padding: 0;
     }
@@ -184,19 +190,13 @@ figure {
 // Main mavigation
 
 .masthead {
-    background-color: $color-white;
-    background-color: var(--color-background);
+    background-color: inherit;
     column-gap: 10px;
     display: grid;
     grid-column-gap: 10px;
     grid-template-columns: 2fr 1fr;
-    left: 0;
     margin-bottom: 40px;
     padding: 10px;
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
-    transition: background-color .1s ease-in-out;
 
     nav[role="navigation"] ul {
         display: inline-block;
@@ -253,6 +253,13 @@ figure {
 
     @media all and (min-width: 30em) {
         margin-bottom: 60px;
+    }
+
+    @supports (--color-background: #fff) {
+        left: 0;
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
     }
 }
 
