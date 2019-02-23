@@ -1,4 +1,4 @@
-const version = '20190223115721';
+const version = '20190223120230';
 const cacheName = `static::${version}`;
 
 
@@ -6,7 +6,7 @@ function updateStaticCache() {
     return caches.open(cacheName).then(cache => {
         return cache.addAll([
             
-            '/assets/styles-dbb2a17567565f6ccb67a16af00972892e54578c02b20cb6d5de7a29c7a96617.css',
+            '/assets/styles-333770dffa457f88f47acf59a2e935f3c773829f9bfd9e8ae36c06e0c4866ba5.css',
             '/assets/theme-77026091a174da81bd4e08d59206f16043046cb6f5d13d856dfc667c7d57987b.js',
             '/assets/main-e720254e216df6f38df9183d48fc5096b498cf7aa00bfdf57bf8aa71c31a7980.js',
             '/assets/avatar-180-b1f192dbbe4ceec9c13c327fb0908af5ddbf621002116885f0cc2e8d8b6787c8.jpg',
