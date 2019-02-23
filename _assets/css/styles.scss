@@ -35,6 +35,12 @@ body {
     width: 100%;
 }
 
+@media screen and (prefers-reduced-motion: reduce) {
+    body {
+        scroll-behavior: auto;
+    }
+}
+
 a:link, a:visited {
     color: var(--color-link);
     text-decoration: none;
@@ -364,6 +370,10 @@ section.post time:after {
     color: var(--color-text-secondary);
     font-style: italic;
     margin-top: 0;
+    text-align: center;
+}
+
+.scroll-to-top {
     text-align: center;
 }
 
