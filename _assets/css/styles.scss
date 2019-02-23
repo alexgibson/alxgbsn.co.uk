@@ -23,6 +23,7 @@
 html {
     background-color: var(--color-background);
     color: var(--color-text-primary);
+    transition: background-color .1s ease-in-out, color .1s ease-in-out;
 }
 
 body {
@@ -195,6 +196,7 @@ figure {
     position: -webkit-sticky;
     position: sticky;
     top: 0;
+    transition: background-color .1s ease-in-out;
 
     nav[role="navigation"] ul {
         display: inline-block;
