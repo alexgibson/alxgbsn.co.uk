@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Testing native ES modules using Mocha and esm.
+title: Testing native ES modules using Mocha and esm
 desc: How to write unit tests for native ES modules using Mocha and esm and run them on the command line.
 excerpt: I recently worked on a project where I wanted to switch to using native ES modules in the browser. Migrating the existing code to ES modules was easy enough, but the tricky part came when I wanted to maintain the existing unit tests. Turns out, many JavaScript testing frameworks don't yet support native ES modules out of the box, and I was struggling to find an easy solution that didn't require transpiling my code back to ES5.
 ---
