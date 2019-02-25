@@ -2,12 +2,12 @@
 layout: post
 title: Creating a dark mode theme using CSS Custom Properties
 desc: How to create a simple and efficient dark mode colour theme using CSS Custom Properties.
-excerpt: The use of variables in CSS preprocessors such as Sass and Less have been common practise in front-end development for some time now. Using variables to reference recurring values (such as for color, margin and padding etc), helps us to write cleaner, more maintainable, and consistent CSS. Whilst preprocessors have extended CSS with some great patterns that we now often take for granted, using variables when compiling to static CSS has some limitations. This is especially true when it comes to theming.
+excerpt: Variables are one of the many reasons many people use CSS preprocessors today. Reference recurring values (such as for color, margin and padding etc) helps us to write cleaner, more maintainable, and consistent CSS. Whilst preprocessors have extended CSS with some great patterns that we now often take for granted, using variables when compiling to static CSS has some pretty hard limitations. This is especially true when it comes to theming.
 ---
 
-The use of variables in CSS preprocessors such as [Sass](https://sass-lang.com/) and [Less](http://lesscss.org/) has been common practise in front-end development for some time now. Using variables to reference recurring values (such as for `color`, `margin` and `padding` etc), helps us to write cleaner, more maintainable, and consistent CSS. Whilst preprocessors have extended CSS with some great patterns that we now often take for granted, using variables when compiling to static CSS has some limitations. This is especially true when it comes to theming.
+Variables are one of the many reasons many people use CSS preprocessors today. Reference recurring values (such as for `color`, `margin` and `padding` etc) helps us to write cleaner, more maintainable, and consistent CSS. Whilst preprocessors have extended CSS with some great patterns that we now often take for granted, using variables when compiling to static CSS has some pretty hard limitations. This is especially true when it comes to theming.
 
-As an example, let's take a look at creating a dark mode theme using Sass. Here's a simplified example for what could be a basic page header:
+As an example, let's take a look at creating a dark mode theme using [Sass](https://sass-lang.com/). Here's a simplified example for what could be a basic page header:
 
 ```scss
 
