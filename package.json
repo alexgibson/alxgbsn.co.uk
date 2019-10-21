@@ -7,7 +7,7 @@
   "devDependencies": {
     "del": "^5.1.0",
     "eslint": "^6.5.1",
-    "gh-pages": "^1.2.0",
+    "gh-pages": "^2.1.1",
     "gulp": "^4.0.2",
     "gulp-eslint": "^6.0.0",
     "gulp-htmlmin": "^5.0.1"
