@@ -2,6 +2,15 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://alxgbsn.co.uk/2020/04/15/my-seventh-year-working-at-mozilla/</loc>
+    
+    <lastmod>2020-04-15T00:00:00+01:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
     <loc>https://alxgbsn.co.uk/2019/04/15/my-sixth-year-working-at-mozilla/</loc>
     
     <lastmod>2019-04-15T00:00:00+01:00</lastmod>
@@ -268,7 +277,7 @@
   
   <url>
     <loc>https://alxgbsn.co.uk/about/</loc>
-    <lastmod>2019-07-15T19:40:07+01:00</lastmod>
+    <lastmod>2020-04-15T14:26:48+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -279,7 +288,7 @@
   
   <url>
     <loc>https://alxgbsn.co.uk/</loc>
-    <lastmod>2019-07-15T19:40:07+01:00</lastmod>
+    <lastmod>2020-04-15T14:26:48+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -288,7 +297,7 @@
   
   <url>
     <loc>https://alxgbsn.co.uk/contact/</loc>
-    <lastmod>2019-07-15T19:40:07+01:00</lastmod>
+    <lastmod>2020-04-15T14:26:48+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -305,7 +314,7 @@
   
   <url>
     <loc>https://alxgbsn.co.uk/</loc>
-    <lastmod>2019-07-15T19:40:07+01:00</lastmod>
+    <lastmod>2020-04-15T14:26:48+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -314,7 +323,7 @@
   
   <url>
     <loc>https://alxgbsn.co.uk/</loc>
-    <lastmod>2019-07-15T19:40:07+01:00</lastmod>
+    <lastmod>2020-04-15T14:26:48+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>

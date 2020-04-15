@@ -1,4 +1,31 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://alxgbsn.co.uk/feed/index.xml" rel="self" type="application/atom+xml" /><link href="https://alxgbsn.co.uk/" rel="alternate" type="text/html" /><updated>2019-07-15T19:40:07+01:00</updated><id>https://alxgbsn.co.uk/</id><title type="html">Alex Gibson, Front End Developer</title><author><name>Alex Gibson</name></author><entry><title type="html">My sixth year working at Mozilla</title><link href="https://alxgbsn.co.uk/2019/04/15/my-sixth-year-working-at-mozilla/" rel="alternate" type="text/html" title="My sixth year working at Mozilla" /><published>2019-04-15T00:00:00+01:00</published><updated>2019-04-15T00:00:00+01:00</updated><id>https://alxgbsn.co.uk/2019/04/15/my-sixth-year-working-at-mozilla</id><content type="html" xml:base="https://alxgbsn.co.uk/2019/04/15/my-sixth-year-working-at-mozilla/">&lt;figure&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="https://alxgbsn.co.uk/feed/index.xml" rel="self" type="application/atom+xml" /><link href="https://alxgbsn.co.uk/" rel="alternate" type="text/html" /><updated>2020-04-15T14:26:48+01:00</updated><id>https://alxgbsn.co.uk/feed/index.xml</id><title type="html">Alex Gibson, Front End Developer</title><author><name>Alex Gibson</name></author><entry><title type="html">My seventh year working at Mozilla</title><link href="https://alxgbsn.co.uk/2020/04/15/my-seventh-year-working-at-mozilla/" rel="alternate" type="text/html" title="My seventh year working at Mozilla" /><published>2020-04-15T00:00:00+01:00</published><updated>2020-04-15T00:00:00+01:00</updated><id>https://alxgbsn.co.uk/2020/04/15/my-seventh-year-working-at-mozilla</id><content type="html" xml:base="https://alxgbsn.co.uk/2020/04/15/my-seventh-year-working-at-mozilla/">&lt;figure&gt;
+    &lt;img src=&quot;/images/posts/berlin-2020.jpg&quot; alt=&quot;Mozilla remotees group photo in Berlin, January 2020&quot; srcset=&quot;/images/posts/berlin-2020-high-res.jpg 1.5x&quot; /&gt;
+    &lt;figcaption&gt;Mozilla remotees group photo in Berlin, January 2020&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;This week marks my seventh year working full time for Mozilla. The past year has been good for me personally and professionally, but it has also been an uneasy time for both Mozilla and the world as a whole. I write this post under lockdown during to the COVID-19 pandemic, which is a very testing time for many people and organizations around the world. I’m thankful to still have a stable job, and to have the protection of being able to work from home. I’m more aware of my privilege now than ever before.&lt;/p&gt;
+
+&lt;h2 id=&quot;professional-achievements&quot;&gt;Professional achievements&lt;/h2&gt;
+
+&lt;p&gt;Earning a promotion from Senior to Staff level engineer at Mozilla is an achievement I thought I’d never accomplish a few years back. It always seemed like a lofty goal, with no clear path for me from where I was situated within the organization. After help and guidance from my manager over the course of a year, it was something I was happy to finally achieve in 2019. I really wanted to be spending more time solving larger technical problems, as well as helping to improve the systems that we rely on for our day-to-day work. To be given more accountability and time to spend on this type of work is a prospect I am really excited about.&lt;/p&gt;
+
+&lt;h2 id=&quot;roadmapping&quot;&gt;Roadmapping&lt;/h2&gt;
+
+&lt;p&gt;As part of my new responsibilities I’m accountable for maintaining the technical roadmap of a large, non-trivial project (&lt;a href=&quot;https://github.com/mozilla/bedrock&quot;&gt;bedrock&lt;/a&gt;). Maintaining the roadmap involves working closely with the project owner and project manager, as well as other stakeholders and engineers, with a goal to better understand the needs of the platform and to identify areas where it can be improved. There is no shortage of work to do here for a website that’s been around for over a decade, has spanned three different codebases, is translated in over 100 languages, and consists of three different front-end CSS frameworks. Over the past 6 months I’ve spent a lot of time filing issues, triaging bugs, and setting milestones to chart a course for platform improvements. It’s been satisfying to see technical debt start to get paid off, and for large platform improvements begin to appear on the horizon.&lt;/p&gt;
+
+&lt;h2 id=&quot;project-fluent&quot;&gt;Project Fluent&lt;/h2&gt;
+
+&lt;p&gt;One of the first large platform improvements we’ve been busy working on is an overhaul of bedrock’s localization (L10n) system. The website’s current L10n system is more than 7 years old, and was built at a time when the need for new localized content was much less frequent than it is today. Once new copy is added to the website, the process of extracting and updating localized strings requires a lot of manual care and intervention. Adding “breaking” string changes is also painful, where even the smallest of punctuation changes is capable of triggering a wave of new localization work.&lt;/p&gt;
+
+&lt;p&gt;Working together with Mozilla’s L10n team, we set a mandate to decommission the current L10n system in 2020, and have been gradually implementing a replacement system built on top of &lt;a href=&quot;https://projectfluent.org/&quot;&gt;Project Fluent&lt;/a&gt;. One of the key goals for the new system is to make the L10n process faster and with less friction for our teams, as well as for the wider Mozilla L10n community. Breaking down the requirements for a such a system of complex workflows has been a long and sometimes difficult task, with several blockers along the way. But we’re nearly there, and the majority of the implementation work is complete. We’re now on the last stretch of migrating legacy content, before finally switching over to the new system.&lt;/p&gt;
+
+&lt;h2 id=&quot;uncertain-changes&quot;&gt;Uncertain changes&lt;/h2&gt;
+
+&lt;p&gt;As I mentioned earlier, despite the past year being a good for me professionally, it has also been a year of unexpected changes and turmoil. To being with, Mozilla had some layoffs at the start of 2020. Whilst I was lucky enough to be uneffected by the &lt;a href=&quot;https://blog.mozilla.org/blog/2020/01/15/readying-for-the-future-at-mozilla/&quot;&gt;reorganisation&lt;/a&gt;, some of my collegues were not as fortunate. Redundancies at Mozilla have been pretty few and far between during the time that I have worked here, so it was pretty unsettling for the organisation as a whole to undergo such a sudden change. My hope is that is now behind us and we can start looking again to the future.&lt;/p&gt;
+
+&lt;p&gt;To complicate things further, the world is also being heavily tested by the COVID-19 pandemic right now. It’s fortunate that Mozilla is in a position to adapt well to continuing work under the distributed environment that we all find ourselves in. A lot of people are relying more and more on the internet right now to do the things they need both for work and for family life, so Mozilla continues to play an important role in enabling people with the tools they need to communicate and interact safely online.&lt;/p&gt;
+
+&lt;p&gt;What will 2020 bring? Your guess is as good as mine. My hope is it can only get better from here.&lt;/p&gt;</content><author><name>Alex Gibson</name></author><summary type="html">This week marks my seventh year working full time for Mozilla. The past year has been good for me personally and professionally, but it has also been an uneasy time for both Mozilla and the world as a whole. I write this post under lockdown during to the COVID-19 pandemic, which is a very testing time for many people and organizations around the world. I'm thankful to still have a stable job, and to have the protection of being able to work from home. I'm more aware of my privilege now than ever before.</summary></entry><entry><title type="html">My sixth year working at Mozilla</title><link href="https://alxgbsn.co.uk/2019/04/15/my-sixth-year-working-at-mozilla/" rel="alternate" type="text/html" title="My sixth year working at Mozilla" /><published>2019-04-15T00:00:00+01:00</published><updated>2019-04-15T00:00:00+01:00</updated><id>https://alxgbsn.co.uk/2019/04/15/my-sixth-year-working-at-mozilla</id><content type="html" xml:base="https://alxgbsn.co.uk/2019/04/15/my-sixth-year-working-at-mozilla/">&lt;figure&gt;
     &lt;img src=&quot;/images/posts/sf-all-hands-2018.jpg&quot; alt=&quot;Photo of San Fransisco's skyline taken at the Monday night event for Mozilla All-Hands, June 2018.&quot; srcset=&quot;/images/posts/sf-all-hands-2018-high-res.jpg 1.5x&quot; /&gt;
     &lt;figcaption&gt;Photo of San Fransisco's skyline taken at the Monday night event for Mozilla All-Hands, June 2018.&lt;/figcaption&gt;
 &lt;/figure&gt;
@@ -54,12 +81,12 @@
 
 &lt;p&gt;A unit test for this module could look like the following piece of code (let’s call it &lt;code class=&quot;highlighter-rouge&quot;&gt;sum.test.js&lt;/code&gt;). Note that here I’m using &lt;a href=&quot;https://www.chaijs.com/&quot;&gt;Chai&lt;/a&gt;, but you could use any &lt;a href=&quot;https://mochajs.org/#assertions&quot;&gt;assertion library&lt;/a&gt; that Mocha supports.&lt;/p&gt;
 
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;sum&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'./sum.js'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;expect&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'chai'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;sum&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;./sum.js&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;expect&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;chai&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 
-&lt;span class=&quot;nx&quot;&gt;describe&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'sum'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;describe&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
 
-    &lt;span class=&quot;nx&quot;&gt;it&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'should return the sum of two arguments'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;it&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;should return the sum of two arguments&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
         &lt;span class=&quot;nx&quot;&gt;expect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;to&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;equal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
@@ -201,7 +228,7 @@ SyntaxError: Unexpected identifier
 &lt;p&gt;You can also detect the preference in JavaScript like so:&lt;/p&gt;
 
 &lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// detect dark mode preference.&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;prefersDarkMode&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;window&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;matchMedia&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'(prefers-color-scheme: dark)'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;matches&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;prefersDarkMode&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;window&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;matchMedia&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;(prefers-color-scheme: dark)&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;matches&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Because I’m a big fan of dark UI’s (I find them much easier on the eye, especially over extended periods of time), I couldn’t resist adding a custom theme to this blog. For browsers which don’t yet support &lt;code class=&quot;highlighter-rouge&quot;&gt;prefers-color-scheme&lt;/code&gt;, I also added a theme toggle to the top right navigation.&lt;/p&gt;
@@ -233,7 +260,7 @@ SyntaxError: Unexpected identifier
 
 &lt;p&gt;You can also detect support for custom properties in JavaScript using the following line of code (I’m using this to determine whether or not to initialise the theme selector in the navigation).&lt;/p&gt;
 
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;supportsCustomProperties&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;window&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;CSS&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;window&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;CSS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;supports&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'color'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'var(--fake-color'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;supportsCustomProperties&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;window&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;CSS&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;window&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;CSS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;supports&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;var(--fake-color&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h2 id=&quot;take-a-closer-look&quot;&gt;Take a closer look&lt;/h2&gt;
@@ -257,7 +284,7 @@ SyntaxError: Unexpected identifier
 &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- Modules can also be inline --&amp;gt;&lt;/span&gt;
 
 &lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;module&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;thing&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'./my-module.js'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;thing&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;./my-module.js&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;nt&quot;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
@@ -349,11 +376,11 @@ SyntaxError: Unexpected identifier
 
 &lt;p&gt;The last service worker I wrote used an &lt;em&gt;offline first&lt;/em&gt; approach. This worked out OK since it was only a single HTML page with a limited number of static assets. The service worker looked in the cache first for any &lt;code class=&quot;highlighter-rouge&quot;&gt;GET&lt;/code&gt; request, and only went out to the network if there was no match:&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addEventListener&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'fetch'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addEventListener&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;fetch&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;request&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 
     &lt;span class=&quot;c1&quot;&gt;// Always fetch non-GET requests from the network.&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;method&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!==&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'GET'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;method&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!==&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;GET&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
         &lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;respondWith&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;fetch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
         &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
@@ -368,19 +395,19 @@ SyntaxError: Unexpected identifier
 
 &lt;p&gt;For this blog that’s not really what I wanted though, since when people visit I want to be sure they always see the most recent content straight away. For this reason I went for a &lt;em&gt;network first&lt;/em&gt; approach for HTML pages, and falling back to a simple &lt;em&gt;offline&lt;/em&gt; page if a request fails:&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addEventListener&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'fetch'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addEventListener&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;fetch&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;request&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 
     &lt;span class=&quot;c1&quot;&gt;// Always fetch non-GET requests from the network.&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;method&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!==&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'GET'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;method&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!==&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;GET&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
         &lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;respondWith&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;fetch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
         &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 
     &lt;span class=&quot;c1&quot;&gt;// For HTML requests, try the network first else fall back to the offline page.&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;headers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Accept'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;indexOf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'text/html'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!==&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;headers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;Accept&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;indexOf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;text/html&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!==&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
         &lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;respondWith&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
-            &lt;span class=&quot;nx&quot;&gt;fetch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;catch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;caches&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;match&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'/offline/'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+            &lt;span class=&quot;nx&quot;&gt;fetch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;catch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;caches&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;match&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;/offline/&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
         &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
         &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
@@ -392,19 +419,19 @@ SyntaxError: Unexpected identifier
 
 &lt;p&gt;In order to get page load performance benefits out of my service worker whilst using a network first strategy for HTML pages, I chose a slightly different strategy for serving static assets such as CSS, JavaScript and image files. Here we look in the service worker cache first and return a response straight away. If no match is found, we go out to the network:&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addEventListener&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'fetch'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addEventListener&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;fetch&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;request&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 
     &lt;span class=&quot;c1&quot;&gt;// Always fetch non-GET requests from the network.&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;method&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!==&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'GET'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;method&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!==&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;GET&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
         &lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;respondWith&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;fetch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
         &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 
     &lt;span class=&quot;c1&quot;&gt;// For HTML requests, try the network first else fall back to the offline page.&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;headers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Accept'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;indexOf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'text/html'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!==&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;headers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;Accept&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;indexOf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;text/html&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!==&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
         &lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;respondWith&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
-            &lt;span class=&quot;nx&quot;&gt;fetch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;catch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;caches&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;match&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'/offline/'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+            &lt;span class=&quot;nx&quot;&gt;fetch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;catch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;caches&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;match&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;/offline/&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
         &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
         &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
@@ -426,10 +453,10 @@ SyntaxError: Unexpected identifier
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;updateStaticCache&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;caches&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;open&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;cacheName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;then&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;cache&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
         &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;cache&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addAll&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;
-            &lt;span class=&quot;s1&quot;&gt;'{{ assets['&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;styles&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;scss&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'].digest_path }}'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-            &lt;span class=&quot;s1&quot;&gt;'{{ assets['&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;js&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'].digest_path }}'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-            &lt;span class=&quot;s1&quot;&gt;'{{ assets['&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;avatar&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;180&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;jpg&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'].digest_path }}'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-            &lt;span class=&quot;s1&quot;&gt;'/offline/'&lt;/span&gt;
+            &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;{{ assets[&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;styles&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;scss&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;].digest_path }}&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;{{ assets[&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;js&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;].digest_path }}&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;{{ assets[&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;avatar&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;180&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;jpg&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;].digest_path }}&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;/offline/&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;
         &lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
@@ -439,7 +466,7 @@ SyntaxError: Unexpected identifier
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;o&quot;&gt;---&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;---&lt;/span&gt;
 
-&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;version&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'{{site.time | date: '&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Y&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;H&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;M&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;S&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'}}'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;version&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;{{site.time | date: &lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Y&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;H&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;M&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;S&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;}}&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;cacheName&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;`static::&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;version&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;If you’re curious to see everything together, you can view my &lt;a href=&quot;https://github.com/alexgibson/alxgbsn.co.uk/blob/master/sw.js&quot;&gt;full service worker code here&lt;/a&gt;.&lt;/p&gt;</content><author><name>Alex Gibson</name></author><summary type="html">Implementing a Service Worker is something I've only really toyed with in the past. I recently felt like I needed to get reacquainted with their inner workings again, so I decided to implement one for this blog. Here are some tips and tricks I learned along the way.</summary></entry><entry><title type="html">My fourth year working at Mozilla</title><link href="https://alxgbsn.co.uk/2017/04/19/my-fourth-year-working-at-mozilla/" rel="alternate" type="text/html" title="My fourth year working at Mozilla" /><published>2017-04-19T00:00:00+01:00</published><updated>2017-04-19T00:00:00+01:00</updated><id>https://alxgbsn.co.uk/2017/04/19/my-fourth-year-working-at-mozilla</id><content type="html" xml:base="https://alxgbsn.co.uk/2017/04/19/my-fourth-year-working-at-mozilla/">&lt;figure&gt;
@@ -610,173 +637,4 @@ experience he’ll always remember.&lt;/p&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;I feel hugely appreciative to Mozilla for being able to share experiences like
-this with colleagues, friends and family alike.&lt;/p&gt;</content><author><name>Alex Gibson</name></author><summary type="html">Today marks my third year working for Mozilla! I usually try and put together a short recap on the things I’ve accomplished during the past year here. There are so many things I could pick out, but I find it hard to know quite where to begin. Three years have flown by very quickly, but looking back at the time when I started, I feel like I have grown considerably. I guess this has been my first year at Mozilla where I no longer feel “new”, although I am still learning constantly by being surrounded by so many smart people.</summary></entry><entry><title type="html">Full Frontal Conference 2015</title><link href="https://alxgbsn.co.uk/2015/11/14/ffconf/" rel="alternate" type="text/html" title="Full Frontal Conference 2015" /><published>2015-11-14T00:00:00+00:00</published><updated>2015-11-14T00:00:00+00:00</updated><id>https://alxgbsn.co.uk/2015/11/14/ffconf</id><content type="html" xml:base="https://alxgbsn.co.uk/2015/11/14/ffconf/">&lt;figure&gt;
-    &lt;img src=&quot;/images/posts/ffconf-2015.jpg&quot; alt=&quot;ffconf 2015&quot; /&gt;
-&lt;/figure&gt;
-
-&lt;p&gt;This year I was lucky enough to grab a ticket for &lt;a href=&quot;http://2015.ffconf.org/&quot;&gt;ffconf 2015&lt;/a&gt;
-before it sold out. I missed the boat last year, but I had attended once before
-in 2013, so felt confident that it would once again be a worthy pilgrimage to
-(not so sunny) Brighton. I always liked that the speakers for ffconf are never
-announced ahead of tickets going on sale. Everything boils down to the content
-and how talks are curated. Here are my notes from the day:&lt;/p&gt;
-
-&lt;h2 id=&quot;robin-mehner---javascript-that-doesnt-hurt-your-feelings&quot;&gt;Robin Mehner - JavaScript that doesn’t hurt your feelings&lt;/h2&gt;
-
-&lt;p&gt;Robin started off the day talking about new shiny features in ES2015, and how
-it can help us write nicer, cleaner JavaScript with less boilerplate. He showed
-off many code examples highlighting practical every day uses. These are just a
-few of the key features he discussed:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/docs/Web/JavaScript/Reference/template_strings&quot;&gt;Template string literals&lt;/a&gt;.&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/docs/Web/JavaScript/Reference/Functions/Default_parameters&quot;&gt;Default parameter values&lt;/a&gt;.&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/docs/Web/JavaScript/Reference/Functions/rest_parameters&quot;&gt;Rest parameters&lt;/a&gt;.&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/docs/Web/JavaScript/Reference/Operators/Spread_operator&quot;&gt;Spread operator&lt;/a&gt;.&lt;/li&gt;
-  &lt;li&gt;Block scope variables &lt;a href=&quot;https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/let&quot;&gt;let&lt;/a&gt; and &lt;a href=&quot;https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/const&quot;&gt;const&lt;/a&gt;.&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment&quot;&gt;Destructuring assignment&lt;/a&gt;.&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/docs/Web/JavaScript/Reference/Functions/Arrow_functions&quot;&gt;Arrow functions&lt;/a&gt;.&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/docs/Web/JavaScript/Reference/Classes&quot;&gt;Classes&lt;/a&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;In addition to major new features, Robin took some time to cover some smaller,
-lesser talked about bits and pieces that are also very useful:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array/find&quot;&gt;Array.find()&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String/startsWith&quot;&gt;String.startsWith()&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String/endsWith&quot;&gt;String.endsWith()&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String/includes&quot;&gt;String.includes()&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object/assign&quot;&gt;Object.assign()&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Many of these features are already &lt;a href=&quot;https://kangax.github.io/compat-table/es6/&quot;&gt;supported in browsers today&lt;/a&gt;, or you can of
-course use a transpiler such as &lt;a href=&quot;https://babeljs.io/&quot;&gt;Babel&lt;/a&gt; to convert your code to ES5.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=4NmkIjUBZmU&amp;amp;index=1&amp;amp;list=PLXmT1r4krsTqtLdWln2ritJZTjd5a06h2&quot;&gt;Watch Robin’s talk on YouTube&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;sara-soueidan---svg-in-motion&quot;&gt;Sara Soueidan - SVG in motion&lt;/h2&gt;
-
-&lt;p&gt;Sara gave a really comprehensive talk on pretty much everything you need to know
-about SVG when it comes to animation. She gave a very detailed run through of
-all the main embedding techniques, their appropriate fallbacks, and how to choose
-the most suitable method depending on what you need to animate. I’ve done a
-little bit of SVG based CSS animation, and I know from bitter experience just
-how many pitfalls there can be to get things to work cross-browser. I still don’t
-think I truly understand everything I need to know when it comes to properties like
-&lt;code class=&quot;highlighter-rouge&quot;&gt;viewbox&lt;/code&gt;, but Sara’s talk was especially useful in helping to explain things more
-clearly. She also went on to give demos of other interesting techniques that I
-had not seen before, such as SVG Sprite Animation and ‘repsonsive’ SVG animation
-based on viewport size.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=3TP2UVkbGHs&amp;amp;index=2&amp;amp;list=PLXmT1r4krsTqtLdWln2ritJZTjd5a06h2&quot;&gt;Watch Sara’s talk on YouTube&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;anna-shipman---operations-a-developers-guide&quot;&gt;Anna Shipman - Operations: a developer’s guide&lt;/h2&gt;
-
-&lt;p&gt;Anna gave a really useful talk on operations aimed at developers, explaining the
-difference between concepts such as &lt;em&gt;virtualization&lt;/em&gt; and &lt;em&gt;containerization&lt;/em&gt;.
-She covered weird sounding terms such as &lt;a href=&quot;https://en.wikipedia.org/wiki/Hypervisor&quot;&gt;&lt;em&gt;hypervisor&lt;/em&gt;&lt;/a&gt;, and explained the differences between tools such as
-&lt;a href=&quot;https://www.vagrantup.com/&quot;&gt;Vagrant&lt;/a&gt;/&lt;a href=&quot;https://ottoproject.io/&quot;&gt;Otto&lt;/a&gt; and
-&lt;a href=&quot;https://www.docker.com/&quot;&gt;Docker&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Anna also gave some great examples of using simple Unix command line tools such
-as &lt;code class=&quot;highlighter-rouge&quot;&gt;make&lt;/code&gt;, which can quite easily do many of the common build tasks we often
-leave to NPM/Gulp/Grunt.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=y6hbrS3DheU&amp;amp;list=PLXmT1r4krsTqtLdWln2ritJZTjd5a06h2&amp;amp;index=3&quot;&gt;Watch Anna’s talk on YouTube&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;john-k-paul---the-web-audio-phenomenon-that-shall-not-be-named&quot;&gt;John K. Paul - The Web Audio Phenomenon that Shall Not Be Named&lt;/h2&gt;
-
-&lt;p&gt;John talked about his interests in both programming and linguistics. Both
-have their own syntax and semantics, but natural languages can have different
-kinds of semantics depending on the sentence. Programming is more like a set
-instruction. Natural languages can also have pragmatics, something which does not
-exist in code. For example, what might a person have been thinking when they
-conveyed a sentence to another person? How could computers accomplish this
-understanding?&lt;/p&gt;
-
-&lt;p&gt;John went on to give a demo of a &lt;a href=&quot;https://makemcgurk.com/&quot;&gt;website he made&lt;/a&gt; to
-highlight something called the &lt;a href=&quot;https://en.wikipedia.org/wiki/McGurk_effect&quot;&gt;McGurk effect&lt;/a&gt;.
-He used Web API’s such as &lt;code class=&quot;highlighter-rouge&quot;&gt;getUserMedia&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;Web Audio&lt;/code&gt;, and the &lt;a href=&quot;https://developer.mozilla.org/docs/Web/API/MediaRecorder_API&quot;&gt;Media Recorder API&lt;/a&gt;
-to build a Node app that lets people record their own McGurk videos to share with
-friends.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=ztZ3fFlShmg&amp;amp;list=PLXmT1r4krsTqtLdWln2ritJZTjd5a06h2&amp;amp;index=4&quot;&gt;Watch John’s talk on YouTube&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;marcy-sutton---how-to-win-at-mobile-accessibility&quot;&gt;Marcy Sutton - How to win at mobile accessibility&lt;/h2&gt;
-
-&lt;p&gt;Marcy gave a talk on mobile web accessibility, covering common barriers to
-accessibility on mobile and how we can overcome them to help build more inclusive
-experiences for everyone.&lt;/p&gt;
-
-&lt;p&gt;Common accessibility barriers include:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Preventing pinch/zoom.&lt;/li&gt;
-  &lt;li&gt;Scroll highjacking.&lt;/li&gt;
-  &lt;li&gt;Ambiguous icons without labels.&lt;/li&gt;
-  &lt;li&gt;Conflicting gestures such as swipe.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Marcy noted that mobile web browsers often have much spottier ARIA support
-compared to their desktop counterparts, and as such the most used button for
-a11y on mobile websites is often the &lt;em&gt;reader mode&lt;/em&gt; button. This is what we’re
-competing against! She then went on to demo several websites on iOS using
-VoiceOver, pointing out common accessibility issues and how to fix them.
-Marcy also covered things such as the importance of semantics, touch target
-sizing, tab order, and making sure that hidden content is reachable.&lt;/p&gt;
-
-&lt;p&gt;Useful resources for accessibility include:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://www.bbc.co.uk/guidelines/futuremedia/accessibility/mobile&quot;&gt;BBC Mobile Accessibility Guidelines&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.microsoft.com/en-us/design/practice#toolkit&quot;&gt;Microsoft Inclusive Design Toolkit&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=Jp6-9X-ZClk&amp;amp;list=PLXmT1r4krsTqtLdWln2ritJZTjd5a06h2&amp;amp;index=5&quot;&gt;Watch Marcy’s talk on YouTube&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;paul-lewis---you-should-use-insert-libraryframework-its-the-bestestest&quot;&gt;Paul Lewis - You should use &amp;lt;insert library/framework&amp;gt;, it’s the bestestest!&lt;/h2&gt;
-
-&lt;p&gt;Paul talked about the &lt;a href=&quot;https://aerotwist.com/blog/the-cost-of-frameworks/&quot;&gt;cost of using JavaScript frameworks&lt;/a&gt;, a follow up to
-his earlier blog post about &lt;a href=&quot;https://aerotwist.com/blog/react-plus-performance-equals-what/&quot;&gt;React performance&lt;/a&gt;.
-He conducted several tests using popular JavaScript frameworks
-and &lt;a href=&quot;http://todomvc.com/&quot;&gt;TodoMVC&lt;/a&gt; as a common baseline, and emphasized that
-developers should stop taking the latest or most popular frameworks to be
-&lt;em&gt;silver bullets&lt;/em&gt;. Every framework has best practices that need to be followed.
-This can be especially true when it comes to mobile devices, where both time to
-first paint and interaction can be so crucial. The bottom line is that &lt;em&gt;all
-code has a cost&lt;/em&gt;, and we must consider that what is good for developers needs
-can’t justifiably outweigh the needs of users.&lt;/p&gt;
-
-&lt;p&gt;Paul also gave a demo of a new project he’s been working on called &lt;a href=&quot;https://aerotwist.com/blog/bigrig/&quot;&gt;Big Rig&lt;/a&gt;, which gives automated load and
-scroll performance analysis for websites. I would love to see this working in
-Firefox soon as well as Chrome!&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=_yCz1TA0EL4&amp;amp;list=PLXmT1r4krsTqtLdWln2ritJZTjd5a06h2&amp;amp;index=6&quot;&gt;Watch Paul’s talk on YouTube&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;martin-kleppe---code-calligrams&quot;&gt;Martin Kleppe - Code Calligrams&lt;/h2&gt;
-
-&lt;p&gt;Martin gave a really interesting talk about both the art and the technique that
-goes into making code &lt;a href=&quot;https://en.wikipedia.org/wiki/Calligram&quot;&gt;calligrams&lt;/a&gt;.
-I’ve always been aware of these types of things superficially, but never took
-the time to understand how they are constructed. Very clever stuff, and most
-definitely something that I’d like to spend some time learning more about.&lt;/p&gt;
-
-&lt;p&gt;Code calligram examples:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://aem1k.com/&quot;&gt;aem1k.com&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://www.jsfuck.com/&quot;&gt;jsfuck.com&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=-QZSJx8oXus&amp;amp;list=PLXmT1r4krsTqtLdWln2ritJZTjd5a06h2&amp;amp;index=7&quot;&gt;Watch Martin’s talk on YouTube&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;lena-reinhard---a-talk-about-everything&quot;&gt;Lena Reinhard - A Talk about Everything&lt;/h2&gt;
-
-&lt;p&gt;The last presentation of the day was from Lena, who gave a very honest, powerful
-and sometimes uncomfortable talk about the challenges many people face every day
-in the software industry. I tried to put together some words here that might do
-the talk justice, but everything I tried to write down fell short of hitting home.
-You should just go watch the video instead (you could hear a pin drop in the venue).&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=CZx7rYoq1Uw&amp;amp;index=8&amp;amp;list=PLXmT1r4krsTqtLdWln2ritJZTjd5a06h2&quot;&gt;Watch Lena’s talk on YouTube&lt;/a&gt;.&lt;/p&gt;</content><author><name>Alex Gibson</name></author><summary type="html">This year I was lucky enough to grab a ticket for ffconf 2015 before it sold out. I missed the boat last year, but I had attended once before in 2013, so felt confident that it would once again be a worthy pilgrimage to (not so sunny) Brighton. I always liked that the speakers for ffconf are never announced ahead of tickets going on sale. Everything boils down to the content and how talks are curated. Here are my notes from the day.</summary></entry></feed>
+this with colleagues, friends and family alike.&lt;/p&gt;</content><author><name>Alex Gibson</name></author><summary type="html">Today marks my third year working for Mozilla! I usually try and put together a short recap on the things I’ve accomplished during the past year here. There are so many things I could pick out, but I find it hard to know quite where to begin. Three years have flown by very quickly, but looking back at the time when I started, I feel like I have grown considerably. I guess this has been my first year at Mozilla where I no longer feel “new”, although I am still learning constantly by being surrounded by so many smart people.</summary></entry></feed>
