@@ -28,6 +28,14 @@
     "url": "https://github.com/alexgibson/alxgbsn.co.uk/issues/issues"
   },
   "scripts": {
+    "prebuild": "npm run clean",
+    "build": "bundle exec jekyll build",
+    "preserve": "npm run clean",
+    "serve": "bundle exec jekyll serve",
+    "clean": "bundle exec jekyll clean",
+    "doctor": "bundle exec jekyll doctor",
+    "lint": "./node_modules/.bin/eslint gulpfile.js ./_assets/js/*.js",
+    "pretest": "npm run lint && npm run doctor",
     "test": "bundle exec htmlproofer ./_site --url-ignore /feed/ --check-html --check-favicon --only-4xx --assume-extension --disable-external"
   }
 }
