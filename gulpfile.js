@@ -1,5 +1,6 @@
 'use strict';
 
+const gulp = require('gulp');
 const ghpages = require('gh-pages');
 const dist = '_site';
 
@@ -10,5 +11,7 @@ function deploy(cb) {
 
     cb();
 }
+
+gulp.task('default', deploy);
 
 module.exports = deploy;

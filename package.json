@@ -35,6 +35,6 @@
     "pretest": "npm run lint && npm run doctor",
     "test": "bundle exec htmlproofer ./_site --url-ignore /feed/ --check-html --check-favicon --only-4xx --assume-extension --disable-external",
     "predeploy": "npm run build",
-    "deploy": "gulp"
+    "deploy": "./node_modules/.bin/gulp"
   }
 }
