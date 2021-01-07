@@ -34,7 +34,7 @@ Run
 To compile the static site, start the local dev server and watch for changes:
 
 ```
-gulp
+npm run serve
 ```
 
 Build
@@ -43,7 +43,7 @@ Build
 To just compile the static site:
 
 ```
-gulp build
+npm run build
 ```
 
 Test
@@ -60,6 +60,6 @@ Deploy
 To automatically build and deploy the static site to the `gh-pages` branch:
 
 ```
-gulp deploy
+npm run deploy
 ```
 

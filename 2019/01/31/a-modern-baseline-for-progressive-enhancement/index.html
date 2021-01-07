@@ -1,4 +1,17 @@
-<!DOCTYPE html><html lang="en" class="no-js"><head><meta charset="utf-8"><title>Using ES modules as a modern baseline for progressive enhancement &ndash; Alex Gibson</title><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="A new approach to delivering progressively enhanced websites using ES modules."><meta name="author" content="Alex Gibson"><meta name="generator" content="Jekyll"><link rel="canonical" href="https://alxgbsn.co.uk/2019/01/31/a-modern-baseline-for-progressive-enhancement/"><script type="module">try {
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <title>Using ES modules as a modern baseline for progressive enhancement &ndash; Alex Gibson</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A new approach to delivering progressively enhanced websites using ES modules.">
+  <meta name="author" content="Alex Gibson">
+  <meta name="generator" content="Jekyll">
+  
+  <link rel="canonical" href="https://alxgbsn.co.uk/2019/01/31/a-modern-baseline-for-progressive-enhancement/">
+  
+  <script type="module">
+    try {
       const currentPref = sessionStorage.getItem('t-dark');
       const prefersDarkMode = currentPref === 'true' || (currentPref !== 'false' && window.matchMedia('(prefers-color-scheme: dark)').matches);
 
@@ -10,21 +23,137 @@
       document.documentElement.classList.remove('no-js');
     } catch (e) {
       // do nothing.
-    }</script><link rel="stylesheet" type="text/css" href="/assets/styles-b020b9a8f36b2ad2ac9fc0251b6c30724d4853bf8bda326059ac8dec0bbf3cfb.css"><link rel="alternate" type="application/rss+xml" title="Alex Gibson" href="/feed/"><link rel="manifest" href="/manifest.json"><!--[if lt IE 9]>
+    }
+  </script>
+  <link rel="stylesheet" type="text/css" href="/assets/styles-b020b9a8f36b2ad2ac9fc0251b6c30724d4853bf8bda326059ac8dec0bbf3cfb.css">
+  <link rel="alternate" type="application/rss+xml" title="Alex Gibson" href="/feed/">
+  <link rel="manifest" href="/manifest.json">
+  <!--[if lt IE 9]>
     <script src="/assets/lib/html5shiv-6e9566e51098627c2824e546909ee18725d233fc9cdd81910819e7e108cf36c0.js" type="text/javascript"></script>
-  <![endif]--><meta name="apple-mobile-web-app-title" content="Alex Gibson"><link rel="apple-touch-icon" type="image/png" sizes="180x180" href="/assets/avatar-180-b1f192dbbe4ceec9c13c327fb0908af5ddbf621002116885f0cc2e8d8b6787c8.jpg"><link rel="icon" type="image/png" sizes="196x196" href="/assets/avatar-196-a65772ff09fa529d865e4f60735ded2bfb50711bafb1bd79cb2111d7c4ec461c.jpg"><link href="/assets/favicon-28523dd6d2b5917829586fe5248f9a408486e09f98117add94210f56aa7ead33.ico" rel="shortcut icon"></head><body id="top"><main role="main"><div class="masthead"><nav role="navigation"><ul><li><a href="/">Home</a></li><li><a href="/about/">About</a></li><li><a href="/contact/">Contact</a></li></ul></nav><div class="theme-selector hidden"><form class="theme-form" method="get"><input type="checkbox" id="theme" name="theme"> <label for="theme" title="Toggle dark theme">Dark theme</label></form></div></div><article><header role="banner"><h1>Using ES modules as a modern baseline for progressive enhancement</h1></header><section class="post"><p class="meta"><time datetime="2019-01-31">January 31 2019</time> 5 min read.</p><p>It’s pretty commonplace today to write JavaScript using ES2015 (or ES6) syntax, and then to <a href="https://babeljs.io/">transpile</a> that code to ES5 in a build step. Transpiling enables us to write code using the latest ECMAScript syntax and features, but then compiles it in a backward compatible way so that it works with older browsers. The downside to this is that transpiling can also lead to increased bundle sizes if you’re not careful, and for browsers that already support ES2015 features, you’re potentially shipping a lot of redundant code. Modern browsers need neither the transpiled code, nor the polyfills that can get bundled along with it.</p><p>Before we get into the details of this post, I’ll start by emphasizing that depending on your project and its target audience, transpiling and bundling your JavaScript may be the <em>exact right</em> thing to do still. Browser segmentation and page load times are key metrics to measure. However, the with technologies like <a href="https://en.wikipedia.org/wiki/HTTP/2">HTTP/2</a> and support for <a href="https://hacks.mozilla.org/2018/03/es-modules-a-cartoon-deep-dive/">ES modules</a> landing in <a href="https://caniuse.com/#feat=es6-module">all major browsers</a>, we now have other options on the table. There is a new opportunity to build <a href="https://developer.mozilla.org/docs/Glossary/Progressive_Enhancement">progressively enhanced</a> websites using modern ES2015 features, but without as much of the bloat and complicated build steps we’ve become accustomed to.</p><h2 id="cutting-the-mustard">Cutting the mustard</h2><p><a href="https://developer.mozilla.org/docs/Learn/Tools_and_testing/Cross_browser_testing/Feature_detection">Feature detection</a> has long been a useful technique to determine the code paths that run in our web pages. Techniques such as <a href="http://responsivenews.co.uk/post/18948466399/cutting-the-mustard">“cutting the mustard”</a> have often been used to define a baseline of browser support for core functionality. Browsers that pass the test can run modern code, and older browsers are given a degraded experience. With ES modules, this kind of feature test can now evolve considerably.</p><p>ES2015 introduced several new pieces of syntax, such as <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/let"><code class="highlighter-rouge">let</code></a>, <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/const"><code class="highlighter-rouge">const</code></a>, <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Functions/Arrow_functions">arrow functions</a>, <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Classes">classes</a>, and of course <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/import"><code class="highlighter-rouge">import</code></a> and <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/export"><code class="highlighter-rouge">export</code></a> for modules. Since this new syntax can’t be parsed by older browsers without throwing errors, web pages need a way to opt-in to use the new syntax where traditional feature detection falls short. Thankfully, web standards people are clever and have delivered such a mechanism!</p><h2 id="modules-to-the-rescue">Modules to the rescue</h2><p>When the spec for loading ES modules was introduced, it added a new value for the <code class="highlighter-rouge">type</code> attribute to the <code class="highlighter-rouge">&lt;script&gt;</code> tag, <a href="https://developer.mozilla.org/docs/Web/HTML/Element/script#attr-type"><code class="highlighter-rouge">type="module"</code></a>. This acts as an identifier to browsers that the script is an ES module and can be loaded as such. It’s also important to note that modules use <a href="https://developer.mozilla.org/docs/Web/HTML/Element/script#attr-defer"><code class="highlighter-rouge">defer</code></a> by default, so do not block the HTML parser like regular scripts.</p><div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"module"</span> <span class="na">src=</span><span class="s">"./my-module.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+  <![endif]-->
+  <meta name="apple-mobile-web-app-title" content="Alex Gibson">
+  <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="/assets/avatar-180-b1f192dbbe4ceec9c13c327fb0908af5ddbf621002116885f0cc2e8d8b6787c8.jpg">
+  <link rel="icon" type="image/png" sizes="196x196" href="/assets/avatar-196-a65772ff09fa529d865e4f60735ded2bfb50711bafb1bd79cb2111d7c4ec461c.jpg">
+  <link href="/assets/favicon-28523dd6d2b5917829586fe5248f9a408486e09f98117add94210f56aa7ead33.ico" rel="shortcut icon">
+</head>
+<body id="top">
+  <main role="main">
+    <div class="masthead">
+  <nav role="navigation">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/about/">About</a></li>
+      <li><a href="/contact/">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="theme-selector hidden">
+    <form class="theme-form" method="get">
+      <input type="checkbox" id="theme" name="theme">
+      <label for="theme" title="Toggle dark theme">Dark theme</label>
+    </form>
+  </div>
+</div>
+
+    <article>
+      <header role="banner">
+        <h1>Using ES modules as a modern baseline for progressive enhancement</h1>
+      </header>
+      <section class="post">
+  <p class="meta">
+    <time datetime="2019-01-31">January 31 2019</time>
+    
+
+
+5 min
+ read.
+  </p>
+  <p>It’s pretty commonplace today to write JavaScript using ES2015 (or ES6) syntax, and then to <a href="https://babeljs.io/">transpile</a> that code to ES5 in a build step. Transpiling enables us to write code using the latest ECMAScript syntax and features, but then compiles it in a backward compatible way so that it works with older browsers. The downside to this is that transpiling can also lead to increased bundle sizes if you’re not careful, and for browsers that already support ES2015 features, you’re potentially shipping a lot of redundant code. Modern browsers need neither the transpiled code, nor the polyfills that can get bundled along with it.</p>
+
+<p>Before we get into the details of this post, I’ll start by emphasizing that depending on your project and its target audience, transpiling and bundling your JavaScript may be the <em>exact right</em> thing to do still. Browser segmentation and page load times are key metrics to measure. However, the with technologies like <a href="https://en.wikipedia.org/wiki/HTTP/2">HTTP/2</a> and support for <a href="https://hacks.mozilla.org/2018/03/es-modules-a-cartoon-deep-dive/">ES modules</a> landing in <a href="https://caniuse.com/#feat=es6-module">all major browsers</a>, we now have other options on the table. There is a new opportunity to build <a href="https://developer.mozilla.org/docs/Glossary/Progressive_Enhancement">progressively enhanced</a> websites using modern ES2015 features, but without as much of the bloat and complicated build steps we’ve become accustomed to.</p>
+
+<h2 id="cutting-the-mustard">Cutting the mustard</h2>
+
+<p><a href="https://developer.mozilla.org/docs/Learn/Tools_and_testing/Cross_browser_testing/Feature_detection">Feature detection</a> has long been a useful technique to determine the code paths that run in our web pages. Techniques such as <a href="http://responsivenews.co.uk/post/18948466399/cutting-the-mustard">“cutting the mustard”</a> have often been used to define a baseline of browser support for core functionality. Browsers that pass the test can run modern code, and older browsers are given a degraded experience. With ES modules, this kind of feature test can now evolve considerably.</p>
+
+<p>ES2015 introduced several new pieces of syntax, such as <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/let"><code class="highlighter-rouge">let</code></a>, <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/const"><code class="highlighter-rouge">const</code></a>, <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Functions/Arrow_functions">arrow functions</a>, <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Classes">classes</a>, and of course <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/import"><code class="highlighter-rouge">import</code></a> and <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/export"><code class="highlighter-rouge">export</code></a> for modules. Since this new syntax can’t be parsed by older browsers without throwing errors, web pages need a way to opt-in to use the new syntax where traditional feature detection falls short. Thankfully, web standards people are clever and have delivered such a mechanism!</p>
+
+<h2 id="modules-to-the-rescue">Modules to the rescue</h2>
+
+<p>When the spec for loading ES modules was introduced, it added a new value for the <code class="highlighter-rouge">type</code> attribute to the <code class="highlighter-rouge">&lt;script&gt;</code> tag, <a href="https://developer.mozilla.org/docs/Web/HTML/Element/script#attr-type"><code class="highlighter-rouge">type="module"</code></a>. This acts as an identifier to browsers that the script is an ES module and can be loaded as such. It’s also important to note that modules use <a href="https://developer.mozilla.org/docs/Web/HTML/Element/script#attr-defer"><code class="highlighter-rouge">defer</code></a> by default, so do not block the HTML parser like regular scripts.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"module"</span> <span class="na">src=</span><span class="s">"./my-module.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
 
 <span class="c">&lt;!-- Modules can also be inline --&gt;</span>
 
 <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"module"</span><span class="nt">&gt;</span>
   <span class="k">import</span> <span class="nx">thing</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./my-module.js</span><span class="dl">'</span><span class="p">;</span>
 <span class="nt">&lt;/script&gt;</span>
-</code></pre></div></div><p>So how does this all tie together with progressive enhancement? Well, <code class="highlighter-rouge">type="module"</code> is a value that older browsers will not understand. When a browser encounters what it considers to be an invalid type, it won’t execute that script. Whilst it may still be downloaded, the script will not be parsed, and none of its <code class="highlighter-rouge">import</code> dependencies will be requested either. This allows us to safely use ES2015 features for modern browsers, and also improves page load performance for people on older browsers or operating systems, since they have less to download over the network. Older browsers can receive a nicely degraded experience of your choosing.</p><p>Of course, if you still wanted to transpile and bundle code for older browsers, or provide some sort of baseline JS support then you can still do that too, using the <code class="highlighter-rouge">nomodule</code> attribute. This attribute signals to a browser that supports ES modules that the script can be ignored, meaning only older browsers will download and run it.</p><div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script </span><span class="na">nomodule</span> <span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+</code></pre></div></div>
+
+<p>So how does this all tie together with progressive enhancement? Well, <code class="highlighter-rouge">type="module"</code> is a value that older browsers will not understand. When a browser encounters what it considers to be an invalid type, it won’t execute that script. Whilst it may still be downloaded, the script will not be parsed, and none of its <code class="highlighter-rouge">import</code> dependencies will be requested either. This allows us to safely use ES2015 features for modern browsers, and also improves page load performance for people on older browsers or operating systems, since they have less to download over the network. Older browsers can receive a nicely degraded experience of your choosing.</p>
+
+<p>Of course, if you still wanted to transpile and bundle code for older browsers, or provide some sort of baseline JS support then you can still do that too, using the <code class="highlighter-rouge">nomodule</code> attribute. This attribute signals to a browser that supports ES modules that the script can be ignored, meaning only older browsers will download and run it.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script </span><span class="na">nomodule</span> <span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
   <span class="c1">// degraded experience</span>
 <span class="nt">&lt;/script&gt;</span>
-</code></pre></div></div><p>If you’re building a progressively enhanced website, then depending on your approach this fallback may not even be needed. It really depends on your target audience and what you see as a suitable baseline experience.</p><h2 id="performance">Performance</h2><p>As I mentioned at the beginning of this article, using unbundled ES modules in production today may not (yet) be a viable option for many large or complex websites. Using ES modules may result in shipping less code compared to transpiled code, but there are still trade-offs to shipping unbundled vs bundled scripts. Whilst browser vendors are continually working hard to improve module loading performance, you should still <a href="https://developers.google.com/web/fundamentals/primers/modules#performance">read about the current trade-offs</a> and carefully measure the impact that modules may have before switching. For simpler websites or personal projects, using ES modules today may be just fine. It’s up to you to decide.</p><h2 id="speeding-up-module-loading">Speeding up module loading</h2><p>If you do decide to use ES modules, you may also want to <a href="https://developers.google.com/web/updates/2017/12/modulepreload">look into preloading</a>, so that browsers can preparse modules and their dependencies as early as they can. Of course, minifying is also recommended as well.</p><div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;head&gt;</span>
+</code></pre></div></div>
+
+<p>If you’re building a progressively enhanced website, then depending on your approach this fallback may not even be needed. It really depends on your target audience and what you see as a suitable baseline experience.</p>
+
+<h2 id="performance">Performance</h2>
+
+<p>As I mentioned at the beginning of this article, using unbundled ES modules in production today may not (yet) be a viable option for many large or complex websites. Using ES modules may result in shipping less code compared to transpiled code, but there are still trade-offs to shipping unbundled vs bundled scripts. Whilst browser vendors are continually working hard to improve module loading performance, you should still <a href="https://developers.google.com/web/fundamentals/primers/modules#performance">read about the current trade-offs</a> and carefully measure the impact that modules may have before switching. For simpler websites or personal projects, using ES modules today may be just fine. It’s up to you to decide.</p>
+
+<h2 id="speeding-up-module-loading">Speeding up module loading</h2>
+
+<p>If you do decide to use ES modules, you may also want to <a href="https://developers.google.com/web/updates/2017/12/modulepreload">look into preloading</a>, so that browsers can preparse modules and their dependencies as early as they can. Of course, minifying is also recommended as well.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;head&gt;</span>
   <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"modulepreload"</span> <span class="na">href=</span><span class="s">"./my-module.js"</span><span class="nt">&gt;</span>
 <span class="nt">&lt;/head&gt;</span>
 
 <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"module"</span> <span class="na">src=</span><span class="s">"./my-module.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
-</code></pre></div></div><p>Note: preloading is currently only supported in Chrome at the time of writing.</p><h2 id="a-modern-baseline-or-a-taste-of-the-future">A modern baseline, or a taste of the future?</h2><p>As we have seen, ES modules can provide a simple, modern baseline for building progressively enhanced websites that can still degrade gracefully on older browsers. Whilst this probably isn’t ready for large, complex websites just yet, it might just be fine for smaller sites and personal projects. To help tempt you, here’s a list of just some of the features that this technique unlocks access to:</p><ul><li>ES6 variables <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/let"><code class="highlighter-rouge">let</code></a>, and <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/const"><code class="highlighter-rouge">const</code></a>.</li><li><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Classes">Classes</a>.</li><li><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Template_literals">Template literals</a>.</li><li>Static <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/import"><code class="highlighter-rouge">import</code></a> and <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/export"><code class="highlighter-rouge">export</code></a> in ES modules.</li><li><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Functions/Arrow_functions">Arrow functions</a>.</li><li><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promises</a>.</li><li><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/async_function">Async functions</a>.</li><li><a href="https://developer.mozilla.org/docs/Web/API/Fetch_API"><code class="highlighter-rouge">fetch</code></a>.</li></ul><p>If you would like to learn more about ES modules, <a href="https://code-cartoons.com/">Lin Clark</a> wrote an excellent <a href="https://hacks.mozilla.org/2018/03/es-modules-a-cartoon-deep-dive/">deep dive on the Mozilla Hacks blog</a>. I highly suggest reading it.</p><p class="scroll-to-top"><a href="#top">Scroll to top</a></p></section></article><footer role="contentinfo"><form role="search" class="search" action="https://duckduckgo.com/" method="get" title="Search this site"><label for="q">Search</label> <input type="hidden" name="sites" value="alxgbsn.co.uk"> <input class="search" type="search" name="q" id="q" placeholder="Search this site"> <button type="submit">Go</button></form><ul><li><a href="/feed/index.xml" title="RSS feed">Subscribe (RSS)</a></li></ul></footer></main><script type="module" src="/assets/theme-77026091a174da81bd4e08d59206f16043046cb6f5d13d856dfc667c7d57987b.js"></script><script type="module" src="/assets/main-e720254e216df6f38df9183d48fc5096b498cf7aa00bfdf57bf8aa71c31a7980.js"></script></body></html>
+</code></pre></div></div>
+
+<p>Note: preloading is currently only supported in Chrome at the time of writing.</p>
+
+<h2 id="a-modern-baseline-or-a-taste-of-the-future">A modern baseline, or a taste of the future?</h2>
+
+<p>As we have seen, ES modules can provide a simple, modern baseline for building progressively enhanced websites that can still degrade gracefully on older browsers. Whilst this probably isn’t ready for large, complex websites just yet, it might just be fine for smaller sites and personal projects. To help tempt you, here’s a list of just some of the features that this technique unlocks access to:</p>
+
+<ul>
+  <li>ES6 variables <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/let"><code class="highlighter-rouge">let</code></a>, and <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/const"><code class="highlighter-rouge">const</code></a>.</li>
+  <li><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Classes">Classes</a>.</li>
+  <li><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Template_literals">Template literals</a>.</li>
+  <li>Static <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/import"><code class="highlighter-rouge">import</code></a> and <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/export"><code class="highlighter-rouge">export</code></a> in ES modules.</li>
+  <li><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Functions/Arrow_functions">Arrow functions</a>.</li>
+  <li><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promises</a>.</li>
+  <li><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/async_function">Async functions</a>.</li>
+  <li><a href="https://developer.mozilla.org/docs/Web/API/Fetch_API"><code class="highlighter-rouge">fetch</code></a>.</li>
+</ul>
+
+<p>If you would like to learn more about ES modules, <a href="https://code-cartoons.com/">Lin Clark</a> wrote an excellent <a href="https://hacks.mozilla.org/2018/03/es-modules-a-cartoon-deep-dive/">deep dive on the Mozilla Hacks blog</a>. I highly suggest reading it.</p>
+
+  <p class="scroll-to-top"><a href="#top">Scroll to top</a></p>
+</section>
+
+    </article>
+    <footer role="contentinfo">
+  <form role="search" class="search" action="https://duckduckgo.com/" method="get" title="Search this site">
+    <label for="q">Search</label>
+    <input type="hidden" name="sites" value="alxgbsn.co.uk" />
+    <input class="search" type="search" name="q" id="q" placeholder="Search this site" />
+    <button type="submit">Go</button>
+  </form>
+  <ul>
+    <li><a href="/feed/index.xml" title="RSS feed">Subscribe (RSS)</a></li>
+  </ul>
+</footer>
+
+  </main>
+  <script type="module" src="/assets/theme-77026091a174da81bd4e08d59206f16043046cb6f5d13d856dfc667c7d57987b.js"></script>
+  <script type="module" src="/assets/main-e720254e216df6f38df9183d48fc5096b498cf7aa00bfdf57bf8aa71c31a7980.js"></script>
+</body>
+</html>

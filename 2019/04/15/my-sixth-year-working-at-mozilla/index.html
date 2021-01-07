@@ -1,4 +1,17 @@
-<!DOCTYPE html><html lang="en" class="no-js"><head><meta charset="utf-8"><title>My sixth year working at Mozilla &ndash; Alex Gibson</title><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="A look back at my sixth year working at Mozilla"><meta name="author" content="Alex Gibson"><meta name="generator" content="Jekyll"><link rel="canonical" href="https://alxgbsn.co.uk/2019/04/15/my-sixth-year-working-at-mozilla/"><script type="module">try {
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <title>My sixth year working at Mozilla &ndash; Alex Gibson</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A look back at my sixth year working at Mozilla">
+  <meta name="author" content="Alex Gibson">
+  <meta name="generator" content="Jekyll">
+  
+  <link rel="canonical" href="https://alxgbsn.co.uk/2019/04/15/my-sixth-year-working-at-mozilla/">
+  
+  <script type="module">
+    try {
       const currentPref = sessionStorage.getItem('t-dark');
       const prefersDarkMode = currentPref === 'true' || (currentPref !== 'false' && window.matchMedia('(prefers-color-scheme: dark)').matches);
 
@@ -10,6 +23,112 @@
       document.documentElement.classList.remove('no-js');
     } catch (e) {
       // do nothing.
-    }</script><link rel="stylesheet" type="text/css" href="/assets/styles-b020b9a8f36b2ad2ac9fc0251b6c30724d4853bf8bda326059ac8dec0bbf3cfb.css"><link rel="alternate" type="application/rss+xml" title="Alex Gibson" href="/feed/"><link rel="manifest" href="/manifest.json"><!--[if lt IE 9]>
+    }
+  </script>
+  <link rel="stylesheet" type="text/css" href="/assets/styles-b020b9a8f36b2ad2ac9fc0251b6c30724d4853bf8bda326059ac8dec0bbf3cfb.css">
+  <link rel="alternate" type="application/rss+xml" title="Alex Gibson" href="/feed/">
+  <link rel="manifest" href="/manifest.json">
+  <!--[if lt IE 9]>
     <script src="/assets/lib/html5shiv-6e9566e51098627c2824e546909ee18725d233fc9cdd81910819e7e108cf36c0.js" type="text/javascript"></script>
-  <![endif]--><meta name="apple-mobile-web-app-title" content="Alex Gibson"><link rel="apple-touch-icon" type="image/png" sizes="180x180" href="/assets/avatar-180-b1f192dbbe4ceec9c13c327fb0908af5ddbf621002116885f0cc2e8d8b6787c8.jpg"><link rel="icon" type="image/png" sizes="196x196" href="/assets/avatar-196-a65772ff09fa529d865e4f60735ded2bfb50711bafb1bd79cb2111d7c4ec461c.jpg"><link href="/assets/favicon-28523dd6d2b5917829586fe5248f9a408486e09f98117add94210f56aa7ead33.ico" rel="shortcut icon"></head><body id="top"><main role="main"><div class="masthead"><nav role="navigation"><ul><li><a href="/">Home</a></li><li><a href="/about/">About</a></li><li><a href="/contact/">Contact</a></li></ul></nav><div class="theme-selector hidden"><form class="theme-form" method="get"><input type="checkbox" id="theme" name="theme"> <label for="theme" title="Toggle dark theme">Dark theme</label></form></div></div><article><header role="banner"><h1>My sixth year working at Mozilla</h1></header><section class="post"><p class="meta"><time datetime="2019-04-15">April 15 2019</time> 4 min read.</p><figure><img src="/images/posts/sf-all-hands-2018.jpg" alt="Photo of San Fransisco's skyline taken at the Monday night event for Mozilla All-Hands, June 2018." srcset="/images/posts/sf-all-hands-2018-high-res.jpg 1.5x"><figcaption>Photo of San Fransisco's skyline taken at the Monday night event for Mozilla All-Hands, June 2018.</figcaption></figure><p>This week marks my sixth year working at Mozilla! I’ll be honest, this year’s <em>mozillaversary</em> came by so fast I nearly forgot all about writing this blog post. It feels hard to believe that I’ve been working here for a full six years. I’ve guess grown and learned a lot in that time, but it still doesn’t feel like all that long ago when I first joined full time. Years start to blur together. So, what’s happened in this past 12 months?</p><h2 id="building-a-design-system">Building a design system</h2><p>Mozilla’s website design system, named <a href="https://protocol.mozilla.org">Protocol</a>, is now a real product. You can <a href="https://www.npmjs.com/package/@mozilla-protocol/core">install it via NPM</a> and build on-brand Mozilla web pages using its compenents. Protocol builds on a system of <em>atoms</em>, <em>molecules</em>, and <em>organiams</em>, following the concepts first made popular in <a href="http://atomicdesign.bradfrost.com/">Atomic Web Design</a>. Many of the new design system components can be seen in use on the recently redesigned <a href="https://www.mozilla.org">www.mozilla.org</a> pages.</p><figure><img src="/images/posts/protocol-homepage.png" alt="Sections of the mozilla.org homepage, built using Protocol components." srcset="/images/posts/protocol-homepage-high-res.png 1.5x"><figcaption>Sections of the mozilla.org homepage, built using Protocol components.</figcaption></figure><p>It was fun to help get this project off the ground, and to see it finally in action on a live website. Making a flexible, intuitive design system is not easy, and we learned a lot in the first year of the project that can help us to improve Protocol over the coming months. By the end of the year, our hope is to have fully ported all mozilla.org content to use Protocol. This is not an easy task for a small team and a large website that’s been around for over a decade. It’ll be an interesting challenge!</p><h2 id="measuring-clicks-to-installs">Measuring clicks to installs</h2><p>Supporting the needs of experimentation on <a href="https://www.mozilla.org/firefox/new/">Firefox download pages</a> is something that our team has been helping to manage and facilitate for several years now. The breadth of data now required in order to fully understand the effectiveness of experiments is a lot more complex today compared to when we first started. <em>Product retention</em> (i.e. how often people actively use Firefox) is now the key metric of success. Measuring how many clicks a download button on a web page receives is relatively straight forward, but understanding how many of those people go on to actually run the installer, and then how often they end up actively using the product for requires a multi-step funnel of measurement. Our team has continued to help <a href="https://bedrock.readthedocs.io/en/latest/stub-attribution.html">build custom tools</a> to facilitate this kind of data in experimentation, so that we can make better informed product decisions.</p><h2 id="publishing-systems">Publishing systems</h2><p>One of our team’s main objectives is to enable people at Mozilla to publish quality content to the web quickly and easily, whether that be on <a href="https://www.mozilla.org">mozilla.org</a>, a <a href="https://irlpodcast.org/">microsite</a>, or on a <a href="https://blog.mozilla.org">official blog</a>. We’re a small team however, and the marketing organisation has a great appetite for wanting new content at a fast pace. This was one of the (many) reasons why we invested in building a design system, so that we can create on-brand web pages at a faster pace with less repetitive manual work. We also invested in building more <a href="https://github.com/mozmeao/www-admin">custom publishing systems</a>, so that other teams can work more independently. We’ve long had publishing systems in place for things like <a href="https://www.mozilla.org/firefox/releasenotes/">Firefox release notes</a>, and now we also have some initial systems in place for publishing marketing content, such as the what can currently be seen on the <a href="https://www.mozilla.org">mozilla.org homepage</a>.</p><h2 id="individual-contributions">Individual contributions</h2><ul><li>I made over 167 commits to <a href="https://github.com/mozilla/bedrock">bedrock</a> this past year.</li><li>I made over 78 commits to <a href="https://github.com/mozilla/protocol">protocol</a> this past year.</li><li>We moved to GitHub issues for most of our projects over the past year, so my <a href="https://bugzilla.mozilla.org">Bugzilla</a> usage has dropped. But I’ve now filed over 534 bugs, made over 5185 comments, and been assigned more than 656 bugs on Bugzilla in total. Yikes.</li></ul><h2 id="travel">Travel</h2><p>I got to visit Portland, San Fransisco for Mozilla’s June all-hands event, and also Orlando for December’s all-hands. I brought the family along to Disney World for an end-of-year vacation afterwards, who all had an amazing time. We’re very lucky!</p><figure><img src="/images/posts/orlando-all-hands-2018.jpg" alt="Family fun outside the Disney Swan &amp; Dolphin, December 2018." srcset="/images/posts/orlando-all-hands-2018-high-res.jpg 1.5x"><figcaption>Family photo outside the Disney Swan &amp; Dolphin, December 2018.</figcaption></figure><p class="scroll-to-top"><a href="#top">Scroll to top</a></p></section></article><footer role="contentinfo"><form role="search" class="search" action="https://duckduckgo.com/" method="get" title="Search this site"><label for="q">Search</label> <input type="hidden" name="sites" value="alxgbsn.co.uk"> <input class="search" type="search" name="q" id="q" placeholder="Search this site"> <button type="submit">Go</button></form><ul><li><a href="/feed/index.xml" title="RSS feed">Subscribe (RSS)</a></li></ul></footer></main><script type="module" src="/assets/theme-77026091a174da81bd4e08d59206f16043046cb6f5d13d856dfc667c7d57987b.js"></script><script type="module" src="/assets/main-e720254e216df6f38df9183d48fc5096b498cf7aa00bfdf57bf8aa71c31a7980.js"></script></body></html>
+  <![endif]-->
+  <meta name="apple-mobile-web-app-title" content="Alex Gibson">
+  <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="/assets/avatar-180-b1f192dbbe4ceec9c13c327fb0908af5ddbf621002116885f0cc2e8d8b6787c8.jpg">
+  <link rel="icon" type="image/png" sizes="196x196" href="/assets/avatar-196-a65772ff09fa529d865e4f60735ded2bfb50711bafb1bd79cb2111d7c4ec461c.jpg">
+  <link href="/assets/favicon-28523dd6d2b5917829586fe5248f9a408486e09f98117add94210f56aa7ead33.ico" rel="shortcut icon">
+</head>
+<body id="top">
+  <main role="main">
+    <div class="masthead">
+  <nav role="navigation">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/about/">About</a></li>
+      <li><a href="/contact/">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="theme-selector hidden">
+    <form class="theme-form" method="get">
+      <input type="checkbox" id="theme" name="theme">
+      <label for="theme" title="Toggle dark theme">Dark theme</label>
+    </form>
+  </div>
+</div>
+
+    <article>
+      <header role="banner">
+        <h1>My sixth year working at Mozilla</h1>
+      </header>
+      <section class="post">
+  <p class="meta">
+    <time datetime="2019-04-15">April 15 2019</time>
+    
+
+
+4 min
+ read.
+  </p>
+  <figure>
+    <img src="/images/posts/sf-all-hands-2018.jpg" alt="Photo of San Fransisco's skyline taken at the Monday night event for Mozilla All-Hands, June 2018." srcset="/images/posts/sf-all-hands-2018-high-res.jpg 1.5x" />
+    <figcaption>Photo of San Fransisco's skyline taken at the Monday night event for Mozilla All-Hands, June 2018.</figcaption>
+</figure>
+
+<p>This week marks my sixth year working at Mozilla! I’ll be honest, this year’s <em>mozillaversary</em> came by so fast I nearly forgot all about writing this blog post. It feels hard to believe that I’ve been working here for a full six years. I’ve guess grown and learned a lot in that time, but it still doesn’t feel like all that long ago when I first joined full time. Years start to blur together. So, what’s happened in this past 12 months?</p>
+
+<h2 id="building-a-design-system">Building a design system</h2>
+
+<p>Mozilla’s website design system, named <a href="https://protocol.mozilla.org">Protocol</a>, is now a real product. You can <a href="https://www.npmjs.com/package/@mozilla-protocol/core">install it via NPM</a> and build on-brand Mozilla web pages using its compenents. Protocol builds on a system of <em>atoms</em>, <em>molecules</em>, and <em>organiams</em>, following the concepts first made popular in <a href="http://atomicdesign.bradfrost.com/">Atomic Web Design</a>. Many of the new design system components can be seen in use on the recently redesigned <a href="https://www.mozilla.org">www.mozilla.org</a> pages.</p>
+
+<figure>
+    <img src="/images/posts/protocol-homepage.png" alt="Sections of the mozilla.org homepage, built using Protocol components." srcset="/images/posts/protocol-homepage-high-res.png 1.5x" />
+    <figcaption>Sections of the mozilla.org homepage, built using Protocol components.</figcaption>
+</figure>
+
+<p>It was fun to help get this project off the ground, and to see it finally in action on a live website. Making a flexible, intuitive design system is not easy, and we learned a lot in the first year of the project that can help us to improve Protocol over the coming months. By the end of the year, our hope is to have fully ported all mozilla.org content to use Protocol. This is not an easy task for a small team and a large website that’s been around for over a decade. It’ll be an interesting challenge!</p>
+
+<h2 id="measuring-clicks-to-installs">Measuring clicks to installs</h2>
+
+<p>Supporting the needs of experimentation on <a href="https://www.mozilla.org/firefox/new/">Firefox download pages</a> is something that our team has been helping to manage and facilitate for several years now. The breadth of data now required in order to fully understand the effectiveness of experiments is a lot more complex today compared to when we first started. <em>Product retention</em> (i.e. how often people actively use Firefox) is now the key metric of success. Measuring how many clicks a download button on a web page receives is relatively straight forward, but understanding how many of those people go on to actually run the installer, and then how often they end up actively using the product for requires a multi-step funnel of measurement. Our team has continued to help <a href="https://bedrock.readthedocs.io/en/latest/stub-attribution.html">build custom tools</a> to facilitate this kind of data in experimentation, so that we can make better informed product decisions.</p>
+
+<h2 id="publishing-systems">Publishing systems</h2>
+
+<p>One of our team’s main objectives is to enable people at Mozilla to publish quality content to the web quickly and easily, whether that be on <a href="https://www.mozilla.org">mozilla.org</a>, a <a href="https://irlpodcast.org/">microsite</a>, or on a <a href="https://blog.mozilla.org">official blog</a>. We’re a small team however, and the marketing organisation has a great appetite for wanting new content at a fast pace. This was one of the (many) reasons why we invested in building a design system, so that we can create on-brand web pages at a faster pace with less repetitive manual work. We also invested in building more <a href="https://github.com/mozmeao/www-admin">custom publishing systems</a>, so that other teams can work more independently. We’ve long had publishing systems in place for things like <a href="https://www.mozilla.org/firefox/releasenotes/">Firefox release notes</a>, and now we also have some initial systems in place for publishing marketing content, such as the what can currently be seen on the <a href="https://www.mozilla.org">mozilla.org homepage</a>.</p>
+
+<h2 id="individual-contributions">Individual contributions</h2>
+
+<ul>
+  <li>I made over 167 commits to <a href="https://github.com/mozilla/bedrock">bedrock</a> this past year.</li>
+  <li>I made over 78 commits to <a href="https://github.com/mozilla/protocol">protocol</a> this past year.</li>
+  <li>We moved to GitHub issues for most of our projects over the past year, so my <a href="https://bugzilla.mozilla.org">Bugzilla</a> usage has dropped. But I’ve now filed over 534 bugs, made over 5185 comments, and been assigned more than 656 bugs on Bugzilla in total. Yikes.</li>
+</ul>
+
+<h2 id="travel">Travel</h2>
+
+<p>I got to visit Portland, San Fransisco for Mozilla’s June all-hands event, and also Orlando for December’s all-hands. I brought the family along to Disney World for an end-of-year vacation afterwards, who all had an amazing time. We’re very lucky!</p>
+
+<figure>
+    <img src="/images/posts/orlando-all-hands-2018.jpg" alt="Family fun outside the Disney Swan &amp; Dolphin, December 2018." srcset="/images/posts/orlando-all-hands-2018-high-res.jpg 1.5x" />
+    <figcaption>Family photo outside the Disney Swan &amp; Dolphin, December 2018.</figcaption>
+</figure>
+
+  <p class="scroll-to-top"><a href="#top">Scroll to top</a></p>
+</section>
+
+    </article>
+    <footer role="contentinfo">
+  <form role="search" class="search" action="https://duckduckgo.com/" method="get" title="Search this site">
+    <label for="q">Search</label>
+    <input type="hidden" name="sites" value="alxgbsn.co.uk" />
+    <input class="search" type="search" name="q" id="q" placeholder="Search this site" />
+    <button type="submit">Go</button>
+  </form>
+  <ul>
+    <li><a href="/feed/index.xml" title="RSS feed">Subscribe (RSS)</a></li>
+  </ul>
+</footer>
+
+  </main>
+  <script type="module" src="/assets/theme-77026091a174da81bd4e08d59206f16043046cb6f5d13d856dfc667c7d57987b.js"></script>
+  <script type="module" src="/assets/main-e720254e216df6f38df9183d48fc5096b498cf7aa00bfdf57bf8aa71c31a7980.js"></script>
+</body>
+</html>
