@@ -2,5 +2,5 @@
 set -e # halt script on error
 
 npm install -g gulp-cli
-gulp build
+npm run build
 npm test
