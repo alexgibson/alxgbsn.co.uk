@@ -5,12 +5,9 @@
   "private": true,
   "dependencies": {},
   "devDependencies": {
-    "del": "^5.1.0",
     "eslint": "^6.8.0",
     "gh-pages": "^2.2.0",
-    "gulp": "^4.0.2",
-    "gulp-eslint": "^6.0.0",
-    "gulp-htmlmin": "^5.0.1"
+    "gulp": "^4.0.2"
   },
   "homepage": "http://alxgbsn.co.uk",
   "repository": {
@@ -36,6 +33,8 @@
     "doctor": "bundle exec jekyll doctor",
     "lint": "./node_modules/.bin/eslint gulpfile.js ./_assets/js/*.js",
     "pretest": "npm run lint && npm run doctor",
-    "test": "bundle exec htmlproofer ./_site --url-ignore /feed/ --check-html --check-favicon --only-4xx --assume-extension --disable-external"
+    "test": "bundle exec htmlproofer ./_site --url-ignore /feed/ --check-html --check-favicon --only-4xx --assume-extension --disable-external",
+    "predeploy": "npm run build",
+    "deploy": "gulp"
   }
 }

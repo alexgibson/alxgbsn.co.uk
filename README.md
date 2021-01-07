@@ -60,6 +60,6 @@ Deploy
 To automatically build and deploy the static site to the `gh-pages` branch:
 
 ```
-gulp deploy
+npm run deploy
 ```
 
