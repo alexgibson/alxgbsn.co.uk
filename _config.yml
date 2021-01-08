@@ -18,7 +18,6 @@ exclude:
   - script
   - Gemfile
   - Gemfile.lock
-  - gulpfile.js
   - package.json
   - travis.yml
   - vendor

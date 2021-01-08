@@ -55,11 +55,3 @@ Once the static site has been generated you can then validate the HTML and all s
 npm test
 ```
 
-Deploy
-------
-To automatically build and deploy the static site to the `gh-pages` branch:
-
-```
-npm run deploy
-```
-
