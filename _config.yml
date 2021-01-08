@@ -18,6 +18,7 @@ exclude:
   - script
   - Gemfile
   - Gemfile.lock
+  - package-lock.json
   - package.json
   - travis.yml
   - vendor
