@@ -52,6 +52,6 @@ Test
 Once the static site has been generated you can then validate the HTML and all site links by running:
 
 ```
-npm test
+npm run test
 ```
 
