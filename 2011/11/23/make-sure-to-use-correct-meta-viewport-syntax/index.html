@@ -34,7 +34,7 @@
   <meta name="apple-mobile-web-app-title" content="Alex Gibson">
   <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="/assets/avatar-180-b1f192dbbe4ceec9c13c327fb0908af5ddbf621002116885f0cc2e8d8b6787c8.jpg">
   <link rel="icon" type="image/png" sizes="196x196" href="/assets/avatar-196-a65772ff09fa529d865e4f60735ded2bfb50711bafb1bd79cb2111d7c4ec461c.jpg">
-  <link rel="shortcut icon" href="/assets/favicon-28523dd6d2b5917829586fe5248f9a408486e09f98117add94210f56aa7ead33.ico">
+  <link href="/assets/favicon-28523dd6d2b5917829586fe5248f9a408486e09f98117add94210f56aa7ead33.ico" rel="shortcut icon">
 </head>
 <body id="top">
   <main role="main">
@@ -78,15 +78,15 @@
 
 <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"viewport"</span> <span class="na">content=</span><span class="s">"width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=no;"</span> <span class="nt">/&gt;</span></code></pre></figure>
 
-<p>Notice the correct syntax uses comma separated values. The incorrect way is to use a semi-colon separator. There is also no real need for the separator on the last value, <code class="highlighter-rouge">user-scalable</code>.</p>
+<p>Notice the correct syntax uses comma separated values. The incorrect way is to use a semi-colon separator. There is also no real need for the separator on the last value, <code class="language-plaintext highlighter-rouge">user-scalable</code>.</p>
 
 <p>So, why does all of this really matter? “It doesn’t seem to make a difference on my iPad?” Well, maybe not — but it can and does make a difference on other devices. The recent <a href="http://dev.w3.org/csswg/css-device-adapt/">CSS Device Adaptation</a> specification defines it, so real world implementations are now built toward the comma syntax style.</p>
 
-<p>A real world example is the BlackBerry Playbook. It has a good web browser, but it’s not very forgiving with error handling when parsing the meta viewport. If you use semi-colons instead of comma’s, width can in some circumstances not get set to <code class="highlighter-rouge">device-width</code>. There is currently a bug in the PlayBook’s viewport implementation that means width gets set to an arbitrary value if <code class="highlighter-rouge">initial-scale</code> is not also set to 1.0. If an error is thrown due to incorrect viewport syntax, <code class="highlighter-rouge">initial-scale</code> can be ignored and the whole page will appear enlarged, with over-sized text and blurry images. Not really what you intended, huh?</p>
+<p>A real world example is the BlackBerry Playbook. It has a good web browser, but it’s not very forgiving with error handling when parsing the meta viewport. If you use semi-colons instead of comma’s, width can in some circumstances not get set to <code class="language-plaintext highlighter-rouge">device-width</code>. There is currently a bug in the PlayBook’s viewport implementation that means width gets set to an arbitrary value if <code class="language-plaintext highlighter-rouge">initial-scale</code> is not also set to 1.0. If an error is thrown due to incorrect viewport syntax, <code class="language-plaintext highlighter-rouge">initial-scale</code> can be ignored and the whole page will appear enlarged, with over-sized text and blurry images. Not really what you intended, huh?</p>
 
 <p>Safari and Chrome are currently the only web browsers that display a series of errors/warnings for an incorrect meta viewport declaration:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Viewport argument value "device-width;" for key "width" not recognized. Content ignored.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Viewport argument value "device-width;" for key "width" not recognized. Content ignored.
 Viewport argument value "1.0;" for key "initial-scale" was truncated to its numeric prefix.
 Viewport argument value "1.0;" for key "maximum-scale" was truncated to its numeric prefix.
 Viewport argument value "0;" for key "user-scalable" was truncated to its numeric prefix.
@@ -98,7 +98,7 @@ Viewport argument value "0;" for key "user-scalable" was truncated to its numeri
 
 <p>Please note, you should not necessarily be including all the different properties seen above in your declaration. This article is simply concentrating on how to define things correctly.</p>
 
-<p>Update - for anyone wishing to use <code class="highlighter-rouge">width=device-width</code> without also setting <code class="highlighter-rouge">initial-scale=1.0</code>, the PlayBook can be tamed by inserting the legacy BlackBerry <code class="highlighter-rouge">HandheldFriendly</code> meta property before the viewport declaration:</p>
+<p>Update - for anyone wishing to use <code class="language-plaintext highlighter-rouge">width=device-width</code> without also setting <code class="language-plaintext highlighter-rouge">initial-scale=1.0</code>, the PlayBook can be tamed by inserting the legacy BlackBerry <code class="language-plaintext highlighter-rouge">HandheldFriendly</code> meta property before the viewport declaration:</p>
 
 <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"HandheldFriendly"</span> <span class="na">content=</span><span class="s">"True"</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"viewport"</span> <span class="na">content=</span><span class="s">"width=device-width"</span> <span class="nt">/&gt;</span></code></pre></figure>

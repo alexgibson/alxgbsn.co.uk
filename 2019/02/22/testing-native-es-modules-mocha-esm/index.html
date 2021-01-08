@@ -34,7 +34,7 @@
   <meta name="apple-mobile-web-app-title" content="Alex Gibson">
   <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="/assets/avatar-180-b1f192dbbe4ceec9c13c327fb0908af5ddbf621002116885f0cc2e8d8b6787c8.jpg">
   <link rel="icon" type="image/png" sizes="196x196" href="/assets/avatar-196-a65772ff09fa529d865e4f60735ded2bfb50711bafb1bd79cb2111d7c4ec461c.jpg">
-  <link rel="shortcut icon" href="/assets/favicon-28523dd6d2b5917829586fe5248f9a408486e09f98117add94210f56aa7ead33.ico">
+  <link href="/assets/favicon-28523dd6d2b5917829586fe5248f9a408486e09f98117add94210f56aa7ead33.ico" rel="shortcut icon">
 </head>
 <body id="top">
   <main role="main">
@@ -74,14 +74,14 @@
 
 <p>The solution came when I heard about a rather clever library called <a href="https://github.com/standard-things/esm">esm</a>. It’s is a fast, production ready, zero-dependency ES module loader for Node. Using it with Mocha turned out to be really straight forward. Here’s a basic example demonstrating how to do it.</p>
 
-<p>First, make sure you have both <a href="https://mochajs.org/">Mocha</a> and <a href="https://github.com/standard-things/esm">esm</a> installed. Next, create an ES module. Here’s a very trivial example called <code class="highlighter-rouge">sum.js</code>:</p>
+<p>First, make sure you have both <a href="https://mochajs.org/">Mocha</a> and <a href="https://github.com/standard-things/esm">esm</a> installed. Next, create an ES module. Here’s a very trivial example called <code class="language-plaintext highlighter-rouge">sum.js</code>:</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">sum</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">return</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p>A unit test for this module could look like the following piece of code (let’s call it <code class="highlighter-rouge">sum.test.js</code>). Note that here I’m using <a href="https://www.chaijs.com/">Chai</a>, but you could use any <a href="https://mochajs.org/#assertions">assertion library</a> that Mocha supports.</p>
+<p>A unit test for this module could look like the following piece of code (let’s call it <code class="language-plaintext highlighter-rouge">sum.test.js</code>). Note that here I’m using <a href="https://www.chaijs.com/">Chai</a>, but you could use any <a href="https://mochajs.org/#assertions">assertion library</a> that Mocha supports.</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">sum</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./sum.js</span><span class="dl">'</span><span class="p">;</span>
 <span class="k">import</span> <span class="p">{</span> <span class="nx">expect</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">chai</span><span class="dl">'</span><span class="p">;</span>
@@ -94,31 +94,31 @@
 <span class="p">});</span>
 </code></pre></div></div>
 
-<p>If we try to run this test on the command line using <code class="highlighter-rouge">mocha 'sum.test.js'</code> then we get an error. This is because Node does not yet understand the ES <code class="highlighter-rouge">import</code> syntax.</p>
+<p>If we try to run this test on the command line using <code class="language-plaintext highlighter-rouge">mocha 'sum.test.js'</code> then we get an error. This is because Node does not yet understand the ES <code class="language-plaintext highlighter-rouge">import</code> syntax.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import sum from './sum.js';
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import sum from './sum.js';
        ^^^
 
 SyntaxError: Unexpected identifier
 </code></pre></div></div>
 
-<p>Thankfully, fixing this using esm is <em>really</em> easy. All that’s needed is to pass in <code class="highlighter-rouge">esm</code> as a <code class="highlighter-rouge">require</code> to our <code class="highlighter-rouge">mocha</code> command:</p>
+<p>Thankfully, fixing this using esm is <em>really</em> easy. All that’s needed is to pass in <code class="language-plaintext highlighter-rouge">esm</code> as a <code class="language-plaintext highlighter-rouge">require</code> to our <code class="language-plaintext highlighter-rouge">mocha</code> command:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mocha 'sum.test.js' --require esm
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mocha 'sum.test.js' --require esm
 </code></pre></div></div>
 
 <p>The test now passes without any further configuration changes. Success!</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sum
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sum
   ✓ should return the sum of two arguments
 
 
 1 passing (10ms)
 </code></pre></div></div>
 
-<p>Because Mocha is Node based, I was also able to port the project’s back-end tests to use the same framework. Being able to run both suite of tests via an npm script in <code class="highlighter-rouge">package.json</code> is nice and simple:</p>
+<p>Because Mocha is Node based, I was also able to port the project’s back-end tests to use the same framework. Being able to run both suite of tests via an npm script in <code class="language-plaintext highlighter-rouge">package.json</code> is nice and simple:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"scripts": {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"scripts": {
   "test": "npm run test-node &amp;&amp; npm run test-browser",
   "test-browser": "mocha --recursive './test/browser/**/*.js' --require esm",
   "test-node": "mocha --recursive './test/node/**/*.js'",

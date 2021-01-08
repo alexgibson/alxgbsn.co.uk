@@ -34,7 +34,7 @@
   <meta name="apple-mobile-web-app-title" content="Alex Gibson">
   <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="/assets/avatar-180-b1f192dbbe4ceec9c13c327fb0908af5ddbf621002116885f0cc2e8d8b6787c8.jpg">
   <link rel="icon" type="image/png" sizes="196x196" href="/assets/avatar-196-a65772ff09fa529d865e4f60735ded2bfb50711bafb1bd79cb2111d7c4ec461c.jpg">
-  <link rel="shortcut icon" href="/assets/favicon-28523dd6d2b5917829586fe5248f9a408486e09f98117add94210f56aa7ead33.ico">
+  <link href="/assets/favicon-28523dd6d2b5917829586fe5248f9a408486e09f98117add94210f56aa7ead33.ico" rel="shortcut icon">
 </head>
 <body id="top">
   <main role="main">
@@ -68,9 +68,9 @@
 4 min
  read.
   </p>
-  <p>Anyone who has experience developing web applications on mobile devices will have no doubt encountered the 300ms delay when firing <code class="highlighter-rouge">click</code> events in web browsers such as Mobile Safari. There are some useful <a href="https://github.com/cheeaun/tappable">standalone plugins</a> and <a href="http://code.google.com/mobile/articles/fast_buttons.html">informative articles</a> to help combat this delay, but this post aims to show a super quick example of how to do simulated ‘tap’ events on dynamic content using JavaScript event delegation.</p>
+  <p>Anyone who has experience developing web applications on mobile devices will have no doubt encountered the 300ms delay when firing <code class="language-plaintext highlighter-rouge">click</code> events in web browsers such as Mobile Safari. There are some useful <a href="https://github.com/cheeaun/tappable">standalone plugins</a> and <a href="http://code.google.com/mobile/articles/fast_buttons.html">informative articles</a> to help combat this delay, but this post aims to show a super quick example of how to do simulated ‘tap’ events on dynamic content using JavaScript event delegation.</p>
 
-<p>A common technique when dealing with <code class="highlighter-rouge">click</code> events in dynamic content is to use event delegation to capture events bubbling up through the DOM. This same technique can be applied to touch events, although it is a little more difficult since there are at least four different events to capture; <code class="highlighter-rouge">touchstart</code>, <code class="highlighter-rouge">touchmove</code>, <code class="highlighter-rouge">touchend</code> and <code class="highlighter-rouge">touchcancel</code>.</p>
+<p>A common technique when dealing with <code class="language-plaintext highlighter-rouge">click</code> events in dynamic content is to use event delegation to capture events bubbling up through the DOM. This same technique can be applied to touch events, although it is a little more difficult since there are at least four different events to capture; <code class="language-plaintext highlighter-rouge">touchstart</code>, <code class="language-plaintext highlighter-rouge">touchmove</code>, <code class="language-plaintext highlighter-rouge">touchend</code> and <code class="language-plaintext highlighter-rouge">touchcancel</code>.</p>
 
 <p>Here’s a very basic example of how to capture a simulated ‘tap’ event:</p>
 
@@ -130,9 +130,9 @@
     <span class="nx">startY</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">};</span></code></pre></figure>
 
-<p>Notice here it is useful to make use of <code class="highlighter-rouge">touchmove</code> to detect any finger dragging gestures that might occur after a <code class="highlighter-rouge">touchstart</code> has fired. This way it is easy to cancel the ‘tap’ on <code class="highlighter-rouge">touchend</code> if desired.</p>
+<p>Notice here it is useful to make use of <code class="language-plaintext highlighter-rouge">touchmove</code> to detect any finger dragging gestures that might occur after a <code class="language-plaintext highlighter-rouge">touchstart</code> has fired. This way it is easy to cancel the ‘tap’ on <code class="language-plaintext highlighter-rouge">touchend</code> if desired.</p>
 
-<p>Update: Originally this article was using the function <code class="highlighter-rouge">document.elementFromPoint(x,y)</code> to get the element target in <code class="highlighter-rouge">ontouchend</code>. A few people have kindly pointed out that you can actually just use <code class="highlighter-rouge">e.changedTouches[0].target</code> or even <code class="highlighter-rouge">e.target</code> to get the same result for a simple ‘tap’. It should be noted however, that the target in this case always refers to the originating element, so if you do need to reference an element a finger might have moved on/off during <code class="highlighter-rouge">touchmove</code> or <code class="highlighter-rouge">touchend</code>, you would still need to use:</p>
+<p>Update: Originally this article was using the function <code class="language-plaintext highlighter-rouge">document.elementFromPoint(x,y)</code> to get the element target in <code class="language-plaintext highlighter-rouge">ontouchend</code>. A few people have kindly pointed out that you can actually just use <code class="language-plaintext highlighter-rouge">e.changedTouches[0].target</code> or even <code class="language-plaintext highlighter-rouge">e.target</code> to get the same result for a simple ‘tap’. It should be noted however, that the target in this case always refers to the originating element, so if you do need to reference an element a finger might have moved on/off during <code class="language-plaintext highlighter-rouge">touchmove</code> or <code class="language-plaintext highlighter-rouge">touchend</code>, you would still need to use:</p>
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nb">document</span><span class="p">.</span><span class="nx">elementFromPoint</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">changedTouches</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">clientX</span><span class="p">,</span> <span class="nx">e</span><span class="p">.</span><span class="nx">changedTouches</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">clientY</span><span class="p">);</span></code></pre></figure>
 

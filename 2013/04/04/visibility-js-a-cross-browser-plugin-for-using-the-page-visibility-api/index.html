@@ -34,7 +34,7 @@
   <meta name="apple-mobile-web-app-title" content="Alex Gibson">
   <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="/assets/avatar-180-b1f192dbbe4ceec9c13c327fb0908af5ddbf621002116885f0cc2e8d8b6787c8.jpg">
   <link rel="icon" type="image/png" sizes="196x196" href="/assets/avatar-196-a65772ff09fa529d865e4f60735ded2bfb50711bafb1bd79cb2111d7c4ec461c.jpg">
-  <link rel="shortcut icon" href="/assets/favicon-28523dd6d2b5917829586fe5248f9a408486e09f98117add94210f56aa7ead33.ico">
+  <link href="/assets/favicon-28523dd6d2b5917829586fe5248f9a408486e09f98117add94210f56aa7ead33.ico" rel="shortcut icon">
 </head>
 <body id="top">
   <main role="main">
@@ -65,7 +65,7 @@
     
 
 
-1 min
+2 min
  read.
   </p>
   <p>Since the <a href="http://www.w3.org/TR/page-visibility/">Page Visibility API</a> now has fairly wide <a href="http://caniuse.com/#feat=pagevisibility">browser support</a>, I decided to put together a simple component for handling and detecting web page visibility changes. Because most browsers still use this feature under an experimental vendor prefix, the JavaScript can be somewhat cumbersome and a pain to rewrite. <a href="https://github.com/alexgibson/visibility.js">Visibility.js</a> handles all the vendor prefix messiness for you, and provides a simple API for registering visibility change callbacks.</p>
@@ -76,7 +76,7 @@
 
 <h2 id="usage">Usage</h2>
 
-<p>Create a new <code class="highlighter-rouge">Visibility</code> instance, passing the relevant callbacks you need.</p>
+<p>Create a new <code class="language-plaintext highlighter-rouge">Visibility</code> instance, passing the relevant callbacks you need.</p>
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">page</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Visibility</span><span class="p">({</span>
     <span class="na">onHidden</span><span class="p">:</span> <span class="nx">hiddenCallback</span><span class="p">,</span>
@@ -94,21 +94,21 @@
 <h2 id="useful-methods">Useful methods</h2>
 
 <ul>
-  <li><code class="highlighter-rouge">isHidden</code> (returns boolean) - manually check to see if the page is hidden.</li>
-  <li><code class="highlighter-rouge">isSupported</code> (returns boolean) - test for Page Visibility API browser support.</li>
-  <li><code class="highlighter-rouge">destroy</code> - remove event listener and callbacks.</li>
+  <li><code class="language-plaintext highlighter-rouge">isHidden</code> (returns boolean) - manually check to see if the page is hidden.</li>
+  <li><code class="language-plaintext highlighter-rouge">isSupported</code> (returns boolean) - test for Page Visibility API browser support.</li>
+  <li><code class="language-plaintext highlighter-rouge">destroy</code> - remove event listener and callbacks.</li>
 </ul>
 
 <h2 id="testing">Testing</h2>
 
 <p>Testing relies upon Karma test runner and Phantom JS. To install these dependencies, run the following command from the project root.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm install
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm install
 </code></pre></div></div>
 
 <p>Then to perform a single pass of the tests run:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm test
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm test
 </code></pre></div></div>
 
 <h2 id="supported-web-browsers">Supported web browsers</h2>

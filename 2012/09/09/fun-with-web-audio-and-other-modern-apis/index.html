@@ -34,7 +34,7 @@
   <meta name="apple-mobile-web-app-title" content="Alex Gibson">
   <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="/assets/avatar-180-b1f192dbbe4ceec9c13c327fb0908af5ddbf621002116885f0cc2e8d8b6787c8.jpg">
   <link rel="icon" type="image/png" sizes="196x196" href="/assets/avatar-196-a65772ff09fa529d865e4f60735ded2bfb50711bafb1bd79cb2111d7c4ec461c.jpg">
-  <link rel="shortcut icon" href="/assets/favicon-28523dd6d2b5917829586fe5248f9a408486e09f98117add94210f56aa7ead33.ico">
+  <link href="/assets/favicon-28523dd6d2b5917829586fe5248f9a408486e09f98117add94210f56aa7ead33.ico" rel="shortcut icon">
 </head>
 <body id="top">
   <main role="main">
@@ -90,7 +90,7 @@
 <span class="nx">nodes</span><span class="p">.</span><span class="nx">delay</span> <span class="o">=</span> <span class="nx">myAudioContext</span><span class="p">.</span><span class="nx">createDelayNode</span><span class="p">();</span>
 <span class="nx">nodes</span><span class="p">.</span><span class="nx">feedbackGain</span> <span class="o">=</span> <span class="nx">myAudioContext</span><span class="p">.</span><span class="nx">createGainNode</span><span class="p">();</span></code></pre></figure>
 
-<p>The <code class="highlighter-rouge">source</code> is then routed through the processor <code class="highlighter-rouge">nodes</code> and connected to the audio context destination (i.e. the speakers).</p>
+<p>The <code class="language-plaintext highlighter-rouge">source</code> is then routed through the processor <code class="language-plaintext highlighter-rouge">nodes</code> and connected to the audio context destination (i.e. the speakers).</p>
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">source</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="nx">nodes</span><span class="p">.</span><span class="nx">filter</span><span class="p">);</span>
 <span class="nx">nodes</span><span class="p">.</span><span class="nx">filter</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="nx">nodes</span><span class="p">.</span><span class="nx">volume</span><span class="p">);</span>
@@ -103,7 +103,7 @@
 
 <h2 id="responding-to-user-input">Responding to user input</h2>
 
-<p>Touching the user interface surface manipulates the oscillator frequency along the <code class="highlighter-rouge">x</code> axis, and the filter cutoff value along the <code class="highlighter-rouge">y</code> axis. To start the sound, <code class="highlighter-rouge">source.noteOn(0)</code> is called.</p>
+<p>Touching the user interface surface manipulates the oscillator frequency along the <code class="language-plaintext highlighter-rouge">x</code> axis, and the filter cutoff value along the <code class="language-plaintext highlighter-rouge">y</code> axis. To start the sound, <code class="language-plaintext highlighter-rouge">source.noteOn(0)</code> is called.</p>
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">source</span><span class="p">.</span><span class="nx">frequency</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="nx">x</span><span class="p">;</span>
 <span class="nx">nodes</span><span class="p">.</span><span class="nx">filter</span><span class="p">.</span><span class="nx">frequency</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="nx">y</span><span class="p">;</span>

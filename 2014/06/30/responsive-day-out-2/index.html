@@ -34,7 +34,7 @@
   <meta name="apple-mobile-web-app-title" content="Alex Gibson">
   <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="/assets/avatar-180-b1f192dbbe4ceec9c13c327fb0908af5ddbf621002116885f0cc2e8d8b6787c8.jpg">
   <link rel="icon" type="image/png" sizes="196x196" href="/assets/avatar-196-a65772ff09fa529d865e4f60735ded2bfb50711bafb1bd79cb2111d7c4ec461c.jpg">
-  <link rel="shortcut icon" href="/assets/favicon-28523dd6d2b5917829586fe5248f9a408486e09f98117add94210f56aa7ead33.ico">
+  <link href="/assets/favicon-28523dd6d2b5917829586fe5248f9a408486e09f98117add94210f56aa7ead33.ico" rel="shortcut icon">
 </head>
 <body id="top">
   <main role="main">
@@ -105,7 +105,7 @@
 
 <p>There was discussion over why developers should use this over say, <a href="http://www.w3.org/TR/css3-flexbox/">CSS Flexbox</a>. The feeling seems to be that Flexbox is great for smaller layout details, but is not as well suited to overall site layout. There was mention that Flexbox has <a href="http://www.smashingmagazine.com/2013/05/23/building-the-new-financial-times-web-app-a-case-study/">performance issues</a>, although that has <a href="http://updates.html5rocks.com/2013/10/Flexbox-layout-isn-t-slow">been refuted</a> by others.</p>
 
-<p>The CSS Grid Layout Module also allows developers control over content ordering, which can be especially useful for responsive design on smaller viewports. There was an accessibility concern raised about re-ordering content in the discussion around this. Such things have already been possible for a while now with Flexbox, but it suffers from the side effect of <em>visual ordering</em> becoming different from the <em>source ordering</em> read aloud by screen readers. Will this implementation be the same? Jeremy pointed out that this has been a problem ever since we could to <code class="highlighter-rouge">position: absolute;</code> in browsers.</p>
+<p>The CSS Grid Layout Module also allows developers control over content ordering, which can be especially useful for responsive design on smaller viewports. There was an accessibility concern raised about re-ordering content in the discussion around this. Such things have already been possible for a while now with Flexbox, but it suffers from the side effect of <em>visual ordering</em> becoming different from the <em>source ordering</em> read aloud by screen readers. Will this implementation be the same? Jeremy pointed out that this has been a problem ever since we could to <code class="language-plaintext highlighter-rouge">position: absolute;</code> in browsers.</p>
 
 <p>For more on CSS Grid Layout, you can read <a href="http://rachelandrew.co.uk/archives/2014/06/27/css-grid-layout-getting-to-grips-with-the-chrome-implementation/">Rachel’s blog post</a> and see her <a href="http://rachelandrew.co.uk/presentations/css-grid">code examples</a>.</p>
 
@@ -133,25 +133,25 @@
 
 <figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="k">@media</span> <span class="p">(</span><span class="n">scripting</span><span class="p">:</span><span class="n">enabled</span><span class="p">)</span> <span class="p">{}</span></code></pre></figure>
 
-<p>The <code class="highlighter-rouge">scripting</code> media feature detects if JavaScript is enabled in the browser. This seems well intentioned enough, but is it actually all that useful? Lack of JS support should not be a problem if you’re already using <em>progressive enhancement</em>. More often than not, problems occur due to slow connectivity or scripts that fail.</p>
+<p>The <code class="language-plaintext highlighter-rouge">scripting</code> media feature detects if JavaScript is enabled in the browser. This seems well intentioned enough, but is it actually all that useful? Lack of JS support should not be a problem if you’re already using <em>progressive enhancement</em>. More often than not, problems occur due to slow connectivity or scripts that fail.</p>
 
 <figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="k">@media</span> <span class="p">(</span><span class="n">light-level</span><span class="p">:</span><span class="n">dim</span><span class="p">)</span> <span class="p">{}</span></code></pre></figure>
 
-<p>The <code class="highlighter-rouge">light-level</code> media feature allows developers to apply specific CSS styles based on (one of three) different luminosity levels detected by a device sensor. Real world testing shows that many device sensors are either not calibrated correctly, or differ enough to make significant use of this pretty impractical.</p>
+<p>The <code class="language-plaintext highlighter-rouge">light-level</code> media feature allows developers to apply specific CSS styles based on (one of three) different luminosity levels detected by a device sensor. Real world testing shows that many device sensors are either not calibrated correctly, or differ enough to make significant use of this pretty impractical.</p>
 
 <figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="k">@media</span> <span class="p">(</span><span class="nb">pointer</span><span class="p">:</span><span class="n">coarse</span><span class="p">)</span> <span class="p">{}</span></code></pre></figure>
 
-<p>The <code class="highlighter-rouge">pointer</code> media type can be used to detect the primary type of pointing device available to a user. Values can be <code class="highlighter-rouge">none</code> (e.g. TV), <code class="highlighter-rouge">coarse</code> (e.g. touchscreen) or <code class="highlighter-rouge">fine</code> (e.g. mouse or stylus). But what about devices with multiple input types? It is up to the user-agent to decide which is the primary input type, but what about users who switch inputs or prefer the secondary input type?</p>
+<p>The <code class="language-plaintext highlighter-rouge">pointer</code> media type can be used to detect the primary type of pointing device available to a user. Values can be <code class="language-plaintext highlighter-rouge">none</code> (e.g. TV), <code class="language-plaintext highlighter-rouge">coarse</code> (e.g. touchscreen) or <code class="language-plaintext highlighter-rouge">fine</code> (e.g. mouse or stylus). But what about devices with multiple input types? It is up to the user-agent to decide which is the primary input type, but what about users who switch inputs or prefer the secondary input type?</p>
 
 <figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="k">@media</span> <span class="p">(</span><span class="n">overflow-block</span><span class="p">:</span><span class="nb">scroll</span><span class="p">)</span> <span class="p">{}</span></code></pre></figure>
 
-<p>The <code class="highlighter-rouge">overflow-block</code> media feature can be used to control the behavior of a device when content overflows the viewport i.e. does it get cut off, or can you scroll?</p>
+<p>The <code class="language-plaintext highlighter-rouge">overflow-block</code> media feature can be used to control the behavior of a device when content overflows the viewport i.e. does it get cut off, or can you scroll?</p>
 
 <p>There was some discussion around this talk about why there seems to be so much work going on adding Media Query features that either aren’t really that useful, or do not seem to be well thought out. Why are developers getting light-level sensor API’s instead of really useful things, like CSS Element Queries? The consensus was that standards work takes time, and we don’t often know what we want or need in advance. These features may have seemed like really clever additions a few years ago, but needs and wants change quickly.</p>
 
 <h2 id="ethan-marcotte-laziness-in-the-time-of-responsive-design">Ethan Marcotte: <em>Laziness in the Time of Responsive Design</em></h2>
 
-<p><a href="http://ethanmarcotte.com/">Ethan Marcotte</a> rounded off the day with a talk about keeping things simple. He describes himself as a lazy developer, but lazy in the sense that making smart decisions means you don’t need to do as much work. Why design for multiple types of devices each with different interactions? If you’re smart, you can design something that works well everywhere. Ethan also showed off some nice CSS techniques using <code class="highlighter-rouge">nth-child</code> selectors to create flexible grids.</p>
+<p><a href="http://ethanmarcotte.com/">Ethan Marcotte</a> rounded off the day with a talk about keeping things simple. He describes himself as a lazy developer, but lazy in the sense that making smart decisions means you don’t need to do as much work. Why design for multiple types of devices each with different interactions? If you’re smart, you can design something that works well everywhere. Ethan also showed off some nice CSS techniques using <code class="language-plaintext highlighter-rouge">nth-child</code> selectors to create flexible grids.</p>
 
 <h2 id="conclusion">Conclusion</h2>
 

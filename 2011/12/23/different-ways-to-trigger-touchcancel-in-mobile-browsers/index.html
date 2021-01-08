@@ -34,7 +34,7 @@
   <meta name="apple-mobile-web-app-title" content="Alex Gibson">
   <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="/assets/avatar-180-b1f192dbbe4ceec9c13c327fb0908af5ddbf621002116885f0cc2e8d8b6787c8.jpg">
   <link rel="icon" type="image/png" sizes="196x196" href="/assets/avatar-196-a65772ff09fa529d865e4f60735ded2bfb50711bafb1bd79cb2111d7c4ec461c.jpg">
-  <link rel="shortcut icon" href="/assets/favicon-28523dd6d2b5917829586fe5248f9a408486e09f98117add94210f56aa7ead33.ico">
+  <link href="/assets/favicon-28523dd6d2b5917829586fe5248f9a408486e09f98117add94210f56aa7ead33.ico" rel="shortcut icon">
 </head>
 <body id="top">
   <main role="main">
@@ -68,7 +68,7 @@
 6 min
  read.
   </p>
-  <p>The <code class="highlighter-rouge">touchcancel</code> event is often neglected when building touch–interfaces using JavaScript. Historically, browsers vendors have never really published documentation detailing the circumstances as to when this event gets fired, and hence it has always been associated with a level of obscurity by many developers. The aim of this post is to try and shed some light on the matter.</p>
+  <p>The <code class="language-plaintext highlighter-rouge">touchcancel</code> event is often neglected when building touch–interfaces using JavaScript. Historically, browsers vendors have never really published documentation detailing the circumstances as to when this event gets fired, and hence it has always been associated with a level of obscurity by many developers. The aim of this post is to try and shed some light on the matter.</p>
 
 <p>Apple originally created touch events for iOS Safari, which have since been adopted as a basis for the <a href="http://www.w3.org/TR/2011/WD-touch-events-20110505/">W3C Touch Events Specification</a>. The original <a href="https://developer.apple.com/library/iad/documentation/UserExperience/Reference/TouchEventClassReference/">Safari DOM Additions Reference</a> documentation provides very little information on touchcancel:</p>
 
@@ -82,7 +82,7 @@
   <p>A user agent must dispatch this event type to indicate when a touch point has been disrupted in an implementation-specific manner, such as a synchronous event or action originating from the UA canceling the touch, or the touch point leaving the document window into a non-document area which is capable of handling user interactions. (e.g. The UA’s native user interface, plug-ins) A user agent may also dispatch this event type when the user places more touch points on the touch surface than the device or implementation is configured to store, in which case the earliest Touch object in the TouchList should be removed.</p>
 </blockquote>
 
-<p>From this description we can begin to understand touchcancel with regard to browser behaviour a little better. It not only helps the browser keep accurate references to active <code class="highlighter-rouge">Touch</code> objects in the <code class="highlighter-rouge">TouchList</code>, but it can also be used by developers to carry out UI specific tasks, such as reseting any variables used during <code class="highlighter-rouge">touchstart</code> or <code class="highlighter-rouge">touchmove</code>. In the event that the system cancels tracking and the <code class="highlighter-rouge">touchend</code> event does not fire, touchcancel saves the day.</p>
+<p>From this description we can begin to understand touchcancel with regard to browser behaviour a little better. It not only helps the browser keep accurate references to active <code class="language-plaintext highlighter-rouge">Touch</code> objects in the <code class="language-plaintext highlighter-rouge">TouchList</code>, but it can also be used by developers to carry out UI specific tasks, such as reseting any variables used during <code class="language-plaintext highlighter-rouge">touchstart</code> or <code class="language-plaintext highlighter-rouge">touchmove</code>. In the event that the system cancels tracking and the <code class="language-plaintext highlighter-rouge">touchend</code> event does not fire, touchcancel saves the day.</p>
 
 <p>But when do browsers actually trigger this event? To start investigating, it was necessary to build a simple event logger to track all touch events. The test features a touch-area and logs the last touch event fired, making it easier to see exactly what kind of interactions result in a touchcancel.</p>
 
