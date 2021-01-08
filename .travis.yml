@@ -1,12 +1,10 @@
 sudo: false
 language: ruby
 rvm:
-- 2.4.2
+- 2.7.2
 before_install:
-  - gem install sass --version "=3.4.19"
-  - gem install compass --version "=1.0.3"
-  - nvm install 10.15.0
-  - nvm use 10.15.0
+  - nvm install 12.20.1
+  - nvm use 12.20.1
 install:
   - bundle install --path vendor/bundle
   - npm install
