@@ -26,7 +26,7 @@
     "prebuild": "npm run clean",
     "build": "bundle exec jekyll build",
     "preserve": "npm run clean",
-    "serve": "bundle exec jekyll serve",
+    "serve": "bundle exec jekyll serve --livereload",
     "clean": "bundle exec jekyll clean",
     "doctor": "bundle exec jekyll doctor",
     "lint": "./node_modules/.bin/eslint ./_assets/js/*.js",
