@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="https://alxgbsn.co.uk/feed/index.xml" rel="self" type="application/atom+xml" /><link href="https://alxgbsn.co.uk/" rel="alternate" type="text/html" /><updated>2021-01-08T14:42:02+00:00</updated><id>https://alxgbsn.co.uk/feed/index.xml</id><title type="html">Alex Gibson, Front End Developer</title><author><name>Alex Gibson</name></author><entry><title type="html">My seventh year working at Mozilla</title><link href="https://alxgbsn.co.uk/2020/04/15/my-seventh-year-working-at-mozilla/" rel="alternate" type="text/html" title="My seventh year working at Mozilla" /><published>2020-04-15T00:00:00+00:00</published><updated>2020-04-15T00:00:00+00:00</updated><id>https://alxgbsn.co.uk/2020/04/15/my-seventh-year-working-at-mozilla</id><content type="html" xml:base="https://alxgbsn.co.uk/2020/04/15/my-seventh-year-working-at-mozilla/">&lt;figure&gt;
-    &lt;img src=&quot;/images/posts/berlin-2020.jpg&quot; alt=&quot;Mozilla remotees group photo in Berlin, January 2020&quot; srcset=&quot;/images/posts/berlin-2020-high-res.jpg 1.5x&quot; /&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="https://alxgbsn.co.uk/feed/index.xml" rel="self" type="application/atom+xml" /><link href="https://alxgbsn.co.uk/" rel="alternate" type="text/html" /><updated>2021-01-08T15:18:33+00:00</updated><id>https://alxgbsn.co.uk/feed/index.xml</id><title type="html">Alex Gibson, Front End Developer</title><author><name>Alex Gibson</name></author><entry><title type="html">My seventh year working at Mozilla</title><link href="https://alxgbsn.co.uk/2020/04/15/my-seventh-year-working-at-mozilla/" rel="alternate" type="text/html" title="My seventh year working at Mozilla" /><published>2020-04-15T00:00:00+00:00</published><updated>2020-04-15T00:00:00+00:00</updated><id>https://alxgbsn.co.uk/2020/04/15/my-seventh-year-working-at-mozilla</id><content type="html" xml:base="https://alxgbsn.co.uk/2020/04/15/my-seventh-year-working-at-mozilla/">&lt;figure&gt;
+    &lt;img src=&quot;/images/posts/berlin-2020.jpg&quot; alt=&quot;Mozilla remotees group photo in Berlin, January 2020&quot; srcset=&quot;/images/posts/berlin-2020-high-res.jpg 1.5x&quot; width=&quot;700&quot; height=&quot;385&quot; /&gt;
     &lt;figcaption&gt;Mozilla remotees group photo in Berlin, January 2020&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -26,7 +26,7 @@
 &lt;p&gt;To complicate things further, the world is also being heavily tested by the COVID-19 pandemic right now. It’s fortunate that Mozilla is in a position to adapt well to continuing work under the distributed environment that we all find ourselves in. A lot of people are relying more and more on the internet right now to do the things they need both for work and for family life, so Mozilla continues to play an important role in enabling people with the tools they need to communicate and interact safely online.&lt;/p&gt;
 
 &lt;p&gt;What will 2020 bring? Your guess is as good as mine. My hope is it can only get better from here.&lt;/p&gt;</content><author><name>Alex Gibson</name></author><summary type="html">This week marks my seventh year working full time for Mozilla. The past year has been good for me personally and professionally, but it has also been an uneasy time for both Mozilla and the world as a whole. I write this post under lockdown during to the COVID-19 pandemic, which is a very testing time for many people and organizations around the world. I'm thankful to still have a stable job, and to have the protection of being able to work from home. I'm more aware of my privilege now than ever before.</summary></entry><entry><title type="html">My sixth year working at Mozilla</title><link href="https://alxgbsn.co.uk/2019/04/15/my-sixth-year-working-at-mozilla/" rel="alternate" type="text/html" title="My sixth year working at Mozilla" /><published>2019-04-15T00:00:00+00:00</published><updated>2019-04-15T00:00:00+00:00</updated><id>https://alxgbsn.co.uk/2019/04/15/my-sixth-year-working-at-mozilla</id><content type="html" xml:base="https://alxgbsn.co.uk/2019/04/15/my-sixth-year-working-at-mozilla/">&lt;figure&gt;
-    &lt;img src=&quot;/images/posts/sf-all-hands-2018.jpg&quot; alt=&quot;Photo of San Fransisco's skyline taken at the Monday night event for Mozilla All-Hands, June 2018.&quot; srcset=&quot;/images/posts/sf-all-hands-2018-high-res.jpg 1.5x&quot; /&gt;
+    &lt;img src=&quot;/images/posts/sf-all-hands-2018.jpg&quot; alt=&quot;Photo of San Fransisco's skyline taken at the Monday night event for Mozilla All-Hands, June 2018.&quot; srcset=&quot;/images/posts/sf-all-hands-2018-high-res.jpg 1.5x&quot; width=&quot;700&quot; height=&quot;394&quot; /&gt;
     &lt;figcaption&gt;Photo of San Fransisco's skyline taken at the Monday night event for Mozilla All-Hands, June 2018.&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -37,7 +37,7 @@
 &lt;p&gt;Mozilla’s website design system, named &lt;a href=&quot;https://protocol.mozilla.org&quot;&gt;Protocol&lt;/a&gt;, is now a real product. You can &lt;a href=&quot;https://www.npmjs.com/package/@mozilla-protocol/core&quot;&gt;install it via NPM&lt;/a&gt; and build on-brand Mozilla web pages using its compenents. Protocol builds on a system of &lt;em&gt;atoms&lt;/em&gt;, &lt;em&gt;molecules&lt;/em&gt;, and &lt;em&gt;organiams&lt;/em&gt;, following the concepts first made popular in &lt;a href=&quot;http://atomicdesign.bradfrost.com/&quot;&gt;Atomic Web Design&lt;/a&gt;. Many of the new design system components can be seen in use on the recently redesigned &lt;a href=&quot;https://www.mozilla.org&quot;&gt;www.mozilla.org&lt;/a&gt; pages.&lt;/p&gt;
 
 &lt;figure&gt;
-    &lt;img src=&quot;/images/posts/protocol-homepage.png&quot; alt=&quot;Sections of the mozilla.org homepage, built using Protocol components.&quot; srcset=&quot;/images/posts/protocol-homepage-high-res.png 1.5x&quot; /&gt;
+    &lt;img src=&quot;/images/posts/protocol-homepage.png&quot; alt=&quot;Sections of the mozilla.org homepage, built using Protocol components.&quot; srcset=&quot;/images/posts/protocol-homepage-high-res.png 1.5x&quot; width=&quot;700&quot; height=&quot;467&quot; loading=&quot;lazy&quot; /&gt;
     &lt;figcaption&gt;Sections of the mozilla.org homepage, built using Protocol components.&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -64,7 +64,7 @@
 &lt;p&gt;I got to visit Portland, San Fransisco for Mozilla’s June all-hands event, and also Orlando for December’s all-hands. I brought the family along to Disney World for an end-of-year vacation afterwards, who all had an amazing time. We’re very lucky!&lt;/p&gt;
 
 &lt;figure&gt;
-    &lt;img src=&quot;/images/posts/orlando-all-hands-2018.jpg&quot; alt=&quot;Family fun outside the Disney Swan &amp;amp; Dolphin, December 2018.&quot; srcset=&quot;/images/posts/orlando-all-hands-2018-high-res.jpg 1.5x&quot; /&gt;
+    &lt;img src=&quot;/images/posts/orlando-all-hands-2018.jpg&quot; alt=&quot;Family fun outside the Disney Swan &amp;amp; Dolphin, December 2018.&quot; srcset=&quot;/images/posts/orlando-all-hands-2018-high-res.jpg 1.5x&quot; width=&quot;700&quot; height=&quot;467&quot; loading=&quot;lazy&quot; /&gt;
     &lt;figcaption&gt;Family photo outside the Disney Swan &amp;amp; Dolphin, December 2018.&lt;/figcaption&gt;
 &lt;/figure&gt;</content><author><name>Alex Gibson</name></author><summary type="html">This week marks my sixth year working at Mozilla! I'll be honest, this year's _mozillaversary_ came by so fast I nearly forgot all about writing this blog post. It feels hard to believe that I've been working here for a full six years. I've guess grown and learned a lot in that time, but it still doesn't feel like all that long ago when I first joined full time. Years start to blur together. So, what's happened in this past 12 months?</summary></entry><entry><title type="html">Testing native ES modules using Mocha and esm</title><link href="https://alxgbsn.co.uk/2019/02/22/testing-native-es-modules-mocha-esm/" rel="alternate" type="text/html" title="Testing native ES modules using Mocha and esm" /><published>2019-02-22T00:00:00+00:00</published><updated>2019-02-22T00:00:00+00:00</updated><id>https://alxgbsn.co.uk/2019/02/22/testing-native-es-modules-mocha-esm</id><content type="html" xml:base="https://alxgbsn.co.uk/2019/02/22/testing-native-es-modules-mocha-esm/">&lt;p&gt;I recently worked on a project where I wanted to switch to using native ES modules in the browser. Migrating the existing code to use ES modules was easy enough, but the tricky part came when I wanted to maintain the existing unit tests. It turns out that many JavaScript testing frameworks don’t yet support native ES modules, and I was struggling to find an easy solution that didn’t require transpiling my code back to ES5.&lt;/p&gt;
 
@@ -332,7 +332,7 @@ SyntaxError: Unexpected identifier
 &lt;/ul&gt;
 
 &lt;p&gt;If you would like to learn more about ES modules, &lt;a href=&quot;https://code-cartoons.com/&quot;&gt;Lin Clark&lt;/a&gt; wrote an excellent &lt;a href=&quot;https://hacks.mozilla.org/2018/03/es-modules-a-cartoon-deep-dive/&quot;&gt;deep dive on the Mozilla Hacks blog&lt;/a&gt;. I highly suggest reading it.&lt;/p&gt;</content><author><name>Alex Gibson</name></author><summary type="html">It's pretty commonplace today to write JavaScript using ES2015 (or ES6) syntax, and then to transpile that code to ES5 in a build step. Transpiling enables us to write code using the latest ECMAScript syntax and features, but then compiles it in a backward compatible way so that it works with older browsers. The downside to this is that transpiling can also lead to increased bundle sizes if you're not careful, and for browsers that already support ES2015 features, you're potentially shipping a lot of redundant code. Modern browsers need neither the transpiled code, nor the polyfills that can get bundled along with it.</summary></entry><entry><title type="html">My fifth year working at Mozilla</title><link href="https://alxgbsn.co.uk/2018/04/18/my-fifth-year-working-at-mozilla/" rel="alternate" type="text/html" title="My fifth year working at Mozilla" /><published>2018-04-18T00:00:00+00:00</published><updated>2018-04-18T00:00:00+00:00</updated><id>https://alxgbsn.co.uk/2018/04/18/my-fifth-year-working-at-mozilla</id><content type="html" xml:base="https://alxgbsn.co.uk/2018/04/18/my-fifth-year-working-at-mozilla/">&lt;figure&gt;
-    &lt;img src=&quot;/images/posts/sf-2017-staff-photo.jpg&quot; alt=&quot;Mozilla staff photo from All-Hands event in Austin, December 2017.&quot; srcset=&quot;/images/posts/sf-2017-staff-photo-high-res.jpg 1.5x&quot; /&gt;
+    &lt;img src=&quot;/images/posts/sf-2017-staff-photo.jpg&quot; alt=&quot;Mozilla staff photo from All-Hands event in Austin, December 2017.&quot; srcset=&quot;/images/posts/sf-2017-staff-photo-high-res.jpg 1.5x&quot; width=&quot;700&quot; height=&quot;409&quot; /&gt;
     &lt;figcaption&gt;Mozilla staff photo from All-Hands event in Austin, December 2017.&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -366,7 +366,7 @@ SyntaxError: Unexpected identifier
 &lt;p&gt;On the travel front, I got to visit both Austin and San Francisco for Mozilla all-hands weeks. As always, both weeks we’re fun but exhausting. Austin is a great city, and we ate way too much BBQ.&lt;/p&gt;
 
 &lt;figure&gt;
-    &lt;img src=&quot;/images/posts/austin-all-hands-closing-party.jpg&quot; alt=&quot;Mozilla Austin all-hands closing party, December 2017.&quot; srcset=&quot;/images/posts/austin-all-hands-closing-party-high-res.jpg 1.5x&quot; /&gt;
+    &lt;img src=&quot;/images/posts/austin-all-hands-closing-party.jpg&quot; alt=&quot;Mozilla Austin all-hands closing party, December 2017.&quot; srcset=&quot;/images/posts/austin-all-hands-closing-party-high-res.jpg 1.5x&quot; width=&quot;700&quot; height=&quot;525&quot; loading=&quot;lazy&quot; /&gt;
     &lt;figcaption&gt;Mozilla Austin all-hands closing party, December 2017.&lt;/figcaption&gt;
 &lt;/figure&gt;</content><author><name>Alex Gibson</name></author><summary type="html">Today marks my fifth year working for Mozilla! This past year has been both fun and frantic, and overall was a really good year for both Mozilla and Firefox. Here's a run down a few of the things I got to work on.</summary></entry><entry><title type="html">Adding a Service Worker to Jekyll</title><link href="https://alxgbsn.co.uk/2017/12/08/adding-a-service-worker-to-jekyll/" rel="alternate" type="text/html" title="Adding a Service Worker to Jekyll" /><published>2017-12-08T00:00:00+00:00</published><updated>2017-12-08T00:00:00+00:00</updated><id>https://alxgbsn.co.uk/2017/12/08/adding-a-service-worker-to-jekyll</id><content type="html" xml:base="https://alxgbsn.co.uk/2017/12/08/adding-a-service-worker-to-jekyll/">&lt;p&gt;Implementing a Service Worker is something I’ve only really &lt;a href=&quot;https://github.com/alexgibson/wavepad&quot;&gt;toyed with in the past&lt;/a&gt;. I recently felt like I needed to get reacquainted with their inner workings again, so I decided to implement one for this blog. Here are some tips and tricks I learned along the way.&lt;/p&gt;
 
@@ -470,7 +470,7 @@ SyntaxError: Unexpected identifier
 &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;cacheName&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;`static::&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;version&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;If you’re curious to see everything together, you can view my &lt;a href=&quot;https://github.com/alexgibson/alxgbsn.co.uk/blob/master/sw.js&quot;&gt;full service worker code here&lt;/a&gt;.&lt;/p&gt;</content><author><name>Alex Gibson</name></author><summary type="html">Implementing a Service Worker is something I've only really toyed with in the past. I recently felt like I needed to get reacquainted with their inner workings again, so I decided to implement one for this blog. Here are some tips and tricks I learned along the way.</summary></entry><entry><title type="html">My fourth year working at Mozilla</title><link href="https://alxgbsn.co.uk/2017/04/19/my-fourth-year-working-at-mozilla/" rel="alternate" type="text/html" title="My fourth year working at Mozilla" /><published>2017-04-19T00:00:00+00:00</published><updated>2017-04-19T00:00:00+00:00</updated><id>https://alxgbsn.co.uk/2017/04/19/my-fourth-year-working-at-mozilla</id><content type="html" xml:base="https://alxgbsn.co.uk/2017/04/19/my-fourth-year-working-at-mozilla/">&lt;figure&gt;
-    &lt;img src=&quot;/images/posts/hawaii-staff-photo.jpg&quot; alt=&quot;Mozilla staff photo from All-Hands event in Hawaii, December 2016.&quot; srcset=&quot;/images/posts/hawaii-staff-photo-high-res.jpg 1.5x&quot; /&gt;
+    &lt;img src=&quot;/images/posts/hawaii-staff-photo.jpg&quot; alt=&quot;Mozilla staff photo from All-Hands event in Hawaii, December 2016.&quot; srcset=&quot;/images/posts/hawaii-staff-photo-high-res.jpg 1.5x&quot; width=&quot;700&quot; height=&quot;409&quot; /&gt;
     &lt;figcaption&gt;Mozilla staff photo from All-Hands event in Hawaii, December 2016&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -501,7 +501,7 @@ SyntaxError: Unexpected identifier
 &lt;p&gt;The main &lt;a href=&quot;https://www.mozilla.org/firefox/new/&quot;&gt;Firefox download page&lt;/a&gt; is one of the most high traffic pages on mozorg, so it’s naturally something we pay close attention to when making changes. This year we experimented on the page &lt;strong&gt;a lot&lt;/strong&gt;. It got redesigned it no less than three times, and continually tweaked over the course of multiple A/B tests. Lots of scrutiny goes into every change, especially in relation to page weight, loading time, and the impact that can have on download conversions. Ultimately what used to be a relatively plain looking page turned into something quite beautiful.&lt;/p&gt;
 
 &lt;figure&gt;
-    &lt;img src=&quot;/images/posts/download-page-horizon.png&quot; alt=&quot;Redesigned Firefox download page&quot; srcset=&quot;/images/posts/download-page-horizon-high-res.png 1.5x&quot; /&gt;
+    &lt;img src=&quot;/images/posts/download-page-horizon.png&quot; alt=&quot;Redesigned Firefox download page&quot; srcset=&quot;/images/posts/download-page-horizon-high-res.png 1.5x&quot; width=&quot;700&quot; height=&quot;489&quot; loading=&quot;lazy&quot; /&gt;
     &lt;figcaption&gt;Redesigned Firefox download page&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -522,7 +522,7 @@ SyntaxError: Unexpected identifier
 &lt;h2 id=&quot;all-hands-and-travel&quot;&gt;All-hands and travel&lt;/h2&gt;
 
 &lt;figure&gt;
-    &lt;img src=&quot;/images/posts/hawaii-volcano.jpg&quot; alt=&quot;In the crater of a volcano!&quot; srcset=&quot;/images/posts/hawaii-volcano-high-res.jpg 1.5x&quot; /&gt;
+    &lt;img src=&quot;/images/posts/hawaii-volcano.jpg&quot; alt=&quot;In the crater of a volcano!&quot; srcset=&quot;/images/posts/hawaii-volcano-high-res.jpg 1.5x&quot; width=&quot;700&quot; height=&quot;525&quot; loading=&quot;lazy&quot; /&gt;
     &lt;figcaption&gt;In the crater of a volcano!&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -557,7 +557,7 @@ SyntaxError: Unexpected identifier
 &lt;h2 id=&quot;make-the-most-of-time-together&quot;&gt;Make the most of time together&lt;/h2&gt;
 
 &lt;p&gt;Being a globally distributed company, Mozilla hosts &lt;a href=&quot;https://wiki.mozilla.org/All_Hands&quot;&gt;All Hands&lt;/a&gt; weeks twice a year where the whole company can get together and plan for the future. These weeks are generally exhausting but also pretty amazing, with so many people being together in one place. We also get to do the odd work week with our functional or durable teams to work on different projects. This usually involves traveling to one of the many &lt;a href=&quot;https://www.mozilla.org/en-US/contact/spaces/&quot;&gt;Mozilla spaces&lt;/a&gt; to work closely together for a week. Making the most of this in-person time is great for things like planning and sprint work, but the main thing I think everyone gets out of it is just spending time together. Talking every day on video is one thing, but also getting to do stuff together in the same location is really important. Not just for the work itself, but also for team building. I try and take as many of these opportunities as I can.&lt;/p&gt;</content><author><name>Alex Gibson</name></author><summary type="html">I've been working remotely at Mozilla as a full time staff member for nearly 4 years now. People often ask me if remote working is boring. The typical question is usually along the lines of &quot;How do you ever get work done with all the distractions at home?&quot;. Well, I love what I do, so my usual response is &quot;Getting work done isn't usually the problem, it's knowing when to stop working that's the hard part&quot;. The next question is often &quot;Don't you feel lonely not speaking to anyone all day?&quot;. Then I explain about this thing called Vidyo, and while I'm not in an office every day we do actually talk face-to-face, even though we're not in the same room, or even in the same country a lot of the time. Remote working is just different to what a lot of people tend to expect. There are definite downsides, but there are some wonderful upsides too. Here are some lessons I've learned over the last 4 years that might be helpful to others.</summary></entry><entry><title type="html">My third year working at Mozilla</title><link href="https://alxgbsn.co.uk/2016/04/15/my-third-year-working-at-mozilla/" rel="alternate" type="text/html" title="My third year working at Mozilla" /><published>2016-04-15T00:00:00+00:00</published><updated>2016-04-15T00:00:00+00:00</updated><id>https://alxgbsn.co.uk/2016/04/15/my-third-year-working-at-mozilla</id><content type="html" xml:base="https://alxgbsn.co.uk/2016/04/15/my-third-year-working-at-mozilla/">&lt;figure&gt;
-    &lt;img src=&quot;/images/posts/whistler-2015.jpg&quot; alt=&quot;Whistler 2015&quot; /&gt;
+    &lt;img src=&quot;/images/posts/whistler-2015.jpg&quot; alt=&quot;Whistler 2015&quot; width=&quot;700&quot; height=&quot;395&quot; /&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;Today marks my third year working for &lt;a href=&quot;https://www.mozilla.org&quot;&gt;Mozilla&lt;/a&gt;!
@@ -607,7 +607,7 @@ on Firefox user on-boarding, I got to help build the interactive tour that
 demonstrates how Tracking Protection works in the new Firefox &lt;a href=&quot;https://www.mozilla.org/firefox/private-browsing/&quot;&gt;Private Browsing&lt;/a&gt; mode.&lt;/p&gt;
 
 &lt;figure&gt;
-    &lt;img src=&quot;/images/posts/tracking-protection-tour.png&quot; alt=&quot;Screenshot of Firefox Tracking Protection tour page&quot; srcset=&quot;/images/posts/tracking-protection-tour-high-res.png 1.5x&quot; /&gt;
+    &lt;img src=&quot;/images/posts/tracking-protection-tour.png&quot; alt=&quot;Screenshot of Firefox Tracking Protection tour page&quot; srcset=&quot;/images/posts/tracking-protection-tour-high-res.png 1.5x&quot; width=&quot;700&quot; height=&quot;520&quot; loading=&quot;lazy&quot; /&gt;
     &lt;figcaption&gt;Tracking Protection tour page&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -615,7 +615,7 @@ demonstrates how Tracking Protection works in the new Firefox &lt;a href=&quot;h
 to help introduce it to a lot of people updating their Firefox via a /whatsnew page.&lt;/p&gt;
 
 &lt;figure&gt;
-    &lt;img src=&quot;/images/posts/tracking-protection-whatsnew.png&quot; alt=&quot;Screenshot of Firefox /whatsnew page&quot; srcset=&quot;/images/posts/tracking-protection-whatsnew-high-res.png 1.5x&quot; /&gt;
+    &lt;img src=&quot;/images/posts/tracking-protection-whatsnew.png&quot; alt=&quot;Screenshot of Firefox /whatsnew page&quot; srcset=&quot;/images/posts/tracking-protection-whatsnew-high-res.png 1.5x&quot; width=&quot;700&quot; height=&quot;490&quot; loading=&quot;lazy&quot; /&gt;
     &lt;figcaption&gt;Firefox /whatsnew page&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -632,7 +632,7 @@ the rest of my team, or being able to bring my family along to
 experience he’ll always remember.&lt;/p&gt;
 
 &lt;figure&gt;
-    &lt;img src=&quot;/images/posts/zip-line-whistler.jpg&quot; alt=&quot;Our team preparing to zip-line from the top of a mountain!&quot; /&gt;
+    &lt;img src=&quot;/images/posts/zip-line-whistler.jpg&quot; alt=&quot;Our team preparing to zip-line from the top of a mountain!&quot; width=&quot;700&quot; height=&quot;613&quot; loading=&quot;lazy&quot; /&gt;
     &lt;figcaption&gt;Our team getting ready to zip-line!&lt;/figcaption&gt;
 &lt;/figure&gt;
 
