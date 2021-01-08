@@ -6,7 +6,7 @@ excerpt: Today marks my first year Mozillaversary, which is pretty hard to belie
 ---
 
 <figure>
-    <img src="/images/posts/mozilla-summit-brussels.jpg" alt="Mozilla Summit 2013, Brussels">
+    <img src="/images/posts/mozilla-summit-brussels.jpg" alt="Mozilla Summit 2013, Brussels" width="700" height="394">
 </figure>
 
 Today marks my first year Mozillaversary, which is pretty hard to believe! I feel very fortunate to work at [Mozilla](https://www.mozilla.org), as I get to work with a very [talented bunch of people](https://wiki.mozilla.org/Webdev/Web_Production). The last 12 months have flown by and it's pretty hard to put it all into a single blog post, so I thought I would try and put things into perspective using some simple statistics (hooray for open work flow and bug trackers).
@@ -26,7 +26,7 @@ Probably the biggest thing I worked on was a new interactive tour to guide users
 the redesigned Firefox UI (codenamed "Australis") that was released along with version 29.
 
 <figure>
-    <img src="/images/posts/firefox-australis-tour.png" alt="Screenshot of Firefox 29 “Australis” /firstrun tour">
+    <img src="/images/posts/firefox-australis-tour.png" alt="Screenshot of Firefox 29 “Australis” /firstrun tour" width="700" height="491" loading="lazy">
     <figcaption>Firefox 29 “Australis” /firstrun tour</figcaption>
 </figure>
 

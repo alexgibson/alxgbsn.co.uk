@@ -6,7 +6,7 @@ excerpt: Today marks my third year working for Mozilla! I usually try and put to
 ---
 
 <figure>
-    <img src="/images/posts/whistler-2015.jpg" alt="Whistler 2015">
+    <img src="/images/posts/whistler-2015.jpg" alt="Whistler 2015" width="700" height="395">
 </figure>
 
 Today marks my third year working for [Mozilla](https://www.mozilla.org)!
@@ -59,7 +59,7 @@ on Firefox user on-boarding, I got to help build the interactive tour that
 demonstrates how Tracking Protection works in the new Firefox [Private Browsing](https://www.mozilla.org/firefox/private-browsing/) mode.
 
 <figure>
-    <img src="/images/posts/tracking-protection-tour.png" alt="Screenshot of Firefox Tracking Protection tour page" srcset="/images/posts/tracking-protection-tour-high-res.png 1.5x">
+    <img src="/images/posts/tracking-protection-tour.png" alt="Screenshot of Firefox Tracking Protection tour page" srcset="/images/posts/tracking-protection-tour-high-res.png 1.5x" width="700" height="520" loading="lazy">
     <figcaption>Tracking Protection tour page</figcaption>
 </figure>
 
@@ -67,7 +67,7 @@ This is a feature I’m very proud that Mozilla decided to ship, so I'm really h
 to help introduce it to a lot of people updating their Firefox via a /whatsnew page.
 
 <figure>
-    <img src="/images/posts/tracking-protection-whatsnew.png" alt="Screenshot of Firefox /whatsnew page" srcset="/images/posts/tracking-protection-whatsnew-high-res.png 1.5x">
+    <img src="/images/posts/tracking-protection-whatsnew.png" alt="Screenshot of Firefox /whatsnew page" srcset="/images/posts/tracking-protection-whatsnew-high-res.png 1.5x" width="700" height="490" loading="lazy">
     <figcaption>Firefox /whatsnew page</figcaption>
 </figure>
 
@@ -85,7 +85,7 @@ the rest of my team, or being able to bring my family along to
 experience he’ll always remember.
 
 <figure>
-    <img src="/images/posts/zip-line-whistler.jpg" alt="Our team preparing to zip-line from the top of a mountain!">
+    <img src="/images/posts/zip-line-whistler.jpg" alt="Our team preparing to zip-line from the top of a mountain!" width="700" height="613" loading="lazy">
     <figcaption>Our team getting ready to zip-line!</figcaption>
 </figure>
 

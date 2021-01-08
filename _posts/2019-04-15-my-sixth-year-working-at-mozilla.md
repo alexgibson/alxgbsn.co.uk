@@ -6,7 +6,7 @@ excerpt: This week marks my sixth year working at Mozilla! I'll be honest, this 
 ---
 
 <figure>
-    <img src="/images/posts/sf-all-hands-2018.jpg" alt="Photo of San Fransisco's skyline taken at the Monday night event for Mozilla All-Hands, June 2018." srcset="/images/posts/sf-all-hands-2018-high-res.jpg 1.5x">
+    <img src="/images/posts/sf-all-hands-2018.jpg" alt="Photo of San Fransisco's skyline taken at the Monday night event for Mozilla All-Hands, June 2018." srcset="/images/posts/sf-all-hands-2018-high-res.jpg 1.5x" width="700" height="394">
     <figcaption>Photo of San Fransisco's skyline taken at the Monday night event for Mozilla All-Hands, June 2018.</figcaption>
 </figure>
 
@@ -18,7 +18,7 @@ Building a design system
 Mozilla's website design system, named [Protocol](https://protocol.mozilla.org), is now a real product. You can [install it via NPM](https://www.npmjs.com/package/@mozilla-protocol/core) and build on-brand Mozilla web pages using its compenents. Protocol builds on a system of _atoms_, _molecules_, and _organiams_, following the concepts first made popular in [Atomic Web Design](http://atomicdesign.bradfrost.com/). Many of the new design system components can be seen in use on the recently redesigned [www.mozilla.org](https://www.mozilla.org) pages.
 
 <figure>
-    <img src="/images/posts/protocol-homepage.png" alt="Sections of the mozilla.org homepage, built using Protocol components." srcset="/images/posts/protocol-homepage-high-res.png 1.5x">
+    <img src="/images/posts/protocol-homepage.png" alt="Sections of the mozilla.org homepage, built using Protocol components." srcset="/images/posts/protocol-homepage-high-res.png 1.5x" width="700" height="467" loading="lazy">
     <figcaption>Sections of the mozilla.org homepage, built using Protocol components.</figcaption>
 </figure>
 
@@ -47,6 +47,6 @@ Travel
 I got to visit Portland, San Fransisco for Mozilla's June all-hands event, and also Orlando for December's all-hands. I brought the family along to Disney World for an end-of-year vacation afterwards, who all had an amazing time. We're very lucky!
 
 <figure>
-    <img src="/images/posts/orlando-all-hands-2018.jpg" alt="Family fun outside the Disney Swan & Dolphin, December 2018." srcset="/images/posts/orlando-all-hands-2018-high-res.jpg 1.5x">
+    <img src="/images/posts/orlando-all-hands-2018.jpg" alt="Family fun outside the Disney Swan & Dolphin, December 2018." srcset="/images/posts/orlando-all-hands-2018-high-res.jpg 1.5x" width="700" height="467" loading="lazy">
     <figcaption>Family photo outside the Disney Swan & Dolphin, December 2018.</figcaption>
 </figure>

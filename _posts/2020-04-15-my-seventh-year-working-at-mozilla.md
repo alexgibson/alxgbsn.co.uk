@@ -6,7 +6,7 @@ excerpt: This week marks my seventh year working full time for Mozilla. The past
 ---
 
 <figure>
-    <img src="/images/posts/berlin-2020.jpg" alt="Mozilla remotees group photo in Berlin, January 2020" srcset="/images/posts/berlin-2020-high-res.jpg 1.5x">
+    <img src="/images/posts/berlin-2020.jpg" alt="Mozilla remotees group photo in Berlin, January 2020" srcset="/images/posts/berlin-2020-high-res.jpg 1.5x" width="700" height="385">
     <figcaption>Mozilla remotees group photo in Berlin, January 2020</figcaption>
 </figure>
 

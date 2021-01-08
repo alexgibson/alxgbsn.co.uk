@@ -6,7 +6,7 @@ excerpt: Today marks my fifth year working for Mozilla! This past year has been 
 ---
 
 <figure>
-    <img src="/images/posts/sf-2017-staff-photo.jpg" alt="Mozilla staff photo from All-Hands event in Austin, December 2017." srcset="/images/posts/sf-2017-staff-photo-high-res.jpg 1.5x">
+    <img src="/images/posts/sf-2017-staff-photo.jpg" alt="Mozilla staff photo from All-Hands event in Austin, December 2017." srcset="/images/posts/sf-2017-staff-photo-high-res.jpg 1.5x" width="700" height="409">
     <figcaption>Mozilla staff photo from All-Hands event in Austin, December 2017.</figcaption>
 </figure>
 
@@ -44,6 +44,6 @@ Travel
 On the travel front, I got to visit both Austin and San Francisco for Mozilla all-hands weeks. As always, both weeks we're fun but exhausting. Austin is a great city, and we ate way too much BBQ.
 
 <figure>
-    <img src="/images/posts/austin-all-hands-closing-party.jpg" alt="Mozilla Austin all-hands closing party, December 2017." srcset="/images/posts/austin-all-hands-closing-party-high-res.jpg 1.5x">
+    <img src="/images/posts/austin-all-hands-closing-party.jpg" alt="Mozilla Austin all-hands closing party, December 2017." srcset="/images/posts/austin-all-hands-closing-party-high-res.jpg 1.5x" width="700" height="525" loading="lazy">
     <figcaption>Mozilla Austin all-hands closing party, December 2017.</figcaption>
 </figure>

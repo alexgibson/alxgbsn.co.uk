@@ -6,7 +6,7 @@ excerpt: This week marks my 4th year Mozillaversary! As usual, I try to put toge
 ---
 
 <figure>
-    <img src="/images/posts/hawaii-staff-photo.jpg" alt="Mozilla staff photo from All-Hands event in Hawaii, December 2016." srcset="/images/posts/hawaii-staff-photo-high-res.jpg 1.5x">
+    <img src="/images/posts/hawaii-staff-photo.jpg" alt="Mozilla staff photo from All-Hands event in Hawaii, December 2016." srcset="/images/posts/hawaii-staff-photo-high-res.jpg 1.5x" width="700" height="409">
     <figcaption>Mozilla staff photo from All-Hands event in Hawaii, December 2016</figcaption>
 </figure>
 
@@ -39,7 +39,7 @@ Firefox Download Pages
 The main [Firefox download page](https://www.mozilla.org/firefox/new/) is one of the most high traffic pages on mozorg, so it's naturally something we pay close attention to when making changes. This year we experimented on the page **a lot**. It got redesigned it no less than three times, and continually tweaked over the course of multiple A/B tests. Lots of scrutiny goes into every change, especially in relation to page weight, loading time, and the impact that can have on download conversions. Ultimately what used to be a relatively plain looking page turned into something quite beautiful.
 
 <figure>
-    <img src="/images/posts/download-page-horizon.png" alt="Redesigned Firefox download page" srcset="/images/posts/download-page-horizon-high-res.png 1.5x">
+    <img src="/images/posts/download-page-horizon.png" alt="Redesigned Firefox download page" srcset="/images/posts/download-page-horizon-high-res.png 1.5x" width="700" height="489" loading="lazy">
     <figcaption>Redesigned Firefox download page</figcaption>
 </figure>
 
@@ -64,7 +64,7 @@ All-hands and travel
 --------------------
 
 <figure>
-    <img src="/images/posts/hawaii-volcano.jpg" alt="In the crater of a volcano!" srcset="/images/posts/hawaii-volcano-high-res.jpg 1.5x">
+    <img src="/images/posts/hawaii-volcano.jpg" alt="In the crater of a volcano!" srcset="/images/posts/hawaii-volcano-high-res.jpg 1.5x" width="700" height="525" loading="lazy">
     <figcaption>In the crater of a volcano!</figcaption>
 </figure>
 
