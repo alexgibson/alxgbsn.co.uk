@@ -2,6 +2,15 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://alxgbsn.co.uk/2021/04/15/my-eighth-year-working-at-mozilla-copy/</loc>
+    
+    <lastmod>2021-04-15T00:00:00+00:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
     <loc>https://alxgbsn.co.uk/2020/04/15/my-seventh-year-working-at-mozilla/</loc>
     
     <lastmod>2020-04-15T00:00:00+00:00</lastmod>
@@ -279,7 +288,7 @@
   
   <url>
     <loc>https://alxgbsn.co.uk/about/</loc>
-    <lastmod>2021-01-08T15:18:33+00:00</lastmod>
+    <lastmod>2021-04-15T13:59:11+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -288,7 +297,7 @@
   
   <url>
     <loc>https://alxgbsn.co.uk/contact/</loc>
-    <lastmod>2021-01-08T15:18:33+00:00</lastmod>
+    <lastmod>2021-04-15T13:59:11+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -297,7 +306,7 @@
   
   <url>
     <loc>https://alxgbsn.co.uk/</loc>
-    <lastmod>2021-01-08T15:18:33+00:00</lastmod>
+    <lastmod>2021-04-15T13:59:11+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -314,7 +323,7 @@
   
   <url>
     <loc>https://alxgbsn.co.uk/</loc>
-    <lastmod>2021-01-08T15:18:33+00:00</lastmod>
+    <lastmod>2021-04-15T13:59:11+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -323,7 +332,16 @@
   
   <url>
     <loc>https://alxgbsn.co.uk/</loc>
-    <lastmod>2021-01-08T15:18:33+00:00</lastmod>
+    <lastmod>2021-04-15T13:59:11+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://alxgbsn.co.uk/</loc>
+    <lastmod>2021-04-15T13:59:11+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>

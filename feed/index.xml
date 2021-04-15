@@ -1,4 +1,14 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="https://alxgbsn.co.uk/feed/index.xml" rel="self" type="application/atom+xml" /><link href="https://alxgbsn.co.uk/" rel="alternate" type="text/html" /><updated>2021-01-08T15:18:33+00:00</updated><id>https://alxgbsn.co.uk/feed/index.xml</id><title type="html">Alex Gibson, Front End Developer</title><author><name>Alex Gibson</name></author><entry><title type="html">My seventh year working at Mozilla</title><link href="https://alxgbsn.co.uk/2020/04/15/my-seventh-year-working-at-mozilla/" rel="alternate" type="text/html" title="My seventh year working at Mozilla" /><published>2020-04-15T00:00:00+00:00</published><updated>2020-04-15T00:00:00+00:00</updated><id>https://alxgbsn.co.uk/2020/04/15/my-seventh-year-working-at-mozilla</id><content type="html" xml:base="https://alxgbsn.co.uk/2020/04/15/my-seventh-year-working-at-mozilla/">&lt;figure&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="https://alxgbsn.co.uk/feed/index.xml" rel="self" type="application/atom+xml" /><link href="https://alxgbsn.co.uk/" rel="alternate" type="text/html" /><updated>2021-04-15T13:59:11+00:00</updated><id>https://alxgbsn.co.uk/feed/index.xml</id><title type="html">Alex Gibson, Front End Developer</title><author><name>Alex Gibson</name></author><entry><title type="html">My eighth year working at Mozilla</title><link href="https://alxgbsn.co.uk/2021/04/15/my-eighth-year-working-at-mozilla-copy/" rel="alternate" type="text/html" title="My eighth year working at Mozilla" /><published>2021-04-15T00:00:00+00:00</published><updated>2021-04-15T00:00:00+00:00</updated><id>https://alxgbsn.co.uk/2021/04/15/my-eighth-year-working-at-mozilla%20copy</id><content type="html" xml:base="https://alxgbsn.co.uk/2021/04/15/my-eighth-year-working-at-mozilla-copy/">&lt;blockquote&gt;
+  &lt;p&gt;What will 2020 bring? Your guess is as good as mine. My hope is it can only get better from here.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Fucking. Hell.&lt;/p&gt;
+
+&lt;p&gt;Well, that was the most short sighted and optimistic take ever, eh? It feels like a decade since I wrote that, and a world away from where we all stand today. I would normally write a post on this day to talk about some of the &lt;a href=&quot;https://www.mozilla.org/products/vpn/&quot;&gt;work&lt;/a&gt; that I’ve been doing at Mozilla over the past 12 months, but that seems kinda insignificant right now. The global pandemic has hit the world hard, and while we’re starting to slowly to recover, it’s going to be a long process. Many businesses world wide, including Mozilla, felt the direct impact of the pandemic. I count myself fortunate to still have a stable job, and to be able to look after my family during this time. We’re all still healthy, and that’s all that really matters right now.&lt;/p&gt;
+
+&lt;p&gt;One thing that’s kept me going over the past year is seeing just how much people can come together to help and support each other. Family, friends, colleagues, management at work - have all been &lt;em&gt;amazing&lt;/em&gt;. And as difficult as my kids have found the last 12 months, it motivates me to see them continue to bring enthusiasm to the world. No matter what’s happening that day, they can &lt;em&gt;always&lt;/em&gt; cheer me up.&lt;/p&gt;
+
+&lt;p&gt;So I’m going to leave this short and just say &lt;strong&gt;&lt;em&gt;stay safe&lt;/em&gt;&lt;/strong&gt;. It’s going to be a truly global effort to get through this. Afterward, I’m sure there will likely be a new definition of “normal”. But I have hope that we are going to get there.&lt;/p&gt;</content><author><name>Alex Gibson</name></author><summary type="html">What will 2020 bring? Your guess is as good as mine. My hope is it can only get better from here. Fucking. Hell.</summary></entry><entry><title type="html">My seventh year working at Mozilla</title><link href="https://alxgbsn.co.uk/2020/04/15/my-seventh-year-working-at-mozilla/" rel="alternate" type="text/html" title="My seventh year working at Mozilla" /><published>2020-04-15T00:00:00+00:00</published><updated>2020-04-15T00:00:00+00:00</updated><id>https://alxgbsn.co.uk/2020/04/15/my-seventh-year-working-at-mozilla</id><content type="html" xml:base="https://alxgbsn.co.uk/2020/04/15/my-seventh-year-working-at-mozilla/">&lt;figure&gt;
     &lt;img src=&quot;/images/posts/berlin-2020.jpg&quot; alt=&quot;Mozilla remotees group photo in Berlin, January 2020&quot; srcset=&quot;/images/posts/berlin-2020-high-res.jpg 1.5x&quot; width=&quot;700&quot; height=&quot;385&quot; /&gt;
     &lt;figcaption&gt;Mozilla remotees group photo in Berlin, January 2020&lt;/figcaption&gt;
 &lt;/figure&gt;
@@ -556,85 +566,4 @@ SyntaxError: Unexpected identifier
 
 &lt;h2 id=&quot;make-the-most-of-time-together&quot;&gt;Make the most of time together&lt;/h2&gt;
 
-&lt;p&gt;Being a globally distributed company, Mozilla hosts &lt;a href=&quot;https://wiki.mozilla.org/All_Hands&quot;&gt;All Hands&lt;/a&gt; weeks twice a year where the whole company can get together and plan for the future. These weeks are generally exhausting but also pretty amazing, with so many people being together in one place. We also get to do the odd work week with our functional or durable teams to work on different projects. This usually involves traveling to one of the many &lt;a href=&quot;https://www.mozilla.org/en-US/contact/spaces/&quot;&gt;Mozilla spaces&lt;/a&gt; to work closely together for a week. Making the most of this in-person time is great for things like planning and sprint work, but the main thing I think everyone gets out of it is just spending time together. Talking every day on video is one thing, but also getting to do stuff together in the same location is really important. Not just for the work itself, but also for team building. I try and take as many of these opportunities as I can.&lt;/p&gt;</content><author><name>Alex Gibson</name></author><summary type="html">I've been working remotely at Mozilla as a full time staff member for nearly 4 years now. People often ask me if remote working is boring. The typical question is usually along the lines of &quot;How do you ever get work done with all the distractions at home?&quot;. Well, I love what I do, so my usual response is &quot;Getting work done isn't usually the problem, it's knowing when to stop working that's the hard part&quot;. The next question is often &quot;Don't you feel lonely not speaking to anyone all day?&quot;. Then I explain about this thing called Vidyo, and while I'm not in an office every day we do actually talk face-to-face, even though we're not in the same room, or even in the same country a lot of the time. Remote working is just different to what a lot of people tend to expect. There are definite downsides, but there are some wonderful upsides too. Here are some lessons I've learned over the last 4 years that might be helpful to others.</summary></entry><entry><title type="html">My third year working at Mozilla</title><link href="https://alxgbsn.co.uk/2016/04/15/my-third-year-working-at-mozilla/" rel="alternate" type="text/html" title="My third year working at Mozilla" /><published>2016-04-15T00:00:00+00:00</published><updated>2016-04-15T00:00:00+00:00</updated><id>https://alxgbsn.co.uk/2016/04/15/my-third-year-working-at-mozilla</id><content type="html" xml:base="https://alxgbsn.co.uk/2016/04/15/my-third-year-working-at-mozilla/">&lt;figure&gt;
-    &lt;img src=&quot;/images/posts/whistler-2015.jpg&quot; alt=&quot;Whistler 2015&quot; width=&quot;700&quot; height=&quot;395&quot; /&gt;
-&lt;/figure&gt;
-
-&lt;p&gt;Today marks my third year working for &lt;a href=&quot;https://www.mozilla.org&quot;&gt;Mozilla&lt;/a&gt;!
-I usually try and put together a short recap on the things I’ve accomplished
-during the past year here. There are so many things I could pick out, but I find
-it hard to know quite where to begin. Three years have flown by very quickly, but
-looking back at the time when I started, I feel like I have grown considerably.
-I guess this has been my first year at Mozilla where I no longer feel “new”,
-although I am still learning constantly by being surrounded by so many smart people.&lt;/p&gt;
-
-&lt;p&gt;Here are some of my personal highlights (and random stats) from the past year.&lt;/p&gt;
-
-&lt;h2 id=&quot;contributions&quot;&gt;Contributions&lt;/h2&gt;
-
-&lt;p&gt;I made over &lt;a href=&quot;https://github.com/mozilla/bedrock/commits?author=alexgibson&quot;&gt;269 commits&lt;/a&gt; to &lt;a href=&quot;https://github.com/mozilla/bedrock&quot;&gt;bedrock&lt;/a&gt; (the repository codename for
-&lt;a href=&quot;https://www.mozilla.org&quot;&gt;www.mozilla.org&lt;/a&gt;). I enjoy working on the site because
-it’s high traffic, spans a large code base, and gets translated into a huge
-number of languages (now over 100 locales). It also has it’s own little place in
-internet &lt;a href=&quot;https://www.youtube.com/watch?v=4Q7FTjhvZ7Y&quot;&gt;history&lt;/a&gt;, which I think
-is kinda cool.&lt;/p&gt;
-
-&lt;p&gt;During the past year our small team made big progress paying off technical debt
-and shaping changes for the future. We finished migrating away from the old
-legacy PHP/SVN site, and finally moved everything over to Python/GitHub. This
-has taken several years to complete in itself (amongst other priorities). We
-also did a ton of infrastructure work moving the site to &lt;a href=&quot;http://aws.amazon.com/&quot;&gt;AWS&lt;/a&gt;,
-which being largely a front-end person who is not accustomed to such work, was
-really fascinating to watch.&lt;/p&gt;
-
-&lt;p&gt;I have now filed over 280 bugs on &lt;a href=&quot;https://bugzilla.mozilla.org/&quot;&gt;Bugzilla&lt;/a&gt;,
-been assigned over 350 bugs, and made over 2700 comments.&lt;/p&gt;
-
-&lt;h2 id=&quot;continuous-integration-and-functional-testing&quot;&gt;Continuous integration and functional testing&lt;/h2&gt;
-
-&lt;p&gt;I spent considerable time learning all about &lt;a href=&quot;http://www.seleniumhq.org/&quot;&gt;Selenium&lt;/a&gt;
-and automated cross-browser testing, which also required learning more Python.
-Together with Mozilla’s &lt;a href=&quot;https://quality.mozilla.org/teams/web-qa/&quot;&gt;WebQA team&lt;/a&gt;,
-I worked on building an &lt;a href=&quot;http://bedrock.readthedocs.org/en/latest/testing.html&quot;&gt;integration test suite&lt;/a&gt;
-for bedrock, which we now run as part of our new &lt;a href=&quot;http://bedrock.readthedocs.org/en/latest/pipeline.html&quot;&gt;automated deployment pipeline&lt;/a&gt;. This was a
-real learning curve for me being primarily a front-end developer, but something
-that I think has helped broaden my skills.&lt;/p&gt;
-
-&lt;h2 id=&quot;tracking-protection&quot;&gt;Tracking Protection&lt;/h2&gt;
-
-&lt;p&gt;Continuing my &lt;a href=&quot;https://alxgbsn.co.uk/2015/04/18/my-second-year-working-at-mozilla/&quot;&gt;prior work&lt;/a&gt;
-on Firefox user on-boarding, I got to help build the interactive tour that
-demonstrates how Tracking Protection works in the new Firefox &lt;a href=&quot;https://www.mozilla.org/firefox/private-browsing/&quot;&gt;Private Browsing&lt;/a&gt; mode.&lt;/p&gt;
-
-&lt;figure&gt;
-    &lt;img src=&quot;/images/posts/tracking-protection-tour.png&quot; alt=&quot;Screenshot of Firefox Tracking Protection tour page&quot; srcset=&quot;/images/posts/tracking-protection-tour-high-res.png 1.5x&quot; width=&quot;700&quot; height=&quot;520&quot; loading=&quot;lazy&quot; /&gt;
-    &lt;figcaption&gt;Tracking Protection tour page&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;p&gt;This is a feature I’m very proud that Mozilla decided to ship, so I’m really happy we got
-to help introduce it to a lot of people updating their Firefox via a /whatsnew page.&lt;/p&gt;
-
-&lt;figure&gt;
-    &lt;img src=&quot;/images/posts/tracking-protection-whatsnew.png&quot; alt=&quot;Screenshot of Firefox /whatsnew page&quot; srcset=&quot;/images/posts/tracking-protection-whatsnew-high-res.png 1.5x&quot; width=&quot;700&quot; height=&quot;490&quot; loading=&quot;lazy&quot; /&gt;
-    &lt;figcaption&gt;Firefox /whatsnew page&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;h2 id=&quot;all-hands-weeks&quot;&gt;All-hands weeks&lt;/h2&gt;
-
-&lt;p&gt;On the travel front, I got to visit &lt;a href=&quot;http://www.whistler.com/&quot;&gt;Whistler&lt;/a&gt; in
-British Columbia and &lt;a href=&quot;https://en.wikipedia.org/wiki/Orlando,_Florida&quot;&gt;Orlando&lt;/a&gt;
-in Florida for Mozilla all-hands weeks. I find these types of weeks generally
-exhausting, but at the same time I feel very privileged to be able to attend
-company events on this scale. I don’t think I’ll ever forget
-&lt;a href=&quot;http://www.superflyziplines.com/&quot;&gt;zip-lining from the top of a mountain&lt;/a&gt; with
-the rest of my team, or being able to bring my family along to
-&lt;a href=&quot;https://disneyworld.disney.go.com/&quot;&gt;Disney World&lt;/a&gt; so my son could have an
-experience he’ll always remember.&lt;/p&gt;
-
-&lt;figure&gt;
-    &lt;img src=&quot;/images/posts/zip-line-whistler.jpg&quot; alt=&quot;Our team preparing to zip-line from the top of a mountain!&quot; width=&quot;700&quot; height=&quot;613&quot; loading=&quot;lazy&quot; /&gt;
-    &lt;figcaption&gt;Our team getting ready to zip-line!&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;p&gt;I feel hugely appreciative to Mozilla for being able to share experiences like
-this with colleagues, friends and family alike.&lt;/p&gt;</content><author><name>Alex Gibson</name></author><summary type="html">Today marks my third year working for Mozilla! I usually try and put together a short recap on the things I’ve accomplished during the past year here. There are so many things I could pick out, but I find it hard to know quite where to begin. Three years have flown by very quickly, but looking back at the time when I started, I feel like I have grown considerably. I guess this has been my first year at Mozilla where I no longer feel “new”, although I am still learning constantly by being surrounded by so many smart people.</summary></entry></feed>
+&lt;p&gt;Being a globally distributed company, Mozilla hosts &lt;a href=&quot;https://wiki.mozilla.org/All_Hands&quot;&gt;All Hands&lt;/a&gt; weeks twice a year where the whole company can get together and plan for the future. These weeks are generally exhausting but also pretty amazing, with so many people being together in one place. We also get to do the odd work week with our functional or durable teams to work on different projects. This usually involves traveling to one of the many &lt;a href=&quot;https://www.mozilla.org/en-US/contact/spaces/&quot;&gt;Mozilla spaces&lt;/a&gt; to work closely together for a week. Making the most of this in-person time is great for things like planning and sprint work, but the main thing I think everyone gets out of it is just spending time together. Talking every day on video is one thing, but also getting to do stuff together in the same location is really important. Not just for the work itself, but also for team building. I try and take as many of these opportunities as I can.&lt;/p&gt;</content><author><name>Alex Gibson</name></author><summary type="html">I've been working remotely at Mozilla as a full time staff member for nearly 4 years now. People often ask me if remote working is boring. The typical question is usually along the lines of &quot;How do you ever get work done with all the distractions at home?&quot;. Well, I love what I do, so my usual response is &quot;Getting work done isn't usually the problem, it's knowing when to stop working that's the hard part&quot;. The next question is often &quot;Don't you feel lonely not speaking to anyone all day?&quot;. Then I explain about this thing called Vidyo, and while I'm not in an office every day we do actually talk face-to-face, even though we're not in the same room, or even in the same country a lot of the time. Remote working is just different to what a lot of people tend to expect. There are definite downsides, but there are some wonderful upsides too. Here are some lessons I've learned over the last 4 years that might be helpful to others.</summary></entry></feed>
