@@ -12,7 +12,7 @@
   {% else %}
   <link rel="canonical" href="{{ site.url }}{{ page.url }}">
   {% endif %}
-  <script type="module">
+  <script>
     try {
       const currentPref = sessionStorage.getItem('t-dark');
       const prefersDarkMode = currentPref === 'true' || (currentPref !== 'false' && window.matchMedia('(prefers-color-scheme: dark)').matches);
