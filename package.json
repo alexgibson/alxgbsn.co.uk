@@ -3,8 +3,12 @@
   "version": "1.0.2",
   "description": "Personal blog",
   "private": true,
+  "source": "src/index.html",
   "devDependencies": {
-    "eslint": "^8.12.0"
+    "del-cli": "^5.0.0",
+    "eslint": "^8.30.0",
+    "gh-pages": "^4.0.0",
+    "parcel": "^2.8.2"
   },
   "homepage": "http://alxgbsn.co.uk",
   "repository": {
@@ -22,14 +26,13 @@
     "url": "https://github.com/alexgibson/alxgbsn.co.uk/issues/issues"
   },
   "scripts": {
-    "prebuild": "npm run clean",
-    "build": "bundle exec jekyll build",
-    "preserve": "npm run clean",
-    "serve": "bundle exec jekyll serve --livereload",
-    "clean": "bundle exec jekyll clean",
-    "doctor": "bundle exec jekyll doctor",
-    "lint": "./node_modules/.bin/eslint ./_assets/js/*.js",
-    "pretest": "npm run lint && npm run doctor",
-    "test": "bundle exec htmlproofer ./_site --url-ignore /feed/ --check-html --check-favicon --only-4xx --assume-extension --disable-external"
+    "clean": "del dist/*",
+    "lint": "eslint .",
+    "pre-start": "npm run clean && npm run lint",
+    "start": "parcel",
+    "pre-build": "npm run clean && npm run lint",
+    "build": "parcel build",
+    "pre-deploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   }
 }

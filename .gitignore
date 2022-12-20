@@ -1,10 +1,4 @@
 .DS_Store
-.jekyll-cache/
-.sass-cache/
-.asset-cache/
 node_modules
-_site/
-.bundle/
-.jekyll-metadata
-.publish/
-/vendor
+dist
+.parcel-cache
