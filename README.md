@@ -1,6 +1,26 @@
 
-alxgbsn.co.uk
-=============
+https://alxgbsn.co.uk
+=====================
 
-TODO
+My personal web site.
+
+Install
+-------
+
+`npm install`
+
+Serve
+-----
+
+`npm start`
+
+Build
+-----
+
+`npm run build`
+
+Deploy
+------
+
+`npm run deploy`
 
