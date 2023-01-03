@@ -1,7 +1,7 @@
 {
   "name": "alexgibson",
-  "version": "1.0.2",
-  "description": "Personal blog",
+  "version": "2.0",
+  "description": "My personal web site",
   "private": true,
   "source": "src/index.html",
   "devDependencies": {
@@ -11,16 +11,16 @@
     "parcel": "^2.8.2",
     "parcel-reporter-static-files-copy": "^1.5.0"
   },
-  "homepage": "http://alxgbsn.co.uk",
+  "homepage": "https://alxgbsn.co.uk",
   "repository": {
     "type": "git",
     "url": "https://github.com/alexgibson/alxgbsn.co.uk.git"
   },
-  "author": "Alex Gibson <alxgbsn@gmail.com> (http://alxgbsn.co.uk/)",
+  "author": "Alex Gibson <alxgbsn@gmail.com> (https://alxgbsn.co.uk/)",
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://raw.githubusercontent.com/alexgibson/alexgibson.github.com/admin/LICENSE.md"
+      "url": "https://raw.githubusercontent.com/alexgibson/alxgbsn.co.uk/main/LICENSE.md"
     }
   ],
   "bugs": {
