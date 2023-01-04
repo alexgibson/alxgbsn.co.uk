@@ -29,11 +29,11 @@
   "scripts": {
     "clean": "del dist/*",
     "lint": "eslint .",
-    "pre-start": "npm run clean && npm run lint",
+    "prestart": "npm run clean && npm run lint",
     "start": "parcel",
-    "pre-build": "npm run clean && npm run lint",
+    "prebuild": "npm run clean && npm run lint",
     "build": "parcel build",
-    "pre-deploy": "npm run build",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   }
 }
