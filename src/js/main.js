@@ -37,3 +37,5 @@ console.log(`
     ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢷⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣸⣿⣤⣀⠀⠀⠈⠙⠛⠀⠀⠀⠈⢣⣄⡾⠁⠀⠀⠀⠀⠀⠀⠀⠀⢻⡀⠀⠀⠀⠀⠀⠀⠀
     ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⣟⣵⣿⠉⠙⠶⢤⡀⠀⠀⠀⠀⠀⠀⢻⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⢾⣇⠀⠀⠀⠀⠀⠀⠀
 `);
+
+console.log('IGN Playlist:', 'https://www.ign.com/playlist/alxgbsn/lists/backlog');
