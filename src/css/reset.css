@@ -10,13 +10,13 @@ main,
 nav,
 section,
 summary {
-    display: block;
+  display: block;
 }
 
 audio,
 video,
 canvas {
-    display: inline-block;
+  display: inline-block;
 }
 
 html,
@@ -40,41 +40,41 @@ li,
 dl,
 dt,
 dd {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 blockquote::before,
 blockquote::after,
 q::before,
 q::after {
-    content: '';
+  content: "";
 }
 
 blockquote,
 q {
-    quotes: '' '';
+  quotes: "" "";
 }
 
 table {
-    border-collapse: collapse;
-    border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 iframe,
 a img {
-    border: 0;
+  border: 0;
 }
 
 img,
 video,
 object,
 embed {
-    -ms-interpolation-mode: bicubic;
-    height: auto;
-    max-width: 100%;
+  -ms-interpolation-mode: bicubic;
+  height: auto;
+  max-width: 100%;
 }
 
 [hidden] {
-    display: none;
+  display: none;
 }

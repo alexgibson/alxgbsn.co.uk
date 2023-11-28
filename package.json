@@ -6,10 +6,13 @@
   "source": "src/index.html",
   "devDependencies": {
     "del-cli": "^5.0.0",
-    "eslint": "^8.31.0",
+    "eslint": "^8.54.0",
+    "eslint-config-prettier": "^9.0.0",
     "gh-pages": "^4.0.0",
+    "globals": "^13.23.0",
     "parcel": "^2.8.2",
-    "parcel-reporter-static-files-copy": "^1.5.0"
+    "parcel-reporter-static-files-copy": "^1.5.0",
+    "prettier": "^3.1.0"
   },
   "homepage": "https://alxgbsn.co.uk",
   "repository": {
@@ -28,7 +31,8 @@
   },
   "scripts": {
     "clean": "del dist/*",
-    "lint": "eslint .",
+    "lint": "prettier --check . && npx eslint .",
+    "format": "prettier --write .",
     "prestart": "npm run clean && npm run lint",
     "start": "parcel",
     "prebuild": "npm run clean && npm run lint",

@@ -1,26 +1,19 @@
-
-https://alxgbsn.co.uk
-=====================
+# https://alxgbsn.co.uk
 
 My personal web site.
 
-Install
--------
+## Install
 
 `npm install`
 
-Serve
------
+## Serve
 
 `npm start`
 
-Build
------
+## Build
 
 `npm run build`
 
-Deploy
-------
+## Deploy
 
 `npm run deploy`
-
