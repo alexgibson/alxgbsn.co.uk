@@ -1,5 +1,25 @@
+:root {
+  --color-dark-theme-background: #1c1b22;
+  --color-dark-theme-foreground: #fbfbfe;
+  --color-dark-theme-link: #00ddff;
+  --color-light-theme-background: #fff;
+  --color-light-theme-foreground: #15141a;
+  --color-light-theme-link: #0061e0;
+  --color-link: var(--color-light-theme-link);
+  --color-main-background: var(--color-light-theme-background);
+  --color-main-foreground: var(--color-light-theme-foreground);
+
+  @media (prefers-color-scheme: dark) {
+    --color-link: var(--color-dark-theme-link);
+    --color-main-background: var(--color-dark-theme-background);
+    --color-main-foreground: var(--color-dark-theme-foreground);
+  }
+}
+
 html,
 body {
+  background-color: var(--color-main-background);
+  color: var(--color-main-foreground);
   margin: 0;
 }
 
@@ -12,13 +32,29 @@ main {
 }
 
 h1 {
-  margin-bottom: 60px;
+  margin-bottom: 1.2em;
   text-align: center;
 }
 
-.scrooge {
-  display: block;
-  margin: 0 auto 40px;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--color-main-foreground);
+}
+
+a:link,
+a:visited {
+  color: var(--color-link);
+  text-decoration: underline;
+}
+
+a:hover,
+a:active,
+a:focus {
+  text-decoration: none;
 }
 
 p {
@@ -43,4 +79,9 @@ small {
 footer {
   margin: 60px 0;
   text-align: center;
+}
+
+.scrooge {
+  display: block;
+  margin: 0 auto 40px;
 }
