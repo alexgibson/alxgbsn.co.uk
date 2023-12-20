@@ -1,4 +1,26 @@
+:root {
+  --color-dark-theme-background: #1c1b22;
+  --color-dark-theme-foreground: #fbfbfe;
+  --color-dark-theme-link: #0df;
+  --color-light-theme-background: #fff;
+  --color-light-theme-foreground: #15141a;
+  --color-light-theme-link: #0061e0;
+  --color-link: var(--color-light-theme-link);
+  --color-main-background: var(--color-light-theme-background);
+  --color-main-foreground: var(--color-light-theme-foreground);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-link: var(--color-dark-theme-link);
+    --color-main-background: var(--color-dark-theme-background);
+    --color-main-foreground: var(--color-dark-theme-foreground);
+  }
+}
+
 html, body {
+  background-color: var(--color-main-background);
+  color: var(--color-main-foreground);
   margin: 0;
 }
 
@@ -12,12 +34,20 @@ main {
 
 h1 {
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 1.2em;
 }
 
-.scrooge {
-  margin: 0 auto 40px;
-  display: block;
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-main-foreground);
+}
+
+a:link, a:visited {
+  color: var(--color-link);
+  text-decoration: underline;
+}
+
+a:hover, a:active, a:focus {
+  text-decoration: none;
 }
 
 p {
@@ -42,6 +72,11 @@ small {
 footer {
   text-align: center;
   margin: 60px 0;
+}
+
+.scrooge {
+  margin: 0 auto 40px;
+  display: block;
 }
 
 /*# sourceMappingURL=index.77a9bc14.css.map */
