@@ -13,7 +13,7 @@
     "parcel": "^2.12.0",
     "parcel-reporter-static-files-copy": "^1.5.3",
     "prettier": "^3.2.5",
-    "update-browserslist-db": "^1.0.15"
+    "update-browserslist-db": "^1.0.16"
   },
   "homepage": "https://alxgbsn.co.uk",
   "repository": {
