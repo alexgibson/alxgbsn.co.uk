@@ -87,6 +87,10 @@ footer {
   margin-top: 2rem;
 }
 
+footer p {
+  margin-bottom: 0;
+}
+
 .avatar {
   border-radius: 50%;
   height: 100px;
