@@ -37,7 +37,7 @@
     "prestart": "npm run clean && npm run lint",
     "start": "parcel",
     "prebuild": "npm run clean && npm run lint",
-    "build": "parcel build",
+    "build": "parcel build --no-cache",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   }
