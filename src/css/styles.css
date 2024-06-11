@@ -131,3 +131,9 @@ ul.social.a-slide-up {
 footer.a-slide-up {
   animation-delay: 400ms;
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .a-slide-up {
+    animation: none;
+  }
+}
