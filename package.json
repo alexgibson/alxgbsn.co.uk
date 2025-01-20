@@ -7,7 +7,7 @@
   "devDependencies": {
     "del-cli": "^6.0.0",
     "eslint": "^9.18.0",
-    "eslint-config-prettier": "^9.1.0",
+    "eslint-config-prettier": "^10.0.1",
     "gh-pages": "^6.3.0",
     "globals": "^15.14.0",
     "parcel": "^2.13.3",
