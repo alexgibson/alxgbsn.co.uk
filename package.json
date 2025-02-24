@@ -9,7 +9,7 @@
     "eslint": "^9.21.0",
     "eslint-config-prettier": "^10.0.1",
     "gh-pages": "^6.3.0",
-    "globals": "^15.15.0",
+    "globals": "^16.0.0",
     "parcel": "^2.13.3",
     "parcel-reporter-static-files-copy": "^1.5.3",
     "prettier": "^3.5.2",
