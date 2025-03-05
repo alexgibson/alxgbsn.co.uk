@@ -34,7 +34,8 @@
   },
   "scripts": {
     "clean": "del dist/*",
-    "lint": "prettier --check . && npx eslint .",
+    "check": "tsc src/js/*.ts --noEmit --allowImportingTsExtensions",
+    "lint": "prettier --check . && npx eslint && npm run check",
     "format": "prettier --write .",
     "prestart": "npm run clean && npm run lint",
     "start": "parcel",

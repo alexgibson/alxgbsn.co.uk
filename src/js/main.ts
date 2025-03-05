@@ -1,12 +1,12 @@
 import Ascii from "./ascii.ts";
 
-function chooseAscii(Ascii: string[]): string {
-  const index = Math.floor(Math.random() * Ascii.length);
-  return Ascii[index];
+function chooseRandomItem<T>(array: T[]): T {
+  const index = Math.floor(Math.random() * array.length);
+  return array[index];
 }
 
-function render(Ascii: string[]): void {
-  console.log(chooseAscii(Ascii));
+function logItem<T>(array: T[]): void {
+  console.log(chooseRandomItem(array));
 }
 
 function invertAvatar(): void {
@@ -19,5 +19,5 @@ function invertAvatar(): void {
   }
 }
 
-render(Ascii);
+logItem(Ascii);
 invertAvatar();
