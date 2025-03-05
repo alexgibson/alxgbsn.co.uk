@@ -44,6 +44,10 @@ body {
   width: 100px;
 }
 
+.avatar.is-inverted {
+  transform: rotate(180deg);
+}
+
 h1 {
   margin-bottom: 1rem;
 }
@@ -116,7 +120,7 @@ footer p {
 }
 
 .a-slide-up {
-  animation: a-slide-up 600ms ease 0ms both;
+  animation: a-slide-up 600ms ease 0ms backwards;
 }
 
 h1.a-slide-up {
