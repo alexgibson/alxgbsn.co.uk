@@ -6,11 +6,11 @@
   "source": "src/index.html",
   "devDependencies": {
     "del-cli": "^6.0.0",
-    "eslint": "^9.22.0",
+    "eslint": "^9.23.0",
     "eslint-config-prettier": "^10.1.1",
     "gh-pages": "^6.3.0",
     "globals": "^16.0.0",
-    "parcel": "^2.13.3",
+    "parcel": "^2.14.2",
     "parcel-reporter-static-files-copy": "^1.5.3",
     "prettier": "^3.5.3",
     "sharp": "^0.33.5",
