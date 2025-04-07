@@ -12,7 +12,7 @@ updates:
     open-pull-requests-limit: 10
     ignore:
       # Needs to be kept in sync with Parcel dependency.
-      - dependency-name: 'sharp'
+      - dependency-name: "sharp"
     groups:
       frontend:
         dependency-type: production
