@@ -16,8 +16,8 @@
     "prettier": "^3.7.4",
     "sharp": "^0.33.5",
     "typescript": "^5.9.3",
-    "typescript-eslint": "^8.49.0",
-    "update-browserslist-db": "^1.2.2"
+    "typescript-eslint": "^8.50.0",
+    "update-browserslist-db": "^1.2.3"
   },
   "homepage": "https://alxgbsn.co.uk",
   "repository": {
