@@ -15,7 +15,7 @@
     "parcel-reporter-static-files-copy": "^1.5.3",
     "prettier": "^3.8.2",
     "sharp": "^0.33.5",
-    "typescript": "^5.9.3",
+    "typescript": "^6.0.2",
     "typescript-eslint": "^8.58.1",
     "update-browserslist-db": "^1.2.3"
   },
