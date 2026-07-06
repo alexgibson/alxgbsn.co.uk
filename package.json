@@ -13,10 +13,10 @@
     "globals": "^17.7.0",
     "parcel": "^2.16.4",
     "parcel-reporter-static-files-copy": "^1.5.3",
-    "prettier": "^3.9.3",
+    "prettier": "^3.9.4",
     "sharp": "^0.33.5",
     "typescript": "^6.0.3",
-    "typescript-eslint": "^8.62.0",
+    "typescript-eslint": "^8.62.1",
     "update-browserslist-db": "^1.2.3"
   },
   "homepage": "https://alxgbsn.co.uk",
